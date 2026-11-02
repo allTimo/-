@@ -7,15 +7,15 @@ __pycache__/
 *.so
 
 # Distribution / packaging
+# ВНИМАНИЕ: правила lib/, lib64/ и downloads/ удалены намеренно.
+# Они отсекали рабочие каталоги проекта: dashboard/collector/lib/,
+# plugin/lib/ и landing/downloads/.
 .Python
 build/
 develop-eggs/
 dist/
-downloads/
 eggs/
 .eggs/
-lib/
-lib64/
 parts/
 sdist/
 var/
@@ -42,7 +42,6 @@ htmlcov/
 .nox/
 .coverage
 .coverage.*
-.cache
 nosetests.xml
 coverage.xml
 *.cover

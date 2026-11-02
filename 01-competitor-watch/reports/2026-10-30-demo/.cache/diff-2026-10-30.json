@@ -1,0 +1,352 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-10-30T22:48:49",
+  "threshold_pct": 0.5,
+  "totals": {
+    "prev_date": "2026-10-23",
+    "curr_date": "2026-10-30",
+    "has_prev": true,
+    "threshold_pct": 0.5,
+    "threshold_abs_rub": 0.0,
+    "min_lots_for_stats": 3,
+    "prev_lots": 9,
+    "curr_lots": 10,
+    "prev_active": 8,
+    "curr_active": 10,
+    "competitors": [
+      "MR Group",
+      "Донстрой",
+      "СЗ Гранель"
+    ],
+    "projects": [
+      "City Bay",
+      "Селигер Сити",
+      "Символ"
+    ],
+    "new_lots": 2,
+    "gone_lots": 1,
+    "gone_lots_inactive": 1,
+    "price_changes": 2,
+    "price_changes_below_threshold": 1,
+    "promo_new": 1,
+    "promo_changed": 1,
+    "promo_ended": 1,
+    "median_ppm2_curr": 331518,
+    "median_ppm2_prev": 329838,
+    "delta_median_ppm2_pct": 0.51,
+    "mean_ppm2_curr": 332361,
+    "mean_ppm2_prev": 337459
+  },
+  "new_lots": [
+    {
+      "source": "cian",
+      "competitor": "Донстрой",
+      "project": "Символ",
+      "lot_id": "M-303",
+      "url": "https://example.com/donstroy/simvol/M-303",
+      "rooms": 1,
+      "rooms_label": "1",
+      "area_m2": 40.0,
+      "floor": 9,
+      "floors_total": 17,
+      "building": "Корпус 6",
+      "price_rub": 11600000,
+      "price_per_m2_rub": 290000,
+      "finish": "white box",
+      "promo_flag": 1,
+      "promo_text": "Скидка 7% на старте продаж",
+      "delivery": "2027-Q1",
+      "status": "active"
+    },
+    {
+      "source": "cian",
+      "competitor": "СЗ Гранель",
+      "project": "Селигер Сити",
+      "lot_id": "S-105",
+      "url": "https://example.com/granelle/seliger-siti/S-105",
+      "rooms": 2,
+      "rooms_label": "2",
+      "area_m2": 60.0,
+      "floor": 18,
+      "floors_total": 24,
+      "building": "Корпус 2",
+      "price_rub": 19800000,
+      "price_per_m2_rub": 330000,
+      "finish": "чистовая",
+      "promo_flag": 0,
+      "promo_text": "",
+      "delivery": "2028-Q1",
+      "status": "active"
+    }
+  ],
+  "gone_lots": [
+    {
+      "source": "cian",
+      "competitor": "Донстрой",
+      "project": "Символ",
+      "lot_id": "M-302",
+      "url": "https://example.com/donstroy/simvol/M-302",
+      "rooms": 4,
+      "rooms_label": "4+",
+      "area_m2": 92.0,
+      "floor": 12,
+      "floors_total": 17,
+      "building": "Корпус 5",
+      "price_rub": 22080000,
+      "price_per_m2_rub": 240000,
+      "finish": "чистовая",
+      "promo_flag": 0,
+      "promo_text": "",
+      "delivery": "2026-Q4",
+      "status": "reserved"
+    }
+  ],
+  "gone_lots_inactive": [
+    {
+      "source": "cian",
+      "competitor": "Донстрой",
+      "project": "Символ",
+      "lot_id": "M-302",
+      "url": "https://example.com/donstroy/simvol/M-302",
+      "rooms": 4,
+      "rooms_label": "4+",
+      "area_m2": 92.0,
+      "floor": 12,
+      "floors_total": 17,
+      "building": "Корпус 5",
+      "price_rub": 22080000,
+      "price_per_m2_rub": 240000,
+      "finish": "чистовая",
+      "promo_flag": 0,
+      "promo_text": "",
+      "delivery": "2026-Q4",
+      "status": "reserved"
+    }
+  ],
+  "price_changes": [
+    {
+      "matched_by": "pct",
+      "source": "cian",
+      "competitor": "СЗ Гранель",
+      "project": "Селигер Сити",
+      "lot_id": "S-102",
+      "rooms": 2,
+      "rooms_label": "2",
+      "area_m2": 56.0,
+      "price_prev_rub": 17920000,
+      "price_curr_rub": 18650000,
+      "delta_rub": 730000,
+      "delta_pct": 4.07,
+      "price_per_m2_prev_rub": 320000,
+      "price_per_m2_curr_rub": 333036,
+      "status_prev": "active",
+      "status_curr": "active",
+      "direction": "рост"
+    },
+    {
+      "matched_by": "pct",
+      "source": "cian",
+      "competitor": "MR Group",
+      "project": "City Bay",
+      "lot_id": "C-202",
+      "rooms": 2,
+      "rooms_label": "2",
+      "area_m2": 61.0,
+      "price_prev_rub": 23180000,
+      "price_curr_rub": 22570000,
+      "delta_rub": -610000,
+      "delta_pct": -2.63,
+      "price_per_m2_prev_rub": 380000,
+      "price_per_m2_curr_rub": 370000,
+      "status_prev": "active",
+      "status_curr": "active",
+      "direction": "снижение"
+    }
+  ],
+  "promo_new": [
+    {
+      "competitor": "Донстрой",
+      "project": "Символ",
+      "lot_id": "M-303",
+      "rooms_label": "1",
+      "promo_text": "Скидка 7% на старте продаж",
+      "promo_text_prev": "",
+      "status": "новая"
+    }
+  ],
+  "promo_changed": [
+    {
+      "competitor": "СЗ Гранель",
+      "project": "Селигер Сити",
+      "lot_id": "S-101",
+      "rooms_label": "1",
+      "promo_text": "Скидка 5% при 100% оплате",
+      "promo_text_prev": "Скидка 3% при 100% оплате",
+      "status": "изменилась"
+    }
+  ],
+  "promo_ended": [
+    {
+      "competitor": "MR Group",
+      "project": "City Bay",
+      "lot_id": "C-201",
+      "rooms_label": "1",
+      "promo_text": "Ипотека 0,1%",
+      "promo_text_prev": "Ипотека 0,1%",
+      "status": "закончилась"
+    }
+  ],
+  "supply_by_project": [
+    {
+      "competitor": "MR Group",
+      "project": "City Bay",
+      "lots_curr": 3,
+      "lots_prev": 3,
+      "active_curr": 3,
+      "active_prev": 3,
+      "delta_active": 0,
+      "new_active": 0,
+      "gone": 0
+    },
+    {
+      "competitor": "Донстрой",
+      "project": "Символ",
+      "lots_curr": 2,
+      "lots_prev": 2,
+      "active_curr": 2,
+      "active_prev": 1,
+      "delta_active": 1,
+      "new_active": 1,
+      "gone": 1
+    },
+    {
+      "competitor": "СЗ Гранель",
+      "project": "Селигер Сити",
+      "lots_curr": 5,
+      "lots_prev": 4,
+      "active_curr": 5,
+      "active_prev": 4,
+      "delta_active": 1,
+      "new_active": 1,
+      "gone": 0
+    }
+  ],
+  "supply_by_rooms": [
+    {
+      "rooms_label": "студии",
+      "count_curr": 2,
+      "count_prev": 2,
+      "delta": 0
+    },
+    {
+      "rooms_label": "1",
+      "count_curr": 3,
+      "count_prev": 2,
+      "delta": 1
+    },
+    {
+      "rooms_label": "2",
+      "count_curr": 4,
+      "count_prev": 3,
+      "delta": 1
+    },
+    {
+      "rooms_label": "3",
+      "count_curr": 1,
+      "count_prev": 1,
+      "delta": 0
+    },
+    {
+      "rooms_label": "4+",
+      "count_curr": 0,
+      "count_prev": 0,
+      "delta": 0
+    }
+  ],
+  "price_by_project": [
+    {
+      "competitor": "MR Group",
+      "project": "City Bay",
+      "active_curr": 3,
+      "active_prev": 3,
+      "median_ppm2_curr": 380000,
+      "median_ppm2_prev": 380000,
+      "delta_median_pct": 0.0,
+      "mean_ppm2_curr": 383333,
+      "mean_ppm2_prev": 386667,
+      "delta_mean_pct": -0.86,
+      "min_lots_for_stats": 3,
+      "stats_excluded": false
+    },
+    {
+      "competitor": "Донстрой",
+      "project": "Символ",
+      "active_curr": 2,
+      "active_prev": 1,
+      "median_ppm2_curr": 275000,
+      "median_ppm2_prev": 260000,
+      "delta_median_pct": 5.77,
+      "mean_ppm2_curr": 275000,
+      "mean_ppm2_prev": 260000,
+      "delta_mean_pct": 5.77,
+      "min_lots_for_stats": 3,
+      "stats_excluded": true
+    },
+    {
+      "competitor": "СЗ Гранель",
+      "project": "Селигер Сити",
+      "active_curr": 5,
+      "active_prev": 4,
+      "median_ppm2_curr": 330000,
+      "median_ppm2_prev": 322338,
+      "delta_median_pct": 2.38,
+      "mean_ppm2_curr": 324722,
+      "mean_ppm2_prev": 319919,
+      "delta_mean_pct": 1.5,
+      "min_lots_for_stats": 3,
+      "stats_excluded": false
+    }
+  ],
+  "rooms_price": [
+    {
+      "rooms_label": "студии",
+      "count_curr": 2,
+      "count_prev": 2,
+      "median_ppm2_curr": 357500,
+      "median_ppm2_prev": 357500,
+      "mean_ppm2_curr": 357500
+    },
+    {
+      "rooms_label": "1",
+      "count_curr": 3,
+      "count_prev": 2,
+      "median_ppm2_curr": 324675,
+      "median_ppm2_prev": 362338,
+      "mean_ppm2_curr": 338225
+    },
+    {
+      "rooms_label": "2",
+      "count_curr": 4,
+      "count_prev": 3,
+      "median_ppm2_curr": 331518,
+      "median_ppm2_prev": 320000,
+      "mean_ppm2_curr": 323259
+    },
+    {
+      "rooms_label": "3",
+      "count_curr": 1,
+      "count_prev": 1,
+      "median_ppm2_curr": 300897,
+      "median_ppm2_prev": 300000,
+      "mean_ppm2_curr": 300897
+    },
+    {
+      "rooms_label": "4+",
+      "count_curr": 0,
+      "count_prev": 0,
+      "median_ppm2_curr": null,
+      "median_ppm2_prev": null,
+      "mean_ppm2_curr": null
+    }
+  ]
+}

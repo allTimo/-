@@ -1,0 +1,146 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-10-31T17:48:15",
+  "threshold_pct": 0.5,
+  "totals": {
+    "prev_date": null,
+    "curr_date": "2026-10-31",
+    "has_prev": false,
+    "threshold_pct": 0.5,
+    "threshold_abs_rub": 0.0,
+    "min_lots_for_stats": 3,
+    "prev_lots": null,
+    "curr_lots": 15,
+    "prev_active": null,
+    "curr_active": 15,
+    "competitors": [
+      "Группа ЛСР"
+    ],
+    "projects": [
+      "ЗИЛАРТ"
+    ],
+    "new_lots": 0,
+    "gone_lots": 0,
+    "gone_lots_inactive": 0,
+    "price_changes": 0,
+    "price_changes_below_threshold": 0,
+    "promo_new": 0,
+    "promo_changed": 0,
+    "promo_ended": 0,
+    "median_ppm2_curr": 601948,
+    "median_ppm2_prev": null,
+    "delta_median_ppm2_pct": null,
+    "mean_ppm2_curr": 623792,
+    "mean_ppm2_prev": null
+  },
+  "new_lots": [],
+  "gone_lots": [],
+  "gone_lots_inactive": [],
+  "price_changes": [],
+  "promo_new": [],
+  "promo_changed": [],
+  "promo_ended": [],
+  "supply_by_project": [
+    {
+      "competitor": "Группа ЛСР",
+      "project": "ЗИЛАРТ",
+      "lots_curr": 15,
+      "lots_prev": null,
+      "active_curr": 15,
+      "active_prev": null,
+      "delta_active": null,
+      "new_active": 0,
+      "gone": 0
+    }
+  ],
+  "supply_by_rooms": [
+    {
+      "rooms_label": "студии",
+      "count_curr": 2,
+      "count_prev": null,
+      "delta": null
+    },
+    {
+      "rooms_label": "1",
+      "count_curr": 5,
+      "count_prev": null,
+      "delta": null
+    },
+    {
+      "rooms_label": "2",
+      "count_curr": 6,
+      "count_prev": null,
+      "delta": null
+    },
+    {
+      "rooms_label": "3",
+      "count_curr": 2,
+      "count_prev": null,
+      "delta": null
+    },
+    {
+      "rooms_label": "4+",
+      "count_curr": 0,
+      "count_prev": null,
+      "delta": null
+    }
+  ],
+  "price_by_project": [
+    {
+      "competitor": "Группа ЛСР",
+      "project": "ЗИЛАРТ",
+      "active_curr": 15,
+      "active_prev": null,
+      "median_ppm2_curr": 601948,
+      "median_ppm2_prev": null,
+      "delta_median_pct": null,
+      "mean_ppm2_curr": 623792,
+      "mean_ppm2_prev": null,
+      "delta_mean_pct": null,
+      "min_lots_for_stats": 3,
+      "stats_excluded": false
+    }
+  ],
+  "rooms_price": [
+    {
+      "rooms_label": "студии",
+      "count_curr": 2,
+      "count_prev": null,
+      "median_ppm2_curr": 822724,
+      "median_ppm2_prev": null,
+      "mean_ppm2_curr": 822724
+    },
+    {
+      "rooms_label": "1",
+      "count_curr": 5,
+      "count_prev": null,
+      "median_ppm2_curr": 606622,
+      "median_ppm2_prev": null,
+      "mean_ppm2_curr": 616857
+    },
+    {
+      "rooms_label": "2",
+      "count_curr": 6,
+      "count_prev": null,
+      "median_ppm2_curr": 560266,
+      "median_ppm2_prev": null,
+      "mean_ppm2_curr": 560682
+    },
+    {
+      "rooms_label": "3",
+      "count_curr": 2,
+      "count_prev": null,
+      "median_ppm2_curr": 631528,
+      "median_ppm2_prev": null,
+      "mean_ppm2_curr": 631528
+    },
+    {
+      "rooms_label": "4+",
+      "count_curr": 0,
+      "count_prev": null,
+      "median_ppm2_curr": null,
+      "median_ppm2_prev": null,
+      "mean_ppm2_curr": null
+    }
+  ]
+}
