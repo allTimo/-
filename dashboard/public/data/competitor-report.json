@@ -1,0 +1,6068 @@
+{
+ "dir": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\01-competitor-watch\\data\\clients",
+ "exists": true,
+ "clients": [
+  {
+   "clientId": "client-svet",
+   "dir": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\01-competitor-watch\\data\\clients\\client-svet\\competitor-profiles",
+   "exists": true,
+   "summary": {
+    "client": "client-svet",
+    "generated_at": "2026-11-01T18:00:38+03:00",
+    "projects": 6,
+    "projects_with_lots": 6,
+    "lots_total": 170,
+    "price_per_m2_median": 514844,
+    "risk_flags": [
+     {
+      "project": "ЖК Дмитровское небо",
+      "code": "no_history",
+      "level": "info",
+      "comment": "истории мало: динамика и риски появятся после 2 недель"
+     },
+     {
+      "project": "ЖК Селигер Сити",
+      "code": "no_history",
+      "level": "info",
+      "comment": "истории мало: динамика и риски появятся после 2 недель"
+     },
+     {
+      "project": "ЖК Михалковский",
+      "code": "no_history",
+      "level": "info",
+      "comment": "истории мало: динамика и риски появятся после 2 недель"
+     },
+     {
+      "project": "ЖК Нарвин",
+      "code": "no_history",
+      "level": "info",
+      "comment": "истории мало: динамика и риски появятся после 2 недель"
+     },
+     {
+      "project": "ЖК СОУЛ",
+      "code": "no_history",
+      "level": "info",
+      "comment": "истории мало: динамика и риски появятся после 2 недель"
+     },
+     {
+      "project": "ЖК Бусиновский парк",
+      "code": "no_history",
+      "level": "info",
+      "comment": "истории мало: динамика и риски появятся после 2 недель"
+     }
+    ],
+    "rosreestr": {
+     "status": "частично доступен",
+     "detail": "страница открывается через браузер без логина: росреестр; Chrome отдал страницу ошибки сертификата: наш.дом.рф (ЕИСЖС)",
+     "reachable_via_browser": [
+      "росреестр"
+     ],
+     "disabled": [],
+     "attempts": [
+      {
+       "source": "наш.дом.рф (ЕИСЖС)",
+       "url": "https://xn--80asehdb.xn--p1ai/",
+       "http": {
+        "status": null,
+        "bytes": 0,
+        "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'xn--80asehdb.xn--p1ai'. (_ssl.c:1010)>"
+       },
+       "browser": {
+        "bytes": 61917,
+        "transport": "chrome-cdp-no-login-headless",
+        "ignore_cert_errors": true,
+        "note": "Chrome отдал страницу ошибки сертификата — это не данные"
+       },
+       "verdict": "error_page"
+      },
+      {
+       "source": "росреестр",
+       "url": "https://rosreestr.gov.ru/",
+       "http": {
+        "status": null,
+        "bytes": 0,
+        "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1010)>"
+       },
+       "browser": {
+        "bytes": 307611,
+        "transport": "chrome-cdp-no-login-headless",
+        "ignore_cert_errors": true
+       },
+       "verdict": "ok"
+      }
+     ],
+     "per_source": [
+      {
+       "source": "наш.дом.рф (ЕИСЖС)",
+       "verdict": "error_page",
+       "note": "Chrome отдал страницу ошибки сертификата — это не данные"
+      },
+      {
+       "source": "росреестр",
+       "verdict": "ok",
+       "note": "страница открылась (chrome-cdp-no-login-headless), обычный HTTP был заблокирован: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate "
+      }
+     ],
+     "requests_made": 4,
+     "checked_at": "2026-11-01",
+     "from_cache": true,
+     "cache_age_hours": 0.1
+    },
+    "official": {
+     "source": "ЕИСЖС (наш.дом.рф) / Росреестр",
+     "status": "частично доступен",
+     "projects_with_official_data": 0,
+     "corpi_total": null,
+     "flats_total": null,
+     "ddu_registered": null,
+     "comment": "нули здесь означают, что официальные данные недоступны, а не что их нет"
+    },
+    "files": [
+     "ЖК Дмитровское небо",
+     "ЖК Селигер Сити",
+     "ЖК Михалковский",
+     "ЖК Нарвин",
+     "ЖК СОУЛ",
+     "ЖК Бусиновский парк"
+    ]
+   },
+   "profiles": [
+    {
+     "projectId": "zhk-businovskiy-park",
+     "project": "ЖК Бусиновский парк",
+     "developer": "ПИК",
+     "klass": "комфорт",
+     "sourceUrl": "https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-businovskiy-park-2159741-ot-zastroyschika-OTZ/",
+     "sourcePlatform": "cian",
+     "collectedAt": "2026-11-01",
+     "distanceKm": 5.15,
+     "metrics": {
+      "siteCorpiNamed": {
+       "value": null,
+       "unit": null,
+       "source": null,
+       "date": null,
+       "method": null,
+       "accuracy": null,
+       "comment": null,
+       "estimate": false,
+       "rawValue": null
+      },
+      "siteDeadlines": {
+       "value": null,
+       "unit": null,
+       "source": null,
+       "date": null,
+       "method": null,
+       "accuracy": null,
+       "comment": null,
+       "estimate": false,
+       "rawValue": null
+      },
+      "siteReadinessPct": {
+       "value": null,
+       "unit": null,
+       "source": null,
+       "date": null,
+       "method": null,
+       "accuracy": null,
+       "comment": null,
+       "estimate": false,
+       "rawValue": null
+      },
+      "siteFlatsTotal": {
+       "value": null,
+       "unit": null,
+       "source": null,
+       "date": null,
+       "method": null,
+       "accuracy": null,
+       "comment": null,
+       "estimate": false,
+       "rawValue": null
+      },
+      "siteFlatsInSale": {
+       "value": null,
+       "unit": null,
+       "source": null,
+       "date": null,
+       "method": null,
+       "accuracy": null,
+       "comment": null,
+       "estimate": false,
+       "rawValue": null
+      },
+      "siteFlatsSold": {
+       "value": null,
+       "unit": null,
+       "source": null,
+       "date": null,
+       "method": null,
+       "accuracy": null,
+       "comment": null,
+       "estimate": false,
+       "rawValue": null
+      },
+      "siteFlatsReserved": {
+       "value": null,
+       "unit": null,
+       "source": null,
+       "date": null,
+       "method": null,
+       "accuracy": null,
+       "comment": null,
+       "estimate": false,
+       "rawValue": null
+      },
+      "sitePromoCount": {
+       "value": null,
+       "unit": null,
+       "source": null,
+       "date": null,
+       "method": null,
+       "accuracy": null,
+       "comment": null,
+       "estimate": false,
+       "rawValue": null
+      },
+      "siteMortgageCount": {
+       "value": null,
+       "unit": null,
+       "source": null,
+       "date": null,
+       "method": null,
+       "accuracy": null,
+       "comment": null,
+       "estimate": false,
+       "rawValue": null
+      },
+      "corpiTotal": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "корпусов всего",
+       "source": "ЕИСЖС (наш.дом.рф)",
+       "date": "2026-11-01",
+       "method": "dom",
+       "accuracy": null,
+       "comment": "официальные данные получить нельзя: ЕИСЖС (наш.дом.рф): Chrome отдал страницу ошибки сертификата — Chrome отдал страницу ошибки сертификата — это не данные",
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "corpiBuilt": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "корпусов введено",
+       "source": "ЕИСЖС (наш.дом.рф)",
+       "date": "2026-11-01",
+       "method": "dom",
+       "accuracy": null,
+       "comment": "официальные данные получить нельзя: ЕИСЖС (наш.дом.рф): Chrome отдал страницу ошибки сертификата — Chrome отдал страницу ошибки сертификата — это не данные",
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "corpiUnderConstruction": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "корпусов строится",
+       "source": "ЕИСЖС (наш.дом.рф)",
+       "date": "2026-11-01",
+       "method": "dom",
+       "accuracy": null,
+       "comment": "официальные данные получить нельзя: ЕИСЖС (наш.дом.рф): Chrome отдал страницу ошибки сертификата — Chrome отдал страницу ошибки сертификата — это не данные",
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "flatsTotal": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "квартир в проекте",
+       "source": "ЕИСЖС (наш.дом.рф)",
+       "date": "2026-11-01",
+       "method": "dom",
+       "accuracy": null,
+       "comment": "официальные данные получить нельзя: ЕИСЖС (наш.дом.рф): Chrome отдал страницу ошибки сертификата — Chrome отдал страницу ошибки сертификата — это не данные",
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "dduRegistered": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "ДДУ зарегистрировано",
+       "source": "ЕИСЖС (наш.дом.рф)",
+       "date": "2026-11-01",
+       "method": "dom",
+       "accuracy": null,
+       "comment": "официальные данные получить нельзя: ЕИСЖС (наш.дом.рф): Chrome отдал страницу ошибки сертификата — Chrome отдал страницу ошибки сертификата — это не данные",
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "soldOfficialRosreestr": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "ДДУ",
+       "source": "ЕИСЖС (наш.дом.рф) / Росреестр",
+       "date": "2026-11-01",
+       "method": "none",
+       "accuracy": null,
+       "comment": "официальные ДДУ недоступны: Chrome отдал страницу ошибки сертификата — своими цифрами не подменяем",
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "marketingBudgetEstimateRub": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "₽",
+       "source": "демо-образец выгрузки",
+       "date": "2026-11-01",
+       "method": "csv",
+       "accuracy": null,
+       "comment": "данные в сервисе есть, но проект не сопоставлен: добавьте домен в карточку конкурента (в срезе: rg-dev.ru, seliger-city.ru)",
+       "estimate": true,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "marketingAds": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "шт.",
+       "source": "демо-образец выгрузки",
+       "date": "2026-11-01",
+       "method": "csv",
+       "accuracy": null,
+       "comment": "данные в сервисе есть, но проект не сопоставлен: добавьте домен в карточку конкурента (в срезе: rg-dev.ru, seliger-city.ru)",
+       "estimate": true,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "marketingKeywords": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "шт.",
+       "source": "демо-образец выгрузки",
+       "date": "2026-11-01",
+       "method": "csv",
+       "accuracy": null,
+       "comment": "данные в сервисе есть, но проект не сопоставлен: добавьте домен в карточку конкурента (в срезе: rg-dev.ru, seliger-city.ru)",
+       "estimate": true,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "marketingLandings": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "шт.",
+       "source": "демо-образец выгрузки",
+       "date": "2026-11-01",
+       "method": "csv",
+       "accuracy": null,
+       "comment": "данные в сервисе есть, но проект не сопоставлен: добавьте домен в карточку конкурента (в срезе: rg-dev.ru, seliger-city.ru)",
+       "estimate": true,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "marketingPeriod": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": null,
+       "source": "демо-образец выгрузки",
+       "date": "2026-11-01",
+       "method": null,
+       "accuracy": null,
+       "comment": "данные в сервисе есть, но проект не сопоставлен: добавьте домен в карточку конкурента (в срезе: rg-dev.ru, seliger-city.ru)",
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "marketingSource": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": null,
+       "source": "демо-образец выгрузки",
+       "date": "2026-11-01",
+       "method": null,
+       "accuracy": null,
+       "comment": "данные в сервисе есть, но проект не сопоставлен: добавьте домен в карточку конкурента (в срезе: rg-dev.ru, seliger-city.ru)",
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "marketingMethod": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": null,
+       "source": "демо-образец выгрузки",
+       "date": "2026-11-01",
+       "method": null,
+       "accuracy": null,
+       "comment": "данные в сервисе есть, но проект не сопоставлен: добавьте домен в карточку конкурента (в срезе: rg-dev.ru, seliger-city.ru)",
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "soldEstimateByGoneLots": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "лотов",
+       "source": "наш недельный мониторинг",
+       "date": "2026-11-01",
+       "method": "estimate",
+       "accuracy": null,
+       "comment": "нужно минимум 2 недели наблюдений",
+       "estimate": true,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "lotsInSale": {
+       "value": 28,
+       "text": null,
+       "hasAny": true,
+       "unit": "лотов",
+       "source": "cian (https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-businovskiy-park-2159741-ot-zastroyschika-OTZ/)",
+       "date": "2026-11-01",
+       "method": "http",
+       "accuracy": "высокая",
+       "comment": "лоты на публичной странице проекта",
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": 28
+      },
+      "priceMinRub": {
+       "value": 14866000,
+       "text": null,
+       "hasAny": true,
+       "unit": "₽",
+       "source": "cian (https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-businovskiy-park-2159741-ot-zastroyschika-OTZ/)",
+       "date": "2026-11-01",
+       "method": "http",
+       "accuracy": null,
+       "comment": null,
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": 14866000
+      },
+      "priceMedianRub": {
+       "value": 22121635,
+       "text": null,
+       "hasAny": true,
+       "unit": "₽",
+       "source": "cian (https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-businovskiy-park-2159741-ot-zastroyschika-OTZ/)",
+       "date": "2026-11-01",
+       "method": "http",
+       "accuracy": null,
+       "comment": null,
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": 22121635
+      },
+      "priceMaxRub": {
+       "value": 33671610,
+       "text": null,
+       "hasAny": true,
+       "unit": "₽",
+       "source": "cian (https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-businovskiy-park-2159741-ot-zastroyschika-OTZ/)",
+       "date": "2026-11-01",
+       "method": "http",
+       "accuracy": null,
+       "comment": null,
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": 33671610
+      },
+      "pricePerM2Median": {
+       "value": 455851,
+       "text": null,
+       "hasAny": true,
+       "unit": "₽/м²",
+       "source": "cian (https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-businovskiy-park-2159741-ot-zastroyschika-OTZ/)",
+       "date": "2026-11-01",
+       "method": "http",
+       "accuracy": null,
+       "comment": null,
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": 455851
+      },
+      "averageAreaM2": {
+       "value": 48.4,
+       "text": null,
+       "hasAny": true,
+       "unit": "м²",
+       "source": "cian (https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-businovskiy-park-2159741-ot-zastroyschika-OTZ/)",
+       "date": "2026-11-01",
+       "method": "http",
+       "accuracy": null,
+       "comment": null,
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": 48.4
+      },
+      "medianAreaM2": {
+       "value": 49,
+       "text": null,
+       "hasAny": true,
+       "unit": "м²",
+       "source": "cian (https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-businovskiy-park-2159741-ot-zastroyschika-OTZ/)",
+       "date": "2026-11-01",
+       "method": "http",
+       "accuracy": null,
+       "comment": null,
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": 49
+      },
+      "reservedLots": {
+       "value": 0,
+       "text": null,
+       "hasAny": true,
+       "unit": "лотов",
+       "source": "cian (https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-businovskiy-park-2159741-ot-zastroyschika-OTZ/)",
+       "date": "2026-11-01",
+       "method": "http",
+       "accuracy": "средняя",
+       "comment": "источник помечает бронь, но ни один лот не отмечен забронированным (реальный ноль)",
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": 0
+      },
+      "promoCount": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "лотов с акцией",
+       "source": "cian (https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-businovskiy-park-2159741-ot-zastroyschika-OTZ/)",
+       "date": "2026-11-01",
+       "method": "http",
+       "accuracy": null,
+       "comment": "акций и промо на странице нет — данных нет",
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      }
+     },
+     "derived": {
+      "soldShareOfficialPct": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "%",
+       "source": "ЕИСЖС (наш.дом.рф)",
+       "date": "2026-11-01",
+       "method": "estimate",
+       "accuracy": null,
+       "comment": "официальная доля проданного не считается: нет данных (ДДУ)",
+       "estimate": true,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "salesSpeedPerWeek": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "",
+       "source": null,
+       "date": "2026-11-01",
+       "method": "estimate",
+       "accuracy": null,
+       "comment": "нужно минимум 2 недели наблюдений (накоплено 1)",
+       "estimate": true,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "absorptionRate": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "",
+       "source": null,
+       "date": "2026-11-01",
+       "method": "estimate",
+       "accuracy": null,
+       "comment": "нужно минимум 2 недели наблюдений (накоплено 1)",
+       "estimate": true,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "monthsToSellOut": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "",
+       "source": null,
+       "date": "2026-11-01",
+       "method": "estimate",
+       "accuracy": null,
+       "comment": "нужно минимум 2 недели наблюдений (накоплено 1)",
+       "estimate": true,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "entryPriceDynamicsPct": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "",
+       "source": null,
+       "date": "2026-11-01",
+       "method": "estimate",
+       "accuracy": null,
+       "comment": "нужно минимум 2 недели наблюдений (накоплено 1)",
+       "estimate": true,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "supplyDynamicsPct": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "",
+       "source": null,
+       "date": "2026-11-01",
+       "method": "estimate",
+       "accuracy": null,
+       "comment": "нужно минимум 2 недели наблюдений (накоплено 1)",
+       "estimate": true,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "promoPressureWeeks": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "",
+       "source": null,
+       "date": "2026-11-01",
+       "method": "estimate",
+       "accuracy": null,
+       "comment": "нужно минимум 2 недели наблюдений (накоплено 1)",
+       "estimate": true,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "priceIndexVsDistrict": {
+       "value": 0.885,
+       "text": null,
+       "hasAny": true,
+       "unit": "×",
+       "source": "расчёт по нашим данным",
+       "date": null,
+       "method": "estimate",
+       "accuracy": "средняя",
+       "comment": "медиана ₽/м² конкурента к медиане района (514 844 ₽/м²)",
+       "estimate": true,
+       "zeroWasAbsence": false,
+       "rawValue": 0.885
+      },
+      "gapPriceVsUsPct": {
+       "value": 82.34,
+       "text": null,
+       "hasAny": true,
+       "unit": "%",
+       "source": "расчёт",
+       "date": "2026-11-01",
+       "method": "estimate",
+       "accuracy": "средняя",
+       "comment": "разрыв: медиана конкурента против нашей цены входа (250 000 ₽/м²)",
+       "estimate": true,
+       "zeroWasAbsence": false,
+       "rawValue": 82.34
+      }
+     },
+     "soldShareBySite": {
+      "value": null,
+      "unit": "%",
+      "source": "сайт застройщика",
+      "date": null,
+      "method": "estimate",
+      "accuracy": null,
+      "comment": "нужны оба числа: всего квартир и продано по шахматке сайта",
+      "estimate": true,
+      "zeroWasAbsence": false,
+      "rawValue": null
+     },
+     "developerSite": null,
+     "officialSources": null,
+     "byRooms": {
+      "1": {
+       "count": 8,
+       "medianPrice": 20193972,
+       "medianPerM2": 534500,
+       "medianArea": 39
+      },
+      "2": {
+       "count": 11,
+       "medianPrice": 22448097,
+       "medianPerM2": 425800,
+       "medianArea": 57
+      },
+      "3": {
+       "count": 4,
+       "medianPrice": 27497074,
+       "medianPerM2": 394287,
+       "medianArea": 71
+      },
+      "studio": {
+       "count": 5,
+       "medianPrice": 15487510,
+       "medianPerM2": 689600,
+       "medianArea": 22
+      },
+      "4+": {
+       "count": 0,
+       "medianPrice": null,
+       "medianPerM2": null,
+       "medianArea": null
+      }
+     },
+     "riskFlags": [
+      {
+       "code": "no_history",
+       "level": "info",
+       "comment": "истории мало: динамика и риски появятся после 2 недель"
+      }
+     ],
+     "limitations": [
+      "ЕИСЖС: официальные корпуса/квартиры/ДДУ недоступны — Chrome отдал страницу ошибки сертификата"
+     ],
+     "history": {
+      "weeks": 1,
+      "needed": 2,
+      "available": false
+     },
+     "sourcesCount": 10,
+     "filedAt": 1793545238992.6155,
+     "matchedBy": null,
+     "marketing": {
+      "state": "unmatched",
+      "note": "данные в сервисе есть, но проект не сопоставлен: добавьте домен в карточку конкурента (в срезе: rg-dev.ru, seliger-city.ru)",
+      "source": "демо-образец выгрузки",
+      "method": "csv",
+      "date": "2026-11-01",
+      "sliceIds": [
+       "rg-dev.ru",
+       "seliger-city.ru"
+      ]
+     }
+    },
+    {
+     "projectId": "zhk-dmitrovskoe-nebo",
+     "project": "ЖК Дмитровское небо",
+     "developer": "Группа ЛСР",
+     "klass": "бизнес",
+     "sourceUrl": "https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-dmitrovskoe-nebo-4051330-ot-zastroyschika-OTZ/",
+     "sourcePlatform": "cian",
+     "collectedAt": "2026-11-01",
+     "distanceKm": 1.16,
+     "metrics": {
+      "siteCorpiNamed": {
+       "value": null,
+       "unit": null,
+       "source": null,
+       "date": null,
+       "method": null,
+       "accuracy": null,
+       "comment": null,
+       "estimate": false,
+       "rawValue": null
+      },
+      "siteDeadlines": {
+       "value": null,
+       "unit": null,
+       "source": null,
+       "date": null,
+       "method": null,
+       "accuracy": null,
+       "comment": null,
+       "estimate": false,
+       "rawValue": null
+      },
+      "siteReadinessPct": {
+       "value": null,
+       "unit": null,
+       "source": null,
+       "date": null,
+       "method": null,
+       "accuracy": null,
+       "comment": null,
+       "estimate": false,
+       "rawValue": null
+      },
+      "siteFlatsTotal": {
+       "value": null,
+       "unit": null,
+       "source": null,
+       "date": null,
+       "method": null,
+       "accuracy": null,
+       "comment": null,
+       "estimate": false,
+       "rawValue": null
+      },
+      "siteFlatsInSale": {
+       "value": null,
+       "unit": null,
+       "source": null,
+       "date": null,
+       "method": null,
+       "accuracy": null,
+       "comment": null,
+       "estimate": false,
+       "rawValue": null
+      },
+      "siteFlatsSold": {
+       "value": null,
+       "unit": null,
+       "source": null,
+       "date": null,
+       "method": null,
+       "accuracy": null,
+       "comment": null,
+       "estimate": false,
+       "rawValue": null
+      },
+      "siteFlatsReserved": {
+       "value": null,
+       "unit": null,
+       "source": null,
+       "date": null,
+       "method": null,
+       "accuracy": null,
+       "comment": null,
+       "estimate": false,
+       "rawValue": null
+      },
+      "sitePromoCount": {
+       "value": null,
+       "unit": null,
+       "source": null,
+       "date": null,
+       "method": null,
+       "accuracy": null,
+       "comment": null,
+       "estimate": false,
+       "rawValue": null
+      },
+      "siteMortgageCount": {
+       "value": null,
+       "unit": null,
+       "source": null,
+       "date": null,
+       "method": null,
+       "accuracy": null,
+       "comment": null,
+       "estimate": false,
+       "rawValue": null
+      },
+      "corpiTotal": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "корпусов всего",
+       "source": "ЕИСЖС (наш.дом.рф)",
+       "date": "2026-11-01",
+       "method": "dom",
+       "accuracy": null,
+       "comment": "официальные данные получить нельзя: ЕИСЖС (наш.дом.рф): Chrome отдал страницу ошибки сертификата — Chrome отдал страницу ошибки сертификата — это не данные",
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "corpiBuilt": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "корпусов введено",
+       "source": "ЕИСЖС (наш.дом.рф)",
+       "date": "2026-11-01",
+       "method": "dom",
+       "accuracy": null,
+       "comment": "официальные данные получить нельзя: ЕИСЖС (наш.дом.рф): Chrome отдал страницу ошибки сертификата — Chrome отдал страницу ошибки сертификата — это не данные",
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "corpiUnderConstruction": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "корпусов строится",
+       "source": "ЕИСЖС (наш.дом.рф)",
+       "date": "2026-11-01",
+       "method": "dom",
+       "accuracy": null,
+       "comment": "официальные данные получить нельзя: ЕИСЖС (наш.дом.рф): Chrome отдал страницу ошибки сертификата — Chrome отдал страницу ошибки сертификата — это не данные",
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "flatsTotal": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "квартир в проекте",
+       "source": "ЕИСЖС (наш.дом.рф)",
+       "date": "2026-11-01",
+       "method": "dom",
+       "accuracy": null,
+       "comment": "официальные данные получить нельзя: ЕИСЖС (наш.дом.рф): Chrome отдал страницу ошибки сертификата — Chrome отдал страницу ошибки сертификата — это не данные",
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "dduRegistered": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "ДДУ зарегистрировано",
+       "source": "ЕИСЖС (наш.дом.рф)",
+       "date": "2026-11-01",
+       "method": "dom",
+       "accuracy": null,
+       "comment": "официальные данные получить нельзя: ЕИСЖС (наш.дом.рф): Chrome отдал страницу ошибки сертификата — Chrome отдал страницу ошибки сертификата — это не данные",
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "soldOfficialRosreestr": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "ДДУ",
+       "source": "ЕИСЖС (наш.дом.рф) / Росреестр",
+       "date": "2026-11-01",
+       "method": "none",
+       "accuracy": null,
+       "comment": "официальные ДДУ недоступны: Chrome отдал страницу ошибки сертификата — своими цифрами не подменяем",
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "marketingBudgetEstimateRub": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "₽",
+       "source": "демо-образец выгрузки",
+       "date": "2026-11-01",
+       "method": "csv",
+       "accuracy": null,
+       "comment": "данные в сервисе есть, но проект не сопоставлен: добавьте домен в карточку конкурента (в срезе: rg-dev.ru, seliger-city.ru)",
+       "estimate": true,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "marketingAds": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "шт.",
+       "source": "демо-образец выгрузки",
+       "date": "2026-11-01",
+       "method": "csv",
+       "accuracy": null,
+       "comment": "данные в сервисе есть, но проект не сопоставлен: добавьте домен в карточку конкурента (в срезе: rg-dev.ru, seliger-city.ru)",
+       "estimate": true,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "marketingKeywords": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "шт.",
+       "source": "демо-образец выгрузки",
+       "date": "2026-11-01",
+       "method": "csv",
+       "accuracy": null,
+       "comment": "данные в сервисе есть, но проект не сопоставлен: добавьте домен в карточку конкурента (в срезе: rg-dev.ru, seliger-city.ru)",
+       "estimate": true,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "marketingLandings": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "шт.",
+       "source": "демо-образец выгрузки",
+       "date": "2026-11-01",
+       "method": "csv",
+       "accuracy": null,
+       "comment": "данные в сервисе есть, но проект не сопоставлен: добавьте домен в карточку конкурента (в срезе: rg-dev.ru, seliger-city.ru)",
+       "estimate": true,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "marketingPeriod": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": null,
+       "source": "демо-образец выгрузки",
+       "date": "2026-11-01",
+       "method": null,
+       "accuracy": null,
+       "comment": "данные в сервисе есть, но проект не сопоставлен: добавьте домен в карточку конкурента (в срезе: rg-dev.ru, seliger-city.ru)",
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "marketingSource": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": null,
+       "source": "демо-образец выгрузки",
+       "date": "2026-11-01",
+       "method": null,
+       "accuracy": null,
+       "comment": "данные в сервисе есть, но проект не сопоставлен: добавьте домен в карточку конкурента (в срезе: rg-dev.ru, seliger-city.ru)",
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "marketingMethod": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": null,
+       "source": "демо-образец выгрузки",
+       "date": "2026-11-01",
+       "method": null,
+       "accuracy": null,
+       "comment": "данные в сервисе есть, но проект не сопоставлен: добавьте домен в карточку конкурента (в срезе: rg-dev.ru, seliger-city.ru)",
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "soldEstimateByGoneLots": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "лотов",
+       "source": "наш недельный мониторинг",
+       "date": "2026-11-01",
+       "method": "estimate",
+       "accuracy": null,
+       "comment": "нужно минимум 2 недели наблюдений",
+       "estimate": true,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "lotsInSale": {
+       "value": 28,
+       "text": null,
+       "hasAny": true,
+       "unit": "лотов",
+       "source": "cian (https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-dmitrovskoe-nebo-4051330-ot-zastroyschika-OTZ/)",
+       "date": "2026-11-01",
+       "method": "http",
+       "accuracy": "высокая",
+       "comment": "лоты на публичной странице проекта",
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": 28
+      },
+      "priceMinRub": {
+       "value": 14969432,
+       "text": null,
+       "hasAny": true,
+       "unit": "₽",
+       "source": "cian (https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-dmitrovskoe-nebo-4051330-ot-zastroyschika-OTZ/)",
+       "date": "2026-11-01",
+       "method": "http",
+       "accuracy": null,
+       "comment": null,
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": 14969432
+      },
+      "priceMedianRub": {
+       "value": 28515245,
+       "text": null,
+       "hasAny": true,
+       "unit": "₽",
+       "source": "cian (https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-dmitrovskoe-nebo-4051330-ot-zastroyschika-OTZ/)",
+       "date": "2026-11-01",
+       "method": "http",
+       "accuracy": null,
+       "comment": null,
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": 28515245
+      },
+      "priceMaxRub": {
+       "value": 37849858,
+       "text": null,
+       "hasAny": true,
+       "unit": "₽",
+       "source": "cian (https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-dmitrovskoe-nebo-4051330-ot-zastroyschika-OTZ/)",
+       "date": "2026-11-01",
+       "method": "http",
+       "accuracy": null,
+       "comment": null,
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": 37849858
+      },
+      "pricePerM2Median": {
+       "value": 477272,
+       "text": null,
+       "hasAny": true,
+       "unit": "₽/м²",
+       "source": "cian (https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-dmitrovskoe-nebo-4051330-ot-zastroyschika-OTZ/)",
+       "date": "2026-11-01",
+       "method": "http",
+       "accuracy": null,
+       "comment": null,
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": 477272
+      },
+      "averageAreaM2": {
+       "value": 56,
+       "text": null,
+       "hasAny": true,
+       "unit": "м²",
+       "source": "cian (https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-dmitrovskoe-nebo-4051330-ot-zastroyschika-OTZ/)",
+       "date": "2026-11-01",
+       "method": "http",
+       "accuracy": null,
+       "comment": null,
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": 56
+      },
+      "medianAreaM2": {
+       "value": 67,
+       "text": null,
+       "hasAny": true,
+       "unit": "м²",
+       "source": "cian (https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-dmitrovskoe-nebo-4051330-ot-zastroyschika-OTZ/)",
+       "date": "2026-11-01",
+       "method": "http",
+       "accuracy": null,
+       "comment": null,
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": 67
+      },
+      "reservedLots": {
+       "value": 0,
+       "text": null,
+       "hasAny": true,
+       "unit": "лотов",
+       "source": "cian (https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-dmitrovskoe-nebo-4051330-ot-zastroyschika-OTZ/)",
+       "date": "2026-11-01",
+       "method": "http",
+       "accuracy": "средняя",
+       "comment": "источник помечает бронь, но ни один лот не отмечен забронированным (реальный ноль)",
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": 0
+      },
+      "promoCount": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "лотов с акцией",
+       "source": "cian (https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-dmitrovskoe-nebo-4051330-ot-zastroyschika-OTZ/)",
+       "date": "2026-11-01",
+       "method": "http",
+       "accuracy": null,
+       "comment": "тексты акций на странице не раскрыты (видна ссылка «7 акций»)",
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      }
+     },
+     "derived": {
+      "soldShareOfficialPct": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "%",
+       "source": "ЕИСЖС (наш.дом.рф)",
+       "date": "2026-11-01",
+       "method": "estimate",
+       "accuracy": null,
+       "comment": "официальная доля проданного не считается: нет данных (ДДУ)",
+       "estimate": true,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "salesSpeedPerWeek": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "",
+       "source": null,
+       "date": "2026-11-01",
+       "method": "estimate",
+       "accuracy": null,
+       "comment": "нужно минимум 2 недели наблюдений (накоплено 1)",
+       "estimate": true,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "absorptionRate": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "",
+       "source": null,
+       "date": "2026-11-01",
+       "method": "estimate",
+       "accuracy": null,
+       "comment": "нужно минимум 2 недели наблюдений (накоплено 1)",
+       "estimate": true,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "monthsToSellOut": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "",
+       "source": null,
+       "date": "2026-11-01",
+       "method": "estimate",
+       "accuracy": null,
+       "comment": "нужно минимум 2 недели наблюдений (накоплено 1)",
+       "estimate": true,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "entryPriceDynamicsPct": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "",
+       "source": null,
+       "date": "2026-11-01",
+       "method": "estimate",
+       "accuracy": null,
+       "comment": "нужно минимум 2 недели наблюдений (накоплено 1)",
+       "estimate": true,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "supplyDynamicsPct": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "",
+       "source": null,
+       "date": "2026-11-01",
+       "method": "estimate",
+       "accuracy": null,
+       "comment": "нужно минимум 2 недели наблюдений (накоплено 1)",
+       "estimate": true,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "promoPressureWeeks": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "",
+       "source": null,
+       "date": "2026-11-01",
+       "method": "estimate",
+       "accuracy": null,
+       "comment": "нужно минимум 2 недели наблюдений (накоплено 1)",
+       "estimate": true,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "priceIndexVsDistrict": {
+       "value": 0.927,
+       "text": null,
+       "hasAny": true,
+       "unit": "×",
+       "source": "расчёт по нашим данным",
+       "date": null,
+       "method": "estimate",
+       "accuracy": "средняя",
+       "comment": "медиана ₽/м² конкурента к медиане района (514 844 ₽/м²)",
+       "estimate": true,
+       "zeroWasAbsence": false,
+       "rawValue": 0.927
+      },
+      "gapPriceVsUsPct": {
+       "value": 90.91,
+       "text": null,
+       "hasAny": true,
+       "unit": "%",
+       "source": "расчёт",
+       "date": "2026-11-01",
+       "method": "estimate",
+       "accuracy": "средняя",
+       "comment": "разрыв: медиана конкурента против нашей цены входа (250 000 ₽/м²)",
+       "estimate": true,
+       "zeroWasAbsence": false,
+       "rawValue": 90.91
+      }
+     },
+     "soldShareBySite": {
+      "value": null,
+      "unit": "%",
+      "source": "сайт застройщика",
+      "date": null,
+      "method": "estimate",
+      "accuracy": null,
+      "comment": "нужны оба числа: всего квартир и продано по шахматке сайта",
+      "estimate": true,
+      "zeroWasAbsence": false,
+      "rawValue": null
+     },
+     "developerSite": null,
+     "officialSources": null,
+     "byRooms": {
+      "1": {
+       "count": 2,
+       "medianPrice": 24341650,
+       "medianPerM2": 629053,
+       "medianArea": 39
+      },
+      "2": {
+       "count": 7,
+       "medianPrice": 28138012,
+       "medianPerM2": 442945,
+       "medianArea": 66
+      },
+      "3": {
+       "count": 10,
+       "medianPrice": 34048773,
+       "medianPerM2": 434862,
+       "medianArea": 76
+      },
+      "studio": {
+       "count": 9,
+       "medianPrice": 17345448,
+       "medianPerM2": 662040,
+       "medianArea": 26
+      },
+      "4+": {
+       "count": 0,
+       "medianPrice": null,
+       "medianPerM2": null,
+       "medianArea": null
+      }
+     },
+     "riskFlags": [
+      {
+       "code": "no_history",
+       "level": "info",
+       "comment": "истории мало: динамика и риски появятся после 2 недель"
+      }
+     ],
+     "limitations": [
+      "ЕИСЖС: официальные корпуса/квартиры/ДДУ недоступны — Chrome отдал страницу ошибки сертификата"
+     ],
+     "history": {
+      "weeks": 1,
+      "needed": 2,
+      "available": false
+     },
+     "sourcesCount": 10,
+     "filedAt": 1793545238985.8865,
+     "matchedBy": null,
+     "marketing": {
+      "state": "unmatched",
+      "note": "данные в сервисе есть, но проект не сопоставлен: добавьте домен в карточку конкурента (в срезе: rg-dev.ru, seliger-city.ru)",
+      "source": "демо-образец выгрузки",
+      "method": "csv",
+      "date": "2026-11-01",
+      "sliceIds": [
+       "rg-dev.ru",
+       "seliger-city.ru"
+      ]
+     }
+    },
+    {
+     "projectId": "zhk-mihalkovskiy",
+     "project": "ЖК Михалковский",
+     "developer": "РГ-Девелопмент",
+     "klass": "бизнес",
+     "sourceUrl": "https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-mihalkovskiy-3206223-ot-zastroyschika-OTZ/",
+     "sourcePlatform": "cian",
+     "collectedAt": "2026-11-01",
+     "distanceKm": 3.43,
+     "metrics": {
+      "siteCorpiNamed": {
+       "value": 7,
+       "text": null,
+       "hasAny": true,
+       "unit": "корпусов",
+       "source": "сайт застройщика",
+       "date": "2026-11-01",
+       "method": "dom",
+       "accuracy": "средняя",
+       "comment": "названия корпусов на странице: Корпус 1, Корпус 2, Корпус 3, Корпус 4",
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": 7
+      },
+      "siteDeadlines": {
+       "value": null,
+       "text": "4 кв 2027",
+       "hasAny": true,
+       "unit": "сроки",
+       "source": "сайт застройщика",
+       "date": "2026-11-01",
+       "method": "dom",
+       "accuracy": "средняя",
+       "comment": "сроки ввода из текста страницы",
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": "4 кв 2027"
+      },
+      "siteReadinessPct": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "%",
+       "source": "сайт застройщика",
+       "date": "2026-11-01",
+       "method": "dom",
+       "accuracy": "средняя",
+       "comment": "готовность, если указана",
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "siteFlatsTotal": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "квартир",
+       "source": "сайт застройщика",
+       "date": "2026-11-01",
+       "method": "dom",
+       "accuracy": "средняя",
+       "comment": "сайт не публикует сводную шахматку (только подбор квартир)",
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "siteFlatsInSale": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "квартир",
+       "source": "сайт застройщика",
+       "date": "2026-11-01",
+       "method": "dom",
+       "accuracy": "средняя",
+       "comment": "сайт не публикует сводную шахматку (только подбор квартир)",
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "siteFlatsSold": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "квартир",
+       "source": "сайт застройщика",
+       "date": "2026-11-01",
+       "method": "dom",
+       "accuracy": "средняя",
+       "comment": "сайт не публикует сводную шахматку (только подбор квартир)",
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "siteFlatsReserved": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "квартир",
+       "source": "сайт застройщика",
+       "date": "2026-11-01",
+       "method": "dom",
+       "accuracy": "средняя",
+       "comment": "сайт не публикует сводную шахматку (только подбор квартир)",
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "sitePromoCount": {
+       "value": 2,
+       "text": null,
+       "hasAny": true,
+       "unit": "акций",
+       "source": "сайт застройщика",
+       "date": "2026-11-01",
+       "method": "dom",
+       "accuracy": "средняя",
+       "comment": "Общая презентация для корпусов 2 и 7 СКИДКА ДО 8% РАССРОЧКА 0% ВЫДАЕМ КЛЮЧИ M Водный стадион M Коптево г; 48 СКИДКА ДО 8% РАССРОЧКА 0% ВЫДАЕМ КЛЮЧИ О проекте Генплан Расположение Ход строительства Новости Офис консультаций Документы Выбрать квартиру от 16",
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": 2
+      },
+      "siteMortgageCount": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "программ",
+       "source": "сайт застройщика",
+       "date": "2026-11-01",
+       "method": "dom",
+       "accuracy": "средняя",
+       "comment": "ипотечных программ на сайте не найдено",
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "corpiTotal": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "корпусов всего",
+       "source": "ЕИСЖС (наш.дом.рф)",
+       "date": "2026-11-01",
+       "method": "dom",
+       "accuracy": null,
+       "comment": "официальные данные получить нельзя: ЕИСЖС (наш.дом.рф): Chrome отдал страницу ошибки сертификата — Chrome отдал страницу ошибки сертификата — это не данные",
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "corpiBuilt": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "корпусов введено",
+       "source": "ЕИСЖС (наш.дом.рф)",
+       "date": "2026-11-01",
+       "method": "dom",
+       "accuracy": null,
+       "comment": "официальные данные получить нельзя: ЕИСЖС (наш.дом.рф): Chrome отдал страницу ошибки сертификата — Chrome отдал страницу ошибки сертификата — это не данные",
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "corpiUnderConstruction": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "корпусов строится",
+       "source": "ЕИСЖС (наш.дом.рф)",
+       "date": "2026-11-01",
+       "method": "dom",
+       "accuracy": null,
+       "comment": "официальные данные получить нельзя: ЕИСЖС (наш.дом.рф): Chrome отдал страницу ошибки сертификата — Chrome отдал страницу ошибки сертификата — это не данные",
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "flatsTotal": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "квартир в проекте",
+       "source": "ЕИСЖС (наш.дом.рф)",
+       "date": "2026-11-01",
+       "method": "dom",
+       "accuracy": null,
+       "comment": "официальные данные получить нельзя: ЕИСЖС (наш.дом.рф): Chrome отдал страницу ошибки сертификата — Chrome отдал страницу ошибки сертификата — это не данные",
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "dduRegistered": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "ДДУ зарегистрировано",
+       "source": "ЕИСЖС (наш.дом.рф)",
+       "date": "2026-11-01",
+       "method": "dom",
+       "accuracy": null,
+       "comment": "официальные данные получить нельзя: ЕИСЖС (наш.дом.рф): Chrome отдал страницу ошибки сертификата — Chrome отдал страницу ошибки сертификата — это не данные",
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "soldOfficialRosreestr": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "ДДУ",
+       "source": "ЕИСЖС (наш.дом.рф) / Росреестр",
+       "date": "2026-11-01",
+       "method": "none",
+       "accuracy": null,
+       "comment": "официальные ДДУ недоступны: Chrome отдал страницу ошибки сертификата — своими цифрами не подменяем",
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "marketingBudgetEstimateRub": {
+       "value": 346800,
+       "text": null,
+       "hasAny": true,
+       "unit": "₽",
+       "source": "демо-образец выгрузки",
+       "date": "2026-11-01",
+       "method": "csv",
+       "accuracy": "демо-образец: оценка сервиса (не данные аккаунта)",
+       "comment": "ориентировочный бюджет по данным демо-образец выгрузки — оценка сервиса, не фактический расход. ВНИМАНИЕ: данные из демонстрационного файла, не из вашего аккаунта",
+       "estimate": true,
+       "zeroWasAbsence": false,
+       "rawValue": 346800
+      },
+      "marketingAds": {
+       "value": 80,
+       "text": null,
+       "hasAny": true,
+       "unit": "шт.",
+       "source": "демо-образец выгрузки",
+       "date": "2026-11-01",
+       "method": "csv",
+       "accuracy": "демо-образец: оценка сервиса (не данные аккаунта)",
+       "comment": "ориентировочный бюджет по данным демо-образец выгрузки — оценка сервиса, не фактический расход. ВНИМАНИЕ: данные из демонстрационного файла, не из вашего аккаунта",
+       "estimate": true,
+       "zeroWasAbsence": false,
+       "rawValue": 80
+      },
+      "marketingKeywords": {
+       "value": 613,
+       "text": null,
+       "hasAny": true,
+       "unit": "шт.",
+       "source": "демо-образец выгрузки",
+       "date": "2026-11-01",
+       "method": "csv",
+       "accuracy": "демо-образец: оценка сервиса (не данные аккаунта)",
+       "comment": "ориентировочный бюджет по данным демо-образец выгрузки — оценка сервиса, не фактический расход. ВНИМАНИЕ: данные из демонстрационного файла, не из вашего аккаунта",
+       "estimate": true,
+       "zeroWasAbsence": false,
+       "rawValue": 613
+      },
+      "marketingLandings": {
+       "value": 1,
+       "text": null,
+       "hasAny": true,
+       "unit": "шт.",
+       "source": "демо-образец выгрузки",
+       "date": "2026-11-01",
+       "method": "csv",
+       "accuracy": "демо-образец: оценка сервиса (не данные аккаунта)",
+       "comment": "ориентировочный бюджет по данным демо-образец выгрузки — оценка сервиса, не фактический расход. ВНИМАНИЕ: данные из демонстрационного файла, не из вашего аккаунта",
+       "estimate": true,
+       "zeroWasAbsence": false,
+       "rawValue": 1
+      },
+      "marketingPeriod": {
+       "value": null,
+       "text": "2026-10",
+       "hasAny": true,
+       "unit": null,
+       "source": "демо-образец выгрузки",
+       "date": "2026-11-01",
+       "method": null,
+       "accuracy": null,
+       "comment": "ориентировочный бюджет по данным демо-образец выгрузки — оценка сервиса, не фактический расход. ВНИМАНИЕ: данные из демонстрационного файла, не из вашего аккаунта",
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": "2026-10"
+      },
+      "marketingSource": {
+       "value": null,
+       "text": "демо-образец выгрузки",
+       "hasAny": true,
+       "unit": null,
+       "source": "демо-образец выгрузки",
+       "date": "2026-11-01",
+       "method": null,
+       "accuracy": null,
+       "comment": "ориентировочный бюджет по данным демо-образец выгрузки — оценка сервиса, не фактический расход. ВНИМАНИЕ: данные из демонстрационного файла, не из вашего аккаунта",
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": "демо-образец выгрузки"
+      },
+      "marketingMethod": {
+       "value": null,
+       "text": "csv",
+       "hasAny": true,
+       "unit": null,
+       "source": "демо-образец выгрузки",
+       "date": "2026-11-01",
+       "method": null,
+       "accuracy": null,
+       "comment": "ориентировочный бюджет по данным демо-образец выгрузки — оценка сервиса, не фактический расход. ВНИМАНИЕ: данные из демонстрационного файла, не из вашего аккаунта",
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": "csv"
+      },
+      "soldEstimateByGoneLots": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "лотов",
+       "source": "наш недельный мониторинг",
+       "date": "2026-11-01",
+       "method": "estimate",
+       "accuracy": null,
+       "comment": "нужно минимум 2 недели наблюдений",
+       "estimate": true,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "lotsInSale": {
+       "value": 28,
+       "text": null,
+       "hasAny": true,
+       "unit": "лотов",
+       "source": "cian (https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-mihalkovskiy-3206223-ot-zastroyschika-OTZ/)",
+       "date": "2026-11-01",
+       "method": "http",
+       "accuracy": "высокая",
+       "comment": "лоты на публичной странице проекта",
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": 28
+      },
+      "priceMinRub": {
+       "value": 20002251,
+       "text": null,
+       "hasAny": true,
+       "unit": "₽",
+       "source": "cian (https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-mihalkovskiy-3206223-ot-zastroyschika-OTZ/)",
+       "date": "2026-11-01",
+       "method": "http",
+       "accuracy": null,
+       "comment": null,
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": 20002251
+      },
+      "priceMedianRub": {
+       "value": 50000000,
+       "text": null,
+       "hasAny": true,
+       "unit": "₽",
+       "source": "cian (https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-mihalkovskiy-3206223-ot-zastroyschika-OTZ/)",
+       "date": "2026-11-01",
+       "method": "http",
+       "accuracy": null,
+       "comment": null,
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": 50000000
+      },
+      "priceMaxRub": {
+       "value": 50000000,
+       "text": null,
+       "hasAny": true,
+       "unit": "₽",
+       "source": "cian (https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-mihalkovskiy-3206223-ot-zastroyschika-OTZ/)",
+       "date": "2026-11-01",
+       "method": "http",
+       "accuracy": null,
+       "comment": null,
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": 50000000
+      },
+      "pricePerM2Median": {
+       "value": 859147,
+       "text": null,
+       "hasAny": true,
+       "unit": "₽/м²",
+       "source": "cian (https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-mihalkovskiy-3206223-ot-zastroyschika-OTZ/)",
+       "date": "2026-11-01",
+       "method": "http",
+       "accuracy": null,
+       "comment": null,
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": 859147
+      },
+      "averageAreaM2": {
+       "value": 55,
+       "text": null,
+       "hasAny": true,
+       "unit": "м²",
+       "source": "cian (https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-mihalkovskiy-3206223-ot-zastroyschika-OTZ/)",
+       "date": "2026-11-01",
+       "method": "http",
+       "accuracy": null,
+       "comment": null,
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": 55
+      },
+      "medianAreaM2": {
+       "value": 49,
+       "text": null,
+       "hasAny": true,
+       "unit": "м²",
+       "source": "cian (https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-mihalkovskiy-3206223-ot-zastroyschika-OTZ/)",
+       "date": "2026-11-01",
+       "method": "http",
+       "accuracy": null,
+       "comment": null,
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": 49
+      },
+      "reservedLots": {
+       "value": 0,
+       "text": null,
+       "hasAny": true,
+       "unit": "лотов",
+       "source": "cian (https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-mihalkovskiy-3206223-ot-zastroyschika-OTZ/)",
+       "date": "2026-11-01",
+       "method": "http",
+       "accuracy": "средняя",
+       "comment": "источник помечает бронь, но ни один лот не отмечен забронированным (реальный ноль)",
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": 0
+      },
+      "promoCount": {
+       "value": 23,
+       "text": null,
+       "hasAny": true,
+       "unit": "лотов с акцией",
+       "source": "cian (https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-mihalkovskiy-3206223-ot-zastroyschika-OTZ/)",
+       "date": "2026-11-01",
+       "method": "http",
+       "accuracy": "средняя",
+       "comment": "скидкой в размере 5% от полной стоимости квартиры; Скидка 8% при покупке квартиры",
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": 23
+      }
+     },
+     "derived": {
+      "soldShareOfficialPct": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "%",
+       "source": "ЕИСЖС (наш.дом.рф)",
+       "date": "2026-11-01",
+       "method": "estimate",
+       "accuracy": null,
+       "comment": "официальная доля проданного не считается: нет данных (ДДУ)",
+       "estimate": true,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "salesSpeedPerWeek": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "",
+       "source": null,
+       "date": "2026-11-01",
+       "method": "estimate",
+       "accuracy": null,
+       "comment": "нужно минимум 2 недели наблюдений (накоплено 1)",
+       "estimate": true,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "absorptionRate": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "",
+       "source": null,
+       "date": "2026-11-01",
+       "method": "estimate",
+       "accuracy": null,
+       "comment": "нужно минимум 2 недели наблюдений (накоплено 1)",
+       "estimate": true,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "monthsToSellOut": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "",
+       "source": null,
+       "date": "2026-11-01",
+       "method": "estimate",
+       "accuracy": null,
+       "comment": "нужно минимум 2 недели наблюдений (накоплено 1)",
+       "estimate": true,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "entryPriceDynamicsPct": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "",
+       "source": null,
+       "date": "2026-11-01",
+       "method": "estimate",
+       "accuracy": null,
+       "comment": "нужно минимум 2 недели наблюдений (накоплено 1)",
+       "estimate": true,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "supplyDynamicsPct": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "",
+       "source": null,
+       "date": "2026-11-01",
+       "method": "estimate",
+       "accuracy": null,
+       "comment": "нужно минимум 2 недели наблюдений (накоплено 1)",
+       "estimate": true,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "promoPressureWeeks": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "",
+       "source": null,
+       "date": "2026-11-01",
+       "method": "estimate",
+       "accuracy": null,
+       "comment": "нужно минимум 2 недели наблюдений (накоплено 1)",
+       "estimate": true,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "priceIndexVsDistrict": {
+       "value": 1.669,
+       "text": null,
+       "hasAny": true,
+       "unit": "×",
+       "source": "расчёт по нашим данным",
+       "date": null,
+       "method": "estimate",
+       "accuracy": "средняя",
+       "comment": "медиана ₽/м² конкурента к медиане района (514 844 ₽/м²)",
+       "estimate": true,
+       "zeroWasAbsence": false,
+       "rawValue": 1.669
+      },
+      "gapPriceVsUsPct": {
+       "value": 243.66,
+       "text": null,
+       "hasAny": true,
+       "unit": "%",
+       "source": "расчёт",
+       "date": "2026-11-01",
+       "method": "estimate",
+       "accuracy": "средняя",
+       "comment": "разрыв: медиана конкурента против нашей цены входа (250 000 ₽/м²)",
+       "estimate": true,
+       "zeroWasAbsence": false,
+       "rawValue": 243.66
+      }
+     },
+     "soldShareBySite": {
+      "value": null,
+      "unit": "%",
+      "source": "сайт застройщика",
+      "date": null,
+      "method": "estimate",
+      "accuracy": null,
+      "comment": "нужны оба числа: всего квартир и продано по шахматке сайта",
+      "estimate": true,
+      "zeroWasAbsence": false,
+      "rawValue": null
+     },
+     "developerSite": {
+      "url": "https://rg-dev.ru/novostroyki/mihalkovskij/",
+      "method": "dom",
+      "note": "HTTP None; открыто в браузере без логина",
+      "title": "ЖК «Михалковский» в Москве — официальный сайт, цены на квартиры и планировки от РГ-Девелоп",
+      "ok": true,
+      "corpi": [
+       "Корпус 1",
+       "Корпус 2",
+       "Корпус 3",
+       "Корпус 4",
+       "Корпус 5",
+       "Корпус 6",
+       "Корпус 7"
+      ]
+     },
+     "officialSources": null,
+     "byRooms": {
+      "1": {
+       "count": 1,
+       "medianPrice": 20002251,
+       "medianPerM2": 466253,
+       "medianArea": 43
+      },
+      "2": {
+       "count": 14,
+       "medianPrice": 50000000,
+       "medianPerM2": 1127397,
+       "medianArea": 44
+      },
+      "3": {
+       "count": 6,
+       "medianPrice": 40870000,
+       "medianPerM2": 628733,
+       "medianArea": 65
+      },
+      "studio": {
+       "count": 3,
+       "medianPrice": 50000000,
+       "medianPerM2": 1760563,
+       "medianArea": 28
+      },
+      "4+": {
+       "count": 4,
+       "medianPrice": 50000000,
+       "medianPerM2": 551877,
+       "medianArea": 91
+      }
+     },
+     "riskFlags": [
+      {
+       "code": "no_history",
+       "level": "info",
+       "comment": "истории мало: динамика и риски появятся после 2 недель"
+      }
+     ],
+     "limitations": [
+      "ЕИСЖС: официальные корпуса/квартиры/ДДУ недоступны — Chrome отдал страницу ошибки сертификата"
+     ],
+     "history": {
+      "weeks": 1,
+      "needed": 2,
+      "available": false
+     },
+     "sourcesCount": 13,
+     "filedAt": 1793545238987.9436,
+     "matchedBy": "project",
+     "marketing": {
+      "state": "ok",
+      "note": "ориентировочный бюджет по данным демо-образец выгрузки — оценка сервиса, не фактический расход. ВНИМАНИЕ: данные из демонстрационного файла, не из вашего аккаунта",
+      "source": "демо-образец выгрузки",
+      "method": "csv",
+      "date": "2026-11-01",
+      "caption": "ориентировочный бюджет по данным демо-образец выгрузки — оценка сервиса, не фактический расход. ВНИМАНИЕ: данные из демонстрационного файла, не из вашего аккаунта",
+      "fuzzy": false,
+      "demo": true,
+      "matchedBy": "project",
+      "domain": "rg-dev.ru"
+     }
+    },
+    {
+     "projectId": "zhk-narvin",
+     "project": "ЖК Нарвин",
+     "developer": "ПИК",
+     "klass": "комфорт",
+     "sourceUrl": "https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-narvin-5686240-ot-zastroyschika-OTZ/",
+     "sourcePlatform": "cian",
+     "collectedAt": "2026-11-01",
+     "distanceKm": 4.28,
+     "metrics": {
+      "siteCorpiNamed": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "корпусов",
+       "source": "сайт застройщика",
+       "date": "2026-11-01",
+       "method": "none",
+       "accuracy": "средняя",
+       "comment": "на странице корпуса по номерам не названы",
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "siteDeadlines": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "сроки",
+       "source": "сайт застройщика",
+       "date": "2026-11-01",
+       "method": "none",
+       "accuracy": "средняя",
+       "comment": "сроки ввода из текста страницы",
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "siteReadinessPct": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "%",
+       "source": "сайт застройщика",
+       "date": "2026-11-01",
+       "method": "none",
+       "accuracy": "средняя",
+       "comment": "готовность, если указана",
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "siteFlatsTotal": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "квартир",
+       "source": "сайт застройщика",
+       "date": "2026-11-01",
+       "method": "none",
+       "accuracy": "средняя",
+       "comment": "страница недоступна: HTTP 401; в браузере открылась заглушка (304 знаков текста)",
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "siteFlatsInSale": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "квартир",
+       "source": "сайт застройщика",
+       "date": "2026-11-01",
+       "method": "none",
+       "accuracy": "средняя",
+       "comment": "страница недоступна: HTTP 401; в браузере открылась заглушка (304 знаков текста)",
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "siteFlatsSold": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "квартир",
+       "source": "сайт застройщика",
+       "date": "2026-11-01",
+       "method": "none",
+       "accuracy": "средняя",
+       "comment": "страница недоступна: HTTP 401; в браузере открылась заглушка (304 знаков текста)",
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "siteFlatsReserved": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "квартир",
+       "source": "сайт застройщика",
+       "date": "2026-11-01",
+       "method": "none",
+       "accuracy": "средняя",
+       "comment": "страница недоступна: HTTP 401; в браузере открылась заглушка (304 знаков текста)",
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "sitePromoCount": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "акций",
+       "source": "сайт застройщика",
+       "date": "2026-11-01",
+       "method": "none",
+       "accuracy": "средняя",
+       "comment": "акций на сайте не найдено",
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "siteMortgageCount": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "программ",
+       "source": "сайт застройщика",
+       "date": "2026-11-01",
+       "method": "none",
+       "accuracy": "средняя",
+       "comment": "ипотечных программ на сайте не найдено",
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "corpiTotal": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "корпусов всего",
+       "source": "ЕИСЖС (наш.дом.рф)",
+       "date": "2026-11-01",
+       "method": "dom",
+       "accuracy": null,
+       "comment": "официальные данные получить нельзя: ЕИСЖС (наш.дом.рф): Chrome отдал страницу ошибки сертификата — Chrome отдал страницу ошибки сертификата — это не данные",
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "corpiBuilt": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "корпусов введено",
+       "source": "ЕИСЖС (наш.дом.рф)",
+       "date": "2026-11-01",
+       "method": "dom",
+       "accuracy": null,
+       "comment": "официальные данные получить нельзя: ЕИСЖС (наш.дом.рф): Chrome отдал страницу ошибки сертификата — Chrome отдал страницу ошибки сертификата — это не данные",
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "corpiUnderConstruction": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "корпусов строится",
+       "source": "ЕИСЖС (наш.дом.рф)",
+       "date": "2026-11-01",
+       "method": "dom",
+       "accuracy": null,
+       "comment": "официальные данные получить нельзя: ЕИСЖС (наш.дом.рф): Chrome отдал страницу ошибки сертификата — Chrome отдал страницу ошибки сертификата — это не данные",
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "flatsTotal": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "квартир в проекте",
+       "source": "ЕИСЖС (наш.дом.рф)",
+       "date": "2026-11-01",
+       "method": "dom",
+       "accuracy": null,
+       "comment": "официальные данные получить нельзя: ЕИСЖС (наш.дом.рф): Chrome отдал страницу ошибки сертификата — Chrome отдал страницу ошибки сертификата — это не данные",
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "dduRegistered": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "ДДУ зарегистрировано",
+       "source": "ЕИСЖС (наш.дом.рф)",
+       "date": "2026-11-01",
+       "method": "dom",
+       "accuracy": null,
+       "comment": "официальные данные получить нельзя: ЕИСЖС (наш.дом.рф): Chrome отдал страницу ошибки сертификата — Chrome отдал страницу ошибки сертификата — это не данные",
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "soldOfficialRosreestr": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "ДДУ",
+       "source": "ЕИСЖС (наш.дом.рф) / Росреестр",
+       "date": "2026-11-01",
+       "method": "none",
+       "accuracy": null,
+       "comment": "официальные ДДУ недоступны: Chrome отдал страницу ошибки сертификата — своими цифрами не подменяем",
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "marketingBudgetEstimateRub": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "₽",
+       "source": "демо-образец выгрузки",
+       "date": "2026-11-01",
+       "method": "csv",
+       "accuracy": null,
+       "comment": "данные в сервисе есть, но проект не сопоставлен: добавьте домен в карточку конкурента (в срезе: rg-dev.ru, seliger-city.ru)",
+       "estimate": true,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "marketingAds": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "шт.",
+       "source": "демо-образец выгрузки",
+       "date": "2026-11-01",
+       "method": "csv",
+       "accuracy": null,
+       "comment": "данные в сервисе есть, но проект не сопоставлен: добавьте домен в карточку конкурента (в срезе: rg-dev.ru, seliger-city.ru)",
+       "estimate": true,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "marketingKeywords": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "шт.",
+       "source": "демо-образец выгрузки",
+       "date": "2026-11-01",
+       "method": "csv",
+       "accuracy": null,
+       "comment": "данные в сервисе есть, но проект не сопоставлен: добавьте домен в карточку конкурента (в срезе: rg-dev.ru, seliger-city.ru)",
+       "estimate": true,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "marketingLandings": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "шт.",
+       "source": "демо-образец выгрузки",
+       "date": "2026-11-01",
+       "method": "csv",
+       "accuracy": null,
+       "comment": "данные в сервисе есть, но проект не сопоставлен: добавьте домен в карточку конкурента (в срезе: rg-dev.ru, seliger-city.ru)",
+       "estimate": true,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "marketingPeriod": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": null,
+       "source": "демо-образец выгрузки",
+       "date": "2026-11-01",
+       "method": null,
+       "accuracy": null,
+       "comment": "данные в сервисе есть, но проект не сопоставлен: добавьте домен в карточку конкурента (в срезе: rg-dev.ru, seliger-city.ru)",
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "marketingSource": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": null,
+       "source": "демо-образец выгрузки",
+       "date": "2026-11-01",
+       "method": null,
+       "accuracy": null,
+       "comment": "данные в сервисе есть, но проект не сопоставлен: добавьте домен в карточку конкурента (в срезе: rg-dev.ru, seliger-city.ru)",
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "marketingMethod": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": null,
+       "source": "демо-образец выгрузки",
+       "date": "2026-11-01",
+       "method": null,
+       "accuracy": null,
+       "comment": "данные в сервисе есть, но проект не сопоставлен: добавьте домен в карточку конкурента (в срезе: rg-dev.ru, seliger-city.ru)",
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "soldEstimateByGoneLots": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "лотов",
+       "source": "наш недельный мониторинг",
+       "date": "2026-11-01",
+       "method": "estimate",
+       "accuracy": null,
+       "comment": "нужно минимум 2 недели наблюдений",
+       "estimate": true,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "lotsInSale": {
+       "value": 28,
+       "text": null,
+       "hasAny": true,
+       "unit": "лотов",
+       "source": "cian (https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-narvin-5686240-ot-zastroyschika-OTZ/)",
+       "date": "2026-11-01",
+       "method": "http",
+       "accuracy": "высокая",
+       "comment": "лоты на публичной странице проекта",
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": 28
+      },
+      "priceMinRub": {
+       "value": 14849477,
+       "text": null,
+       "hasAny": true,
+       "unit": "₽",
+       "source": "cian (https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-narvin-5686240-ot-zastroyschika-OTZ/)",
+       "date": "2026-11-01",
+       "method": "http",
+       "accuracy": null,
+       "comment": null,
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": 14849477
+      },
+      "priceMedianRub": {
+       "value": 24266276,
+       "text": null,
+       "hasAny": true,
+       "unit": "₽",
+       "source": "cian (https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-narvin-5686240-ot-zastroyschika-OTZ/)",
+       "date": "2026-11-01",
+       "method": "http",
+       "accuracy": null,
+       "comment": null,
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": 24266276
+      },
+      "priceMaxRub": {
+       "value": 37056360,
+       "text": null,
+       "hasAny": true,
+       "unit": "₽",
+       "source": "cian (https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-narvin-5686240-ot-zastroyschika-OTZ/)",
+       "date": "2026-11-01",
+       "method": "http",
+       "accuracy": null,
+       "comment": null,
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": 37056360
+      },
+      "pricePerM2Median": {
+       "value": 500350,
+       "text": null,
+       "hasAny": true,
+       "unit": "₽/м²",
+       "source": "cian (https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-narvin-5686240-ot-zastroyschika-OTZ/)",
+       "date": "2026-11-01",
+       "method": "http",
+       "accuracy": null,
+       "comment": null,
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": 500350
+      },
+      "averageAreaM2": {
+       "value": 49.3,
+       "text": null,
+       "hasAny": true,
+       "unit": "м²",
+       "source": "cian (https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-narvin-5686240-ot-zastroyschika-OTZ/)",
+       "date": "2026-11-01",
+       "method": "http",
+       "accuracy": null,
+       "comment": null,
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": 49.3
+      },
+      "medianAreaM2": {
+       "value": 49,
+       "text": null,
+       "hasAny": true,
+       "unit": "м²",
+       "source": "cian (https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-narvin-5686240-ot-zastroyschika-OTZ/)",
+       "date": "2026-11-01",
+       "method": "http",
+       "accuracy": null,
+       "comment": null,
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": 49
+      },
+      "reservedLots": {
+       "value": 0,
+       "text": null,
+       "hasAny": true,
+       "unit": "лотов",
+       "source": "cian (https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-narvin-5686240-ot-zastroyschika-OTZ/)",
+       "date": "2026-11-01",
+       "method": "http",
+       "accuracy": "средняя",
+       "comment": "источник помечает бронь, но ни один лот не отмечен забронированным (реальный ноль)",
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": 0
+      },
+      "promoCount": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "лотов с акцией",
+       "source": "cian (https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-narvin-5686240-ot-zastroyschika-OTZ/)",
+       "date": "2026-11-01",
+       "method": "http",
+       "accuracy": null,
+       "comment": "акций и промо на странице нет — данных нет",
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      }
+     },
+     "derived": {
+      "soldShareOfficialPct": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "%",
+       "source": "ЕИСЖС (наш.дом.рф)",
+       "date": "2026-11-01",
+       "method": "estimate",
+       "accuracy": null,
+       "comment": "официальная доля проданного не считается: нет данных (ДДУ)",
+       "estimate": true,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "salesSpeedPerWeek": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "",
+       "source": null,
+       "date": "2026-11-01",
+       "method": "estimate",
+       "accuracy": null,
+       "comment": "нужно минимум 2 недели наблюдений (накоплено 1)",
+       "estimate": true,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "absorptionRate": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "",
+       "source": null,
+       "date": "2026-11-01",
+       "method": "estimate",
+       "accuracy": null,
+       "comment": "нужно минимум 2 недели наблюдений (накоплено 1)",
+       "estimate": true,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "monthsToSellOut": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "",
+       "source": null,
+       "date": "2026-11-01",
+       "method": "estimate",
+       "accuracy": null,
+       "comment": "нужно минимум 2 недели наблюдений (накоплено 1)",
+       "estimate": true,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "entryPriceDynamicsPct": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "",
+       "source": null,
+       "date": "2026-11-01",
+       "method": "estimate",
+       "accuracy": null,
+       "comment": "нужно минимум 2 недели наблюдений (накоплено 1)",
+       "estimate": true,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "supplyDynamicsPct": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "",
+       "source": null,
+       "date": "2026-11-01",
+       "method": "estimate",
+       "accuracy": null,
+       "comment": "нужно минимум 2 недели наблюдений (накоплено 1)",
+       "estimate": true,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "promoPressureWeeks": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "",
+       "source": null,
+       "date": "2026-11-01",
+       "method": "estimate",
+       "accuracy": null,
+       "comment": "нужно минимум 2 недели наблюдений (накоплено 1)",
+       "estimate": true,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "priceIndexVsDistrict": {
+       "value": 0.972,
+       "text": null,
+       "hasAny": true,
+       "unit": "×",
+       "source": "расчёт по нашим данным",
+       "date": null,
+       "method": "estimate",
+       "accuracy": "средняя",
+       "comment": "медиана ₽/м² конкурента к медиане района (514 844 ₽/м²)",
+       "estimate": true,
+       "zeroWasAbsence": false,
+       "rawValue": 0.972
+      },
+      "gapPriceVsUsPct": {
+       "value": 100.14,
+       "text": null,
+       "hasAny": true,
+       "unit": "%",
+       "source": "расчёт",
+       "date": "2026-11-01",
+       "method": "estimate",
+       "accuracy": "средняя",
+       "comment": "разрыв: медиана конкурента против нашей цены входа (250 000 ₽/м²)",
+       "estimate": true,
+       "zeroWasAbsence": false,
+       "rawValue": 100.14
+      }
+     },
+     "soldShareBySite": {
+      "value": null,
+      "unit": "%",
+      "source": "сайт застройщика",
+      "date": null,
+      "method": "estimate",
+      "accuracy": null,
+      "comment": "нужны оба числа: всего квартир и продано по шахматке сайта",
+      "estimate": true,
+      "zeroWasAbsence": false,
+      "rawValue": null
+     },
+     "developerSite": {
+      "url": "https://www.pik.ru/narvin",
+      "method": "none",
+      "note": "HTTP 401; в браузере открылась заглушка (304 знаков текста)",
+      "title": "null",
+      "ok": false,
+      "corpi": []
+     },
+     "officialSources": null,
+     "byRooms": {
+      "1": {
+       "count": 11,
+       "medianPrice": 20289440,
+       "medianPerM2": 529077,
+       "medianArea": 37
+      },
+      "2": {
+       "count": 11,
+       "medianPrice": 25574900,
+       "medianPerM2": 477700,
+       "medianArea": 55
+      },
+      "3": {
+       "count": 4,
+       "medianPrice": 32537114,
+       "medianPerM2": 436813,
+       "medianArea": 77
+      },
+      "studio": {
+       "count": 2,
+       "medianPrice": 18624738,
+       "medianPerM2": 588153,
+       "medianArea": 33
+      },
+      "4+": {
+       "count": 0,
+       "medianPrice": null,
+       "medianPerM2": null,
+       "medianArea": null
+      }
+     },
+     "riskFlags": [
+      {
+       "code": "no_history",
+       "level": "info",
+       "comment": "истории мало: динамика и риски появятся после 2 недель"
+      }
+     ],
+     "limitations": [
+      "сайт застройщика: HTTP 401; в браузере открылась заглушка (304 знаков текста)",
+      "ЕИСЖС: официальные корпуса/квартиры/ДДУ недоступны — Chrome отдал страницу ошибки сертификата"
+     ],
+     "history": {
+      "weeks": 1,
+      "needed": 2,
+      "available": false
+     },
+     "sourcesCount": 10,
+     "filedAt": 1793545238990.2576,
+     "matchedBy": null,
+     "marketing": {
+      "state": "unmatched",
+      "note": "данные в сервисе есть, но проект не сопоставлен: добавьте домен в карточку конкурента (в срезе: rg-dev.ru, seliger-city.ru)",
+      "source": "демо-образец выгрузки",
+      "method": "csv",
+      "date": "2026-11-01",
+      "sliceIds": [
+       "rg-dev.ru",
+       "seliger-city.ru"
+      ]
+     }
+    },
+    {
+     "projectId": "zhk-seliger-siti",
+     "project": "ЖК Селигер Сити",
+     "developer": "MR Group",
+     "klass": "бизнес",
+     "sourceUrl": "https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-seliger-siti-36051-ot-zastroyschika-OTZ/",
+     "sourcePlatform": "cian",
+     "collectedAt": "2026-11-01",
+     "distanceKm": 1.88,
+     "metrics": {
+      "siteCorpiNamed": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "корпусов",
+       "source": "сайт застройщика",
+       "date": "2026-11-01",
+       "method": "none",
+       "accuracy": "средняя",
+       "comment": "на странице корпуса по номерам не названы",
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "siteDeadlines": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "сроки",
+       "source": "сайт застройщика",
+       "date": "2026-11-01",
+       "method": "none",
+       "accuracy": "средняя",
+       "comment": "сроки ввода из текста страницы",
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "siteReadinessPct": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "%",
+       "source": "сайт застройщика",
+       "date": "2026-11-01",
+       "method": "none",
+       "accuracy": "средняя",
+       "comment": "готовность, если указана",
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "siteFlatsTotal": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "квартир",
+       "source": "сайт застройщика",
+       "date": "2026-11-01",
+       "method": "none",
+       "accuracy": "средняя",
+       "comment": "страница недоступна: HTTP None; Chrome отдал страницу-ошибку (не данные)",
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "siteFlatsInSale": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "квартир",
+       "source": "сайт застройщика",
+       "date": "2026-11-01",
+       "method": "none",
+       "accuracy": "средняя",
+       "comment": "страница недоступна: HTTP None; Chrome отдал страницу-ошибку (не данные)",
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "siteFlatsSold": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "квартир",
+       "source": "сайт застройщика",
+       "date": "2026-11-01",
+       "method": "none",
+       "accuracy": "средняя",
+       "comment": "страница недоступна: HTTP None; Chrome отдал страницу-ошибку (не данные)",
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "siteFlatsReserved": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "квартир",
+       "source": "сайт застройщика",
+       "date": "2026-11-01",
+       "method": "none",
+       "accuracy": "средняя",
+       "comment": "страница недоступна: HTTP None; Chrome отдал страницу-ошибку (не данные)",
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "sitePromoCount": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "акций",
+       "source": "сайт застройщика",
+       "date": "2026-11-01",
+       "method": "none",
+       "accuracy": "средняя",
+       "comment": "акций на сайте не найдено",
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "siteMortgageCount": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "программ",
+       "source": "сайт застройщика",
+       "date": "2026-11-01",
+       "method": "none",
+       "accuracy": "средняя",
+       "comment": "ипотечных программ на сайте не найдено",
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "corpiTotal": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "корпусов всего",
+       "source": "ЕИСЖС (наш.дом.рф)",
+       "date": "2026-11-01",
+       "method": "dom",
+       "accuracy": null,
+       "comment": "официальные данные получить нельзя: ЕИСЖС (наш.дом.рф): Chrome отдал страницу ошибки сертификата — Chrome отдал страницу ошибки сертификата — это не данные",
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "corpiBuilt": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "корпусов введено",
+       "source": "ЕИСЖС (наш.дом.рф)",
+       "date": "2026-11-01",
+       "method": "dom",
+       "accuracy": null,
+       "comment": "официальные данные получить нельзя: ЕИСЖС (наш.дом.рф): Chrome отдал страницу ошибки сертификата — Chrome отдал страницу ошибки сертификата — это не данные",
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "corpiUnderConstruction": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "корпусов строится",
+       "source": "ЕИСЖС (наш.дом.рф)",
+       "date": "2026-11-01",
+       "method": "dom",
+       "accuracy": null,
+       "comment": "официальные данные получить нельзя: ЕИСЖС (наш.дом.рф): Chrome отдал страницу ошибки сертификата — Chrome отдал страницу ошибки сертификата — это не данные",
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "flatsTotal": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "квартир в проекте",
+       "source": "ЕИСЖС (наш.дом.рф)",
+       "date": "2026-11-01",
+       "method": "dom",
+       "accuracy": null,
+       "comment": "официальные данные получить нельзя: ЕИСЖС (наш.дом.рф): Chrome отдал страницу ошибки сертификата — Chrome отдал страницу ошибки сертификата — это не данные",
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "dduRegistered": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "ДДУ зарегистрировано",
+       "source": "ЕИСЖС (наш.дом.рф)",
+       "date": "2026-11-01",
+       "method": "dom",
+       "accuracy": null,
+       "comment": "официальные данные получить нельзя: ЕИСЖС (наш.дом.рф): Chrome отдал страницу ошибки сертификата — Chrome отдал страницу ошибки сертификата — это не данные",
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "soldOfficialRosreestr": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "ДДУ",
+       "source": "ЕИСЖС (наш.дом.рф) / Росреестр",
+       "date": "2026-11-01",
+       "method": "none",
+       "accuracy": null,
+       "comment": "официальные ДДУ недоступны: Chrome отдал страницу ошибки сертификата — своими цифрами не подменяем",
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "marketingBudgetEstimateRub": {
+       "value": 240900,
+       "text": null,
+       "hasAny": true,
+       "unit": "₽",
+       "source": "демо-образец выгрузки",
+       "date": "2026-11-01",
+       "method": "csv",
+       "accuracy": "демо-образец: оценка сервиса (не данные аккаунта)",
+       "comment": "ориентировочный бюджет по данным демо-образец выгрузки — оценка сервиса, не фактический расход. ВНИМАНИЕ: данные из демонстрационного файла, не из вашего аккаунта",
+       "estimate": true,
+       "zeroWasAbsence": false,
+       "rawValue": 240900
+      },
+      "marketingAds": {
+       "value": 51,
+       "text": null,
+       "hasAny": true,
+       "unit": "шт.",
+       "source": "демо-образец выгрузки",
+       "date": "2026-11-01",
+       "method": "csv",
+       "accuracy": "демо-образец: оценка сервиса (не данные аккаунта)",
+       "comment": "ориентировочный бюджет по данным демо-образец выгрузки — оценка сервиса, не фактический расход. ВНИМАНИЕ: данные из демонстрационного файла, не из вашего аккаунта",
+       "estimate": true,
+       "zeroWasAbsence": false,
+       "rawValue": 51
+      },
+      "marketingKeywords": {
+       "value": 402,
+       "text": null,
+       "hasAny": true,
+       "unit": "шт.",
+       "source": "демо-образец выгрузки",
+       "date": "2026-11-01",
+       "method": "csv",
+       "accuracy": "демо-образец: оценка сервиса (не данные аккаунта)",
+       "comment": "ориентировочный бюджет по данным демо-образец выгрузки — оценка сервиса, не фактический расход. ВНИМАНИЕ: данные из демонстрационного файла, не из вашего аккаунта",
+       "estimate": true,
+       "zeroWasAbsence": false,
+       "rawValue": 402
+      },
+      "marketingLandings": {
+       "value": 1,
+       "text": null,
+       "hasAny": true,
+       "unit": "шт.",
+       "source": "демо-образец выгрузки",
+       "date": "2026-11-01",
+       "method": "csv",
+       "accuracy": "демо-образец: оценка сервиса (не данные аккаунта)",
+       "comment": "ориентировочный бюджет по данным демо-образец выгрузки — оценка сервиса, не фактический расход. ВНИМАНИЕ: данные из демонстрационного файла, не из вашего аккаунта",
+       "estimate": true,
+       "zeroWasAbsence": false,
+       "rawValue": 1
+      },
+      "marketingPeriod": {
+       "value": null,
+       "text": "2026-10",
+       "hasAny": true,
+       "unit": null,
+       "source": "демо-образец выгрузки",
+       "date": "2026-11-01",
+       "method": null,
+       "accuracy": null,
+       "comment": "ориентировочный бюджет по данным демо-образец выгрузки — оценка сервиса, не фактический расход. ВНИМАНИЕ: данные из демонстрационного файла, не из вашего аккаунта",
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": "2026-10"
+      },
+      "marketingSource": {
+       "value": null,
+       "text": "демо-образец выгрузки",
+       "hasAny": true,
+       "unit": null,
+       "source": "демо-образец выгрузки",
+       "date": "2026-11-01",
+       "method": null,
+       "accuracy": null,
+       "comment": "ориентировочный бюджет по данным демо-образец выгрузки — оценка сервиса, не фактический расход. ВНИМАНИЕ: данные из демонстрационного файла, не из вашего аккаунта",
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": "демо-образец выгрузки"
+      },
+      "marketingMethod": {
+       "value": null,
+       "text": "csv",
+       "hasAny": true,
+       "unit": null,
+       "source": "демо-образец выгрузки",
+       "date": "2026-11-01",
+       "method": null,
+       "accuracy": null,
+       "comment": "ориентировочный бюджет по данным демо-образец выгрузки — оценка сервиса, не фактический расход. ВНИМАНИЕ: данные из демонстрационного файла, не из вашего аккаунта",
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": "csv"
+      },
+      "soldEstimateByGoneLots": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "лотов",
+       "source": "наш недельный мониторинг",
+       "date": "2026-11-01",
+       "method": "estimate",
+       "accuracy": null,
+       "comment": "нужно минимум 2 недели наблюдений",
+       "estimate": true,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "lotsInSale": {
+       "value": 30,
+       "text": null,
+       "hasAny": true,
+       "unit": "лотов",
+       "source": "cian (https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-seliger-siti-36051-ot-zastroyschika-OTZ/)",
+       "date": "2026-11-01",
+       "method": "http",
+       "accuracy": "высокая",
+       "comment": "лоты на публичной странице проекта",
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": 30
+      },
+      "priceMinRub": {
+       "value": 19397200,
+       "text": null,
+       "hasAny": true,
+       "unit": "₽",
+       "source": "cian (https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-seliger-siti-36051-ot-zastroyschika-OTZ/)",
+       "date": "2026-11-01",
+       "method": "http",
+       "accuracy": null,
+       "comment": null,
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": 19397200
+      },
+      "priceMedianRub": {
+       "value": 24605606,
+       "text": null,
+       "hasAny": true,
+       "unit": "₽",
+       "source": "cian (https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-seliger-siti-36051-ot-zastroyschika-OTZ/)",
+       "date": "2026-11-01",
+       "method": "http",
+       "accuracy": null,
+       "comment": null,
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": 24605606
+      },
+      "priceMaxRub": {
+       "value": 41362303,
+       "text": null,
+       "hasAny": true,
+       "unit": "₽",
+       "source": "cian (https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-seliger-siti-36051-ot-zastroyschika-OTZ/)",
+       "date": "2026-11-01",
+       "method": "http",
+       "accuracy": null,
+       "comment": null,
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": 41362303
+      },
+      "pricePerM2Median": {
+       "value": 577597,
+       "text": null,
+       "hasAny": true,
+       "unit": "₽/м²",
+       "source": "cian (https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-seliger-siti-36051-ot-zastroyschika-OTZ/)",
+       "date": "2026-11-01",
+       "method": "http",
+       "accuracy": null,
+       "comment": null,
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": 577597
+      },
+      "averageAreaM2": {
+       "value": 51.5,
+       "text": null,
+       "hasAny": true,
+       "unit": "м²",
+       "source": "cian (https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-seliger-siti-36051-ot-zastroyschika-OTZ/)",
+       "date": "2026-11-01",
+       "method": "http",
+       "accuracy": null,
+       "comment": null,
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": 51.5
+      },
+      "medianAreaM2": {
+       "value": 42,
+       "text": null,
+       "hasAny": true,
+       "unit": "м²",
+       "source": "cian (https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-seliger-siti-36051-ot-zastroyschika-OTZ/)",
+       "date": "2026-11-01",
+       "method": "http",
+       "accuracy": null,
+       "comment": null,
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": 42
+      },
+      "reservedLots": {
+       "value": 0,
+       "text": null,
+       "hasAny": true,
+       "unit": "лотов",
+       "source": "cian (https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-seliger-siti-36051-ot-zastroyschika-OTZ/)",
+       "date": "2026-11-01",
+       "method": "http",
+       "accuracy": "средняя",
+       "comment": "источник помечает бронь, но ни один лот не отмечен забронированным (реальный ноль)",
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": 0
+      },
+      "promoCount": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "лотов с акцией",
+       "source": "cian (https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-seliger-siti-36051-ot-zastroyschika-OTZ/)",
+       "date": "2026-11-01",
+       "method": "http",
+       "accuracy": null,
+       "comment": "тексты акций на странице не раскрыты (видна ссылка «4 акций»)",
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      }
+     },
+     "derived": {
+      "soldShareOfficialPct": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "%",
+       "source": "ЕИСЖС (наш.дом.рф)",
+       "date": "2026-11-01",
+       "method": "estimate",
+       "accuracy": null,
+       "comment": "официальная доля проданного не считается: нет данных (ДДУ)",
+       "estimate": true,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "salesSpeedPerWeek": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "",
+       "source": null,
+       "date": "2026-11-01",
+       "method": "estimate",
+       "accuracy": null,
+       "comment": "нужно минимум 2 недели наблюдений (накоплено 1)",
+       "estimate": true,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "absorptionRate": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "",
+       "source": null,
+       "date": "2026-11-01",
+       "method": "estimate",
+       "accuracy": null,
+       "comment": "нужно минимум 2 недели наблюдений (накоплено 1)",
+       "estimate": true,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "monthsToSellOut": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "",
+       "source": null,
+       "date": "2026-11-01",
+       "method": "estimate",
+       "accuracy": null,
+       "comment": "нужно минимум 2 недели наблюдений (накоплено 1)",
+       "estimate": true,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "entryPriceDynamicsPct": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "",
+       "source": null,
+       "date": "2026-11-01",
+       "method": "estimate",
+       "accuracy": null,
+       "comment": "нужно минимум 2 недели наблюдений (накоплено 1)",
+       "estimate": true,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "supplyDynamicsPct": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "",
+       "source": null,
+       "date": "2026-11-01",
+       "method": "estimate",
+       "accuracy": null,
+       "comment": "нужно минимум 2 недели наблюдений (накоплено 1)",
+       "estimate": true,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "promoPressureWeeks": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "",
+       "source": null,
+       "date": "2026-11-01",
+       "method": "estimate",
+       "accuracy": null,
+       "comment": "нужно минимум 2 недели наблюдений (накоплено 1)",
+       "estimate": true,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "priceIndexVsDistrict": {
+       "value": 1.122,
+       "text": null,
+       "hasAny": true,
+       "unit": "×",
+       "source": "расчёт по нашим данным",
+       "date": null,
+       "method": "estimate",
+       "accuracy": "средняя",
+       "comment": "медиана ₽/м² конкурента к медиане района (514 844 ₽/м²)",
+       "estimate": true,
+       "zeroWasAbsence": false,
+       "rawValue": 1.122
+      },
+      "gapPriceVsUsPct": {
+       "value": 131.04,
+       "text": null,
+       "hasAny": true,
+       "unit": "%",
+       "source": "расчёт",
+       "date": "2026-11-01",
+       "method": "estimate",
+       "accuracy": "средняя",
+       "comment": "разрыв: медиана конкурента против нашей цены входа (250 000 ₽/м²)",
+       "estimate": true,
+       "zeroWasAbsence": false,
+       "rawValue": 131.04
+      }
+     },
+     "soldShareBySite": {
+      "value": null,
+      "unit": "%",
+      "source": "сайт застройщика",
+      "date": null,
+      "method": "estimate",
+      "accuracy": null,
+      "comment": "нужны оба числа: всего квартир и продано по шахматке сайта",
+      "estimate": true,
+      "zeroWasAbsence": false,
+      "rawValue": null
+     },
+     "developerSite": {
+      "url": "https://www.mrgroup.ru/projects/seliger-siti/",
+      "method": "none",
+      "note": "HTTP None; Chrome отдал страницу-ошибку (не данные)",
+      "title": "null",
+      "ok": false,
+      "corpi": []
+     },
+     "officialSources": null,
+     "byRooms": {
+      "1": {
+       "count": 9,
+       "medianPrice": 24411213,
+       "medianPerM2": 597019,
+       "medianArea": 40
+      },
+      "2": {
+       "count": 8,
+       "medianPrice": 35517618,
+       "medianPerM2": 507421,
+       "medianArea": 70
+      },
+      "3": {
+       "count": 0,
+       "medianPrice": null,
+       "medianPerM2": null,
+       "medianArea": null
+      },
+      "studio": {
+       "count": 13,
+       "medianPrice": 20897823,
+       "medianPerM2": 598679,
+       "medianArea": 34
+      },
+      "4+": {
+       "count": 0,
+       "medianPrice": null,
+       "medianPerM2": null,
+       "medianArea": null
+      }
+     },
+     "riskFlags": [
+      {
+       "code": "no_history",
+       "level": "info",
+       "comment": "истории мало: динамика и риски появятся после 2 недель"
+      }
+     ],
+     "limitations": [
+      "сайт застройщика: HTTP None; Chrome отдал страницу-ошибку (не данные)",
+      "ЕИСЖС: официальные корпуса/квартиры/ДДУ недоступны — Chrome отдал страницу ошибки сертификата"
+     ],
+     "history": {
+      "weeks": 1,
+      "needed": 2,
+      "available": false
+     },
+     "sourcesCount": 10,
+     "filedAt": 1793545238986.9055,
+     "matchedBy": "project",
+     "marketing": {
+      "state": "ok",
+      "note": "ориентировочный бюджет по данным демо-образец выгрузки — оценка сервиса, не фактический расход. ВНИМАНИЕ: данные из демонстрационного файла, не из вашего аккаунта",
+      "source": "демо-образец выгрузки",
+      "method": "csv",
+      "date": "2026-11-01",
+      "caption": "ориентировочный бюджет по данным демо-образец выгрузки — оценка сервиса, не фактический расход. ВНИМАНИЕ: данные из демонстрационного файла, не из вашего аккаунта",
+      "fuzzy": false,
+      "demo": true,
+      "matchedBy": "project",
+      "domain": "seliger-city.ru"
+     }
+    },
+    {
+     "projectId": "zhk-soul",
+     "project": "ЖК СОУЛ",
+     "developer": "FORMA (ПИК)",
+     "klass": "бизнес",
+     "sourceUrl": "https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-soul-4183417-ot-zastroyschika-OTZ/",
+     "sourcePlatform": "cian",
+     "collectedAt": "2026-11-01",
+     "distanceKm": 5.01,
+     "metrics": {
+      "siteCorpiNamed": {
+       "value": null,
+       "unit": null,
+       "source": null,
+       "date": null,
+       "method": null,
+       "accuracy": null,
+       "comment": null,
+       "estimate": false,
+       "rawValue": null
+      },
+      "siteDeadlines": {
+       "value": null,
+       "unit": null,
+       "source": null,
+       "date": null,
+       "method": null,
+       "accuracy": null,
+       "comment": null,
+       "estimate": false,
+       "rawValue": null
+      },
+      "siteReadinessPct": {
+       "value": null,
+       "unit": null,
+       "source": null,
+       "date": null,
+       "method": null,
+       "accuracy": null,
+       "comment": null,
+       "estimate": false,
+       "rawValue": null
+      },
+      "siteFlatsTotal": {
+       "value": null,
+       "unit": null,
+       "source": null,
+       "date": null,
+       "method": null,
+       "accuracy": null,
+       "comment": null,
+       "estimate": false,
+       "rawValue": null
+      },
+      "siteFlatsInSale": {
+       "value": null,
+       "unit": null,
+       "source": null,
+       "date": null,
+       "method": null,
+       "accuracy": null,
+       "comment": null,
+       "estimate": false,
+       "rawValue": null
+      },
+      "siteFlatsSold": {
+       "value": null,
+       "unit": null,
+       "source": null,
+       "date": null,
+       "method": null,
+       "accuracy": null,
+       "comment": null,
+       "estimate": false,
+       "rawValue": null
+      },
+      "siteFlatsReserved": {
+       "value": null,
+       "unit": null,
+       "source": null,
+       "date": null,
+       "method": null,
+       "accuracy": null,
+       "comment": null,
+       "estimate": false,
+       "rawValue": null
+      },
+      "sitePromoCount": {
+       "value": null,
+       "unit": null,
+       "source": null,
+       "date": null,
+       "method": null,
+       "accuracy": null,
+       "comment": null,
+       "estimate": false,
+       "rawValue": null
+      },
+      "siteMortgageCount": {
+       "value": null,
+       "unit": null,
+       "source": null,
+       "date": null,
+       "method": null,
+       "accuracy": null,
+       "comment": null,
+       "estimate": false,
+       "rawValue": null
+      },
+      "corpiTotal": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "корпусов всего",
+       "source": "ЕИСЖС (наш.дом.рф)",
+       "date": "2026-11-01",
+       "method": "dom",
+       "accuracy": null,
+       "comment": "официальные данные получить нельзя: ЕИСЖС (наш.дом.рф): Chrome отдал страницу ошибки сертификата — Chrome отдал страницу ошибки сертификата — это не данные",
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "corpiBuilt": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "корпусов введено",
+       "source": "ЕИСЖС (наш.дом.рф)",
+       "date": "2026-11-01",
+       "method": "dom",
+       "accuracy": null,
+       "comment": "официальные данные получить нельзя: ЕИСЖС (наш.дом.рф): Chrome отдал страницу ошибки сертификата — Chrome отдал страницу ошибки сертификата — это не данные",
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "corpiUnderConstruction": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "корпусов строится",
+       "source": "ЕИСЖС (наш.дом.рф)",
+       "date": "2026-11-01",
+       "method": "dom",
+       "accuracy": null,
+       "comment": "официальные данные получить нельзя: ЕИСЖС (наш.дом.рф): Chrome отдал страницу ошибки сертификата — Chrome отдал страницу ошибки сертификата — это не данные",
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "flatsTotal": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "квартир в проекте",
+       "source": "ЕИСЖС (наш.дом.рф)",
+       "date": "2026-11-01",
+       "method": "dom",
+       "accuracy": null,
+       "comment": "официальные данные получить нельзя: ЕИСЖС (наш.дом.рф): Chrome отдал страницу ошибки сертификата — Chrome отдал страницу ошибки сертификата — это не данные",
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "dduRegistered": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "ДДУ зарегистрировано",
+       "source": "ЕИСЖС (наш.дом.рф)",
+       "date": "2026-11-01",
+       "method": "dom",
+       "accuracy": null,
+       "comment": "официальные данные получить нельзя: ЕИСЖС (наш.дом.рф): Chrome отдал страницу ошибки сертификата — Chrome отдал страницу ошибки сертификата — это не данные",
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "soldOfficialRosreestr": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "ДДУ",
+       "source": "ЕИСЖС (наш.дом.рф) / Росреестр",
+       "date": "2026-11-01",
+       "method": "none",
+       "accuracy": null,
+       "comment": "официальные ДДУ недоступны: Chrome отдал страницу ошибки сертификата — своими цифрами не подменяем",
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "marketingBudgetEstimateRub": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "₽",
+       "source": "демо-образец выгрузки",
+       "date": "2026-11-01",
+       "method": "csv",
+       "accuracy": null,
+       "comment": "данные в сервисе есть, но проект не сопоставлен: добавьте домен в карточку конкурента (в срезе: rg-dev.ru, seliger-city.ru)",
+       "estimate": true,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "marketingAds": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "шт.",
+       "source": "демо-образец выгрузки",
+       "date": "2026-11-01",
+       "method": "csv",
+       "accuracy": null,
+       "comment": "данные в сервисе есть, но проект не сопоставлен: добавьте домен в карточку конкурента (в срезе: rg-dev.ru, seliger-city.ru)",
+       "estimate": true,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "marketingKeywords": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "шт.",
+       "source": "демо-образец выгрузки",
+       "date": "2026-11-01",
+       "method": "csv",
+       "accuracy": null,
+       "comment": "данные в сервисе есть, но проект не сопоставлен: добавьте домен в карточку конкурента (в срезе: rg-dev.ru, seliger-city.ru)",
+       "estimate": true,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "marketingLandings": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "шт.",
+       "source": "демо-образец выгрузки",
+       "date": "2026-11-01",
+       "method": "csv",
+       "accuracy": null,
+       "comment": "данные в сервисе есть, но проект не сопоставлен: добавьте домен в карточку конкурента (в срезе: rg-dev.ru, seliger-city.ru)",
+       "estimate": true,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "marketingPeriod": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": null,
+       "source": "демо-образец выгрузки",
+       "date": "2026-11-01",
+       "method": null,
+       "accuracy": null,
+       "comment": "данные в сервисе есть, но проект не сопоставлен: добавьте домен в карточку конкурента (в срезе: rg-dev.ru, seliger-city.ru)",
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "marketingSource": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": null,
+       "source": "демо-образец выгрузки",
+       "date": "2026-11-01",
+       "method": null,
+       "accuracy": null,
+       "comment": "данные в сервисе есть, но проект не сопоставлен: добавьте домен в карточку конкурента (в срезе: rg-dev.ru, seliger-city.ru)",
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "marketingMethod": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": null,
+       "source": "демо-образец выгрузки",
+       "date": "2026-11-01",
+       "method": null,
+       "accuracy": null,
+       "comment": "данные в сервисе есть, но проект не сопоставлен: добавьте домен в карточку конкурента (в срезе: rg-dev.ru, seliger-city.ru)",
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "soldEstimateByGoneLots": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "лотов",
+       "source": "наш недельный мониторинг",
+       "date": "2026-11-01",
+       "method": "estimate",
+       "accuracy": null,
+       "comment": "нужно минимум 2 недели наблюдений",
+       "estimate": true,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "lotsInSale": {
+       "value": 28,
+       "text": null,
+       "hasAny": true,
+       "unit": "лотов",
+       "source": "cian (https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-soul-4183417-ot-zastroyschika-OTZ/)",
+       "date": "2026-11-01",
+       "method": "http",
+       "accuracy": "высокая",
+       "comment": "лоты на публичной странице проекта",
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": 28
+      },
+      "priceMinRub": {
+       "value": 19797987,
+       "text": null,
+       "hasAny": true,
+       "unit": "₽",
+       "source": "cian (https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-soul-4183417-ot-zastroyschika-OTZ/)",
+       "date": "2026-11-01",
+       "method": "http",
+       "accuracy": null,
+       "comment": null,
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": 19797987
+      },
+      "priceMedianRub": {
+       "value": 31009032,
+       "text": null,
+       "hasAny": true,
+       "unit": "₽",
+       "source": "cian (https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-soul-4183417-ot-zastroyschika-OTZ/)",
+       "date": "2026-11-01",
+       "method": "http",
+       "accuracy": null,
+       "comment": null,
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": 31009032
+      },
+      "priceMaxRub": {
+       "value": 40928509,
+       "text": null,
+       "hasAny": true,
+       "unit": "₽",
+       "source": "cian (https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-soul-4183417-ot-zastroyschika-OTZ/)",
+       "date": "2026-11-01",
+       "method": "http",
+       "accuracy": null,
+       "comment": null,
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": 40928509
+      },
+      "pricePerM2Median": {
+       "value": 529339,
+       "text": null,
+       "hasAny": true,
+       "unit": "₽/м²",
+       "source": "cian (https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-soul-4183417-ot-zastroyschika-OTZ/)",
+       "date": "2026-11-01",
+       "method": "http",
+       "accuracy": null,
+       "comment": null,
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": 529339
+      },
+      "averageAreaM2": {
+       "value": 57.9,
+       "text": null,
+       "hasAny": true,
+       "unit": "м²",
+       "source": "cian (https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-soul-4183417-ot-zastroyschika-OTZ/)",
+       "date": "2026-11-01",
+       "method": "http",
+       "accuracy": null,
+       "comment": null,
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": 57.9
+      },
+      "medianAreaM2": {
+       "value": 60,
+       "text": null,
+       "hasAny": true,
+       "unit": "м²",
+       "source": "cian (https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-soul-4183417-ot-zastroyschika-OTZ/)",
+       "date": "2026-11-01",
+       "method": "http",
+       "accuracy": null,
+       "comment": null,
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": 60
+      },
+      "reservedLots": {
+       "value": 0,
+       "text": null,
+       "hasAny": true,
+       "unit": "лотов",
+       "source": "cian (https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-soul-4183417-ot-zastroyschika-OTZ/)",
+       "date": "2026-11-01",
+       "method": "http",
+       "accuracy": "средняя",
+       "comment": "источник помечает бронь, но ни один лот не отмечен забронированным (реальный ноль)",
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": 0
+      },
+      "promoCount": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "лотов с акцией",
+       "source": "cian (https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-soul-4183417-ot-zastroyschika-OTZ/)",
+       "date": "2026-11-01",
+       "method": "http",
+       "accuracy": null,
+       "comment": "тексты акций на странице не раскрыты (видна ссылка «2 акций»)",
+       "estimate": false,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      }
+     },
+     "derived": {
+      "soldShareOfficialPct": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "%",
+       "source": "ЕИСЖС (наш.дом.рф)",
+       "date": "2026-11-01",
+       "method": "estimate",
+       "accuracy": null,
+       "comment": "официальная доля проданного не считается: нет данных (ДДУ)",
+       "estimate": true,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "salesSpeedPerWeek": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "",
+       "source": null,
+       "date": "2026-11-01",
+       "method": "estimate",
+       "accuracy": null,
+       "comment": "нужно минимум 2 недели наблюдений (накоплено 1)",
+       "estimate": true,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "absorptionRate": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "",
+       "source": null,
+       "date": "2026-11-01",
+       "method": "estimate",
+       "accuracy": null,
+       "comment": "нужно минимум 2 недели наблюдений (накоплено 1)",
+       "estimate": true,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "monthsToSellOut": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "",
+       "source": null,
+       "date": "2026-11-01",
+       "method": "estimate",
+       "accuracy": null,
+       "comment": "нужно минимум 2 недели наблюдений (накоплено 1)",
+       "estimate": true,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "entryPriceDynamicsPct": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "",
+       "source": null,
+       "date": "2026-11-01",
+       "method": "estimate",
+       "accuracy": null,
+       "comment": "нужно минимум 2 недели наблюдений (накоплено 1)",
+       "estimate": true,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "supplyDynamicsPct": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "",
+       "source": null,
+       "date": "2026-11-01",
+       "method": "estimate",
+       "accuracy": null,
+       "comment": "нужно минимум 2 недели наблюдений (накоплено 1)",
+       "estimate": true,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "promoPressureWeeks": {
+       "value": null,
+       "text": null,
+       "hasAny": false,
+       "unit": "",
+       "source": null,
+       "date": "2026-11-01",
+       "method": "estimate",
+       "accuracy": null,
+       "comment": "нужно минимум 2 недели наблюдений (накоплено 1)",
+       "estimate": true,
+       "zeroWasAbsence": false,
+       "rawValue": null
+      },
+      "priceIndexVsDistrict": {
+       "value": 1.028,
+       "text": null,
+       "hasAny": true,
+       "unit": "×",
+       "source": "расчёт по нашим данным",
+       "date": null,
+       "method": "estimate",
+       "accuracy": "средняя",
+       "comment": "медиана ₽/м² конкурента к медиане района (514 844 ₽/м²)",
+       "estimate": true,
+       "zeroWasAbsence": false,
+       "rawValue": 1.028
+      },
+      "gapPriceVsUsPct": {
+       "value": 111.74,
+       "text": null,
+       "hasAny": true,
+       "unit": "%",
+       "source": "расчёт",
+       "date": "2026-11-01",
+       "method": "estimate",
+       "accuracy": "средняя",
+       "comment": "разрыв: медиана конкурента против нашей цены входа (250 000 ₽/м²)",
+       "estimate": true,
+       "zeroWasAbsence": false,
+       "rawValue": 111.74
+      }
+     },
+     "soldShareBySite": {
+      "value": null,
+      "unit": "%",
+      "source": "сайт застройщика",
+      "date": null,
+      "method": "estimate",
+      "accuracy": null,
+      "comment": "нужны оба числа: всего квартир и продано по шахматке сайта",
+      "estimate": true,
+      "zeroWasAbsence": false,
+      "rawValue": null
+     },
+     "developerSite": null,
+     "officialSources": null,
+     "byRooms": {
+      "1": {
+       "count": 11,
+       "medianPrice": 24303686,
+       "medianPerM2": 547855,
+       "medianArea": 44
+      },
+      "2": {
+       "count": 9,
+       "medianPrice": 34599552,
+       "medianPerM2": 517200,
+       "medianArea": 64
+      },
+      "3": {
+       "count": 5,
+       "medianPrice": 39039462,
+       "medianPerM2": 455224,
+       "medianArea": 85
+      },
+      "studio": {
+       "count": 3,
+       "medianPrice": 19869384,
+       "medianPerM2": 664362,
+       "medianArea": 30
+      },
+      "4+": {
+       "count": 0,
+       "medianPrice": null,
+       "medianPerM2": null,
+       "medianArea": null
+      }
+     },
+     "riskFlags": [
+      {
+       "code": "no_history",
+       "level": "info",
+       "comment": "истории мало: динамика и риски появятся после 2 недель"
+      }
+     ],
+     "limitations": [
+      "ЕИСЖС: официальные корпуса/квартиры/ДДУ недоступны — Chrome отдал страницу ошибки сертификата"
+     ],
+     "history": {
+      "weeks": 1,
+      "needed": 2,
+      "available": false
+     },
+     "sourcesCount": 10,
+     "filedAt": 1793545238991.5208,
+     "matchedBy": null,
+     "marketing": {
+      "state": "unmatched",
+      "note": "данные в сервисе есть, но проект не сопоставлен: добавьте домен в карточку конкурента (в срезе: rg-dev.ru, seliger-city.ru)",
+      "source": "демо-образец выгрузки",
+      "method": "csv",
+      "date": "2026-11-01",
+      "sliceIds": [
+       "rg-dev.ru",
+       "seliger-city.ru"
+      ]
+     }
+    }
+   ],
+   "emptyReason": null,
+   "marketing": {
+    "exists": true,
+    "dir": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\01-competitor-watch\\data\\clients\\client-svet\\budgets",
+    "status": "ok",
+    "note": null,
+    "source": "демо-образец выгрузки",
+    "method": "csv",
+    "demo": true,
+    "slices": [
+     {
+      "date": "2026-11-01",
+      "file": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\01-competitor-watch\\data\\clients\\client-svet\\budgets\\2026-11-01.json",
+      "demo": true,
+      "source": "демо-образец выгрузки",
+      "method": "csv",
+      "items": [
+       {
+        "project": "zhk-mihalkovskiy",
+        "budgetRub": 346800,
+        "period": "2026-10",
+        "ads": 80,
+        "keywords": 613,
+        "landings": 1,
+        "collectedAt": "2026-11-01",
+        "accuracy": "демо-образец: оценка сервиса (не данные аккаунта)",
+        "status": null,
+        "note": "",
+        "source": "демо-образец выгрузки",
+        "methodRaw": "csv",
+        "method": "csv",
+        "name": "ЖК Михалковский",
+        "domain": "rg-dev.ru",
+        "demo": true
+       },
+       {
+        "project": "zhk-seliger-siti",
+        "budgetRub": 240900,
+        "period": "2026-10",
+        "ads": 51,
+        "keywords": 402,
+        "landings": 1,
+        "collectedAt": "2026-11-01",
+        "accuracy": "демо-образец: оценка сервиса (не данные аккаунта)",
+        "status": null,
+        "note": "",
+        "source": "демо-образец выгрузки",
+        "methodRaw": "csv",
+        "method": "csv",
+        "name": "zhk-seliger-siti",
+        "domain": "seliger-city.ru",
+        "demo": true
+       }
+      ]
+     }
+    ],
+    "weeks": [
+     {
+      "date": "2026-11-01",
+      "source": "демо-образец выгрузки",
+      "method": "csv",
+      "demo": true
+     }
+    ]
+   },
+   "completeness": {
+    "seenMetricKeys": [
+     "averageAreaM2",
+     "corpiBuilt",
+     "corpiTotal",
+     "corpiUnderConstruction",
+     "dduRegistered",
+     "flatsTotal",
+     "lotsInSale",
+     "marketingAds",
+     "marketingBudgetEstimateRub",
+     "marketingKeywords",
+     "marketingLandings",
+     "marketingMethod",
+     "marketingPeriod",
+     "marketingSource",
+     "medianAreaM2",
+     "priceMaxRub",
+     "priceMedianRub",
+     "priceMinRub",
+     "pricePerM2Median",
+     "promoCount",
+     "reservedLots",
+     "siteCorpiNamed",
+     "siteDeadlines",
+     "siteFlatsInSale",
+     "siteFlatsReserved",
+     "siteFlatsSold",
+     "siteFlatsTotal",
+     "siteMortgageCount",
+     "sitePromoCount",
+     "siteReadinessPct",
+     "soldEstimateByGoneLots",
+     "soldOfficialRosreestr"
+    ],
+    "seenDerivedKeys": [
+     "absorptionRate",
+     "entryPriceDynamicsPct",
+     "gapPriceVsUsPct",
+     "monthsToSellOut",
+     "priceIndexVsDistrict",
+     "promoPressureWeeks",
+     "salesSpeedPerWeek",
+     "soldShareBySite",
+     "soldShareOfficialPct",
+     "supplyDynamicsPct"
+    ],
+    "groups": [
+     {
+      "id": "summary",
+      "title": "Сводка",
+      "kind": "summary",
+      "hint": "сколько конкурентов, лотов, медианы, акции, флаги, дата и себестоимость прогона"
+     },
+     {
+      "id": "competitors",
+      "title": "Конкуренты",
+      "kind": "table",
+      "hint": "таблица по проектам с сортировкой и поиском",
+      "metrics": [
+       {
+        "key": "lotsInSale",
+        "label": "Лотов",
+        "fmt": "int"
+       },
+       {
+        "key": "pricePerM2Median",
+        "label": "Медиана ₽/м²",
+        "fmt": "money"
+       },
+       {
+        "key": "priceMinRub",
+        "label": "Мин. вход, ₽",
+        "fmt": "money"
+       },
+       {
+        "key": "priceMedianRub",
+        "label": "Медиана цены, ₽",
+        "fmt": "money"
+       },
+       {
+        "key": "averageAreaM2",
+        "label": "Ср. площадь, м²",
+        "fmt": "num"
+       },
+       {
+        "key": "promoCount",
+        "label": "Лотов с акцией",
+        "fmt": "int"
+       },
+       {
+        "key": "reservedLots",
+        "label": "Бронь",
+        "fmt": "int"
+       }
+      ]
+     },
+     {
+      "id": "prices",
+      "title": "Цены",
+      "kind": "metrics",
+      "hint": "медианы, минимум и максимум, ₽/м², разрез по типам квартир",
+      "metrics": [
+       {
+        "key": "priceMinRub",
+        "label": "Минимальная цена, ₽",
+        "fmt": "money"
+       },
+       {
+        "key": "priceMedianRub",
+        "label": "Медианная цена, ₽",
+        "fmt": "money"
+       },
+       {
+        "key": "priceMaxRub",
+        "label": "Максимальная цена, ₽",
+        "fmt": "money"
+       },
+       {
+        "key": "pricePerM2Median",
+        "label": "Медиана ₽/м²",
+        "fmt": "money"
+       },
+       {
+        "key": "priceIndexVsDistrict",
+        "label": "Индекс цены к району, ×",
+        "fmt": "num",
+        "estimate": true
+       },
+       {
+        "key": "gapPriceVsUsPct",
+        "label": "Разрыв с нашей ценой, %",
+        "fmt": "num",
+        "estimate": true
+       }
+      ]
+     },
+     {
+      "id": "product",
+      "title": "Продукт",
+      "kind": "metrics",
+      "hint": "площади, структура по комнатности, сдвиги",
+      "metrics": [
+       {
+        "key": "averageAreaM2",
+        "label": "Средняя площадь, м²",
+        "fmt": "num"
+       },
+       {
+        "key": "medianAreaM2",
+        "label": "Медианная площадь, м²",
+        "fmt": "num"
+       },
+       {
+        "key": "lotsInSale",
+        "label": "Лотов в реализации",
+        "fmt": "int"
+       }
+      ]
+     },
+     {
+      "id": "buildings",
+      "title": "Корпуса и стройка",
+      "kind": "metrics",
+      "hint": "корпуса, стадии, сроки ввода, готовность, шахматка (сайт застройщика, метод dom)",
+      "metrics": [
+       {
+        "key": "siteCorpiNamed",
+        "label": "Корпусов названо",
+        "fmt": "int"
+       },
+       {
+        "key": "siteDeadlines",
+        "label": "Сроки ввода",
+        "fmt": "text"
+       },
+       {
+        "key": "siteReadinessPct",
+        "label": "Готовность, %",
+        "fmt": "num"
+       },
+       {
+        "key": "siteFlatsTotal",
+        "label": "Квартир по шахматке",
+        "fmt": "int"
+       },
+       {
+        "key": "siteFlatsInSale",
+        "label": "В продаже (сайт)",
+        "fmt": "int"
+       },
+       {
+        "key": "siteFlatsSold",
+        "label": "Продано (сайт)",
+        "fmt": "int"
+       },
+       {
+        "key": "siteFlatsReserved",
+        "label": "Забронировано (сайт)",
+        "fmt": "int"
+       },
+       {
+        "key": "reservedLots",
+        "label": "Бронь (площадка)",
+        "fmt": "int"
+       },
+       {
+        "key": "soldShareBySite",
+        "label": "Доля проданного по сайту, %",
+        "fmt": "pct",
+        "estimate": true,
+        "note": "не Росреестр"
+       }
+      ]
+     },
+     {
+      "id": "promos",
+      "title": "Акции и программы",
+      "kind": "metrics",
+      "hint": "тексты акций сайта, число ипотечных программ, давление промо",
+      "metrics": [
+       {
+        "key": "sitePromoCount",
+        "label": "Акций на сайте застройщика",
+        "fmt": "int"
+       },
+       {
+        "key": "siteMortgageCount",
+        "label": "Ипотечных программ",
+        "fmt": "int"
+       },
+       {
+        "key": "promoCount",
+        "label": "Лотов с акцией (площадка)",
+        "fmt": "int"
+       },
+       {
+        "key": "promoPressureWeeks",
+        "label": "Недель подряд с акциями",
+        "fmt": "num",
+        "estimate": true
+       }
+      ]
+     },
+     {
+      "id": "dynamics",
+      "title": "Динамика",
+      "kind": "metrics",
+      "hint": "скорость продаж, absorption, прогноз распродажи, изменения цены и предложения (расчёт)",
+      "metrics": [
+       {
+        "key": "salesSpeedPerWeek",
+        "label": "Скорость продаж, лотов/нед",
+        "fmt": "num",
+        "estimate": true
+       },
+       {
+        "key": "absorptionRate",
+        "label": "Absorption, %",
+        "fmt": "pct",
+        "estimate": true
+       },
+       {
+        "key": "monthsToSellOut",
+        "label": "Месяцев до распродажи",
+        "fmt": "num",
+        "estimate": true
+       },
+       {
+        "key": "entryPriceDynamicsPct",
+        "label": "Динамика цены входа, %",
+        "fmt": "pct",
+        "estimate": true
+       },
+       {
+        "key": "supplyDynamicsPct",
+        "label": "Динамика предложения, %",
+        "fmt": "pct",
+        "estimate": true
+       }
+      ]
+     },
+     {
+      "id": "marketing",
+      "title": "Маркетинг",
+      "kind": "marketing",
+      "hint": "ориентировочные бюджеты по данным SpyWords / Keys.so — оценка сервиса, не фактический расход",
+      "metrics": [
+       {
+        "key": "marketingBudgetEstimateRub",
+        "label": "Бюджет за период, ₽ (оценка)",
+        "fmt": "money",
+        "estimate": true
+       },
+       {
+        "key": "marketingPeriod",
+        "label": "Период",
+        "fmt": "text"
+       },
+       {
+        "key": "marketingAds",
+        "label": "Объявлений",
+        "fmt": "int",
+        "estimate": true
+       },
+       {
+        "key": "marketingKeywords",
+        "label": "Ключевых слов",
+        "fmt": "int",
+        "estimate": true
+       },
+       {
+        "key": "marketingLandings",
+        "label": "Уникальных посадочных",
+        "fmt": "int",
+        "estimate": true
+       },
+       {
+        "key": "marketingSource",
+        "label": "Источник",
+        "fmt": "text"
+       },
+       {
+        "key": "marketingMethod",
+        "label": "Метод сбора",
+        "fmt": "text"
+       }
+      ]
+     },
+     {
+      "id": "visits",
+      "title": "Обращения и визиты",
+      "kind": "metrics",
+      "planned": true,
+      "hint": "звонки, конверсия, визиты. Эти данные не публикуются публично — панель не подставляет прокси-оценки без пометки",
+      "metrics": [
+       {
+        "key": "visitsCount",
+        "label": "Визитов в офис продаж",
+        "fmt": "int"
+       },
+       {
+        "key": "callsCount",
+        "label": "Звонков",
+        "fmt": "int"
+       },
+       {
+        "key": "conversionPct",
+        "label": "Конверсия в сделку, %",
+        "fmt": "pct"
+       }
+      ]
+     },
+     {
+      "id": "official",
+      "title": "Официальные данные: Росреестр / ЕИСЖС",
+      "kind": "official",
+      "hint": "отдельно от сайта застройщика; источник сейчас недоступен",
+      "metrics": [
+       {
+        "key": "corpiTotal",
+        "label": "Корпусов всего (официально)",
+        "fmt": "int"
+       },
+       {
+        "key": "corpiBuilt",
+        "label": "Сдано корпусов",
+        "fmt": "int"
+       },
+       {
+        "key": "corpiUnderConstruction",
+        "label": "Строится корпусов",
+        "fmt": "int"
+       },
+       {
+        "key": "flatsTotal",
+        "label": "Квартир всего (официально)",
+        "fmt": "int"
+       },
+       {
+        "key": "dduRegistered",
+        "label": "Зарегистрировано ДДУ",
+        "fmt": "int"
+       },
+       {
+        "key": "soldOfficialRosreestr",
+        "label": "Продано официально",
+        "fmt": "int"
+       },
+       {
+        "key": "soldShareOfficialPct",
+        "label": "Доля проданного (официальная), %",
+        "fmt": "pct",
+        "estimate": true
+       },
+       {
+        "key": "soldEstimateByGoneLots",
+        "label": "Продано (оценка по ушедшим лотам)",
+        "fmt": "int",
+        "estimate": true
+       }
+      ]
+     },
+     {
+      "id": "risks",
+      "title": "Риски",
+      "kind": "risks",
+      "hint": "риск-флаги движка и что требует внимания"
+     },
+     {
+      "id": "sources",
+      "title": "Источники",
+      "kind": "sources",
+      "hint": "источник, метод, дата, точность и что получить не удалось"
+     }
+    ],
+    "groupTitles": [
+     {
+      "id": "summary",
+      "title": "Сводка",
+      "kind": "summary",
+      "planned": false,
+      "metrics": []
+     },
+     {
+      "id": "competitors",
+      "title": "Конкуренты",
+      "kind": "table",
+      "planned": false,
+      "metrics": [
+       "lotsInSale",
+       "pricePerM2Median",
+       "priceMinRub",
+       "priceMedianRub",
+       "averageAreaM2",
+       "promoCount",
+       "reservedLots"
+      ]
+     },
+     {
+      "id": "prices",
+      "title": "Цены",
+      "kind": "metrics",
+      "planned": false,
+      "metrics": [
+       "priceMinRub",
+       "priceMedianRub",
+       "priceMaxRub",
+       "pricePerM2Median",
+       "priceIndexVsDistrict",
+       "gapPriceVsUsPct"
+      ]
+     },
+     {
+      "id": "product",
+      "title": "Продукт",
+      "kind": "metrics",
+      "planned": false,
+      "metrics": [
+       "averageAreaM2",
+       "medianAreaM2",
+       "lotsInSale"
+      ]
+     },
+     {
+      "id": "buildings",
+      "title": "Корпуса и стройка",
+      "kind": "metrics",
+      "planned": false,
+      "metrics": [
+       "siteCorpiNamed",
+       "siteDeadlines",
+       "siteReadinessPct",
+       "siteFlatsTotal",
+       "siteFlatsInSale",
+       "siteFlatsSold",
+       "siteFlatsReserved",
+       "reservedLots",
+       "soldShareBySite"
+      ]
+     },
+     {
+      "id": "promos",
+      "title": "Акции и программы",
+      "kind": "metrics",
+      "planned": false,
+      "metrics": [
+       "sitePromoCount",
+       "siteMortgageCount",
+       "promoCount",
+       "promoPressureWeeks"
+      ]
+     },
+     {
+      "id": "dynamics",
+      "title": "Динамика",
+      "kind": "metrics",
+      "planned": false,
+      "metrics": [
+       "salesSpeedPerWeek",
+       "absorptionRate",
+       "monthsToSellOut",
+       "entryPriceDynamicsPct",
+       "supplyDynamicsPct"
+      ]
+     },
+     {
+      "id": "marketing",
+      "title": "Маркетинг",
+      "kind": "marketing",
+      "planned": false,
+      "metrics": [
+       "marketingBudgetEstimateRub",
+       "marketingPeriod",
+       "marketingAds",
+       "marketingKeywords",
+       "marketingLandings",
+       "marketingSource",
+       "marketingMethod"
+      ]
+     },
+     {
+      "id": "visits",
+      "title": "Обращения и визиты",
+      "kind": "metrics",
+      "planned": true,
+      "metrics": [
+       "visitsCount",
+       "callsCount",
+       "conversionPct"
+      ]
+     },
+     {
+      "id": "official",
+      "title": "Официальные данные: Росреестр / ЕИСЖС",
+      "kind": "official",
+      "planned": false,
+      "metrics": [
+       "corpiTotal",
+       "corpiBuilt",
+       "corpiUnderConstruction",
+       "flatsTotal",
+       "dduRegistered",
+       "soldOfficialRosreestr",
+       "soldShareOfficialPct",
+       "soldEstimateByGoneLots"
+      ]
+     },
+     {
+      "id": "risks",
+      "title": "Риски",
+      "kind": "risks",
+      "planned": false,
+      "metrics": []
+     },
+     {
+      "id": "sources",
+      "title": "Источники",
+      "kind": "sources",
+      "planned": false,
+      "metrics": []
+     }
+    ],
+    "hidden": [],
+    "displayedCount": 42,
+    "seenCount": 42,
+    "uncovered": [],
+    "ok": true
+   },
+   "agg": {
+    "competitors": 6,
+    "lotsTotal": 170,
+    "lotsBySummary": 170,
+    "medianPerM2Market": 514845,
+    "medianPerM2Summary": 514844,
+    "promosActive": 23,
+    "risks": 6,
+    "lastRunAt": "2026-11-01T18:00:38+03:00",
+    "costRub": null,
+    "metricsTotal": 252,
+    "metricsWithValue": 71,
+    "metricsWithSource": 71,
+    "metricsEstimate": 20,
+    "completeness": {
+     "seenMetricKeys": [
+      "averageAreaM2",
+      "corpiBuilt",
+      "corpiTotal",
+      "corpiUnderConstruction",
+      "dduRegistered",
+      "flatsTotal",
+      "lotsInSale",
+      "marketingAds",
+      "marketingBudgetEstimateRub",
+      "marketingKeywords",
+      "marketingLandings",
+      "marketingMethod",
+      "marketingPeriod",
+      "marketingSource",
+      "medianAreaM2",
+      "priceMaxRub",
+      "priceMedianRub",
+      "priceMinRub",
+      "pricePerM2Median",
+      "promoCount",
+      "reservedLots",
+      "siteCorpiNamed",
+      "siteDeadlines",
+      "siteFlatsInSale",
+      "siteFlatsReserved",
+      "siteFlatsSold",
+      "siteFlatsTotal",
+      "siteMortgageCount",
+      "sitePromoCount",
+      "siteReadinessPct",
+      "soldEstimateByGoneLots",
+      "soldOfficialRosreestr"
+     ],
+     "seenDerivedKeys": [
+      "absorptionRate",
+      "entryPriceDynamicsPct",
+      "gapPriceVsUsPct",
+      "monthsToSellOut",
+      "priceIndexVsDistrict",
+      "promoPressureWeeks",
+      "salesSpeedPerWeek",
+      "soldShareBySite",
+      "soldShareOfficialPct",
+      "supplyDynamicsPct"
+     ],
+     "groups": [
+      {
+       "id": "summary",
+       "title": "Сводка",
+       "kind": "summary",
+       "hint": "сколько конкурентов, лотов, медианы, акции, флаги, дата и себестоимость прогона"
+      },
+      {
+       "id": "competitors",
+       "title": "Конкуренты",
+       "kind": "table",
+       "hint": "таблица по проектам с сортировкой и поиском",
+       "metrics": [
+        {
+         "key": "lotsInSale",
+         "label": "Лотов",
+         "fmt": "int"
+        },
+        {
+         "key": "pricePerM2Median",
+         "label": "Медиана ₽/м²",
+         "fmt": "money"
+        },
+        {
+         "key": "priceMinRub",
+         "label": "Мин. вход, ₽",
+         "fmt": "money"
+        },
+        {
+         "key": "priceMedianRub",
+         "label": "Медиана цены, ₽",
+         "fmt": "money"
+        },
+        {
+         "key": "averageAreaM2",
+         "label": "Ср. площадь, м²",
+         "fmt": "num"
+        },
+        {
+         "key": "promoCount",
+         "label": "Лотов с акцией",
+         "fmt": "int"
+        },
+        {
+         "key": "reservedLots",
+         "label": "Бронь",
+         "fmt": "int"
+        }
+       ]
+      },
+      {
+       "id": "prices",
+       "title": "Цены",
+       "kind": "metrics",
+       "hint": "медианы, минимум и максимум, ₽/м², разрез по типам квартир",
+       "metrics": [
+        {
+         "key": "priceMinRub",
+         "label": "Минимальная цена, ₽",
+         "fmt": "money"
+        },
+        {
+         "key": "priceMedianRub",
+         "label": "Медианная цена, ₽",
+         "fmt": "money"
+        },
+        {
+         "key": "priceMaxRub",
+         "label": "Максимальная цена, ₽",
+         "fmt": "money"
+        },
+        {
+         "key": "pricePerM2Median",
+         "label": "Медиана ₽/м²",
+         "fmt": "money"
+        },
+        {
+         "key": "priceIndexVsDistrict",
+         "label": "Индекс цены к району, ×",
+         "fmt": "num",
+         "estimate": true
+        },
+        {
+         "key": "gapPriceVsUsPct",
+         "label": "Разрыв с нашей ценой, %",
+         "fmt": "num",
+         "estimate": true
+        }
+       ]
+      },
+      {
+       "id": "product",
+       "title": "Продукт",
+       "kind": "metrics",
+       "hint": "площади, структура по комнатности, сдвиги",
+       "metrics": [
+        {
+         "key": "averageAreaM2",
+         "label": "Средняя площадь, м²",
+         "fmt": "num"
+        },
+        {
+         "key": "medianAreaM2",
+         "label": "Медианная площадь, м²",
+         "fmt": "num"
+        },
+        {
+         "key": "lotsInSale",
+         "label": "Лотов в реализации",
+         "fmt": "int"
+        }
+       ]
+      },
+      {
+       "id": "buildings",
+       "title": "Корпуса и стройка",
+       "kind": "metrics",
+       "hint": "корпуса, стадии, сроки ввода, готовность, шахматка (сайт застройщика, метод dom)",
+       "metrics": [
+        {
+         "key": "siteCorpiNamed",
+         "label": "Корпусов названо",
+         "fmt": "int"
+        },
+        {
+         "key": "siteDeadlines",
+         "label": "Сроки ввода",
+         "fmt": "text"
+        },
+        {
+         "key": "siteReadinessPct",
+         "label": "Готовность, %",
+         "fmt": "num"
+        },
+        {
+         "key": "siteFlatsTotal",
+         "label": "Квартир по шахматке",
+         "fmt": "int"
+        },
+        {
+         "key": "siteFlatsInSale",
+         "label": "В продаже (сайт)",
+         "fmt": "int"
+        },
+        {
+         "key": "siteFlatsSold",
+         "label": "Продано (сайт)",
+         "fmt": "int"
+        },
+        {
+         "key": "siteFlatsReserved",
+         "label": "Забронировано (сайт)",
+         "fmt": "int"
+        },
+        {
+         "key": "reservedLots",
+         "label": "Бронь (площадка)",
+         "fmt": "int"
+        },
+        {
+         "key": "soldShareBySite",
+         "label": "Доля проданного по сайту, %",
+         "fmt": "pct",
+         "estimate": true,
+         "note": "не Росреестр"
+        }
+       ]
+      },
+      {
+       "id": "promos",
+       "title": "Акции и программы",
+       "kind": "metrics",
+       "hint": "тексты акций сайта, число ипотечных программ, давление промо",
+       "metrics": [
+        {
+         "key": "sitePromoCount",
+         "label": "Акций на сайте застройщика",
+         "fmt": "int"
+        },
+        {
+         "key": "siteMortgageCount",
+         "label": "Ипотечных программ",
+         "fmt": "int"
+        },
+        {
+         "key": "promoCount",
+         "label": "Лотов с акцией (площадка)",
+         "fmt": "int"
+        },
+        {
+         "key": "promoPressureWeeks",
+         "label": "Недель подряд с акциями",
+         "fmt": "num",
+         "estimate": true
+        }
+       ]
+      },
+      {
+       "id": "dynamics",
+       "title": "Динамика",
+       "kind": "metrics",
+       "hint": "скорость продаж, absorption, прогноз распродажи, изменения цены и предложения (расчёт)",
+       "metrics": [
+        {
+         "key": "salesSpeedPerWeek",
+         "label": "Скорость продаж, лотов/нед",
+         "fmt": "num",
+         "estimate": true
+        },
+        {
+         "key": "absorptionRate",
+         "label": "Absorption, %",
+         "fmt": "pct",
+         "estimate": true
+        },
+        {
+         "key": "monthsToSellOut",
+         "label": "Месяцев до распродажи",
+         "fmt": "num",
+         "estimate": true
+        },
+        {
+         "key": "entryPriceDynamicsPct",
+         "label": "Динамика цены входа, %",
+         "fmt": "pct",
+         "estimate": true
+        },
+        {
+         "key": "supplyDynamicsPct",
+         "label": "Динамика предложения, %",
+         "fmt": "pct",
+         "estimate": true
+        }
+       ]
+      },
+      {
+       "id": "marketing",
+       "title": "Маркетинг",
+       "kind": "marketing",
+       "hint": "ориентировочные бюджеты по данным SpyWords / Keys.so — оценка сервиса, не фактический расход",
+       "metrics": [
+        {
+         "key": "marketingBudgetEstimateRub",
+         "label": "Бюджет за период, ₽ (оценка)",
+         "fmt": "money",
+         "estimate": true
+        },
+        {
+         "key": "marketingPeriod",
+         "label": "Период",
+         "fmt": "text"
+        },
+        {
+         "key": "marketingAds",
+         "label": "Объявлений",
+         "fmt": "int",
+         "estimate": true
+        },
+        {
+         "key": "marketingKeywords",
+         "label": "Ключевых слов",
+         "fmt": "int",
+         "estimate": true
+        },
+        {
+         "key": "marketingLandings",
+         "label": "Уникальных посадочных",
+         "fmt": "int",
+         "estimate": true
+        },
+        {
+         "key": "marketingSource",
+         "label": "Источник",
+         "fmt": "text"
+        },
+        {
+         "key": "marketingMethod",
+         "label": "Метод сбора",
+         "fmt": "text"
+        }
+       ]
+      },
+      {
+       "id": "visits",
+       "title": "Обращения и визиты",
+       "kind": "metrics",
+       "planned": true,
+       "hint": "звонки, конверсия, визиты. Эти данные не публикуются публично — панель не подставляет прокси-оценки без пометки",
+       "metrics": [
+        {
+         "key": "visitsCount",
+         "label": "Визитов в офис продаж",
+         "fmt": "int"
+        },
+        {
+         "key": "callsCount",
+         "label": "Звонков",
+         "fmt": "int"
+        },
+        {
+         "key": "conversionPct",
+         "label": "Конверсия в сделку, %",
+         "fmt": "pct"
+        }
+       ]
+      },
+      {
+       "id": "official",
+       "title": "Официальные данные: Росреестр / ЕИСЖС",
+       "kind": "official",
+       "hint": "отдельно от сайта застройщика; источник сейчас недоступен",
+       "metrics": [
+        {
+         "key": "corpiTotal",
+         "label": "Корпусов всего (официально)",
+         "fmt": "int"
+        },
+        {
+         "key": "corpiBuilt",
+         "label": "Сдано корпусов",
+         "fmt": "int"
+        },
+        {
+         "key": "corpiUnderConstruction",
+         "label": "Строится корпусов",
+         "fmt": "int"
+        },
+        {
+         "key": "flatsTotal",
+         "label": "Квартир всего (официально)",
+         "fmt": "int"
+        },
+        {
+         "key": "dduRegistered",
+         "label": "Зарегистрировано ДДУ",
+         "fmt": "int"
+        },
+        {
+         "key": "soldOfficialRosreestr",
+         "label": "Продано официально",
+         "fmt": "int"
+        },
+        {
+         "key": "soldShareOfficialPct",
+         "label": "Доля проданного (официальная), %",
+         "fmt": "pct",
+         "estimate": true
+        },
+        {
+         "key": "soldEstimateByGoneLots",
+         "label": "Продано (оценка по ушедшим лотам)",
+         "fmt": "int",
+         "estimate": true
+        }
+       ]
+      },
+      {
+       "id": "risks",
+       "title": "Риски",
+       "kind": "risks",
+       "hint": "риск-флаги движка и что требует внимания"
+      },
+      {
+       "id": "sources",
+       "title": "Источники",
+       "kind": "sources",
+       "hint": "источник, метод, дата, точность и что получить не удалось"
+      }
+     ],
+     "groupTitles": [
+      {
+       "id": "summary",
+       "title": "Сводка",
+       "kind": "summary",
+       "planned": false,
+       "metrics": []
+      },
+      {
+       "id": "competitors",
+       "title": "Конкуренты",
+       "kind": "table",
+       "planned": false,
+       "metrics": [
+        "lotsInSale",
+        "pricePerM2Median",
+        "priceMinRub",
+        "priceMedianRub",
+        "averageAreaM2",
+        "promoCount",
+        "reservedLots"
+       ]
+      },
+      {
+       "id": "prices",
+       "title": "Цены",
+       "kind": "metrics",
+       "planned": false,
+       "metrics": [
+        "priceMinRub",
+        "priceMedianRub",
+        "priceMaxRub",
+        "pricePerM2Median",
+        "priceIndexVsDistrict",
+        "gapPriceVsUsPct"
+       ]
+      },
+      {
+       "id": "product",
+       "title": "Продукт",
+       "kind": "metrics",
+       "planned": false,
+       "metrics": [
+        "averageAreaM2",
+        "medianAreaM2",
+        "lotsInSale"
+       ]
+      },
+      {
+       "id": "buildings",
+       "title": "Корпуса и стройка",
+       "kind": "metrics",
+       "planned": false,
+       "metrics": [
+        "siteCorpiNamed",
+        "siteDeadlines",
+        "siteReadinessPct",
+        "siteFlatsTotal",
+        "siteFlatsInSale",
+        "siteFlatsSold",
+        "siteFlatsReserved",
+        "reservedLots",
+        "soldShareBySite"
+       ]
+      },
+      {
+       "id": "promos",
+       "title": "Акции и программы",
+       "kind": "metrics",
+       "planned": false,
+       "metrics": [
+        "sitePromoCount",
+        "siteMortgageCount",
+        "promoCount",
+        "promoPressureWeeks"
+       ]
+      },
+      {
+       "id": "dynamics",
+       "title": "Динамика",
+       "kind": "metrics",
+       "planned": false,
+       "metrics": [
+        "salesSpeedPerWeek",
+        "absorptionRate",
+        "monthsToSellOut",
+        "entryPriceDynamicsPct",
+        "supplyDynamicsPct"
+       ]
+      },
+      {
+       "id": "marketing",
+       "title": "Маркетинг",
+       "kind": "marketing",
+       "planned": false,
+       "metrics": [
+        "marketingBudgetEstimateRub",
+        "marketingPeriod",
+        "marketingAds",
+        "marketingKeywords",
+        "marketingLandings",
+        "marketingSource",
+        "marketingMethod"
+       ]
+      },
+      {
+       "id": "visits",
+       "title": "Обращения и визиты",
+       "kind": "metrics",
+       "planned": true,
+       "metrics": [
+        "visitsCount",
+        "callsCount",
+        "conversionPct"
+       ]
+      },
+      {
+       "id": "official",
+       "title": "Официальные данные: Росреестр / ЕИСЖС",
+       "kind": "official",
+       "planned": false,
+       "metrics": [
+        "corpiTotal",
+        "corpiBuilt",
+        "corpiUnderConstruction",
+        "flatsTotal",
+        "dduRegistered",
+        "soldOfficialRosreestr",
+        "soldShareOfficialPct",
+        "soldEstimateByGoneLots"
+       ]
+      },
+      {
+       "id": "risks",
+       "title": "Риски",
+       "kind": "risks",
+       "planned": false,
+       "metrics": []
+      },
+      {
+       "id": "sources",
+       "title": "Источники",
+       "kind": "sources",
+       "planned": false,
+       "metrics": []
+      }
+     ],
+     "hidden": [],
+     "displayedCount": 42,
+     "seenCount": 42,
+     "uncovered": [],
+     "ok": true
+    },
+    "uncovered": []
+   }
+  }
+ ],
+ "profilesFound": 6,
+ "emptyReason": null,
+ "newestMtimeMs": 1793545238993.6494,
+ "catalogue": {
+  "version": 1,
+  "for": "agent-1-competitor-watch",
+  "groups": [
+   {
+    "id": "summary",
+    "title": "Сводка",
+    "kind": "summary",
+    "hint": "сколько конкурентов, лотов, медианы, акции, флаги, дата и себестоимость прогона"
+   },
+   {
+    "id": "competitors",
+    "title": "Конкуренты",
+    "kind": "table",
+    "hint": "таблица по проектам с сортировкой и поиском",
+    "metrics": [
+     {
+      "key": "lotsInSale",
+      "label": "Лотов",
+      "fmt": "int"
+     },
+     {
+      "key": "pricePerM2Median",
+      "label": "Медиана ₽/м²",
+      "fmt": "money"
+     },
+     {
+      "key": "priceMinRub",
+      "label": "Мин. вход, ₽",
+      "fmt": "money"
+     },
+     {
+      "key": "priceMedianRub",
+      "label": "Медиана цены, ₽",
+      "fmt": "money"
+     },
+     {
+      "key": "averageAreaM2",
+      "label": "Ср. площадь, м²",
+      "fmt": "num"
+     },
+     {
+      "key": "promoCount",
+      "label": "Лотов с акцией",
+      "fmt": "int"
+     },
+     {
+      "key": "reservedLots",
+      "label": "Бронь",
+      "fmt": "int"
+     }
+    ]
+   },
+   {
+    "id": "prices",
+    "title": "Цены",
+    "kind": "metrics",
+    "hint": "медианы, минимум и максимум, ₽/м², разрез по типам квартир",
+    "metrics": [
+     {
+      "key": "priceMinRub",
+      "label": "Минимальная цена, ₽",
+      "fmt": "money"
+     },
+     {
+      "key": "priceMedianRub",
+      "label": "Медианная цена, ₽",
+      "fmt": "money"
+     },
+     {
+      "key": "priceMaxRub",
+      "label": "Максимальная цена, ₽",
+      "fmt": "money"
+     },
+     {
+      "key": "pricePerM2Median",
+      "label": "Медиана ₽/м²",
+      "fmt": "money"
+     },
+     {
+      "key": "priceIndexVsDistrict",
+      "label": "Индекс цены к району, ×",
+      "fmt": "num",
+      "estimate": true
+     },
+     {
+      "key": "gapPriceVsUsPct",
+      "label": "Разрыв с нашей ценой, %",
+      "fmt": "num",
+      "estimate": true
+     }
+    ]
+   },
+   {
+    "id": "product",
+    "title": "Продукт",
+    "kind": "metrics",
+    "hint": "площади, структура по комнатности, сдвиги",
+    "metrics": [
+     {
+      "key": "averageAreaM2",
+      "label": "Средняя площадь, м²",
+      "fmt": "num"
+     },
+     {
+      "key": "medianAreaM2",
+      "label": "Медианная площадь, м²",
+      "fmt": "num"
+     },
+     {
+      "key": "lotsInSale",
+      "label": "Лотов в реализации",
+      "fmt": "int"
+     }
+    ]
+   },
+   {
+    "id": "buildings",
+    "title": "Корпуса и стройка",
+    "kind": "metrics",
+    "hint": "корпуса, стадии, сроки ввода, готовность, шахматка (сайт застройщика, метод dom)",
+    "metrics": [
+     {
+      "key": "siteCorpiNamed",
+      "label": "Корпусов названо",
+      "fmt": "int"
+     },
+     {
+      "key": "siteDeadlines",
+      "label": "Сроки ввода",
+      "fmt": "text"
+     },
+     {
+      "key": "siteReadinessPct",
+      "label": "Готовность, %",
+      "fmt": "num"
+     },
+     {
+      "key": "siteFlatsTotal",
+      "label": "Квартир по шахматке",
+      "fmt": "int"
+     },
+     {
+      "key": "siteFlatsInSale",
+      "label": "В продаже (сайт)",
+      "fmt": "int"
+     },
+     {
+      "key": "siteFlatsSold",
+      "label": "Продано (сайт)",
+      "fmt": "int"
+     },
+     {
+      "key": "siteFlatsReserved",
+      "label": "Забронировано (сайт)",
+      "fmt": "int"
+     },
+     {
+      "key": "reservedLots",
+      "label": "Бронь (площадка)",
+      "fmt": "int"
+     },
+     {
+      "key": "soldShareBySite",
+      "label": "Доля проданного по сайту, %",
+      "fmt": "pct",
+      "estimate": true,
+      "note": "не Росреестр"
+     }
+    ]
+   },
+   {
+    "id": "promos",
+    "title": "Акции и программы",
+    "kind": "metrics",
+    "hint": "тексты акций сайта, число ипотечных программ, давление промо",
+    "metrics": [
+     {
+      "key": "sitePromoCount",
+      "label": "Акций на сайте застройщика",
+      "fmt": "int"
+     },
+     {
+      "key": "siteMortgageCount",
+      "label": "Ипотечных программ",
+      "fmt": "int"
+     },
+     {
+      "key": "promoCount",
+      "label": "Лотов с акцией (площадка)",
+      "fmt": "int"
+     },
+     {
+      "key": "promoPressureWeeks",
+      "label": "Недель подряд с акциями",
+      "fmt": "num",
+      "estimate": true
+     }
+    ]
+   },
+   {
+    "id": "dynamics",
+    "title": "Динамика",
+    "kind": "metrics",
+    "hint": "скорость продаж, absorption, прогноз распродажи, изменения цены и предложения (расчёт)",
+    "metrics": [
+     {
+      "key": "salesSpeedPerWeek",
+      "label": "Скорость продаж, лотов/нед",
+      "fmt": "num",
+      "estimate": true
+     },
+     {
+      "key": "absorptionRate",
+      "label": "Absorption, %",
+      "fmt": "pct",
+      "estimate": true
+     },
+     {
+      "key": "monthsToSellOut",
+      "label": "Месяцев до распродажи",
+      "fmt": "num",
+      "estimate": true
+     },
+     {
+      "key": "entryPriceDynamicsPct",
+      "label": "Динамика цены входа, %",
+      "fmt": "pct",
+      "estimate": true
+     },
+     {
+      "key": "supplyDynamicsPct",
+      "label": "Динамика предложения, %",
+      "fmt": "pct",
+      "estimate": true
+     }
+    ]
+   },
+   {
+    "id": "marketing",
+    "title": "Маркетинг",
+    "kind": "marketing",
+    "hint": "ориентировочные бюджеты по данным SpyWords / Keys.so — оценка сервиса, не фактический расход",
+    "metrics": [
+     {
+      "key": "marketingBudgetEstimateRub",
+      "label": "Бюджет за период, ₽ (оценка)",
+      "fmt": "money",
+      "estimate": true
+     },
+     {
+      "key": "marketingPeriod",
+      "label": "Период",
+      "fmt": "text"
+     },
+     {
+      "key": "marketingAds",
+      "label": "Объявлений",
+      "fmt": "int",
+      "estimate": true
+     },
+     {
+      "key": "marketingKeywords",
+      "label": "Ключевых слов",
+      "fmt": "int",
+      "estimate": true
+     },
+     {
+      "key": "marketingLandings",
+      "label": "Уникальных посадочных",
+      "fmt": "int",
+      "estimate": true
+     },
+     {
+      "key": "marketingSource",
+      "label": "Источник",
+      "fmt": "text"
+     },
+     {
+      "key": "marketingMethod",
+      "label": "Метод сбора",
+      "fmt": "text"
+     }
+    ]
+   },
+   {
+    "id": "visits",
+    "title": "Обращения и визиты",
+    "kind": "metrics",
+    "planned": true,
+    "hint": "звонки, конверсия, визиты. Эти данные не публикуются публично — панель не подставляет прокси-оценки без пометки",
+    "metrics": [
+     {
+      "key": "visitsCount",
+      "label": "Визитов в офис продаж",
+      "fmt": "int"
+     },
+     {
+      "key": "callsCount",
+      "label": "Звонков",
+      "fmt": "int"
+     },
+     {
+      "key": "conversionPct",
+      "label": "Конверсия в сделку, %",
+      "fmt": "pct"
+     }
+    ]
+   },
+   {
+    "id": "official",
+    "title": "Официальные данные: Росреестр / ЕИСЖС",
+    "kind": "official",
+    "hint": "отдельно от сайта застройщика; источник сейчас недоступен",
+    "metrics": [
+     {
+      "key": "corpiTotal",
+      "label": "Корпусов всего (официально)",
+      "fmt": "int"
+     },
+     {
+      "key": "corpiBuilt",
+      "label": "Сдано корпусов",
+      "fmt": "int"
+     },
+     {
+      "key": "corpiUnderConstruction",
+      "label": "Строится корпусов",
+      "fmt": "int"
+     },
+     {
+      "key": "flatsTotal",
+      "label": "Квартир всего (официально)",
+      "fmt": "int"
+     },
+     {
+      "key": "dduRegistered",
+      "label": "Зарегистрировано ДДУ",
+      "fmt": "int"
+     },
+     {
+      "key": "soldOfficialRosreestr",
+      "label": "Продано официально",
+      "fmt": "int"
+     },
+     {
+      "key": "soldShareOfficialPct",
+      "label": "Доля проданного (официальная), %",
+      "fmt": "pct",
+      "estimate": true
+     },
+     {
+      "key": "soldEstimateByGoneLots",
+      "label": "Продано (оценка по ушедшим лотам)",
+      "fmt": "int",
+      "estimate": true
+     }
+    ]
+   },
+   {
+    "id": "risks",
+    "title": "Риски",
+    "kind": "risks",
+    "hint": "риск-флаги движка и что требует внимания"
+   },
+   {
+    "id": "sources",
+    "title": "Источники",
+    "kind": "sources",
+    "hint": "источник, метод, дата, точность и что получить не удалось"
+   }
+  ],
+  "hidden": [],
+  "displayKeys": [
+   "lotsInSale",
+   "pricePerM2Median",
+   "priceMinRub",
+   "priceMedianRub",
+   "averageAreaM2",
+   "promoCount",
+   "reservedLots",
+   "priceMaxRub",
+   "priceIndexVsDistrict",
+   "gapPriceVsUsPct",
+   "medianAreaM2",
+   "siteCorpiNamed",
+   "siteDeadlines",
+   "siteReadinessPct",
+   "siteFlatsTotal",
+   "siteFlatsInSale",
+   "siteFlatsSold",
+   "siteFlatsReserved",
+   "soldShareBySite",
+   "sitePromoCount",
+   "siteMortgageCount",
+   "promoPressureWeeks",
+   "salesSpeedPerWeek",
+   "absorptionRate",
+   "monthsToSellOut",
+   "entryPriceDynamicsPct",
+   "supplyDynamicsPct",
+   "marketingBudgetEstimateRub",
+   "marketingPeriod",
+   "marketingAds",
+   "marketingKeywords",
+   "marketingLandings",
+   "marketingSource",
+   "marketingMethod",
+   "visitsCount",
+   "callsCount",
+   "conversionPct",
+   "corpiTotal",
+   "corpiBuilt",
+   "corpiUnderConstruction",
+   "flatsTotal",
+   "dduRegistered",
+   "soldOfficialRosreestr",
+   "soldShareOfficialPct",
+   "soldEstimateByGoneLots"
+  ],
+  "keyMap": [
+   {
+    "raw": "site_corpi_named",
+    "internal": "siteCorpiNamed",
+    "bucket": "metrics",
+    "groups": [
+     "buildings"
+    ]
+   },
+   {
+    "raw": "site_deadlines",
+    "internal": "siteDeadlines",
+    "bucket": "metrics",
+    "groups": [
+     "buildings"
+    ]
+   },
+   {
+    "raw": "site_readiness_pct",
+    "internal": "siteReadinessPct",
+    "bucket": "metrics",
+    "groups": [
+     "buildings"
+    ]
+   },
+   {
+    "raw": "site_flats_total",
+    "internal": "siteFlatsTotal",
+    "bucket": "metrics",
+    "groups": [
+     "buildings"
+    ]
+   },
+   {
+    "raw": "site_flats_in_sale",
+    "internal": "siteFlatsInSale",
+    "bucket": "metrics",
+    "groups": [
+     "buildings"
+    ]
+   },
+   {
+    "raw": "site_flats_sold",
+    "internal": "siteFlatsSold",
+    "bucket": "metrics",
+    "groups": [
+     "buildings"
+    ]
+   },
+   {
+    "raw": "site_flats_reserved",
+    "internal": "siteFlatsReserved",
+    "bucket": "metrics",
+    "groups": [
+     "buildings"
+    ]
+   },
+   {
+    "raw": "site_promo_count",
+    "internal": "sitePromoCount",
+    "bucket": "metrics",
+    "groups": [
+     "promos"
+    ]
+   },
+   {
+    "raw": "site_mortgage_count",
+    "internal": "siteMortgageCount",
+    "bucket": "metrics",
+    "groups": [
+     "promos"
+    ]
+   },
+   {
+    "raw": "corpi_total",
+    "internal": "corpiTotal",
+    "bucket": "metrics",
+    "groups": [
+     "official"
+    ]
+   },
+   {
+    "raw": "corpi_built",
+    "internal": "corpiBuilt",
+    "bucket": "metrics",
+    "groups": [
+     "official"
+    ]
+   },
+   {
+    "raw": "corpi_under_construction",
+    "internal": "corpiUnderConstruction",
+    "bucket": "metrics",
+    "groups": [
+     "official"
+    ]
+   },
+   {
+    "raw": "flats_total",
+    "internal": "flatsTotal",
+    "bucket": "metrics",
+    "groups": [
+     "official"
+    ]
+   },
+   {
+    "raw": "ddu_registered",
+    "internal": "dduRegistered",
+    "bucket": "metrics",
+    "groups": [
+     "official"
+    ]
+   },
+   {
+    "raw": "sold_official_rosreestr",
+    "internal": "soldOfficialRosreestr",
+    "bucket": "metrics",
+    "groups": [
+     "official"
+    ]
+   },
+   {
+    "raw": "marketing_budget_estimate_rub",
+    "internal": "marketingBudgetEstimateRub",
+    "bucket": "metrics",
+    "groups": [
+     "marketing"
+    ]
+   },
+   {
+    "raw": "marketing_ads_count",
+    "internal": "marketingAds",
+    "bucket": "metrics",
+    "groups": [
+     "marketing"
+    ]
+   },
+   {
+    "raw": "marketing_keywords_count",
+    "internal": "marketingKeywords",
+    "bucket": "metrics",
+    "groups": [
+     "marketing"
+    ]
+   },
+   {
+    "raw": "marketing_landings_count",
+    "internal": "marketingLandings",
+    "bucket": "metrics",
+    "groups": [
+     "marketing"
+    ]
+   },
+   {
+    "raw": "marketing_period",
+    "internal": "marketingPeriod",
+    "bucket": "metrics",
+    "groups": [
+     "marketing"
+    ]
+   },
+   {
+    "raw": "marketing_source",
+    "internal": "marketingSource",
+    "bucket": "metrics",
+    "groups": [
+     "marketing"
+    ]
+   },
+   {
+    "raw": "marketing_method",
+    "internal": "marketingMethod",
+    "bucket": "metrics",
+    "groups": [
+     "marketing"
+    ]
+   },
+   {
+    "raw": "sold_estimate_by_gone_lots",
+    "internal": "soldEstimateByGoneLots",
+    "bucket": "metrics",
+    "groups": [
+     "official"
+    ]
+   },
+   {
+    "raw": "lots_in_sale",
+    "internal": "lotsInSale",
+    "bucket": "metrics",
+    "groups": [
+     "competitors",
+     "product"
+    ]
+   },
+   {
+    "raw": "price_min_rub",
+    "internal": "priceMinRub",
+    "bucket": "metrics",
+    "groups": [
+     "competitors",
+     "prices"
+    ]
+   },
+   {
+    "raw": "price_median_rub",
+    "internal": "priceMedianRub",
+    "bucket": "metrics",
+    "groups": [
+     "competitors",
+     "prices"
+    ]
+   },
+   {
+    "raw": "price_max_rub",
+    "internal": "priceMaxRub",
+    "bucket": "metrics",
+    "groups": [
+     "prices"
+    ]
+   },
+   {
+    "raw": "price_per_m2_median",
+    "internal": "pricePerM2Median",
+    "bucket": "metrics",
+    "groups": [
+     "competitors",
+     "prices"
+    ]
+   },
+   {
+    "raw": "average_area_m2",
+    "internal": "averageAreaM2",
+    "bucket": "metrics",
+    "groups": [
+     "competitors",
+     "product"
+    ]
+   },
+   {
+    "raw": "median_area_m2",
+    "internal": "medianAreaM2",
+    "bucket": "metrics",
+    "groups": [
+     "product"
+    ]
+   },
+   {
+    "raw": "reserved_lots",
+    "internal": "reservedLots",
+    "bucket": "metrics",
+    "groups": [
+     "competitors",
+     "buildings"
+    ]
+   },
+   {
+    "raw": "promo_count",
+    "internal": "promoCount",
+    "bucket": "metrics",
+    "groups": [
+     "competitors",
+     "promos"
+    ]
+   },
+   {
+    "raw": "sold_share_official_pct",
+    "internal": "soldShareOfficialPct",
+    "bucket": "derived",
+    "groups": [
+     "official"
+    ]
+   },
+   {
+    "raw": "sales_speed_per_week",
+    "internal": "salesSpeedPerWeek",
+    "bucket": "derived",
+    "groups": [
+     "dynamics"
+    ]
+   },
+   {
+    "raw": "absorption_rate",
+    "internal": "absorptionRate",
+    "bucket": "derived",
+    "groups": [
+     "dynamics"
+    ]
+   },
+   {
+    "raw": "months_to_sell_out",
+    "internal": "monthsToSellOut",
+    "bucket": "derived",
+    "groups": [
+     "dynamics"
+    ]
+   },
+   {
+    "raw": "entry_price_dynamics_pct",
+    "internal": "entryPriceDynamicsPct",
+    "bucket": "derived",
+    "groups": [
+     "dynamics"
+    ]
+   },
+   {
+    "raw": "supply_dynamics_pct",
+    "internal": "supplyDynamicsPct",
+    "bucket": "derived",
+    "groups": [
+     "dynamics"
+    ]
+   },
+   {
+    "raw": "promo_pressure_weeks",
+    "internal": "promoPressureWeeks",
+    "bucket": "derived",
+    "groups": [
+     "promos"
+    ]
+   },
+   {
+    "raw": "price_index_vs_district",
+    "internal": "priceIndexVsDistrict",
+    "bucket": "derived",
+    "groups": [
+     "prices"
+    ]
+   },
+   {
+    "raw": "gap_price_vs_us_pct",
+    "internal": "gapPriceVsUsPct",
+    "bucket": "derived",
+    "groups": [
+     "prices"
+    ]
+   },
+   {
+    "raw": "(расчёт панели)",
+    "internal": "soldShareBySite",
+    "bucket": "derived",
+    "groups": [
+     "buildings"
+    ]
+   }
+  ]
+ },
+ "counts": {
+  "clients": 1,
+  "profiles": 6,
+  "lots": 170,
+  "withPrice": 6,
+  "withRisk": 6,
+  "sourcesCovered": 71,
+  "metricsTotal": 252
+ },
+ "snapshots": {
+  "dir": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\01-competitor-watch\\data\\snapshots",
+  "dates": [
+   "2026-10-23",
+   "2026-10-30"
+  ],
+  "last": "2026-10-30"
+ }
+}

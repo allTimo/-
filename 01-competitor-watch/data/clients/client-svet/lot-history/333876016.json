@@ -1,0 +1,211 @@
+{
+  "lot_id": "333876016",
+  "saved_at": "2026-11-01",
+  "source": "cian-connector",
+  "history": [
+    {
+      "date": "2026-09-13",
+      "price_rub": 52500000.0
+    }
+  ],
+  "card": {
+    "status": "success",
+    "offer_id": 333876016,
+    "title": "Евротрехкомнатная 71,3 м2 ЖК Небо",
+    "deal_type": "sale",
+    "category": "flatSale",
+    "price_rub": 52500000,
+    "price_unit": "total",
+    "price_period": null,
+    "lease_term": null,
+    "deposit_rub": null,
+    "rooms": 3,
+    "flat_type": "rooms",
+    "is_apartments": false,
+    "total_area_m2": 71.3,
+    "living_area_m2": 50.9,
+    "kitchen_area_m2": 11.5,
+    "floor": 31,
+    "floors_total": 51,
+    "build_year": 2020,
+    "building_material": "monolith",
+    "ceiling_height_m": 2.8,
+    "address": "Москва, ЗАО, район Раменки, Мичуринский проспект, 56",
+    "metro": [
+      {
+        "name": "Раменки",
+        "minutes": null,
+        "mode": null
+      },
+      {
+        "name": "Мичуринский проспект",
+        "minutes": null,
+        "mode": null
+      },
+      {
+        "name": "Мичуринский проспект",
+        "minutes": null,
+        "mode": null
+      }
+    ],
+    "newbuilding_name": "Небо — Небоскребы на Мичуринском, 56",
+    "description": "ЖК Небо, Раменки. Видовая Евротрёхкомнатная 71,3 м² (до перепланировки была площадь 75,6 м2, как у других квартир такой планировки в нашем ЖК ) на 31 этаже 52-этажного премиального комплекса из трёх башен. Панорамный вид на долину реки Раменка и Мосфильмовскую. Закрытая территория, консьерж-сервис, подземный паркинг. Пешком до метро Раменки (8 мин) и БКЛ Мичуринский проспект (11 мин).\n\nКомиссии и агентские договоры исключены; просьба писать только при реальной готовности к сделке.\n\nПланировка и состояние\nЕвротрёхкомнатная: 2 изолированные спальни + 1 гостиная. Перепланировка узаконена. \n\nОкна на запад, квартира не угловая, за счёт чего очень тепло зимой и летом не нагревается, т.к. прямые солнечные лучи появляются только к вечеру и на закате. \n\nПродажа с полным комплектом мебели и техники. Квартира проектировалась как долгосрочный жилой актив: инженерная надёжность, экологичные материалы, минимальные эксплуатационные риски.\n\nКухня и техника\nКухня Mossman: эмаль (Италия), шпон американский орех (Германия), кварц, фурнитура Blum, измельчитель InSinkErator. Техника: Neff (индукция), Electrolux (духовка, СВЧ), Elica (вытяжка); холодильник Liebherr, морозильная камера Bosch; ASKO — ПММ, стиралка, сушилка; два LG OLED 55 и 65.\n\nИнженерия и умный дом\nШторы с голосовым управлением; защита от протечек; проводная сеть 1 Гбит/с + Wi-Fi 6. Вода: коллектор (Италия), фильтры Honeywell, Stiebel Eltron, термостат Hansgrohe. Отопление: коллекторная система Rehau с регулировкой. Электрика: ABB, Schneider Electric, мастер-выключатель. Кондиционирование: канальные LG во всех комнатах.\n\nО комплексе и локации\nТри 52-этажные башни, дизайнерские лобби, 5 лифтов Schindler в каждой башне, охрана и видеонаблюдение, доступ по пропускам, подземный паркинг на 940 м/м с автомойкой. Раменки — престижный и экологичный район: парки, МГУ, заказник Воробьёвы горы, сильные школы, развитая инфраструктура.\n\n— Квартира юридически чистая, есть ипотека ВТБ, сделку проведём через банк одним днём, снимаем обременение и регистрируем на вас право собственности в банке.\n\n1 Собственник.\nИпотека ВТБ, сделка проводится в банке, часть денег уходит в погашение и регистрируется на покупателя. Предвар хоть завтра, сделка 1 ноября, истекает 5 лет с покупки. Торга нет \nСобственник один 40 лет, мат капитал не использовался.",
+    "agency_name": null,
+    "seller_type": "realtor_not_commerce",
+    "is_by_homeowner": true,
+    "photos": 33,
+    "photo_urls": [
+      {
+        "url": "https://images.cdn-cian.ru/images/kvartira-moskva-michurinskiy-prospekt-2963991994-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/kvartira-moskva-michurinskiy-prospekt-2963991988-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/kvartira-moskva-michurinskiy-prospekt-2963991996-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/kvartira-moskva-michurinskiy-prospekt-2963991993-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/kvartira-moskva-michurinskiy-prospekt-2963991997-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/kvartira-moskva-michurinskiy-prospekt-2963988244-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/kvartira-moskva-michurinskiy-prospekt-2963988247-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/kvartira-moskva-michurinskiy-prospekt-2963988245-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/kvartira-moskva-michurinskiy-prospekt-2963992011-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/kvartira-moskva-michurinskiy-prospekt-2963992003-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/kvartira-moskva-michurinskiy-prospekt-2963991999-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/kvartira-moskva-michurinskiy-prospekt-2963992000-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/kvartira-moskva-michurinskiy-prospekt-2963988252-1.jpg",
+        "is_layout": true
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/kvartira-moskva-michurinskiy-prospekt-2963988264-1.jpg",
+        "is_layout": true
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/kvartira-moskva-michurinskiy-prospekt-2963988274-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/kvartira-moskva-michurinskiy-prospekt-2963988279-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/kvartira-moskva-michurinskiy-prospekt-2963988285-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/kvartira-moskva-michurinskiy-prospekt-2963992009-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/kvartira-moskva-michurinskiy-prospekt-2963991979-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/kvartira-moskva-michurinskiy-prospekt-2963992010-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/kvartira-moskva-michurinskiy-prospekt-2963988259-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/kvartira-moskva-michurinskiy-prospekt-2963991998-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/kvartira-moskva-michurinskiy-prospekt-2963992002-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/kvartira-moskva-michurinskiy-prospekt-2963988281-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/kvartira-moskva-michurinskiy-prospekt-2963992006-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/kvartira-moskva-michurinskiy-prospekt-2963988283-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/kvartira-moskva-michurinskiy-prospekt-2963988286-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/kvartira-moskva-michurinskiy-prospekt-2963988282-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/kvartira-moskva-michurinskiy-prospekt-2963988284-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/kvartira-moskva-michurinskiy-prospekt-2963988287-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/kvartira-moskva-michurinskiy-prospekt-2963988280-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/kvartira-moskva-michurinskiy-prospekt-2963992005-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/kvartira-moskva-michurinskiy-prospekt-2963991995-1.jpg",
+        "is_layout": false
+      }
+    ],
+    "created_at": "2026-09-13T15:12:36.087",
+    "updated_at": "2026-11-01T01:10:16.220075Z",
+    "views": 2745,
+    "agent": {
+      "name": null,
+      "agent_id": 135442733,
+      "account_type": null,
+      "user_type": "realtor_not_commerce",
+      "is_developer": null,
+      "offers_count": 0,
+      "on_cian_since": "2025-09-24T21:22:19.477000Z"
+    },
+    "url": "https://www.cian.ru/sale/flat/333876016/",
+    "tier_used": "cdp",
+    "_meta": {
+      "source": "cian_card",
+      "healthy": true,
+      "warnings": []
+    }
+  }
+}

@@ -1,0 +1,223 @@
+# prices.yaml — цены моделей ZvenoAI для агентов-маркетологов (schema prices/v1)
+#
+# Зачем: считать «эффективность на рубль» и выбирать модель для агента,
+# подагентов и сложного анализа. Все цены — МИНИМАЛЬНЫЕ среди провайдеров,
+# которые обслуживают модель (на странице модели это «от N ₽ за 1M»).
+# Подписка ZvenoAI даёт до −45% на часть моделей; здесь — цена без подписки.
+#
+# Источники: страницы моделей zveno.ai (у каждой модели указан source),
+# курс ЦБ РФ на дату rate_date. Ключ API в файле не хранится и не нужен.
+#
+# Пересчёт: usd = rub / rate.usd_rub. «Типовой ход» = 100 000 токенов на входе
+# и 20 000 на выходе — порядок величины для агентской задачи (снимок
+# конкурентов, разбор выдачи, черновик отчёта).
+
+schema: prices/v1
+fetched_at: '2026-10-31'
+rate:
+  usd_rub: 80.5573
+  date: '2026-10-31T11:30:00+03:00'
+  source: https://www.cbr-xml-daily.ru/daily_json.js
+currency_of_source: RUB
+price_unit: per_1m_tokens
+price_kind: minimum_across_providers
+
+models:
+  deepseek/deepseek-v4.1-flash:
+    rub_per_1m_in: 2.59
+    rub_per_1m_out: 27.84
+    rub_per_1m_cache_read: null
+    usd_per_1m_in: 0.0322
+    usd_per_1m_out: 0.3456
+    usd_per_1m_cache_read: null
+    accepts_images: true
+    context_tokens: 1048576
+    rub_per_typical_turn_100k_in_20k_out: 0.82
+    source: https://zveno.ai/models/deepseek/deepseek-v4.1-flash
+  deepseek/deepseek-v4-flash:
+    rub_per_1m_in: 7.33
+    rub_per_1m_out: 32.86
+    rub_per_1m_cache_read: null
+    usd_per_1m_in: 0.0910
+    usd_per_1m_out: 0.4079
+    usd_per_1m_cache_read: null
+    accepts_images: false
+    context_tokens: 1048576
+    rub_per_typical_turn_100k_in_20k_out: 1.39
+    source: https://zveno.ai/models/deepseek/deepseek-v4-flash
+  deepseek/deepseek-v4-flash-0731:
+    rub_per_1m_in: 11.21
+    rub_per_1m_out: 27.06
+    rub_per_1m_cache_read: 6.77
+    usd_per_1m_in: 0.1392
+    usd_per_1m_out: 0.3359
+    usd_per_1m_cache_read: 0.084
+    accepts_images: false
+    context_tokens: 1048576
+    rub_per_typical_turn_100k_in_20k_out: 1.66
+    source: https://zveno.ai/models/deepseek/deepseek-v4-flash-0731
+  deepseek/deepseek-v4-flash-vision-exp:
+    rub_per_1m_in: 85.06
+    rub_per_1m_out: 255.18
+    rub_per_1m_cache_read: null
+    usd_per_1m_in: 1.0559
+    usd_per_1m_out: 3.1677
+    usd_per_1m_cache_read: null
+    accepts_images: true
+    context_tokens: 1048576
+    rub_per_typical_turn_100k_in_20k_out: 13.61
+    source: https://zveno.ai/models/deepseek/deepseek-v4-flash-vision-exp
+  deepseek/deepseek-v4-pro:
+    rub_per_1m_in: 173.99
+    rub_per_1m_out: 289.98
+    rub_per_1m_cache_read: 48.33
+    usd_per_1m_in: 2.1598
+    usd_per_1m_out: 3.5997
+    usd_per_1m_cache_read: 0.5999
+    accepts_images: false
+    context_tokens: 1048576
+    rub_per_typical_turn_100k_in_20k_out: 23.20
+    source: https://zveno.ai/models/deepseek/deepseek-v4-pro
+  z-ai/glm-5.3-flash:
+    rub_per_1m_in: 3.15
+    rub_per_1m_out: 6.86
+    rub_per_1m_cache_read: 3.15
+    usd_per_1m_in: 0.0391
+    usd_per_1m_out: 0.0852
+    usd_per_1m_cache_read: 0.0391
+    accepts_images: true
+    context_tokens: 1048576
+    rub_per_typical_turn_100k_in_20k_out: 0.45
+    source: https://zveno.ai/models/z-ai/glm-5.3-flash
+  z-ai/glm-5.3:
+    rub_per_1m_in: 13.51
+    rub_per_1m_out: 270.64
+    rub_per_1m_cache_read: 13.32
+    usd_per_1m_in: 0.1677
+    usd_per_1m_out: 3.3596
+    usd_per_1m_cache_read: 0.1653
+    accepts_images: false
+    context_tokens: 1048576
+    rub_per_typical_turn_100k_in_20k_out: 6.76
+    source: https://zveno.ai/models/z-ai/glm-5.3
+  z-ai/glm-4.6v:
+    rub_per_1m_in: 58.00
+    rub_per_1m_out: 173.99
+    rub_per_1m_cache_read: 10.63
+    usd_per_1m_in: 0.7200
+    usd_per_1m_out: 2.1598
+    usd_per_1m_cache_read: 0.132
+    accepts_images: true
+    context_tokens: 131100
+    rub_per_typical_turn_100k_in_20k_out: 9.28
+    source: https://zveno.ai/models/z-ai/glm-4.6v
+  google/gemini-3.8-flash:
+    rub_per_1m_in: 144.99
+    rub_per_1m_out: 724.94
+    rub_per_1m_cache_read: null
+    usd_per_1m_in: 1.7998
+    usd_per_1m_out: 8.9991
+    usd_per_1m_cache_read: null
+    accepts_images: true
+    context_tokens: 1048576
+    rub_per_typical_turn_100k_in_20k_out: 29.00
+    source: https://zveno.ai/models/google/gemini-3.8-flash
+  google/gemini-3-flash-preview:
+    rub_per_1m_in: 96.66
+    rub_per_1m_out: 579.95
+    rub_per_1m_cache_read: null
+    usd_per_1m_in: 1.1999
+    usd_per_1m_out: 7.1992
+    usd_per_1m_cache_read: null
+    accepts_images: true
+    context_tokens: 1048576
+    rub_per_typical_turn_100k_in_20k_out: 21.27
+    source: https://zveno.ai/models/google/gemini-3-flash-preview
+  qwen/qwen3.8-flash:
+    rub_per_1m_in: 29.00
+    rub_per_1m_out: 90.86
+    rub_per_1m_cache_read: null
+    usd_per_1m_in: 0.3600
+    usd_per_1m_out: 1.1279
+    usd_per_1m_cache_read: null
+    accepts_images: true
+    context_tokens: 1000000
+    rub_per_typical_turn_100k_in_20k_out: 4.72
+    source: https://zveno.ai/models/qwen/qwen3.8-flash
+  qwen/qwen3-vl-30b-a3b-instruct:
+    rub_per_1m_in: 29.00
+    rub_per_1m_out: 115.99
+    rub_per_1m_cache_read: null
+    usd_per_1m_in: 0.3600
+    usd_per_1m_out: 1.4398
+    usd_per_1m_cache_read: null
+    accepts_images: true
+    context_tokens: 262144
+    rub_per_typical_turn_100k_in_20k_out: 5.22
+    source: https://zveno.ai/models/qwen/qwen3-vl-30b-a3b-instruct
+  openai/gpt-6-luna:
+    rub_per_1m_in: 19.33
+    rub_per_1m_out: 96.66
+    rub_per_1m_cache_read: null
+    usd_per_1m_in: 0.2400
+    usd_per_1m_out: 1.1999
+    usd_per_1m_cache_read: null
+    accepts_images: true
+    context_tokens: 1050000
+    rub_per_typical_turn_100k_in_20k_out: 3.87
+    source: https://zveno.ai/models/openai/gpt-6-luna
+  minimax/minimax-m3:
+    rub_per_1m_in: 44.46
+    rub_per_1m_out: 185.58
+    rub_per_1m_cache_read: 9.67
+    usd_per_1m_in: 0.5519
+    usd_per_1m_out: 2.3037
+    usd_per_1m_cache_read: 0.12
+    accepts_images: true
+    context_tokens: 1048576
+    rub_per_typical_turn_100k_in_20k_out: 8.16
+    source: https://zveno.ai/models/minimax/minimax-m3
+  anthropic/claude-sonnet-5.5:
+    rub_per_1m_in: 386.63
+    rub_per_1m_out: 1933.17
+    rub_per_1m_cache_read: null
+    usd_per_1m_in: 4.7994
+    usd_per_1m_out: 23.9975
+    usd_per_1m_cache_read: null
+    accepts_images: true
+    context_tokens: 1000000
+    rub_per_typical_turn_100k_in_20k_out: 77.33
+    source: https://zveno.ai/models/anthropic/claude-sonnet-5.5
+  anthropic/claude-opus-5.5:
+    rub_per_1m_in: 773.27
+    rub_per_1m_out: 3866.35
+    rub_per_1m_cache_read: null
+    usd_per_1m_in: 9.5990
+    usd_per_1m_out: 47.9950
+    usd_per_1m_cache_read: null
+    accepts_images: true
+    context_tokens: 1000000
+    rub_per_typical_turn_100k_in_20k_out: 154.65
+    source: https://zveno.ai/models/anthropic/claude-opus-5.5
+
+# Рекомендации: обоснование — в marketing-agents/install/README-market-plugins.md
+recommendations:
+  default_agent:
+    model: deepseek/deepseek-v4.1-flash
+    why: 'уже стоит моделью профиля по умолчанию; 2,59/27,84 ₽ за 1M (0,0322/0,3456 USD), контекст 1M, принимает изображения; типовой ход ≈ 0,82 ₽'
+  subagents_light:
+    model: z-ai/glm-5.3-flash
+    why: 'самый дешёвый из проверенных по типовому ходу ≈ 0,45 ₽ (3,15/6,86 ₽ за 1M; выход в 4 раза дешевле, чем у v4.1-flash); понимает изображения и видео, контекст 1M'
+  heavy_analysis:
+    model: openai/gpt-6-luna
+    why: 'ступень выше Flash при умеренной цене 19,33/96,66 ₽ за 1M (типовой ход ≈ 3,87 ₽, в 4,7 раза дешевле v4-pro ≈ 23,20 ₽); принимает изображения и файлы'
+    alternative: deepseek/deepseek-v4-pro
+    alternative_why: 'сильнее всех в семействе DeepSeek, но 173,99/289,98 ₽ за 1M и БЕЗ приёма изображений — только для действительно сложных задач'
+  vision_screenshots:
+    model: z-ai/glm-5.3-flash
+    why: 'принимает изображения, 3,15/6,86 ₽ за 1M — дешевле любого другого мультимодального варианта; для рядовых скриншотов ещё дешевле бесплатная цепочка vision-router (OVH, без ключа, 2 запроса/мин на модель)'
+    avoid: ['google/gemini-3-flash-preview', 'google/gemini-3.8-flash', 'anthropic/claude-opus-5.5']
+    avoid_why: '96,66/579,95 ₽, 144,99/724,94 ₽ и 773,27/3866,35 ₽ за 1M соответственно — в 30–500 раз дороже за ту же «посмотреть картинку»'
+  text_only_warning:
+    models: ['deepseek/deepseek-v4-flash', 'deepseek/deepseek-v4-flash-0731', 'deepseek/deepseek-v4-pro', 'z-ai/glm-5.3']
+    why: 'по таблице характеристик zveno.ai эти модели принимают ТОЛЬКО текст — картинки в них отправлять нельзя'

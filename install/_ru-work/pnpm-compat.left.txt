@@ -1,0 +1,1 @@
+835	        || /is not recognized as an internal or external command|不是内部或外部命令|不是內部或外部命令/.test(output);

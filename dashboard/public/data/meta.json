@@ -1,0 +1,479 @@
+{
+ "generatedAt": "2026-11-01T20:36:54.688Z",
+ "generatedAtMs": 1793565414688,
+ "durationMs": 3753,
+ "today": "2026-11-01",
+ "workspaceRoot": "C:\\Users\\Артем\\Desktop\\тестDH",
+ "projectDir": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents",
+ "dashboardDir": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\dashboard",
+ "configDir": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\dashboard\\config",
+ "dataDir": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\dashboard\\public\\data",
+ "sources": [
+  {
+   "id": "sessions",
+   "label": "Логи сессий DSH (multi-frame zstd + JSONL)",
+   "path": "C:\\Users\\Артем\\.dsh\\sessions",
+   "exists": true,
+   "items": 40,
+   "note": "events: 42321"
+  },
+  {
+   "id": "projcache",
+   "label": "Проекция сессий (tokenUsage, agentTeam)",
+   "path": "C:\\Users\\Артем\\.dsh\\storages\\session_projcache\\sessions",
+   "exists": true,
+   "items": 40,
+   "note": "контрольные суммы токенов"
+  },
+  {
+   "id": "agents",
+   "label": "Реестр агентов",
+   "path": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\registry\\agents.yaml",
+   "exists": true,
+   "items": 4,
+   "note": "updated: 2026-10-31"
+  },
+  {
+   "id": "projects",
+   "label": "Реестр проектов",
+   "path": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\registry\\projects.yaml",
+   "exists": true,
+   "items": 1,
+   "note": ""
+  },
+  {
+   "id": "tasks",
+   "label": "Реестр задач registry/tasks/*.yaml",
+   "path": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\registry\\tasks",
+   "exists": true,
+   "items": 3,
+   "note": "1 файл(ов)"
+  },
+  {
+   "id": "prices",
+   "label": "Цены моделей",
+   "path": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\registry\\prices.yaml",
+   "exists": true,
+   "items": 16,
+   "note": "источник: registry"
+  },
+  {
+   "id": "links",
+   "label": "Связь агентов реестра и исполнителей DSH",
+   "path": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\dashboard\\config\\links.yaml",
+   "exists": true,
+   "items": 1,
+   "note": ""
+  },
+  {
+   "id": "task-owners",
+   "label": "Владельцы задач из логов (в логе исполнитель не пишется)",
+   "path": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\dashboard\\config\\task-owners.yaml",
+   "exists": true,
+   "items": 14,
+   "note": "ручной снимок общей доски"
+  },
+  {
+   "id": "profile",
+   "label": "Профиль DSH (что реально подключено)",
+   "path": "C:\\Users\\Артем\\.dsh\\profiles\\desktop\\package.json",
+   "exists": true,
+   "items": 28,
+   "note": "бандлов: 28, сообщества: 12"
+  },
+  {
+   "id": "integrations",
+   "label": "Каталог интеграций",
+   "path": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\registry\\integrations-catalog.yaml",
+   "exists": true,
+   "items": 12,
+   "note": "что можно подключить"
+  },
+  {
+   "id": "sources",
+   "label": "Реестр источников мониторинга",
+   "path": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\registry\\sources.yaml",
+   "exists": true,
+   "items": 7,
+   "note": "включено: 6"
+  },
+  {
+   "id": "snapshots",
+   "label": "Снимки конкурентов (статистика по источникам)",
+   "path": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\01-competitor-watch\\data\\snapshots",
+   "exists": true,
+   "items": 4,
+   "note": "лотов: 304 в 4 снимках"
+  },
+  {
+   "id": "source-runs",
+   "label": "Журнал запусков источников",
+   "path": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\01-competitor-watch\\data\\source-runs.jsonl",
+   "exists": true,
+   "items": 20,
+   "note": "запусков: 20"
+  },
+  {
+   "id": "agent-tabs",
+   "label": "Вкладки раздела «Агенты»",
+   "path": "config/agents-tabs.yaml",
+   "exists": true,
+   "items": 4,
+   "note": "правится одним файлом"
+  },
+  {
+   "id": "competitor-report",
+   "label": "Отчёт Агента 1 по конкурентам",
+   "path": "01-competitor-watch/data/clients/<client>/competitor-profiles/*.json",
+   "exists": true,
+   "items": 6,
+   "note": "профилей 6, лотов 170"
+  },
+  {
+   "id": "candidates",
+   "label": "Кандидаты в конкуренты (автоподбор)",
+   "path": "01-competitor-watch/data/candidates/*.json",
+   "exists": true,
+   "items": 6,
+   "note": "найдено 6"
+  },
+  {
+   "id": "agent-settings",
+   "label": "Тонкие настройки агентов",
+   "path": "registry/agent-settings/*.yaml",
+   "exists": true,
+   "items": 5,
+   "note": "файл на каждого агента, отдельно правится"
+  },
+  {
+   "id": "ads",
+   "label": "Реклама и кэшбэк",
+   "path": "public/data/ads.json",
+   "exists": true,
+   "items": 5,
+   "note": "каналов 5, записей бюджета и кэшбэка"
+  },
+  {
+   "id": "analytics2",
+   "label": "Аналитика: серии, срезы, метрики",
+   "path": "public/data/analytics2.json",
+   "exists": true,
+   "items": 28,
+   "note": "графиков 6, срезов 9"
+  },
+  {
+   "id": "nav",
+   "label": "Структура левого меню",
+   "path": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\dashboard\\config\\nav.yaml",
+   "exists": true,
+   "items": 25,
+   "note": "правится одним файлом"
+  },
+  {
+   "id": "clients",
+   "label": "Клиенты сервиса",
+   "path": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\registry\\clients.yaml",
+   "exists": true,
+   "items": 4,
+   "note": "активных: 3"
+  },
+  {
+   "id": "services",
+   "label": "Каталог услуг",
+   "path": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\registry\\services.yaml",
+   "exists": true,
+   "items": 3,
+   "note": "включено: 2"
+  },
+  {
+   "id": "subscriptions",
+   "label": "Подписки",
+   "path": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\registry\\subscriptions.yaml",
+   "exists": true,
+   "items": 5,
+   "note": "активных: 4, просрочено: 1"
+  },
+  {
+   "id": "runs",
+   "label": "Журнал прогонов",
+   "path": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\registry\\runs.jsonl",
+   "exists": true,
+   "items": 12,
+   "note": "успешно: 12, ошибок: 0"
+  },
+  {
+   "id": "invoices",
+   "label": "Счета",
+   "path": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\registry\\invoices.yaml",
+   "exists": true,
+   "items": 3,
+   "note": "не оплачено: 1"
+  },
+  {
+   "id": "history",
+   "label": "История переключений тумблеров (копии .bak-*)",
+   "path": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\registry",
+   "exists": true,
+   "items": 88,
+   "note": "агенты: 57, источники: 31"
+  }
+ ],
+ "totals": {
+  "sessions": 40,
+  "events": 42321,
+  "agents": 4,
+  "agentsEnabled": 1,
+  "members": 17,
+  "tasks": 83,
+  "projects": 1,
+  "alerts": 6,
+  "clients": 4,
+  "services": 3,
+  "subscriptions": 5,
+  "runs": 12,
+  "revenueRub": 28500,
+  "marginRub": 28257.8002,
+  "alertsCritical": 2,
+  "integrations": 12,
+  "integrationsConnected": 10,
+  "sources": 7,
+  "sourcesEnabled": 6,
+  "lots": 304,
+  "tokens": {
+   "inputTokens": 38887036,
+   "outputTokens": 5785828,
+   "cacheReadTokens": 1182128187,
+   "cacheWriteTokens": 0,
+   "totalTokens": 1226948917
+  },
+  "usd": 41.379,
+  "rub": 3333.39,
+  "rubComplete": false
+ },
+ "pricing": {
+  "source": "registry",
+  "path": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\registry\\prices.yaml",
+  "found": true,
+  "schema": "prices/v1",
+  "fetchedAt": "2026-10-31",
+  "priceKind": "minimum_across_providers",
+  "usdRub": 80.5573,
+  "usdRubNote": "https://www.cbr-xml-daily.ru/daily_json.js 2026-10-31T11:30:00+03:00",
+  "modelCount": 16,
+  "unknownModels": [
+   "openai/gpt-4o-mini"
+  ],
+  "cachePriceAssumedFor": [
+   "deepseek/deepseek-v4.1-flash",
+   "deepseek/deepseek-v4-flash",
+   "deepseek/deepseek-v4-flash-vision-exp",
+   "google/gemini-3.8-flash",
+   "google/gemini-3-flash-preview",
+   "qwen/qwen3.8-flash",
+   "qwen/qwen3-vl-30b-a3b-instruct",
+   "openai/gpt-6-luna",
+   "anthropic/claude-sonnet-5.5",
+   "anthropic/claude-opus-5.5"
+  ]
+ },
+ "history": {
+  "agents": {
+   "agent-3-creative": {
+    "at": 1793530368766.9883,
+    "previous": true,
+    "now": false,
+    "backup": "agents.yaml.bak-20261101-135250-646"
+   },
+   "agent-4-analytics": {
+    "at": 1793529428984.189,
+    "previous": true,
+    "now": false,
+    "backup": "agents.yaml.bak-20261101-133823-320"
+   },
+   "agent-1-competitor-watch": {
+    "at": 1793460449487.3916,
+    "previous": false,
+    "now": true,
+    "backup": "agents.yaml.bak-20261031-182730"
+   }
+  },
+  "sources": {
+   "avito": {
+    "at": 1793548139867.2317,
+    "previous": false,
+    "now": true,
+    "backup": "sources.yaml.bak-20261101-184902-580"
+   },
+   "domclick": {
+    "at": 1793548139867.2317,
+    "previous": false,
+    "now": true,
+    "backup": "sources.yaml.bak-20261101-184902-580"
+   },
+   "partner-feeds": {
+    "at": 1793548137174.9773,
+    "previous": true,
+    "now": false,
+    "backup": "sources.yaml.bak-20261101-184859-865"
+   },
+   "developer-sites": {
+    "at": 1793548131398.1362,
+    "previous": false,
+    "now": true,
+    "backup": "sources.yaml.bak-20261101-184854-310"
+   },
+   "manual-inbox": {
+    "at": 1793548131398.1362,
+    "previous": false,
+    "now": true,
+    "backup": "sources.yaml.bak-20261101-184854-310"
+   },
+   "cian": {
+    "at": 1793548131398.1362,
+    "previous": false,
+    "now": true,
+    "backup": "sources.yaml.bak-20261101-184854-310"
+   },
+   "yandex-realty": {
+    "at": 1793548131398.1362,
+    "previous": false,
+    "now": true,
+    "backup": "sources.yaml.bak-20261101-184854-310"
+   }
+  },
+  "backups": {
+   "agents": {
+    "count": 57,
+    "newestAt": 1793530368766.9883
+   },
+   "sources": {
+    "count": 31,
+    "newestAt": 1793548139867.2317
+   }
+  }
+ },
+ "warnings": [
+  {
+   "level": "warn",
+   "message": "prices: для 10 моделей не опубликована цена чтения из кэша (deepseek/deepseek-v4.1-flash, deepseek/deepseek-v4-flash, deepseek/deepseek-v4-flash-vision-exp) — кэш считается по цене входа, это ОЦЕНКА СВЕРХУ"
+  }
+ ],
+ "files": [
+  {
+   "name": "prices.json",
+   "path": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\dashboard\\public\\data\\prices.json",
+   "bytes": 9111
+  },
+  {
+   "name": "integrations.json",
+   "path": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\dashboard\\public\\data\\integrations.json",
+   "bytes": 67040
+  },
+  {
+   "name": "sources.json",
+   "path": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\dashboard\\public\\data\\sources.json",
+   "bytes": 12973
+  },
+  {
+   "name": "analytics.json",
+   "path": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\dashboard\\public\\data\\analytics.json",
+   "bytes": 8211
+  },
+  {
+   "name": "settings.json",
+   "path": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\dashboard\\public\\data\\settings.json",
+   "bytes": 39677
+  },
+  {
+   "name": "alerts.json",
+   "path": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\dashboard\\public\\data\\alerts.json",
+   "bytes": 3674
+  },
+  {
+   "name": "service.json",
+   "path": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\dashboard\\public\\data\\service.json",
+   "bytes": 26819
+  },
+  {
+   "name": "nav.json",
+   "path": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\dashboard\\public\\data\\nav.json",
+   "bytes": 4233
+  },
+  {
+   "name": "analytics2.json",
+   "path": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\dashboard\\public\\data\\analytics2.json",
+   "bytes": 31238
+  },
+  {
+   "name": "ads.json",
+   "path": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\dashboard\\public\\data\\ads.json",
+   "bytes": 29404
+  },
+  {
+   "name": "agent-tabs.json",
+   "path": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\dashboard\\public\\data\\agent-tabs.json",
+   "bytes": 1204
+  },
+  {
+   "name": "agent-settings.json",
+   "path": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\dashboard\\public\\data\\agent-settings.json",
+   "bytes": 8633
+  },
+  {
+   "name": "candidates.json",
+   "path": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\dashboard\\public\\data\\candidates.json",
+   "bytes": 5138
+  },
+  {
+   "name": "competitor-report.json",
+   "path": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\dashboard\\public\\data\\competitor-report.json",
+   "bytes": 192879
+  },
+  {
+   "name": "agents.json",
+   "path": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\dashboard\\public\\data\\agents.json",
+   "bytes": 18226
+  },
+  {
+   "name": "tasks.json",
+   "path": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\dashboard\\public\\data\\tasks.json",
+   "bytes": 484409
+  },
+  {
+   "name": "projects.json",
+   "path": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\dashboard\\public\\data\\projects.json",
+   "bytes": 2881
+  },
+  {
+   "name": "sessions.json",
+   "path": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\dashboard\\public\\data\\sessions.json",
+   "bytes": 82750
+  },
+  {
+   "name": "usage.json",
+   "path": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\dashboard\\public\\data\\usage.json",
+   "bytes": 14749
+  }
+ ],
+ "dataFiles": [
+  "prices.json",
+  "integrations.json",
+  "sources.json",
+  "analytics.json",
+  "settings.json",
+  "alerts.json",
+  "service.json",
+  "nav.json",
+  "analytics2.json",
+  "ads.json",
+  "agent-tabs.json",
+  "agent-settings.json",
+  "candidates.json",
+  "competitor-report.json",
+  "agents.json",
+  "tasks.json",
+  "projects.json",
+  "sessions.json",
+  "usage.json"
+ ]
+}

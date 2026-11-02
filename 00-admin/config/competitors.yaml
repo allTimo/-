@@ -1,0 +1,225 @@
+# ============================================================================
+# competitors.yaml — КОНКУРЕНТЫ
+# ============================================================================
+# ЗАЧЕМ ЭТОТ ФАЙЛ:
+#   Список конкурентов, по которым Агент 1 неделя за неделей собирает и
+#   сравнивает цены, акции и предложение. Чем точнее список — тем полезнее отчёт.
+#
+# КАК ДОБАВИТЬ НОВОГО КОНКУРЕНТА ЗА 1 МИНУТУ:
+#   1. Найдите ЖК на Циан, скопируйте ссылку на страницу ЖК.
+#   2. Скопируйте последний блок «- id:» целиком и вставьте ниже.
+#   3. Замените id (латиница, дефис), name, developer и вставьте ссылки.
+#   4. Сохраните файл — готово. Конкурент попадёт в следующий недельный цикл.
+#   Подробнее: 00-admin/runbook.md, раздел «Как добавить конкурента/ЖК».
+#
+# ОБЯЗАТЕЛЬНЫЕ ПОЛЯ: id, name, developer, class, okrug, location, delivery,
+#   cian_url, priority
+# НЕОБЯЗАТЕЛЬНЫЕ ПОЛЯ: avito_url, yandex_realty_url, site_url, notes
+#   (если ссылки нет — оставьте пустые кавычки "", агент будет искать
+#   данные по другим источникам, о пропуске сообщит в разделе «Ограничения»).
+#
+# ДОПУСТИМЫЕ ЗНАЧЕНИЯ:
+#   class:    премиум | бизнес
+#   priority: high | medium | low   (high — следим пристально, попадает в «Главное за неделю»)
+#   okrug:    ЦАО, САО, СВАО, ВАО, ЮВАО, ЮАО, ЮЗАО, ЗАО, СЗАО, НАО, ТАО
+#   delivery: YYYY-QN, например 2025-Q4
+#
+# ВАЖНО: id конкурента используется в my-objects.yaml (поле key_competitors)
+#        и как значение колонки competitor в data/snapshots/<дата>/lots.csv.
+#        Менять id после запусков нежелательно — сломается сопоставление истории.
+# ============================================================================
+
+version: 1
+updated: "2026-10-31"
+
+competitors:
+
+  # 1. Прямой конкурент в Западном Дегунино, бизнес-класс, крупный объём предложения.
+  - id: zhk-dmitrovskoe-nebo
+    name: "Дмитровское небо"
+    developer: "Группа ЛСР"
+    class: "бизнес"
+    okrug: "САО"
+    location: "Западное Дегунино, Ильменский проезд (м. Селигерская / Верхние Лихоборы)"
+    delivery: "2027-Q2"
+    cian_url: "https://www.cian.ru/novostroyki-zhk-dmitrovskoe-nebo/"
+    avito_url: "https://www.avito.ru/moskva/kvartiry/prodazha/novostroyki"
+    yandex_realty_url: "https://realty.yandex.ru/moskva-i-moskovskaya-oblast/kupit/novostrojka/"
+    site_url: ""
+    site_url_verified_at: "2026-10-31"
+    site_status: "проверено 2026-10-31: https://dmitrovskoe-nebo.lsr.ru/ (DNS: не существует). www.lsr.ru/msk/ отдаёт только JS-оболочку — цен нет."
+    priority: "high"
+    notes: "Крупный проект ЛСР рядом с «Светом»; сравниваем по цене м², объёму лотов и акциям. Прямое пересечение аудитории."
+
+  # 2. Квартальная застройка бизнес-класса в том же районе.
+  - id: zhk-seliger-siti
+    name: "Селигер Сити"
+    developer: "MR Group"
+    class: "бизнес"
+    okrug: "САО"
+    location: "Западное Дегунино, Ильменский проезд / Пяловская ул. (м. Селигерская)"
+    delivery: "2026-Q4"
+    cian_url: "https://www.cian.ru/novostroyki-zhk-seliger-siti/"
+    avito_url: ""
+    yandex_realty_url: "https://realty.yandex.ru/moskva-i-moskovskaya-oblast/kupit/novostrojka/"
+    site_url: ""
+    site_url_verified_at: "2026-10-31"
+    site_status: "проверено 2026-10-31: https://seliger-city.ru/ (DNS: не существует). mr-group.ru закрыт от не-браузерных запросов."
+    priority: "high"
+    notes: "Мультиформатный проект бизнес-класса с собственным парком; сильный конкурент по локации и инфраструктуре."
+
+  # 3. Проект ПИК в Западном Дегунино (ряд источников относит к бизнес-классу).
+  - id: zhk-onezhskiy-val
+    name: "Онежский вал"
+    developer: "ПИК"
+    class: "бизнес"
+    okrug: "САО"
+    location: "Западное Дегунино, Ильменский проезд (м. Селигерская)"
+    delivery: "2028-Q4"
+    cian_url: "https://www.cian.ru/novostroyki-zhk-onezhskiy-val/"
+    avito_url: ""
+    yandex_realty_url: "https://realty.yandex.ru/moskva-i_moskovskaya_oblast/kupit/novostrojka/"
+    site_url: "https://www.pik.ru/"
+    site_url_verified_at: "2026-10-31"
+    site_status: "проверено 2026-10-31: ПИК отвечает HTTP 401 на любые не-браузерные запросы; поддомен onezhskiy-val.pik.ru не резолвится."
+    priority: "high"
+    notes: "Большой объём предложения от ПИК; следим за ценовой политикой и выводом новых корпусов. Класс в разных источниках трактуется как бизнес/комфорт — уточнять по факту."
+
+  # 4. «Бизнес-лайт» в Восточном Дегунино, активно конкурирует за ту же аудиторию.
+  - id: zhk-akcenty
+    name: "Акценты"
+    developer: "PLUS Development"
+    class: "бизнес"
+    okrug: "САО"
+    location: "Восточное Дегунино, Дубнинская ул. (м. Селигерская / Верхние Лихоборы)"
+    delivery: "2027-Q4"
+    cian_url: "https://www.cian.ru/novostroyki-zhk-akcenty/"
+    avito_url: ""
+    yandex_realty_url: "https://realty.yandex.ru/moskva-i_moskovskaya_oblast/kupit/novostrojka/"
+    site_url: "https://accenty.ru/"
+    site_url_verified_at: "2026-10-31"
+    site_status: "проверено 2026-10-31: Работает (HTTP 200). В SSR-состоянии только минимальная цена: lowPrice 14 065 547 ₽ на 2026-10-31. Прайс по лотам грузится скриптами."
+    priority: "medium"
+    notes: "Позиционируется как бизнес-лайт; сравниваем по цене входа и формату отделки. Молодой проект с агрессивным маркетингом."
+
+  # 5. Бизнес-класс в Головинском районе, рядом с Головинскими прудами.
+  - id: zhk-mihalkovskiy
+    name: "Михалковский"
+    developer: "РГ-Девелопмент"
+    class: "бизнес"
+    okrug: "САО"
+    location: "Головинский район, у Головинских прудов (м. Коптево / МЦК)"
+    delivery: "2027-Q4"
+    cian_url: "https://www.cian.ru/novostroyki-zhk-mihalkovskiy/"
+    avito_url: ""
+    yandex_realty_url: "https://realty.yandex.ru/moskva-i_moskovskaya_oblast/kupit/novostrojka/"
+    site_url: "https://rg-dev.ru/novostroyki/mihalkovskij/"
+    site_url_verified_at: "2026-10-31"
+    site_status: "проверено 2026-10-31: Исправлен URL (был несуществующий поддомен). Страница открывается (200), структурированных цен в HTML нет."
+    priority: "medium"
+    notes: "Бизнес-класс с хорошей экологией; конкурент по сегменту и удалённости от центра, но в другом локационном кластере."
+
+  # 6. Бизнес-класс в районе Аэропорт, более высокий ценовой уровень.
+  - id: zhk-soul
+    name: "Соул (Soul)"
+    developer: "FORMA (ПИК)"
+    class: "бизнес"
+    okrug: "САО"
+    location: "Аэропорт, Часовая ул. (м. Аэропорт / Сокол)"
+    delivery: "2029-Q1"
+    cian_url: "https://www.cian.ru/novostroyki-zhk-soul/"
+    avito_url: ""
+    yandex_realty_url: "https://realty.yandex.ru/moskva-i_moskovskaya_oblast/kupit/novostrojka/"
+    site_url: "https://soul-forma.ru/"
+    site_url_verified_at: "2026-10-31"
+    site_status: "проверено 2026-10-31: Открывается (200), цен в HTML/SSR нет — прайс грузится скриптами."
+    priority: "medium"
+    notes: "Бизнес-класс с премиальным наполнением; конкурент по верхней границе бюджета. Следим за акциями и рассрочками."
+
+  # 7. Бизнес-класс от ПИК в Головинском районе.
+  - id: zhk-narvin
+    name: "Нарвин"
+    developer: "ПИК"
+    class: "бизнес"
+    okrug: "САО"
+    location: "Головинский район, Онежская ул. (м. Коптево / МЦК)"
+    delivery: "2028-Q4"
+    cian_url: "https://www.cian.ru/novostroyki-zhk-narvin/"
+    avito_url: ""
+    yandex_realty_url: "https://realty.yandex.ru/moskva-i_moskovskaya_oblast/kupit/novostrojka/"
+    site_url: "https://www.pik.ru/"
+    site_url_verified_at: "2026-10-31"
+    site_status: "проверено 2026-10-31: ПИК отвечает HTTP 401; поддомен narvin.pik.ru не резолвится."
+    priority: "medium"
+    notes: "Бизнес-класс от ПИК; сравним по цене м² и планировочным решениям. Прямой конкурент по сегменту."
+
+  # 8. ЖК на Дмитровском шоссе, близко к «Свету», бизнес-класс.
+  - id: zhk-kinetik
+    name: "Кинетик. Резиденции на Дмитровском"
+    developer: "UDS"
+    class: "бизнес"
+    okrug: "САО"
+    location: "Западное Дегунино, Дмитровское шоссе, 75/77 (м. Верхние Лихоборы)"
+    delivery: "2029-Q4"
+    cian_url: "https://www.cian.ru/novostroyki-zhk-kinetik/"
+    avito_url: ""
+    yandex_realty_url: "https://realty.yandex.ru/moskva-i_moskovskaya_oblast/kupit/novostrojka/"
+    site_url: "https://kinetik.uds.ru/"
+    site_url_verified_at: "2026-10-31"
+    site_status: "проверено 2026-10-31: kinetik.uds.ru, uds.ru и uds.group недоступны (нет соединения/DNS)."
+    priority: "high"
+    notes: "Ближайший конкурент по локации (то же Дмитровское шоссе). Сравниваем по цене, сроку сдачи и формату резиденций."
+
+  # 9. Бизнес-класс в Бутырском районе, более городская локация.
+  - id: zhk-mons
+    name: "МОНС"
+    developer: "Брусника"
+    class: "бизнес"
+    okrug: "САО"
+    location: "Бутырский район, Огородный проезд (м. Улица Милашенкова / Бутырская)"
+    delivery: "2027-Q3"
+    cian_url: "https://www.cian.ru/novostroyki-zhk-mons/"
+    avito_url: ""
+    yandex_realty_url: "https://realty.yandex.ru/moskva-i_moskovskaya_oblast/kupit/novostrojka/"
+    site_url: "https://mons.brusnika.ru/"
+    site_url_verified_at: "2026-10-31"
+    site_status: "проверено 2026-10-31: Открывается (200). Каталог квартир — https://moskva.brusnika.ru/flat/ — грузится скриптами, цен в HTML нет."
+    priority: "low"
+    notes: "Бизнес-класс с концепцией «город в миниатюре»; конкурент по сегменту, но локационно дальше от «Света»."
+
+  # 10. Крупный проект ПИК в Западном Дегунино (в ряде источников — бизнес).
+  - id: zhk-businovskiy-park
+    name: "Бусиновский парк"
+    developer: "ПИК"
+    class: "бизнес"
+    okrug: "САО"
+    location: "Западное Дегунино, ул. Бусиновская Горка (м. Ховрино / Селигерская)"
+    delivery: "2027-Q2"
+    cian_url: "https://www.cian.ru/novostroyki-zhk-businovskiy-park/"
+    avito_url: ""
+    yandex_realty_url: "https://realty.yandex.ru/moskva-i_moskovskaya_oblast/kupit/novostrojka/"
+    site_url: "https://www.pik.ru/"
+    site_url_verified_at: "2026-10-31"
+    site_status: "проверено 2026-10-31: ПИК отвечает HTTP 401; поддомен businovskiy-park.pik.ru не резолвится."
+    priority: "low"
+    notes: "Большой объём предложения; следим за демпингом и акциями. Класс в разных источниках — бизнес/комфорт, уточнять по факту."
+
+# ============================================================================
+# КАК ЗАПОЛНЯТЬ ССЫЛКИ ПРАВИЛЬНО
+# ============================================================================
+# cian_url          — ссылка на страницу ЖК (или выдачу) на Циан.
+# avito_url         — ссылка на страницу ЖК/застройщика на Авито (может отсутствовать).
+# yandex_realty_url — ссылка на карточку ЖК в Яндекс Недвижимости.
+# site_url          — официальный сайт ЖК (самая надёжная точка: цены и акции от застройщика).
+# Если ссылки нет — оставьте "", НЕ удаляйте строку: так структура одинакова у всех.
+#
+# ПРИМЕЧАНИЕ О ДАННЫХ (обновлено 2026-10-31):
+#   • ОСНОВНОЙ путь сбора — официальные сайты застройщиков (site_url), обычный HTTP,
+#     без авторизации: 00-admin/scripts/collect-developer-sites.mjs, затем
+#     build-snapshot-from-site.py. В снимке такие лоты идут с source=site.
+#   • ЦИАН И АВИТО — ОТЛОЖЕНЫ по решению пользователя (2026-10-31). Ссылки cian_url/avito_url
+#     оставлены на будущее, но в недельном цикле сейчас не используются.
+#   • site_status у каждого конкурента — результат фактической проверки 2026-10-31
+#     (команда: node 00-admin/scripts/collect-developer-sites.mjs --probe <url>).
+#   • Разведка источников: 00-admin/research/sources-research-2026-10-30.md
+#     (там же приложение от 2026-10-31 про сайты застройщиков).

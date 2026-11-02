@@ -1,0 +1,195 @@
+{
+  "lot_id": "330646871",
+  "saved_at": "2026-11-01",
+  "source": "cian-connector",
+  "history": [
+    {
+      "date": "2026-06-01",
+      "price_rub": 937899000.0
+    },
+    {
+      "date": "2026-07-10",
+      "price_rub": 1000080000.0
+    }
+  ],
+  "card": {
+    "status": "success",
+    "offer_id": 330646871,
+    "title": "3-комн. квартира, 231.6 м², 2/6 эт.",
+    "deal_type": "sale",
+    "category": "newBuildingFlatSale",
+    "price_rub": 1000080000,
+    "price_unit": "total",
+    "price_period": null,
+    "lease_term": null,
+    "deposit_rub": null,
+    "rooms": 3,
+    "flat_type": "rooms",
+    "is_apartments": false,
+    "total_area_m2": 231.6,
+    "living_area_m2": null,
+    "kitchen_area_m2": null,
+    "floor": 2,
+    "floors_total": 6,
+    "build_year": null,
+    "building_material": "monolith",
+    "ceiling_height_m": null,
+    "address": "Москва, ЦАО, район Пресненский, переулок Брюсов, 2",
+    "metro": [
+      {
+        "name": "Охотный ряд",
+        "minutes": null,
+        "mode": null
+      },
+      {
+        "name": "Библиотека им. Ленина",
+        "minutes": null,
+        "mode": null
+      },
+      {
+        "name": "Арбатская",
+        "minutes": null,
+        "mode": null
+      },
+      {
+        "name": "Александровский сад",
+        "minutes": null,
+        "mode": null
+      },
+      {
+        "name": "Тверская",
+        "minutes": null,
+        "mode": null
+      },
+      {
+        "name": "Пушкинская",
+        "minutes": null,
+        "mode": null
+      },
+      {
+        "name": "Боровицкая",
+        "minutes": null,
+        "mode": null
+      },
+      {
+        "name": "Чеховская",
+        "minutes": null,
+        "mode": null
+      },
+      {
+        "name": "Театральная",
+        "minutes": null,
+        "mode": null
+      },
+      {
+        "name": "Площадь Революции",
+        "minutes": null,
+        "mode": null
+      },
+      {
+        "name": "Кузнецкий мост",
+        "minutes": null,
+        "mode": null
+      }
+    ],
+    "newbuilding_name": "БРЮСОВ",
+    "description": "Резиденция с лоджией и видами на Англиканскую церковь\n\nРезиденция с 3 спальнями, 231,6 м², 2 этаж из 6. \nВход в квартиру сразу из лифта.\n\nПланировочное решение включает гостиную с дровяным камином, три спальни, просторную лоджию, сервисную зону с отдельным входом для персонала. Полная приватность жильцов и персонала обеспечена раздельными входами и сервисным лифтом.\nВиды с резиденции открываются на Англиканскую церковь и во внутренний двор.\n\nРезиденция в клубном доме \"Брюсов\" — где каждый день начинается с тишины и света.\nВсего 17 адресов в самом сердце Москвы могут носить имя \"Брюсов\". \n\nРасположенная в историческом Брюсовом переулке, в пяти минутах от Кремля, она хранит атмосферу старой Москвы: размеренную, интеллигентную, вневременную. Здесь нет суеты — только уют внутреннего двора, шелест воды у фонтана и мягкий свет заката за панорамными окнами. \n\nИнтерьер создан 1508 London — британским бюро, чьи проекты украшают резиденции по всему миру. В этой квартире всё говорит о сдержанной роскоши: тёплый оттенок дубовой инженерной доски с уникальной раскладкой, текстильные обои и панели из натурального шпона на стенах; дровяной камин как центр гостиной; итальянская кухня Boffi, исполненная по индивидуальному со встроенной техникой Gaggenau; ванная как личное спа: натуральный мрамор, сантехника Antonio Lupi / CEA, баланс текстур и света. \nОкна — Sky-Frame и Forster — почти стирают границу между интерьером и двором. Благодаря стеклу Saint-Gobain с улучшенной цветопередачей и энергосберегающим покрытием, пространство наполнено естественным светом, но остаётся защищённым от городского шума и холода. \n\nИнженерия работает незаметно, но безупречно: индивидуальная система климат-контроля с увлажнением, \"холодный потолок\", многоуровневая фильтрация воздуха и воды, система \"Умный дом\". \nСервис в \"Брюсов\" — это невидимый слой спокойствия: круглосуточный консьерж, отдельный лифт для персонала, закрытое лобби с дровяным камином и видом на патио, а также подземный паркинг с Rolls-Royce-friendly машиноместами и зарядками для электромобилей. \n\nЭта резиденция — не просто недвижимость. Это адрес для тех, кто выбирает жизнь, выверенную до детали: без компромиссов, но без показной демонстрации. \nДля тех, кто ценит истинную роскошь — ту, что чувствуется, а не афишируется. \n\nКоличество адресов в доме ограничено — как и круг тех, для кого они предназначены.\n\nСдача во 2-ом квартале 2026 года. Девелопер коллекционной недвижимости VOS'HOD.",
+    "agency_name": "Восход",
+    "seller_type": "developer",
+    "is_by_homeowner": null,
+    "photos": 18,
+    "photo_urls": [
+      {
+        "url": "https://images.cdn-cian.ru/images/2892071172-1.jpg",
+        "is_layout": true
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2892071179-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2892071191-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2892071204-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2892071216-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2892071225-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2892071236-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2951703084-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2955962419-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2951703122-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2951703131-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2951703164-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2892071282-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2892071288-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2892071292-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2892071295-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2892071300-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2892071302-1.jpg",
+        "is_layout": false
+      }
+    ],
+    "created_at": "2026-06-01T14:05:44.133",
+    "updated_at": "2026-11-01T15:10:28.700180Z",
+    "views": 3466,
+    "agent": {
+      "name": "Восход",
+      "agent_id": 140604530,
+      "account_type": "agency",
+      "user_type": "developer",
+      "is_developer": true,
+      "offers_count": 33,
+      "on_cian_since": "2026-04-10T18:37:21.507000Z"
+    },
+    "url": "https://www.cian.ru/sale/flat/330646871/",
+    "tier_used": "cdp",
+    "_meta": {
+      "source": "cian_card",
+      "healthy": true,
+      "warnings": []
+    }
+  }
+}

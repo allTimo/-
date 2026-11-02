@@ -1,0 +1,290 @@
+{
+  "checked_at": "2026-11-01",
+  "client": "client-svet",
+  "eiszhs": {
+    "status": "недоступен",
+    "detail": "корень ЕИСЖС: unavailable; корень по http: unavailable; API /api/kn/object: unavailable; API /api/v1/objects: unavailable; API сервисы/api/kn/object: unavailable; мобильная версия: blocked",
+    "attempts": [
+      {
+        "url": "https://xn--80asehdb.xn--p1ai/",
+        "label": "корень ЕИСЖС",
+        "status": 503,
+        "bytes": 62160,
+        "verdict": "unavailable",
+        "note": "HTTP 503: сервис недоступен (не наша блокировка)"
+      },
+      {
+        "url": "http://xn--80asehdb.xn--p1ai/",
+        "label": "корень по http",
+        "status": 503,
+        "bytes": 62160,
+        "verdict": "unavailable",
+        "note": "HTTP 503: сервис недоступен (не наша блокировка)"
+      },
+      {
+        "url": "https://xn--80asehdb.xn--p1ai/api/kn/object?limit=5",
+        "label": "API /api/kn/object",
+        "status": 503,
+        "bytes": 62160,
+        "verdict": "unavailable",
+        "note": "HTTP 503: сервис недоступен (не наша блокировка)"
+      },
+      {
+        "url": "https://xn--80asehdb.xn--p1ai/api/v1/objects?limit=5",
+        "label": "API /api/v1/objects",
+        "status": 503,
+        "bytes": 62160,
+        "verdict": "unavailable",
+        "note": "HTTP 503: сервис недоступен (не наша блокировка)"
+      },
+      {
+        "url": "https://xn--80asehdb.xn--p1ai/%D1%81%D0%B5%D1%80%D0%B2%D0%B8%D1%81%D1%8B/api/kn/object?limit=5",
+        "label": "API сервисы/api/kn/object",
+        "status": 503,
+        "bytes": 62160,
+        "verdict": "unavailable",
+        "note": "HTTP 503: сервис недоступен (не наша блокировка)"
+      },
+      {
+        "url": "https://m.xn--80asehdb.xn--p1ai/",
+        "label": "мобильная версия",
+        "status": null,
+        "bytes": 0,
+        "verdict": "blocked",
+        "note": "<urlopen error [Errno 11001] getaddrinfo failed>"
+      }
+    ],
+    "checked_at": "2026-11-01",
+    "tls_verification": "отключена"
+  },
+  "domrf": {
+    "indicators": [
+      {
+        "code": "header",
+        "title": "header",
+        "value": null,
+        "dynamics": null,
+        "sales_related": false
+      },
+      {
+        "code": "logo",
+        "title": "logo",
+        "value": null,
+        "dynamics": null,
+        "sales_related": false
+      },
+      {
+        "code": "new_projects",
+        "title": "Запуски новых проектов",
+        "value": "29,2 млн кв. м",
+        "dynamics": "up",
+        "sales_related": false
+      },
+      {
+        "code": "mortgage_issuance",
+        "title": "Выдача ипотеки",
+        "value": "788 тыс. кредитов",
+        "dynamics": "up",
+        "sales_related": true
+      },
+      {
+        "code": "mortgage_rate",
+        "title": "Ставка по ипотеке",
+        "value": "18,76%",
+        "dynamics": "up",
+        "sales_related": true
+      },
+      {
+        "code": "index_price",
+        "title": "Индекс цен на жильё",
+        "value": "+5,9%",
+        "dynamics": "up",
+        "sales_related": true
+      },
+      {
+        "code": "research_topics",
+        "title": "research_topics",
+        "value": null,
+        "dynamics": null,
+        "sales_related": false
+      },
+      {
+        "code": "",
+        "title": "Топ ипотечных банков",
+        "value": null,
+        "dynamics": null,
+        "sales_related": false
+      },
+      {
+        "code": "",
+        "title": "Еженедельный дайджест&lt;br&gt; 16– 23 октября 2026 г.",
+        "value": null,
+        "dynamics": null,
+        "sales_related": false
+      },
+      {
+        "code": "",
+        "title": "Обзор многоквартирного жилищного строительства в Российской Федерации",
+        "value": null,
+        "dynamics": null,
+        "sales_related": false
+      },
+      {
+        "code": "",
+        "title": "Обзор рынка ипотечных облигаций",
+        "value": null,
+        "dynamics": null,
+        "sales_related": false
+      },
+      {
+        "code": "",
+        "title": "Обзор рынка ипотечного кредитования",
+        "value": null,
+        "dynamics": null,
+        "sales_related": false
+      },
+      {
+        "code": "",
+        "title": "Малогабаритное жилье в России",
+        "value": null,
+        "dynamics": null,
+        "sales_related": false
+      },
+      {
+        "code": "",
+        "title": "Обзор рынка аренды жилья в России за II квартал 2026 года",
+        "value": null,
+        "dynamics": null,
+        "sales_related": false
+      },
+      {
+        "code": "",
+        "title": "Итоги I полугодия 2026 г. в жилищной сфере",
+        "value": null,
+        "dynamics": null,
+        "sales_related": false
+      },
+      {
+        "code": "",
+        "title": "Портрет ипотечного заемщика 2025 г.",
+        "value": null,
+        "dynamics": null,
+        "sales_related": false
+      },
+      {
+        "code": "",
+        "title": "Международные рынки: жилищная сфера Великобритании",
+        "value": null,
+        "dynamics": null,
+        "sales_related": false
+      },
+      {
+        "code": "items",
+        "title": "items",
+        "value": null,
+        "dynamics": null,
+        "sales_related": false
+      },
+      {
+        "code": "banner",
+        "title": "Карьера ДОМ.РФ",
+        "value": null,
+        "dynamics": null,
+        "sales_related": false
+      },
+      {
+        "code": "contacts",
+        "title": "contacts",
+        "value": null,
+        "dynamics": null,
+        "sales_related": false
+      },
+      {
+        "code": "10",
+        "title": "Для людей",
+        "value": null,
+        "dynamics": null,
+        "sales_related": false
+      },
+      {
+        "code": "20",
+        "title": "О компании",
+        "value": null,
+        "dynamics": null,
+        "sales_related": false
+      },
+      {
+        "code": "30",
+        "title": "Новости",
+        "value": null,
+        "dynamics": null,
+        "sales_related": false
+      },
+      {
+        "code": "40",
+        "title": "Для бизнеса",
+        "value": null,
+        "dynamics": null,
+        "sales_related": false
+      },
+      {
+        "code": "50",
+        "title": "Аналитика",
+        "value": null,
+        "dynamics": null,
+        "sales_related": false
+      },
+      {
+        "code": "60",
+        "title": "Контакты",
+        "value": null,
+        "dynamics": null,
+        "sales_related": false
+      },
+      {
+        "code": "70",
+        "title": "Для регионов",
+        "value": null,
+        "dynamics": null,
+        "sales_related": false
+      },
+      {
+        "code": "80",
+        "title": "Инвесторам",
+        "value": null,
+        "dynamics": null,
+        "sales_related": false
+      },
+      {
+        "code": "soc",
+        "title": "soc",
+        "value": null,
+        "dynamics": null,
+        "sales_related": false
+      }
+    ],
+    "news": [
+      "Купить квартиру в новостройке",
+      "Проверить новостройку",
+      "Как выбрать между арендой жилья и ипотекой?",
+      "Как заплатить налоги с продажи недвижимости?",
+      "Больше ответов на спроси.дом.рф",
+      "Взять ипотеку в банке ДОМ.РФ"
+    ],
+    "periods": [
+      "01.10.2026",
+      "01.12.2026",
+      "02.11.2026",
+      "05.10.2026",
+      "06.11.2026",
+      "07.12.2026"
+    ],
+    "status": "ok",
+    "source": "ДОМ.РФ (дом.рф/аналитика)",
+    "url": "https://xn--d1aqf.xn--p1ai/analytics/",
+    "collected_at": "2026-11-01",
+    "level": "рынок (не по конкретному ЖК)",
+    "bytes": 110300
+  },
+  "note": "официальные ДДУ по конкретному ЖК: недоступен; ниже — что удалось получить"
+}

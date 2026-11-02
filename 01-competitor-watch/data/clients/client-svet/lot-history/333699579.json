@@ -1,0 +1,143 @@
+{
+  "lot_id": "333699579",
+  "saved_at": "2026-11-01",
+  "source": "cian-connector",
+  "history": [
+    {
+      "date": "2026-09-08",
+      "price_rub": 65365027.0
+    },
+    {
+      "date": "2026-10-30",
+      "price_rub": 66017952.0
+    }
+  ],
+  "card": {
+    "status": "success",
+    "offer_id": 333699579,
+    "title": "Квартира для большой семьи",
+    "deal_type": "sale",
+    "category": "newBuildingFlatSale",
+    "price_rub": 66017952,
+    "price_unit": "total",
+    "price_period": null,
+    "lease_term": null,
+    "deposit_rub": null,
+    "rooms": 3,
+    "flat_type": "rooms",
+    "is_apartments": false,
+    "total_area_m2": 91.6,
+    "living_area_m2": 50.1,
+    "kitchen_area_m2": 11.4,
+    "floor": 3,
+    "floors_total": 47,
+    "build_year": null,
+    "building_material": "monolith",
+    "ceiling_height_m": 3.48,
+    "address": "Москва, ЮАО, район Даниловский, Летниковская улица, 11к1",
+    "metro": [
+      {
+        "name": "Павелецкая",
+        "minutes": null,
+        "mode": null
+      },
+      {
+        "name": "Пролетарская",
+        "minutes": null,
+        "mode": null
+      },
+      {
+        "name": "Крестьянская застава",
+        "minutes": null,
+        "mode": null
+      }
+    ],
+    "newbuilding_name": "HIGH LIFE (ХАЙ ЛАЙФ)",
+    "description": "Продажа от застройщика PIONEER. \n\n3-к квартира  площадью 91.6 кв. м. на 3-м этаже 47 этажной башни в премиальном комплексе HIGH LIFE, вблизи исторического Замоскворечья. \n\nЖилой комплекс всего в 5 минутах от Садового кольца. Архитектура от бюро ADM задает выразительный силуэт, а панорамное остекление и эркеры раскрывают виды на знаковые точки Москвы — Кремль, МГУ, Москва-Сити и Дом музыки. \n\nHIGH LIFE — это символ настоящей премиальной жизни, как она есть. Здесь нет места иллюзиям и надуманным ценностям. Это пространство для тех, кто ищет не просто комфорт и статус, а гармонию, подлинность и смысл в каждом аспекте своей повседневности. Это образ жизни, который отвечает самым высоким требованиям современного человека, стремящегося к настоящему качеству во всём. \n\n\nДля жителей предусмотрена приватная инфраструктура:\n \n• Частный кинозал; \n• Библиотека с камином; \n• Зал для мероприятий и рабочие пространства; \n• Залы для йоги и спорта; \n• SPA, массаж и beauty-зоны; \n• Почтовые комнаты, зоны для колясок и ухода за домашними животными; \n• Двухуровневый двор-парк 2 с детскими площадками, фонтаном и зонами для занятия спортом. \n\nИнженерия на высшем уровне:\n \n• Центральное кондиционирование с использованием VRF-систем; \n• Усиленная вентиляция кухонь и гардеробных; \n• Обеззараживание воздуха; \n• Мониторинг качества воды и дополнительная доочистка; \n• Повышенная шумоизоляция; \n• Автоматизированная передача инженерных данных в управляющую компанию. \n\nКомплексное обеспечение безопасности: \n\n• Круглосуточное видеонаблюдение; \n• Мобильное управление доступом и наблюдением за квартирой; \n• Современные системы пожарного оповещения; \n• В подземном паркинге въезд через считыватель дальнего действия. Предусмотрено разграничение для резидентов, гостей и персонала, а также панель прямого вызова квартиры, консьержа или охраны.\n\nЗастройщик PIONEER более 25 лет формирует стандарты качественной городской среды. Портфель компании насчитывает свыше 30 реализованных проектов, включая комплексы уровня премиум и делюкс. \n\nЗвоните для получения подробной информации, бронирования квартиры и обсуждения индивидуальных условий приобретения.",
+    "agency_name": "Пионер",
+    "seller_type": "developer",
+    "is_by_homeowner": null,
+    "photos": 15,
+    "photo_urls": [
+      {
+        "url": "https://images.cdn-cian.ru/images/2985679560-1.jpg",
+        "is_layout": true
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2960237854-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2985679563-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2985679603-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2985679631-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2993113299-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2985679670-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2985679701-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2991677324-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2985679771-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2991677333-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2985679852-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2985679884-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2993276204-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2993276196-1.jpg",
+        "is_layout": false
+      }
+    ],
+    "created_at": "2026-09-08T08:36:13.83",
+    "updated_at": "2026-11-01T10:25:19.512514Z",
+    "views": 466,
+    "agent": {
+      "name": "Пионер",
+      "agent_id": 116011436,
+      "account_type": "agency",
+      "user_type": "developer",
+      "is_developer": true,
+      "offers_count": 345,
+      "on_cian_since": "2024-05-01T10:46:52.870000Z"
+    },
+    "url": "https://www.cian.ru/sale/flat/333699579/",
+    "tier_used": "cdp",
+    "_meta": {
+      "source": "cian_card",
+      "healthy": true,
+      "warnings": []
+    }
+  }
+}

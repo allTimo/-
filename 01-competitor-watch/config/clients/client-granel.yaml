@@ -1,0 +1,132 @@
+# ============================================================================
+# КОНФИГ КЛИЕНТА: client-granel (СЗ «Гранель», ЖК «Селигер Сити»)
+# ============================================================================
+# Один файл = один клиент (контракт зафиксирован Lead, см. task-49).
+# Панель: registry/clients.yaml -> client-granel (plan: premium), agent-settings -> agent-1-competitor-watch.
+#
+# ССЫЛКИ ПРОВЕРЕНЫ ФАКТИЧЕСКИ 2026-11-01 обычным HTTP (без логина).
+# Полная таблица: 00-admin/research/platforms-public-pages-2026-11-01.md
+# ============================================================================
+
+version: 1
+updated: "2026-11-01"
+
+client_id: client-granel
+name: "СЗ «Гранель» — Селигер Сити"
+brand:
+  logo: "assets/logo-granel.png"   # TODO (от пользователя): файла логотипа в проекте нет
+  accent: "#1f8f4e"
+
+schedule:
+  weekday: monday
+  time: "10:00"
+
+report:
+  title: "Мониторинг конкурентов — Селигер Сити"
+  formats: [md, xlsx, pdf]
+
+recipients:
+  - { channel: telegram, address: "" }   # TODO (от пользователя): телеграм получателя не задан
+  - { channel: email, address: "d.granel@example.ru" }   # из registry/clients.yaml (контакт)
+
+sources:
+  - { id: developer-sites, enabled: true }
+  - { id: cian,           enabled: true, mode: public-pages, auth: none }     # проверено: 200, лоты с ценами в HTML
+  - { id: avito,          enabled: false, mode: public-pages, auth: none }    # 439 «проверка безопасности»
+  - { id: yandex-realty,  enabled: true, mode: public-pages, auth: none }     # 200 на проверенных ЖК
+  - { id: domclick,       enabled: false, mode: public-pages, auth: none }    # 401
+
+competitors:
+  # 1. Прямой конкурент: наш же локационный кластер, Дмитровское шоссе.
+  - name: "Свет"
+    developer: "Dominanta"
+    class: "бизнес"
+    site: "https://svetdom.ru/"                  # проверено: 200
+    platforms:
+      cian: "https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-svet-5449798-ot-zastroyschika-OTZ/"
+      avito: ""
+      yandex_realty: ""                          # TODO: страница ЖК не найдена в каталоге Яндекс Недвижимости
+      domclick: ""
+
+  - name: "Дмитровское небо"
+    developer: "Группа ЛСР"
+    class: "бизнес"
+    site: ""                                     # TODO: домен ЛСР для этого ЖК не существует
+    platforms:
+      cian: "https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-dmitrovskoe-nebo-4051330-ot-zastroyschika-OTZ/"
+      avito: ""
+      yandex_realty: ""
+      domclick: ""
+
+  - name: "Онежский вал"
+    developer: "ПИК"
+    class: "бизнес"
+    site: "https://www.pik.ru/"                  # 401 для не-браузерных запросов
+    platforms:
+      cian: "https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-onezhskiy-val-5722062-ot-zastroyschika-OTZ/"
+      avito: ""
+      yandex_realty: ""
+      domclick: ""
+
+  - name: "Нарвин"
+    developer: "ПИК"
+    class: "бизнес"
+    site: "https://www.pik.ru/"
+    platforms:
+      cian: "https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-narvin-5686240-ot-zastroyschika-OTZ/"
+      avito: ""
+      yandex_realty: ""
+      domclick: ""
+
+  - name: "Бусиновский парк"
+    developer: "ПИК"
+    class: "бизнес"
+    site: "https://www.pik.ru/"
+    platforms:
+      cian: "https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-businovskiy-park-2159741-ot-zastroyschika-OTZ/"
+      avito: ""
+      yandex_realty: ""
+      domclick: ""
+
+  - name: "Акценты"
+    developer: "Plus Development"
+    class: "бизнес"
+    site: "https://accenty.ru/"
+    platforms:
+      cian: "https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-akcenty-5698426-ot-zastroyschika-OTZ/"
+      avito: ""
+      yandex_realty: "https://realty.yandex.ru/moskva_i_moskovskaya_oblast/kupit/novostrojka/akcenty-3991148/"
+      domclick: ""
+
+  - name: "Кинетик. Резиденции на Дмитровском"
+    developer: "UDS"
+    class: "бизнес"
+    site: ""                                     # TODO: домены UDS недоступны
+    platforms:
+      cian: "https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-kinetik-rezidencii-na-dmitrovskom-5778933-ot-zastroyschika-OTZ/"
+      avito: ""
+      yandex_realty: ""
+      domclick: ""
+
+  - name: "Михалковский"
+    developer: "РГ-Девелопмент"
+    class: "бизнес"
+    site: "https://rg-dev.ru/novostroyki/mihalkovskij/"
+    platforms:
+      cian: "https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-mihalkovskiy-3206223-ot-zastroyschika-OTZ/"
+      avito: ""
+      yandex_realty: "https://realty.yandex.ru/moskva_i_moskovskaya_oblast/kupit/novostrojka/mihalkovskij-2586475/"
+      domclick: ""
+
+# НАШ СОБСТВЕННЫЙ ОБЪЕКТ здесь НЕ дублируется: структура контракта фиксирована.
+# Задаётся в панели: registry/agent-settings/agent-1-competitor-watch.yaml -> agent1.watch.
+# Ссылки нашего ЖК на 01.11.2026 (проверены HTTP 200):
+#   циан: https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-seliger-siti-36051-ot-zastroyschika-OTZ/  (27 лотов)
+#   сайт: TODO — seliger-city.ru не существует, mr-group.ru закрыт для не-браузерных запросов
+# TODO для пользователя: завести наш объект в 00-admin/config/my-objects.yaml, если «Селигер Сити» — наш ЖК.
+
+# ЧТО НУЖНО ОТ ПОЛЬЗОВАТЕЛЯ (TODO):
+#   1. Логотип client-granel и телеграм получателя.
+#   2. Сайт ЖК «Селигер Сити» у застройщика (домен не отвечает).
+#   3. Рабочие ссылки Авито и Домклик (площадки режут обычный HTTP: 439 и 401).
+#   4. Завести наш объект my-zhk-seliger-siti в 00-admin/config/my-objects.yaml, если «Селигер Сити» — наш ЖК.

@@ -1,0 +1,699 @@
+{
+ "currency": {
+  "usdRub": 80.5573,
+  "source": "registry",
+  "path": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\registry\\prices.yaml",
+  "note": "https://www.cbr-xml-daily.ru/daily_json.js 2026-10-31T11:30:00+03:00"
+ },
+ "pricing": {
+  "schema": "prices/v1",
+  "fetchedAt": "2026-10-31",
+  "priceKind": "minimum_across_providers",
+  "modelCount": 16,
+  "cachePriceAssumedFor": [
+   "deepseek/deepseek-v4.1-flash",
+   "deepseek/deepseek-v4-flash",
+   "deepseek/deepseek-v4-flash-vision-exp",
+   "google/gemini-3.8-flash",
+   "google/gemini-3-flash-preview",
+   "qwen/qwen3.8-flash",
+   "qwen/qwen3-vl-30b-a3b-instruct",
+   "openai/gpt-6-luna",
+   "anthropic/claude-sonnet-5.5",
+   "anthropic/claude-opus-5.5"
+  ],
+  "cacheAssumptionNote": "Для части моделей не опубликована цена чтения из кэша — кэш посчитан по цене входа (оценка сверху)."
+ },
+ "totals": {
+  "tokens": {
+   "inputTokens": 38887036,
+   "outputTokens": 5785828,
+   "cacheReadTokens": 1182128187,
+   "cacheWriteTokens": 0,
+   "totalTokens": 1226948917
+  },
+  "usd": 41.379,
+  "rub": 3333.39,
+  "rubComplete": false
+ },
+ "peak": {
+  "multiplier": 1,
+  "windowsUtc": [],
+  "weekdays": [],
+  "note": null,
+  "peakTokens": {
+   "inputTokens": 0,
+   "outputTokens": 0,
+   "cacheReadTokens": 0,
+   "totalTokens": 0
+  }
+ },
+ "cache": {
+  "cacheReadTokens": 1182128187,
+  "share": 0.9635
+ },
+ "byDay": [
+  {
+   "date": "2026-10-28",
+   "tokens": {
+    "inputTokens": 455772,
+    "outputTokens": 252684,
+    "cacheReadTokens": 24049536,
+    "cacheWriteTokens": 0,
+    "totalTokens": 24757992
+   },
+   "peakTokens": {
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "cacheReadTokens": 0,
+    "totalTokens": 0
+   },
+   "usd": 0.8038,
+   "rub": 64.75,
+   "rubComplete": false,
+   "sessions": 13,
+   "byModel": [
+    {
+     "key": "deepseek/deepseek-v4.1-flash",
+     "model": "deepseek/deepseek-v4.1-flash",
+     "provider": "zvenoai",
+     "tokens": {
+      "inputTokens": 221004,
+      "outputTokens": 171288,
+      "cacheReadTokens": 22937984,
+      "cacheWriteTokens": 0,
+      "totalTokens": 23330276
+     },
+     "usd": 0.8038,
+     "rub": 64.75,
+     "priceKnown": true
+    },
+    {
+     "key": "openai/gpt-4o-mini",
+     "model": "openai/gpt-4o-mini",
+     "provider": "zvenoai",
+     "tokens": {
+      "inputTokens": 234768,
+      "outputTokens": 81396,
+      "cacheReadTokens": 1111552,
+      "cacheWriteTokens": 0,
+      "totalTokens": 1427716
+     },
+     "usd": 0,
+     "rub": null,
+     "priceKnown": false
+    }
+   ]
+  },
+  {
+   "date": "2026-10-29",
+   "tokens": {
+    "inputTokens": 298082,
+    "outputTokens": 65719,
+    "cacheReadTokens": 2373408,
+    "cacheWriteTokens": 74110,
+    "totalTokens": 2811319
+   },
+   "peakTokens": {
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "cacheReadTokens": 0,
+    "totalTokens": 0
+   },
+   "usd": 0.2293,
+   "rub": 18.47,
+   "rubComplete": true,
+   "sessions": 3,
+   "byModel": [
+    {
+     "key": "deepseek/deepseek-v4.1-flash",
+     "model": "deepseek/deepseek-v4.1-flash",
+     "provider": "zvenoai",
+     "tokens": {
+      "inputTokens": 298025,
+      "outputTokens": 56537,
+      "cacheReadTokens": 1830272,
+      "cacheWriteTokens": 0,
+      "totalTokens": 2184834
+     },
+     "usd": 0.088,
+     "rub": 7.09,
+     "priceKnown": true
+    },
+    {
+     "key": "openai/gpt-6-luna",
+     "model": "openai/gpt-6-luna",
+     "provider": "zvenoai",
+     "tokens": {
+      "inputTokens": 57,
+      "outputTokens": 9182,
+      "cacheReadTokens": 543136,
+      "cacheWriteTokens": 0,
+      "totalTokens": 626485
+     },
+     "usd": 0.1414,
+     "rub": 11.39,
+     "priceKnown": true
+    }
+   ]
+  },
+  {
+   "date": "2026-10-30",
+   "tokens": {
+    "inputTokens": 3148107,
+    "outputTokens": 856860,
+    "cacheReadTokens": 73828896,
+    "cacheWriteTokens": 73756,
+    "totalTokens": 77907619
+   },
+   "peakTokens": {
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "cacheReadTokens": 0,
+    "totalTokens": 0
+   },
+   "usd": 2.8443,
+   "rub": 229.13,
+   "rubComplete": true,
+   "sessions": 8,
+   "byModel": [
+    {
+     "key": "deepseek/deepseek-v4.1-flash",
+     "model": "deepseek/deepseek-v4.1-flash",
+     "provider": "zvenoai",
+     "tokens": {
+      "inputTokens": 3148089,
+      "outputTokens": 852152,
+      "cacheReadTokens": 73495424,
+      "cacheWriteTokens": 0,
+      "totalTokens": 77495665
+     },
+     "usd": 2.7587,
+     "rub": 222.23,
+     "priceKnown": true
+    },
+    {
+     "key": "openai/gpt-6-luna",
+     "model": "openai/gpt-6-luna",
+     "provider": "zvenoai",
+     "tokens": {
+      "inputTokens": 18,
+      "outputTokens": 4708,
+      "cacheReadTokens": 333472,
+      "cacheWriteTokens": 0,
+      "totalTokens": 411954
+     },
+     "usd": 0.0857,
+     "rub": 6.9,
+     "priceKnown": true
+    }
+   ]
+  },
+  {
+   "date": "2026-10-31",
+   "tokens": {
+    "inputTokens": 12472379,
+    "outputTokens": 2611452,
+    "cacheReadTokens": 547655227,
+    "cacheWriteTokens": 0,
+    "totalTokens": 562739058
+   },
+   "peakTokens": {
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "cacheReadTokens": 0,
+    "totalTokens": 0
+   },
+   "usd": 18.9112,
+   "rub": 1523.43,
+   "rubComplete": true,
+   "sessions": 17,
+   "byModel": [
+    {
+     "key": "deepseek/deepseek-v4.1-flash",
+     "model": "deepseek/deepseek-v4.1-flash",
+     "provider": "zvenoai",
+     "tokens": {
+      "inputTokens": 12472379,
+      "outputTokens": 2611452,
+      "cacheReadTokens": 547655227,
+      "cacheWriteTokens": 0,
+      "totalTokens": 562739058
+     },
+     "usd": 18.9112,
+     "rub": 1523.43,
+     "priceKnown": true
+    }
+   ]
+  },
+  {
+   "date": "2026-11-01",
+   "tokens": {
+    "inputTokens": 22512696,
+    "outputTokens": 1999113,
+    "cacheReadTokens": 534221120,
+    "cacheWriteTokens": 0,
+    "totalTokens": 558732929
+   },
+   "peakTokens": {
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "cacheReadTokens": 0,
+    "totalTokens": 0
+   },
+   "usd": 18.5904,
+   "rub": 1497.6,
+   "rubComplete": true,
+   "sessions": 11,
+   "byModel": [
+    {
+     "key": "deepseek/deepseek-v4.1-flash",
+     "model": "deepseek/deepseek-v4.1-flash",
+     "provider": "zvenoai",
+     "tokens": {
+      "inputTokens": 22512696,
+      "outputTokens": 1999113,
+      "cacheReadTokens": 534221120,
+      "cacheWriteTokens": 0,
+      "totalTokens": 558732929
+     },
+     "usd": 18.5904,
+     "rub": 1497.6,
+     "priceKnown": true
+    }
+   ]
+  }
+ ],
+ "byModel": [
+  {
+   "key": "deepseek/deepseek-v4.1-flash",
+   "model": "deepseek/deepseek-v4.1-flash",
+   "provider": "zvenoai",
+   "tokens": {
+    "inputTokens": 38652193,
+    "outputTokens": 5690542,
+    "cacheReadTokens": 1180140027,
+    "cacheWriteTokens": 0,
+    "totalTokens": 1224482762
+   },
+   "usd": 41.152,
+   "rub": 3315.1,
+   "priceKnown": true
+  },
+  {
+   "key": "openai/gpt-4o-mini",
+   "model": "openai/gpt-4o-mini",
+   "provider": "zvenoai",
+   "tokens": {
+    "inputTokens": 234768,
+    "outputTokens": 81396,
+    "cacheReadTokens": 1111552,
+    "cacheWriteTokens": 0,
+    "totalTokens": 1427716
+   },
+   "usd": 0,
+   "rub": null,
+   "priceKnown": false
+  },
+  {
+   "key": "openai/gpt-6-luna",
+   "model": "openai/gpt-6-luna",
+   "provider": "zvenoai",
+   "tokens": {
+    "inputTokens": 75,
+    "outputTokens": 13890,
+    "cacheReadTokens": 876608,
+    "cacheWriteTokens": 147866,
+    "totalTokens": 1038439
+   },
+   "usd": 0.227,
+   "rub": 18.29,
+   "priceKnown": true
+  }
+ ],
+ "byAgent": [
+  {
+   "name": "lead",
+   "tokens": {
+    "inputTokens": 15751678,
+    "outputTokens": 1480353,
+    "cacheReadTokens": 293069376,
+    "cacheWriteTokens": 147866,
+    "totalTokens": 310449273
+   },
+   "usd": 10.6346,
+   "rub": 856.69,
+   "rubComplete": true,
+   "sessions": 13,
+   "lastActivityAt": 1793552253057,
+   "projects": {
+    "marketing-agents (наш проект)": 5,
+    "Desktop/DeepSeek Harness": 7,
+    "deepseek-harness/default-workspace": 1
+   },
+   "kinds": {
+    "root": 13
+   }
+  },
+  {
+   "name": "dashboard-ui",
+   "tokens": {
+    "inputTokens": 8857008,
+    "outputTokens": 1237538,
+    "cacheReadTokens": 292630144,
+    "cacheWriteTokens": 0,
+    "totalTokens": 302724690
+   },
+   "usd": 10.1208,
+   "rub": 815.3,
+   "rubComplete": true,
+   "sessions": 1,
+   "lastActivityAt": 1793550811272,
+   "projects": {
+    "marketing-agents (наш проект)": 1
+   },
+   "kinds": {
+    "subagent": 1
+   }
+  },
+  {
+   "name": "data-engine",
+   "tokens": {
+    "inputTokens": 3324382,
+    "outputTokens": 860199,
+    "cacheReadTokens": 188246912,
+    "cacheWriteTokens": 0,
+    "totalTokens": 192431493
+   },
+   "usd": 6.4565,
+   "rub": 520.12,
+   "rubComplete": true,
+   "sessions": 1,
+   "lastActivityAt": 1793547524477,
+   "projects": {
+    "marketing-agents (наш проект)": 1
+   },
+   "kinds": {
+    "subagent": 1
+   }
+  },
+  {
+   "name": "verifier",
+   "tokens": {
+    "inputTokens": 3139739,
+    "outputTokens": 294527,
+    "cacheReadTokens": 72610368,
+    "cacheWriteTokens": 0,
+    "totalTokens": 76044634
+   },
+   "usd": 2.5372,
+   "rub": 204.39,
+   "rubComplete": true,
+   "sessions": 3,
+   "lastActivityAt": 1793552032070,
+   "projects": {
+    "marketing-agents (наш проект)": 3
+   },
+   "kinds": {
+    "subagent": 3
+   }
+  },
+  {
+   "name": "plugin-dev",
+   "tokens": {
+    "inputTokens": 1642899,
+    "outputTokens": 412595,
+    "cacheReadTokens": 73469952,
+    "cacheWriteTokens": 0,
+    "totalTokens": 75525446
+   },
+   "usd": 2.5575,
+   "rub": 206.03,
+   "rubComplete": true,
+   "sessions": 1,
+   "lastActivityAt": 1793547413147,
+   "projects": {
+    "marketing-agents (наш проект)": 1
+   },
+   "kinds": {
+    "subagent": 1
+   }
+  },
+  {
+   "name": "plugins-ru",
+   "tokens": {
+    "inputTokens": 1271359,
+    "outputTokens": 213996,
+    "cacheReadTokens": 55424512,
+    "cacheWriteTokens": 0,
+    "totalTokens": 56909867
+   },
+   "usd": 1.8968,
+   "rub": 152.8,
+   "rubComplete": true,
+   "sessions": 1,
+   "lastActivityAt": 1793468366939,
+   "projects": {
+    "marketing-agents (наш проект)": 1
+   },
+   "kinds": {
+    "subagent": 1
+   }
+  },
+  {
+   "name": "agent1-workspace",
+   "tokens": {
+    "inputTokens": 1981720,
+    "outputTokens": 271391,
+    "cacheReadTokens": 53652096,
+    "cacheWriteTokens": 0,
+    "totalTokens": 55905207
+   },
+   "usd": 1.8825,
+   "rub": 151.65,
+   "rubComplete": true,
+   "sessions": 1,
+   "lastActivityAt": 1793531322931,
+   "projects": {
+    "marketing-agents (наш проект)": 1
+   },
+   "kinds": {
+    "subagent": 1
+   }
+  },
+  {
+   "name": "market-ru",
+   "tokens": {
+    "inputTokens": 148005,
+    "outputTokens": 296947,
+    "cacheReadTokens": 52446976,
+    "cacheWriteTokens": 0,
+    "totalTokens": 52891928
+   },
+   "usd": 1.7936,
+   "rub": 144.49,
+   "rubComplete": true,
+   "sessions": 1,
+   "lastActivityAt": 1793469500586,
+   "projects": {
+    "marketing-agents (наш проект)": 1
+   },
+   "kinds": {
+    "subagent": 1
+   }
+  },
+  {
+   "name": "market-lib-ru",
+   "tokens": {
+    "inputTokens": 518184,
+    "outputTokens": 160087,
+    "cacheReadTokens": 35578299,
+    "cacheWriteTokens": 0,
+    "totalTokens": 36256570
+   },
+   "usd": 1.2159,
+   "rub": 97.95,
+   "rubComplete": true,
+   "sessions": 1,
+   "lastActivityAt": 1793471431674,
+   "projects": {
+    "marketing-agents (наш проект)": 1
+   },
+   "kinds": {
+    "subagent": 1
+   }
+  },
+  {
+   "name": "skillbrowser-ru",
+   "tokens": {
+    "inputTokens": 451881,
+    "outputTokens": 171956,
+    "cacheReadTokens": 31380992,
+    "cacheWriteTokens": 0,
+    "totalTokens": 32004829
+   },
+   "usd": 1.0829,
+   "rub": 87.23,
+   "rubComplete": true,
+   "sessions": 1,
+   "lastActivityAt": 1793468518785,
+   "projects": {
+    "marketing-agents (наш проект)": 1
+   },
+   "kinds": {
+    "subagent": 1
+   }
+  },
+  {
+   "name": "capability-dev",
+   "tokens": {
+    "inputTokens": 619502,
+    "outputTokens": 89972,
+    "cacheReadTokens": 10632320,
+    "cacheWriteTokens": 0,
+    "totalTokens": 11341794
+   },
+   "usd": 0.3929,
+   "rub": 31.65,
+   "rubComplete": true,
+   "sessions": 1,
+   "lastActivityAt": 1793550211113,
+   "projects": {
+    "marketing-agents (наш проект)": 1
+   },
+   "kinds": {
+    "subagent": 1
+   }
+  },
+  {
+   "name": "plugin-author",
+   "tokens": {
+    "inputTokens": 225822,
+    "outputTokens": 85974,
+    "cacheReadTokens": 8841728,
+    "cacheWriteTokens": 0,
+    "totalTokens": 9153524
+   },
+   "usd": 0.3212,
+   "rub": 25.88,
+   "rubComplete": true,
+   "sessions": 1,
+   "lastActivityAt": 1793552002046,
+   "projects": {
+    "marketing-agents (наш проект)": 1
+   },
+   "kinds": {
+    "subagent": 1
+   }
+  },
+  {
+   "name": "locale-core",
+   "tokens": {
+    "inputTokens": 376308,
+    "outputTokens": 64395,
+    "cacheReadTokens": 6670848,
+    "cacheWriteTokens": 0,
+    "totalTokens": 7111551
+   },
+   "usd": 0.2488,
+   "rub": 20.04,
+   "rubComplete": true,
+   "sessions": 1,
+   "lastActivityAt": 1793467359970,
+   "projects": {
+    "marketing-agents (наш проект)": 1
+   },
+   "kinds": {
+    "subagent": 1
+   }
+  },
+  {
+   "name": "auditor",
+   "tokens": {
+    "inputTokens": 117159,
+    "outputTokens": 52100,
+    "cacheReadTokens": 4914688,
+    "cacheWriteTokens": 0,
+    "totalTokens": 5083947
+   },
+   "usd": 0.1798,
+   "rub": 14.48,
+   "rubComplete": true,
+   "sessions": 1,
+   "lastActivityAt": 1793467255526,
+   "projects": {
+    "marketing-agents (наш проект)": 1
+   },
+   "kinds": {
+    "subagent": 1
+   }
+  },
+  {
+   "name": "localizer",
+   "tokens": {
+    "inputTokens": 226622,
+    "outputTokens": 12402,
+    "cacheReadTokens": 1447424,
+    "cacheWriteTokens": 0,
+    "totalTokens": 1686448
+   },
+   "usd": 0.0581,
+   "rub": 4.68,
+   "rubComplete": true,
+   "sessions": 1,
+   "lastActivityAt": 1793466430453,
+   "projects": {
+    "marketing-agents (наш проект)": 1
+   },
+   "kinds": {
+    "subagent": 1
+   }
+  },
+  {
+   "name": "субагент (разовый)",
+   "tokens": {
+    "inputTokens": 234768,
+    "outputTokens": 81396,
+    "cacheReadTokens": 1111552,
+    "cacheWriteTokens": 0,
+    "totalTokens": 1427716
+   },
+   "usd": null,
+   "rub": null,
+   "rubComplete": false,
+   "sessions": 10,
+   "lastActivityAt": 1793214441387,
+   "projects": {
+    "Desktop/DeepSeek Harness": 10
+   },
+   "kinds": {
+    "subagent": 10
+   }
+  },
+  {
+   "name": "dashboard-dev",
+   "tokens": {
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "cacheReadTokens": 0,
+    "cacheWriteTokens": 0,
+    "totalTokens": 0
+   },
+   "usd": null,
+   "rub": null,
+   "rubComplete": true,
+   "sessions": 1,
+   "lastActivityAt": 1793455525965,
+   "projects": {
+    "marketing-agents (наш проект)": 1
+   },
+   "kinds": {
+    "subagent": 1
+   }
+  }
+ ],
+ "unknownPriceModels": [
+  "openai/gpt-4o-mini"
+ ],
+ "pricedModelCount": 2
+}

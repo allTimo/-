@@ -1,0 +1,282 @@
+{
+  "lot_id": "333322130",
+  "saved_at": "2026-11-01",
+  "project": "zhk-mihalkovskiy",
+  "source": "cian-connector",
+  "history": [
+    {
+      "date": "2026-08-26",
+      "price_rub": 34258359.0
+    },
+    {
+      "date": "2026-10-26",
+      "price_rub": 29990291.0
+    }
+  ],
+  "card": {
+    "status": "success",
+    "offer_id": 333322130,
+    "title": "3-комн. квартира, 72 м², 9/20 эт.",
+    "deal_type": "sale",
+    "category": "newBuildingFlatSale",
+    "price_rub": 29990291,
+    "price_unit": "total",
+    "price_period": null,
+    "lease_term": null,
+    "deposit_rub": null,
+    "rooms": 3,
+    "flat_type": "rooms",
+    "is_apartments": false,
+    "total_area_m2": 72,
+    "living_area_m2": 44.2,
+    "kitchen_area_m2": 10.4,
+    "floor": 9,
+    "floors_total": 20,
+    "build_year": null,
+    "building_material": "monolith",
+    "ceiling_height_m": 2.8,
+    "address": "Москва, САО, район Головинский, Михалковская улица, вл56",
+    "metro": [
+      {
+        "name": "Коптево",
+        "minutes": null,
+        "mode": null
+      },
+      {
+        "name": "Водный стадион",
+        "minutes": null,
+        "mode": null
+      },
+      {
+        "name": "Лихоборы",
+        "minutes": null,
+        "mode": null
+      }
+    ],
+    "newbuilding_name": "Михалковский",
+    "description": "Проект \"Московские кварталы\" — это строящиеся и готовые квартиры во всех столичных округах. Объекты сочетают практичность современного жилья и удобство городской жизни: надежные монолитные дома, продуманная инфраструктура, благоустроенные территории и современная инженерия. Проекты возводятся под контролем города, что гарантирует качество, долговечность и соблюдение сроков. Каждый дом становится частью гармонично развивающегося района. Застройка ведется с учетом всех аспектов городской инфраструктуры: современные школы и детские сады, новые поликлиники, уютные и безопасные дворы, удобные транспортные развязки. Новые комфортные дома от городского застройщика меняют облик Москвы, создавая возможности для улучшения качества жизни каждого жителя.",
+    "agency_name": "Московские кварталы",
+    "seller_type": "developer",
+    "is_by_homeowner": null,
+    "photos": 49,
+    "photo_urls": [
+      {
+        "url": "https://images.cdn-cian.ru/images/2951904366-1.jpg",
+        "is_layout": true
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2951904401-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2995711148-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2995711150-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2951904433-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2951904460-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2951904481-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2951904531-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2951904552-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2951904603-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2951904665-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2951904718-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2951904752-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2951904800-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2951904842-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2951904900-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2951904929-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2951904972-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2951905017-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2951905060-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2951905129-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2951905179-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2951905203-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2951905242-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2951905263-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2951905300-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2951905340-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2951905392-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2951905435-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2951905468-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2951905497-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2951905551-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2951905590-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2951905643-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2951905702-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2951905754-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2951905805-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2951905829-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2951905856-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2951905905-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2951905921-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2951905939-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2951905955-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2951905971-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2951905997-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2951906031-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2951906087-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2951906132-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2951906209-1.jpg",
+        "is_layout": false
+      }
+    ],
+    "created_at": "2026-08-26T18:44:23.84",
+    "updated_at": "2026-11-01T16:35:26.310000Z",
+    "views": 413,
+    "agent": {
+      "name": "Московские кварталы",
+      "agent_id": 141374239,
+      "account_type": "agency",
+      "user_type": "developer",
+      "is_developer": true,
+      "offers_count": 4220,
+      "on_cian_since": "2026-05-13T14:09:48.347000Z"
+    },
+    "url": "https://www.cian.ru/sale/flat/333322130/",
+    "tier_used": "cdp",
+    "_meta": {
+      "source": "cian_card",
+      "healthy": true,
+      "warnings": []
+    }
+  },
+  "offer_url": "https://www.cian.ru/sale/flat/333322130/",
+  "page_price_rub": 29990291
+}

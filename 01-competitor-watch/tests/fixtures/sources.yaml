@@ -1,0 +1,40 @@
+# Фикстура источников для тестов (та же схема, что registry/sources.yaml).
+version: 1
+updated: "2026-10-31"
+
+sources:
+  - id: developer-sites
+    name: "Сайты застройщиков"
+    enabled: true
+    kind: http            # http | browser | feed | manual
+    auth: none
+    status: partial       # working | partial | blocked | paused | not-tested
+    priority: 1
+    last_run: "2026-10-31"
+    limits: "цены «от» по позициям каталога"
+    howto: "node collect-developer-sites.mjs --site zilart"
+    note: "Основной путь."
+
+  - id: manual-inbox
+    name: "Ручные материалы (скриншоты, выгрузки)"
+    enabled: true
+    kind: manual
+    auth: none
+    status: working
+    priority: 3
+    last_run: null
+    limits: "ручной труд"
+    howto: "01-competitor-watch/inbox"
+    note: "Скриншоты читаются агентом."
+
+  - id: cian
+    name: "Циан"
+    enabled: false
+    kind: browser
+    auth: "вход в Chrome с отладкой"
+    status: paused
+    priority: 4
+    last_run: "2026-10-31"
+    limits: "нужен Chrome over CDP"
+    howto: "скил cian-connector"
+    note: "Лежит на паузе."

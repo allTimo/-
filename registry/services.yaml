@@ -1,0 +1,41 @@
+# Каталог услуг сервиса: услуга = агент + регламент + артефакты + расписание + цена.
+# В MVP три услуги. Себестоимость — оценка стоимости одного прогона по данным панели.
+version: 1
+updated: "2026-10-31"
+
+services:
+  - id: competitor-watch
+    name: "Мониторинг конкурентов и цен"
+    what: "Раз в неделю собирает цены, акции и объём предложения конкурентов, сравнивает с прошлой неделей и готовит отчёт."
+    agent: agent-1-competitor-watch
+    schedule: "weekly:monday:10:00"
+    artifacts: ["Отчёт Markdown", "Отчёт Excel (5 листов)", "Снимок lots.csv"]
+    cost_rub: 120
+    price_rub: 2900
+    status: active
+    enabled: true
+    note: "Движок и 52 теста готовы. Первая услуга пилота."
+
+  - id: direct-semantics
+    name: "Настройка Яндекс Директа"
+    what: "Собирает и кластеризует семантику, собирает кампании и группы, пишет объявления, готовит выгрузку в Директ."
+    agent: agent-2-direct-semantics
+    schedule: "on-demand"
+    artifacts: ["Файл выгрузки для Директа", "Список кампаний и групп", "Тексты объявлений"]
+    cost_rub: 450
+    price_rub: 9900
+    status: planned
+    enabled: true
+    note: "Каркас регламента готов; агент пока в статусе planned."
+
+  - id: listing-audit
+    name: "Размещение и аудит на площадках недвижимости"
+    what: "Аудит текущих объявлений и подготовка их для Циан, Авито и Яндекс Недвижимости."
+    agent: agent-1-competitor-watch
+    schedule: "on-demand"
+    artifacts: ["Чек-лист по объявлениям", "Подготовленные тексты и параметры"]
+    cost_rub: 260
+    price_rub: 5900
+    status: planned
+    enabled: false
+    note: "Требует входа в Chrome с отладкой — часть работы вручную."

@@ -1,0 +1,138 @@
+{
+  "lot_id": "325477023",
+  "saved_at": "2026-11-01",
+  "project": "zhk-dmitrovskoe-nebo",
+  "source": "cian-connector",
+  "history": [
+    {
+      "date": "2025-12-30",
+      "price_rub": 29417417.0
+    },
+    {
+      "date": "2026-01-26",
+      "price_rub": 32354120.0
+    },
+    {
+      "date": "2026-02-02",
+      "price_rub": 33969269.0
+    },
+    {
+      "date": "2026-05-21",
+      "price_rub": 34056444.0
+    },
+    {
+      "date": "2026-05-25",
+      "price_rub": 34056327.0
+    },
+    {
+      "date": "2026-08-10",
+      "price_rub": 34157822.0
+    },
+    {
+      "date": "2026-10-13",
+      "price_rub": 28036818.0
+    },
+    {
+      "date": "2026-10-22",
+      "price_rub": 28042678.0
+    }
+  ],
+  "card": {
+    "status": "success",
+    "offer_id": 325477023,
+    "title": "2-комн. квартира, 58.6 м², 17/17 эт.",
+    "deal_type": "sale",
+    "category": "newBuildingFlatSale",
+    "price_rub": 28042678,
+    "price_unit": "total",
+    "price_period": null,
+    "lease_term": null,
+    "deposit_rub": null,
+    "rooms": 2,
+    "flat_type": "rooms",
+    "is_apartments": false,
+    "total_area_m2": 58.6,
+    "living_area_m2": 37.6,
+    "kitchen_area_m2": 5.5,
+    "floor": 17,
+    "floors_total": 17,
+    "build_year": null,
+    "building_material": "monolith",
+    "ceiling_height_m": 2.7,
+    "address": "Москва, САО, район Западное Дегунино, Ильменский проезд, 4к2",
+    "metro": [
+      {
+        "name": "Селигерская",
+        "minutes": null,
+        "mode": null
+      },
+      {
+        "name": "Верхние Лихоборы",
+        "minutes": null,
+        "mode": null
+      },
+      {
+        "name": "Яхромская",
+        "minutes": null,
+        "mode": null
+      }
+    ],
+    "newbuilding_name": "Дмитровское небо",
+    "description": "Продается 2-комн. кв-ра площадью 58.60 кв.м на 17 этаже 17 этажного монолитного дома в ЖК \"ДМИТРОВСКОЕ НЕБО\" от Группа ЛСР. \"Дмитровское небо\" —жилой квартал бизнес-класса в Северном административном округе в районе Западное Дегунино. Находится среди парков и водоемов, вблизи всей необходимой для современной жизни инфраструктуры. Особенностью проекта является благоустроенный сквер площадью 1.5 га.\n \nВ шаговой доступности от \"Дмитровского неба\" находятся станции метро \"Верхние Лихоборы\" и \"Селигерская\" Люблинско-Дмитровской линии. Кроме этого, за несколько минут можно доехать до станций МЦД \"Дегунино\" и МЦК \"Лихоборы\".\nУдачное расположение проекта смогут оценить и автомобилисты, ведь рядом — удобное Дмитровское шоссе, которое обеспечивает комфортные выезды на МКАД и ТТК. Также рядом расположена Северо-Восточная хорда — скоростная магистраль, связывающая север Москвы с востоком и юго-востоком.\n \nМежду корпусами первой очереди строительства появится сквер-парк, площадь которого составит 1,5 гектара. Его ландшафтный дизайн разработан ведущими урбанистами столицы.",
+    "agency_name": "Группа ЛСР",
+    "seller_type": "developer",
+    "is_by_homeowner": null,
+    "photos": 7,
+    "photo_urls": [
+      {
+        "url": "https://images.cdn-cian.ru/images/2754160233-1.jpg",
+        "is_layout": true
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2754160239-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2754160255-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2754160259-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2754160274-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2754160279-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2754160296-1.jpg",
+        "is_layout": false
+      }
+    ],
+    "created_at": "2025-12-30T16:46:53.513",
+    "updated_at": "2026-10-31T01:05:46.497000Z",
+    "views": 1070,
+    "agent": {
+      "name": "Группа ЛСР",
+      "agent_id": 138172952,
+      "account_type": "agency",
+      "user_type": "developer",
+      "is_developer": true,
+      "offers_count": 1792,
+      "on_cian_since": "2025-12-30T16:28:12.910000Z"
+    },
+    "url": "https://www.cian.ru/sale/flat/325477023/",
+    "tier_used": "cdp",
+    "_meta": {
+      "source": "cian_card",
+      "healthy": true,
+      "warnings": []
+    }
+  },
+  "offer_url": "https://www.cian.ru/sale/flat/325477023/",
+  "page_price_rub": 28042678
+}

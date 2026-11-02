@@ -1,0 +1,135 @@
+{
+  "lot_id": "330113720",
+  "saved_at": "2026-11-01",
+  "source": "cian-connector",
+  "history": [
+    {
+      "date": "2026-05-18",
+      "price_rub": 100354029.0
+    },
+    {
+      "date": "2026-05-29",
+      "price_rub": 100355760.0
+    },
+    {
+      "date": "2026-07-01",
+      "price_rub": 100455970.0
+    }
+  ],
+  "card": {
+    "status": "success",
+    "offer_id": 330113720,
+    "title": "На первой линии Москвы-реки",
+    "deal_type": "sale",
+    "category": "newBuildingFlatSale",
+    "price_rub": 100455970,
+    "price_unit": "total",
+    "price_period": null,
+    "lease_term": null,
+    "deposit_rub": null,
+    "rooms": 2,
+    "flat_type": "rooms",
+    "is_apartments": false,
+    "total_area_m2": 91.1,
+    "living_area_m2": 29.7,
+    "kitchen_area_m2": 8.1,
+    "floor": 3,
+    "floors_total": 11,
+    "build_year": null,
+    "building_material": "monolithBrick",
+    "ceiling_height_m": 3.65,
+    "address": "Москва, ЮАО, район Даниловский, Дербеневская набережная, 5",
+    "metro": [
+      {
+        "name": "Павелецкая",
+        "minutes": null,
+        "mode": null
+      },
+      {
+        "name": "Пролетарская",
+        "minutes": null,
+        "mode": null
+      },
+      {
+        "name": "Крестьянская застава",
+        "minutes": null,
+        "mode": null
+      }
+    ],
+    "newbuilding_name": "Клубный дом ОПУС",
+    "description": "Прямая продажа от застройщика! Продаётся 2-к квартира общей площадью 91.1 кв. м. на 3 этаже 11 этажного дома. \n \nОПУС — эксклюзивный клубный дом в одном повороте реки от Кремля, проект делюкс-класса от девелопера PIONEER с архитектурной концепцией от бюро \"Цимайло Ляшенко и Партнёры\". \n \nГлавная особенность проекта — ступенчатая модульная архитектура с террасами, которая формирует эффект \"парящих\" объёмов и открывает панорамные виды на Москва-реку. \nОПУС расположен в Даниловском районе на Дербеневской набережной, в исторической части Москвы, где в шаговой доступности есть рестораны, сервисы и городская инфраструктура. Также на территории проекта запланированы коммерческие площади для повседневных услуг. \n \nПреимущества: \n- Выдача ключей в 2026 году; \n- Высота потолков от 3,5 м; \n- Огромные панорамные окна с видом на воду; \n- Камерный формат: от 2 до 7 квартир на этаже; \n- Эксклюзивные видовые террасы; \n- Пентхаусы с высотой потолков до 7,9 метров и возможностью установки камина; \n- Ландшафтный парк 1 га; \n- Клубная инфраструктура для резидентов. \n \nДевелопер PIONEER.",
+    "agency_name": "Компания PIONEER",
+    "seller_type": "developer",
+    "is_by_homeowner": null,
+    "photos": 12,
+    "photo_urls": [
+      {
+        "url": "https://images.cdn-cian.ru/images/2881880299-1.jpg",
+        "is_layout": true
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2924309280-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2924309287-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2924309300-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2924309312-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2924309331-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2924309341-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2924309353-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2924309373-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2924309385-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2924309396-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2924309409-1.jpg",
+        "is_layout": false
+      }
+    ],
+    "created_at": "2026-05-18T11:25:30.683",
+    "updated_at": "2026-11-01T15:25:17.300483Z",
+    "views": 4758,
+    "agent": {
+      "name": "Компания PIONEER",
+      "agent_id": 141493134,
+      "account_type": "agency",
+      "user_type": "developer",
+      "is_developer": true,
+      "offers_count": 69,
+      "on_cian_since": "2026-05-18T11:17:27.767000Z"
+    },
+    "url": "https://www.cian.ru/sale/flat/330113720/",
+    "tier_used": "cdp",
+    "_meta": {
+      "source": "cian_card",
+      "healthy": true,
+      "warnings": []
+    }
+  }
+}

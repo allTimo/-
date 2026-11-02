@@ -1,0 +1,214 @@
+{
+  "lot_id": "328747534",
+  "saved_at": "2026-11-01",
+  "source": "cian-connector",
+  "history": [
+    {
+      "date": "2026-04-08",
+      "price_rub": 249464600.0
+    },
+    {
+      "date": "2026-06-22",
+      "price_rub": 249678000.0
+    },
+    {
+      "date": "2026-08-10",
+      "price_rub": 260348000.0
+    }
+  ],
+  "card": {
+    "status": "success",
+    "offer_id": 328747534,
+    "title": "Пентхаус с собственной террасой",
+    "deal_type": "sale",
+    "category": "flatSale",
+    "price_rub": 260348000,
+    "price_unit": "total",
+    "price_period": null,
+    "lease_term": null,
+    "deposit_rub": null,
+    "rooms": 3,
+    "flat_type": "rooms",
+    "is_apartments": true,
+    "total_area_m2": 213.4,
+    "living_area_m2": 79.4,
+    "kitchen_area_m2": 65.2,
+    "floor": 8,
+    "floors_total": 8,
+    "build_year": 2022,
+    "building_material": "monolithBrick",
+    "ceiling_height_m": 3.6,
+    "address": "Москва, ЦАО, район Таганский, Славянская площадь, 2/5с1",
+    "metro": [
+      {
+        "name": "Китай-город",
+        "minutes": null,
+        "mode": null
+      },
+      {
+        "name": "Лубянка",
+        "minutes": null,
+        "mode": null
+      },
+      {
+        "name": "Площадь Революции",
+        "minutes": null,
+        "mode": null
+      },
+      {
+        "name": "Театральная",
+        "minutes": null,
+        "mode": null
+      },
+      {
+        "name": "Охотный ряд",
+        "minutes": null,
+        "mode": null
+      },
+      {
+        "name": "Кузнецкий мост",
+        "minutes": null,
+        "mode": null
+      }
+    ],
+    "newbuilding_name": "LUMIN (ЛЮМИН)",
+    "description": "Цена указана со скидкой. Апартаменты продаются без мебели\nРассрочка 0% на 12 месяцев при первоначальном взносе от 20%.\n\nПентхаус в клубном доме Lumin — в самом центре Москвы, в нескольких минутах пешком от парка Зарядье, Кремля и исторических улиц Китай-города.\n\nОбщая площадь пентхауса составляет 213,4 кв. м. Высота потолков — 3,6 м. Свободная планировка позволяет создать индивидуальное пространство под ваш образ жизни: просторную кухню-гостиную с дровяным камином, мастер-спальню с гардеробной и ванной комнатой, две дополнительные спальни, кабинет, постирочную и системы хранения.\n\nОсобое преимущество лота — собственная терраса площадью 36,9 кв. м. и видом на кафедральный собор Святых Петра и Павла. Это редкая возможность иметь собственную террасу в самом сердце города — для отдыха, приема гостей и неспешных вечеров на свежем воздухе.\n\nLumin — камерный клубный дом всего на 54 апартамента и 4 пентхауса. Здесь ценят пространство, спокойствие и возможность жить в центре города без ощущения большого жилого комплекса.\n\nВ клубном доме предусмотрен двухуровневый подземный паркинг, современные инженерные системы, круглосуточный сервис и безопасность.",
+    "agency_name": "H R E",
+    "seller_type": "realtor_not_commerce",
+    "is_by_homeowner": false,
+    "photos": 28,
+    "photo_urls": [
+      {
+        "url": "https://images.cdn-cian.ru/images/kvartira-moskva-slavyanskaya-ploshcad-2977588813-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/kvartira-moskva-slavyanskaya-ploshcad-2977588790-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/kvartira-moskva-slavyanskaya-ploshcad-2977593863-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/kvartira-moskva-slavyanskaya-ploshcad-2977593868-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/kvartira-moskva-slavyanskaya-ploshcad-2977588786-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/kvartira-moskva-slavyanskaya-ploshcad-2977588809-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/kvartira-moskva-slavyanskaya-ploshcad-2977593772-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/kvartira-moskva-slavyanskaya-ploshcad-2922662776-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/kvartira-moskva-slavyanskaya-ploshcad-2922663264-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/kvartira-moskva-slavyanskaya-ploshcad-2922663707-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/kvartira-moskva-slavyanskaya-ploshcad-2922663272-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/kvartira-moskva-slavyanskaya-ploshcad-2922664311-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/kvartira-moskva-slavyanskaya-ploshcad-2922663322-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/kvartira-moskva-slavyanskaya-ploshcad-2905005184-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/kvartira-moskva-slavyanskaya-ploshcad-2905005197-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/kvartira-moskva-slavyanskaya-ploshcad-2905006019-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/kvartira-moskva-slavyanskaya-ploshcad-2922676179-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/kvartira-moskva-slavyanskaya-ploshcad-2922676159-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/kvartira-moskva-slavyanskaya-ploshcad-2922676177-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/kvartira-moskva-slavyanskaya-ploshcad-2922667295-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/kvartira-moskva-slavyanskaya-ploshcad-2922668060-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/kvartira-moskva-slavyanskaya-ploshcad-2922668602-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/kvartira-moskva-slavyanskaya-ploshcad-2922676178-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/kvartira-moskva-slavyanskaya-ploshcad-2922670430-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/kvartira-moskva-slavyanskaya-ploshcad-2922676174-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/kvartira-moskva-slavyanskaya-ploshcad-2922667423-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/kvartira-moskva-slavyanskaya-ploshcad-2851495011-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/kvartira-moskva-slavyanskaya-ploshcad-2922675832-1.jpg",
+        "is_layout": true
+      }
+    ],
+    "created_at": "2026-04-08T13:31:57.403",
+    "updated_at": "2026-11-01T13:10:17.244458Z",
+    "views": 3778,
+    "agent": {
+      "name": "H R E",
+      "agent_id": 140116723,
+      "account_type": "agency",
+      "user_type": "realtor_not_commerce",
+      "is_developer": false,
+      "offers_count": 3,
+      "on_cian_since": "2026-03-24T10:09:55.650000Z"
+    },
+    "url": "https://www.cian.ru/sale/flat/328747534/",
+    "tier_used": "cdp",
+    "_meta": {
+      "source": "cian_card",
+      "healthy": true,
+      "warnings": []
+    }
+  }
+}

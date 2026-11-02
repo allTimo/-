@@ -1,0 +1,76 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+dist/pypi/
+*.egg-info/
+.eggs/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# uv
+# uv.lock IS committed — it pins the exact dependency set for reproducible installs.
+
+# Testing / tooling caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.hypothesis/
+.coverage
+htmlcov/
+coverage.xml
+
+# Environment / secrets
+# No secrets are needed by this project, but a stray .env must never be committed.
+.env
+.env.*
+!.env.example
+
+# Chrome scraping profile (created at runtime, contains the operator's session)
+Chrome-Scraping/
+chrome-scraping/
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Local scratch
+/tmp/
+scratch/
+*.log
+
+# Live-run request ledger (scripts/live_check.py and pytest -m live share it).
+.live-budget*.json
+
+# Архивы релиза собираются и прикладываются к Releases, а не хранятся в git.
+*.zip
+
+# jsdom для DOM-тестов ставится из package.json + package-lock.json: оба
+# отслеживаются намеренно (CI кладёт jsdom по этим манифестам, иначе
+# dom-тесты экстракторов тихо скипаются на раннерах).
+node_modules/
+
+# dsh/package.json is not the Node artefact above: it is the plugin-bundle
+# manifest every dsh install resolves, so it must be tracked.
+!dsh/package.json
+
+# Local tooling and run artifacts that must never be committed.
+.agent/
+.qwen/
+MISSION.md
+QWEN.md
+PUBLISH_PROMPT.md
+start-run.sh

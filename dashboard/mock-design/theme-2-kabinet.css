@@ -1,0 +1,37 @@
+/* Вариант 2. «Кабинет» — светлый и воздушный: крупные заголовки, много воздуха. */
+:root {
+  --bg: #f7f7f8;
+  --panel: #ffffff;
+  --panel2: #ffffff;
+  --panel3: #f0f0f2;
+  --card-bg: #ffffff;
+  --hd-bg: rgba(255, 255, 255, 0.9);
+  --side-bg: #ffffff;
+  --border: #e6e6e9;
+  --border-soft: #efeff2;
+  --text: #111111;
+  --muted: #5b5b66;
+  --muted2: #8a8a95;
+  --accent: #7553ff;
+  --accent2: #553db8;
+  --accent-soft: rgba(117, 83, 255, 0.10);
+  --ok: #12a150; --ok-soft: rgba(18, 161, 80, 0.12);
+  --bad: #d92d20; --bad-soft: rgba(217, 45, 32, 0.12);
+  --hover-bg: rgba(17, 17, 17, 0.035);
+  --bar-bg: linear-gradient(90deg, #7553ff, #a78bfa);
+  --logo-bg: linear-gradient(135deg, #7553ff, #a78bfa);
+  --radius: 22px; --radius-sm: 16px; --radius-xs: 12px;
+  --shadow: 0 10px 30px rgba(17, 17, 17, 0.07);
+  --shadow-sm: 0 6px 16px rgba(17, 17, 17, 0.08);
+  --font: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --mono: 'JetBrains Mono', ui-monospace, Consolas, monospace;
+  --gap: 18px; --main-pad: 32px; --card-pad: 24px; --pad-y: 16px; --pad-x: 32px;
+  --fs: 15px; --fs-h1: 32px; --fs-title: 18px; --fs-kpi: 34px; --fs-card-title: 16px;
+  --side-w: 268px; --side-item-pad: 11px 12px;
+  --btn-transition: background .2s ease, box-shadow .2s ease, transform .2s ease;
+  --anim-in: mFade .35s ease both;
+  --blur: none;
+}
+.side-item { border-radius: 13px; }
+.kpi:hover, .card:hover { transform: translateY(-2px); transition: transform .2s ease, box-shadow .2s ease; box-shadow: 0 16px 40px rgba(17, 17, 17, 0.1); }
+.page-sub { font-size: 14px; }

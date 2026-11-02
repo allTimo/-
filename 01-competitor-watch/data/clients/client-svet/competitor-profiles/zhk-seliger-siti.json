@@ -1,0 +1,375 @@
+{
+  "project": "ЖК Селигер Сити",
+  "source_url": "https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-seliger-siti-36051-ot-zastroyschika-OTZ/",
+  "source_platform": "cian",
+  "collected_at": "2026-11-01",
+  "metrics": {
+    "lots_in_sale": {
+      "value": 30,
+      "unit": "лотов",
+      "source": "cian (https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-seliger-siti-36051-ot-zastroyschika-OTZ/)",
+      "collected_at": "2026-11-01",
+      "method": "http",
+      "accuracy": "высокая",
+      "comment": "лоты на публичной странице проекта"
+    },
+    "price_min_rub": {
+      "value": 19397200,
+      "unit": "₽",
+      "source": "cian (https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-seliger-siti-36051-ot-zastroyschika-OTZ/)",
+      "collected_at": "2026-11-01",
+      "method": "http",
+      "accuracy": "",
+      "comment": ""
+    },
+    "price_median_rub": {
+      "value": 24605606,
+      "unit": "₽",
+      "source": "cian (https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-seliger-siti-36051-ot-zastroyschika-OTZ/)",
+      "collected_at": "2026-11-01",
+      "method": "http",
+      "accuracy": "",
+      "comment": ""
+    },
+    "price_max_rub": {
+      "value": 41362303,
+      "unit": "₽",
+      "source": "cian (https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-seliger-siti-36051-ot-zastroyschika-OTZ/)",
+      "collected_at": "2026-11-01",
+      "method": "http",
+      "accuracy": "",
+      "comment": ""
+    },
+    "price_per_m2_median": {
+      "value": 577597,
+      "unit": "₽/м²",
+      "source": "cian (https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-seliger-siti-36051-ot-zastroyschika-OTZ/)",
+      "collected_at": "2026-11-01",
+      "method": "http",
+      "accuracy": "",
+      "comment": ""
+    },
+    "average_area_m2": {
+      "value": 51.5,
+      "unit": "м²",
+      "source": "cian (https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-seliger-siti-36051-ot-zastroyschika-OTZ/)",
+      "collected_at": "2026-11-01",
+      "method": "http",
+      "accuracy": "",
+      "comment": ""
+    },
+    "median_area_m2": {
+      "value": 42,
+      "unit": "м²",
+      "source": "cian (https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-seliger-siti-36051-ot-zastroyschika-OTZ/)",
+      "collected_at": "2026-11-01",
+      "method": "http",
+      "accuracy": "",
+      "comment": ""
+    },
+    "reserved_lots": {
+      "value": 0,
+      "unit": "лотов",
+      "source": "cian (https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-seliger-siti-36051-ot-zastroyschika-OTZ/)",
+      "collected_at": "2026-11-01",
+      "method": "http",
+      "accuracy": "средняя",
+      "comment": "источник помечает бронь, но ни один лот не отмечен забронированным (реальный ноль)"
+    },
+    "promo_count": {
+      "value": null,
+      "unit": "лотов с акцией",
+      "source": "cian (https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-seliger-siti-36051-ot-zastroyschika-OTZ/)",
+      "collected_at": "2026-11-01",
+      "method": "http",
+      "accuracy": "",
+      "comment": "тексты акций на странице не раскрыты (видна ссылка «4 акций»)"
+    },
+    "site_corpi_named": {
+      "value": null,
+      "unit": "корпусов",
+      "source": "сайт застройщика",
+      "collected_at": "2026-11-01",
+      "method": "none",
+      "accuracy": "средняя",
+      "comment": "на странице корпуса по номерам не названы"
+    },
+    "site_deadlines": {
+      "value": null,
+      "unit": "сроки",
+      "source": "сайт застройщика",
+      "collected_at": "2026-11-01",
+      "method": "none",
+      "accuracy": "средняя",
+      "comment": "сроки ввода из текста страницы"
+    },
+    "site_readiness_pct": {
+      "value": null,
+      "unit": "%",
+      "source": "сайт застройщика",
+      "collected_at": "2026-11-01",
+      "method": "none",
+      "accuracy": "средняя",
+      "comment": "готовность, если указана"
+    },
+    "site_flats_total": {
+      "value": null,
+      "unit": "квартир",
+      "source": "сайт застройщика",
+      "collected_at": "2026-11-01",
+      "method": "none",
+      "accuracy": "средняя",
+      "comment": "страница недоступна: HTTP None; Chrome отдал страницу-ошибку (не данные)"
+    },
+    "site_flats_in_sale": {
+      "value": null,
+      "unit": "квартир",
+      "source": "сайт застройщика",
+      "collected_at": "2026-11-01",
+      "method": "none",
+      "accuracy": "средняя",
+      "comment": "страница недоступна: HTTP None; Chrome отдал страницу-ошибку (не данные)"
+    },
+    "site_flats_sold": {
+      "value": null,
+      "unit": "квартир",
+      "source": "сайт застройщика",
+      "collected_at": "2026-11-01",
+      "method": "none",
+      "accuracy": "средняя",
+      "comment": "страница недоступна: HTTP None; Chrome отдал страницу-ошибку (не данные)"
+    },
+    "site_flats_reserved": {
+      "value": null,
+      "unit": "квартир",
+      "source": "сайт застройщика",
+      "collected_at": "2026-11-01",
+      "method": "none",
+      "accuracy": "средняя",
+      "comment": "страница недоступна: HTTP None; Chrome отдал страницу-ошибку (не данные)"
+    },
+    "site_promo_count": {
+      "value": null,
+      "unit": "акций",
+      "source": "сайт застройщика",
+      "collected_at": "2026-11-01",
+      "method": "none",
+      "accuracy": "средняя",
+      "comment": "акций на сайте не найдено"
+    },
+    "site_mortgage_count": {
+      "value": null,
+      "unit": "программ",
+      "source": "сайт застройщика",
+      "collected_at": "2026-11-01",
+      "method": "none",
+      "accuracy": "средняя",
+      "comment": "ипотечных программ на сайте не найдено"
+    },
+    "corpi_total": {
+      "value": null,
+      "unit": "корпусов всего",
+      "source": "ЕИСЖС (наш.дом.рф)",
+      "collected_at": "2026-11-01",
+      "method": "dom",
+      "accuracy": "",
+      "comment": "официальные данные получить нельзя: ЕИСЖС (наш.дом.рф): Chrome отдал страницу ошибки сертификата — Chrome отдал страницу ошибки сертификата — это не данные"
+    },
+    "corpi_built": {
+      "value": null,
+      "unit": "корпусов введено",
+      "source": "ЕИСЖС (наш.дом.рф)",
+      "collected_at": "2026-11-01",
+      "method": "dom",
+      "accuracy": "",
+      "comment": "официальные данные получить нельзя: ЕИСЖС (наш.дом.рф): Chrome отдал страницу ошибки сертификата — Chrome отдал страницу ошибки сертификата — это не данные"
+    },
+    "corpi_under_construction": {
+      "value": null,
+      "unit": "корпусов строится",
+      "source": "ЕИСЖС (наш.дом.рф)",
+      "collected_at": "2026-11-01",
+      "method": "dom",
+      "accuracy": "",
+      "comment": "официальные данные получить нельзя: ЕИСЖС (наш.дом.рф): Chrome отдал страницу ошибки сертификата — Chrome отдал страницу ошибки сертификата — это не данные"
+    },
+    "flats_total": {
+      "value": null,
+      "unit": "квартир в проекте",
+      "source": "ЕИСЖС (наш.дом.рф)",
+      "collected_at": "2026-11-01",
+      "method": "dom",
+      "accuracy": "",
+      "comment": "официальные данные получить нельзя: ЕИСЖС (наш.дом.рф): Chrome отдал страницу ошибки сертификата — Chrome отдал страницу ошибки сертификата — это не данные"
+    },
+    "ddu_registered": {
+      "value": null,
+      "unit": "ДДУ зарегистрировано",
+      "source": "ЕИСЖС (наш.дом.рф)",
+      "collected_at": "2026-11-01",
+      "method": "dom",
+      "accuracy": "",
+      "comment": "официальные данные получить нельзя: ЕИСЖС (наш.дом.рф): Chrome отдал страницу ошибки сертификата — Chrome отдал страницу ошибки сертификата — это не данные"
+    },
+    "sold_official_rosreestr": {
+      "value": null,
+      "unit": "ДДУ",
+      "source": "ЕИСЖС (наш.дом.рф) / Росреестр",
+      "collected_at": "2026-11-01",
+      "method": "none",
+      "accuracy": "",
+      "comment": "официальные ДДУ недоступны: Chrome отдал страницу ошибки сертификата — своими цифрами не подменяем"
+    },
+    "sold_estimate_by_gone_lots": {
+      "value": null,
+      "unit": "лотов",
+      "source": "наш недельный мониторинг",
+      "collected_at": "2026-11-01",
+      "method": "estimate",
+      "accuracy": "",
+      "comment": "нужно минимум 2 недели наблюдений"
+    }
+  },
+  "derived": {
+    "sales_speed_per_week": {
+      "value": null,
+      "unit": "",
+      "source": "",
+      "collected_at": "2026-11-01",
+      "method": "estimate",
+      "accuracy": "",
+      "comment": "нужно минимум 2 недели наблюдений (накоплено 1)"
+    },
+    "absorption_rate": {
+      "value": null,
+      "unit": "",
+      "source": "",
+      "collected_at": "2026-11-01",
+      "method": "estimate",
+      "accuracy": "",
+      "comment": "нужно минимум 2 недели наблюдений (накоплено 1)"
+    },
+    "months_to_sell_out": {
+      "value": null,
+      "unit": "",
+      "source": "",
+      "collected_at": "2026-11-01",
+      "method": "estimate",
+      "accuracy": "",
+      "comment": "нужно минимум 2 недели наблюдений (накоплено 1)"
+    },
+    "entry_price_dynamics_pct": {
+      "value": null,
+      "unit": "",
+      "source": "",
+      "collected_at": "2026-11-01",
+      "method": "estimate",
+      "accuracy": "",
+      "comment": "нужно минимум 2 недели наблюдений (накоплено 1)"
+    },
+    "supply_dynamics_pct": {
+      "value": null,
+      "unit": "",
+      "source": "",
+      "collected_at": "2026-11-01",
+      "method": "estimate",
+      "accuracy": "",
+      "comment": "нужно минимум 2 недели наблюдений (накоплено 1)"
+    },
+    "promo_pressure_weeks": {
+      "value": null,
+      "unit": "",
+      "source": "",
+      "collected_at": "2026-11-01",
+      "method": "estimate",
+      "accuracy": "",
+      "comment": "нужно минимум 2 недели наблюдений (накоплено 1)"
+    },
+    "price_index_vs_district": {
+      "value": 1.122,
+      "unit": "×",
+      "source": "расчёт по нашим данным",
+      "collected_at": null,
+      "method": "estimate",
+      "accuracy": "средняя",
+      "comment": "медиана ₽/м² конкурента к медиане района (514 844 ₽/м²)"
+    },
+    "gap_price_vs_us_pct": {
+      "value": 131.04,
+      "unit": "%",
+      "source": "расчёт",
+      "collected_at": "2026-11-01",
+      "method": "estimate",
+      "accuracy": "средняя",
+      "comment": "разрыв: медиана конкурента против нашей цены входа (250 000 ₽/м²)"
+    },
+    "sold_share_official_pct": {
+      "value": null,
+      "unit": "%",
+      "source": "ЕИСЖС (наш.дом.рф)",
+      "collected_at": "2026-11-01",
+      "method": "estimate",
+      "accuracy": "",
+      "comment": "официальная доля проданного не считается: нет данных (ДДУ)"
+    }
+  },
+  "risk_flags": [
+    {
+      "code": "no_history",
+      "level": "info",
+      "comment": "истории мало: динамика и риски появятся после 2 недель"
+    }
+  ],
+  "limitations": [
+    "сайт застройщика: HTTP None; Chrome отдал страницу-ошибку (не данные)",
+    "ЕИСЖС: официальные корпуса/квартиры/ДДУ недоступны — Chrome отдал страницу ошибки сертификата"
+  ],
+  "by_rooms": {
+    "студии": {
+      "count": 13,
+      "median_price": 20897823,
+      "median_price_per_m2": 598679,
+      "median_area": 34
+    },
+    "1": {
+      "count": 9,
+      "median_price": 24411213,
+      "median_price_per_m2": 597019,
+      "median_area": 40
+    },
+    "2": {
+      "count": 8,
+      "median_price": 35517618,
+      "median_price_per_m2": 507421,
+      "median_area": 70
+    },
+    "3": {
+      "count": 0,
+      "median_price": null,
+      "median_price_per_m2": null,
+      "median_area": null
+    },
+    "4+": {
+      "count": 0,
+      "median_price": null,
+      "median_price_per_m2": null,
+      "median_area": null
+    }
+  },
+  "developer_site": {
+    "url": "https://www.mrgroup.ru/projects/seliger-siti/",
+    "method": "none",
+    "note": "HTTP None; Chrome отдал страницу-ошибку (не данные)",
+    "title": null,
+    "corpi": [],
+    "ok": false
+  },
+  "history": {
+    "weeks": 1,
+    "needed": 2,
+    "available": false
+  },
+  "distance_km": 1.88,
+  "class": "бизнес",
+  "developer": "MR Group"
+}

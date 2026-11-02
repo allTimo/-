@@ -1,0 +1,62 @@
+# Реестр агентов — ЕДИНЫЙ ИСТОЧНИК ПРАВДЫ.
+# Дашборд читает этот файл (вкладка «Агенты»), тумблер вкл/выкл правит поле enabled.
+# Чтобы подключить нового агента: скопируйте блок, поменяйте id и поля. Подробности — registry/README.md.
+version: 1
+updated: "2026-10-31"
+
+agents:
+  - id: agent-1-competitor-watch
+    name: "Агент 1 — Мониторинг конкурентов"
+    role: "Раз в неделю собирает снимок предложения конкурентов (цены, акции, количество лотов), сравнивает с прошлой неделей и готовит отчёт."
+    enabled: true
+    status: active
+    model: "deepseek/deepseek-v4.1-flash"
+    model_hint: "лёгкий сбор данных + расчёты движка; сильную модель подключать только для выводов"
+    projects: []          # пусто = все проекты из projects.yaml
+    groups: ["Мониторинг", "Конкуренты"]
+    schedule: "weekly:monday:10:00"
+    inputs: ["registry/intake/inbox", "01-competitor-watch/inbox", "cian-connector", "avito-connector"]
+    outputs: ["01-competitor-watch/reports", "01-competitor-watch/data/snapshots"]
+    runbook: "00-admin/runbook.md"
+    notes: "Движок и тесты: 01-competitor-watch/scripts, 52 теста."
+
+  - id: agent-2-direct-semantics
+    name: "Агент 2 — Семантика и кампании Яндекс Директа"
+    role: "Собирает и кластеризует семантику, собирает кампании и группы, пишет объявления, готовит выгрузку в Директ."
+    enabled: false
+    status: planned
+    model: "deepseek/deepseek-v4-pro"
+    model_hint: "задача творческая и объёмная — здесь сильная модель оправдана"
+    projects: []
+    groups: ["Директ", "Семантика"]
+    schedule: "on-demand"
+    inputs: ["registry/intake", "00-admin/config/my-objects.yaml"]
+    outputs: ["02-keywords-direct"]
+    runbook: "02-keywords-direct/README.md"
+    notes: "Следующий этап. Запуск — по команде пользователя."
+
+  - id: agent-3-creative
+    name: "Агент 3 — Креативы и дизайн (заготовка)"
+    role: "Готовит баннеры и графику под размеры площадок, обновляет креативы под акции конкурентов."
+    enabled: false
+    status: planned
+    model: "deepseek/deepseek-v4.1-flash"
+    projects: []
+    groups: ["Креативы"]
+    schedule: "on-demand"
+    inputs: ["superdesign", "dsh-creative-studio"]
+    outputs: ["creatives"]
+    notes: "Инструменты из маркета: superdesign, dsh-creative-studio (ставится в T11)."
+
+  - id: agent-4-analytics
+    name: "Агент 4 — Сквозная аналитика (заготовка)"
+    role: "Сводит расходы и результаты по площадкам и кампаниям, готовит недельную сводку по эффективности."
+    enabled: false
+    status: planned
+    model: "deepseek/deepseek-v4.1-flash"
+    projects: []
+    groups: ["Аналитика"]
+    schedule: "weekly"
+    inputs: ["dashboard/public/data", "registry/prices.yaml"]
+    outputs: ["reports"]
+    notes: "Опирается на данные дашборда; включать, когда появятся выгрузки по расходам."

@@ -1,0 +1,16 @@
+
+/* ===== T64: иерархия групп отчёта Агента 1 ===== */
+.cr-tools { display: flex; flex-direction: column; gap: 10px; }
+.cr-group { border: 1px solid var(--border); border-radius: var(--radius-sm); margin-bottom: 10px; background: var(--panel); }
+.cr-group > summary.cr-sum, .cr-sub > summary.cr-sum { cursor: pointer; list-style: none; display: flex; align-items: baseline; gap: 10px; padding: 12px 14px; }
+.cr-group > summary::-webkit-details-marker, .cr-sub > summary::-webkit-details-marker { display: none; }
+.cr-sum-title { font-weight: 650; font-size: 14px; }
+.cr-sum-title::after { content: ' ▾'; color: var(--muted-2); font-weight: 400; }
+details[open] > summary .cr-sum-title::after { content: ' ▴'; }
+.cr-sum-hint { font-size: 12px; color: var(--muted-2); }
+.cr-body { padding: 0 14px 14px; }
+.cr-sub { border-top: 1px solid var(--border-soft); }
+.cr-sub > summary.cr-sum { padding: 9px 0; }
+.cr-nodata { color: var(--muted-2); font-size: 12.5px; font-style: italic; }
+.cr-src { color: var(--muted-2); font-size: 11px; }
+.cr-val { cursor: help; }

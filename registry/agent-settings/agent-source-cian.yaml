@@ -1,0 +1,54 @@
+# ТОНКИЕ НАСТРОЙКИ АГЕНТА-ИСТОЧНИКА: лимиты запросов, пауза, страницы, стоп при блокировке.
+version: 1
+agent: agent-source-cian
+updated: "2026-11-01"
+
+schedule:
+  enabled: true
+  days: [1, 2, 3, 4, 5]
+  time: "09:30"
+  frequency: daily
+  timezone: "Europe/Moscow"
+  only_on_new_data: false
+
+model:
+  name: "deepseek/deepseek-v4.1-flash"
+  limit_rub: 500
+  limit_tokens: 300000
+  on_limit: stop
+
+priority:
+  level: low
+  max_parallel: 1
+  timeout_sec: 120
+  retries: 3
+
+report:
+  formats: [csv]
+  sections: [raw]
+  language: ru
+  branding: false
+
+delivery:
+  channels: []
+  addresses: []
+  auto_send: false
+  copy_to: ""
+
+alerts:
+  when: [fail]
+  price_threshold_pct: 0
+  quiet_hours: "23:00-07:00"
+
+limits:
+  skip_weekends: true
+  min_interval_hours: 24
+  stop_switch: false
+
+source_agent:
+  rate_limit_per_min: 10
+  pause_ms: 1500
+  max_pages: 5
+  timeout_sec: 30
+  stop_on_block: true
+  use_browser: false

@@ -1,0 +1,68 @@
+# СТРУКТУРА ЛЕВОГО МЕНЮ — один файл, из которого панель строит навигацию.
+#
+# Чтобы добавить новый раздел, допишите запись в нужную группу. Логику править не нужно.
+#
+# Поля записи:
+#   id            — идентификатор раздела; он же якорь в адресе: #agents, #sources и т.д.
+#                   ВАЖНО: под этим id должен существовать экран (VIEWS[id]) — список
+#                   готовых экранов см. в README, раздел «Навигация».
+#   label         — как пункт называется в меню
+#   icon          — иконка из набора: grid, users, card, spark, list, bot, home, chart,
+#                   ruble, trend, check, plug, box, wallet, bell, pulse, clock, wrench,
+#                   layers, folder, userplus, lock, gear, book, help
+#   counter       — необязательно: счётчик-кружок. Значения: alerts (тревоги),
+#                   overdue (просроченные подписки), failed (упавшие прогоны),
+#                   unpaid (неоплаченные счета)
+#   counter_kind  — bad (красный) или пусто (акцентный)
+#
+# Пример нового агентского раздела:
+#   - { id: agents-creative, label: "Агенты-креативы", icon: "spark", counter: failed }
+
+version: 1
+updated: "2026-11-01"
+
+groups:
+  - id: work
+    title: "Работа"
+    items:
+      - { id: overview, label: "Обзор", icon: "grid", counter: alerts }
+      - { id: clients, label: "Клиенты", icon: "users" }
+      - { id: subscriptions, label: "Подписки и тарифы", icon: "card", counter: overdue, counter_kind: bad }
+      - { id: services, label: "Услуги", icon: "spark" }
+      - { id: ads, label: "Реклама и кэшбэк", icon: "wallet" }
+      - { id: queue, label: "Очередь работ", icon: "list", counter: failed, counter_kind: bad }
+      - { id: agents, label: "Агенты", icon: "bot" }
+
+  - id: analytics
+    title: "Аналитика"
+    items:
+      - { id: analytics, label: "Аналитика", icon: "chart" }
+      - { id: results, label: "Результаты", icon: "check" }
+      - { id: usage, label: "Расходы: токены и модели", icon: "ruble" }
+      - { id: economy, label: "Экономика: деньги сервиса", icon: "trend" }
+      - { id: quality, label: "Качество", icon: "check" }
+
+  - id: system
+    title: "Система"
+    items:
+      - { id: integrations, label: "Интеграции", icon: "box" }
+      - { id: payments, label: "Оплаты", icon: "wallet", counter: unpaid, counter_kind: bad }
+      - { id: notifications, label: "Уведомления", icon: "bell" }
+      - { id: system, label: "Состояние системы: здоровье данных", icon: "pulse" }
+      - { id: journal, label: "Журнал", icon: "clock" }
+      - { id: infra, label: "Инфраструктура и справка", icon: "wrench" }
+
+  - id: manage
+    title: "Управление"
+    items:
+      - { id: workspaces, label: "Рабочие пространства", icon: "layers" }
+      - { id: projects, label: "Проекты", icon: "folder" }
+      - { id: team, label: "Команда и доступы", icon: "userplus" }
+      - { id: security, label: "Безопасность", icon: "lock" }
+      - { id: settings, label: "Настройки", icon: "gear" }
+
+  - id: help
+    title: "Помощь"
+    items:
+      - { id: learning, label: "Обучение", icon: "book" }
+      - { id: support, label: "Поддержка", icon: "help" }

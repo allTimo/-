@@ -1,0 +1,126 @@
+# ============================================================================
+# КОНФИГ КЛИЕНТА: client-svet (ЖК «Свет», Dominanta)
+# ============================================================================
+# Один файл = один клиент (контракт зафиксирован Lead, см. task-49).
+# Глобальные переключатели — registry/sources.yaml; этот файл их переопределяет.
+# Панель: registry/clients.yaml -> client-svet, registry/agent-settings/agent-1-competitor-watch.yaml
+#
+# ССЫЛКИ ПРОВЕРЕНЫ ФАКТИЧЕСКИ 2026-11-01 обычным HTTP (без логина).
+# Полная таблица проверки: 00-admin/research/platforms-public-pages-2026-11-01.md
+#   cian          — HTTP 200, в HTML видны лоты с ценами (реально работает без входа)
+#   yandex-realty — HTTP 200, цена видна (проверено на двух ЖК)
+#   avito         — HTTP 439 «Доступ ограничен: проверка безопасности» (ЗАБЛОКИРОВАН)
+#   domclick      — HTTP 401 (ЗАБЛОКИРОВАН)
+#   TODO означает: ссылку должен подтвердить/дать пользователь.
+# ============================================================================
+
+version: 1
+updated: "2026-11-01"
+
+client_id: client-svet
+name: "ЖК «Свет»"
+brand:
+  logo: "assets/logo.png"      # TODO (от пользователя): файл логотипа ещё не положен в проект
+  accent: "#7553ff"
+
+schedule:
+  weekday: monday              # как в registry/agent-settings: присылать по понедельникам
+  time: "10:00"                # Europe/Moscow
+
+report:
+  title: "Мониторинг конкурентов"
+  formats: [md, xlsx, pdf]     # pdf — из панели; движок сейчас отдаёт md + xlsx
+
+recipients:
+  - { channel: telegram, address: "@svet_marketing" }   # подтверждено в agent-settings
+  - { channel: email, address: "" }                     # TODO (от пользователя): e-mail получателя
+
+sources:
+  - { id: developer-sites, enabled: true }                                   # работает частично
+  - { id: cian,           enabled: true, mode: public-pages, auth: none }     # проверено: 10/10 страниц ЖК, 200
+  - { id: avito,          enabled: false, mode: public-pages, auth: none }    # 439 «проверка безопасности»
+  - { id: yandex-realty,  enabled: true, mode: public-pages, auth: none }     # проверено: 200, цена видна
+  - { id: domclick,       enabled: false, mode: public-pages, auth: none }    # 401
+
+competitors:
+  # 1. Прямой конкурент на том же Дмитровском шоссе.
+  - name: "Дмитровское небо"
+    developer: "Группа ЛСР"
+    class: "бизнес"
+    site: ""                                     # TODO: dmitrovskoe-nebo.lsr.ru не существует (DNS, проверено 31.10)
+    platforms:
+      cian: "https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-dmitrovskoe-nebo-4051330-ot-zastroyschika-OTZ/"
+      avito: ""                                  # TODO: площадка блокирует обычный HTTP (439)
+      yandex_realty: ""                          # TODO: страница ЖК не найдена в каталоге Яндекс Недвижимости
+      domclick: ""                               # TODO: площадка отдаёт 401
+
+  # 2. Крупный проект бизнес-класса в том же районе.
+  - name: "Селигер Сити"
+    developer: "MR Group"
+    class: "бизнес"
+    site: ""                                     # TODO: seliger-city.ru не существует; mr-group.ru закрыт от не-браузерных запросов
+    platforms:
+      cian: "https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-seliger-siti-36051-ot-zastroyschika-OTZ/"
+      avito: ""
+      yandex_realty: ""
+      domclick: ""
+
+  # 3. Большой объём предложения от ПИК.
+  - name: "Онежский вал"
+    developer: "ПИК"
+    class: "бизнес"
+    site: "https://www.pik.ru/"                  # сайт существует, но отвечает 401 на не-браузерные запросы
+    platforms:
+      cian: "https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-onezhskiy-val-5722062-ot-zastroyschika-OTZ/"
+      avito: ""
+      yandex_realty: ""
+      domclick: ""
+
+  # 4. Ближайший конкурент по локации (то же шоссе).
+  - name: "Кинетик. Резиденции на Дмитровском"
+    developer: "UDS"
+    class: "бизнес"
+    site: ""                                     # TODO: kinetik.uds.ru / uds.ru / uds.group недоступны (проверено 31.10)
+    platforms:
+      cian: "https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-kinetik-rezidencii-na-dmitrovskom-5778933-ot-zastroyschika-OTZ/"
+      avito: ""
+      yandex_realty: ""
+      domclick: ""
+
+  # 5. «Бизнес-лайт» в соседнем Восточном Дегунино.
+  - name: "Акценты"
+    developer: "Plus Development"
+    class: "бизнес"
+    site: "https://accenty.ru/"                  # проверено: 200, в HTML только «цена от»
+    platforms:
+      cian: "https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-akcenty-5698426-ot-zastroyschika-OTZ/"
+      avito: ""
+      yandex_realty: "https://realty.yandex.ru/moskva_i_moskovskaya_oblast/kupit/novostrojka/akcenty-3991148/"
+      domclick: ""
+
+  # 6. Дополнительный ориентир по сегменту (не в ключевых конкурентах my-objects.yaml).
+  - name: "Михалковский"
+    developer: "РГ-Девелопмент"
+    class: "бизнес"
+    site: "https://rg-dev.ru/novostroyki/mihalkovskij/"   # проверено: 200, структурированных цен нет
+    platforms:
+      cian: "https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-mihalkovskiy-3206223-ot-zastroyschika-OTZ/"
+      avito: ""
+      yandex_realty: "https://realty.yandex.ru/moskva_i_moskovskaya_oblast/kupit/novostrojka/mihalkovskij-2586475/"
+      domclick: ""
+
+# НАШ СОБСТВЕННЫЙ ОБЪЕКТ здесь НЕ дублируется: структура контракта фиксирована
+# (client_id, name, brand, schedule, report, recipients, sources, competitors).
+# Наш ЖК задаётся в панели: registry/agent-settings/agent-1-competitor-watch.yaml -> agent1.watch;
+# самоописание — 00-admin/config/my-objects.yaml -> my-zhk-svet.
+# Ссылки нашего ЖК на 01.11.2026 (для agent1.watch.url, проверены HTTP 200):
+#   сайт: https://svetdom.ru/
+#   циан: https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-svet-5449798-ot-zastroyschika-OTZ/  (28 лотов в HTML)
+
+# ЧТО НУЖНО ОТ ПОЛЬЗОВАТЕЛЯ (TODO):
+#   1. Логотип клиента в assets/logo.png (сейчас в проекте нет).
+#   2. E-mail получателя отчёта (в реестре есть только телефон контакта).
+#   3. Реальные сайты конкурентов, где стоит TODO: Дмитровское небо (ЛСР), Селигер Сити (MR Group),
+#      Кинетик (UDS) — домены не отвечают.
+#   4. Хотя бы по одной рабочей ссылке на Авито и Домклик: обе площадки режут обычный HTTP
+#      (439 и 401). Без этого разделы «Авито/Домклик» в снимке будут пустыми.

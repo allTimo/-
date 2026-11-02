@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Спасибо — что дальше | Центр управления агентами</title>
+<meta name="description" content="Заявка отправлена. Что произойдёт дальше: срок ответа, что подготовить, пример отчёта.">
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="../dashboard/public/fonts/fonts.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="glow glow-1"></div>
+<div class="glow glow-2"></div>
+
+<header class="hd">
+  <div class="wrap hd-in">
+    <a class="logo" href="index.html">
+      <span class="logo-mark">ЦУ</span>
+      <span class="logo-text">Центр управления агентами</span>
+    </a>
+    <nav class="nav">
+      <a href="index.html#services">Услуги</a>
+      <a href="index.html#report">Пример отчёта</a>
+      <a href="index.html#plans">Тарифы</a>
+      <a href="index.html#faq">Вопросы</a>
+    </nav>
+    <div class="hd-actions">
+      <a class="btn btn-ghost" href="../dashboard/public/index.html?surface=client" data-slot="cabinet-link">Войти в кабинет</a>
+      <a class="btn" href="index.html#lead">Новая заявка</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="wrap thankyou">
+    <div class="badge-line" id="ty-badge">Страница после отправки заявки</div>
+    <h1 id="ty-title">Заявка у оператора</h1>
+    <p class="lead" id="ty-lead">Мы получили ваши контакты и объект. Отвечаем в течение <b>2 часов в рабочее время</b> (пн–пт, 10:00–19:00 МСК).</p>
+    <div class="card notice" id="ty-direct" hidden>
+      <p><b>Похоже, вы открыли эту страницу напрямую.</b> Заявка с этой страницы не отправляется — здесь только описание того, что происходит после отправки. Если вы хотите оставить заявку, вернитесь на <a href="index.html#lead">форму</a>.</p>
+    </div>
+
+    <div class="ty-grid">
+      <div class="card">
+        <h3>Что произойдёт дальше</h3>
+        <ol class="f-list">
+          <li><b>В течение 2 часов</b> (в рабочее время) оператор отвечает и задаёт уточняющие вопросы, если нужно.</li>
+          <li><b>В тот же день</b> присылаем пример отчёта и уточняем список конкурентов: 2–5 ЖК или застройщиков.</li>
+          <li><b>1–2 рабочих дня</b> — считаем цену под ваш объём и делаем первый отчёт на ваших данных.</li>
+          <li>Вы смотрите отчёт и решаете про подписку. До этого момента платить не нужно.</li>
+        </ol>
+        <p class="small">Заявки, отправленные вечером, ночью или в выходные, берём в работу утром следующего рабочего дня.</p>
+      </div>
+
+      <div class="card">
+        <h3>Что подготовить (по желанию)</h3>
+        <ul class="f-list">
+          <li>Ссылку на сайт вашего объекта или ЖК — чтобы мы сверили, как он выглядит на площадках.</li>
+          <li>Список конкурентов: 2–5 названий ЖК или застройщиков, которых важно отслеживать.</li>
+          <li>Какие площадки важнее: Циан, Авито, Яндекс Недвижимость, сайты застройщиков.</li>
+          <li>Если есть — ссылки на ваши текущие объявления.</li>
+        </ul>
+        <p class="small">Ничего из этого не обязательно на первом шаге: без списка конкурентов мы подберём кандидатов сами и покажем на подтверждение. Доступы и пароли не нужны.</p>
+      </div>
+    </div>
+
+    <div class="card dl-card">
+      <div>
+        <h3>Пока ждёте — посмотрите пример отчёта</h3>
+        <p>Демо-отчёт по открытым данным сайта застройщика (ЖК ЗИЛАРТ, 31.10.2026). Ровно тот формат, в котором вы будете получать свои отчёты — 9 разделов: главное за неделю, цены, изменения, акции, ограничения источников.</p>
+      </div>
+      <div class="dl-actions">
+        <a class="btn btn-primary" href="downloads/primer-otcheta-konkurenty.md" download>Скачать пример (Markdown)</a>
+        <a class="btn" href="downloads/primer-otcheta-konkurenty.xlsx" download>Скачать пример (Excel)</a>
+        <a class="btn" href="index.html#report">Посмотреть скриншоты отчёта</a>
+      </div>
+    </div>
+
+    <div class="card contacts-card">
+      <h3>Контакты: уточняются</h3>
+      <p>Публичные Telegram и почта пока не подтверждены — мы не ставим заглушку вместо адреса. Если нужно что-то добавить к заявке, отправьте её ещё раз через <a href="index.html#lead">форму</a> с пометкой в комментарии: заявки связываются по контакту.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="ft">
+  <div class="wrap ft-bottom" style="border-top:0;margin-top:0">
+    <span class="small">© 2026 Центр управления агентами. Цены — пример.</span>
+    <span class="small"><a href="index.html">На главную</a> · <a href="oferta.html">Оферта (черновик)</a> · <a href="privacy.html">Политика (черновик)</a></span>
+  </div>
+</footer>
+
+<script>
+/* Страница «спасибо» различает два случая: пришли после отправки формы (?name=…)
+   или открыли адрес напрямую. Во втором случае мы не делаем вид, что заявка принята. */
+(function () {
+  var params = new URLSearchParams(location.search);
+  var name = params.get('name');
+  if (!name) { try { name = sessionStorage.getItem('dsh-lead-name'); } catch (e) { name = null; } }
+  var direct = !params.get('name');
+  if (name) {
+    document.getElementById('ty-title').textContent = 'Спасибо, ' + name + '! Заявка у оператора';
+    document.getElementById('ty-badge').textContent = 'Заявка отправлена';
+  }
+  if (direct) {
+    document.getElementById('ty-direct').hidden = false;
+    document.getElementById('ty-title').textContent = 'Что дальше после заявки';
+    document.getElementById('ty-badge').textContent = 'Страница «что дальше»';
+  }
+})();
+</script>
+</body>
+</html>

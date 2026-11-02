@@ -1,0 +1,224 @@
+{
+  "project_id": "my-zhk-svet",
+  "generated_at": "2026-11-01T17:31:22+03:00",
+  "watch": {
+    "name": "ЖК «Свет»",
+    "address": "Москва, Западное Дегунино, Дмитровское шоссе, 83А",
+    "url": "https://svetdom.ru/",
+    "lat": 55.8504471,
+    "lon": 37.5660167,
+    "geocode_source": "osm-nominatim",
+    "geocode_warning": "точность геокодирования невысокая (primary/highway) — проверьте координаты или задайте их вручную"
+  },
+  "radius_km": 10.0,
+  "segment": {
+    "classes": [
+      "бизнес"
+    ],
+    "price_per_m2_range": [
+      250000,
+      450000
+    ]
+  },
+  "decisions_file": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\01-competitor-watch\\data\\candidates\\my-zhk-svet.decisions.json",
+  "platform_attempts": [
+    {
+      "source": "cian",
+      "url": "https://www.cian.ru/novostroyki/",
+      "status": "no_data",
+      "note": "страница открылась, но лотов на ней нет (видна только цена «от»)",
+      "found": 0
+    },
+    {
+      "source": "avito",
+      "url": "https://www.avito.ru/rossiya/kvartiry",
+      "status": "needs_browser",
+      "note": "HTTP 439 (браузер отключён флагом)",
+      "found": 0
+    },
+    {
+      "source": "yandex-realty",
+      "url": "https://realty.yandex.ru/moskva-i-moskovskaya-oblast/kupit/kvartira/",
+      "status": "no_data",
+      "note": "страница открылась, но лотов на ней нет (видна только цена «от»)",
+      "found": 0
+    }
+  ],
+  "search": "; снимок выдачи search-results-degunino-2026-11-01.json (9 записей)",
+  "summary": {
+    "total": 9,
+    "in_radius": 6,
+    "radius_km": 10.0,
+    "approved": 0,
+    "rejected": 0,
+    "candidate": 9,
+    "without_distance": 3,
+    "without_price": 0,
+    "class_mismatch": 3
+  },
+  "limitations": [
+    "точность геокодирования невысокая (primary/highway) — проверьте координаты или задайте их вручную",
+    "площадки без публичных данных: cian (no_data), avito (needs_browser), yandex-realty (no_data)",
+    "без расстояния: 3 (нет координат — данных нет)"
+  ],
+  "candidates": [
+    {
+      "id": "zhk-dmitrovskoe-nebo-gruppa-lsr",
+      "key": "db580eeac51c",
+      "name": "ЖК Дмитровское небо",
+      "developer": "Группа ЛСР",
+      "class": "бизнес",
+      "lat": 55.8573367,
+      "lon": 37.5519877,
+      "distance_km": 1.16,
+      "price_per_m2": 477272.0,
+      "sources": [
+        {
+          "platform": "cian",
+          "url": "https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-dmitrovskoe-nebo-4051330-ot-zastroyschika-OTZ/"
+        }
+      ],
+      "found_at": "2026-11-01T17:31:09+03:00",
+      "confidence": "high",
+      "status": "candidate",
+      "notes": [
+        "цена ₽/м² — медиана по 28 лотам страницы ЖК (Циан, HTTP без логина)"
+      ],
+      "in_radius": true,
+      "class_match": true,
+      "in_price_range": false
+    },
+    {
+      "id": "zhk-seliger-siti-mr-group",
+      "key": "8e77ae1c7782",
+      "name": "ЖК Селигер Сити",
+      "developer": "MR Group",
+      "class": "бизнес",
+      "lat": 55.8618061,
+      "lon": 37.5436443,
+      "distance_km": 1.88,
+      "price_per_m2": 577597.0,
+      "sources": [
+        {
+          "platform": "cian",
+          "url": "https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-seliger-siti-36051-ot-zastroyschika-OTZ/"
+        }
+      ],
+      "found_at": "2026-11-01T17:31:22+03:00",
+      "confidence": "high",
+      "status": "candidate",
+      "notes": [
+        "цена ₽/м² — медиана по 30 лотам страницы ЖК (Циан, HTTP без логина)"
+      ],
+      "in_radius": true,
+      "class_match": true,
+      "in_price_range": false
+    },
+    {
+      "id": "zhk-mihalkovskiy-rg-development",
+      "key": "b340dddf2b68",
+      "name": "ЖК Михалковский",
+      "developer": "РГ-Девелопмент",
+      "class": "бизнес",
+      "lat": 55.8397434,
+      "lon": 37.5144426,
+      "distance_km": 3.43,
+      "price_per_m2": 859147.0,
+      "sources": [
+        {
+          "platform": "cian",
+          "url": "https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-mihalkovskiy-3206223-ot-zastroyschika-OTZ/"
+        }
+      ],
+      "found_at": "2026-11-01T17:31:20+03:00",
+      "confidence": "high",
+      "status": "candidate",
+      "notes": [
+        "цена ₽/м² — медиана по 28 лотам страницы ЖК (Циан, HTTP без логина)"
+      ],
+      "in_radius": true,
+      "class_match": true,
+      "in_price_range": false
+    },
+    {
+      "id": "zhk-narvin-pik",
+      "key": "b0cd4500a47a",
+      "name": "ЖК Нарвин",
+      "developer": "ПИК",
+      "class": "комфорт",
+      "lat": 55.8418852,
+      "lon": 37.4991997,
+      "distance_km": 4.28,
+      "price_per_m2": 500350.0,
+      "sources": [
+        {
+          "platform": "cian",
+          "url": "https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-narvin-5686240-ot-zastroyschika-OTZ/"
+        }
+      ],
+      "found_at": "2026-11-01T17:31:13+03:00",
+      "confidence": "medium",
+      "status": "candidate",
+      "notes": [
+        "цена ₽/м² — медиана по 28 лотам страницы ЖК (Циан, HTTP без логина)",
+        "класс «комфорт» не совпадает с сегментом наблюдения (бизнес)"
+      ],
+      "in_radius": true,
+      "class_match": false,
+      "in_price_range": false
+    },
+    {
+      "id": "zhk-soul-forma-pik",
+      "key": "f9e138cafe21",
+      "name": "ЖК СОУЛ",
+      "developer": "FORMA (ПИК)",
+      "class": "бизнес",
+      "lat": 55.8123589,
+      "lon": 37.5232396,
+      "distance_km": 5.01,
+      "price_per_m2": 529339.0,
+      "sources": [
+        {
+          "platform": "cian",
+          "url": "https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-soul-4183417-ot-zastroyschika-OTZ/"
+        }
+      ],
+      "found_at": "2026-11-01T17:31:21+03:00",
+      "confidence": "high",
+      "status": "candidate",
+      "notes": [
+        "цена ₽/м² — медиана по 28 лотам страницы ЖК (Циан, HTTP без логина)"
+      ],
+      "in_radius": true,
+      "class_match": true,
+      "in_price_range": false
+    },
+    {
+      "id": "zhk-businovskiy-park-pik",
+      "key": "8537688edeb5",
+      "name": "ЖК Бусиновский парк",
+      "developer": "ПИК",
+      "class": "комфорт",
+      "lat": 55.8813546,
+      "lon": 37.5045918,
+      "distance_km": 5.15,
+      "price_per_m2": 444996.0,
+      "sources": [
+        {
+          "platform": "cian",
+          "url": "https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-businovskiy-park-2159741-ot-zastroyschika-OTZ/"
+        }
+      ],
+      "found_at": "2026-11-01T17:31:14+03:00",
+      "confidence": "medium",
+      "status": "candidate",
+      "notes": [
+        "цена ₽/м² — медиана по 28 лотам страницы ЖК (Циан, HTTP без логина)",
+        "класс «комфорт» не совпадает с сегментом наблюдения (бизнес)"
+      ],
+      "in_radius": true,
+      "class_match": false,
+      "in_price_range": true
+    }
+  ]
+}

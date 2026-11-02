@@ -1,0 +1,101 @@
+# Источники мониторинга цен и лотов — источник правды для дашборда и агентов.
+# Тумблер во вкладке «Источники мониторинга» правит поле enabled (с бэкапом файла).
+# Скрипты сбора обязаны пропускать источники с enabled: false.
+#
+# ОБНОВЛЕНО 2026-11-01: площадки подключаются по ПУБЛИЧНЫМ СТРАНИЦАМ, БЕЗ входа в кабинет
+# (решение пользователя). mode: public-pages, auth: none. Фактическая проверка ссылок —
+# 00-admin/research/platforms-public-pages-2026-11-01.md. Коннекторы с логином не используются.
+version: 2
+updated: "2026-11-01"
+
+sources:
+  - id: developer-sites
+    name: "Сайты застройщиков"
+    enabled: true
+    kind: http            # http | browser | feed | manual
+    auth: none
+    mode: public-pages
+    status: partial       # working | partial | blocked | paused | not-tested
+    priority: 1
+    last_run: "2026-11-01"
+    limits: "прайс по лотам часто отдаётся клиентским JS; в HTML видны агрегаты «цена от». ПИК отвечает 401, домены ЛСР/MR/UDS для части ЖК не отвечают"
+    howto: "node marketing-agents/00-admin/scripts/collect-developer-sites.mjs --site <id>; проверка площадки: --probe <url>"
+    note: "Основной путь с 31.10.2026. Доказан на zilart.ru: 15 позиций, медиана 602 000 ₽/м²."
+
+  - id: partner-feeds
+    name: "Партнёрские прайсы застройщиков"
+    enabled: false
+    kind: feed
+    auth: "по договорённости"
+    mode: file
+    status: not-tested
+    priority: 2
+    last_run: null
+    limits: "нужна выгрузка от застройщика; формат — xlsx/csv в inbox"
+    howto: "положить файл в marketing-agents/01-competitor-watch/inbox/ и запустить разбор"
+    note: "Самый точный источник: лоты, площади, этажи, акции."
+
+  - id: manual-inbox
+    name: "Ручные материалы (скриншоты, выгрузки)"
+    enabled: true
+    kind: manual
+    auth: none
+    mode: file
+    status: working
+    priority: 3
+    last_run: null
+    limits: "ручной труд; зато работает всегда"
+    howto: "01-competitor-watch/inbox + registry/intake/inbox"
+    note: "Скриншоты читаются агентом (нужна vision-модель или режим 👁 Vision)."
+
+  - id: cian
+    name: "Циан"
+    enabled: true
+    kind: http
+    auth: none
+    mode: public-pages    # ПУБЛИЧНЫЕ СТРАНИЦЫ БЕЗ ВХОДА В КАБИНЕТ
+    status: working
+    priority: 4
+    last_run: "2026-11-01"
+    limits: "без логина; страница ЖК отдаёт ~24-28 лотов с ценами прямо в HTML, остальное — по страницам. Коннектор с логином (CDP) не используется"
+    howto: "обычный HTTP: https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-<slug>-<id>-ot-zastroyschika-OTZ/ ; id ЖК берутся из каталога https://www.cian.ru/novostroyki-moskva-sao-045/"
+    note: "ПРОВЕРЕНО 01.11.2026: 10/10 страниц ЖК конкурентов — HTTP 200, в HTML видны лоты (площадь, комнатность, цена, корпус). Ранее собранный снимок 270 лотов (через CDP) лежит на паузе в data/snapshots/_paused-cian-2026-10-31."
+
+  - id: avito
+    name: "Авито Недвижимость"
+    enabled: true
+    kind: http
+    auth: none
+    mode: public-pages    # планируется без входа, но площадка режет обычный HTTP
+    status: blocked
+    priority: 5
+    last_run: "2026-11-01"
+    limits: "ПРОВЕРЕНО 01.11.2026: HTTP 439 «Доступ ограничен: проверка безопасности». Без браузера/логина данные не отдаёт"
+    howto: "—"
+    note: "Нужна рабочая ссылка от пользователя или возобновление браузерного пути (Chrome CDP) — отложено."
+
+  - id: yandex-realty
+    name: "Яндекс Недвижимость"
+    enabled: true
+    kind: http
+    auth: none
+    mode: public-pages
+    status: working
+    priority: 6
+    last_run: "2026-11-01"
+    limits: "без логина; страница ЖК отдаёт цену (lowPrice) и разметку, но НЕ все ЖК находятся в каталоге площадки"
+    howto: "обычный HTTP: https://realty.yandex.ru/moskva_i_moskovskaya_oblast/kupit/novostrojka/<slug>-<id>/"
+    note: "ПРОВЕРЕНО 01.11.2026: каталог новостроек — HTTP 200; страницы «Акценты» и «Михалковский» — 200, цена видна. Остальные ЖК клиентов в каталоге не найдены (TODO для пользователя)."
+
+  - id: domclick
+    name: "Домклик"
+    enabled: true
+    kind: http
+    auth: none
+    mode: public-pages
+    status: blocked
+    priority: 7
+    last_run: "2026-11-01"
+    limits: "ПРОВЕРЕНО 01.11.2026: HTTP 401 на /moskva/novostroyki. Публичные страницы без входа недоступны"
+    howto: "—"
+    note: "Добавлен 01.11.2026 по решению пользователя; пока закрыт. Нужна ссылка/подход от пользователя."

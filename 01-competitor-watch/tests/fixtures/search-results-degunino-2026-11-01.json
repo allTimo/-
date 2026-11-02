@@ -1,0 +1,150 @@
+{
+  "note": "Кандидаты вокруг Дмитровского шоссе: ссылки Циан из проверенного списка 00-admin/research/platforms-public-pages-2026-11-01.md, координаты — живое геокодирование OSM/Nominatim",
+  "generated_at": "2026-11-01T14:25:00+03:00",
+  "results": [
+    {
+      "name": "ЖК Дмитровское небо",
+      "developer": "Группа ЛСР",
+      "class": "бизнес",
+      "address": "Москва, ЖК Дмитровское небо",
+      "lat": 55.8573367,
+      "lon": 37.5519877,
+      "url": "https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-dmitrovskoe-nebo-4051330-ot-zastroyschika-OTZ/",
+      "source": "web-search",
+      "sources": [
+        {
+          "platform": "cian",
+          "url": "https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-dmitrovskoe-nebo-4051330-ot-zastroyschika-OTZ/"
+        }
+      ]
+    },
+    {
+      "name": "ЖК Кинетик. Резиденции на Дмитровском",
+      "developer": "UDS",
+      "class": "бизнес",
+      "address": "Москва, ЖК Кинетик. Резиденции на Дмитровском",
+      "lat": null,
+      "lon": null,
+      "url": "https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-kinetik-rezidencii-na-dmitrovskom-5778933-ot-zastroyschika-OTZ/",
+      "source": "web-search",
+      "sources": [
+        {
+          "platform": "cian",
+          "url": "https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-kinetik-rezidencii-na-dmitrovskom-5778933-ot-zastroyschika-OTZ/"
+        }
+      ]
+    },
+    {
+      "name": "ЖК Нарвин",
+      "developer": "ПИК",
+      "class": "комфорт",
+      "address": "Москва, ЖК Нарвин",
+      "lat": 55.8418852,
+      "lon": 37.4991997,
+      "url": "https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-narvin-5686240-ot-zastroyschika-OTZ/",
+      "source": "web-search",
+      "sources": [
+        {
+          "platform": "cian",
+          "url": "https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-narvin-5686240-ot-zastroyschika-OTZ/"
+        }
+      ]
+    },
+    {
+      "name": "ЖК Бусиновский парк",
+      "developer": "ПИК",
+      "class": "комфорт",
+      "address": "Москва, ЖК Бусиновский парк",
+      "lat": 55.8813546,
+      "lon": 37.5045918,
+      "url": "https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-businovskiy-park-2159741-ot-zastroyschika-OTZ/",
+      "source": "web-search",
+      "sources": [
+        {
+          "platform": "cian",
+          "url": "https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-businovskiy-park-2159741-ot-zastroyschika-OTZ/"
+        }
+      ]
+    },
+    {
+      "name": "ЖК Онежский вал",
+      "developer": "ПИК",
+      "class": "комфорт",
+      "address": "Москва, ЖК Онежский вал",
+      "lat": null,
+      "lon": null,
+      "url": "https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-onezhskiy-val-5722062-ot-zastroyschika-OTZ/",
+      "source": "web-search",
+      "sources": [
+        {
+          "platform": "cian",
+          "url": "https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-onezhskiy-val-5722062-ot-zastroyschika-OTZ/"
+        }
+      ]
+    },
+    {
+      "name": "ЖК Акценты",
+      "developer": "Plus Development",
+      "class": "бизнес",
+      "address": "Москва, ЖК Акценты",
+      "lat": null,
+      "lon": null,
+      "url": "https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-akcenty-5698426-ot-zastroyschika-OTZ/",
+      "source": "web-search",
+      "sources": [
+        {
+          "platform": "cian",
+          "url": "https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-akcenty-5698426-ot-zastroyschika-OTZ/"
+        }
+      ]
+    },
+    {
+      "name": "ЖК Михалковский",
+      "developer": "РГ-Девелопмент",
+      "class": "бизнес",
+      "address": "Москва, ЖК Михалковский",
+      "lat": 55.8397434,
+      "lon": 37.5144426,
+      "url": "https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-mihalkovskiy-3206223-ot-zastroyschika-OTZ/",
+      "source": "web-search",
+      "sources": [
+        {
+          "platform": "cian",
+          "url": "https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-mihalkovskiy-3206223-ot-zastroyschika-OTZ/"
+        }
+      ]
+    },
+    {
+      "name": "ЖК СОУЛ",
+      "developer": "FORMA (ПИК)",
+      "class": "бизнес",
+      "address": "Москва, ЖК СОУЛ",
+      "lat": 55.8123589,
+      "lon": 37.5232396,
+      "url": "https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-soul-4183417-ot-zastroyschika-OTZ/",
+      "source": "web-search",
+      "sources": [
+        {
+          "platform": "cian",
+          "url": "https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-soul-4183417-ot-zastroyschika-OTZ/"
+        }
+      ]
+    },
+    {
+      "name": "ЖК Селигер Сити",
+      "developer": "MR Group",
+      "class": "бизнес",
+      "address": "Москва, ЖК Селигер Сити",
+      "lat": 55.8618061,
+      "lon": 37.5436443,
+      "url": "https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-seliger-siti-36051-ot-zastroyschika-OTZ/",
+      "source": "web-search",
+      "sources": [
+        {
+          "platform": "cian",
+          "url": "https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-seliger-siti-36051-ot-zastroyschika-OTZ/"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+/* Вариант 3. «Стекло» — тёмный премиум: градиентные пятна, стеклянные панели, микроанимации. */
+:root {
+  --bg: #08080c;
+  --panel: rgba(255, 255, 255, 0.04);
+  --panel2: rgba(255, 255, 255, 0.06);
+  --panel3: rgba(255, 255, 255, 0.10);
+  --card-bg: rgba(255, 255, 255, 0.045);
+  --hd-bg: rgba(8, 8, 12, 0.6);
+  --side-bg: rgba(255, 255, 255, 0.03);
+  --border: rgba(255, 255, 255, 0.10);
+  --border-soft: rgba(255, 255, 255, 0.06);
+  --text: #ffffff;
+  --muted: #b9b9c6;
+  --muted2: #82828f;
+  --accent: #7553ff;
+  --accent2: #6a46f0;
+  --accent-soft: rgba(117, 83, 255, 0.22);
+  --ok: #2ee888; --ok-soft: rgba(46, 232, 136, 0.16);
+  --bad: #ff6568; --bad-soft: rgba(255, 101, 104, 0.16);
+  --hover-bg: rgba(255, 255, 255, 0.07);
+  --bar-bg: linear-gradient(90deg, #7553ff, #4fc1ff);
+  --logo-bg: linear-gradient(135deg, #7553ff, #4fc1ff);
+  --radius: 24px; --radius-sm: 18px; --radius-xs: 14px;
+  --shadow: 0 18px 50px rgba(0, 0, 0, 0.45);
+  --shadow-sm: 0 10px 26px rgba(117, 83, 255, 0.25);
+  --font: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --mono: 'JetBrains Mono', ui-monospace, Consolas, monospace;
+  --gap: 16px; --main-pad: 26px; --card-pad: 20px; --pad-y: 14px; --pad-x: 26px;
+  --fs: 14px; --fs-h1: 26px; --fs-title: 17px; --fs-kpi: 28px; --fs-card-title: 15px;
+  --side-w: 258px;
+  --btn-transition: background .25s ease, box-shadow .25s ease, transform .25s ease;
+  --anim-in: mFade .5s cubic-bezier(.2,.7,.3,1) both;
+  --blur: blur(18px);
+}
+/* градиентные пятна */
+body::before, body::after {
+  content: ''; position: fixed; z-index: 0; border-radius: 50%;
+  filter: blur(90px); pointer-events: none;
+}
+body::before { width: 620px; height: 620px; left: -140px; top: -180px; background: radial-gradient(circle, rgba(117,83,255,.55), transparent 65%); animation: mFloat 14s ease-in-out infinite alternate; }
+body::after { width: 560px; height: 560px; right: -120px; top: 120px; background: radial-gradient(circle, rgba(79,193,255,.42), transparent 65%); animation: mFloat 18s ease-in-out infinite alternate-reverse; }
+@keyframes mFloat { from { transform: translate3d(0,0,0) scale(1); } to { transform: translate3d(40px, 30px, 0) scale(1.08); } }
+.kpi-value { text-shadow: 0 0 22px rgba(117, 83, 255, 0.55); }
+.kpi, .card { border-color: rgba(255, 255, 255, 0.12); }
+.kpi::before { background: linear-gradient(180deg, #7553ff, #4fc1ff); width: 4px; }
+.kpi:hover, .card:hover { transform: translateY(-3px); transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease; border-color: rgba(117, 83, 255, 0.5); box-shadow: 0 22px 60px rgba(117, 83, 255, 0.28); }
+.btn-primary { box-shadow: 0 10px 30px rgba(117, 83, 255, 0.4); }
+.side-item.active { background: linear-gradient(90deg, rgba(117,83,255,.28), rgba(79,193,255,.10)); }

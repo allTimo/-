@@ -1,0 +1,471 @@
+{
+ "configFile": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\registry\\sources.yaml",
+ "configExists": true,
+ "configUpdated": "2026-11-01",
+ "summary": {
+  "total": 7,
+  "enabled": 6,
+  "disabled": 1,
+  "withData": 2,
+  "withoutData": 5,
+  "totalLots": 304,
+  "topSource": {
+   "id": "cian",
+   "name": "Циан",
+   "lots": 289
+  },
+  "snapshots": 4,
+  "weeks": 2
+ },
+ "sources": [
+  {
+   "id": "developer-sites",
+   "name": "Сайты застройщиков",
+   "enabled": true,
+   "kind": "http",
+   "auth": "none",
+   "status": "partial",
+   "priority": 1,
+   "lastRun": "2026-11-01",
+   "limits": "прайс по лотам часто отдаётся клиентским JS; в HTML видны агрегаты «цена от». ПИК отвечает 401, домены ЛСР/MR/UDS для части ЖК не отвечают",
+   "howto": "node marketing-agents/00-admin/scripts/collect-developer-sites.mjs --site <id>; проверка площадки: --probe <url>",
+   "note": "Основной путь с 31.10.2026. Доказан на zilart.ru: 15 позиций, медиана 602 000 ₽/м².",
+   "stats": {
+    "lots": 15,
+    "snapshots": 1,
+    "snapshotDirs": [
+     "_demo-site-zilart-2026-10-31"
+    ],
+    "dates": [
+     "2026-10-31"
+    ],
+    "firstDate": "2026-10-31",
+    "lastDate": "2026-10-31",
+    "projects": [
+     {
+      "name": "ЗИЛАРТ",
+      "lots": 15
+     }
+    ],
+    "competitors": [
+     {
+      "name": "Группа ЛСР",
+      "lots": 15
+     }
+    ],
+    "rooms": {
+     "0": 2,
+     "1": 5,
+     "2": 6,
+     "3": 2
+    },
+    "promo": 0,
+    "avgPriceRub": 31605773,
+    "share": 0.049342105263157895
+   },
+   "lastRunFromLog": {
+    "ts": "2026-11-01T14:03:19",
+    "source": "developer-sites",
+    "status": "ok",
+    "lots": 15,
+    "projects": 1,
+    "note": "адаптер zilart: цены «от» по позициям каталога (HTTP, без логина). Гранулярность: цена «от» по позиции каталога (корпус + тип квартиры + площадь); это НЕ шахматка по каждому лоту. "
+   }
+  },
+  {
+   "id": "partner-feeds",
+   "name": "Партнёрские прайсы застройщиков",
+   "enabled": false,
+   "kind": "feed",
+   "auth": "по договорённости",
+   "status": "not-tested",
+   "priority": 2,
+   "lastRun": null,
+   "limits": "нужна выгрузка от застройщика; формат — xlsx/csv в inbox",
+   "howto": "положить файл в marketing-agents/01-competitor-watch/inbox/ и запустить разбор",
+   "note": "Самый точный источник: лоты, площади, этажи, акции.",
+   "stats": {
+    "lots": 0,
+    "snapshots": 0,
+    "snapshotDirs": [],
+    "dates": [],
+    "firstDate": null,
+    "lastDate": null,
+    "projects": [],
+    "competitors": [],
+    "rooms": {},
+    "promo": 0,
+    "avgPriceRub": null,
+    "share": 0
+   },
+   "lastRunFromLog": null
+  },
+  {
+   "id": "manual-inbox",
+   "name": "Ручные материалы (скриншоты, выгрузки)",
+   "enabled": true,
+   "kind": "manual",
+   "auth": "none",
+   "status": "working",
+   "priority": 3,
+   "lastRun": null,
+   "limits": "ручной труд; зато работает всегда",
+   "howto": "01-competitor-watch/inbox + registry/intake/inbox",
+   "note": "Скриншоты читаются агентом (нужна vision-модель или режим 👁 Vision).",
+   "stats": {
+    "lots": 0,
+    "snapshots": 0,
+    "snapshotDirs": [],
+    "dates": [],
+    "firstDate": null,
+    "lastDate": null,
+    "projects": [],
+    "competitors": [],
+    "rooms": {},
+    "promo": 0,
+    "avgPriceRub": null,
+    "share": 0
+   },
+   "lastRunFromLog": {
+    "ts": "2026-11-01T14:03:19",
+    "source": "manual-inbox",
+    "status": "empty",
+    "lots": 0,
+    "projects": 0,
+    "note": "ждём материалы в inbox"
+   }
+  },
+  {
+   "id": "cian",
+   "name": "Циан",
+   "enabled": true,
+   "kind": "http",
+   "auth": "none",
+   "status": "working",
+   "priority": 4,
+   "lastRun": "2026-11-01",
+   "limits": "без логина; страница ЖК отдаёт ~24-28 лотов с ценами прямо в HTML, остальное — по страницам. Коннектор с логином (CDP) не используется",
+   "howto": "обычный HTTP: https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-<slug>-<id>-ot-zastroyschika-OTZ/ ; id ЖК берутся из каталога https://www.cian.ru/novostroyki-moskva-sao-045/",
+   "note": "ПРОВЕРЕНО 01.11.2026: 10/10 страниц ЖК конкурентов — HTTP 200, в HTML видны лоты (площадь, комнатность, цена, корпус). Ранее собранный снимок 270 лотов (через CDP) лежит на паузе в data/snapshots/_paused-cian-2026-10-31.",
+   "stats": {
+    "lots": 289,
+    "snapshots": 3,
+    "snapshotDirs": [
+     "2026-10-23",
+     "2026-10-30",
+     "_paused-cian-2026-10-31"
+    ],
+    "dates": [
+     "2026-10-23",
+     "2026-10-30",
+     "2026-10-31"
+    ],
+    "firstDate": "2026-10-23",
+    "lastDate": "2026-10-31",
+    "projects": [
+     {
+      "name": "Сити Бэй",
+      "lots": 136
+     },
+     {
+      "name": "ЗИЛАРТ",
+      "lots": 134
+     },
+     {
+      "name": "Селигер Сити",
+      "lots": 9
+     },
+     {
+      "name": "City Bay",
+      "lots": 6
+     },
+     {
+      "name": "Символ",
+      "lots": 4
+     }
+    ],
+    "competitors": [
+     {
+      "name": "MR",
+      "lots": 136
+     },
+     {
+      "name": "Группа ЛСР",
+      "lots": 134
+     },
+     {
+      "name": "СЗ Гранель",
+      "lots": 9
+     },
+     {
+      "name": "MR Group",
+      "lots": 6
+     },
+     {
+      "name": "Донстрой",
+      "lots": 4
+     }
+    ],
+    "rooms": {
+     "0": 24,
+     "1": 80,
+     "2": 120,
+     "3": 46,
+     "4": 19
+    },
+    "promo": 0,
+    "avgPriceRub": 30508893,
+    "share": 0.9506578947368421
+   },
+   "lastRunFromLog": {
+    "ts": "2026-11-01T14:03:19",
+    "source": "cian",
+    "status": "partial",
+    "lots": 0,
+    "projects": 0,
+    "note": "страница отдала капчу/проверку бота"
+   }
+  },
+  {
+   "id": "avito",
+   "name": "Авито Недвижимость",
+   "enabled": true,
+   "kind": "http",
+   "auth": "none",
+   "status": "blocked",
+   "priority": 5,
+   "lastRun": "2026-11-01",
+   "limits": "ПРОВЕРЕНО 01.11.2026: HTTP 439 «Доступ ограничен: проверка безопасности». Без браузера/логина данные не отдаёт",
+   "howto": "—",
+   "note": "Нужна рабочая ссылка от пользователя или возобновление браузерного пути (Chrome CDP) — отложено.",
+   "stats": {
+    "lots": 0,
+    "snapshots": 0,
+    "snapshotDirs": [],
+    "dates": [],
+    "firstDate": null,
+    "lastDate": null,
+    "projects": [],
+    "competitors": [],
+    "rooms": {},
+    "promo": 0,
+    "avgPriceRub": null,
+    "share": 0
+   },
+   "lastRunFromLog": {
+    "ts": "2026-11-01T14:03:19",
+    "source": "avito",
+    "status": "partial",
+    "lots": 0,
+    "projects": 0,
+    "note": "страница отдала капчу/проверку бота"
+   }
+  },
+  {
+   "id": "yandex-realty",
+   "name": "Яндекс Недвижимость",
+   "enabled": true,
+   "kind": "http",
+   "auth": "none",
+   "status": "working",
+   "priority": 6,
+   "lastRun": "2026-11-01",
+   "limits": "без логина; страница ЖК отдаёт цену (lowPrice) и разметку, но НЕ все ЖК находятся в каталоге площадки",
+   "howto": "обычный HTTP: https://realty.yandex.ru/moskva_i_moskovskaya_oblast/kupit/novostrojka/<slug>-<id>/",
+   "note": "ПРОВЕРЕНО 01.11.2026: каталог новостроек — HTTP 200; страницы «Акценты» и «Михалковский» — 200, цена видна. Остальные ЖК клиентов в каталоге не найдены (TODO для пользователя).",
+   "stats": {
+    "lots": 0,
+    "snapshots": 0,
+    "snapshotDirs": [],
+    "dates": [],
+    "firstDate": null,
+    "lastDate": null,
+    "projects": [],
+    "competitors": [],
+    "rooms": {},
+    "promo": 0,
+    "avgPriceRub": null,
+    "share": 0
+   },
+   "lastRunFromLog": {
+    "ts": "2026-11-01T14:03:19",
+    "source": "yandex-realty",
+    "status": "empty",
+    "lots": 0,
+    "projects": 0,
+    "note": "страница не упоминает «ЗИЛАРТ» — похоже на каталожную выдачу; лоты не привязаны к проекту"
+   }
+  },
+  {
+   "id": "domclick",
+   "name": "Домклик",
+   "enabled": true,
+   "kind": "http",
+   "auth": "none",
+   "status": "blocked",
+   "priority": 7,
+   "lastRun": "2026-11-01",
+   "limits": "ПРОВЕРЕНО 01.11.2026: HTTP 401 на /moskva/novostroyki. Публичные страницы без входа недоступны",
+   "howto": "—",
+   "note": "Добавлен 01.11.2026 по решению пользователя; пока закрыт. Нужна ссылка/подход от пользователя.",
+   "stats": {
+    "lots": 0,
+    "snapshots": 0,
+    "snapshotDirs": [],
+    "dates": [],
+    "firstDate": null,
+    "lastDate": null,
+    "projects": [],
+    "competitors": [],
+    "rooms": {},
+    "promo": 0,
+    "avgPriceRub": null,
+    "share": 0
+   },
+   "lastRunFromLog": {
+    "ts": "2026-11-01T14:03:19",
+    "source": "domclick",
+    "status": "partial",
+    "lots": 0,
+    "projects": 0,
+    "note": "HTTP 401: площадка отдаёт данные только по договору/API (партнёрский API Домклик — по договору)"
+   }
+  }
+ ],
+ "share": [
+  {
+   "id": "cian",
+   "name": "Циан",
+   "enabled": true,
+   "lots": 289,
+   "share": 0.9506578947368421,
+   "inRegistry": true
+  },
+  {
+   "id": "developer-sites",
+   "name": "Сайты застройщиков",
+   "enabled": true,
+   "lots": 15,
+   "share": 0.049342105263157895,
+   "inRegistry": true
+  }
+ ],
+ "snapshots": [
+  {
+   "dir": "2026-10-23",
+   "date": "2026-10-23",
+   "rows": 9,
+   "sources": {
+    "cian": 9
+   },
+   "sourceList": [
+    "cian"
+   ],
+   "projects": {
+    "Селигер Сити": 4,
+    "City Bay": 3,
+    "Символ": 2
+   },
+   "competitors": {
+    "СЗ Гранель": 4,
+    "MR Group": 3,
+    "Донстрой": 2
+   },
+   "firstDate": "2026-10-23",
+   "lastDate": "2026-10-23",
+   "file": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\01-competitor-watch\\data\\snapshots\\2026-10-23\\lots.csv"
+  },
+  {
+   "dir": "2026-10-30",
+   "date": "2026-10-30",
+   "rows": 10,
+   "sources": {
+    "cian": 10
+   },
+   "sourceList": [
+    "cian"
+   ],
+   "projects": {
+    "City Bay": 3,
+    "Символ": 2,
+    "Селигер Сити": 5
+   },
+   "competitors": {
+    "MR Group": 3,
+    "Донстрой": 2,
+    "СЗ Гранель": 5
+   },
+   "firstDate": "2026-10-30",
+   "lastDate": "2026-10-30",
+   "file": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\01-competitor-watch\\data\\snapshots\\2026-10-30\\lots.csv"
+  },
+  {
+   "dir": "_demo-site-zilart-2026-10-31",
+   "date": "2026-10-31",
+   "rows": 15,
+   "sources": {
+    "developer-sites": 15
+   },
+   "sourceList": [
+    "developer-sites"
+   ],
+   "projects": {
+    "ЗИЛАРТ": 15
+   },
+   "competitors": {
+    "Группа ЛСР": 15
+   },
+   "firstDate": "2026-10-31",
+   "lastDate": "2026-10-31",
+   "file": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\01-competitor-watch\\data\\snapshots\\_demo-site-zilart-2026-10-31\\lots.csv"
+  },
+  {
+   "dir": "_paused-cian-2026-10-31",
+   "date": "2026-10-31",
+   "rows": 270,
+   "sources": {
+    "cian": 270
+   },
+   "sourceList": [
+    "cian"
+   ],
+   "projects": {
+    "Сити Бэй": 136,
+    "ЗИЛАРТ": 134
+   },
+   "competitors": {
+    "MR": 136,
+    "Группа ЛСР": 134
+   },
+   "firstDate": "2026-10-31",
+   "lastDate": "2026-10-31",
+   "file": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\01-competitor-watch\\data\\snapshots\\_paused-cian-2026-10-31\\lots.csv"
+  }
+ ],
+ "byWeek": [
+  {
+   "week": "2026-W43",
+   "lots": 9,
+   "bySource": {
+    "cian": 9
+   }
+  },
+  {
+   "week": "2026-W44",
+   "lots": 295,
+   "bySource": {
+    "cian": 280,
+    "developer-sites": 15
+   }
+  }
+ ],
+ "unknownInSnapshots": [],
+ "runLog": {
+  "exists": true,
+  "file": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\01-competitor-watch\\data\\source-runs.jsonl",
+  "count": 20,
+  "badLines": 0,
+  "note": "журнал запусков прочитан"
+ },
+ "warnings": []
+}

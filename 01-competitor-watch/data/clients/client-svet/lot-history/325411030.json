@@ -1,0 +1,254 @@
+{
+  "lot_id": "325411030",
+  "saved_at": "2026-11-01",
+  "project": "zhk-mihalkovskiy",
+  "source": "cian-connector",
+  "history": [
+    {
+      "date": "2025-12-26",
+      "price_rub": 18624970.0
+    },
+    {
+      "date": "2025-12-31",
+      "price_rub": 20467000.0
+    },
+    {
+      "date": "2026-01-06",
+      "price_rub": 18624970.0
+    },
+    {
+      "date": "2026-02-16",
+      "price_rub": 20467000.0
+    },
+    {
+      "date": "2026-02-17",
+      "price_rub": 19369969.0
+    },
+    {
+      "date": "2026-04-14",
+      "price_rub": 19561979.0
+    },
+    {
+      "date": "2026-05-08",
+      "price_rub": 19776946.0
+    },
+    {
+      "date": "2026-09-16",
+      "price_rub": 19874006.0
+    },
+    {
+      "date": "2026-10-08",
+      "price_rub": 20677662.0
+    }
+  ],
+  "card": {
+    "status": "success",
+    "offer_id": 325411030,
+    "title": "Место, где хочется задержаться",
+    "deal_type": "sale",
+    "category": "newBuildingFlatSale",
+    "price_rub": 20677662,
+    "price_unit": "total",
+    "price_period": null,
+    "lease_term": null,
+    "deposit_rub": null,
+    "rooms": 2,
+    "flat_type": "rooms",
+    "is_apartments": false,
+    "total_area_m2": 42.2,
+    "living_area_m2": 28.8,
+    "kitchen_area_m2": 5.4,
+    "floor": 2,
+    "floors_total": 20,
+    "build_year": null,
+    "building_material": "monolith",
+    "ceiling_height_m": 2.85,
+    "address": "Москва, САО, район Головинский, Михалковский ЖК",
+    "metro": [
+      {
+        "name": "Водный стадион",
+        "minutes": null,
+        "mode": null
+      },
+      {
+        "name": "Коптево",
+        "minutes": null,
+        "mode": null
+      },
+      {
+        "name": "Лихоборы",
+        "minutes": null,
+        "mode": null
+      }
+    ],
+    "newbuilding_name": "Михалковский",
+    "description": "При приобретении квартиры площадью более 45 м² доступна беспроцентная рассрочка с первым платежом от 30%. У покупателя также есть право воспользоваться скидкой в размере 5% от полной стоимости квартиры. \n\n-  Первый платеж составляет 30% от стоимости объекта и вносится при заключении ДДУ\n-  Второй платеж в размере 30% от стоимости объекта вносится через 6 месяцев с даты заключения ДДУ\n-  Остаток 20% через 12 месяцев с даты заключения ДДУ, но не позднее 30.06.2027\n-  Остаток 20% не позднее 30.06.2027\n- Действует на приобретение квартир в корп. 2, 7\n\nПродаётся 2-к квартира 42,2 кв.м. в ЖК \"Михалковский\" на 2-м этаже 20 этажного дома.\n\nСкидка 8% при покупке квартиры!\n\nИпотека под ваш бюджет! Полная стоимость кредита от 12,570 до 23,358% . Ставка 12,49% в АО \"Альфа-Банк\", генеральная лицензия Банка России 1326 от 16.01.2015. Ставка 12,49% действует на весь срок кредита. Первоначальный взнос — от 20,1% от стоимости квартиры. Сумма кредита — от 600 тыс. руб. до 50 млн руб. Срок кредитования — от 11 до 15 лет. В наличии также и другие ипотечные предложения.\n\nКомпания \"РГ-Девелопмент\" предоставляет скидку на квартиры в жилом комплексе. Акция действительна до 15.11.2026 включительно. Для того чтобы воспользоваться предложением, необходимо подписать договор на приобретение недвижимости до 15.11.2026 включительно.\n\nДействует программа \"Растет семья - растет и квартира\".\n\nКомпания \"РГ-Девелопмент\" вошла в ТОП-10 девелоперов по объёму введённого жилья в \"Старой Москве\" по итогам 2025 года.\n\nПрямая продажа от застройщика!\nКвартиры без отделки.\nСрок сдачи  IV кв. 2027г.\n\nОсобенности проекта:\nЗавораживающие виды\nКрасивое благоустройство\nУникальная локация для Москвы (рядом Головинский парк, пруды, усадьба Михалково)\nРядом с центром\n\nВ проекте присутствует: архитектура голландского бюро MLA+, зеленые зоны, транспортная доступность, благоустроенная территория, подземный паркинг, детский сад и выход на Головинский парк с пятью прудами. Название комплекса указывает на одну из его черт - соседство с имением Михалково. Позвольте себе жить в месте, где проводили свой досуг династии Дашковых и Паниных.",
+    "agency_name": "РГ-Девелопмент",
+    "seller_type": "developer",
+    "is_by_homeowner": null,
+    "photos": 35,
+    "photo_urls": [
+      {
+        "url": "https://images.cdn-cian.ru/images/2956304474-1.jpg",
+        "is_layout": true
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2751039596-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2750914402-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2750914426-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2901931346-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2994440546-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2994440550-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2750914470-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2994440556-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2750914512-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2750914571-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2750914598-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2750914627-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2864222789-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2750914655-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2750914680-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2750914710-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2750914769-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2750914799-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2750914831-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2750914861-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2750914890-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2750914920-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2750914946-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2750914973-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2750914997-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2994440561-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2750915064-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2750915087-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2750915112-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2994440567-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2994440571-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2750915155-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2750915159-1.jpg",
+        "is_layout": false
+      },
+      {
+        "url": "https://images.cdn-cian.ru/images/2991823073-1.jpg",
+        "is_layout": false
+      }
+    ],
+    "created_at": "2025-12-26T21:37:54.23",
+    "updated_at": "2026-11-01T16:16:31.850000Z",
+    "views": 3548,
+    "agent": {
+      "name": "РГ-Девелопмент",
+      "agent_id": 34428593,
+      "account_type": "agency",
+      "user_type": "developer",
+      "is_developer": true,
+      "offers_count": 298,
+      "on_cian_since": "2019-07-29T17:39:47.973000Z"
+    },
+    "url": "https://www.cian.ru/sale/flat/325411030/",
+    "tier_used": "cdp",
+    "_meta": {
+      "source": "cian_card",
+      "healthy": true,
+      "warnings": []
+    }
+  },
+  "offer_url": "https://www.cian.ru/sale/flat/325411030/",
+  "page_price_rub": 50000000
+}

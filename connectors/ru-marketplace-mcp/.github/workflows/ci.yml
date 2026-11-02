@@ -1,0 +1,560 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+  schedule:
+    # Nightly live canary: catches endpoint drift on its own timetable instead
+    # of waiting for a user to trip over it. See the `live` job.
+    - cron: "0 3 * * *"
+
+concurrency:
+  # The nightly canary runs on this same ref as every push to main, so the group
+  # has to carry the event name: otherwise a routine commit cancels the canary —
+  # which reports nothing when cancelled, it just stops existing — and the canary
+  # cancels a merge verification. Scheduled runs are never cancelled; superseded
+  # push and pull-request runs still cancel each other. See
+  # scripts/test_ci_concurrency.py, which fails if this contract is dropped.
+  group: ${{ github.workflow }}-${{ github.ref }}-${{ github.event_name }}
+  cancel-in-progress: ${{ github.event_name != 'schedule' }}
+
+env:
+  # Prove the committed uv.lock rather than re-resolving in CI. With "1" every
+  # `uv sync`/`uv run` refuses to touch the lockfile, so CI installs the exact
+  # graph a release will ship; a drifted manifest fails instead of being
+  # silently papered over by a fresh resolve. The `uv lock --check` step in the
+  # lint job turns that same drift into an early, clearly-labelled failure.
+  UV_FROZEN: "1"
+
+jobs:
+  lint:
+    name: Lint and types
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@07a047e608db84b3d8c06cd9a7c7dcc9c355c18e # v10.3.2
+        with:
+          enable-cache: true
+          cache-dependency-glob: "**/pyproject.toml"
+
+      - name: Set up Python
+        run: uv python install 3.12
+
+      - name: Lockfile is up to date
+        # Fail fast and loud if pyproject changed without re-running `uv lock`.
+        # Under UV_FROZEN=1 a later `uv sync` would also fail, but with a message
+        # about the frozen flag; this makes the actual cause — a stale uv.lock —
+        # the first thing that turns the build red. Fix locally with `uv lock`.
+        run: uv lock --check
+
+      - name: Sync workspace
+        run: uv sync --all-packages
+
+      - name: Ruff (lint)
+        run: uv run ruff check .
+
+      - name: Ruff (format check)
+        run: uv run ruff format --check .
+
+      - name: mypy (host platform)
+        # The tree to check lives in [tool.mypy] files, not on the command line:
+        # a `packages/*/src` glob is expanded by bash here but not by PowerShell
+        # on the maintainer's machine, so the documented command has to be one
+        # that behaves the same in both.
+        run: uv run mypy
+
+      - name: mypy (cross-platform)
+        # The lint job runs on Linux, where mypy resolves os.killpg/getpgid and
+        # signal.SIGKILL as present — so a Windows-only type error stays invisible
+        # until someone runs the checks on Windows. These flags catch it here.
+        run: |
+          uv run mypy --platform win32
+          uv run mypy --platform darwin
+
+      - name: No stdout writes in connector code
+        # A print()/sys.stdout write in a server module corrupts the JSON-RPC
+        # stream on stdio transports — the worst kind of bug here because it is
+        # silent until a client chokes on a garbled frame. pre-commit runs this,
+        # but pre-commit is opt-in; running it in CI too means a contributor who
+        # skipped the hook still gets caught. No args = scan every packages/*/src.
+        run: uv run python scripts/check_no_print.py
+
+      - name: Documented test count is current
+        # The figure appears in seven places and is edited by hand, so it rots on
+        # a schedule — it has already been wrong three times, twice while the
+        # audit that fixed it was adding tests of its own.
+        run: uv run python scripts/check_test_count.py
+
+      - name: Generated tool reference is current
+        # docs/TOOLS.md and the README cost block are generated from the wire
+        # schemas; a stale copy would advertise tools or costs the server no
+        # longer has.
+        run: uv run python scripts/gen_tools_doc.py --check
+
+      - name: Fixture pins describe their fixtures
+        # A provenance file pins the bytes it describes, and nothing checked
+        # that the pin still matched. This is why the stale citilink and avito
+        # pins are visible - and quarantined with dated reasons - instead of silent.
+        run: uv run python scripts/check_provenance.py
+
+      - name: uv.lock revision is not downgraded
+        # uv 0.11.x rewrites uv.lock from revision 5 to revision 3 when a
+        # contributor relocks, while the Dockerfiles build with uv 0.13.6.
+        # The lockfile must stay at the revision the images build from; the
+        # contributor fixes it by relocking with a current uv.
+        run: uv run python scripts/check_lock_revision.py
+
+      - name: MCP wire-cost baseline
+        # Keep the model-facing surface measurable. A schema expansion over the
+        # stored baseline is a review signal, not an invisible context-cost
+        # regression. Latency is intentionally reported by the probe but is not
+        # gated because hosted runner load is variable.
+        run: uv run python scripts/mcp_wire.py compare-mcp decision-mcp marketplace-mcp --baseline work/performance/wire-baseline.json --max-token-regression-percent 10
+
+      - name: One version, everywhere
+        # A release version is written down in seventy-two places. Preparing
+        # 1.2.1 moved fourteen pyproject.toml files and left thirteen
+        # __version__ strings behind — installed packages would have reported
+        # the previous release. Nothing was comparing them; now something is.
+        run: uv run python scripts/check_versions.py
+
+  test:
+    name: Tests (${{ matrix.os }}, py${{ matrix.python }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        # The connectors ship to operator laptops, so all three desktop OSes are
+        # first-class. The Windows process-management paths are unit-tested
+        # everywhere via PLATFORM_OVERRIDE, but running the suite natively on
+        # Windows is what proves the real branches import and behave.
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        python: ["3.12", "3.13"]
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Set up Node for jsdom-backed DOM tests
+        # The connector extractor tests (dns/citilink/lamoda/taobao/aliexpress)
+        # run the real extractor JS over captured markup in jsdom. Without this
+        # step the tests silently SKIP in CI, which is exactly how a dead parser
+        # stayed green before (the DNS/Citilink lesson). Dev tool only: the
+        # servers themselves never touch Node.
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 22
+
+      - name: Install jsdom
+        run: npm ci --no-audit --no-fund
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@07a047e608db84b3d8c06cd9a7c7dcc9c355c18e # v10.3.2
+        with:
+          enable-cache: true
+          cache-dependency-glob: "**/pyproject.toml"
+
+      - name: Set up Python ${{ matrix.python }}
+        run: uv python install ${{ matrix.python }}
+
+      - name: Sync workspace
+        run: uv sync --all-packages --python ${{ matrix.python }}
+
+      - name: Run offline test suite
+        # Live and CDP tests are excluded: CI has no Russian-friendly IP and no
+        # logged-in browser, so including them would produce noise, not signal.
+        run: uv run pytest -q -m "not live and not cdp"
+
+      - name: Operational gate regression tests
+        run: uv run pytest -q scripts
+
+  coverage:
+    name: Coverage (ubuntu, py3.12)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@07a047e608db84b3d8c06cd9a7c7dcc9c355c18e # v10.3.2
+        with:
+          enable-cache: true
+          cache-dependency-glob: "**/pyproject.toml"
+
+      - name: Set up Python
+        run: uv python install 3.12
+
+      - name: Sync workspace
+        run: uv sync --all-packages
+
+      - name: Enforce coverage threshold
+        # A single job owns the coverage gate so the threshold is not evaluated
+        # redundantly across the OS/Python matrix. It runs on the primary target
+        # (ubuntu + lowest supported Python); the matrix legs keep running the
+        # suite without coverage. Deselects live/cdp so the measured percentage
+        # matches the offline suite the floor was derived from.
+        #
+        # Measured branch-coverage total on the offline suite was 83.2% at
+        # v2.5.1 (77.74% when the floor was introduced at 70%); the 80% floor
+        # sits a few points below so unrelated churn does not break the build
+        # while the number still ratchets up. --cov reads its
+        # source/omit (and branch=true) from [tool.coverage.run] in pyproject.toml.
+        run: uv run pytest -q -m "not live and not cdp" --cov --cov-report=term-missing --cov-fail-under=80
+
+  smoke:
+    name: Server smoke test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@07a047e608db84b3d8c06cd9a7c7dcc9c355c18e # v10.3.2
+        with:
+          enable-cache: true
+          cache-dependency-glob: "**/pyproject.toml"
+
+      - name: Set up Python
+        run: uv python install 3.12
+
+      - name: Sync workspace
+        run: uv sync --all-packages
+
+      - name: Every server imports and registers its tools
+        # A server that imports but registers nothing is broken in a way the unit
+        # tests would not catch, so the tool inventory is asserted explicitly.
+        run: |
+          uv run python - <<'PY'
+          import asyncio
+
+          # Operator-only *_selfcheck diagnostics are no longer registered as
+          # MCP tools (they run via `marketplace-mcp doctor`), so every
+          # connector count is one lower than the pre-dsh-packaging contract.
+          EXPECTED = {
+              "wb": 8,
+              "ozon": 3,
+              "detmir": 3,
+              "yandex": 2,
+              "compare": 4,
+              "avito": 3,
+              "taobao": 2,
+              "megamarket": 2,
+              "lamoda": 2,
+              "dns": 2,
+              "citilink": 2,
+              "aliexpress": 2,
+              "cian": 2,
+              "mpstats": 2,
+          }
+
+          async def main() -> None:
+              from detmir_connector.server import mcp as detmir_mcp
+              from ozon_connector.server import mcp as ozon_mcp
+              from wb_connector.server import mcp as wb_mcp
+              from compare_connector.server import mcp as compare_mcp
+              from yandex_connector.server import mcp as yandex_mcp
+              from avito_connector.server import mcp as avito_mcp
+              from taobao_connector.server import mcp as taobao_mcp
+              from megamarket_connector.server import mcp as megamarket_mcp
+              from lamoda_connector.server import mcp as lamoda_mcp
+              from dns_connector.server import mcp as dns_mcp
+              from citilink_connector.server import mcp as citilink_mcp
+              from aliexpress_connector.server import mcp as aliexpress_mcp
+              from cian_connector.server import mcp as cian_mcp
+              from mpstats_connector.server import mcp as mpstats_mcp
+
+              servers = {
+                  "wb": wb_mcp,
+                  "ozon": ozon_mcp,
+                  "detmir": detmir_mcp,
+                  "yandex": yandex_mcp,
+                  "compare": compare_mcp,
+                  "avito": avito_mcp,
+                  "taobao": taobao_mcp,
+                  "megamarket": megamarket_mcp,
+                  "lamoda": lamoda_mcp,
+                  "dns": dns_mcp,
+                  "citilink": citilink_mcp,
+                  "aliexpress": aliexpress_mcp,
+                  "cian": cian_mcp,
+                  "mpstats": mpstats_mcp,
+              }
+              # Guard the guard: mpstats was listed in EXPECTED but never added to
+              # `servers`, so the loop skipped it and the step still printed "all
+              # servers registered their expected tools" while checking 11 of 12.
+              # A key mismatch is now the first failure, not a silent omission.
+              if set(servers) != set(EXPECTED):
+                  raise SystemExit(
+                      f"servers/EXPECTED disagree: only in servers {sorted(set(servers) - set(EXPECTED))}, "
+                      f"only in EXPECTED {sorted(set(EXPECTED) - set(servers))}"
+                  )
+
+              failures = []
+              for name, server in servers.items():
+                  tools = sorted(t.name for t in await server.list_tools())
+                  print(f"{name}: {len(tools)} tools -> {tools}")
+                  if len(tools) != EXPECTED[name]:
+                      failures.append(f"{name}: expected {EXPECTED[name]} tools, got {len(tools)}")
+              if failures:
+                  raise SystemExit("\n".join(failures))
+              print("all servers registered their expected tools")
+
+          asyncio.run(main())
+          PY
+
+      - name: Console scripts are installed
+        run: |
+          uv run which wb-mcp
+          uv run which ozon-mcp
+          uv run which detmir-mcp
+          uv run which yandex-mcp
+          uv run which compare-mcp
+          uv run which avito-mcp
+          uv run which taobao-mcp
+          uv run which megamarket-mcp
+          uv run which lamoda-mcp
+          uv run which dns-mcp
+          uv run which citilink-mcp
+          uv run which aliexpress-mcp
+          uv run which cian-mcp
+          uv run which mpstats-mcp
+          uv run which marketplace-mcp
+
+      - name: Real MCP session over stdio
+        # The import check above proves the decorators ran. It does not prove
+        # the console script starts, that the JSON-RPC handshake completes, or
+        # that stdout stays parseable — which is how a stdio server actually
+        # breaks for a user. This spawns each server the way a client does and
+        # runs initialize / tools/list / tools/call. It is what caught six
+        # connectors advertising the FastMCP library version instead of their
+        # own, since the in-process check never reads serverInfo.
+        run: uv run python scripts/e2e_stdio_check.py
+
+  pypi-bundle:
+    # Additional install evidence; existing ruleset-required job names stay unchanged.
+    name: PyPI bundle installs
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@07a047e608db84b3d8c06cd9a7c7dcc9c355c18e # v10.3.2
+        with:
+          enable-cache: true
+          cache-dependency-glob: "**/pyproject.toml"
+
+      - name: Set up Python
+        run: uv python install 3.12
+
+      - name: Sync build environment
+        run: uv sync --frozen --all-packages
+
+      - name: Build the additional PyPI bundle
+        run: uv run python scripts/build_pypi_bundle.py
+
+      - name: Install the wheel with plain pip outside the workspace
+        run: |
+          uv run python -m venv "$RUNNER_TEMP/pypi-venv"
+          "$RUNNER_TEMP/pypi-venv/bin/python" -m pip install dist/pypi/*.whl
+          echo "$RUNNER_TEMP/pypi-venv/bin" >> "$GITHUB_PATH"
+
+      - name: Installed CLI entry points show help
+        run: |
+          marketplace-mcp --help
+          ru-marketplace-mcp --help
+
+      - name: Real stdio sessions use the installed console scripts
+        # The probe resolves scripts on PATH, now headed by the pip-only venv.
+        # It calls local introspection only, never marketplace tools or doctor.
+        env:
+          PYTHONPATH: ""
+          MCP_TRANSPORT: stdio
+        run: '"$RUNNER_TEMP/pypi-venv/bin/python" scripts/e2e_stdio_check.py'
+
+  live:
+    name: Live endpoint canaries (nightly / manual)
+    # Runs on a schedule and on demand, never on a push: live endpoints drift
+    # on their own timetable, and a flaky marketplace must not gate a PR. The
+    # job needs a Russian-friendly IP — from GitHub's datacenter runners most
+    # sources report inconclusive, which is still a useful baseline signal.
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@07a047e608db84b3d8c06cd9a7c7dcc9c355c18e # v10.3.2
+        with:
+          enable-cache: true
+          cache-dependency-glob: "**/pyproject.toml"
+
+      - name: Set up Python
+        run: uv python install 3.12
+
+      - name: Sync workspace
+        run: uv sync --all-packages
+
+      - name: Run live canaries
+        id: canaries
+        # A blocked source is information, not a build failure, so we do not let
+        # a red assertion abort the job — but we DO capture the exact pytest exit
+        # code and hand it to the summary step, which is what makes the outcome
+        # honest instead of a blanket green. Only wb, detmir and yandex carry
+        # @pytest.mark.live tests (3 of the 14 sources), so this canary covers 3
+        # of 12 — the summary spells that out so a pass is not mistaken for
+        # "everything works". Exit codes: 0 = all passed, 1 = failures (from a
+        # datacenter runner with no Russian IP this usually means blocked, but it
+        # is indistinguishable here from real drift), 5 = nothing collected, other
+        # = a hard error (crash/collection failure) that is a genuine problem.
+        run: |
+          set +e
+          uv run pytest -q -m "live" --tb=short 2>&1 | tee live.log
+          echo "exit_code=${PIPESTATUS[0]}" >> "$GITHUB_OUTPUT"
+
+      - name: Summarise canary outcome
+        # Always runs, even after a failing canary step, so the verdict is
+        # recorded. This is the step the old comment promised but never existed;
+        # without it the job was green regardless and a blocked run looked
+        # identical to a healthy one. It fails the job ONLY on a hard error
+        # (exit code neither 0/1/5), because that is a broken canary rather than
+        # an unreachable marketplace.
+        if: always()
+        env:
+          RC: ${{ steps.canaries.outputs.exit_code }}
+        run: |
+          {
+            echo "## Live endpoint canaries"
+            echo ""
+            echo "Coverage: **3 of 14 sources** carry \`@pytest.mark.live\` tests — wb, detmir, yandex. The other 11 have none, so a green canary says nothing about them. AliExpress is CDP-only against x5sec: its drift signal comes from \`aliexpress_selfcheck\` on the operator's machine, not from this nightly job."
+            echo ""
+            echo "GitHub's runners have no Russian-friendly IP, so a blocked source and genuine drift both surface as test failures here; disambiguating needs a rerun from a Russian-friendly IP."
+            echo ""
+            case "$RC" in
+              0)
+                echo "### Result: PASS — all live tests passed (endpoints reachable and healthy)." ;;
+              1)
+                echo "### Result: FAILED — a live test failed: parser drift, or a block the selfcheck did not recognise (a recognised block skips). This step cannot tell them apart; the Doctor drift alarm step below can." ;;
+              5)
+                echo "### Result: HARD FAILURE — no live tests were collected. Expected 3 sources' worth; the marker or test layout is broken." ;;
+              *)
+                echo "### Result: HARD FAILURE — the canary errored (exit code $RC). This is a broken test run, not an unreachable marketplace." ;;
+            esac
+            echo ""
+            echo "<details><summary>pytest output</summary>"
+            echo ""
+            echo '```'
+            cat live.log
+            echo '```'
+            echo ""
+            echo "</details>"
+          } >> "$GITHUB_STEP_SUMMARY"
+
+          # Honest conclusion: PASS (0) and BLOCKED/INCONCLUSIVE (1) leave the
+          # job green — a blocked marketplace must not page anyone. Anything else
+          # fails it: exit 5 means the 3 live sources stopped being collected (a
+          # canary silently testing nothing is the exact false-green this job was
+          # fixed to kill), and any other code is a crash.
+          case "$RC" in
+            0|1) : ;;
+            *) echo "Canary did not run cleanly (exit $RC); failing the job — see the step summary."; exit 1 ;;
+          esac
+
+      - name: Doctor drift alarm
+        # The canary above cannot tell drift from a block: a drifted selfcheck and
+        # an unrecognised block both end as pytest exit 1, which leaves the job
+        # green. `live_check.py doctor` runs the
+        # CLI's doctor round — every selfcheck, plus the machine-readable
+        # --status-file snapshot — under the same shared live budget the canary
+        # uses. Doctor exit codes: 0 all healthy, 1 a parser drifted (the alarm
+        # this job exists to raise), 2 nothing drifted but sources could not be
+        # judged (blocked, no CDP, wrong country — the expected nightly result
+        # from GitHub's datacenter IPs), 3 the budget or the status file failed.
+        # A blocked source must not page anyone, same rule as the canary; only
+        # the alarm and hard errors fail the job.
+        run: |
+          set +e
+          uv run python scripts/live_check.py doctor --status-file "$RUNNER_TEMP/doctor-status.json" 2>&1 | tee doctor.log
+          code=${PIPESTATUS[0]}
+          {
+            echo "## Doctor drift alarm"
+            echo ""
+            echo "Exit $code: 0 healthy, 1 drift (alarm), 2 blocked/inconclusive, 3 budget or status-file failure."
+            echo ""
+            echo "<details><summary>doctor output</summary>"
+            echo ""
+            echo '```'
+            cat doctor.log
+            echo '```'
+            echo ""
+            echo "</details>"
+          } >> "$GITHUB_STEP_SUMMARY"
+          case "$code" in
+            0|2) echo "doctor exit $code: not an alarm" ;;
+            1) echo "doctor reported parser drift; failing the job"; exit 1 ;;
+            *) echo "doctor did not run cleanly (exit $code); failing the job"; exit 1 ;;
+          esac
+
+  dsh-bundle:
+    name: dsh bundle installs and activates
+    runs-on: ubuntu-latest
+    # The pytest suite owns the bundle's *contents* (test_dsh_bundle.py). Nothing
+    # owned its *installation*: that is performed by dsh's plugin manager, not by
+    # Python, so a broken bundle or a breaking dsh release would only surface when
+    # a user hit it. dsh is a developer preview with breaking changes promised.
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Install pnpm
+        # dsh does not vendor pnpm: it calls spawnSync("pnpm", ...) and prints
+        # "pnpm not found on PATH" without it.
+        run: npm install -g pnpm@10
+
+      - name: Install dsh
+        run: |
+          npm install -g @deepseek-ai/dsh@0.1.0-rc.6
+          echo "dsh $(dsh --version), pnpm $(pnpm --version)"
+
+      - name: Bundle installs into a clean profile
+        run: dsh plugin --profile smoke add "$GITHUB_WORKSPACE/dsh"
+
+      - name: The bundle became a profile layer
+        # Exit code 0 is not proof of anything here. Measured 2026-08-16 on the
+        # sibling humanizer-ru bundle: `add "github:owner/repo#v3.13.0&path:/dsh"`
+        # exited 0 while pnpm silently dropped `&path:/dsh`, installed the whole
+        # repository as a plain dependency and left the profile with no layer at
+        # all. So assert the composition, not the exit code.
+        run: |
+          set -euo pipefail
+          profile="$HOME/.dsh/profiles/smoke"
+          python3 -c "import json,sys; d=json.load(open(sys.argv[1],encoding='utf-8')); b=d['dsh']['profile']['bundles']; print('bundles:', b); sys.exit(0 if sys.argv[2] in b else 1)" "$profile/package.json" ru-marketplace-mcp-dsh
+          installed="$profile/node_modules/ru-marketplace-mcp-dsh"
+          test -f "$installed/cordis.patch.yml"
+          skills=$(find "$installed/skills" -name SKILL.md | wc -l)
+          echo "vendored skills: $skills"
+          test "$skills" -eq 15
+
+      - name: All MCP rows are still disabled by default
+        # The safety promise of this bundle: skills are free, MCP tools are opt-in.
+        # If a row ever ships enabled it would spend the user's context on every
+        # request without consent, so the guard is asserted rather than trusted.
+        run: |
+          set -euo pipefail
+          patch="$GITHUB_WORKSPACE/dsh/cordis.patch.yml"
+          rows=$(grep -c "name: '@deepseek-ai/dsh-mcp-client'" "$patch")
+          guards=$(grep -c 'disabled: !!js' "$patch")
+          echo "mcp rows: $rows, disabled guards: $guards"
+          test "$rows" -eq 3
+          test "$guards" -eq 3
+          grep -q 'RU_MARKETPLACE_MCP_DIR' "$patch"
+
+      - name: Removal restores the profile
+        run: |
+          set -euo pipefail
+          dsh plugin --profile smoke remove ru-marketplace-mcp-dsh
+          profile="$HOME/.dsh/profiles/smoke"
+          if grep -q ru-marketplace-mcp-dsh "$profile/package.json"; then
+            echo "the bundle survived removal"
+            exit 1
+          fi
+          echo "profile restored"

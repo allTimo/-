@@ -1,0 +1,37 @@
+# Задачи за 2026-10. Формат элемента: marketing-agents/registry/README.md
+# Файл собран автоматически: registry/intake/scripts/text_to_tasks.py
+# Источники: fixture-transcript-2026-10-31.txt
+
+- id: T-1
+  subject: "Проверить новые акции у Селигер Сити, там обещают скидку"
+  group: "Конкуренты"
+  category: "Акции"
+  owner: "agent-1-competitor-watch"
+  status: "new"
+  project: ""
+  due: ""
+  source: "telemost-text"
+  created: "2026-10-31"
+  quote: "Надо проверить новые акции у Селигер Сити, там обещают скидку."
+- id: T-2
+  subject: "Собрать семантику по ЖК Свет и разбить на кластеры до 5 ноября"
+  group: "Семантика"
+  category: "Семантика"
+  owner: "agent-2-direct-semantics"
+  status: "new"
+  project: "my-zhk-svet"
+  due: "2026-11-05"
+  source: "telemost-text"
+  created: "2026-10-31"
+  quote: "Нужно собрать семантику по ЖК Свет и разбить на кластеры до 5 ноября."
+- id: T-3
+  subject: "Посмотреть, что происходит с ценами у Донстроя"
+  group: "Конкуренты"
+  category: "Цены"
+  owner: "agent-1-competitor-watch"
+  status: "new"
+  project: ""
+  due: ""
+  source: "telemost-text"
+  created: "2026-10-31"
+  quote: "Надо посмотреть, что происходит с ценами у Донстроя."

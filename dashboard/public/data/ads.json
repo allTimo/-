@@ -1,0 +1,1126 @@
+{
+ "generatedAtMs": 1793565418415,
+ "today": "2026-11-01",
+ "platform": {
+  "commissionPct": 7,
+  "ipoRegistered": false,
+  "turnoverRub": 278200,
+  "commissionRub": 19474,
+  "operatorsCashbackRub": 14244,
+  "operatorsPaidRub": 0,
+  "operatorsDueRub": 14244,
+  "marginRub": 5230,
+  "marginPct": 0.2685632124884461,
+  "turnoverToCommission": 0.07,
+  "formula": "оборот 278200 ₽ × 7% = комиссия 19474 ₽",
+  "legalNote": "ДО РЕГИСТРАЦИИ ИП ЭТОТ РЕЖИМ ИСПОЛЬЗОВАТЬ НЕЛЬЗЯ: НПД не допускает агентскую схему (422-ФЗ). Оформляйте ИП или работайте по схеме «клиент платит площадке сам»."
+ },
+ "operators": [
+  {
+   "id": "op-anna",
+   "name": "Анна Петрова",
+   "contact": "anna@example.ru · Telegram @anna_ads",
+   "cashbackPct": 4,
+   "status": "active",
+   "statusLabel": "активен",
+   "contract": "договор №1 от 01.10.2026"
+  },
+  {
+   "id": "op-studio",
+   "name": "Студия «Восток»",
+   "contact": "hello@vostok.example · +7 999 000-00-03",
+   "cashbackPct": 5,
+   "status": "active",
+   "statusLabel": "активен",
+   "contract": "договор №2 от 05.10.2026"
+  },
+  {
+   "id": "op-sergey",
+   "name": "Сергей Ильин",
+   "contact": "sergey@example.ru",
+   "cashbackPct": 6,
+   "status": "paused",
+   "statusLabel": "на паузе",
+   "contract": "договора нет"
+  }
+ ],
+ "operatorRows": [
+  {
+   "id": "op-sergey",
+   "name": "Сергей Ильин",
+   "ratePct": 6,
+   "status": "paused",
+   "statusLabel": "на паузе",
+   "contract": "договора нет",
+   "clients": [
+    "client-loss-demo"
+   ],
+   "turnover": 120000,
+   "commission": 8400,
+   "cashback": 7200,
+   "paid": 0,
+   "due": 7200,
+   "clientsCount": 1,
+   "hasClients": true,
+   "effRate": 0.06
+  },
+  {
+   "id": "op-anna",
+   "name": "Анна Петрова",
+   "ratePct": 4,
+   "status": "active",
+   "statusLabel": "активен",
+   "contract": "договор №1 от 01.10.2026",
+   "clients": [
+    "client-svet",
+    "client-donstroy"
+   ],
+   "turnover": 86600,
+   "commission": 6062,
+   "cashback": 3464,
+   "paid": 0,
+   "due": 3464,
+   "clientsCount": 2,
+   "hasClients": true,
+   "effRate": 0.04
+  },
+  {
+   "id": "op-studio",
+   "name": "Студия «Восток»",
+   "ratePct": 5,
+   "status": "active",
+   "statusLabel": "активен",
+   "contract": "договор №2 от 05.10.2026",
+   "clients": [
+    "client-granel"
+   ],
+   "turnover": 71600,
+   "commission": 5012,
+   "cashback": 3580,
+   "paid": 0,
+   "due": 3580,
+   "clientsCount": 1,
+   "hasClients": true,
+   "effRate": 0.05
+  }
+ ],
+ "operatorAccruals": [
+  {
+   "id": "opacc-001",
+   "operator": "op-anna",
+   "operatorName": "Анна Петрова",
+   "period": "2026-10",
+   "baseRub": 86600,
+   "ratePct": 4,
+   "amountRub": 3464,
+   "expectedRub": 3464,
+   "formulaOk": true,
+   "formula": "86600 × 4% = 3464 ₽",
+   "status": "начислено",
+   "statusLabel": "начислено"
+  },
+  {
+   "id": "opacc-002",
+   "operator": "op-studio",
+   "operatorName": "Студия «Восток»",
+   "period": "2026-10",
+   "baseRub": 71600,
+   "ratePct": 5,
+   "amountRub": 3580,
+   "expectedRub": 3580,
+   "formulaOk": true,
+   "formula": "71600 × 5% = 3580 ₽",
+   "status": "ожидает",
+   "statusLabel": "ожидает"
+  },
+  {
+   "id": "opacc-003",
+   "operator": "op-sergey",
+   "operatorName": "Сергей Ильин",
+   "period": "2026-10",
+   "baseRub": 120000,
+   "ratePct": 6,
+   "amountRub": 7200,
+   "expectedRub": 7200,
+   "formulaOk": true,
+   "formula": "120000 × 6% = 7200 ₽",
+   "status": "начислено",
+   "statusLabel": "начислено"
+  }
+ ],
+ "operatorPayouts": [
+  {
+   "id": "oppay-001",
+   "operator": "op-anna",
+   "operatorName": "Анна Петрова",
+   "date": "2026-11-01",
+   "amountRub": 3464,
+   "method": "СБП",
+   "status": "ожидает",
+   "statusLabel": "ожидает",
+   "doc": "акт №1"
+  }
+ ],
+ "clientOperator": {
+  "client-svet": "op-anna",
+  "client-granel": "op-studio",
+  "client-loss-demo": "op-sergey",
+  "client-donstroy": "op-anna"
+ },
+ "defaults": {
+  "ratePct": 10,
+  "lowBalanceThresholdRub": 15000,
+  "rounding": "до копейки, половина вверх"
+ },
+ "channels": [
+  {
+   "id": "yandex-direct",
+   "name": "Яндекс Директ",
+   "status": "active",
+   "source": "api",
+   "sourceLabel": "по API",
+   "ratePct": 10,
+   "fixedRub": 0,
+   "note": "основной канал, расходы по API",
+   "urgentNote": null,
+   "returnPct": 10,
+   "agreement": true,
+   "returnNote": "возврат 10% по договору"
+  },
+  {
+   "id": "vk-ads",
+   "name": "VK Реклама",
+   "status": "active",
+   "source": "api",
+   "sourceLabel": "по API",
+   "ratePct": 10,
+   "fixedRub": 0,
+   "note": "расходы по API",
+   "urgentNote": null,
+   "returnPct": 8,
+   "agreement": true,
+   "returnNote": "возврат 8% по договору"
+  },
+  {
+   "id": "avito",
+   "name": "Avito",
+   "status": "active",
+   "source": "export",
+   "sourceLabel": "импорт выгрузки",
+   "ratePct": 8,
+   "fixedRub": 0,
+   "note": "партнёрского договора нет: возврат 0%",
+   "urgentNote": "расходы вносятся вручную или импортом",
+   "returnPct": 0,
+   "agreement": false,
+   "returnNote": "партнёрского договора нет: возврат 0%"
+  },
+  {
+   "id": "cian",
+   "name": "CIAN",
+   "status": "active",
+   "source": "manual",
+   "sourceLabel": "вручную",
+   "ratePct": 8,
+   "fixedRub": 0,
+   "note": "партнёрского договора нет: возврат 0%",
+   "urgentNote": "расходы вносятся вручную или импортом",
+   "returnPct": 0,
+   "agreement": false,
+   "returnNote": "партнёрского договора нет: возврат 0%"
+  },
+  {
+   "id": "telegram-ads",
+   "name": "Telegram Ads",
+   "status": "paused",
+   "source": "manual",
+   "sourceLabel": "вручную",
+   "ratePct": 12,
+   "fixedRub": 3000,
+   "note": "нет открытого API, работаем вручную",
+   "urgentNote": "расходы вносятся вручную или импортом",
+   "returnPct": 7,
+   "agreement": false,
+   "returnNote": "партнёрского договора нет: возврат 0%"
+  }
+ ],
+ "channelRows": [
+  {
+   "id": "cian",
+   "name": "CIAN",
+   "spend": 132000,
+   "topup": 140000,
+   "balance": 8000,
+   "cashback": 960,
+   "clients": 2,
+   "share": 0.4744787922358016,
+   "ratePct": 8,
+   "sourceLabel": "вручную",
+   "urgentNote": "расходы вносятся вручную или импортом",
+   "status": "active"
+  },
+  {
+   "id": "yandex-direct",
+   "name": "Яндекс Директ",
+   "spend": 105600,
+   "topup": 160000,
+   "balance": 54400,
+   "cashback": 11380,
+   "clients": 3,
+   "share": 0.3795830337886413,
+   "ratePct": 10,
+   "sourceLabel": "по API",
+   "urgentNote": null,
+   "status": "active"
+  },
+  {
+   "id": "avito",
+   "name": "Avito",
+   "spend": 22000,
+   "topup": 30000,
+   "balance": 8000,
+   "cashback": 1760,
+   "clients": 1,
+   "share": 0.07907979870596693,
+   "ratePct": 8,
+   "sourceLabel": "импорт выгрузки",
+   "urgentNote": "расходы вносятся вручную или импортом",
+   "status": "active"
+  },
+  {
+   "id": "vk-ads",
+   "name": "VK Реклама",
+   "spend": 18600,
+   "topup": 30000,
+   "balance": 11400,
+   "cashback": 1860,
+   "clients": 1,
+   "share": 0.06685837526959022,
+   "ratePct": 10,
+   "sourceLabel": "по API",
+   "urgentNote": null,
+   "status": "active"
+  },
+  {
+   "id": "telegram-ads",
+   "name": "Telegram Ads",
+   "spend": 0,
+   "topup": 0,
+   "balance": 0,
+   "cashback": 0,
+   "clients": 0,
+   "share": 0,
+   "ratePct": 12,
+   "sourceLabel": "вручную",
+   "urgentNote": "расходы вносятся вручную или импортом",
+   "status": "paused"
+  }
+ ],
+ "clientRows": [
+  {
+   "id": "client-svet",
+   "name": "ЖК «Свет» (Dominanta)",
+   "topup": 120000,
+   "spend": 82400,
+   "balance": 37600,
+   "cashback": 7800,
+   "paid": 7800,
+   "mode": "client-pays",
+   "modeLabel": "клиент платит площадке сам",
+   "channels": {
+    "yandex-direct": 60400,
+    "avito": 22000
+   },
+   "low": false,
+   "channelList": [
+    {
+     "id": "yandex-direct",
+     "name": "Яндекс Директ",
+     "spend": 60400,
+     "mode": "client-pays",
+     "modeLabel": "клиент платит площадке сам"
+    },
+    {
+     "id": "avito",
+     "name": "Avito",
+     "spend": 22000,
+     "mode": "client-pays",
+     "modeLabel": "клиент платит площадке сам"
+    }
+   ],
+   "throughService": false,
+   "status": "ок",
+   "effRate": 0.09466019417475728,
+   "operatorId": "op-anna",
+   "operatorName": "Анна Петрова",
+   "commissionPct": 7,
+   "commissionRub": 5768,
+   "operatorCashbackRub": 3296,
+   "returnRub": 10000,
+   "returnExpectedRub": 6040,
+   "operatorRatePct": 4,
+   "cashbackDueRub": 3296,
+   "cashbackFundedRub": 3296,
+   "cashbackFromReturnRub": 6000,
+   "platformMarginRub": 12472,
+   "lossRub": 0,
+   "loss": false,
+   "deferred": null,
+   "deferredDays": null,
+   "deferredDue": null,
+   "deferredDaysLeft": null,
+   "deferredOverdue": false
+  },
+  {
+   "id": "client-granel",
+   "name": "СЗ «Гранель» — Селигер Сити",
+   "topup": 110000,
+   "spend": 71600,
+   "balance": 38400,
+   "cashback": 7740,
+   "paid": 7740,
+   "mode": "through-service",
+   "modeLabel": "бюджет через сервис",
+   "channels": {
+    "yandex-direct": 41000,
+    "vk-ads": 18600,
+    "cian": 12000
+   },
+   "low": false,
+   "channelList": [
+    {
+     "id": "yandex-direct",
+     "name": "Яндекс Директ",
+     "spend": 41000,
+     "mode": "through-service",
+     "modeLabel": "бюджет через сервис"
+    },
+    {
+     "id": "vk-ads",
+     "name": "VK Реклама",
+     "spend": 18600,
+     "mode": "through-service",
+     "modeLabel": "бюджет через сервис"
+    },
+    {
+     "id": "cian",
+     "name": "CIAN",
+     "spend": 12000,
+     "mode": "through-service",
+     "modeLabel": "бюджет через сервис"
+    }
+   ],
+   "throughService": true,
+   "status": "ок",
+   "effRate": 0.10810055865921787,
+   "operatorId": "op-studio",
+   "operatorName": "Студия «Восток»",
+   "commissionPct": 7,
+   "commissionRub": 5012,
+   "operatorCashbackRub": 3580,
+   "returnRub": 7800,
+   "returnExpectedRub": 5588,
+   "operatorRatePct": 5,
+   "cashbackDueRub": 3580,
+   "cashbackFundedRub": 3580,
+   "cashbackFromReturnRub": 4680,
+   "platformMarginRub": 9232,
+   "lossRub": 0,
+   "loss": false,
+   "deferred": {
+    "client": "client-granel",
+    "days": 50,
+    "since": "2026-10-15",
+    "dueDate": "2026-12-04",
+    "daysLeft": 33,
+    "overdue": false,
+    "note": "как у click.ru, до 50 дней — учёт, не финансирование"
+   },
+   "deferredDays": 50,
+   "deferredDue": "2026-12-04",
+   "deferredDaysLeft": 33,
+   "deferredOverdue": false
+  },
+  {
+   "id": "client-loss-demo",
+   "name": "Пример: убыточный клиент",
+   "topup": 120000,
+   "spend": 120000,
+   "balance": 0,
+   "cashback": 0,
+   "paid": 0,
+   "mode": "client-pays",
+   "modeLabel": "клиент платит площадке сам",
+   "channels": {
+    "cian": 120000
+   },
+   "low": true,
+   "channelList": [
+    {
+     "id": "cian",
+     "name": "CIAN",
+     "spend": 120000,
+     "mode": "client-pays",
+     "modeLabel": "клиент платит площадке сам"
+    }
+   ],
+   "throughService": false,
+   "status": "низкий остаток",
+   "effRate": 0,
+   "operatorId": "op-sergey",
+   "operatorName": "Сергей Ильин",
+   "commissionPct": 7,
+   "commissionRub": 8400,
+   "operatorCashbackRub": 7200,
+   "returnRub": 0,
+   "returnExpectedRub": 0,
+   "operatorRatePct": 6,
+   "cashbackDueRub": 7200,
+   "cashbackFundedRub": 0,
+   "cashbackFromReturnRub": 0,
+   "platformMarginRub": 1200,
+   "lossRub": 7200,
+   "loss": true,
+   "deferred": {
+    "client": "client-loss-demo",
+    "days": 30,
+    "since": "2026-10-01",
+    "dueDate": "2026-10-31",
+    "daysLeft": -1,
+    "overdue": true,
+    "note": "демо-отсрочка"
+   },
+   "deferredDays": 30,
+   "deferredDue": "2026-10-31",
+   "deferredDaysLeft": -1,
+   "deferredOverdue": true
+  },
+  {
+   "id": "client-donstroy",
+   "name": "«Донстрой» (лид)",
+   "topup": 10000,
+   "spend": 4200,
+   "balance": 5800,
+   "cashback": 420,
+   "paid": 0,
+   "mode": "client-pays",
+   "modeLabel": "клиент платит площадке сам",
+   "channels": {
+    "yandex-direct": 4200
+   },
+   "low": true,
+   "channelList": [
+    {
+     "id": "yandex-direct",
+     "name": "Яндекс Директ",
+     "spend": 4200,
+     "mode": "client-pays",
+     "modeLabel": "клиент платит площадке сам"
+    }
+   ],
+   "throughService": false,
+   "status": "низкий остаток",
+   "effRate": 0.1,
+   "operatorId": "op-anna",
+   "operatorName": "Анна Петрова",
+   "commissionPct": 7,
+   "commissionRub": 294,
+   "operatorCashbackRub": 168,
+   "returnRub": 500,
+   "returnExpectedRub": 420,
+   "operatorRatePct": 4,
+   "cashbackDueRub": 168,
+   "cashbackFundedRub": 168,
+   "cashbackFromReturnRub": 300,
+   "platformMarginRub": 626,
+   "lossRub": 0,
+   "loss": false,
+   "deferred": null,
+   "deferredDays": null,
+   "deferredDue": null,
+   "deferredDaysLeft": null,
+   "deferredOverdue": false
+  }
+ ],
+ "topups": [
+  {
+   "id": "top-006",
+   "client": "client-donstroy",
+   "channel": "yandex-direct",
+   "date": "2026-10-06",
+   "amountRub": 10000,
+   "by": "клиент, счёт №21",
+   "kind": "topup"
+  },
+  {
+   "id": "top-005",
+   "client": "client-granel",
+   "channel": "cian",
+   "date": "2026-10-05",
+   "amountRub": 20000,
+   "by": "клиент, платёжка",
+   "kind": "topup"
+  },
+  {
+   "id": "top-004",
+   "client": "client-granel",
+   "channel": "vk-ads",
+   "date": "2026-10-04",
+   "amountRub": 30000,
+   "by": "клиент, платёжка",
+   "kind": "topup"
+  },
+  {
+   "id": "top-002",
+   "client": "client-svet",
+   "channel": "avito",
+   "date": "2026-10-03",
+   "amountRub": 30000,
+   "by": "клиент, счёт №13",
+   "kind": "topup"
+  },
+  {
+   "id": "top-003",
+   "client": "client-granel",
+   "channel": "yandex-direct",
+   "date": "2026-10-02",
+   "amountRub": 60000,
+   "by": "клиент, платёжка",
+   "kind": "topup"
+  },
+  {
+   "id": "top-101",
+   "client": "client-loss-demo",
+   "channel": "cian",
+   "date": "2026-10-01",
+   "amountRub": 120000,
+   "by": "клиент, счёт №31 (демо-убыток)",
+   "kind": "topup"
+  },
+  {
+   "id": "top-001",
+   "client": "client-svet",
+   "channel": "yandex-direct",
+   "date": "2026-10-01",
+   "amountRub": 90000,
+   "by": "клиент, счёт №12",
+   "kind": "topup"
+  }
+ ],
+ "spends": [
+  {
+   "id": "sp-101",
+   "client": "client-loss-demo",
+   "channel": "cian",
+   "date": "2026-10-31",
+   "amountRub": 120000,
+   "period": "01.10–31.10",
+   "kind": "spend"
+  },
+  {
+   "id": "sp-011",
+   "client": "client-granel",
+   "channel": "cian",
+   "date": "2026-10-28",
+   "amountRub": 12000,
+   "period": "01.10–28.10",
+   "kind": "spend"
+  },
+  {
+   "id": "sp-010",
+   "client": "client-granel",
+   "channel": "vk-ads",
+   "date": "2026-10-28",
+   "amountRub": 9300,
+   "period": "15.10–28.10",
+   "kind": "spend"
+  },
+  {
+   "id": "sp-008",
+   "client": "client-granel",
+   "channel": "yandex-direct",
+   "date": "2026-10-28",
+   "amountRub": 21000,
+   "period": "15.10–28.10",
+   "kind": "spend"
+  },
+  {
+   "id": "sp-006",
+   "client": "client-svet",
+   "channel": "avito",
+   "date": "2026-10-28",
+   "amountRub": 11000,
+   "period": "15.10–28.10",
+   "kind": "spend"
+  },
+  {
+   "id": "sp-004",
+   "client": "client-svet",
+   "channel": "yandex-direct",
+   "date": "2026-10-28",
+   "amountRub": 13000,
+   "period": "22.10–28.10",
+   "kind": "spend"
+  },
+  {
+   "id": "sp-012",
+   "client": "client-donstroy",
+   "channel": "yandex-direct",
+   "date": "2026-10-21",
+   "amountRub": 4200,
+   "period": "01.10–21.10",
+   "kind": "spend"
+  },
+  {
+   "id": "sp-003",
+   "client": "client-svet",
+   "channel": "yandex-direct",
+   "date": "2026-10-21",
+   "amountRub": 15900,
+   "period": "15.10–21.10",
+   "kind": "spend"
+  },
+  {
+   "id": "sp-009",
+   "client": "client-granel",
+   "channel": "vk-ads",
+   "date": "2026-10-14",
+   "amountRub": 9300,
+   "period": "01.10–14.10",
+   "kind": "spend"
+  },
+  {
+   "id": "sp-007",
+   "client": "client-granel",
+   "channel": "yandex-direct",
+   "date": "2026-10-14",
+   "amountRub": 20000,
+   "period": "01.10–14.10",
+   "kind": "spend"
+  },
+  {
+   "id": "sp-005",
+   "client": "client-svet",
+   "channel": "avito",
+   "date": "2026-10-14",
+   "amountRub": 11000,
+   "period": "01.10–14.10",
+   "kind": "spend"
+  },
+  {
+   "id": "sp-002",
+   "client": "client-svet",
+   "channel": "yandex-direct",
+   "date": "2026-10-14",
+   "amountRub": 16100,
+   "period": "08.10–14.10",
+   "kind": "spend"
+  },
+  {
+   "id": "sp-001",
+   "client": "client-svet",
+   "channel": "yandex-direct",
+   "date": "2026-10-07",
+   "amountRub": 15400,
+   "period": "01.10–07.10",
+   "kind": "spend"
+  }
+ ],
+ "rateOverrides": [
+  {
+   "id": "rate-001",
+   "client": "client-granel",
+   "channel": "yandex-direct",
+   "ratePct": 12,
+   "fixedRub": 0,
+   "since": "2026-10-01",
+   "reason": "премиум-тариф, повышенная ставка"
+  }
+ ],
+ "modeHistory": [
+  {
+   "client": "client-granel",
+   "channel": null,
+   "mode": "through-service",
+   "since": null,
+   "reason": null
+  },
+  {
+   "client": "client-donstroy",
+   "channel": null,
+   "mode": "client-pays",
+   "since": null,
+   "reason": null
+  },
+  {
+   "client": "client-svet",
+   "channel": null,
+   "mode": "client-pays",
+   "since": null,
+   "reason": null
+  }
+ ],
+ "accruals": [
+  {
+   "id": "acc-001",
+   "client": "client-svet",
+   "clientName": "ЖК «Свет» (Dominanta)",
+   "channel": "yandex-direct",
+   "channelName": "Яндекс Директ",
+   "period": "2026-10",
+   "baseRub": 60400,
+   "ratePct": 10,
+   "fixedRub": 0,
+   "amountRub": 6040,
+   "expectedRub": 6040,
+   "formulaOk": true,
+   "formula": "60400 × 10% = 6040 ₽",
+   "status": "начислено",
+   "statusLabel": "начислено",
+   "doc": "счёт №14"
+  },
+  {
+   "id": "acc-002",
+   "client": "client-svet",
+   "clientName": "ЖК «Свет» (Dominanta)",
+   "channel": "avito",
+   "channelName": "Avito",
+   "period": "2026-10",
+   "baseRub": 22000,
+   "ratePct": 8,
+   "fixedRub": 0,
+   "amountRub": 1760,
+   "expectedRub": 1760,
+   "formulaOk": true,
+   "formula": "22000 × 8% = 1760 ₽",
+   "status": "начислено",
+   "statusLabel": "начислено",
+   "doc": "счёт №14"
+  },
+  {
+   "id": "acc-003",
+   "client": "client-granel",
+   "clientName": "СЗ «Гранель» — Селигер Сити",
+   "channel": "yandex-direct",
+   "channelName": "Яндекс Директ",
+   "period": "2026-10",
+   "baseRub": 41000,
+   "ratePct": 12,
+   "fixedRub": 0,
+   "amountRub": 4920,
+   "expectedRub": 4920,
+   "formulaOk": true,
+   "formula": "41000 × 12% = 4920 ₽",
+   "status": "ожидает",
+   "statusLabel": "ожидает",
+   "doc": "счёт №15"
+  },
+  {
+   "id": "acc-004",
+   "client": "client-granel",
+   "clientName": "СЗ «Гранель» — Селигер Сити",
+   "channel": "vk-ads",
+   "channelName": "VK Реклама",
+   "period": "2026-10",
+   "baseRub": 18600,
+   "ratePct": 10,
+   "fixedRub": 0,
+   "amountRub": 1860,
+   "expectedRub": 1860,
+   "formulaOk": true,
+   "formula": "18600 × 10% = 1860 ₽",
+   "status": "ожидает",
+   "statusLabel": "ожидает",
+   "doc": "счёт №15"
+  },
+  {
+   "id": "acc-005",
+   "client": "client-granel",
+   "clientName": "СЗ «Гранель» — Селигер Сити",
+   "channel": "cian",
+   "channelName": "CIAN",
+   "period": "2026-10",
+   "baseRub": 12000,
+   "ratePct": 8,
+   "fixedRub": 0,
+   "amountRub": 960,
+   "expectedRub": 960,
+   "formulaOk": true,
+   "formula": "12000 × 8% = 960 ₽",
+   "status": "ожидает",
+   "statusLabel": "ожидает",
+   "doc": "счёт №15"
+  },
+  {
+   "id": "acc-006",
+   "client": "client-donstroy",
+   "clientName": "«Донстрой» (лид)",
+   "channel": "yandex-direct",
+   "channelName": "Яндекс Директ",
+   "period": "2026-10",
+   "baseRub": 4200,
+   "ratePct": 10,
+   "fixedRub": 0,
+   "amountRub": 420,
+   "expectedRub": 420,
+   "formulaOk": true,
+   "formula": "4200 × 10% = 420 ₽",
+   "status": "начислено",
+   "statusLabel": "начислено",
+   "doc": null
+  }
+ ],
+ "payouts": [
+  {
+   "id": "pay-001",
+   "client": "client-svet",
+   "clientName": "ЖК «Свет» (Dominanta)",
+   "date": "2026-10-31",
+   "amountRub": 7800,
+   "method": "СБП",
+   "status": "выплачено",
+   "statusLabel": "выплачено",
+   "doc": "акт №14"
+  },
+  {
+   "id": "pay-002",
+   "client": "client-granel",
+   "clientName": "СЗ «Гранель» — Селигер Сити",
+   "date": "2026-11-05",
+   "amountRub": 7740,
+   "method": "счёт для юрлиц",
+   "status": "ожидает",
+   "statusLabel": "ожидает",
+   "doc": "счёт №15"
+  }
+ ],
+ "timeline": [
+  {
+   "date": "2026-10-07",
+   "total": 15400,
+   "yandex-direct": 15400,
+   "vk-ads": 0,
+   "avito": 0,
+   "cian": 0,
+   "telegram-ads": 0
+  },
+  {
+   "date": "2026-10-14",
+   "total": 56400,
+   "yandex-direct": 36100,
+   "vk-ads": 9300,
+   "avito": 11000,
+   "cian": 0,
+   "telegram-ads": 0
+  },
+  {
+   "date": "2026-10-21",
+   "total": 20100,
+   "yandex-direct": 20100,
+   "vk-ads": 0,
+   "avito": 0,
+   "cian": 0,
+   "telegram-ads": 0
+  },
+  {
+   "date": "2026-10-28",
+   "total": 66300,
+   "yandex-direct": 34000,
+   "vk-ads": 9300,
+   "avito": 11000,
+   "cian": 12000,
+   "telegram-ads": 0
+  },
+  {
+   "date": "2026-10-31",
+   "total": 120000,
+   "yandex-direct": 0,
+   "vk-ads": 0,
+   "avito": 0,
+   "cian": 120000,
+   "telegram-ads": 0
+  }
+ ],
+ "modes": {
+  "client-pays": "клиент платит площадке сам",
+  "through-service": "бюджет через сервис",
+  "legal": "Прогон бюджета через сервис — агентская схема. По 422-ФЗ НПД к ней не применяется: нужно ИП или ООО. При НПД выставляем вознаграждение за ведение рекламы."
+ },
+ "totals": {
+  "topupRub": 360000,
+  "spendRub": 278200,
+  "balanceRub": 81800,
+  "cashbackRub": 15960,
+  "paidRub": 7800,
+  "dueRub": 8160,
+  "avgRatePct": 5.74,
+  "clients": 4,
+  "channels": 4,
+  "lowBalance": 2,
+  "throughService": 1
+ },
+ "returns": [
+  {
+   "id": "ret-001",
+   "client": "client-svet",
+   "channel": "yandex-direct",
+   "period": "2026-10",
+   "amountRub": 8800,
+   "note": "агентское вознаграждение за октябрь"
+  },
+  {
+   "id": "ret-002",
+   "client": "client-svet",
+   "channel": "avito",
+   "period": "2026-10",
+   "amountRub": 1200,
+   "note": "частичный возврат по спецусловиям"
+  },
+  {
+   "id": "ret-003",
+   "client": "client-granel",
+   "channel": "yandex-direct",
+   "period": "2026-10",
+   "amountRub": 5200,
+   "note": "агентское вознаграждение"
+  },
+  {
+   "id": "ret-004",
+   "client": "client-granel",
+   "channel": "vk-ads",
+   "period": "2026-10",
+   "amountRub": 2600,
+   "note": "агентское вознаграждение"
+  },
+  {
+   "id": "ret-005",
+   "client": "client-donstroy",
+   "channel": "yandex-direct",
+   "period": "2026-10",
+   "amountRub": 500,
+   "note": "небольшой возврат"
+  },
+  {
+   "id": "ret-006",
+   "client": "client-loss-demo",
+   "channel": "cian",
+   "period": "2026-10",
+   "amountRub": 0,
+   "note": "ДЕМО: договора нет, возврат 0 — кэшбэк нечем покрыть"
+  }
+ ],
+ "deferred": [
+  {
+   "client": "client-granel",
+   "days": 50,
+   "since": "2026-10-15",
+   "dueDate": "2026-12-04",
+   "daysLeft": 33,
+   "overdue": false,
+   "note": "как у click.ru, до 50 дней — учёт, не финансирование"
+  },
+  {
+   "client": "client-loss-demo",
+   "days": 30,
+   "since": "2026-10-01",
+   "dueDate": "2026-10-31",
+   "daysLeft": -1,
+   "overdue": true,
+   "note": "демо-отсрочка"
+  }
+ ],
+ "wallet": {
+  "topupRub": 360000,
+  "spendRub": 278200,
+  "returnRub": 18300,
+  "cashbackRub": 14244,
+  "commissionRub": 19474,
+  "marginRub": 23530,
+  "balanceRub": 81800
+ },
+ "risk": {
+  "lossClients": 1,
+  "lossRub": 7200,
+  "rows": [
+   {
+    "id": "client-loss-demo",
+    "name": "Пример: убыточный клиент",
+    "cashback": 7200,
+    "returnRub": 0,
+    "lossRub": 7200,
+    "spend": 120000,
+    "operatorRatePct": 6
+   }
+  ]
+ },
+ "utp": {
+  "text": "Кэшбэк с любого оборота — без минимального порога",
+  "detail": "Мы не ставим условие «пополнение от 50 000 ₽» и не пишем «до 22% при соблюдении условий»: ставки в панели — наши фактические по договорам с площадками, а кэшбэк считается с первого рубля оборота."
+ },
+ "counts": {
+  "channels": 5,
+  "clients": 4,
+  "topups": 7,
+  "spends": 13,
+  "accruals": 6,
+  "payouts": 2,
+  "alerts": 4,
+  "operators": 3,
+  "operatorAccruals": 3,
+  "operatorPayouts": 1,
+  "returns": 6,
+  "deferred": 2,
+  "lossClients": 1
+ },
+ "alerts": [
+  {
+   "level": "critical",
+   "title": "Низкий остаток бюджета: Пример: убыточный клиент",
+   "what": "Остаток 0.00 ₽ при пороге 15000 ₽.",
+   "meaning": "Реклама может остановиться: площадка перестанет показывать объявления.",
+   "action": "Попросить клиента пополнить или перевести на режим «клиент платит сам».",
+   "client": "client-loss-demo"
+  },
+  {
+   "level": "warning",
+   "title": "Низкий остаток бюджета: «Донстрой» (лид)",
+   "what": "Остаток 5800.00 ₽ при пороге 15000 ₽.",
+   "meaning": "Реклама может остановиться: площадка перестанет показывать объявления.",
+   "action": "Попросить клиента пополнить или перевести на режим «клиент платит сам».",
+   "client": "client-donstroy"
+  },
+  {
+   "level": "info",
+   "title": "Агентская схема у клиента СЗ «Гранель» — Селигер Сити",
+   "what": "Бюджет проходит через сервис.",
+   "meaning": "По 422-ФЗ НПД не применяется к агентской деятельности. Нужно ИП или ООО; при НПД выставляйте вознаграждение за ведение.",
+   "action": "Проверить схему и документы до выставления счёта.",
+   "client": "client-granel"
+  },
+  {
+   "level": "critical",
+   "title": "ИП ещё не оформлен",
+   "what": "Режим «бюджет через сервис» — агентский.",
+   "meaning": "По 422-ФЗ НПД не применяется к агентской деятельности: до регистрации ИП этот режим использовать нельзя.",
+   "action": "Оформить ИП либо перевести клиентов на схему «клиент платит площадке сам».",
+   "client": null
+  },
+  {
+   "level": "critical",
+   "title": "УБЫТОК на клиенте: Пример: убыточный клиент",
+   "what": "Кэшбэк оператору 7200.00 ₽ (оборот 120000 ₽ × 6%) не покрыт возвратом площадки: возврат 0.00 ₽.",
+   "meaning": "На этом клиенте вы теряете 7200.00 ₽ своих денег — кэшбэк платится не из возврата, а из вашего кармана.",
+   "action": "Снизить ставку кэшбэка оператору до уровня возврата или заключить партнёрский договор с площадкой.",
+   "client": "client-loss-demo"
+  },
+  {
+   "level": "critical",
+   "title": "Просрочена отсрочка платежа: Пример: убыточный клиент",
+   "what": "Отсрочка 30 дней с 2026-10-01, срок 2026-10-31.",
+   "meaning": "Платёж просрочен на 1 дн. Напоминание клиенту.",
+   "action": "Напомнить клиенту о платеже.",
+   "client": "client-loss-demo"
+  }
+ ],
+ "warnings": []
+}

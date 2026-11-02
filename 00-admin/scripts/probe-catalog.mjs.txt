@@ -1,0 +1,7 @@
+const cfg = window._cianConfig || {};
+const st = cfg["newbuilding-search-frontend"] || [];
+const init = (st.find((e) => e && e.key === "initialState") || {}).value || {};
+const nb = ((init.offersData || {}).newbuildings) || [];
+const want = ["ЗИЛАРТ", "Сити Бэй"];
+const hits = nb.filter((x) => want.indexOf(x.name) >= 0);
+return JSON.stringify(hits.map((x) => ({ id: x.id, name: x.name, builders: (x.builders || []).map((b) => b.name), region: x.regionId, status: x.specialStatusDisplay })), null, 1);

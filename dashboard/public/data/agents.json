@@ -1,0 +1,665 @@
+{
+ "summary": {
+  "total": 4,
+  "enabled": 1,
+  "disabled": 3,
+  "active": 1,
+  "planned": 3,
+  "membersTotal": 17,
+  "membersActive": 16
+ },
+ "agents": [
+  {
+   "id": "agent-1-competitor-watch",
+   "name": "Агент 1 — Мониторинг конкурентов",
+   "role": "Раз в неделю собирает снимок предложения конкурентов (цены, акции, количество лотов), сравнивает с прошлой неделей и готовит отчёт.",
+   "enabled": true,
+   "status": "active",
+   "model": "deepseek/deepseek-v4.1-flash",
+   "modelHint": "лёгкий сбор данных + расчёты движка; сильную модель подключать только для выводов",
+   "projects": [],
+   "groups": [
+    "Мониторинг",
+    "Конкуренты"
+   ],
+   "schedule": "weekly:monday:10:00",
+   "inputs": [
+    "registry/intake/inbox",
+    "01-competitor-watch/inbox",
+    "cian-connector",
+    "avito-connector"
+   ],
+   "outputs": [
+    "01-competitor-watch/reports",
+    "01-competitor-watch/data/snapshots"
+   ],
+   "runbook": "00-admin/runbook.md",
+   "notes": "Движок и тесты: 01-competitor-watch/scripts, 52 теста.",
+   "origin": "registry",
+   "linkedMembers": [
+    "data-engine",
+    "verifier",
+    "verifier",
+    "verifier",
+    "agent1-workspace"
+   ],
+   "linkConfigured": true,
+   "metrics": {
+    "tasks": {
+     "total": 12,
+     "byStatus": {
+      "new": 4,
+      "done": 8
+     }
+    },
+    "sessions": 11,
+    "tokens": {
+     "inputTokens": 14725319,
+     "outputTokens": 2015171,
+     "cacheReadTokens": 459730112,
+     "cacheWriteTokens": 0,
+     "totalTokens": 476470602
+    },
+    "usd": 15.9506,
+    "rub": 1284.94,
+    "rubComplete": true,
+    "lastActivityAt": 1793552032070,
+    "priceKnown": true
+   }
+  },
+  {
+   "id": "agent-2-direct-semantics",
+   "name": "Агент 2 — Семантика и кампании Яндекс Директа",
+   "role": "Собирает и кластеризует семантику, собирает кампании и группы, пишет объявления, готовит выгрузку в Директ.",
+   "enabled": false,
+   "status": "planned",
+   "model": "deepseek/deepseek-v4-pro",
+   "modelHint": "задача творческая и объёмная — здесь сильная модель оправдана",
+   "projects": [],
+   "groups": [
+    "Директ",
+    "Семантика"
+   ],
+   "schedule": "on-demand",
+   "inputs": [
+    "registry/intake",
+    "00-admin/config/my-objects.yaml"
+   ],
+   "outputs": [
+    "02-keywords-direct"
+   ],
+   "runbook": "02-keywords-direct/README.md",
+   "notes": "Следующий этап. Запуск — по команде пользователя.",
+   "origin": "registry",
+   "linkedMembers": [],
+   "linkConfigured": false,
+   "metrics": {
+    "tasks": {
+     "total": 1,
+     "byStatus": {
+      "new": 1
+     }
+    },
+    "sessions": 0,
+    "tokens": {
+     "inputTokens": 0,
+     "outputTokens": 0,
+     "cacheReadTokens": 0,
+     "cacheWriteTokens": 0,
+     "totalTokens": 0
+    },
+    "usd": 0,
+    "rub": null,
+    "rubComplete": true,
+    "lastActivityAt": null,
+    "priceKnown": false
+   }
+  },
+  {
+   "id": "agent-3-creative",
+   "name": "Агент 3 — Креативы и дизайн (заготовка)",
+   "role": "Готовит баннеры и графику под размеры площадок, обновляет креативы под акции конкурентов.",
+   "enabled": false,
+   "status": "planned",
+   "model": "deepseek/deepseek-v4.1-flash",
+   "modelHint": null,
+   "projects": [],
+   "groups": [
+    "Креативы"
+   ],
+   "schedule": "on-demand",
+   "inputs": [
+    "superdesign",
+    "dsh-creative-studio"
+   ],
+   "outputs": [
+    "creatives"
+   ],
+   "runbook": null,
+   "notes": "Инструменты из маркета: superdesign, dsh-creative-studio (ставится в T11).",
+   "origin": "registry",
+   "linkedMembers": [],
+   "linkConfigured": false,
+   "metrics": {
+    "tasks": {
+     "total": 0,
+     "byStatus": {}
+    },
+    "sessions": 0,
+    "tokens": {
+     "inputTokens": 0,
+     "outputTokens": 0,
+     "cacheReadTokens": 0,
+     "cacheWriteTokens": 0,
+     "totalTokens": 0
+    },
+    "usd": 0,
+    "rub": null,
+    "rubComplete": true,
+    "lastActivityAt": null,
+    "priceKnown": false
+   }
+  },
+  {
+   "id": "agent-4-analytics",
+   "name": "Агент 4 — Сквозная аналитика (заготовка)",
+   "role": "Сводит расходы и результаты по площадкам и кампаниям, готовит недельную сводку по эффективности.",
+   "enabled": false,
+   "status": "planned",
+   "model": "deepseek/deepseek-v4.1-flash",
+   "modelHint": null,
+   "projects": [],
+   "groups": [
+    "Аналитика"
+   ],
+   "schedule": "weekly",
+   "inputs": [
+    "dashboard/public/data",
+    "registry/prices.yaml"
+   ],
+   "outputs": [
+    "reports"
+   ],
+   "runbook": null,
+   "notes": "Опирается на данные дашборда; включать, когда появятся выгрузки по расходам.",
+   "origin": "registry",
+   "linkedMembers": [],
+   "linkConfigured": false,
+   "metrics": {
+    "tasks": {
+     "total": 0,
+     "byStatus": {}
+    },
+    "sessions": 0,
+    "tokens": {
+     "inputTokens": 0,
+     "outputTokens": 0,
+     "cacheReadTokens": 0,
+     "cacheWriteTokens": 0,
+     "totalTokens": 0
+    },
+    "usd": 0,
+    "rub": null,
+    "rubComplete": true,
+    "lastActivityAt": null,
+    "priceKnown": false
+   }
+  }
+ ],
+ "members": [
+  {
+   "id": "830d7f80-26e3-41ae-b091-4b3e697e1072",
+   "kind": "system",
+   "registryAgentId": null,
+   "name": "dashboard-ui",
+   "description": "веб-дашборд и сборщик аналитики",
+   "provider": "spawn",
+   "context": "fresh",
+   "phase": "active",
+   "teamId": "session-162bee51-5867-46f8-be1a-478d35530d29",
+   "sessions": 1,
+   "tokens": {
+    "inputTokens": 8857008,
+    "outputTokens": 1237538,
+    "cacheReadTokens": 292630144,
+    "cacheWriteTokens": 0,
+    "totalTokens": 302724690
+   },
+   "usd": 10.1208,
+   "rub": 815.3,
+   "rubComplete": true,
+   "lastActivityAt": 1793550811272,
+   "sessionIds": [
+    "830d7f80-26e3-41ae-b091-4b3e697e1072"
+   ]
+  },
+  {
+   "id": "ab6c1cbd-ae91-443e-95b6-4d598fb42390",
+   "kind": "product",
+   "registryAgentId": "agent-1-competitor-watch",
+   "name": "data-engine",
+   "description": "Python-движок снимок/diff/отчёт и тесты",
+   "provider": "spawn",
+   "context": "fresh",
+   "phase": "active",
+   "teamId": "session-162bee51-5867-46f8-be1a-478d35530d29",
+   "sessions": 1,
+   "tokens": {
+    "inputTokens": 3324382,
+    "outputTokens": 860199,
+    "cacheReadTokens": 188246912,
+    "cacheWriteTokens": 0,
+    "totalTokens": 192431493
+   },
+   "usd": 6.4565,
+   "rub": 520.12,
+   "rubComplete": true,
+   "lastActivityAt": 1793547524477,
+   "sessionIds": [
+    "ab6c1cbd-ae91-443e-95b6-4d598fb42390"
+   ]
+  },
+  {
+   "id": "bc3bdbf7-a3cb-400e-b8c3-2617e5d33100",
+   "kind": "product",
+   "registryAgentId": "agent-1-competitor-watch",
+   "name": "verifier",
+   "description": "независимый верификатор Агента 1 и плагина",
+   "provider": "spawn",
+   "context": "fresh",
+   "phase": "active",
+   "teamId": "session-162bee51-5867-46f8-be1a-478d35530d29",
+   "sessions": 3,
+   "tokens": {
+    "inputTokens": 3139739,
+    "outputTokens": 294527,
+    "cacheReadTokens": 72610368,
+    "cacheWriteTokens": 0,
+    "totalTokens": 76044634
+   },
+   "usd": 2.5372,
+   "rub": 204.39,
+   "rubComplete": true,
+   "lastActivityAt": 1793552032070,
+   "sessionIds": [
+    "e43a1771-9fc1-4400-b4fa-6315d1135359",
+    "bc3bdbf7-a3cb-400e-b8c3-2617e5d33100",
+    "6280b1b7-a0d1-4515-ba04-d6a2da0210ff"
+   ]
+  },
+  {
+   "id": "e43a1771-9fc1-4400-b4fa-6315d1135359",
+   "kind": "product",
+   "registryAgentId": "agent-1-competitor-watch",
+   "name": "verifier",
+   "description": "Независимая проверка плагина на живом GUI (доступ, скриншоты, DOM-ассерты)",
+   "provider": "spawn",
+   "context": "fresh",
+   "phase": "active",
+   "teamId": "session-932e8d00-4a73-4772-89cf-12fe61c6e310",
+   "sessions": 3,
+   "tokens": {
+    "inputTokens": 3139739,
+    "outputTokens": 294527,
+    "cacheReadTokens": 72610368,
+    "cacheWriteTokens": 0,
+    "totalTokens": 76044634
+   },
+   "usd": 2.5372,
+   "rub": 204.39,
+   "rubComplete": true,
+   "lastActivityAt": 1793552032070,
+   "sessionIds": [
+    "e43a1771-9fc1-4400-b4fa-6315d1135359",
+    "bc3bdbf7-a3cb-400e-b8c3-2617e5d33100",
+    "6280b1b7-a0d1-4515-ba04-d6a2da0210ff"
+   ]
+  },
+  {
+   "id": "6280b1b7-a0d1-4515-ba04-d6a2da0210ff",
+   "kind": "product",
+   "registryAgentId": "agent-1-competitor-watch",
+   "name": "verifier",
+   "description": "Independent verification of russification and audit results",
+   "provider": "spawn",
+   "context": "fresh",
+   "phase": "active",
+   "teamId": "session-a1097186-d111-41f5-b0fb-1e9047ac821d",
+   "sessions": 3,
+   "tokens": {
+    "inputTokens": 3139739,
+    "outputTokens": 294527,
+    "cacheReadTokens": 72610368,
+    "cacheWriteTokens": 0,
+    "totalTokens": 76044634
+   },
+   "usd": 2.5372,
+   "rub": 204.39,
+   "rubComplete": true,
+   "lastActivityAt": 1793552032070,
+   "sessionIds": [
+    "e43a1771-9fc1-4400-b4fa-6315d1135359",
+    "bc3bdbf7-a3cb-400e-b8c3-2617e5d33100",
+    "6280b1b7-a0d1-4515-ba04-d6a2da0210ff"
+   ]
+  },
+  {
+   "id": "18edb148-dc05-4424-84d4-d587ac4471b2",
+   "kind": "system",
+   "registryAgentId": null,
+   "name": "plugin-dev",
+   "description": "разработчик DSH-плагина и провайдера скилов",
+   "provider": "spawn",
+   "context": "fresh",
+   "phase": "active",
+   "teamId": "session-162bee51-5867-46f8-be1a-478d35530d29",
+   "sessions": 1,
+   "tokens": {
+    "inputTokens": 1642899,
+    "outputTokens": 412595,
+    "cacheReadTokens": 73469952,
+    "cacheWriteTokens": 0,
+    "totalTokens": 75525446
+   },
+   "usd": 2.5575,
+   "rub": 206.03,
+   "rubComplete": true,
+   "lastActivityAt": 1793547413147,
+   "sessionIds": [
+    "18edb148-dc05-4424-84d4-d587ac4471b2"
+   ]
+  },
+  {
+   "id": "ebd6522a-7ce3-4741-85fd-ae097136ff55",
+   "kind": "other",
+   "registryAgentId": null,
+   "name": "plugins-ru",
+   "description": "Russify vision-router menu, skill-browser and small plugin UIs",
+   "provider": "spawn",
+   "context": "fresh",
+   "phase": "active",
+   "teamId": "session-a1097186-d111-41f5-b0fb-1e9047ac821d",
+   "sessions": 1,
+   "tokens": {
+    "inputTokens": 1271359,
+    "outputTokens": 213996,
+    "cacheReadTokens": 55424512,
+    "cacheWriteTokens": 0,
+    "totalTokens": 56909867
+   },
+   "usd": 1.8968,
+   "rub": 152.8,
+   "rubComplete": true,
+   "lastActivityAt": 1793468366939,
+   "sessionIds": [
+    "ebd6522a-7ce3-4741-85fd-ae097136ff55"
+   ]
+  },
+  {
+   "id": "526c6729-9219-46a9-a830-222b627ae94e",
+   "kind": "product",
+   "registryAgentId": "agent-1-competitor-watch",
+   "name": "agent1-workspace",
+   "description": "контур Агента 1: конфиги, шаблоны, регламент, разведка",
+   "provider": "spawn",
+   "context": "fresh",
+   "phase": "active",
+   "teamId": "session-162bee51-5867-46f8-be1a-478d35530d29",
+   "sessions": 1,
+   "tokens": {
+    "inputTokens": 1981720,
+    "outputTokens": 271391,
+    "cacheReadTokens": 53652096,
+    "cacheWriteTokens": 0,
+    "totalTokens": 55905207
+   },
+   "usd": 1.8825,
+   "rub": 151.65,
+   "rubComplete": true,
+   "lastActivityAt": 1793531322931,
+   "sessionIds": [
+    "526c6729-9219-46a9-a830-222b627ae94e"
+   ]
+  },
+  {
+   "id": "ef90afcc-7f73-4802-8b94-6844d30b15d8",
+   "kind": "other",
+   "registryAgentId": null,
+   "name": "market-ru",
+   "description": "Russify the dshmarket plugin UI (priority sections)",
+   "provider": "spawn",
+   "context": "fresh",
+   "phase": "active",
+   "teamId": "session-a1097186-d111-41f5-b0fb-1e9047ac821d",
+   "sessions": 1,
+   "tokens": {
+    "inputTokens": 148005,
+    "outputTokens": 296947,
+    "cacheReadTokens": 52446976,
+    "cacheWriteTokens": 0,
+    "totalTokens": 52891928
+   },
+   "usd": 1.7936,
+   "rub": 144.49,
+   "rubComplete": true,
+   "lastActivityAt": 1793469500586,
+   "sessionIds": [
+    "ef90afcc-7f73-4802-8b94-6844d30b15d8"
+   ]
+  },
+  {
+   "id": "b92ef342-e1fc-4691-a19d-01ede6e42968",
+   "kind": "other",
+   "registryAgentId": null,
+   "name": "market-lib-ru",
+   "description": "Russify dshmarket server-side lib/*.js",
+   "provider": "spawn",
+   "context": "fresh",
+   "phase": "active",
+   "teamId": "session-a1097186-d111-41f5-b0fb-1e9047ac821d",
+   "sessions": 1,
+   "tokens": {
+    "inputTokens": 518184,
+    "outputTokens": 160087,
+    "cacheReadTokens": 35578299,
+    "cacheWriteTokens": 0,
+    "totalTokens": 36256570
+   },
+   "usd": 1.2159,
+   "rub": 97.95,
+   "rubComplete": true,
+   "lastActivityAt": 1793471431674,
+   "sessionIds": [
+    "b92ef342-e1fc-4691-a19d-01ede6e42968"
+   ]
+  },
+  {
+   "id": "88d3be0a-cdad-4d6a-a60c-7cccc2110438",
+   "kind": "other",
+   "registryAgentId": null,
+   "name": "skillbrowser-ru",
+   "description": "Russify dsh-skill-browser plugin UI",
+   "provider": "spawn",
+   "context": "fresh",
+   "phase": "active",
+   "teamId": "session-a1097186-d111-41f5-b0fb-1e9047ac821d",
+   "sessions": 1,
+   "tokens": {
+    "inputTokens": 451881,
+    "outputTokens": 171956,
+    "cacheReadTokens": 31380992,
+    "cacheWriteTokens": 0,
+    "totalTokens": 32004829
+   },
+   "usd": 1.0829,
+   "rub": 87.23,
+   "rubComplete": true,
+   "lastActivityAt": 1793468518785,
+   "sessionIds": [
+    "88d3be0a-cdad-4d6a-a60c-7cccc2110438"
+   ]
+  },
+  {
+   "id": "f05182e9-1a62-4402-9b83-808feca15fe4",
+   "kind": "other",
+   "registryAgentId": null,
+   "name": "capability-dev",
+   "description": "браузер, рабочий стол и зрение для агентов",
+   "provider": "spawn",
+   "context": "fresh",
+   "phase": "active",
+   "teamId": "session-162bee51-5867-46f8-be1a-478d35530d29",
+   "sessions": 1,
+   "tokens": {
+    "inputTokens": 619502,
+    "outputTokens": 89972,
+    "cacheReadTokens": 10632320,
+    "cacheWriteTokens": 0,
+    "totalTokens": 11341794
+   },
+   "usd": 0.3929,
+   "rub": 31.65,
+   "rubComplete": true,
+   "lastActivityAt": 1793550211113,
+   "sessionIds": [
+    "f05182e9-1a62-4402-9b83-808feca15fe4"
+   ]
+  },
+  {
+   "id": "403e9806-3fc0-411e-bfcb-54b96eaade23",
+   "kind": "other",
+   "registryAgentId": null,
+   "name": "plugin-author",
+   "description": "Автор клиентского UI-плагина dsh-step-timer (тайминги по этапам)",
+   "provider": "spawn",
+   "context": "fresh",
+   "phase": "active",
+   "teamId": "session-932e8d00-4a73-4772-89cf-12fe61c6e310",
+   "sessions": 1,
+   "tokens": {
+    "inputTokens": 225822,
+    "outputTokens": 85974,
+    "cacheReadTokens": 8841728,
+    "cacheWriteTokens": 0,
+    "totalTokens": 9153524
+   },
+   "usd": 0.3212,
+   "rub": 25.88,
+   "rubComplete": true,
+   "lastActivityAt": 1793552002046,
+   "sessionIds": [
+    "403e9806-3fc0-411e-bfcb-54b96eaade23"
+   ]
+  },
+  {
+   "id": "b584c756-0f46-4910-bddd-4fa3101f9786",
+   "kind": "other",
+   "registryAgentId": null,
+   "name": "locale-core",
+   "description": "Russian language pack: 8 agent-preset guides + ru-locale pipeline gaps",
+   "provider": "spawn",
+   "context": "fresh",
+   "phase": "active",
+   "teamId": "session-a1097186-d111-41f5-b0fb-1e9047ac821d",
+   "sessions": 1,
+   "tokens": {
+    "inputTokens": 376308,
+    "outputTokens": 64395,
+    "cacheReadTokens": 6670848,
+    "cacheWriteTokens": 0,
+    "totalTokens": 7111551
+   },
+   "usd": 0.2488,
+   "rub": 20.04,
+   "rubComplete": true,
+   "lastActivityAt": 1793467359970,
+   "sessionIds": [
+    "b584c756-0f46-4910-bddd-4fa3101f9786"
+   ]
+  },
+  {
+   "id": "b5ebf23a-6c81-4ca0-8876-dfb2df683750",
+   "kind": "other",
+   "registryAgentId": null,
+   "name": "auditor",
+   "description": "Internal read-only audit of plugins and skills",
+   "provider": "spawn",
+   "context": "fresh",
+   "phase": "active",
+   "teamId": "session-a1097186-d111-41f5-b0fb-1e9047ac821d",
+   "sessions": 1,
+   "tokens": {
+    "inputTokens": 117159,
+    "outputTokens": 52100,
+    "cacheReadTokens": 4914688,
+    "cacheWriteTokens": 0,
+    "totalTokens": 5083947
+   },
+   "usd": 0.1798,
+   "rub": 14.48,
+   "rubComplete": true,
+   "lastActivityAt": 1793467255526,
+   "sessionIds": [
+    "b5ebf23a-6c81-4ca0-8876-dfb2df683750"
+   ]
+  },
+  {
+   "id": "9d66e28b-6708-401a-9046-e6f91c21f01a",
+   "kind": "other",
+   "registryAgentId": null,
+   "name": "localizer",
+   "description": "русификация интерфейса DSH и плагинов",
+   "provider": "spawn",
+   "context": "fresh",
+   "phase": "active",
+   "teamId": "session-162bee51-5867-46f8-be1a-478d35530d29",
+   "sessions": 1,
+   "tokens": {
+    "inputTokens": 226622,
+    "outputTokens": 12402,
+    "cacheReadTokens": 1447424,
+    "cacheWriteTokens": 0,
+    "totalTokens": 1686448
+   },
+   "usd": 0.0581,
+   "rub": 4.68,
+   "rubComplete": true,
+   "lastActivityAt": 1793466430453,
+   "sessionIds": [
+    "9d66e28b-6708-401a-9046-e6f91c21f01a"
+   ]
+  },
+  {
+   "id": "7d702bb7-4e55-45cc-a14d-5d5683181960",
+   "kind": "system",
+   "registryAgentId": null,
+   "name": "dashboard-dev",
+   "description": "веб-дашборд и сборщик аналитики",
+   "provider": "spawn",
+   "context": "fresh",
+   "phase": "failed",
+   "teamId": "session-162bee51-5867-46f8-be1a-478d35530d29",
+   "sessions": 1,
+   "tokens": {
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "cacheReadTokens": 0,
+    "cacheWriteTokens": 0,
+    "totalTokens": 0
+   },
+   "usd": 0,
+   "rub": null,
+   "rubComplete": true,
+   "lastActivityAt": 1793455525965,
+   "sessionIds": [
+    "7d702bb7-4e55-45cc-a14d-5d5683181960"
+   ]
+  }
+ ],
+ "registryFile": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\registry\\agents.yaml",
+ "registryUpdated": "2026-10-31",
+ "links": {
+  "file": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\dashboard\\config\\links.yaml",
+  "configured": 1
+ }
+}

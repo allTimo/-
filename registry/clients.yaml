@@ -1,0 +1,49 @@
+# Клиенты сервиса — источник правды для панели и агентов.
+# Правки из панели атомарные, с копией .bak-<timestamp>; обратимость по SHA-256.
+version: 1
+updated: "2026-10-31"
+
+clients:
+  - id: client-svet
+    name: "ЖК «Свет» (Dominanta)"
+    operator_id: op-anna
+    contact: "Ирина, маркетинг · +7 999 000-00-01"
+    status: active            # lead | active | paused | churned
+    plan: business            # start | business | premium
+    since: "2026-10-01"
+    objects: [my-zhk-svet]
+    services: [competitor-watch, listing-audit]
+    note: "Пилотный клиент. Ждёт отчёт по понедельникам, смотрит в Excel."
+
+  - id: client-granel
+    name: "СЗ «Гранель» — Селигер Сити"
+    operator_id: op-studio
+    contact: "Дмитрий, руководитель отдела продаж · d.granel@example.ru"
+    status: active
+    plan: premium
+    since: "2026-10-15"
+    objects: []
+    services: [competitor-watch, direct-semantics, listing-audit]
+    note: "Просил сравнение недель и индивидуальный разбор по своим ЖК."
+
+  - id: client-loss-demo
+    name: "Пример: убыточный клиент"
+    operator_id: op-sergey
+    contact: "демо-пример для проверки предохранителя от убытка"
+    status: active
+    plan: start
+    since: "2026-10-01"
+    objects: []
+    services: [listing-audit]
+    note: "ДЕМО: площадка без партнёрского договора (возврат 0%), но оператору обещан кэшбэк. Предохранитель должен показать убыток."
+
+  - id: client-donstroy
+    name: "«Донстрой» (лид)"
+    operator_id: op-anna
+    contact: "Анна, digital · +7 999 000-00-02"
+    status: lead
+    plan: start
+    since: "2026-10-30"
+    objects: []
+    services: []
+    note: "Интересуются ценами конкурентов. Услуги ещё не подключены."

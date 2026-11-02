@@ -1,0 +1,28 @@
+# Счета: выставляются вручную, оплата вне MVP.
+version: 1
+updated: "2026-10-31"
+
+invoices:
+  - id: inv-2026-10-001
+    client: client-svet
+    period: "2026-10"
+    amount_rub: 2900
+    status: paid              # draft | issued | paid
+    issued: "2026-10-01"
+    file: "01-competitor-watch/reports/invoices/inv-2026-10-001.xlsx"
+
+  - id: inv-2026-10-002
+    client: client-granel
+    period: "2026-10"
+    amount_rub: 9800
+    status: issued
+    issued: "2026-10-15"
+    file: null
+
+  - id: inv-2026-11-001
+    client: client-granel
+    period: "2026-11"
+    amount_rub: 5900
+    status: draft
+    issued: null
+    file: null

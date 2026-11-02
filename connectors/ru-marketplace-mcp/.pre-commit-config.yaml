@@ -1,0 +1,65 @@
+# Pre-commit hooks for ru-marketplace-mcp.
+#
+# Install once:  uv run pre-commit install
+# Run manually:  uv run pre-commit run --all-files
+#
+# These mirror the CI lint job, so a clean commit means a green CI lint stage.
+
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+        # Captured markup is evidence: the DOM tests run the real extractor
+        # against bytes taken off the live site, so a hook that appends a
+        # newline is quietly editing the thing under test.
+        exclude: ^packages/.*/tests/fixtures/
+      - id: check-yaml
+      - id: check-toml
+      - id: check-added-large-files
+        args: [--maxkb=512]
+      - id: check-merge-conflict
+      - id: detect-private-key
+      - id: mixed-line-ending
+        args: [--fix=lf]
+
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    # Keep this pin equal to the ruff version in uv.lock (0.16.7), which is the
+    # one CI runs via `uv run ruff`. ruff's formatter and lint rules shift
+    # between releases, so a stale pin here formats code one way locally and CI
+    # rejects it the other way — a maddening loop of "clean commit, red CI".
+    # When you bump ruff in the lock, bump this rev in the same change.
+    rev: v0.16.7
+    hooks:
+      - id: ruff
+        args: [--fix]
+      - id: ruff-format
+
+  - repo: local
+    hooks:
+      - id: no-print-in-servers
+        # A print() in a stdio MCP server writes to stdout and corrupts the
+        # JSON-RPC stream — the single most damaging mistake in this codebase.
+        name: no stdout writes in connector code
+        entry: python scripts/check_no_print.py
+        language: system
+        files: ^packages/.*/src/.*\.py$
+        pass_filenames: true
+
+      - id: check-test-count
+        # Adding a test silently invalidates the number the README advertises.
+        name: documented test count is current
+        entry: python scripts/check_test_count.py
+        language: system
+        files: (^packages/.*/tests/.*\.py|README\.md|docs/ARCHITECTURE\.md)$
+        pass_filenames: false
+
+      - id: check-versions
+        # Version strings live in seventy-two places and are edited by hand at
+        # release time; the one that gets missed is silent.
+        name: one version, everywhere
+        entry: python scripts/check_versions.py
+        language: system
+        files: (pyproject\.toml|__init__\.py|server\.py|server\.json|docker-compose\.yml|DEPLOYMENT\.md)$
+        pass_filenames: false

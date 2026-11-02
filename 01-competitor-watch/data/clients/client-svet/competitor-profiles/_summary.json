@@ -1,0 +1,120 @@
+{
+  "client": "client-svet",
+  "generated_at": "2026-11-01T18:00:38+03:00",
+  "projects": 6,
+  "projects_with_lots": 6,
+  "lots_total": 170,
+  "price_per_m2_median": 514844,
+  "risk_flags": [
+    {
+      "project": "ЖК Дмитровское небо",
+      "code": "no_history",
+      "level": "info",
+      "comment": "истории мало: динамика и риски появятся после 2 недель"
+    },
+    {
+      "project": "ЖК Селигер Сити",
+      "code": "no_history",
+      "level": "info",
+      "comment": "истории мало: динамика и риски появятся после 2 недель"
+    },
+    {
+      "project": "ЖК Михалковский",
+      "code": "no_history",
+      "level": "info",
+      "comment": "истории мало: динамика и риски появятся после 2 недель"
+    },
+    {
+      "project": "ЖК Нарвин",
+      "code": "no_history",
+      "level": "info",
+      "comment": "истории мало: динамика и риски появятся после 2 недель"
+    },
+    {
+      "project": "ЖК СОУЛ",
+      "code": "no_history",
+      "level": "info",
+      "comment": "истории мало: динамика и риски появятся после 2 недель"
+    },
+    {
+      "project": "ЖК Бусиновский парк",
+      "code": "no_history",
+      "level": "info",
+      "comment": "истории мало: динамика и риски появятся после 2 недель"
+    }
+  ],
+  "rosreestr": {
+    "status": "частично доступен",
+    "detail": "страница открывается через браузер без логина: росреестр; Chrome отдал страницу ошибки сертификата: наш.дом.рф (ЕИСЖС)",
+    "reachable_via_browser": [
+      "росреестр"
+    ],
+    "disabled": [],
+    "attempts": [
+      {
+        "source": "наш.дом.рф (ЕИСЖС)",
+        "url": "https://xn--80asehdb.xn--p1ai/",
+        "http": {
+          "status": null,
+          "bytes": 0,
+          "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'xn--80asehdb.xn--p1ai'. (_ssl.c:1010)>"
+        },
+        "browser": {
+          "bytes": 61917,
+          "transport": "chrome-cdp-no-login-headless",
+          "ignore_cert_errors": true,
+          "note": "Chrome отдал страницу ошибки сертификата — это не данные"
+        },
+        "verdict": "error_page"
+      },
+      {
+        "source": "росреестр",
+        "url": "https://rosreestr.gov.ru/",
+        "http": {
+          "status": null,
+          "bytes": 0,
+          "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1010)>"
+        },
+        "browser": {
+          "bytes": 307611,
+          "transport": "chrome-cdp-no-login-headless",
+          "ignore_cert_errors": true
+        },
+        "verdict": "ok"
+      }
+    ],
+    "per_source": [
+      {
+        "source": "наш.дом.рф (ЕИСЖС)",
+        "verdict": "error_page",
+        "note": "Chrome отдал страницу ошибки сертификата — это не данные"
+      },
+      {
+        "source": "росреестр",
+        "verdict": "ok",
+        "note": "страница открылась (chrome-cdp-no-login-headless), обычный HTTP был заблокирован: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate "
+      }
+    ],
+    "requests_made": 4,
+    "checked_at": "2026-11-01",
+    "from_cache": true,
+    "cache_age_hours": 0.1
+  },
+  "official": {
+    "source": "ЕИСЖС (наш.дом.рф) / Росреестр",
+    "status": "частично доступен",
+    "projects_with_official_data": 0,
+    "corpi_total": null,
+    "flats_total": null,
+    "ddu_registered": null,
+    "comment": "нули здесь означают, что официальные данные недоступны, а не что их нет"
+  },
+  "files": [
+    "ЖК Дмитровское небо",
+    "ЖК Селигер Сити",
+    "ЖК Михалковский",
+    "ЖК Нарвин",
+    "ЖК СОУЛ",
+    "ЖК Бусиновский парк"
+  ]
+}

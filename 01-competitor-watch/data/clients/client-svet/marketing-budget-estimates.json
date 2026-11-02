@@ -1,0 +1,115 @@
+{
+  "checked_at": "2026-11-01",
+  "domain": null,
+  "secrets_source": "не заданы",
+  "tokens": {
+    "keysso": false,
+    "spywords": false
+  },
+  "sources": {
+    "csv": {
+      "status": "ok",
+      "files": [
+        {
+          "file": "keysso-export-sample.csv",
+          "encoding": "utf-8-sig",
+          "delimiter": ";",
+          "columns": [
+            "domain",
+            "period",
+            "adcost",
+            "ads",
+            "keywords",
+            "url"
+          ],
+          "rows": 3
+        }
+      ],
+      "summary": {
+        "budget_estimate_rub": 587700,
+        "ads_count": 131,
+        "keywords_count": 1015,
+        "landings_count": 2,
+        "domains_count": 2,
+        "rows": 3,
+        "source": "демо-образец выгрузки",
+        "method": "csv",
+        "period": null,
+        "note": ""
+      },
+      "metrics": {
+        "marketing_budget_estimate_rub": {
+          "value": 587700,
+          "unit": "₽/период",
+          "source": "демо-образец выгрузки",
+          "collected_at": "2026-11-01",
+          "method": "csv",
+          "accuracy": "оценка сервиса (не факт расхода)",
+          "comment": "оценка сервиса по данным контекстной рекламы; НЕ фактический расход застройщика",
+          "period": null
+        },
+        "marketing_ads_count": {
+          "value": 131,
+          "unit": "объявлений",
+          "source": "демо-образец выгрузки",
+          "collected_at": "2026-11-01",
+          "method": "csv",
+          "accuracy": "оценка сервиса (не факт расхода)",
+          "comment": "оценка сервиса",
+          "period": null
+        },
+        "marketing_keywords_count": {
+          "value": 1015,
+          "unit": "фраз",
+          "source": "демо-образец выгрузки",
+          "collected_at": "2026-11-01",
+          "method": "csv",
+          "accuracy": "оценка сервиса (не факт расхода)",
+          "comment": "оценка сервиса",
+          "period": null
+        },
+        "marketing_landings_count": {
+          "value": 2,
+          "unit": "посадочных",
+          "source": "демо-образец выгрузки",
+          "collected_at": "2026-11-01",
+          "method": "csv",
+          "accuracy": "оценка сервиса (не факт расхода)",
+          "comment": "оценка сервиса: уникальные посадочные страницы",
+          "period": null
+        },
+        "marketing_period": {
+          "value": "2026-11",
+          "unit": "период",
+          "source": "демо-образец выгрузки",
+          "collected_at": "2026-11-01",
+          "method": "csv",
+          "accuracy": "оценка сервиса (не факт расхода)",
+          "comment": "период, за который собраны данные",
+          "period": null
+        },
+        "marketing_source": {
+          "value": "демо-образец выгрузки",
+          "unit": "",
+          "source": "демо-образец выгрузки",
+          "collected_at": "2026-11-01",
+          "method": "csv",
+          "accuracy": "оценка сервиса (не факт расхода)",
+          "comment": "источник данных о бюджете",
+          "period": null
+        },
+        "marketing_method": {
+          "value": "csv",
+          "unit": "",
+          "source": "демо-образец выгрузки",
+          "collected_at": "2026-11-01",
+          "method": "csv",
+          "accuracy": "оценка сервиса (не факт расхода)",
+          "comment": "способ получения: csv | api | mcp (белый список панели)",
+          "period": null
+        }
+      }
+    }
+  },
+  "slice": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\01-competitor-watch\\data\\clients\\client-svet\\budgets\\2026-11-01.json"
+}

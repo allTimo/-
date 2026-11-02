@@ -1,0 +1,102 @@
+{
+  "note": "Снимок веб-поиска от 2026-11-01 по району Хамовники/Парк культуры; координаты — живое геокодирование OSM/Nominatim",
+  "generated_at": "2026-11-01T14:15:00+03:00",
+  "results": [
+    {
+      "name": "ЖК Barrin House",
+      "developer": "ГК Основа",
+      "class": "бизнес",
+      "address": "Москва, Ефремова, 10",
+      "lat": 55.725995,
+      "lon": 37.5756655,
+      "url": "https://www.novostroy-m.ru/baza/barrin_house",
+      "source": "web-search",
+      "sources": [
+        {
+          "platform": "web-search",
+          "url": "https://www.novostroy-m.ru/baza/barrin_house"
+        }
+      ]
+    },
+    {
+      "name": "ЖК Набоков",
+      "developer": "Vesco Group",
+      "class": "премиум",
+      "address": "Москва, Курсовой переулок, 10/1",
+      "lat": 55.7402042,
+      "lon": 37.6049144,
+      "url": "https://vesco-realty.ru/gorod/zhk/nabokov",
+      "source": "web-search",
+      "sources": [
+        {
+          "platform": "web-search",
+          "url": "https://vesco-realty.ru/gorod/zhk/nabokov"
+        }
+      ]
+    },
+    {
+      "name": "Резиденция на Всеволожском",
+      "developer": "Эталон",
+      "class": "премиум",
+      "address": "Москва, Всеволожский переулок, 2",
+      "lat": 55.7427981,
+      "lon": 37.5989308,
+      "url": "https://etalongroup.com/company/projects/899/",
+      "source": "web-search",
+      "sources": [
+        {
+          "platform": "web-search",
+          "url": "https://etalongroup.com/company/projects/899/"
+        }
+      ]
+    },
+    {
+      "name": "ЖК Символ",
+      "developer": "Донстрой",
+      "class": "бизнес",
+      "address": "Москва, Золоторожский Вал, 11",
+      "lat": 55.7523855,
+      "lon": 37.6941064,
+      "url": "https://www.donstroy.com/",
+      "source": "web-search",
+      "sources": [
+        {
+          "platform": "web-search",
+          "url": "https://www.donstroy.com/"
+        }
+      ]
+    },
+    {
+      "name": "Сити Бэй",
+      "developer": "MR Group",
+      "class": "бизнес",
+      "address": "Москва, Береговой проезд, 1",
+      "lat": 55.7594677,
+      "lon": 37.5082989,
+      "url": "https://www.mrgroup.ru/",
+      "source": "web-search",
+      "sources": [
+        {
+          "platform": "web-search",
+          "url": "https://www.mrgroup.ru/"
+        }
+      ]
+    },
+    {
+      "name": "Селигер Сити",
+      "developer": "СЗ Гранель",
+      "class": "бизнес",
+      "address": "Москва, Ильменский проезд, 14",
+      "lat": 55.8606578,
+      "lon": 37.5452889,
+      "url": "https://www.seligersiti.ru/",
+      "source": "web-search",
+      "sources": [
+        {
+          "platform": "web-search",
+          "url": "https://www.seligersiti.ru/"
+        }
+      ]
+    }
+  ]
+}

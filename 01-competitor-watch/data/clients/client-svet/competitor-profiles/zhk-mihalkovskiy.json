@@ -1,0 +1,382 @@
+{
+  "project": "ЖК Михалковский",
+  "source_url": "https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-mihalkovskiy-3206223-ot-zastroyschika-OTZ/",
+  "source_platform": "cian",
+  "collected_at": "2026-11-01",
+  "metrics": {
+    "lots_in_sale": {
+      "value": 28,
+      "unit": "лотов",
+      "source": "cian (https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-mihalkovskiy-3206223-ot-zastroyschika-OTZ/)",
+      "collected_at": "2026-11-01",
+      "method": "http",
+      "accuracy": "высокая",
+      "comment": "лоты на публичной странице проекта"
+    },
+    "price_min_rub": {
+      "value": 20002251,
+      "unit": "₽",
+      "source": "cian (https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-mihalkovskiy-3206223-ot-zastroyschika-OTZ/)",
+      "collected_at": "2026-11-01",
+      "method": "http",
+      "accuracy": "",
+      "comment": ""
+    },
+    "price_median_rub": {
+      "value": 50000000,
+      "unit": "₽",
+      "source": "cian (https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-mihalkovskiy-3206223-ot-zastroyschika-OTZ/)",
+      "collected_at": "2026-11-01",
+      "method": "http",
+      "accuracy": "",
+      "comment": ""
+    },
+    "price_max_rub": {
+      "value": 50000000,
+      "unit": "₽",
+      "source": "cian (https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-mihalkovskiy-3206223-ot-zastroyschika-OTZ/)",
+      "collected_at": "2026-11-01",
+      "method": "http",
+      "accuracy": "",
+      "comment": ""
+    },
+    "price_per_m2_median": {
+      "value": 859147,
+      "unit": "₽/м²",
+      "source": "cian (https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-mihalkovskiy-3206223-ot-zastroyschika-OTZ/)",
+      "collected_at": "2026-11-01",
+      "method": "http",
+      "accuracy": "",
+      "comment": ""
+    },
+    "average_area_m2": {
+      "value": 55.0,
+      "unit": "м²",
+      "source": "cian (https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-mihalkovskiy-3206223-ot-zastroyschika-OTZ/)",
+      "collected_at": "2026-11-01",
+      "method": "http",
+      "accuracy": "",
+      "comment": ""
+    },
+    "median_area_m2": {
+      "value": 49,
+      "unit": "м²",
+      "source": "cian (https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-mihalkovskiy-3206223-ot-zastroyschika-OTZ/)",
+      "collected_at": "2026-11-01",
+      "method": "http",
+      "accuracy": "",
+      "comment": ""
+    },
+    "reserved_lots": {
+      "value": 0,
+      "unit": "лотов",
+      "source": "cian (https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-mihalkovskiy-3206223-ot-zastroyschika-OTZ/)",
+      "collected_at": "2026-11-01",
+      "method": "http",
+      "accuracy": "средняя",
+      "comment": "источник помечает бронь, но ни один лот не отмечен забронированным (реальный ноль)"
+    },
+    "promo_count": {
+      "value": 23,
+      "unit": "лотов с акцией",
+      "source": "cian (https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-mihalkovskiy-3206223-ot-zastroyschika-OTZ/)",
+      "collected_at": "2026-11-01",
+      "method": "http",
+      "accuracy": "средняя",
+      "comment": "скидкой в размере 5% от полной стоимости квартиры; Скидка 8% при покупке квартиры"
+    },
+    "site_corpi_named": {
+      "value": 7,
+      "unit": "корпусов",
+      "source": "сайт застройщика",
+      "collected_at": "2026-11-01",
+      "method": "dom",
+      "accuracy": "средняя",
+      "comment": "названия корпусов на странице: Корпус 1, Корпус 2, Корпус 3, Корпус 4"
+    },
+    "site_deadlines": {
+      "value": "4 кв 2027",
+      "unit": "сроки",
+      "source": "сайт застройщика",
+      "collected_at": "2026-11-01",
+      "method": "dom",
+      "accuracy": "средняя",
+      "comment": "сроки ввода из текста страницы"
+    },
+    "site_readiness_pct": {
+      "value": null,
+      "unit": "%",
+      "source": "сайт застройщика",
+      "collected_at": "2026-11-01",
+      "method": "dom",
+      "accuracy": "средняя",
+      "comment": "готовность, если указана"
+    },
+    "site_flats_total": {
+      "value": null,
+      "unit": "квартир",
+      "source": "сайт застройщика",
+      "collected_at": "2026-11-01",
+      "method": "dom",
+      "accuracy": "средняя",
+      "comment": "сайт не публикует сводную шахматку (только подбор квартир)"
+    },
+    "site_flats_in_sale": {
+      "value": null,
+      "unit": "квартир",
+      "source": "сайт застройщика",
+      "collected_at": "2026-11-01",
+      "method": "dom",
+      "accuracy": "средняя",
+      "comment": "сайт не публикует сводную шахматку (только подбор квартир)"
+    },
+    "site_flats_sold": {
+      "value": null,
+      "unit": "квартир",
+      "source": "сайт застройщика",
+      "collected_at": "2026-11-01",
+      "method": "dom",
+      "accuracy": "средняя",
+      "comment": "сайт не публикует сводную шахматку (только подбор квартир)"
+    },
+    "site_flats_reserved": {
+      "value": null,
+      "unit": "квартир",
+      "source": "сайт застройщика",
+      "collected_at": "2026-11-01",
+      "method": "dom",
+      "accuracy": "средняя",
+      "comment": "сайт не публикует сводную шахматку (только подбор квартир)"
+    },
+    "site_promo_count": {
+      "value": 2,
+      "unit": "акций",
+      "source": "сайт застройщика",
+      "collected_at": "2026-11-01",
+      "method": "dom",
+      "accuracy": "средняя",
+      "comment": "Общая презентация для корпусов 2 и 7 СКИДКА ДО 8% РАССРОЧКА 0% ВЫДАЕМ КЛЮЧИ M Водный стадион M Коптево г; 48 СКИДКА ДО 8% РАССРОЧКА 0% ВЫДАЕМ КЛЮЧИ О проекте Генплан Расположение Ход строительства Новости Офис консультаций Документы Выбрать квартиру от 16"
+    },
+    "site_mortgage_count": {
+      "value": null,
+      "unit": "программ",
+      "source": "сайт застройщика",
+      "collected_at": "2026-11-01",
+      "method": "dom",
+      "accuracy": "средняя",
+      "comment": "ипотечных программ на сайте не найдено"
+    },
+    "corpi_total": {
+      "value": null,
+      "unit": "корпусов всего",
+      "source": "ЕИСЖС (наш.дом.рф)",
+      "collected_at": "2026-11-01",
+      "method": "dom",
+      "accuracy": "",
+      "comment": "официальные данные получить нельзя: ЕИСЖС (наш.дом.рф): Chrome отдал страницу ошибки сертификата — Chrome отдал страницу ошибки сертификата — это не данные"
+    },
+    "corpi_built": {
+      "value": null,
+      "unit": "корпусов введено",
+      "source": "ЕИСЖС (наш.дом.рф)",
+      "collected_at": "2026-11-01",
+      "method": "dom",
+      "accuracy": "",
+      "comment": "официальные данные получить нельзя: ЕИСЖС (наш.дом.рф): Chrome отдал страницу ошибки сертификата — Chrome отдал страницу ошибки сертификата — это не данные"
+    },
+    "corpi_under_construction": {
+      "value": null,
+      "unit": "корпусов строится",
+      "source": "ЕИСЖС (наш.дом.рф)",
+      "collected_at": "2026-11-01",
+      "method": "dom",
+      "accuracy": "",
+      "comment": "официальные данные получить нельзя: ЕИСЖС (наш.дом.рф): Chrome отдал страницу ошибки сертификата — Chrome отдал страницу ошибки сертификата — это не данные"
+    },
+    "flats_total": {
+      "value": null,
+      "unit": "квартир в проекте",
+      "source": "ЕИСЖС (наш.дом.рф)",
+      "collected_at": "2026-11-01",
+      "method": "dom",
+      "accuracy": "",
+      "comment": "официальные данные получить нельзя: ЕИСЖС (наш.дом.рф): Chrome отдал страницу ошибки сертификата — Chrome отдал страницу ошибки сертификата — это не данные"
+    },
+    "ddu_registered": {
+      "value": null,
+      "unit": "ДДУ зарегистрировано",
+      "source": "ЕИСЖС (наш.дом.рф)",
+      "collected_at": "2026-11-01",
+      "method": "dom",
+      "accuracy": "",
+      "comment": "официальные данные получить нельзя: ЕИСЖС (наш.дом.рф): Chrome отдал страницу ошибки сертификата — Chrome отдал страницу ошибки сертификата — это не данные"
+    },
+    "sold_official_rosreestr": {
+      "value": null,
+      "unit": "ДДУ",
+      "source": "ЕИСЖС (наш.дом.рф) / Росреестр",
+      "collected_at": "2026-11-01",
+      "method": "none",
+      "accuracy": "",
+      "comment": "официальные ДДУ недоступны: Chrome отдал страницу ошибки сертификата — своими цифрами не подменяем"
+    },
+    "sold_estimate_by_gone_lots": {
+      "value": null,
+      "unit": "лотов",
+      "source": "наш недельный мониторинг",
+      "collected_at": "2026-11-01",
+      "method": "estimate",
+      "accuracy": "",
+      "comment": "нужно минимум 2 недели наблюдений"
+    }
+  },
+  "derived": {
+    "sales_speed_per_week": {
+      "value": null,
+      "unit": "",
+      "source": "",
+      "collected_at": "2026-11-01",
+      "method": "estimate",
+      "accuracy": "",
+      "comment": "нужно минимум 2 недели наблюдений (накоплено 1)"
+    },
+    "absorption_rate": {
+      "value": null,
+      "unit": "",
+      "source": "",
+      "collected_at": "2026-11-01",
+      "method": "estimate",
+      "accuracy": "",
+      "comment": "нужно минимум 2 недели наблюдений (накоплено 1)"
+    },
+    "months_to_sell_out": {
+      "value": null,
+      "unit": "",
+      "source": "",
+      "collected_at": "2026-11-01",
+      "method": "estimate",
+      "accuracy": "",
+      "comment": "нужно минимум 2 недели наблюдений (накоплено 1)"
+    },
+    "entry_price_dynamics_pct": {
+      "value": null,
+      "unit": "",
+      "source": "",
+      "collected_at": "2026-11-01",
+      "method": "estimate",
+      "accuracy": "",
+      "comment": "нужно минимум 2 недели наблюдений (накоплено 1)"
+    },
+    "supply_dynamics_pct": {
+      "value": null,
+      "unit": "",
+      "source": "",
+      "collected_at": "2026-11-01",
+      "method": "estimate",
+      "accuracy": "",
+      "comment": "нужно минимум 2 недели наблюдений (накоплено 1)"
+    },
+    "promo_pressure_weeks": {
+      "value": null,
+      "unit": "",
+      "source": "",
+      "collected_at": "2026-11-01",
+      "method": "estimate",
+      "accuracy": "",
+      "comment": "нужно минимум 2 недели наблюдений (накоплено 1)"
+    },
+    "price_index_vs_district": {
+      "value": 1.669,
+      "unit": "×",
+      "source": "расчёт по нашим данным",
+      "collected_at": null,
+      "method": "estimate",
+      "accuracy": "средняя",
+      "comment": "медиана ₽/м² конкурента к медиане района (514 844 ₽/м²)"
+    },
+    "gap_price_vs_us_pct": {
+      "value": 243.66,
+      "unit": "%",
+      "source": "расчёт",
+      "collected_at": "2026-11-01",
+      "method": "estimate",
+      "accuracy": "средняя",
+      "comment": "разрыв: медиана конкурента против нашей цены входа (250 000 ₽/м²)"
+    },
+    "sold_share_official_pct": {
+      "value": null,
+      "unit": "%",
+      "source": "ЕИСЖС (наш.дом.рф)",
+      "collected_at": "2026-11-01",
+      "method": "estimate",
+      "accuracy": "",
+      "comment": "официальная доля проданного не считается: нет данных (ДДУ)"
+    }
+  },
+  "risk_flags": [
+    {
+      "code": "no_history",
+      "level": "info",
+      "comment": "истории мало: динамика и риски появятся после 2 недель"
+    }
+  ],
+  "limitations": [
+    "ЕИСЖС: официальные корпуса/квартиры/ДДУ недоступны — Chrome отдал страницу ошибки сертификата"
+  ],
+  "by_rooms": {
+    "студии": {
+      "count": 3,
+      "median_price": 50000000,
+      "median_price_per_m2": 1760563,
+      "median_area": 28
+    },
+    "1": {
+      "count": 1,
+      "median_price": 20002251,
+      "median_price_per_m2": 466253,
+      "median_area": 43
+    },
+    "2": {
+      "count": 14,
+      "median_price": 50000000,
+      "median_price_per_m2": 1127397,
+      "median_area": 44
+    },
+    "3": {
+      "count": 6,
+      "median_price": 40870000,
+      "median_price_per_m2": 628733,
+      "median_area": 65
+    },
+    "4+": {
+      "count": 4,
+      "median_price": 50000000,
+      "median_price_per_m2": 551877,
+      "median_area": 91
+    }
+  },
+  "developer_site": {
+    "url": "https://rg-dev.ru/novostroyki/mihalkovskij/",
+    "method": "dom",
+    "note": "HTTP None; открыто в браузере без логина",
+    "title": "ЖК «Михалковский» в Москве — официальный сайт, цены на квартиры и планировки от РГ-Девелоп",
+    "corpi": [
+      "Корпус 1",
+      "Корпус 2",
+      "Корпус 3",
+      "Корпус 4",
+      "Корпус 5",
+      "Корпус 6",
+      "Корпус 7"
+    ],
+    "ok": true
+  },
+  "history": {
+    "weeks": 1,
+    "needed": 2,
+    "available": false
+  },
+  "distance_km": 3.43,
+  "class": "бизнес",
+  "developer": "РГ-Девелопмент"
+}

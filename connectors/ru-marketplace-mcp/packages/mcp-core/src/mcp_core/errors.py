@@ -1,0 +1,161 @@
+# START_MODULE_CONTRACT
+# PURPOSE: Encode provider-neutral failures as machine-readable MCP ToolErrors.
+# SCOPE: Error taxonomy, retryability, optional status and challenge metadata.
+# DEPENDS: FastMCP ToolError; stdlib json,enum,typing.
+# LINKS: M-ERRORS; M-CORE; M-HTTP; M-BROWSER-HANDOFF.
+# END_MODULE_CONTRACT
+# START_MODULE_MAP
+# ErrorCode: Enumerate stable wire codes and their retryability.
+# ConnectorError: Carry provider/status/retry metadata and serialize failures.
+# AuthMissingError: Represent missing authentication with status 401.
+# RateLimitedError: Represent provider throttling and optional retry delay.
+# UpstreamTimeoutError: Represent upstream request deadlines.
+# TransportDownError: Represent transport refusal or outage.
+# ParserDriftError: Represent upstream parser/schema drift.
+# BadRequestError: Represent invalid requests with status 400.
+# NotFoundError: Represent unavailable resources with status 404.
+# PermissionDeniedError: Represent forbidden access with status 403.
+# ChallengeRequiredError: Add user-action, challenge and optional handoff metadata.
+# raise_tool_error: Raise FastMCP ToolError containing serialized connector error.
+# END_MODULE_MAP
+from __future__ import annotations
+
+import json
+from enum import StrEnum
+from typing import NoReturn
+
+from fastmcp.exceptions import ToolError
+
+
+class ErrorCode(StrEnum):
+    AUTH_MISSING = "auth_missing"
+    RATE_LIMITED = "rate_limited"
+    TIMEOUT = "timeout"
+    TRANSPORT_DOWN = "transport_down"
+    PARSER_DRIFT = "parser_drift"
+    BAD_REQUEST = "bad_request"
+    PERMISSION_DENIED = "permission_denied"
+    CHALLENGE_REQUIRED = "challenge_required"
+    NOT_FOUND = "not_found"
+
+    @property
+    def retryable(self) -> bool:
+        return self in (
+            ErrorCode.RATE_LIMITED,
+            ErrorCode.TIMEOUT,
+            ErrorCode.TRANSPORT_DOWN,
+            ErrorCode.CHALLENGE_REQUIRED,
+        )
+
+
+class ConnectorError(Exception):
+    def __init__(
+        self,
+        code: ErrorCode,
+        message: str,
+        *,
+        provider: str | None = None,
+        retry_after_s: float | None = None,
+        status_code: int | None = None,
+    ) -> None:
+        super().__init__(message)
+        self.code = code
+        self.provider = provider
+        self.retry_after_s = retry_after_s
+        self.status_code = status_code
+
+    def to_dict(self) -> dict:
+        return {
+            "error": self.code.value,
+            "message": str(self),
+            "retryable": self.code.retryable,
+            **({"provider": self.provider} if self.provider else {}),
+            **({"retry_after_s": self.retry_after_s} if self.retry_after_s is not None else {}),
+            **({"status_code": self.status_code} if self.status_code is not None else {}),
+        }
+
+
+class AuthMissingError(ConnectorError):
+    def __init__(self, message: str = "authentication missing or invalid", *, provider: str | None = None) -> None:
+        super().__init__(ErrorCode.AUTH_MISSING, message, provider=provider, status_code=401)
+
+
+class RateLimitedError(ConnectorError):
+    def __init__(self, provider: str, *, retry_after_s: float | None = None) -> None:
+        super().__init__(
+            ErrorCode.RATE_LIMITED,
+            f"{provider} rate-limited",
+            provider=provider,
+            retry_after_s=retry_after_s,
+            status_code=429,
+        )
+
+
+class UpstreamTimeoutError(ConnectorError):
+    def __init__(self, message: str = "upstream request timed out", *, provider: str | None = None) -> None:
+        super().__init__(ErrorCode.TIMEOUT, message, provider=provider)
+
+
+class TransportDownError(ConnectorError):
+    def __init__(
+        self,
+        message: str = "upstream transport error",
+        *,
+        provider: str | None = None,
+        status_code: int | None = None,
+        retry_after_s: float | None = None,
+    ) -> None:
+        super().__init__(
+            ErrorCode.TRANSPORT_DOWN, message, provider=provider, status_code=status_code, retry_after_s=retry_after_s
+        )
+
+
+class ParserDriftError(ConnectorError):
+    def __init__(self, message: str = "upstream response parser drift", *, provider: str | None = None) -> None:
+        super().__init__(ErrorCode.PARSER_DRIFT, message, provider=provider)
+
+
+class BadRequestError(ConnectorError):
+    def __init__(self, message: str = "bad request") -> None:
+        super().__init__(ErrorCode.BAD_REQUEST, message, status_code=400)
+
+
+class NotFoundError(ConnectorError):
+    def __init__(self, message: str = "resource not found", *, provider: str | None = None) -> None:
+        super().__init__(ErrorCode.NOT_FOUND, message, provider=provider, status_code=404)
+
+
+class PermissionDeniedError(ConnectorError):
+    def __init__(self, message: str = "permission denied") -> None:
+        super().__init__(ErrorCode.PERMISSION_DENIED, message, status_code=403)
+
+
+class ChallengeRequiredError(ConnectorError):
+    """A marketplace requires a user-mediated browser challenge completion."""
+
+    def __init__(
+        self,
+        message: str,
+        *,
+        provider: str | None = None,
+        challenge_type: str = "captcha",
+        handoff_expires_at: str | None = None,
+        handoff_id: str | None = None,
+    ) -> None:
+        super().__init__(ErrorCode.CHALLENGE_REQUIRED, message, provider=provider, status_code=403)
+        self.challenge_type = challenge_type
+        self.handoff_expires_at = handoff_expires_at
+        self.handoff_id = handoff_id
+
+    def to_dict(self) -> dict:
+        return {
+            **super().to_dict(),
+            "requires_user_action": True,
+            "challenge_type": self.challenge_type,
+            **({"handoff_expires_at": self.handoff_expires_at} if self.handoff_expires_at else {}),
+            **({"handoff_id": self.handoff_id} if self.handoff_id else {}),
+        }
+
+
+def raise_tool_error(err: ConnectorError) -> NoReturn:
+    raise ToolError(json.dumps(err.to_dict(), ensure_ascii=False))

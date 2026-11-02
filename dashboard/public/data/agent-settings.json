@@ -1,0 +1,414 @@
+{
+ "byAgent": {
+  "agent-1-competitor-watch": {
+   "agent": "agent-1-competitor-watch",
+   "file": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\registry\\agent-settings\\agent-1-competitor-watch.yaml",
+   "fileName": "agent-1-competitor-watch.yaml",
+   "updated": "2026-11-01",
+   "status": "active",
+   "note": null,
+   "schedule": {
+    "enabled": true,
+    "days": [
+     1,
+     4
+    ],
+    "time": "10:00",
+    "frequency": "weekly",
+    "timezone": "Europe/Moscow",
+    "only_on_new_data": true
+   },
+   "model": {
+    "name": "deepseek/deepseek-v4.1-flash",
+    "limit_rub": 3000,
+    "limit_tokens": 2000000,
+    "on_limit": "pause"
+   },
+   "priority": {
+    "level": "normal",
+    "max_parallel": 1,
+    "timeout_sec": 900,
+    "retries": 2
+   },
+   "report": {
+    "formats": [
+     "md",
+     "xlsx"
+    ],
+    "sections": [
+     "summary",
+     "prices",
+     "changes",
+     "promos",
+     "limits"
+    ],
+    "language": "ru",
+    "branding": true
+   },
+   "delivery": {
+    "channels": [
+     "telegram"
+    ],
+    "addresses": [
+     "@svet_marketing"
+    ],
+    "auto_send": false,
+    "copy_to": ""
+   },
+   "alerts": {
+    "when": [
+     "fail",
+     "low_data"
+    ],
+    "price_threshold_pct": 5,
+    "quiet_hours": "22:00-08:00"
+   },
+   "limits": {
+    "skip_weekends": true,
+    "min_interval_hours": 168,
+    "stop_switch": false
+   },
+   "agent1": {
+    "projects": [
+     "my-zhk-svet"
+    ],
+    "price_threshold_pct": 5,
+    "min_lots": 10,
+    "promo_words": [
+     "акция",
+     "скидка",
+     "рассрочка",
+     "спецпредложение"
+    ],
+    "collect_mode": "http",
+    "compare_depth_weeks": 2,
+    "watch": {
+     "name": "ЖК «Свет»",
+     "address": "Москва, Западное Дегунино, Дмитровское шоссе, 83А",
+     "url": "https://svetdom.ru/",
+     "lat": "",
+     "lon": "",
+     "radius_km": 10,
+     "klass": [
+      "бизнес"
+     ],
+     "price_min_per_m2": 250000,
+     "price_max_per_m2": 450000,
+     "sources": [
+      "cian",
+      "avito",
+      "yandex-realty"
+     ],
+     "max_candidates": 20
+    },
+    "competitor_domains": {
+     "seliger-city.ru": "zhk-seliger-siti"
+    },
+    "source_modes": {
+     "cian": "http",
+     "avito": "browser",
+     "yandex-realty": "http",
+     "domclick": "off",
+     "developer-sites": "http"
+    },
+    "competitorDomains": {
+     "seliger-city.ru": "zhk-seliger-siti"
+    }
+   },
+   "sourceAgent": null,
+   "editable": true
+  },
+  "agent-2-direct-semantics": {
+   "agent": "agent-2-direct-semantics",
+   "file": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\registry\\agent-settings\\agent-2-direct-semantics.yaml",
+   "fileName": "agent-2-direct-semantics.yaml",
+   "updated": "2026-11-01",
+   "status": "stub",
+   "note": "Агент 2 ещё не реализован: поля показаны для примера и остаются неактивными — сохранять нельзя.",
+   "schedule": {
+    "enabled": false,
+    "days": [
+     1
+    ],
+    "time": "11:00",
+    "frequency": "on-demand",
+    "timezone": "Europe/Moscow",
+    "only_on_new_data": false
+   },
+   "model": {
+    "name": "deepseek/deepseek-v4.1-flash",
+    "limit_rub": 0,
+    "limit_tokens": 0,
+    "on_limit": "warn"
+   },
+   "priority": {
+    "level": "low",
+    "max_parallel": 1,
+    "timeout_sec": 900,
+    "retries": 0
+   },
+   "report": {
+    "formats": [
+     "xlsx"
+    ],
+    "sections": [
+     "summary"
+    ],
+    "language": "ru",
+    "branding": false
+   },
+   "delivery": {
+    "channels": [],
+    "addresses": [],
+    "auto_send": false,
+    "copy_to": ""
+   },
+   "alerts": {
+    "when": [
+     "never"
+    ],
+    "price_threshold_pct": 0,
+    "quiet_hours": ""
+   },
+   "limits": {
+    "skip_weekends": true,
+    "min_interval_hours": 24,
+    "stop_switch": true
+   },
+   "agent1": null,
+   "sourceAgent": null,
+   "editable": false
+  },
+  "agent-3-creative": {
+   "agent": "agent-3-creative",
+   "file": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\registry\\agent-settings\\agent-3-creative.yaml",
+   "fileName": "agent-3-creative.yaml",
+   "updated": "2026-11-01",
+   "status": "stub",
+   "note": null,
+   "schedule": {
+    "enabled": false,
+    "days": [
+     1
+    ],
+    "time": "12:00",
+    "frequency": "on-demand",
+    "timezone": "Europe/Moscow",
+    "only_on_new_data": false
+   },
+   "model": {
+    "name": "deepseek/deepseek-v4.1-flash",
+    "limit_rub": 0,
+    "limit_tokens": 0,
+    "on_limit": "warn"
+   },
+   "priority": {
+    "level": "low",
+    "max_parallel": 1,
+    "timeout_sec": 600,
+    "retries": 0
+   },
+   "report": {
+    "formats": [
+     "md"
+    ],
+    "sections": [
+     "summary"
+    ],
+    "language": "ru",
+    "branding": false
+   },
+   "delivery": {
+    "channels": [],
+    "addresses": [],
+    "auto_send": false,
+    "copy_to": ""
+   },
+   "alerts": {
+    "when": [
+     "never"
+    ],
+    "price_threshold_pct": 0,
+    "quiet_hours": ""
+   },
+   "limits": {
+    "skip_weekends": true,
+    "min_interval_hours": 24,
+    "stop_switch": true
+   },
+   "agent1": null,
+   "sourceAgent": null,
+   "editable": false
+  },
+  "agent-4-analytics": {
+   "agent": "agent-4-analytics",
+   "file": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\registry\\agent-settings\\agent-4-analytics.yaml",
+   "fileName": "agent-4-analytics.yaml",
+   "updated": "2026-11-01",
+   "status": "stub",
+   "note": null,
+   "schedule": {
+    "enabled": false,
+    "days": [
+     5
+    ],
+    "time": "18:00",
+    "frequency": "weekly",
+    "timezone": "Europe/Moscow",
+    "only_on_new_data": true
+   },
+   "model": {
+    "name": "deepseek/deepseek-v4.1-flash",
+    "limit_rub": 0,
+    "limit_tokens": 0,
+    "on_limit": "warn"
+   },
+   "priority": {
+    "level": "low",
+    "max_parallel": 1,
+    "timeout_sec": 600,
+    "retries": 0
+   },
+   "report": {
+    "formats": [
+     "md",
+     "xlsx"
+    ],
+    "sections": [
+     "summary"
+    ],
+    "language": "ru",
+    "branding": false
+   },
+   "delivery": {
+    "channels": [],
+    "addresses": [],
+    "auto_send": false,
+    "copy_to": ""
+   },
+   "alerts": {
+    "when": [
+     "never"
+    ],
+    "price_threshold_pct": 0,
+    "quiet_hours": ""
+   },
+   "limits": {
+    "skip_weekends": true,
+    "min_interval_hours": 168,
+    "stop_switch": true
+   },
+   "agent1": null,
+   "sourceAgent": null,
+   "editable": false
+  },
+  "agent-source-cian": {
+   "agent": "agent-source-cian",
+   "file": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\registry\\agent-settings\\agent-source-cian.yaml",
+   "fileName": "agent-source-cian.yaml",
+   "updated": "2026-11-01",
+   "status": "active",
+   "note": null,
+   "schedule": {
+    "enabled": true,
+    "days": [
+     1,
+     2,
+     3,
+     4,
+     5
+    ],
+    "time": "09:30",
+    "frequency": "daily",
+    "timezone": "Europe/Moscow",
+    "only_on_new_data": false
+   },
+   "model": {
+    "name": "deepseek/deepseek-v4.1-flash",
+    "limit_rub": 500,
+    "limit_tokens": 300000,
+    "on_limit": "stop"
+   },
+   "priority": {
+    "level": "low",
+    "max_parallel": 1,
+    "timeout_sec": 120,
+    "retries": 3
+   },
+   "report": {
+    "formats": [
+     "csv"
+    ],
+    "sections": [
+     "raw"
+    ],
+    "language": "ru",
+    "branding": false
+   },
+   "delivery": {
+    "channels": [],
+    "addresses": [],
+    "auto_send": false,
+    "copy_to": ""
+   },
+   "alerts": {
+    "when": [
+     "fail"
+    ],
+    "price_threshold_pct": 0,
+    "quiet_hours": "23:00-07:00"
+   },
+   "limits": {
+    "skip_weekends": true,
+    "min_interval_hours": 24,
+    "stop_switch": false
+   },
+   "agent1": null,
+   "sourceAgent": {
+    "rate_limit_per_min": 10,
+    "pause_ms": 1500,
+    "max_pages": 5,
+    "timeout_sec": 30,
+    "stop_on_block": true,
+    "use_browser": false
+   },
+   "editable": true
+  }
+ },
+ "files": [
+  {
+   "agent": "agent-1-competitor-watch",
+   "fileName": "agent-1-competitor-watch.yaml",
+   "bytes": 4321
+  },
+  {
+   "agent": "agent-2-direct-semantics",
+   "fileName": "agent-2-direct-semantics.yaml",
+   "bytes": 980
+  },
+  {
+   "agent": "agent-3-creative",
+   "fileName": "agent-3-creative.yaml",
+   "bytes": 732
+  },
+  {
+   "agent": "agent-4-analytics",
+   "fileName": "agent-4-analytics.yaml",
+   "bytes": 736
+  },
+  {
+   "agent": "agent-source-cian",
+   "fileName": "agent-source-cian.yaml",
+   "bytes": 982
+  }
+ ],
+ "dir": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\registry\\agent-settings",
+ "exists": true,
+ "counts": {
+  "files": 5,
+  "agents": 5,
+  "stub": 3
+ },
+ "warnings": [],
+ "newestMtimeMs": 1793546653327.3599
+}

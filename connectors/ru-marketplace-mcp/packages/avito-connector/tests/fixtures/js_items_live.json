@@ -1,0 +1,147 @@
+{
+  "count": 48451,
+  "itemsOnPage": 50,
+  "itemsOnPageMainSection": 50,
+  "mainCount": 48451,
+  "totalCount": 48451,
+  "totalElements": 48450,
+  "catalog": {
+    "items": [
+      {
+        "id": 8105179339,
+        "locationId": 637640,
+        "urlPath": "/moskva/noutbuki/noutbuk_lenovo_thinkbook_16_g6_novyy_8105179339?context=H4sIAAAAAAAA_wE_AMD_YToyOntzOjEzOiJsb2NhbFByaW9yaXR5IjtiOjA7czoxOiJ4IjtzOjE2OiJ3czZkNEV4bnp5cHhZNWlnIjt9DSb83D8AAAA",
+        "title": "Ноутбук Lenovo ThinkBook 16 G6 Новый",
+        "category": {
+          "id": 98,
+          "name": "Ноутбуки",
+          "slug": "noutbuki",
+          "rootId": 6,
+          "compare": false,
+          "pageRootId": 6
+        },
+        "location": null,
+        "addressDetailed": {
+          "locationName": ""
+        },
+        "sortTimeStamp": 1787909564000,
+        "allowTimeStamp": 1787909564000,
+        "priceDetailed": {
+          "enabled": true,
+          "fullString": "69 900 ₽",
+          "hasValue": true,
+          "postfix": "",
+          "string": "69 900",
+          "stringWithoutDiscount": null,
+          "title": {
+            "full": "Цена",
+            "short": "Цена"
+          },
+          "titleDative": "цене",
+          "value": 69900,
+          "wasLowered": false,
+          "exponent": "70 тыс."
+        },
+        "imagesCount": 5,
+        "isMarketplace": false,
+        "rating": {
+          "score": 5,
+          "summary": "721 отзыв",
+          "showChevronEnd": false
+        }
+      },
+      {
+        "id": 8033089127,
+        "locationId": 637640,
+        "urlPath": "/moskva/noutbuki/bolshoy_vybor_noutbukov_pod_vashi_zadachi_garantiya_8033089127?context=H4sIAAAAAAAA_wE_AMD_YToyOntzOjEzOiJsb2NhbFByaW9yaXR5IjtiOjA7czoxOiJ4IjtzOjE2OiJ3czZkNEV4bnp5cHhZNWlnIjt9DSb83D8AAAA",
+        "title": "Большой выбор ноутбуков под Ваши задачи + гарантия",
+        "category": {
+          "id": 98,
+          "name": "Ноутбуки",
+          "slug": "noutbuki",
+          "rootId": 6,
+          "compare": false,
+          "pageRootId": 6
+        },
+        "location": {
+          "id": 637640,
+          "name": "Москва",
+          "namePrepositional": "Москве",
+          "isCurrent": true,
+          "isRegion": false
+        },
+        "addressDetailed": {
+          "locationName": "Москва"
+        },
+        "sortTimeStamp": 1787386382000,
+        "allowTimeStamp": 1787386382000,
+        "priceDetailed": {
+          "enabled": true,
+          "fullString": "17 990 ₽",
+          "hasValue": true,
+          "postfix": "",
+          "string": "17 990",
+          "stringWithoutDiscount": null,
+          "title": {
+            "full": "Цена",
+            "short": "Цена"
+          },
+          "titleDative": "цене",
+          "value": 17990,
+          "wasLowered": false,
+          "exponent": "18 тыс."
+        },
+        "imagesCount": 9,
+        "isMarketplace": false,
+        "rating": {
+          "score": 5,
+          "summary": "769 отзывов",
+          "showChevronEnd": false
+        }
+      },
+      {
+        "id": 7800596644,
+        "locationId": 637640,
+        "urlPath": "/moskva/noutbuki/noutbuki_pod_lyubye_zadachi_garantiya_1_god_7800596644?context=H4sIAAAAAAAA_wE_AMD_YToyOntzOjEzOiJsb2NhbFByaW9yaXR5IjtiOjA7czoxOiJ4IjtzOjE2OiJ3czZkNEV4bnp5cHhZNWlnIjt9DSb83D8AAAA",
+        "title": "Ноутбуки под любые задачи гарантия 1 год",
+        "category": {
+          "id": 98,
+          "name": "Ноутбуки",
+          "slug": "noutbuki",
+          "rootId": 6,
+          "compare": false,
+          "pageRootId": 6
+        },
+        "location": null,
+        "addressDetailed": {
+          "locationName": ""
+        },
+        "sortTimeStamp": 1787046307000,
+        "allowTimeStamp": 1787046307000,
+        "priceDetailed": {
+          "enabled": true,
+          "fullString": "14 000 ₽",
+          "hasValue": true,
+          "postfix": "",
+          "string": "14 000",
+          "stringWithoutDiscount": null,
+          "title": {
+            "full": "Цена",
+            "short": "Цена"
+          },
+          "titleDative": "цене",
+          "value": 14000,
+          "wasLowered": false,
+          "exponent": "14 тыс."
+        },
+        "imagesCount": 5,
+        "isMarketplace": false,
+        "rating": {
+          "score": 4.8,
+          "summary": "653 отзыва",
+          "showChevronEnd": false
+        }
+      }
+    ]
+  }
+}

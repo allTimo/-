@@ -1,0 +1,10 @@
+﻿snapshot_date,source,competitor,project,lot_id,url,rooms,area_m2,floor,floors_total,building,price_rub,price_per_m2_rub,finish,promo_flag,promo_text,delivery,status
+2026-10-23,cian,СЗ Гранель,Селигер Сити,S-101,https://example.com/granelle/seliger-siti/S-101,1,38.5,12,24,Корпус 1,12500000,324675,чистовая,1,Скидка 3% при 100% оплате,2027-Q2,active
+2026-10-23,cian,СЗ Гранель,Селигер Сити,S-102,https://example.com/granelle/seliger-siti/S-102,2,56,8,24,Корпус 1,17920000,320000,white box,0,,2027-Q2,active
+2026-10-23,cian,СЗ Гранель,Селигер Сити,S-103,https://example.com/granelle/seliger-siti/S-103,0,24,5,24,Корпус 1,8040000,335000,без отделки,0,,2027-Q1,active
+2026-10-23,cian,СЗ Гранель,Селигер Сити,S-104,https://example.com/granelle/seliger-siti/S-104,3,78,15,24,Корпус 2,23400000,300000,чистовая,0,,2028-Q1,active
+2026-10-23,cian,MR Group,City Bay,C-201,https://example.com/mrgroup/city-bay/C-201,1,42,20,32,Корпус A,16800000,400000,чистовая,1,"Ипотека 0,1%",2027-Q3,active
+2026-10-23,cian,MR Group,City Bay,C-202,https://example.com/mrgroup/city-bay/C-202,2,61,22,32,Корпус A,23180000,380000,с мебелью,0,,2027-Q3,active
+2026-10-23,cian,MR Group,City Bay,C-203,https://example.com/mrgroup/city-bay/C-203,0,26.5,10,32,Корпус B,10070000,380000,white box,0,,2027-Q4,active
+2026-10-23,cian,Донстрой,Символ,M-301,https://example.com/donstroy/simvol/M-301,2,58,7,17,Корпус 5,15080000,260000,чистовая,0,,2026-Q4,active
+2026-10-23,cian,Донстрой,Символ,M-302,https://example.com/donstroy/simvol/M-302,4,92,12,17,Корпус 5,22080000,,чистовая,0,,2026-Q4,reserved

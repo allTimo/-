@@ -1,0 +1,1501 @@
+{
+ "generatedAtMs": 1793565418389,
+ "routing": {
+  "title": "Роутинг моделей (delegate-router)",
+  "note": "Файл конфигурации найден. Лёгкие задачи уходят на дешёвую модель, сложные — на сильную.",
+  "file": "C:\\Users\\Артем\\.dsh\\dsh-delegate-router.json",
+  "exists": true,
+  "items": [
+   {
+    "id": "flashModel",
+    "label": "Дешёвая модель для лёгких задач",
+    "kind": "select",
+    "value": "z-ai/glm-5.3-flash",
+    "options": [
+     [
+      "deepseek/deepseek-v4.1-flash",
+      "deepseek/deepseek-v4.1-flash — 2.59 ₽ за 1 млн вход"
+     ],
+     [
+      "deepseek/deepseek-v4-flash",
+      "deepseek/deepseek-v4-flash — 7.33 ₽ за 1 млн вход"
+     ],
+     [
+      "deepseek/deepseek-v4-flash-0731",
+      "deepseek/deepseek-v4-flash-0731 — 11.21 ₽ за 1 млн вход"
+     ],
+     [
+      "deepseek/deepseek-v4-flash-vision-exp",
+      "deepseek/deepseek-v4-flash-vision-exp — 85.06 ₽ за 1 млн вход"
+     ],
+     [
+      "deepseek/deepseek-v4-pro",
+      "deepseek/deepseek-v4-pro — 173.99 ₽ за 1 млн вход"
+     ],
+     [
+      "z-ai/glm-5.3-flash",
+      "z-ai/glm-5.3-flash — 3.15 ₽ за 1 млн вход"
+     ],
+     [
+      "z-ai/glm-5.3",
+      "z-ai/glm-5.3 — 13.51 ₽ за 1 млн вход"
+     ],
+     [
+      "z-ai/glm-4.6v",
+      "z-ai/glm-4.6v — 58 ₽ за 1 млн вход"
+     ],
+     [
+      "google/gemini-3.8-flash",
+      "google/gemini-3.8-flash — 144.99 ₽ за 1 млн вход"
+     ],
+     [
+      "google/gemini-3-flash-preview",
+      "google/gemini-3-flash-preview — 96.66 ₽ за 1 млн вход"
+     ],
+     [
+      "qwen/qwen3.8-flash",
+      "qwen/qwen3.8-flash — 29 ₽ за 1 млн вход"
+     ],
+     [
+      "qwen/qwen3-vl-30b-a3b-instruct",
+      "qwen/qwen3-vl-30b-a3b-instruct — 29 ₽ за 1 млн вход"
+     ],
+     [
+      "openai/gpt-6-luna",
+      "openai/gpt-6-luna — 19.33 ₽ за 1 млн вход"
+     ],
+     [
+      "minimax/minimax-m3",
+      "minimax/minimax-m3 — 44.46 ₽ за 1 млн вход"
+     ],
+     [
+      "anthropic/claude-sonnet-5.5",
+      "anthropic/claude-sonnet-5.5 — 386.63 ₽ за 1 млн вход"
+     ],
+     [
+      "anthropic/claude-opus-5.5",
+      "anthropic/claude-opus-5.5 — 773.27 ₽ за 1 млн вход"
+     ]
+    ],
+    "what": "Подагенты и рутина пойдут на эту модель. Ошибётесь с выбором — рутина подорожает.",
+    "file": "router",
+    "path": [
+     "flashModel"
+    ],
+    "history": null
+   },
+   {
+    "id": "proModel",
+    "label": "Сильная модель для сложных задач",
+    "kind": "select",
+    "value": "openai/gpt-6-luna",
+    "options": [
+     [
+      "deepseek/deepseek-v4.1-flash",
+      "deepseek/deepseek-v4.1-flash — 2.59 ₽ за 1 млн вход"
+     ],
+     [
+      "deepseek/deepseek-v4-flash",
+      "deepseek/deepseek-v4-flash — 7.33 ₽ за 1 млн вход"
+     ],
+     [
+      "deepseek/deepseek-v4-flash-0731",
+      "deepseek/deepseek-v4-flash-0731 — 11.21 ₽ за 1 млн вход"
+     ],
+     [
+      "deepseek/deepseek-v4-flash-vision-exp",
+      "deepseek/deepseek-v4-flash-vision-exp — 85.06 ₽ за 1 млн вход"
+     ],
+     [
+      "deepseek/deepseek-v4-pro",
+      "deepseek/deepseek-v4-pro — 173.99 ₽ за 1 млн вход"
+     ],
+     [
+      "z-ai/glm-5.3-flash",
+      "z-ai/glm-5.3-flash — 3.15 ₽ за 1 млн вход"
+     ],
+     [
+      "z-ai/glm-5.3",
+      "z-ai/glm-5.3 — 13.51 ₽ за 1 млн вход"
+     ],
+     [
+      "z-ai/glm-4.6v",
+      "z-ai/glm-4.6v — 58 ₽ за 1 млн вход"
+     ],
+     [
+      "google/gemini-3.8-flash",
+      "google/gemini-3.8-flash — 144.99 ₽ за 1 млн вход"
+     ],
+     [
+      "google/gemini-3-flash-preview",
+      "google/gemini-3-flash-preview — 96.66 ₽ за 1 млн вход"
+     ],
+     [
+      "qwen/qwen3.8-flash",
+      "qwen/qwen3.8-flash — 29 ₽ за 1 млн вход"
+     ],
+     [
+      "qwen/qwen3-vl-30b-a3b-instruct",
+      "qwen/qwen3-vl-30b-a3b-instruct — 29 ₽ за 1 млн вход"
+     ],
+     [
+      "openai/gpt-6-luna",
+      "openai/gpt-6-luna — 19.33 ₽ за 1 млн вход"
+     ],
+     [
+      "minimax/minimax-m3",
+      "minimax/minimax-m3 — 44.46 ₽ за 1 млн вход"
+     ],
+     [
+      "anthropic/claude-sonnet-5.5",
+      "anthropic/claude-sonnet-5.5 — 386.63 ₽ за 1 млн вход"
+     ],
+     [
+      "anthropic/claude-opus-5.5",
+      "anthropic/claude-opus-5.5 — 773.27 ₽ за 1 млн вход"
+     ]
+    ],
+    "what": "Сложный анализ и большие тексты пойдут на эту модель. Дешёвая модель здесь даст слабый результат.",
+    "file": "router",
+    "path": [
+     "proModel"
+    ],
+    "history": null
+   }
+  ]
+ },
+ "plugins": {
+  "title": "Плагины и интеграции профиля DSH",
+  "note": "Включение и выключение пакетов в dsh.profile.bundles. Перед правкой делается копия, после правки профиль проверяется скриптом check-profile-bundles.mjs; если проверка не прошла — файл автоматически возвращается из копии.",
+  "manifest": "C:\\Users\\Артем\\.dsh\\profiles\\desktop\\package.json",
+  "profileDir": "C:\\Users\\Артем\\.dsh\\profiles\\desktop",
+  "rows": [
+   {
+    "name": "@deepseek-ai/dsh-base",
+    "inBundles": true,
+    "installed": false,
+    "declaredVersion": null,
+    "protected": true,
+    "protectReason": "встроенный бандл DeepSeek — приходит с приложением, выключение ломает запуск DSH",
+    "inbox": true,
+    "history": null
+   },
+   {
+    "name": "@deepseek-ai/dsh-experimental-agent-team-profile",
+    "inBundles": true,
+    "installed": false,
+    "declaredVersion": null,
+    "protected": true,
+    "protectReason": "встроенный бандл DeepSeek — приходит с приложением, выключение ломает запуск DSH",
+    "inbox": true,
+    "history": null
+   },
+   {
+    "name": "@deepseek-ai/dsh-experimental-auto-review",
+    "inBundles": true,
+    "installed": false,
+    "declaredVersion": null,
+    "protected": true,
+    "protectReason": "встроенный бандл DeepSeek — приходит с приложением, выключение ломает запуск DSH",
+    "inbox": true,
+    "history": null
+   },
+   {
+    "name": "@deepseek-ai/dsh-experimental-badge-skill-bundle",
+    "inBundles": true,
+    "installed": false,
+    "declaredVersion": null,
+    "protected": true,
+    "protectReason": "встроенный бандл DeepSeek — приходит с приложением, выключение ломает запуск DSH",
+    "inbox": true,
+    "history": null
+   },
+   {
+    "name": "@deepseek-ai/dsh-experimental-cot-translation-bundle",
+    "inBundles": true,
+    "installed": false,
+    "declaredVersion": null,
+    "protected": true,
+    "protectReason": "встроенный бандл DeepSeek — приходит с приложением, выключение ломает запуск DSH",
+    "inbox": true,
+    "history": null
+   },
+   {
+    "name": "@deepseek-ai/dsh-experimental-inspector-profile",
+    "inBundles": true,
+    "installed": false,
+    "declaredVersion": null,
+    "protected": true,
+    "protectReason": "встроенный бандл DeepSeek — приходит с приложением, выключение ломает запуск DSH",
+    "inbox": true,
+    "history": null
+   },
+   {
+    "name": "@deepseek-ai/dsh-experimental-plugin-market-bundle",
+    "inBundles": true,
+    "installed": false,
+    "declaredVersion": null,
+    "protected": true,
+    "protectReason": "встроенный бандл DeepSeek — приходит с приложением, выключение ломает запуск DSH",
+    "inbox": true,
+    "history": null
+   },
+   {
+    "name": "@deepseek-ai/dsh-experimental-ralph-bundle",
+    "inBundles": true,
+    "installed": false,
+    "declaredVersion": null,
+    "protected": true,
+    "protectReason": "встроенный бандл DeepSeek — приходит с приложением, выключение ломает запуск DSH",
+    "inbox": true,
+    "history": null
+   },
+   {
+    "name": "@deepseek-ai/dsh-experimental-session-search",
+    "inBundles": true,
+    "installed": false,
+    "declaredVersion": null,
+    "protected": true,
+    "protectReason": "встроенный бандл DeepSeek — приходит с приложением, выключение ломает запуск DSH",
+    "inbox": true,
+    "history": null
+   },
+   {
+    "name": "@deepseek-ai/dsh-experimental-session-titles-bundle",
+    "inBundles": true,
+    "installed": false,
+    "declaredVersion": null,
+    "protected": true,
+    "protectReason": "встроенный бандл DeepSeek — приходит с приложением, выключение ломает запуск DSH",
+    "inbox": true,
+    "history": null
+   },
+   {
+    "name": "@deepseek-ai/dsh-experimental-terminal-bundle",
+    "inBundles": true,
+    "installed": false,
+    "declaredVersion": null,
+    "protected": true,
+    "protectReason": "встроенный бандл DeepSeek — приходит с приложением, выключение ломает запуск DSH",
+    "inbox": true,
+    "history": null
+   },
+   {
+    "name": "@deepseek-ai/dsh-experimental-tool-worktree",
+    "inBundles": true,
+    "installed": false,
+    "declaredVersion": null,
+    "protected": true,
+    "protectReason": "встроенный бандл DeepSeek — приходит с приложением, выключение ломает запуск DSH",
+    "inbox": true,
+    "history": null
+   },
+   {
+    "name": "@deepseek-ai/dsh-experimental-voice-input-bundle",
+    "inBundles": true,
+    "installed": false,
+    "declaredVersion": null,
+    "protected": true,
+    "protectReason": "встроенный бандл DeepSeek — приходит с приложением, выключение ломает запуск DSH",
+    "inbox": true,
+    "history": null
+   },
+   {
+    "name": "@deepseek-ai/dsh-subagent-claude-code",
+    "inBundles": true,
+    "installed": true,
+    "declaredVersion": "0.2.1-rc.3",
+    "protected": true,
+    "protectReason": "встроенный бандл DeepSeek — приходит с приложением, выключение ломает запуск DSH",
+    "inbox": true,
+    "history": null
+   },
+   {
+    "name": "@deepseek-ai/dsh-subagent-codex",
+    "inBundles": true,
+    "installed": true,
+    "declaredVersion": "0.2.1-rc.3",
+    "protected": true,
+    "protectReason": "встроенный бандл DeepSeek — приходит с приложением, выключение ломает запуск DSH",
+    "inbox": true,
+    "history": null
+   },
+   {
+    "name": "@deepseek-ai/dsh-web-app",
+    "inBundles": true,
+    "installed": false,
+    "declaredVersion": null,
+    "protected": true,
+    "protectReason": "встроенный бандл DeepSeek — приходит с приложением, выключение ломает запуск DSH",
+    "inbox": true,
+    "history": null
+   },
+   {
+    "name": "@sandbaseai/dsh-skills",
+    "inBundles": true,
+    "installed": true,
+    "declaredVersion": "https://codeload.github.com/sandbaseai/sandbase-skills/tar.gz/refs/heads/main",
+    "protected": false,
+    "protectReason": null,
+    "inbox": false,
+    "history": null
+   },
+   {
+    "name": "dsh-delegate-router",
+    "inBundles": true,
+    "installed": true,
+    "declaredVersion": "^0.4.5",
+    "protected": false,
+    "protectReason": null,
+    "inbox": false,
+    "history": null
+   },
+   {
+    "name": "dsh-git-credentials",
+    "inBundles": true,
+    "installed": true,
+    "declaredVersion": "^0.6.1",
+    "protected": false,
+    "protectReason": null,
+    "inbox": false,
+    "history": null
+   },
+   {
+    "name": "dsh-locale-ru",
+    "inBundles": false,
+    "installed": true,
+    "declaredVersion": "file:.plugin-sources/dsh-locale-ru",
+    "protected": true,
+    "protectReason": "языковой пакет: выключение вернёт интерфейс на китайский (подключён через file:.plugin-sources)",
+    "inbox": false,
+    "history": null
+   },
+   {
+    "name": "dsh-review",
+    "inBundles": true,
+    "installed": true,
+    "declaredVersion": "^0.1.1",
+    "protected": false,
+    "protectReason": null,
+    "inbox": false,
+    "history": null
+   },
+   {
+    "name": "dsh-scrape-webpage",
+    "inBundles": true,
+    "installed": true,
+    "declaredVersion": "^1.0.0",
+    "protected": false,
+    "protectReason": null,
+    "inbox": false,
+    "history": null
+   },
+   {
+    "name": "dsh-serper-search",
+    "inBundles": true,
+    "installed": true,
+    "declaredVersion": "^0.4.0",
+    "protected": false,
+    "protectReason": null,
+    "inbox": false,
+    "history": null
+   },
+   {
+    "name": "dsh-skill-browser",
+    "inBundles": true,
+    "installed": true,
+    "declaredVersion": "^1.9.11",
+    "protected": false,
+    "protectReason": null,
+    "inbox": false,
+    "history": null
+   },
+   {
+    "name": "dsh-telegram-channel-ru",
+    "inBundles": true,
+    "installed": true,
+    "declaredVersion": "^0.13.1",
+    "protected": false,
+    "protectReason": null,
+    "inbox": false,
+    "history": null
+   },
+   {
+    "name": "dsh-vision-router",
+    "inBundles": true,
+    "installed": true,
+    "declaredVersion": "^3.1.0",
+    "protected": false,
+    "protectReason": null,
+    "inbox": false,
+    "history": null
+   },
+   {
+    "name": "dshmarket",
+    "inBundles": true,
+    "installed": true,
+    "declaredVersion": "^1.73.3",
+    "protected": false,
+    "protectReason": null,
+    "inbox": false,
+    "history": null
+   },
+   {
+    "name": "ru-marketplace-mcp-dsh",
+    "inBundles": true,
+    "installed": true,
+    "declaredVersion": "file:.plugin-sources/ru-marketplace-mcp-dsh",
+    "protected": false,
+    "protectReason": null,
+    "inbox": false,
+    "history": null
+   },
+   {
+    "name": "superdesign-dsh",
+    "inBundles": true,
+    "installed": true,
+    "declaredVersion": "https://codeload.github.com/superdesigndev/superdesign-skill/tar.gz/refs/heads/main",
+    "protected": false,
+    "protectReason": null,
+    "inbox": false,
+    "history": null
+   }
+  ],
+  "protectedCount": 17,
+  "restartNote": "После изменения списка плагинов НУЖЕН ПЕРЕЗАПУСК DeepSeek Harness: изменения подхватываются только при старте приложения."
+ },
+ "delivery": {
+  "title": "Доставка и уведомления",
+  "note": "Куда уходит отчёт. Автоматическая отправка в этой версии выключена: отчёт готовит агент, отправляете вы сами.",
+  "sendMode": "manual",
+  "items": [
+   {
+    "id": "delivery.telegram.enabled",
+    "label": "Отправка в Telegram",
+    "kind": "bool",
+    "value": false,
+    "file": "settings",
+    "path": [
+     "delivery",
+     "telegram",
+     "enabled"
+    ],
+    "what": "Включит отметку «отправлять в Telegram». Нужен токен бота и канал — без них отправка не сработает.",
+    "history": null
+   },
+   {
+    "id": "delivery.email.enabled",
+    "label": "Отправка на почту",
+    "kind": "bool",
+    "value": false,
+    "file": "settings",
+    "path": [
+     "delivery",
+     "email",
+     "enabled"
+    ],
+    "what": "Включит отметку «отправлять на почту». Нужен адрес получателя и почтовый шлюз.",
+    "history": null
+   }
+  ],
+  "where": {
+   "sendMode": "вручную (отчёт готовит агент)",
+   "telegram": "выключен",
+   "email": "выключена",
+   "formats": [
+    "md",
+    "xlsx"
+   ]
+  }
+ },
+ "files": {
+  "settings": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\00-admin\\config\\settings.yaml",
+  "prices": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\registry\\prices.yaml",
+  "agents": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\registry\\agents.yaml",
+  "sources": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\registry\\sources.yaml",
+  "settingsExists": true,
+  "pricesExists": true
+ },
+ "report": {
+  "title": "Правила отчёта",
+  "note": "Правка атомарная: меняется только значение, комментарии и порядок строк сохраняются. Файл: 00-admin/config/settings.yaml",
+  "items": [
+   {
+    "id": "thresholds.price_change_pct",
+    "label": "Порог изменения цены, %",
+    "kind": "number",
+    "value": 0.5,
+    "options": null,
+    "step": "0.1",
+    "min": 0,
+    "max": 100,
+    "what": "Изменение цены меньше этого значения считается шумом и в отчёт не выносится.",
+    "file": "settings",
+    "path": [
+     "thresholds",
+     "price_change_pct"
+    ],
+    "history": {
+     "at": 1793462529657.0232,
+     "previous": 2.5,
+     "now": 0.5,
+     "backup": "settings.yaml.bak-20261031-190210-675"
+    }
+   },
+   {
+    "id": "thresholds.price_change_abs_rub",
+    "label": "Порог изменения цены, ₽",
+    "kind": "number",
+    "value": 0,
+    "options": null,
+    "step": "1000",
+    "min": 0,
+    "max": null,
+    "what": "0 — порог по абсолютной сумме не применяется. Иначе изменение меньше этой суммы игнорируется.",
+    "file": "settings",
+    "path": [
+     "thresholds",
+     "price_change_abs_rub"
+    ],
+    "history": null
+   },
+   {
+    "id": "thresholds.lot_count_change_abs",
+    "label": "Порог по числу лотов",
+    "kind": "number",
+    "value": 3,
+    "options": null,
+    "step": "1",
+    "min": 0,
+    "max": null,
+    "what": "Приход или уход меньшего числа лотов по проекту не выносится в «Главное за неделю».",
+    "file": "settings",
+    "path": [
+     "thresholds",
+     "lot_count_change_abs"
+    ],
+    "history": {
+     "at": 1793462531608.266,
+     "previous": 9,
+     "now": 3,
+     "backup": "settings.yaml.bak-20261031-190212-492"
+    }
+   },
+   {
+    "id": "thresholds.min_lots_for_stats",
+    "label": "Минимум лотов для статистики",
+    "kind": "number",
+    "value": 3,
+    "options": null,
+    "step": "1",
+    "min": 0,
+    "max": null,
+    "what": "Проект с меньшим числом лотов не попадает в медианные таблицы отчёта.",
+    "file": "settings",
+    "path": [
+     "thresholds",
+     "min_lots_for_stats"
+    ],
+    "history": {
+     "at": 1793462533355.818,
+     "previous": 7,
+     "now": 3,
+     "backup": "settings.yaml.bak-20261031-190214-239"
+    }
+   },
+   {
+    "id": "period.days",
+    "label": "Период сравнения, дней",
+    "kind": "number",
+    "value": 7,
+    "options": null,
+    "step": "1",
+    "min": 1,
+    "max": 365,
+    "what": "С каким снимком сравнивать текущий: ровно N дней назад (справочное значение для движка).",
+    "file": "settings",
+    "path": [
+     "period",
+     "days"
+    ],
+    "history": {
+     "at": 1793474035475.254,
+     "previous": 14,
+     "now": 7,
+     "backup": "settings.yaml.bak-20261031-221356-943"
+    }
+   },
+   {
+    "id": "period.compare_mode",
+    "label": "Режим сравнения",
+    "kind": "select",
+    "value": "week_over_week",
+    "options": [
+     [
+      "week_over_week",
+      "Снимок N дней назад"
+     ],
+     [
+      "previous_snapshot",
+      "Предыдущий снимок по дате"
+     ]
+    ],
+    "step": null,
+    "min": null,
+    "max": null,
+    "what": "«Снимок N дней назад» — строго по периоду. «Предыдущий снимок» — если сбор был пропущен, сравнит с тем, что есть.",
+    "file": "settings",
+    "path": [
+     "period",
+     "compare_mode"
+    ],
+    "history": {
+     "at": 1793462536822.3738,
+     "previous": "previous_snapshot",
+     "now": "week_over_week",
+     "backup": "settings.yaml.bak-20261031-190217-668"
+    }
+   },
+   {
+    "id": "units.price_round_to_rub",
+    "label": "Округление денег в отчёте, ₽",
+    "kind": "number",
+    "value": 1000,
+    "options": null,
+    "step": "100",
+    "min": 1,
+    "max": null,
+    "what": "До какого шага округлять суммы в отчёте. 1000 — до тысяч рублей.",
+    "file": "settings",
+    "path": [
+     "units",
+     "price_round_to_rub"
+    ],
+    "history": {
+     "at": 1793462538528.0696,
+     "previous": 100,
+     "now": 1000,
+     "backup": "settings.yaml.bak-20261031-190219-381"
+    }
+   },
+   {
+    "id": "units.pct_decimals",
+    "label": "Знаков после запятой в процентах",
+    "kind": "number",
+    "value": 2,
+    "options": null,
+    "step": "1",
+    "min": 0,
+    "max": 6,
+    "what": "Сколько знаков показывать в процентах отчёта. 2 — как «0,53 %».",
+    "file": "settings",
+    "path": [
+     "units",
+     "pct_decimals"
+    ],
+    "history": {
+     "at": 1793462540237.506,
+     "previous": 3,
+     "now": 2,
+     "backup": "settings.yaml.bak-20261031-190221-098"
+    }
+   },
+   {
+    "id": "quality.warn_if_lots_below",
+    "label": "Предупреждать, если лотов меньше",
+    "kind": "number",
+    "value": 10,
+    "options": null,
+    "step": "1",
+    "min": 0,
+    "max": null,
+    "what": "Если в снимке меньше этого числа лотов — в отчёт попадёт предупреждение о неполных данных.",
+    "file": "settings",
+    "path": [
+     "quality",
+     "warn_if_lots_below"
+    ],
+    "history": {
+     "at": 1793462541952.2017,
+     "previous": 25,
+     "now": 10,
+     "backup": "settings.yaml.bak-20261031-190222-804"
+    }
+   },
+   {
+    "id": "output.formats",
+    "label": "Форматы отчёта",
+    "kind": "list",
+    "value": [
+     "md",
+     "xlsx"
+    ],
+    "options": [
+     [
+      "md",
+      "Markdown (.md)"
+     ],
+     [
+      "xlsx",
+      "Excel (.xlsx)"
+     ],
+     [
+      "csv",
+      "CSV (.csv)"
+     ]
+    ],
+    "step": null,
+    "min": null,
+    "max": null,
+    "what": "В каких файлах готовить отчёт. md и xlsx — основные; csv — дополнительно.",
+    "file": "settings",
+    "path": [
+     "output",
+     "formats"
+    ],
+    "history": {
+     "at": 1793462543671.0164,
+     "previous": [
+      "md",
+      "xlsx",
+      "csv"
+     ],
+     "now": [
+      "md",
+      "xlsx"
+     ],
+     "backup": "settings.yaml.bak-20261031-190224-505"
+    }
+   }
+  ]
+ },
+ "prices": {
+  "title": "Цены моделей и курс валюты",
+  "note": "Единственный источник цен — registry/prices.yaml. Правка меняет только число, комментарии и остальные строки сохраняются.",
+  "file": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\registry\\prices.yaml",
+  "rate": {
+   "id": "rate.usd_rub",
+   "label": "Курс доллара, ₽ за 1 $",
+   "kind": "number",
+   "step": "0.01",
+   "min": 1,
+   "value": 80.5573,
+   "path": [
+    "rate",
+    "usd_rub"
+   ],
+   "file": "prices",
+   "what": "По этому курсу рубли считаются из долларовых ставок. Если курс неверный — весь расход в рублях будет неверным.",
+   "history": {
+    "at": 1793462545366.4187,
+    "previous": 82.5,
+    "now": 80.5573,
+    "backup": "prices.yaml.bak-20261031-190226-251"
+   }
+  },
+  "models": [
+   {
+    "id": "deepseek/deepseek-v4.1-flash",
+    "rubIn": 2.59,
+    "rubOut": 27.84,
+    "rubCacheRead": null,
+    "acceptsImages": true,
+    "historyIn": {
+     "at": 1793462547152.4849,
+     "previous": 7.77,
+     "now": 2.59,
+     "backup": "prices.yaml.bak-20261031-190228-059"
+    },
+    "historyOut": null
+   },
+   {
+    "id": "deepseek/deepseek-v4-flash",
+    "rubIn": 7.33,
+    "rubOut": 32.86,
+    "rubCacheRead": null,
+    "acceptsImages": false,
+    "historyIn": null,
+    "historyOut": null
+   },
+   {
+    "id": "deepseek/deepseek-v4-flash-0731",
+    "rubIn": 11.21,
+    "rubOut": 27.06,
+    "rubCacheRead": 6.77,
+    "acceptsImages": false,
+    "historyIn": null,
+    "historyOut": null
+   },
+   {
+    "id": "deepseek/deepseek-v4-flash-vision-exp",
+    "rubIn": 85.06,
+    "rubOut": 255.18,
+    "rubCacheRead": null,
+    "acceptsImages": true,
+    "historyIn": null,
+    "historyOut": null
+   },
+   {
+    "id": "deepseek/deepseek-v4-pro",
+    "rubIn": 173.99,
+    "rubOut": 289.98,
+    "rubCacheRead": 48.33,
+    "acceptsImages": false,
+    "historyIn": null,
+    "historyOut": null
+   },
+   {
+    "id": "z-ai/glm-5.3-flash",
+    "rubIn": 3.15,
+    "rubOut": 6.86,
+    "rubCacheRead": 3.15,
+    "acceptsImages": true,
+    "historyIn": null,
+    "historyOut": {
+     "at": 1793462548991.896,
+     "previous": 9.99,
+     "now": 6.86,
+     "backup": "prices.yaml.bak-20261031-190229-936"
+    }
+   },
+   {
+    "id": "z-ai/glm-5.3",
+    "rubIn": 13.51,
+    "rubOut": 270.64,
+    "rubCacheRead": 13.32,
+    "acceptsImages": false,
+    "historyIn": null,
+    "historyOut": null
+   },
+   {
+    "id": "z-ai/glm-4.6v",
+    "rubIn": 58,
+    "rubOut": 173.99,
+    "rubCacheRead": 10.63,
+    "acceptsImages": true,
+    "historyIn": null,
+    "historyOut": null
+   },
+   {
+    "id": "google/gemini-3.8-flash",
+    "rubIn": 144.99,
+    "rubOut": 724.94,
+    "rubCacheRead": null,
+    "acceptsImages": true,
+    "historyIn": null,
+    "historyOut": null
+   },
+   {
+    "id": "google/gemini-3-flash-preview",
+    "rubIn": 96.66,
+    "rubOut": 579.95,
+    "rubCacheRead": null,
+    "acceptsImages": true,
+    "historyIn": null,
+    "historyOut": null
+   },
+   {
+    "id": "qwen/qwen3.8-flash",
+    "rubIn": 29,
+    "rubOut": 90.86,
+    "rubCacheRead": null,
+    "acceptsImages": true,
+    "historyIn": null,
+    "historyOut": null
+   },
+   {
+    "id": "qwen/qwen3-vl-30b-a3b-instruct",
+    "rubIn": 29,
+    "rubOut": 115.99,
+    "rubCacheRead": null,
+    "acceptsImages": true,
+    "historyIn": null,
+    "historyOut": null
+   },
+   {
+    "id": "openai/gpt-6-luna",
+    "rubIn": 19.33,
+    "rubOut": 96.66,
+    "rubCacheRead": null,
+    "acceptsImages": true,
+    "historyIn": null,
+    "historyOut": null
+   },
+   {
+    "id": "minimax/minimax-m3",
+    "rubIn": 44.46,
+    "rubOut": 185.58,
+    "rubCacheRead": 9.67,
+    "acceptsImages": true,
+    "historyIn": null,
+    "historyOut": null
+   },
+   {
+    "id": "anthropic/claude-sonnet-5.5",
+    "rubIn": 386.63,
+    "rubOut": 1933.17,
+    "rubCacheRead": null,
+    "acceptsImages": true,
+    "historyIn": null,
+    "historyOut": null
+   },
+   {
+    "id": "anthropic/claude-opus-5.5",
+    "rubIn": 773.27,
+    "rubOut": 3866.35,
+    "rubCacheRead": null,
+    "acceptsImages": true,
+    "historyIn": null,
+    "historyOut": null
+   }
+  ]
+ },
+ "agents": {
+  "title": "Агенты",
+  "note": "Включение, модель, расписание, проект и группы задач. Модели показаны с ценой за 1 млн токенов.",
+  "rows": [
+   {
+    "id": "agent-1-competitor-watch",
+    "name": "Агент 1 — Мониторинг конкурентов",
+    "enabled": true,
+    "status": "active",
+    "model": "deepseek/deepseek-v4.1-flash",
+    "schedule": "weekly:monday:10:00",
+    "projects": [],
+    "groups": [
+     "Мониторинг",
+     "Конкуренты"
+    ],
+    "modelOptions": [
+     {
+      "id": "deepseek/deepseek-v4.1-flash",
+      "rubIn": 2.59,
+      "rubOut": 27.84
+     },
+     {
+      "id": "deepseek/deepseek-v4-flash",
+      "rubIn": 7.33,
+      "rubOut": 32.86
+     },
+     {
+      "id": "deepseek/deepseek-v4-flash-0731",
+      "rubIn": 11.21,
+      "rubOut": 27.06
+     },
+     {
+      "id": "deepseek/deepseek-v4-flash-vision-exp",
+      "rubIn": 85.06,
+      "rubOut": 255.18
+     },
+     {
+      "id": "deepseek/deepseek-v4-pro",
+      "rubIn": 173.99,
+      "rubOut": 289.98
+     },
+     {
+      "id": "z-ai/glm-5.3-flash",
+      "rubIn": 3.15,
+      "rubOut": 6.86
+     },
+     {
+      "id": "z-ai/glm-5.3",
+      "rubIn": 13.51,
+      "rubOut": 270.64
+     },
+     {
+      "id": "z-ai/glm-4.6v",
+      "rubIn": 58,
+      "rubOut": 173.99
+     },
+     {
+      "id": "google/gemini-3.8-flash",
+      "rubIn": 144.99,
+      "rubOut": 724.94
+     },
+     {
+      "id": "google/gemini-3-flash-preview",
+      "rubIn": 96.66,
+      "rubOut": 579.95
+     },
+     {
+      "id": "qwen/qwen3.8-flash",
+      "rubIn": 29,
+      "rubOut": 90.86
+     },
+     {
+      "id": "qwen/qwen3-vl-30b-a3b-instruct",
+      "rubIn": 29,
+      "rubOut": 115.99
+     },
+     {
+      "id": "openai/gpt-6-luna",
+      "rubIn": 19.33,
+      "rubOut": 96.66
+     },
+     {
+      "id": "minimax/minimax-m3",
+      "rubIn": 44.46,
+      "rubOut": 185.58
+     },
+     {
+      "id": "anthropic/claude-sonnet-5.5",
+      "rubIn": 386.63,
+      "rubOut": 1933.17
+     },
+     {
+      "id": "anthropic/claude-opus-5.5",
+      "rubIn": 773.27,
+      "rubOut": 3866.35
+     }
+    ],
+    "history": {
+     "enabled": {
+      "at": 1793460449487.3916,
+      "previous": false,
+      "now": true,
+      "backup": "agents.yaml.bak-20261031-182730"
+     },
+     "model": null,
+     "schedule": null
+    }
+   },
+   {
+    "id": "agent-2-direct-semantics",
+    "name": "Агент 2 — Семантика и кампании Яндекс Директа",
+    "enabled": false,
+    "status": "planned",
+    "model": "deepseek/deepseek-v4-pro",
+    "schedule": "on-demand",
+    "projects": [],
+    "groups": [
+     "Директ",
+     "Семантика"
+    ],
+    "modelOptions": [
+     {
+      "id": "deepseek/deepseek-v4.1-flash",
+      "rubIn": 2.59,
+      "rubOut": 27.84
+     },
+     {
+      "id": "deepseek/deepseek-v4-flash",
+      "rubIn": 7.33,
+      "rubOut": 32.86
+     },
+     {
+      "id": "deepseek/deepseek-v4-flash-0731",
+      "rubIn": 11.21,
+      "rubOut": 27.06
+     },
+     {
+      "id": "deepseek/deepseek-v4-flash-vision-exp",
+      "rubIn": 85.06,
+      "rubOut": 255.18
+     },
+     {
+      "id": "deepseek/deepseek-v4-pro",
+      "rubIn": 173.99,
+      "rubOut": 289.98
+     },
+     {
+      "id": "z-ai/glm-5.3-flash",
+      "rubIn": 3.15,
+      "rubOut": 6.86
+     },
+     {
+      "id": "z-ai/glm-5.3",
+      "rubIn": 13.51,
+      "rubOut": 270.64
+     },
+     {
+      "id": "z-ai/glm-4.6v",
+      "rubIn": 58,
+      "rubOut": 173.99
+     },
+     {
+      "id": "google/gemini-3.8-flash",
+      "rubIn": 144.99,
+      "rubOut": 724.94
+     },
+     {
+      "id": "google/gemini-3-flash-preview",
+      "rubIn": 96.66,
+      "rubOut": 579.95
+     },
+     {
+      "id": "qwen/qwen3.8-flash",
+      "rubIn": 29,
+      "rubOut": 90.86
+     },
+     {
+      "id": "qwen/qwen3-vl-30b-a3b-instruct",
+      "rubIn": 29,
+      "rubOut": 115.99
+     },
+     {
+      "id": "openai/gpt-6-luna",
+      "rubIn": 19.33,
+      "rubOut": 96.66
+     },
+     {
+      "id": "minimax/minimax-m3",
+      "rubIn": 44.46,
+      "rubOut": 185.58
+     },
+     {
+      "id": "anthropic/claude-sonnet-5.5",
+      "rubIn": 386.63,
+      "rubOut": 1933.17
+     },
+     {
+      "id": "anthropic/claude-opus-5.5",
+      "rubIn": 773.27,
+      "rubOut": 3866.35
+     }
+    ],
+    "history": {
+     "enabled": null,
+     "model": {
+      "at": 1793462552750.1118,
+      "previous": "deepseek/deepseek-v4.1-flash",
+      "now": "deepseek/deepseek-v4-pro",
+      "backup": "agents.yaml.bak-20261031-190233-695"
+     },
+     "schedule": {
+      "at": 1793462550866.5884,
+      "previous": "weekly:friday:09:00",
+      "now": "on-demand",
+      "backup": "agents.yaml.bak-20261031-190231-798"
+     }
+    }
+   },
+   {
+    "id": "agent-3-creative",
+    "name": "Агент 3 — Креативы и дизайн (заготовка)",
+    "enabled": false,
+    "status": "planned",
+    "model": "deepseek/deepseek-v4.1-flash",
+    "schedule": "on-demand",
+    "projects": [],
+    "groups": [
+     "Креативы"
+    ],
+    "modelOptions": [
+     {
+      "id": "deepseek/deepseek-v4.1-flash",
+      "rubIn": 2.59,
+      "rubOut": 27.84
+     },
+     {
+      "id": "deepseek/deepseek-v4-flash",
+      "rubIn": 7.33,
+      "rubOut": 32.86
+     },
+     {
+      "id": "deepseek/deepseek-v4-flash-0731",
+      "rubIn": 11.21,
+      "rubOut": 27.06
+     },
+     {
+      "id": "deepseek/deepseek-v4-flash-vision-exp",
+      "rubIn": 85.06,
+      "rubOut": 255.18
+     },
+     {
+      "id": "deepseek/deepseek-v4-pro",
+      "rubIn": 173.99,
+      "rubOut": 289.98
+     },
+     {
+      "id": "z-ai/glm-5.3-flash",
+      "rubIn": 3.15,
+      "rubOut": 6.86
+     },
+     {
+      "id": "z-ai/glm-5.3",
+      "rubIn": 13.51,
+      "rubOut": 270.64
+     },
+     {
+      "id": "z-ai/glm-4.6v",
+      "rubIn": 58,
+      "rubOut": 173.99
+     },
+     {
+      "id": "google/gemini-3.8-flash",
+      "rubIn": 144.99,
+      "rubOut": 724.94
+     },
+     {
+      "id": "google/gemini-3-flash-preview",
+      "rubIn": 96.66,
+      "rubOut": 579.95
+     },
+     {
+      "id": "qwen/qwen3.8-flash",
+      "rubIn": 29,
+      "rubOut": 90.86
+     },
+     {
+      "id": "qwen/qwen3-vl-30b-a3b-instruct",
+      "rubIn": 29,
+      "rubOut": 115.99
+     },
+     {
+      "id": "openai/gpt-6-luna",
+      "rubIn": 19.33,
+      "rubOut": 96.66
+     },
+     {
+      "id": "minimax/minimax-m3",
+      "rubIn": 44.46,
+      "rubOut": 185.58
+     },
+     {
+      "id": "anthropic/claude-sonnet-5.5",
+      "rubIn": 386.63,
+      "rubOut": 1933.17
+     },
+     {
+      "id": "anthropic/claude-opus-5.5",
+      "rubIn": 773.27,
+      "rubOut": 3866.35
+     }
+    ],
+    "history": {
+     "enabled": {
+      "at": 1793530368766.9883,
+      "previous": true,
+      "now": false,
+      "backup": "agents.yaml.bak-20261101-135250-646"
+     },
+     "model": null,
+     "schedule": null
+    }
+   },
+   {
+    "id": "agent-4-analytics",
+    "name": "Агент 4 — Сквозная аналитика (заготовка)",
+    "enabled": false,
+    "status": "planned",
+    "model": "deepseek/deepseek-v4.1-flash",
+    "schedule": "weekly",
+    "projects": [],
+    "groups": [
+     "Аналитика"
+    ],
+    "modelOptions": [
+     {
+      "id": "deepseek/deepseek-v4.1-flash",
+      "rubIn": 2.59,
+      "rubOut": 27.84
+     },
+     {
+      "id": "deepseek/deepseek-v4-flash",
+      "rubIn": 7.33,
+      "rubOut": 32.86
+     },
+     {
+      "id": "deepseek/deepseek-v4-flash-0731",
+      "rubIn": 11.21,
+      "rubOut": 27.06
+     },
+     {
+      "id": "deepseek/deepseek-v4-flash-vision-exp",
+      "rubIn": 85.06,
+      "rubOut": 255.18
+     },
+     {
+      "id": "deepseek/deepseek-v4-pro",
+      "rubIn": 173.99,
+      "rubOut": 289.98
+     },
+     {
+      "id": "z-ai/glm-5.3-flash",
+      "rubIn": 3.15,
+      "rubOut": 6.86
+     },
+     {
+      "id": "z-ai/glm-5.3",
+      "rubIn": 13.51,
+      "rubOut": 270.64
+     },
+     {
+      "id": "z-ai/glm-4.6v",
+      "rubIn": 58,
+      "rubOut": 173.99
+     },
+     {
+      "id": "google/gemini-3.8-flash",
+      "rubIn": 144.99,
+      "rubOut": 724.94
+     },
+     {
+      "id": "google/gemini-3-flash-preview",
+      "rubIn": 96.66,
+      "rubOut": 579.95
+     },
+     {
+      "id": "qwen/qwen3.8-flash",
+      "rubIn": 29,
+      "rubOut": 90.86
+     },
+     {
+      "id": "qwen/qwen3-vl-30b-a3b-instruct",
+      "rubIn": 29,
+      "rubOut": 115.99
+     },
+     {
+      "id": "openai/gpt-6-luna",
+      "rubIn": 19.33,
+      "rubOut": 96.66
+     },
+     {
+      "id": "minimax/minimax-m3",
+      "rubIn": 44.46,
+      "rubOut": 185.58
+     },
+     {
+      "id": "anthropic/claude-sonnet-5.5",
+      "rubIn": 386.63,
+      "rubOut": 1933.17
+     },
+     {
+      "id": "anthropic/claude-opus-5.5",
+      "rubIn": 773.27,
+      "rubOut": 3866.35
+     }
+    ],
+    "history": {
+     "enabled": {
+      "at": 1793529428984.189,
+      "previous": true,
+      "now": false,
+      "backup": "agents.yaml.bak-20261101-133823-320"
+     },
+     "model": null,
+     "schedule": null
+    }
+   }
+  ]
+ },
+ "sources": {
+  "title": "Источники мониторинга",
+  "note": "Выключенный источник пропускается сбором (движок T18).",
+  "rows": [
+   {
+    "id": "developer-sites",
+    "name": "Сайты застройщиков",
+    "enabled": true,
+    "status": "partial",
+    "kind": "http",
+    "lots": 15,
+    "history": {
+     "enabled": {
+      "at": 1793548131398.1362,
+      "previous": false,
+      "now": true,
+      "backup": "sources.yaml.bak-20261101-184854-310"
+     }
+    }
+   },
+   {
+    "id": "partner-feeds",
+    "name": "Партнёрские прайсы застройщиков",
+    "enabled": false,
+    "status": "not-tested",
+    "kind": "feed",
+    "lots": 0,
+    "history": {
+     "enabled": {
+      "at": 1793548137174.9773,
+      "previous": true,
+      "now": false,
+      "backup": "sources.yaml.bak-20261101-184859-865"
+     }
+    }
+   },
+   {
+    "id": "manual-inbox",
+    "name": "Ручные материалы (скриншоты, выгрузки)",
+    "enabled": true,
+    "status": "working",
+    "kind": "manual",
+    "lots": 0,
+    "history": {
+     "enabled": {
+      "at": 1793548131398.1362,
+      "previous": false,
+      "now": true,
+      "backup": "sources.yaml.bak-20261101-184854-310"
+     }
+    }
+   },
+   {
+    "id": "cian",
+    "name": "Циан",
+    "enabled": true,
+    "status": "working",
+    "kind": "http",
+    "lots": 289,
+    "history": {
+     "enabled": {
+      "at": 1793548131398.1362,
+      "previous": false,
+      "now": true,
+      "backup": "sources.yaml.bak-20261101-184854-310"
+     }
+    }
+   },
+   {
+    "id": "avito",
+    "name": "Авито Недвижимость",
+    "enabled": true,
+    "status": "blocked",
+    "kind": "http",
+    "lots": 0,
+    "history": {
+     "enabled": {
+      "at": 1793548139867.2317,
+      "previous": false,
+      "now": true,
+      "backup": "sources.yaml.bak-20261101-184902-580"
+     }
+    }
+   },
+   {
+    "id": "yandex-realty",
+    "name": "Яндекс Недвижимость",
+    "enabled": true,
+    "status": "working",
+    "kind": "http",
+    "lots": 0,
+    "history": {
+     "enabled": {
+      "at": 1793548131398.1362,
+      "previous": false,
+      "now": true,
+      "backup": "sources.yaml.bak-20261101-184854-310"
+     }
+    }
+   },
+   {
+    "id": "domclick",
+    "name": "Домклик",
+    "enabled": true,
+    "status": "blocked",
+    "kind": "http",
+    "lots": 0,
+    "history": {
+     "enabled": {
+      "at": 1793548139867.2317,
+      "previous": false,
+      "now": true,
+      "backup": "sources.yaml.bak-20261101-184902-580"
+     }
+    }
+   }
+  ]
+ },
+ "warnings": []
+}

@@ -1,0 +1,37 @@
+# Конфиг клиента Агента 1 — фикстура тестов (та же схема, что фиксирует Lead).
+client_id: client-svet
+name: "ЖК «Свет»"
+brand:
+  logo: "assets/logo.png"
+  accent: "#7553ff"
+schedule: { weekday: monday, time: "10:00" }
+report:
+  title: "Мониторинг конкурентов"
+  formats: [md, xlsx, docx, pdf]
+recipients:
+  - { channel: telegram, address: "@svet_marketing" }
+  - { channel: email, address: "marketing@example.com" }
+sources:
+  - { id: developer-sites, enabled: true }
+  - { id: cian,           enabled: true, mode: public-pages, auth: none }
+  - { id: avito,          enabled: true, mode: public-pages, auth: none }
+  - { id: yandex-realty,  enabled: true, mode: public-pages, auth: none }
+  - { id: domclick,       enabled: true, mode: public-pages, auth: none }
+  - { id: manual-inbox,   enabled: true }
+competitors:
+  - name: "ЗИЛАРТ"
+    developer: "ЛСР"
+    class: "бизнес"
+    site: "https://zilart.ru/"
+    platforms:
+      cian: "https://www.cian.ru/"
+      avito: "https://www.avito.ru/rossiya/kvartiry"
+      yandex_realty: "https://realty.yandex.ru/moskva-i-moskovskaya-oblast/kupit/kvartira/zhk-zilart/"
+      domclick: "https://domclick.ru/"
+  - name: "Селигер Сити"
+    developer: "MR Group"
+    class: "бизнес"
+    site: "https://www.seligersiti.ru/"
+    platforms:
+      cian: "https://www.cian.ru/"
+      avito: "https://www.avito.ru/rossiya/kvartiry"

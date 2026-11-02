@@ -1,0 +1,4 @@
+- insert:
+    - id: marketing-skills
+      name: dsh-marketing-skills
+      config: {}

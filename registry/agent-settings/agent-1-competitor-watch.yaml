@@ -1,0 +1,101 @@
+# ТОНКИЕ НАСТРОЙКИ АГЕНТА 1 — «Мониторинг конкурентов»
+# Схема и правила — в registry/README-agents-settings.md.
+# Правка из панели атомарная, с копией .bak-<timestamp>; обратимость по SHA-256.
+
+version: 1
+agent: agent-1-competitor-watch
+updated: "2026-11-01"
+
+schedule:
+  enabled: true
+  days: [1, 4]
+  time: "10:00"
+  frequency: weekly
+  timezone: "Europe/Moscow"
+  only_on_new_data: true
+
+model:
+  name: "deepseek/deepseek-v4.1-flash"
+  limit_rub: 3000
+  limit_tokens: 2000000
+  on_limit: pause
+
+priority:
+  level: normal
+  max_parallel: 1
+  timeout_sec: 900
+  retries: 2
+
+report:
+  formats: [md, xlsx]
+  sections: [summary, prices, changes, promos, limits]
+  language: ru
+  branding: true
+
+delivery:
+  channels: [telegram]
+  addresses: ["@svet_marketing"]
+  auto_send: false
+  copy_to: ""
+
+alerts:
+  when: [fail, low_data]
+  price_threshold_pct: 5
+  quiet_hours: "22:00-08:00"
+
+limits:
+  skip_weekends: true
+  min_interval_hours: 168
+  stop_switch: false
+
+agent1:
+  projects: [my-zhk-svet]
+  price_threshold_pct: 5
+  min_lots: 10
+  promo_words: [акция, скидка, рассрочка, спецпредложение]
+  collect_mode: http
+  compare_depth_weeks: 2
+  # ПОДТВЕРЖДЁННЫЕ КОНКУРЕНТЫ ЗДЕСЬ НЕ ХРАНЯТСЯ.
+  # Они живут в клиентских конфигах: 01-competitor-watch/config/clients/<client-id>.yaml.
+  # Здесь их держать нельзя — настройки агента не должны дублировать клиентские данные.
+  # ЖК ДЛЯ НАБЛЮДЕНИЯ — свой проект, вокруг которого ищем конкурентов.
+  # Радиус по умолчанию 10 км; если координаты пусты, агент определит их по адресу.
+  watch:
+    name: "ЖК «Свет»"
+    address: "Москва, Западное Дегунино, Дмитровское шоссе, 83А"
+    url: "https://svetdom.ru/"
+    lat: ""
+    lon: ""
+    radius_km: 10
+    klass: ["бизнес"]
+    price_min_per_m2: 250000
+    price_max_per_m2: 450000
+    sources: ["cian", "avito", "yandex-realty"]
+    max_candidates: 20
+
+  # ДОМЕНЫ КОНКУРЕНТОВ: карта «домен → канонический ключ проекта».
+  # Нужна для сопоставления срезов, где движок отдаёт только домен (например seliger-city.ru),
+  # а профиль проекта называется по ключу (zhk-seliger-siti). Движок читает эту карту,
+  # и панель применяет её при сопоставлении бюджетов.
+  competitor_domains:
+    seliger-city.ru: zhk-seliger-siti
+
+  # РЕЖИМ СБОРА ПО ИСТОЧНИКУ — единственное место, где задаётся доступ и способ сбора.
+  # Значения: http (обычный запрос без логина) | browser (Chrome без логина) | off (выключен).
+  #
+  # Проверено прямым запросом 01.11.2026:
+  #   cian          — работает обычным HTTP без логина (200, реальные цены)      -> http
+  #   avito         — работает через браузер без логина (движок взял 50 лотов)   -> browser
+  #   yandex-realty — требует ссылок уровня проекта, включаем с пометкой         -> http
+  #   domclick      — закрыт (401/403), держим выключенным                       -> off
+  #   developer-sites — сайты застройщиков, обычный HTTP                         -> http
+  #
+  # ВАЖНО: что реально включено ДЛЯ КЛИЕНТА — задаётся в его конфиге
+  # 01-competitor-watch/config/clients/<client-id>.yaml. Это главный источник правды.
+  # Значения ниже — рабочая готовность источников у агента.
+  source_modes:
+    cian: http
+    avito: browser
+    yandex-realty: http
+    domclick: off
+    developer-sites: http

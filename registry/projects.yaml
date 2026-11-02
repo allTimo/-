@@ -1,0 +1,12 @@
+# Реестр проектов (наши ЖК). Источник правды для дашборда и агентов.
+# Синхронизировано с 00-admin/config/my-objects.yaml — при добавлении ЖК обнови оба файла.
+version: 1
+updated: "2026-10-31"
+
+projects:
+  - id: my-zhk-svet
+    name: "Свет"
+    developer: "Dominanta"
+    class: "бизнес"
+    agents: [agent-1-competitor-watch]
+    status: active

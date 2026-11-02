@@ -1,0 +1,104 @@
+# ПОЛНЫЙ КАТАЛОГ ИНТЕГРАЦИЙ: что можно подключить по API.
+# Источник: marketing-agents/docs/integrations-catalog.md (перенесён сюда один в один).
+# Правится вручную: добавьте запись в нужную группу — раздел «Интеграции» подхватит её.
+#
+# direction: read (читаем) | write (пишем) | both (оба)
+# status:    connected (подключено) | available (можно подключить)
+#            | partnership (требует партнёрства) | no-api (нет открытого API)
+# package:   id пакета в профиле DSH — если он установлен и в бандлах, статус станет
+#            «подключено» автоматически, по фактам, а не по обещаниям.
+# key_env:   имя переменной окружения с ключом. Значение ключа панель НИКОГДА не читает,
+#            показывает только «ключ есть / ключа нет».
+
+version: 1
+updated: "2026-10-31"
+
+groups:
+  - id: our-tools
+    title: "Наши инструменты (уже в работе)"
+    items:
+      - { id: zveno, name: "Zveno.ai — модели", what: "Все модели агентов: дешёвые для рутины, сильные для анализа", direction: both, method: "API-ключ", where: "личный кабинет zveno.ai", status: connected, key_env: ZVENOAI_API_KEY }
+      - { id: vision-router, name: "Маршрутизатор картинок (Vision Router)", what: "Читать скриншоты и изображения без смены модели", direction: read, method: "плагин профиля", where: "включён; у поля ввода включить «Vision»", status: connected, package: dsh-vision-router }
+      - { id: delegate-router, name: "Маршрутизатор подагентов (Delegate Router)", what: "Лёгкие задачи уходят на дешёвую модель", direction: both, method: "плагин профиля", where: "настроить flashModel/proModel в разделе «Настройки»", status: connected, package: dsh-delegate-router }
+      - { id: scrape-webpage, name: "Разбор веб-страниц (Scrape Webpage)", what: "Текст, заголовки, ключевые слова и картинки со страниц конкурентов", direction: read, method: "плагин профиля", where: "ключ не нужен", status: connected, package: dsh-scrape-webpage }
+      - { id: serper, name: "Serper — усиленный поиск", what: "Поиск конкурентов, акций и упоминаний через Google", direction: read, method: "API-ключ", where: "serper.dev — бесплатный лимит, затем по тарифу", status: connected, package: dsh-serper-search, key_env: SERPER_API_KEY }
+      - { id: skill-browser, name: "Панель управления скилами", what: "Включать и выключать скилы, журнал вызовов", direction: both, method: "плагин профиля", where: "ключ не нужен", status: connected, package: dsh-skill-browser }
+      - { id: superdesign, name: "Superdesign — дизайн и графика", what: "Макеты, баннеры, лендинги", direction: write, method: "плагин профиля", where: "нужен вход superdesign login", status: connected, package: superdesign-dsh }
+      - { id: marketplace-mcp, name: "Маркетплейсы РФ (MCP)", what: "Сравнение цен по маркетплейсам: Авито, Ozon, WB, Яндекс Маркет", direction: read, method: "MCP", where: "требует Python 3.12+ и uv", status: connected, package: ru-marketplace-mcp-dsh, key_env: RU_MARKETPLACE_MCP_DIR }
+      - { id: telegram-bot, name: "Telegram — отправка отчётов", what: "Отчёты и уведомления в чат или канал", direction: write, method: "Bot API", where: "@BotFather выдаёт токен бота", status: connected, package: dsh-telegram-channel-ru, key_env: DSH_TELEGRAM_TOKEN }
+
+  - id: crm
+    title: "CRM"
+    items:
+      - { id: amocrm, name: "amoCRM", what: "Заявки, воронка, сделки: агент видит лиды и возвращает результат в карточку сделки", direction: both, method: "OAuth + вебхуки", where: "личный кабинет amoCRM → интеграции", status: available }
+      - { id: bitrix24, name: "Битрикс24", what: "Лиды, сделки, задачи; запись результата в таймлайн", direction: both, method: "OAuth / входящий вебхук", where: "Настройки → Разработчикам", status: available }
+      - { id: retailcrm, name: "retailCRM", what: "Заказы и клиенты (для смежных задач)", direction: both, method: "API-ключ", where: "кабинет → API", status: available }
+      - { id: moysklad, name: "МойСклад", what: "Клиенты, заказы, счета", direction: both, method: "API-ключ", where: "кабинет → Настройки → API", status: available }
+      - { id: yclients, name: "YCLIENTS", what: "Записи и визиты, если клиент оказывает услугу офлайн", direction: read, method: "API", where: "кабинет → Интеграции", status: available }
+      - { id: universal-webhook, name: "Универсальный вебхук", what: "Любая CRM без готовой интеграции: агент шлёт результат POST-запросом", direction: write, method: "HTTP", where: "наш URL + токен", status: available }
+
+  - id: analytics
+    title: "Сквозная аналитика и коллтрекинг"
+    items:
+      - { id: roistat, name: "Roistat", what: "Сквозная аналитика: расходы, лиды, сделки, окупаемость", direction: both, method: "API-ключ", where: "кабинет → Настройки → API", status: available }
+      - { id: calltouch, name: "Calltouch", what: "Звонки, коллтрекинг, связка с рекламой", direction: both, method: "API", where: "кабинет → Интеграции", status: available }
+      - { id: callibri, name: "Callibri", what: "Коллтрекинг и чаты", direction: both, method: "API", where: "кабинет → API", status: available }
+      - { id: comagic, name: "CoMagic (UIS)", what: "Сквозная аналитика и телефония", direction: both, method: "API", where: "по договору с CoMagic", status: available }
+      - { id: alytics, name: "Alytics", what: "Управление ставками и аналитика", direction: both, method: "API", where: "кабинет → API", status: available }
+      - { id: owox, name: "OWOX BI", what: "Выгрузка данных в BI-хранилище", direction: write, method: "API / коннектор", where: "по договору с OWOX", status: partnership }
+
+  - id: ads
+    title: "Рекламные каналы"
+    items:
+      - { id: yandex-direct, name: "Яндекс Директ", what: "Кампании, ставки, статистика; агент готовит и загружает кампании", direction: both, method: "API Директа + OAuth", where: "Яндекс OAuth + доступ к API Директа", status: available }
+      - { id: vk-ads, name: "VK Реклама", what: "Кампании и статистика (в том числе бывший myTarget)", direction: both, method: "API VK Ads", where: "кабинет VK Рекламы → API", status: available }
+      - { id: tg-ads, name: "Telegram Ads", what: "Кампании в Telegram", direction: both, method: "API (партнёрский доступ)", where: "заявка на партнёрский доступ", status: partnership }
+      - { id: avito-ads, name: "Авито", what: "Объявления недвижимости: публикация и статистика", direction: both, method: "API для партнёров / выгрузка", where: "партнёрский договор с Авито", status: partnership }
+      - { id: cian-ads, name: "CIAN", what: "Объявления и статистика по новостройкам", direction: both, method: "партнёрский API / выгрузка", where: "партнёрский договор с Циан", status: partnership }
+      - { id: yandex-realty-ads, name: "Яндекс Недвижимость", what: "Размещение и статистика", direction: both, method: "партнёрский API", where: "через Яндекс Недвижимость", status: partnership }
+      - { id: domclick, name: "Домклик", what: "Размещение и лиды", direction: both, method: "партнёрский API", where: "через Сбер и Домклик", status: partnership }
+      - { id: google-ads, name: "Google Ads", what: "Если клиент работает на зарубежные рынки", direction: both, method: "OAuth (ограничения из РФ)", where: "Google Ads → API Center", status: partnership }
+
+  - id: web-analytics
+    title: "Веб-аналитика"
+    items:
+      - { id: yandex-metrica, name: "Яндекс Метрика", what: "Визиты, цели, конверсии, связка с Директом", direction: read, method: "API + OAuth", where: "Метрика → Настройки → Доступ к API", status: available }
+      - { id: top-mail-ru, name: "Top.Mail.Ru", what: "Аудитория и срезы", direction: read, method: "API", where: "кабинет Top.Mail.Ru", status: available }
+      - { id: matomo, name: "Matomo", what: "Аналитика на своём сервере, без чужих сервисов", direction: read, method: "API", where: "свой сервер Matomo + токен", status: available }
+      - { id: ga4, name: "Google Analytics 4", what: "Дополнительный источник (с ограничениями)", direction: read, method: "API", where: "Google Cloud → сервисный аккаунт", status: available }
+
+  - id: delivery
+    title: "Каналы доставки результатов"
+    items:
+      - { id: telegram-delivery, name: "Telegram", what: "Отправка отчётов и уведомлений в чат или канал", direction: write, method: "Bot API", where: "@BotFather выдаёт токен", status: connected, package: dsh-telegram-channel-ru, key_env: DSH_TELEGRAM_TOKEN }
+      - { id: whatsapp, name: "WhatsApp Business", what: "Отправка отчётов через провайдера", direction: write, method: "API провайдера", where: "провайдер WhatsApp Business API", status: partnership }
+      - { id: vk-messages, name: "VK Сообщения", what: "Отправка в сообщество", direction: write, method: "API", where: "сообщество → Управление → Работа с API", status: available }
+      - { id: email-smtp, name: "Почта (SMTP)", what: "Отправка отчётов и актов письмом", direction: write, method: "SMTP", where: "настройки почтового ящика", status: available }
+      - { id: sms, name: "SMS (SMS.ru и аналоги)", what: "Короткие уведомления", direction: write, method: "API", where: "кабинет провайдера SMS", status: available }
+      - { id: edo, name: "ЭДО (Диадок, СБИС)", what: "Обмен закрывающими документами", direction: both, method: "API", where: "договор с оператором ЭДО", status: partnership }
+
+  - id: money
+    title: "Деньги и документы"
+    items:
+      - { id: yookassa, name: "ЮKassa", what: "Приём платежей: карта и СБП", direction: both, method: "API + OAuth", where: "ЮKassa → Настройки → API", status: available }
+      - { id: cloudpayments, name: "CloudPayments", what: "Приём платежей", direction: both, method: "API", where: "кабинет CloudPayments", status: available }
+      - { id: robokassa, name: "Robokassa", what: "Приём платежей", direction: both, method: "API", where: "кабинет Robokassa", status: available }
+      - { id: tbank, name: "Т-Банк", what: "Счета и выписки для юрлиц", direction: both, method: "API", where: "интернет-банк → API", status: partnership }
+      - { id: moy-nalog, name: "«Мой налог» (НПД)", what: "Чеки самозанятого", direction: write, method: "через приложение / партнёрский API", where: "приложение «Мой налог»", status: no-api }
+      - { id: onec, name: "1С", what: "Синхронизация счетов и актов", direction: both, method: "выгрузка / API", where: "настройка обмена в 1С", status: available }
+      - { id: sheets, name: "Google Sheets / Яндекс Таблицы", what: "Табличная выгрузка данных", direction: write, method: "API", where: "сервисный аккаунт таблиц", status: available }
+
+  - id: realty
+    title: "Данные о недвижимости"
+    items:
+      - { id: eiszhs, name: "наш.дом.рф (ЕИСЖС)", what: "Официальные данные о строящемся жилье", direction: read, method: "открытые данные / API", where: "портал ЕИСЖС", status: available }
+      - { id: domrf, name: "ДОМ.РФ", what: "Аналитика рынка", direction: read, method: "открытые данные", where: "портал ДОМ.РФ", status: available }
+      - { id: rosreestr, name: "Росреестр", what: "Сведения о правах и объектах", direction: read, method: "партнёрский API", where: "через аккредитованных партнёров", status: no-api }
+
+  - id: infra
+    title: "Инфраструктура для интеграций"
+    items:
+      - { id: webhooks, name: "Входящие и исходящие вебхуки", what: "Любая система отдаёт нам событие или получает результат", direction: both, method: "HTTP", where: "в разделе «Настройки» → вебхуки", status: available }
+      - { id: rest-api, name: "REST API панели", what: "Клиент или подрядчик забирает данные сам", direction: read, method: "HTTP + ключ доступа", where: "ключ лежит в dashboard/config/access.key", status: connected }
+      - { id: n8n, name: "n8n / Make / Zapier", what: "Связка без кода с любыми сервисами", direction: both, method: "через вебхуки", where: "аккаунт n8n, Make или Zapier", status: available }
+      - { id: bi, name: "BI-выгрузка (Metabase и др.)", what: "Свои дашборды поверх наших данных", direction: write, method: "выгрузка файлом", where: "свой сервер BI", status: available }

@@ -1,0 +1,381 @@
+{
+ "generatedAtMs": 1793565414688,
+ "funnel": {
+  "agents": 4,
+  "agentsEnabled": 1,
+  "tasks": 83,
+  "tasksInProgress": 2,
+  "tasksDone": 65,
+  "tasksUnassigned": 0,
+  "sources": 7,
+  "sourcesEnabled": 6,
+  "lots": 304,
+  "tokens": 1226948917,
+  "rub": 3333.39,
+  "rubComplete": false
+ },
+ "agents": [
+  {
+   "id": "agent-1-competitor-watch",
+   "name": "Агент 1 — Мониторинг конкурентов",
+   "enabled": true,
+   "status": "active",
+   "model": "deepseek/deepseek-v4.1-flash",
+   "groups": [
+    "Мониторинг",
+    "Конкуренты"
+   ],
+   "tasks": {
+    "total": 12,
+    "inProgress": 0,
+    "done": 8,
+    "blocked": 0,
+    "unassigned": 0,
+    "new": 4,
+    "byGroup": {
+     "Конкуренты": 2,
+     "Сборка системы": 10
+    }
+   },
+   "tokens": {
+    "inputTokens": 14725319,
+    "outputTokens": 2015171,
+    "cacheReadTokens": 459730112,
+    "cacheWriteTokens": 0,
+    "totalTokens": 476470602
+   },
+   "rub": 1284.94,
+   "rubComplete": true,
+   "usd": 15.9506,
+   "sessions": 11,
+   "lastActivityAt": 1793552032070,
+   "linkedMembers": [
+    "data-engine",
+    "verifier",
+    "verifier",
+    "verifier",
+    "agent1-workspace"
+   ],
+   "sources": [
+    "developer-sites",
+    "cian",
+    "avito"
+   ],
+   "projects": [
+    "my-zhk-svet"
+   ],
+   "priceKnown": true
+  },
+  {
+   "id": "agent-2-direct-semantics",
+   "name": "Агент 2 — Семантика и кампании Яндекс Директа",
+   "enabled": false,
+   "status": "planned",
+   "model": "deepseek/deepseek-v4-pro",
+   "groups": [
+    "Директ",
+    "Семантика"
+   ],
+   "tasks": {
+    "total": 1,
+    "inProgress": 0,
+    "done": 0,
+    "blocked": 0,
+    "unassigned": 0,
+    "new": 1,
+    "byGroup": {
+     "Семантика": 1
+    }
+   },
+   "tokens": {
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "cacheReadTokens": 0,
+    "cacheWriteTokens": 0,
+    "totalTokens": 0
+   },
+   "rub": null,
+   "rubComplete": true,
+   "usd": 0,
+   "sessions": 0,
+   "lastActivityAt": null,
+   "linkedMembers": [],
+   "sources": [],
+   "projects": [
+    "my-zhk-svet"
+   ],
+   "priceKnown": false
+  },
+  {
+   "id": "agent-3-creative",
+   "name": "Агент 3 — Креативы и дизайн (заготовка)",
+   "enabled": false,
+   "status": "planned",
+   "model": "deepseek/deepseek-v4.1-flash",
+   "groups": [
+    "Креативы"
+   ],
+   "tasks": {
+    "total": 0,
+    "inProgress": 0,
+    "done": 0,
+    "blocked": 0,
+    "unassigned": 0,
+    "new": 0,
+    "byGroup": {}
+   },
+   "tokens": {
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "cacheReadTokens": 0,
+    "cacheWriteTokens": 0,
+    "totalTokens": 0
+   },
+   "rub": null,
+   "rubComplete": true,
+   "usd": 0,
+   "sessions": 0,
+   "lastActivityAt": null,
+   "linkedMembers": [],
+   "sources": [],
+   "projects": [
+    "my-zhk-svet"
+   ],
+   "priceKnown": false
+  },
+  {
+   "id": "agent-4-analytics",
+   "name": "Агент 4 — Сквозная аналитика (заготовка)",
+   "enabled": false,
+   "status": "planned",
+   "model": "deepseek/deepseek-v4.1-flash",
+   "groups": [
+    "Аналитика"
+   ],
+   "tasks": {
+    "total": 0,
+    "inProgress": 0,
+    "done": 0,
+    "blocked": 0,
+    "unassigned": 0,
+    "new": 0,
+    "byGroup": {}
+   },
+   "tokens": {
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "cacheReadTokens": 0,
+    "cacheWriteTokens": 0,
+    "totalTokens": 0
+   },
+   "rub": null,
+   "rubComplete": true,
+   "usd": 0,
+   "sessions": 0,
+   "lastActivityAt": null,
+   "linkedMembers": [],
+   "sources": [],
+   "projects": [
+    "my-zhk-svet"
+   ],
+   "priceKnown": false
+  }
+ ],
+ "sources": [
+  {
+   "id": "developer-sites",
+   "name": "Сайты застройщиков",
+   "enabled": true,
+   "kind": "http",
+   "status": "partial",
+   "lots": 15,
+   "snapshots": 1,
+   "share": 0.049342105263157895,
+   "lastDate": "2026-10-31",
+   "agents": [
+    "agent-1-competitor-watch"
+   ],
+   "agentsTokens": 476470602,
+   "agentsRub": 1284.94,
+   "agentsRubComplete": true,
+   "costPerLot": 85.66266666666667
+  },
+  {
+   "id": "partner-feeds",
+   "name": "Партнёрские прайсы застройщиков",
+   "enabled": false,
+   "kind": "feed",
+   "status": "not-tested",
+   "lots": 0,
+   "snapshots": 0,
+   "share": 0,
+   "lastDate": null,
+   "agents": [],
+   "agentsTokens": 0,
+   "agentsRub": null,
+   "agentsRubComplete": true,
+   "costPerLot": null
+  },
+  {
+   "id": "manual-inbox",
+   "name": "Ручные материалы (скриншоты, выгрузки)",
+   "enabled": true,
+   "kind": "manual",
+   "status": "working",
+   "lots": 0,
+   "snapshots": 0,
+   "share": 0,
+   "lastDate": null,
+   "agents": [],
+   "agentsTokens": 0,
+   "agentsRub": null,
+   "agentsRubComplete": true,
+   "costPerLot": null
+  },
+  {
+   "id": "cian",
+   "name": "Циан",
+   "enabled": true,
+   "kind": "http",
+   "status": "working",
+   "lots": 289,
+   "snapshots": 3,
+   "share": 0.9506578947368421,
+   "lastDate": "2026-10-31",
+   "agents": [
+    "agent-1-competitor-watch"
+   ],
+   "agentsTokens": 476470602,
+   "agentsRub": 1284.94,
+   "agentsRubComplete": true,
+   "costPerLot": 4.446159169550173
+  },
+  {
+   "id": "avito",
+   "name": "Авито Недвижимость",
+   "enabled": true,
+   "kind": "http",
+   "status": "blocked",
+   "lots": 0,
+   "snapshots": 0,
+   "share": 0,
+   "lastDate": null,
+   "agents": [
+    "agent-1-competitor-watch"
+   ],
+   "agentsTokens": 476470602,
+   "agentsRub": 1284.94,
+   "agentsRubComplete": true,
+   "costPerLot": null
+  },
+  {
+   "id": "yandex-realty",
+   "name": "Яндекс Недвижимость",
+   "enabled": true,
+   "kind": "http",
+   "status": "working",
+   "lots": 0,
+   "snapshots": 0,
+   "share": 0,
+   "lastDate": null,
+   "agents": [],
+   "agentsTokens": 0,
+   "agentsRub": null,
+   "agentsRubComplete": true,
+   "costPerLot": null
+  },
+  {
+   "id": "domclick",
+   "name": "Домклик",
+   "enabled": true,
+   "kind": "http",
+   "status": "blocked",
+   "lots": 0,
+   "snapshots": 0,
+   "share": 0,
+   "lastDate": null,
+   "agents": [],
+   "agentsTokens": 0,
+   "agentsRub": null,
+   "agentsRubComplete": true,
+   "costPerLot": null
+  }
+ ],
+ "weeks": [
+  {
+   "week": "2026-W43",
+   "lots": 9,
+   "tokens": 0,
+   "rub": 0,
+   "rubComplete": true,
+   "tasksCreated": 0,
+   "tasksDone": 0
+  },
+  {
+   "week": "2026-W44",
+   "lots": 295,
+   "tokens": 1226948917,
+   "rub": 3333.38,
+   "rubComplete": true,
+   "tasksCreated": 83,
+   "tasksDone": 65
+  }
+ ],
+ "days": [
+  {
+   "d": "2026-10-28",
+   "tokens": 24757992,
+   "rub": 64.75
+  },
+  {
+   "d": "2026-10-29",
+   "tokens": 2811319,
+   "rub": 18.47
+  },
+  {
+   "d": "2026-10-30",
+   "tokens": 77907619,
+   "rub": 229.13
+  },
+  {
+   "d": "2026-10-31",
+   "tokens": 562739058,
+   "rub": 1523.43
+  },
+  {
+   "d": "2026-11-01",
+   "tokens": 558732929,
+   "rub": 1497.6
+  }
+ ],
+ "projects": [
+  {
+   "id": "my-zhk-svet",
+   "name": "Свет",
+   "agents": [
+    "agent-1-competitor-watch"
+   ],
+   "tasks": {
+    "total": 1,
+    "done": 0,
+    "inProgress": 0
+   },
+   "tokens": {
+    "inputTokens": 8445841,
+    "outputTokens": 1426117,
+    "cacheReadTokens": 314509376,
+    "cacheWriteTokens": 0,
+    "totalTokens": 324381334
+   },
+   "rub": 876.16,
+   "rubComplete": true
+  }
+ ],
+ "notes": [
+  "Расход считается по событиям assistant/message в логах сессий и привязывается к исполнителю DSH, а затем к агенту реестра через dashboard/config/links.yaml.",
+  "Расход по источнику — это сумма расхода агентов, которые его используют. Это не «цена за лот»: лоты и токены считаются разными механизмами.",
+  "Задачи из логов DSH не имеют даты создания — для недельной динамики берётся время первого появления задачи в логе.",
+  "Модель без цены в прайсе помечается «цена неизвестна», её токены считаются, а рубли — нет."
+ ],
+ "warnings": []
+}

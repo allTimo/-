@@ -1,0 +1,1305 @@
+"""Offline tests for cross-marketplace comparison.
+
+Each marketplace's search is stubbed, so these tests exercise the part that only
+this connector owns: merging, ranking, and reporting partial failures honestly.
+"""
+
+from __future__ import annotations
+
+import asyncio
+import json
+import tomllib
+from pathlib import Path
+from types import SimpleNamespace
+
+import pytest
+from compare_connector import server
+from compare_connector.models_output import MarketOffer
+from fastmcp.exceptions import ToolError
+from mcp_core import resilience as R
+from mcp_core.errors import ChallengeRequiredError, ParserDriftError, RateLimitedError, raise_tool_error
+from pydantic import ValidationError
+
+
+def offer(source: str, price: float | None, title: str = "товар", **kwargs) -> MarketOffer:
+    return MarketOffer(source=source, title=title, price_rub=price, **kwargs)
+
+
+def stub_sources(monkeypatch, impls: dict[str, object]):
+    """Replace the per-marketplace search implementations.
+
+    ``SOURCES`` is patched alongside so availability checks agree with the stubs.
+    """
+    monkeypatch.setattr(server, "_SEARCH_IMPLS", impls)
+    monkeypatch.setattr(server, "SOURCES", dict.fromkeys(impls, object()))
+
+
+def error_payload(err: ToolError) -> dict:
+    return json.loads(str(err))
+
+
+# ------------------------------------------------------------------ basics ----
+
+
+def test_server_version_matches_pyproject():
+    pyproject = tomllib.loads((Path(__file__).resolve().parents[1] / "pyproject.toml").read_text())
+    assert pyproject["project"]["version"] == server.SERVER_VERSION
+
+
+async def test_registered_tools_are_stable():
+    names = {tool.name for tool in await server.mcp.list_tools()}
+    assert names == {"compare_prices", "compare_sources", "compare_verify_offer", "compare_browser_snapshot"}
+
+
+async def test_compare_verify_offer_dispatches_to_source_card(monkeypatch):
+    class FakeCard:
+        async def __call__(self, *, nm_ids):
+            return {"items": [{"nm_id": nm_ids[0], "price_rub": 1234}]}
+
+    class FakeSource:
+        wb_card = FakeCard()
+
+    monkeypatch.setattr(server, "SOURCES", {"wildberries": FakeSource()})
+
+    result = await server.compare_verify_offer(
+        "wildberries", "https://www.wildberries.ru/catalog/123/detail.aspx", expected_price_rub=1234
+    )
+
+    assert result["source"] == "wildberries"
+    assert result["card"]["items"][0]["nm_id"] == 123
+    assert result["price_verification"]["matches"] is True
+
+
+async def test_megamarket_card_dispatch_uses_native_argument_in_both_profiles(monkeypatch):
+    from compare_connector import decision_server
+
+    calls: list[str] = []
+
+    async def card(*, item_id_or_url):
+        calls.append(item_id_or_url)
+        return {"item_id": item_id_or_url, "price_rub": 1234}
+
+    monkeypatch.setattr(server, "SOURCES", {"megamarket": SimpleNamespace(megamarket_card=card)})
+    assert (await server.compare_verify_offer("megamarket", "100023282378"))["card"]["item_id"] == "100023282378"
+    assert (await decision_server.decision_inspect("megamarket", "100023282378"))["card"]["item_id"] == "100023282378"
+    assert calls == ["100023282378", "100023282378"]
+
+
+async def test_default_comparison_omits_deselected_sources_but_explicit_request_is_rejected(monkeypatch):
+    async def search(query, limit):
+        return [offer("wildberries", 100)]
+
+    monkeypatch.setenv("MARKETPLACE_SOURCES", "wildberries,compare")
+    monkeypatch.setattr(server, "_SEARCH_IMPLS", {"wildberries": search, "ozon": search})
+    monkeypatch.setattr(server, "SOURCES", {"wildberries": object(), "ozon": object()})
+
+    result = await server.compare_prices("тест")
+    assert result.sources_queried == ["wildberries"]
+    assert result.complete is True
+    with pytest.raises(ToolError, match="deselected"):
+        await server.compare_prices("тест", sources=["ozon"])
+
+
+async def test_selected_missing_connector_still_makes_default_comparison_partial(monkeypatch):
+    async def search(query, limit):
+        return [offer("wildberries", 100)]
+
+    monkeypatch.setenv("MARKETPLACE_SOURCES", "wildberries,ozon,compare")
+    monkeypatch.setattr(server, "_SEARCH_IMPLS", {"wildberries": search, "ozon": search, "dns": search})
+    monkeypatch.setattr(server, "SOURCES", {"wildberries": object()})
+
+    result = await server.compare_prices("тест")
+    assert result.complete is False
+    assert {outcome.source: outcome.status for outcome in result.source_outcomes} == {
+        "wildberries": "ok",
+        "ozon": "not_installed",
+    }
+    report = await server.compare_sources()
+    assert report["not_installed"] == ["ozon"]
+    assert "dns" in report["deselected"]
+    assert "ozon" not in report["deselected"]
+
+
+async def test_detsky_mir_is_not_a_comparison_source():
+    """Detsky Mir has no working text search, so it must not join a text comparison.
+
+    Including it would return products unrelated to the query — confidently wrong
+    is worse than absent.
+    """
+    assert "detsky_mir" not in server.SEARCHABLE
+
+
+# ----------------------------------------------------------------- ranking ----
+
+
+async def test_offers_are_ranked_cheapest_first(monkeypatch):
+    async def wb(query, limit):
+        return [offer("wildberries", 1500.0), offer("wildberries", 700.0)]
+
+    async def ya(query, limit):
+        return [offer("yandex_market", 1000.0)]
+
+    stub_sources(monkeypatch, {"wildberries": wb, "yandex_market": ya})
+
+    result = await server.compare_prices(query="тест")
+
+    assert [o.price_rub for o in result.offers] == [700.0, 1000.0, 1500.0]
+    assert result.cheapest.price_rub == 700.0
+    assert result.cheapest.source == "wildberries"
+    assert result.price_spread_rub == 800.0
+    assert result.complete is True
+
+
+async def test_subscription_prices_never_win_the_ranking(monkeypatch):
+    """A Plus-only price must not be presented as the cheapest available.
+
+    Yandex's subscriber price runs 25-30% below its everyday price; ranking on it
+    would fabricate a bargain that non-subscribers cannot buy.
+    """
+
+    async def wb(query, limit):
+        return [offer("wildberries", 1000.0)]
+
+    async def ya(query, limit):
+        return [offer("yandex_market", 1200.0, price_with_subscription_rub=800.0)]
+
+    stub_sources(monkeypatch, {"wildberries": wb, "yandex_market": ya})
+
+    result = await server.compare_prices(query="тест")
+
+    assert result.cheapest.source == "wildberries"
+    assert result.cheapest.price_rub == 1000.0
+    # The subscriber price is still reported, just not ranked on.
+    yandex_offer = next(o for o in result.offers if o.source == "yandex_market")
+    assert yandex_offer.price_with_subscription_rub == 800.0
+
+
+async def test_unpriced_offers_are_kept_at_the_end(monkeypatch):
+    """'Found but no price' is information; dropping it would hide stock reality."""
+
+    async def wb(query, limit):
+        return [offer("wildberries", None, title="без цены"), offer("wildberries", 500.0)]
+
+    stub_sources(monkeypatch, {"wildberries": wb})
+
+    result = await server.compare_prices(query="тест", sources=["wildberries"])
+
+    assert result.total_offers == 2
+    assert result.offers[0].price_rub == 500.0
+    assert result.offers[-1].price_rub is None
+    assert result.cheapest.price_rub == 500.0
+
+
+async def test_spread_is_none_with_a_single_priced_offer(monkeypatch):
+    async def wb(query, limit):
+        return [offer("wildberries", 500.0)]
+
+    stub_sources(monkeypatch, {"wildberries": wb})
+
+    result = await server.compare_prices(query="тест", sources=["wildberries"])
+
+    assert result.price_spread_rub is None
+
+
+# ------------------------------------------------------- partial failures ----
+
+
+async def test_one_source_failing_does_not_sink_the_comparison(monkeypatch):
+    """The core resilience promise: three sources answering still beats nothing."""
+
+    async def wb(query, limit):
+        return [offer("wildberries", 500.0)]
+
+    async def ozon(query, limit):
+        raise RuntimeError('{"error": "transport_down", "message": "Cloudflare"}')
+
+    stub_sources(monkeypatch, {"wildberries": wb, "ozon": ozon})
+
+    result = await server.compare_prices(query="тест")
+
+    assert result.total_offers == 1
+    assert result.complete is False
+    assert result.sources_ok == ["wildberries"]
+    outcomes = {o.source: o for o in result.source_outcomes}
+    assert outcomes["ozon"].status == "blocked"
+    assert any("partial" in w for w in result.warnings)
+
+
+async def test_a_timeout_is_reported_as_a_timeout(monkeypatch):
+    async def wb(query, limit):
+        return [offer("wildberries", 500.0)]
+
+    async def slow(query, limit):
+        await asyncio.sleep(5)
+        return []
+
+    stub_sources(monkeypatch, {"wildberries": wb, "yandex_market": slow})
+    monkeypatch.setattr(server, "SOURCE_TIMEOUT_S", 0.05)
+
+    result = await server.compare_prices(query="тест")
+
+    outcomes = {o.source: o for o in result.source_outcomes}
+    assert outcomes["yandex_market"].status == "timeout"
+    assert result.complete is False
+    assert result.total_offers == 1
+    assert outcomes["yandex_market"].retryable is True
+    assert outcomes["yandex_market"].requires_user_action is False
+
+
+# START_BLOCK_TAOBAO_LOADING_TIMEOUT
+async def test_taobao_loading_timeout_keeps_citilink_results(monkeypatch):
+    """R-TAOBAO-GRID-LOADING, R-ERRORS: the real Taobao tool's loading error maps to retryable timeout."""
+    from mcp_core.cache import TTLCache
+    from taobao_connector import server as taobao_server
+
+    calls = []
+    monkeypatch.setattr(taobao_server, "_cache", TTLCache(ttl_s=300))
+    monkeypatch.setenv("MARKETPLACE_SOURCES", "taobao,citilink,compare")
+
+    async def render(url, extract_js, wait_ms, ctx):
+        calls.append("taobao")
+        return {
+            "title": "iphone 15_淘宝搜索",
+            "items": [],
+            "anchors_total": 0,
+            "login_anchors": 0,
+            "body_snippet": "加载中...",
+            "grid_loading": True,
+        }
+
+    async def taobao(query, limit):
+        await taobao_server.taobao_search(query)
+        return []
+
+    async def citilink(query, limit):
+        calls.append("citilink")
+        return [offer("citilink", 500.0)]
+
+    monkeypatch.setattr(taobao_server, "_cdp_render", render)
+    stub_sources(monkeypatch, {"taobao": taobao, "citilink": citilink})
+    result = await server.compare_prices("iphone 15", sources=["taobao", "citilink"])
+    outcome = next(it for it in result.source_outcomes if it.source == "taobao")
+    assert outcome.status == "timeout"
+    assert outcome.error_code == "timeout"
+    assert outcome.retryable is True
+    assert outcome.requires_user_action is False
+    assert result.complete is False
+    assert result.sources_ok == ["citilink"]
+    assert result.total_offers == 1
+    assert result.cheapest.source == "citilink"
+    assert calls.count("taobao") == calls.count("citilink") == 1
+
+
+# END_BLOCK_TAOBAO_LOADING_TIMEOUT
+
+
+@pytest.mark.parametrize("wire_error", [False, True])
+async def test_challenge_keeps_partial_results_and_recovers_only_failed_source(monkeypatch, wire_error):
+    calls = []
+    blocked = True
+
+    async def wb(query, limit):
+        calls.append("wildberries")
+        return [offer("wildberries", 500.0)]
+
+    async def taobao(query, limit):
+        calls.append("taobao")
+        if blocked:
+            error = ChallengeRequiredError("visible challenge " * 40, challenge_type="login_or_captcha")
+            if wire_error:
+                raise_tool_error(error)
+            raise error
+        return [offer("taobao", None, currency="cny", price_native=35)]
+
+    stub_sources(monkeypatch, {"wildberries": wb, "taobao": taobao})
+    result = await server.compare_prices(query="тест")
+    outcome = next(o for o in result.source_outcomes if o.source == "taobao")
+    assert result.complete is False
+    assert result.cheapest.source == "wildberries"
+    assert outcome.status == "blocked"
+    assert outcome.error_code == "challenge_required"
+    assert outcome.retryable is True
+    assert outcome.requires_user_action is True
+    assert outcome.challenge_type == "login_or_captcha"
+    assert len(outcome.detail) <= 200
+    assert calls.count("taobao") == 1  # no blind challenge retry loop
+
+    blocked = False  # a later call after browser action completed
+    resumed = await server.compare_prices(query="тест", sources=["taobao"])
+    assert resumed.complete is True  # only for this retry's requested sources
+    assert resumed.sources_ok == ["taobao"]
+    assert resumed.source_outcomes[0].requires_user_action is False
+    assert calls.count("wildberries") == 1
+
+
+@pytest.mark.parametrize(
+    ("error", "status", "code", "retryable"),
+    [
+        (RateLimitedError("ozon"), "blocked", "rate_limited", True),
+        (ParserDriftError("field 403 missing"), "error", "parser_drift", False),
+    ],
+)
+def test_structured_error_code_takes_precedence_over_message(error, status, code, retryable):
+    result = server._source_error(ToolError(json.dumps(error.to_dict())))
+    assert result["status"] == status
+    assert result["error_code"] == code
+    assert result["retryable"] is retryable
+    assert result["requires_user_action"] is False
+
+
+@pytest.mark.parametrize("message", ["broken", "[]", "null", '{"error": []}', '{"error": "new_code"}'])
+def test_malformed_error_envelope_does_not_break_comparison(message):
+    result = server._source_error(ToolError(message))
+    assert result["status"] == "error"
+    assert not result.get("requires_user_action", False)
+
+
+def test_challenge_metadata_does_not_leak_credentials_or_upstream_instructions():
+    payload = {
+        "error": "challenge_required",
+        "message": "failed at https://user:secret@example.com/?token=private",
+        "challenge_type": "visit https://untrusted.invalid/?token=private",
+    }
+    result = server._source_error(ToolError(json.dumps(payload)))
+    assert "secret" not in result["detail"]
+    assert "private" not in result["detail"]
+    assert result["challenge_type"] is None
+    assert result["requires_user_action"] is True
+
+
+@pytest.mark.parametrize("expiry", [None, [], "https://example.invalid/?token=secret", "2026-09-12T00:00:00"])
+def test_invalid_handoff_expiry_does_not_become_recovery_instructions(expiry):
+    result = server._source_error(ToolError(json.dumps({"error": "challenge_required", "handoff_expires_at": expiry})))
+    assert result["handoff_expires_at"] is None
+
+
+@pytest.mark.parametrize("handle", [None, 12345678901234567, [], "https://example.invalid/token", "short"])
+def test_invalid_handoff_id_does_not_become_a_snapshot_target(handle):
+    payload = {"error": "challenge_required", "handoff_expires_at": "2026-09-12T15:00:00Z", "handoff_id": handle}
+    assert server._source_error(ToolError(json.dumps(payload)))["handoff_id"] is None
+
+
+async def test_a_generic_failure_is_reported_as_error_not_blocked(monkeypatch):
+    """Anti-bot blocks and ordinary bugs need different responses, so they differ."""
+
+    async def wb(query, limit):
+        raise ValueError("unexpected shape in response")
+
+    stub_sources(monkeypatch, {"wildberries": wb})
+
+    result = await server.compare_prices(query="тест", sources=["wildberries"])
+
+    assert result.source_outcomes[0].status == "error"
+    assert result.total_offers == 0
+    assert any("no_prices" in w for w in result.warnings)
+
+
+async def test_sources_report_their_elapsed_time(monkeypatch):
+    async def wb(query, limit):
+        return [offer("wildberries", 100.0)]
+
+    stub_sources(monkeypatch, {"wildberries": wb})
+
+    result = await server.compare_prices(query="тест", sources=["wildberries"])
+
+    assert result.source_outcomes[0].elapsed_ms >= 0
+    assert result.source_outcomes[0].offers_returned == 1
+
+
+async def test_a_missing_connector_is_distinguished_from_a_block(monkeypatch):
+    """'Not installed' needs a different fix than 'refused us', so they differ."""
+
+    async def wb(query, limit):
+        return [offer("wildberries", 100.0)]
+
+    monkeypatch.setattr(server, "_SEARCH_IMPLS", {"wildberries": wb, "ozon": wb})
+    monkeypatch.setattr(server, "SOURCES", {"wildberries": object()})  # Ozon absent
+
+    result = await server.compare_prices(query="тест", sources=["wildberries", "ozon"])
+
+    outcomes = {o.source: o for o in result.source_outcomes}
+    assert outcomes["ozon"].status == "not_installed"
+    assert result.complete is False
+
+
+async def test_degraded_yandex_rows_never_rank_with_a_subscription_price(monkeypatch):
+    """A Plus price must not masquerade as the everyday price in the ranking.
+
+    Live fact 2026-09-13: with the SSR widget state gone, yandex_search answers
+    through its schema.org fallback, whose offers.price is the Plus subscriber
+    price (Realme Note 60x: ld+json 11102 == the yaBank additional price, while
+    the everyday price was 11329 and the base 12450). Such rows carry
+    price_rub=None and may only ride in price_with_subscription_rub, keeping
+    the offer unranked instead of letting a subscription price win.
+    """
+
+    async def degraded_yandex(query, limit):
+        return [
+            offer(
+                "yandex_market",
+                None,
+                title="Смартфон Realme Note 60х 4/128GB Зеленый",
+                product_id="4315891968",
+                variant_id="103796664836",
+                price_with_subscription_rub=11102.0,
+            )
+        ]
+
+    stub_sources(monkeypatch, {"yandex_market": degraded_yandex})
+
+    result = await server.compare_prices(query="телефон", sources=["yandex_market"])
+
+    assert result.cheapest is None
+    assert result.total_offers == 1
+    row = result.offers[0]
+    assert row.price_rub is None
+    assert row.price_with_subscription_rub == 11102.0
+    assert any("no_prices" in warning for warning in result.warnings)
+
+
+async def test_sources_run_concurrently(monkeypatch):
+    """Serial queries would make a four-source comparison unusably slow."""
+    started: list[float] = []
+
+    async def make(delay: float):
+        async def impl(query, limit):
+            started.append(asyncio.get_running_loop().time())
+            await asyncio.sleep(delay)
+            return [offer("x", 100.0)]
+
+        return impl
+
+    impls = {
+        "wildberries": await make(0.1),
+        "yandex_market": await make(0.1),
+        "ozon": await make(0.1),
+    }
+    stub_sources(monkeypatch, impls)
+
+    loop_start = asyncio.get_running_loop().time()
+    await server.compare_prices(query="тест")
+    elapsed = asyncio.get_running_loop().time() - loop_start
+
+    assert len(started) == 3
+    # Concurrent: ~0.1s total rather than ~0.3s serial.
+    assert elapsed < 0.25
+
+
+# -------------------------------------------------------------- validation ----
+
+
+@pytest.mark.parametrize("bad_query", ["", " ", "x"])
+async def test_short_queries_are_rejected(monkeypatch, bad_query):
+    """Rejected either by the tool's own check or by pydantic's min_length.
+
+    Both are correct outcomes; what matters is that no marketplace is queried.
+    """
+
+    async def fail(query, limit):
+        raise AssertionError("a rejected query must never reach a marketplace")
+
+    stub_sources(monkeypatch, {"wildberries": fail})
+
+    with pytest.raises((ToolError, ValidationError)):
+        await server.compare_prices(query=bad_query, sources=["wildberries"])
+
+
+async def test_unknown_source_names_are_rejected(monkeypatch):
+    async def wb(query, limit):
+        return []
+
+    stub_sources(monkeypatch, {"wildberries": wb})
+
+    with pytest.raises(ToolError) as excinfo:
+        await server.compare_prices(query="тест", sources=["aliexpress"])
+
+    payload = error_payload(excinfo.value)
+    assert payload["error"] == "bad_request"
+    assert "aliexpress" in payload["message"]
+
+
+async def test_all_requested_sources_missing_is_an_error(monkeypatch):
+    """No installed source means the answer would be empty and misleading."""
+
+    async def wb(query, limit):
+        return []
+
+    monkeypatch.setattr(server, "_SEARCH_IMPLS", {"wildberries": wb})
+    monkeypatch.setattr(server, "SOURCES", {})
+
+    with pytest.raises(ToolError) as excinfo:
+        await server.compare_prices(query="тест", sources=["wildberries"])
+
+    assert error_payload(excinfo.value)["error"] == "bad_request"
+
+
+async def test_per_source_limit_is_passed_through(monkeypatch):
+    seen: dict[str, int] = {}
+
+    async def wb(query, limit):
+        seen["limit"] = limit
+        return []
+
+    stub_sources(monkeypatch, {"wildberries": wb})
+
+    await server.compare_prices(query="тест", per_source_limit=7, sources=["wildberries"])
+
+    assert seen["limit"] == 7
+
+
+# ----------------------------------------------------------- source report ----
+
+
+async def test_compare_sources_reports_installed_and_missing(monkeypatch):
+    monkeypatch.setattr(server, "SOURCES", {"wildberries": object(), "yandex_market": object()})
+
+    report = await server.compare_sources()
+
+    assert "wildberries" in report["installed"]
+    assert "ozon" in report["not_installed"]
+    assert report["server_version"] == server.SERVER_VERSION
+    assert "source_timeout_s" in report
+
+
+# --------------------------------------------------------- typed adapters ----
+
+
+class _FakeOzonItem:
+    """Mirrors OzonSearchItemOut: every value arrives as display text."""
+
+    def __init__(self, **kw):
+        self.sku = kw.get("sku")
+        self.url = kw.get("url")
+        self.canonical_path = kw.get("canonical_path")
+        self.card_input = kw.get("card_input")
+        self.title = kw.get("title")
+        self.price = kw.get("price")
+        self.price_original = kw.get("price_original")
+        self.rating = kw.get("rating")
+        self.rating_count = kw.get("rating_count")
+        self.stock = kw.get("stock")
+
+
+class _FakeResponse:
+    def __init__(self, items):
+        self.items = items
+
+
+@pytest.mark.parametrize(
+    ("raw", "expected"),
+    [
+        ("1 234 ₽", 1234.0),
+        ("1 234 ₽", 1234.0),  # non-breaking space
+        ("1 234,50 ₽", 1234.5),  # narrow no-break space, comma decimal
+        ("999 ₽", 999.0),
+        (1500, 1500.0),
+        (1500.5, 1500.5),
+        ("0 ₽", None),  # a zero price is not a bargain, it is no offer
+        (0, None),
+        ("", None),
+        (None, None),
+        ("нет цены", None),
+        (True, None),  # a bool is not a price
+    ],
+)
+def test_price_coercion_handles_ozon_display_strings(raw, expected):
+    """Ozon reports prices as text; MarketOffer.price_rub is a float.
+
+    Passing the raw string through raised a pydantic ValidationError, which would
+    have taken down the entire Ozon source rather than one offer.
+    """
+    assert server._as_price(raw) == expected
+
+
+def test_price_coercion_never_substitutes_zero():
+    """A 0.0 would rank a dead listing as the cheapest option."""
+    assert server._as_price("0 ₽") is None
+    assert server._as_price(0) is None
+    assert server._as_price(0.0) is None
+
+
+def test_price_coercion_never_returns_a_negative():
+    """A negative is not a price. Ranking one would crown it the cheapest
+    offer, so it must degrade to no-offer exactly like a zero does."""
+    assert server._as_price(-500) is None
+    assert server._as_price(-500.0) is None
+    assert server._as_price("-500 ₽") is None
+    assert server._as_price("-1 234") is None
+
+
+def test_price_coercion_never_returns_a_non_finite_value():
+    """inf is not a price either: ``10**400`` blows up ``float()`` with
+    OverflowError, a float inf compares as greater than every real price
+    (so it would never win the ranking, but it also never belongs in an
+    offer), and mcp_core.coerce_price already guarantees finiteness —
+    the compare connector must not diverge from that doctrine."""
+    assert server._as_price(float("inf")) is None
+    assert server._as_price(float("-inf")) is None
+    assert server._as_price(float("nan")) is None
+    assert server._as_price(10**400) is None
+    assert server._as_price("9" * 400) is None
+
+
+def test_price_coercion_never_concatenates_a_price_range():
+    """Live-captured Ozon filter strings (rendered search page, 2026-08-07,
+    the captured pages kept outside the repository, ozon_search_page_raw.html) carry TWO numbers:
+    '1 000–2 000 ₽'. The old tolerant parser concatenated them into
+    10002000.0 — a plausible-looking fabricated price. The shared doctrine
+    is: more than one number means ambiguous, which means None."""
+    assert server._as_price("1\u2009000–2\u2009000\u2009₽") is None
+    assert server._as_price("2\u2009000–30\u2009000\u2009₽") is None
+
+
+@pytest.mark.parametrize(
+    "raw",
+    [
+        # Thin-space grouped integers exactly as captured from Ozon's rendered
+        # pages on 2026-08-07 (the captured pages kept outside the repository, ozon_*_page_raw.html); the two
+        # comma-decimal forms were not on those pages but are the kopeck
+        # display shape coerce_price is documented to handle — pinned here so
+        # the delegation's decimal parity is explicit, not implied.
+        "158\u2009370\u2009₽",
+        "84\u2009817\u2009₽",
+        "3\u2009266\u2009₽",
+        "1\u2009000\u2009₽",
+        "79\u2009990\u2009₽",
+        "99,50\u2009₽",
+        "1\u2009234,50\u2009₽",
+    ],
+)
+def test_price_coercion_keeps_coerce_price_parity_on_live_ozon_formats(raw):
+    assert server._as_price(raw) == R.coerce_price(raw)
+    assert server._as_price(raw) is not None
+
+
+@pytest.mark.parametrize(
+    ("raw", "expected"),
+    [
+        ("24 086 отзывов", 24086),
+        ("(15 374)", 15374),
+        ("5", 5),
+        (42, 42),
+        (None, None),
+        ("нет", None),
+    ],
+)
+def test_count_coercion_handles_russian_review_labels(raw, expected):
+    assert server._as_count(raw) == expected
+
+
+def test_count_coercion_never_raises_on_non_finite_floats():
+    """json.loads admits NaN/Infinity by default, and int() raises on both.
+    coerce_int guards them with isfinite, and the compare duplicate must keep
+    parity — otherwise one poisoned cell aborts the whole compare_prices tool
+    instead of degrading that field to no-data."""
+    assert server._as_count(float("nan")) is None
+    assert server._as_count(float("inf")) is None
+    assert server._as_count(float("-inf")) is None
+
+
+def test_count_coercion_never_drops_a_sign():
+    """A signed count is ambiguous: dropping the sign and concatenating digits
+    fabricates a plausible-but-wrong number ('-3' -> 3). That is the doctrine
+    coerce_int established — signed means None, not a manufactured count."""
+    assert server._as_count("-3") is None
+    assert server._as_count("+5") is None
+
+
+def test_count_coercion_rejects_unicode_signs_and_ranges():
+    """The sign guard must cover the unicode minus/en-dash/em-dash, not only
+    ASCII -/+: a marketplace renders a range as '1 000–2 000', and concatenating
+    those digits fabricates 10002000 — the same hole coerce_int had and the
+    compare duplicate inherits. '−5' must not read as 5 either."""
+    assert server._as_count("1 000–2 000") is None
+    assert server._as_count("5–10") is None
+    assert server._as_count("−5") is None
+    # the tolerant review-label form must still parse — letters are not the hole
+    assert server._as_count("24 086 отзывов") == 24086
+
+
+@pytest.mark.parametrize(
+    ("raw", "expected"),
+    [
+        ("осталось 3 шт", True),
+        ("осталось 0 шт", False),
+        ("много шт", True),
+        ("477\u2009шт осталось", True),
+        ("осталось 1\u202f000 шт.", True),
+        ("В наличии", True),
+        ("есть в наличии", True),
+        ("Не осталось", False),
+        ("нет в наличии", False),
+        ("нет на складе", False),
+        ("товар закончился", False),
+        ("распродано", False),
+        ("0 шт осталось", False),
+        ("2 шт", None),  # pack size is not a stock statement
+        ("купили 3 шт", None),
+        ("в упаковке 5 шт", None),
+        ("скидка 30%", None),
+        ("осталось -3 шт", None),
+        ("осталось +3 шт", None),
+        ("осталось −3 шт", None),
+        ("осталось 3–5 шт", None),
+        ("осталось 3-5 шт", None),
+        ("осталось 3.5 шт", None),
+        ("осталось 1234 567 шт", None),
+        ("осталось 3 шт, купили 20", None),
+        ("осталось", None),
+        (5, True),
+        (0, False),
+        (None, None),  # unknown is not the same as out of stock
+        ("", None),
+    ],
+)
+def test_stock_label_coercion(raw, expected):
+    assert server._stock_from_label(raw) is expected
+
+
+def test_stock_label_never_claims_stock_from_a_non_finite_value():
+    """Only a positive statement counts as in stock. NaN compared > 0 is
+    False and inf compared > 0 is True, so without a finiteness guard a
+    poisoned cell asserts OUT OF STOCK (NaN) or IN STOCK (inf) — two lies
+    where the docstring promises "unknown", because json.loads admits
+    NaN/Infinity by default."""
+    assert server._stock_from_label(float("nan")) is None
+    assert server._stock_from_label(float("inf")) is None
+    assert server._stock_from_label(float("-inf")) is None
+
+
+async def test_ozon_adapter_reads_the_real_model_fields(monkeypatch):
+    """The old adapter guessed keys OzonSearchItemOut does not declare.
+
+    It read price_rub, reviews_count, feedbacks, name, id and brand — none exist,
+    so each silently became None. This pins the real field names.
+    """
+    item = _FakeOzonItem(
+        sku=123456,
+        title="товар",
+        price="1 999 ₽",
+        rating="4,8",
+        rating_count="24 086 отзывов",
+        stock="осталось 3 шт",
+        url="https://www.ozon.ru/product/123456/",
+    )
+
+    class FakeOzonServer:
+        async def ozon_search(self, query):
+            return _FakeResponse([item])
+
+    monkeypatch.setitem(server.SOURCES, "ozon", FakeOzonServer())
+
+    offers = await server._search_ozon("товар", 10)
+
+    assert len(offers) == 1
+    got = offers[0]
+    assert got.product_id == "123456"
+    assert got.price_rub == 1999.0
+    assert got.rating == 4.8
+    assert got.rating_count == 24086, "review count was always None before"
+    assert got.in_stock is True, "stock was ignored entirely before"
+    assert got.url == "https://www.ozon.ru/product/123456/"
+    # Ozon search rows genuinely carry neither, so they are empty by definition.
+    assert got.brand == ""
+    assert got.seller == ""
+
+
+async def test_ozon_adapter_survives_a_priceless_row(monkeypatch):
+    class FakeOzonServer:
+        async def ozon_search(self, query):
+            return _FakeResponse([_FakeOzonItem(sku=1, title="без цены")])
+
+    monkeypatch.setitem(server.SOURCES, "ozon", FakeOzonServer())
+
+    offers = await server._search_ozon("тест", 10)
+
+    assert offers[0].price_rub is None
+    assert offers[0].in_stock is None
+
+
+async def test_wildberries_adapter_reads_typed_attributes(monkeypatch):
+    from wb_connector.models_output import WbCardItem
+
+    class FakeWbServer:
+        async def wb_search(self, query, page):
+            return _FakeResponse(
+                [
+                    WbCardItem(
+                        nm_id=5535522,
+                        name="фильтр",
+                        brand="DEFENDER",
+                        supplier="Продавец",
+                        review_rating=4.7,
+                        feedbacks=120,
+                        # Native WB requires a reported quantity for known stock.
+                        total_quantity=3,
+                        in_stock=True,
+                        price_rub=1500.0,
+                    )
+                ]
+            )
+
+    monkeypatch.setitem(server.SOURCES, "wildberries", FakeWbServer())
+
+    offers = await server._search_wildberries("фильтр", 10)
+
+    got = offers[0]
+    assert got.product_id == "5535522"
+    assert got.price_rub == 1500.0
+    assert got.rating == 4.7
+    assert got.rating_count == 120
+    assert got.in_stock is True
+    assert got.url == "https://www.wildberries.ru/catalog/5535522/detail.aspx"
+
+
+async def test_wildberries_adapter_tolerates_a_no_results_response(monkeypatch):
+    """wb_search can return a distinct no-results model with no items at all."""
+    from wb_connector.models_output import WbNoResultsResponse
+
+    class FakeWbServer:
+        async def wb_search(self, query, page):
+            return WbNoResultsResponse(query="ничего")
+
+    monkeypatch.setitem(server.SOURCES, "wildberries", FakeWbServer())
+
+    assert await server._search_wildberries("ничего", 10) == []
+
+
+async def test_yandex_adapter_keeps_the_subscriber_price_out_of_ranking(monkeypatch):
+    from yandex_connector.models_output import YandexProduct
+
+    class FakeYandexServer:
+        async def yandex_search(self, query, page, limit):
+            return _FakeResponse(
+                [
+                    YandexProduct(
+                        product_id="777",
+                        title="телефон",
+                        brand="Бренд",
+                        seller="Магазин",
+                        price_rub=30000.0,
+                        price_with_plus=21000.0,
+                        rating=4.5,
+                        rating_count=88,
+                        in_stock=True,
+                        url="https://market.yandex.ru/product/777",
+                    )
+                ]
+            )
+
+    monkeypatch.setitem(server.SOURCES, "yandex_market", FakeYandexServer())
+
+    got = (await server._search_yandex("телефон", 10))[0]
+
+    assert got.price_rub == 30000.0, "ranking must use the everyday price"
+    assert got.price_with_subscription_rub == 21000.0
+
+
+async def test_avito_adapter_maps_classified_fields(monkeypatch):
+    from avito_connector.models_output import AvitoSearchItemOut
+
+    class FakeAvitoServer:
+        async def avito_search(self, query, page):
+            return _FakeResponse(
+                [
+                    AvitoSearchItemOut(
+                        item_id=4612345678,
+                        title="Ноутбук ThinkPad",
+                        price_rub=45500.0,
+                        url="https://www.avito.ru/moskva/noutbuki/x_4612345678",
+                        seller_name="ИП Сидоров",
+                    ),
+                    AvitoSearchItemOut(item_id=4612349999, title="Отдам даром", price_rub=None, url=""),
+                ]
+            )
+
+    monkeypatch.setitem(server.SOURCES, "avito", FakeAvitoServer())
+
+    got = await server._search_avito("ноутбук", 10)
+
+    assert got[0].price_rub == 45500.0
+    assert got[0].seller == "ИП Сидоров"
+    assert got[1].price_rub is None, "a priceless ad stays priceless — never 0"
+
+
+async def test_taobao_adapter_never_ranks_yuan_as_rubles(monkeypatch):
+    from taobao_connector.models_output import TaobaoSearchItemOut
+
+    class FakeTaobaoServer:
+        async def taobao_search(self, query, page):
+            return _FakeResponse(
+                [
+                    TaobaoSearchItemOut(
+                        item_id="123456789012",
+                        title="Apple iPhone 16",
+                        price_cny=9999.0,
+                        shop_name="苹果官方旗舰店",
+                        url="https://item.taobao.com/item.htm?id=123456789012",
+                    )
+                ]
+            )
+
+    monkeypatch.setitem(server.SOURCES, "taobao", FakeTaobaoServer())
+
+    got = await server._search_taobao("手机", 10)
+
+    assert got[0].price_rub is None, "yuan must never enter ruble ranking"
+    assert got[0].seller == "苹果官方旗舰店"
+    assert "taobao" in server.FOREIGN_CURRENCY_SOURCES
+    # The yuan figure must survive the adapter. Asserting only price_rub is
+    # None proves nothing — that is hardcoded, so the old test passed while the
+    # connector fetched a real price and threw it away.
+    assert got[0].currency == "cny"
+    assert got[0].price_native == 9999.0
+    assert not server._ranks_in_rubles(got[0])
+
+
+async def test_foreign_source_detail_counts_native_prices_without_changing_ranking(monkeypatch):
+    """R-COMPARE-FOREIGN-DETAIL: 20 CNY prices are visible, never ranked as RUB."""
+
+    async def taobao(query, limit):
+        return [offer("taobao", None, product_id=str(i), currency="cny", price_native=10 + i) for i in range(20)]
+
+    async def wb(query, limit):
+        return [offer("wildberries", 500, product_id="wb1"), offer("wildberries", 300, product_id="wb2")]
+
+    stub_sources(monkeypatch, {"taobao": taobao, "wildberries": wb})
+    result = await server.compare_prices("тест", per_source_limit=20, sources=["taobao", "wildberries"])
+    outcomes = {outcome.source: outcome for outcome in result.source_outcomes}
+    assert outcomes["taobao"].detail == "20 results, 20 priced in CNY (not ranked)"
+    assert outcomes["wildberries"].detail == "2 results, 2 priced"
+    assert result.cheapest.source == "wildberries" and result.cheapest.price_rub == 300
+    assert result.price_spread_rub == 200
+    assert [item.price_rub for item in result.offers[:2]] == [300, 500]
+    assert len(result.offers[2:]) == 20
+    assert all(item.source == "taobao" and item.price_rub is None for item in result.offers[2:])
+    assert [item.price_native for item in result.offers[2:]] == list(range(10, 30))
+
+
+@pytest.mark.parametrize(
+    ("prices", "expected"),
+    [
+        ([], "0 results, 0 priced (not ranked)"),
+        ([("cny", None), ("usd", None)], "2 results, 0 priced (not ranked)"),
+        ([("usd", 10), ("cny", 20), ("cny", 30), ("eur", None)], "4 results, 3 priced in CNY/USD (not ranked)"),
+    ],
+)
+async def test_foreign_source_detail_handles_missing_and_mixed_native_prices(monkeypatch, prices, expected):
+    """R-COMPARE-FOREIGN-DETAIL: count present native prices and sort their codes."""
+
+    async def taobao(query, limit):
+        return [
+            offer("taobao", None, product_id=str(i), currency=currency, price_native=price)
+            for i, (currency, price) in enumerate(prices)
+        ]
+
+    stub_sources(monkeypatch, {"taobao": taobao})
+    result = await server.compare_prices("тест", sources=["taobao"])
+    assert result.source_outcomes[0].detail == expected
+    assert result.cheapest is None and result.price_spread_rub is None
+    assert result.total_offers == len(prices)
+
+
+async def test_rouble_source_detail_still_counts_only_rouble_prices(monkeypatch):
+    """R-COMPARE-FOREIGN-DETAIL: missing RUB prices do not change the old detail."""
+
+    async def wb(query, limit):
+        return [offer("wildberries", 500), offer("wildberries", None, price_native=200, currency="usd")]
+
+    stub_sources(monkeypatch, {"wildberries": wb})
+    result = await server.compare_prices("тест", sources=["wildberries"])
+    assert result.source_outcomes[0].detail == "2 results, 1 priced"
+    assert result.cheapest.price_rub == 500 and result.price_spread_rub is None
+
+
+async def test_a_yuan_offer_never_becomes_cheapest(monkeypatch):
+    """End-to-end: a cheap yuan number must not outrank a dearer rouble one.
+
+    9999 ¥ is worth far more than 45500 ₽, but a naive comparator sees the
+    smaller integer and calls Taobao the bargain. The ranking must exclude it
+    on currency, and the response must still tell the user the yuan price.
+    """
+    offers = [
+        MarketOffer(source="wildberries", product_id="1", title="iPhone", price_rub=45500.0),
+        MarketOffer(
+            source="taobao", product_id="2", title="iPhone", price_rub=None, currency="cny", price_native=9999.0
+        ),
+    ]
+
+    priced = [offer for offer in offers if server._ranks_in_rubles(offer)]
+
+    assert [offer.source for offer in priced] == ["wildberries"]
+    assert offers[1].price_native == 9999.0, "the yuan price is reported, just not ranked"
+    assert offers[0].price_native == 45500.0, "rouble sources mirror price_rub into price_native"
+
+
+async def test_a_foreign_currency_offer_cannot_be_smuggled_into_the_ranking():
+    """currency is checked independently of price_rub, on purpose.
+
+    If an adapter regressed and filled price_rub with a yuan figure, the
+    price_rub-is-not-None test alone would let it win. The currency guard is
+    the backstop.
+    """
+    smuggled = MarketOffer(source="taobao", product_id="9", title="x", price_rub=300.0, currency="cny")
+
+    assert not server._ranks_in_rubles(smuggled)
+
+
+async def test_cdp_source_adapters_map_their_fields(monkeypatch):
+    """Every CDP adapter must map its connector's typed model onto MarketOffer."""
+    from megamarket_connector.models_output import MegamarketSearchItemOut
+
+    class FakeMegamarket:
+        async def megamarket_search(self, query):
+            return _FakeResponse(
+                [
+                    MegamarketSearchItemOut(
+                        item_id="1234567",
+                        title="Стиральная машина",
+                        price_rub=32990.0,
+                        rating=4.7,
+                        rating_count=213,
+                        url="https://megamarket.ru/x",
+                    )
+                ]
+            )
+
+    monkeypatch.setitem(server.SOURCES, "megamarket", FakeMegamarket())
+    got = await server._search_megamarket("стиральная машина", 10)
+    assert got[0].price_rub == 32990.0
+    assert got[0].rating == 4.7
+
+
+async def test_every_searchable_source_has_an_impl_and_a_search_tool():
+    """SEARCHABLE must never name a source that lacks a _SEARCH_IMPLS entry —
+    that is the mismatch this audit caught."""
+    for name in server.SEARCHABLE:
+        assert name in server._SEARCH_IMPLS, f"{name} in SEARCHABLE but not in _SEARCH_IMPLS"
+    for name in server._SEARCH_IMPLS:
+        assert name in server.SEARCHABLE, f"{name} has an impl but is excluded from SEARCHABLE"
+
+
+# ------------------------------------------------------------------ deduplication ----
+
+
+def test_duplicate_listings_are_collapsed():
+    """One listing must not occupy two ranking slots.
+
+    A marketplace returning the same product twice (colour variants sharing an
+    id, an overlapping page) used to produce two offers, so a single listing
+    could be both cheapest and runner-up and read as two independent
+    confirmations of the same price.
+    """
+    offers = [
+        MarketOffer(source="wildberries", product_id="1", title="Ноутбук", price_rub=52999.0),
+        MarketOffer(source="wildberries", product_id="1", title="Ноутбук", price_rub=52999.0),
+        MarketOffer(source="ozon", product_id="1", title="Ноутбук", price_rub=51000.0),
+    ]
+
+    out = server._dedupe(offers)
+
+    assert len(out) == 2, "same id on the same source is one listing"
+    assert [(o.source, o.product_id) for o in out] == [("wildberries", "1"), ("ozon", "1")]
+
+
+def test_dedupe_keeps_source_order():
+    offers = [
+        MarketOffer(source="wildberries", product_id="a", title="A", price_rub=3.0),
+        MarketOffer(source="wildberries", product_id="b", title="B", price_rub=1.0),
+        MarketOffer(source="wildberries", product_id="a", title="A", price_rub=3.0),
+    ]
+
+    assert [o.product_id for o in server._dedupe(offers)] == ["a", "b"]
+
+
+def test_offers_without_an_id_are_never_merged():
+    """A blank id is unknown, not shared — merging those would lose real offers."""
+    offers = [
+        MarketOffer(source="dns", product_id="", title="Первый", price_rub=100.0),
+        MarketOffer(source="dns", product_id="", title="Второй", price_rub=200.0),
+    ]
+
+    assert len(server._dedupe(offers)) == 2
+
+
+# ------------------------------------------------------------------- relevance ----
+#
+# Observed live in July 2026: a query for "iphone 15" returned a 34 224 ₽ offer
+# ranked above genuine 52 049 ₽ ones. The tool trusts each marketplace's own
+# relevance completely, so an accessory or a different configuration can become
+# the headline "cheapest". These warn; they never drop a row, because no
+# threshold tuned without live data should be allowed to hide a real bargain.
+
+
+def test_an_accessory_as_cheapest_is_flagged():
+    priced = [
+        MarketOffer(source="wildberries", product_id="1", title="Чехол для iPhone 15 силиконовый", price_rub=990.0),
+        MarketOffer(source="ozon", product_id="2", title="Apple iPhone 15 128GB", price_rub=52049.0),
+    ]
+
+    warnings = server._relevance_warnings("iphone 15", priced)
+
+    assert any(w.startswith("relevance:") for w in warnings), warnings
+
+
+def test_searching_for_the_accessory_itself_is_not_flagged():
+    """Asking for a case and getting cases is the correct answer."""
+    priced = [
+        MarketOffer(source="wildberries", product_id="1", title="Чехол для iPhone 15", price_rub=990.0),
+        MarketOffer(source="ozon", product_id="2", title="Чехол для iPhone 15 кожаный", price_rub=1990.0),
+    ]
+
+    assert server._relevance_warnings("чехол для iphone 15", priced) == []
+
+
+def test_a_genuine_cheapest_is_left_alone():
+    priced = [
+        MarketOffer(source="wildberries", product_id="1", title="Apple iPhone 15 128GB", price_rub=49900.0),
+        MarketOffer(source="ozon", product_id="2", title="Apple iPhone 15 128GB", price_rub=52049.0),
+        MarketOffer(source="yandex_market", product_id="3", title="Apple iPhone 15", price_rub=60229.0),
+    ]
+
+    assert server._relevance_warnings("iphone 15", priced) == []
+
+
+def test_a_price_far_below_the_median_is_flagged():
+    priced = [
+        MarketOffer(source="wildberries", product_id="1", title="iPhone 15 запчасть", price_rub=4000.0),
+        MarketOffer(source="ozon", product_id="2", title="Apple iPhone 15 128GB", price_rub=52049.0),
+        MarketOffer(source="yandex_market", product_id="3", title="Apple iPhone 15", price_rub=60229.0),
+    ]
+
+    warnings = server._relevance_warnings("iphone 15", priced)
+
+    assert any(w.startswith("price_outlier:") for w in warnings), warnings
+
+
+def test_the_outlier_check_needs_three_offers_to_have_a_median():
+    priced = [
+        MarketOffer(source="wildberries", product_id="1", title="iPhone 15", price_rub=1000.0),
+        MarketOffer(source="ozon", product_id="2", title="iPhone 15", price_rub=52049.0),
+    ]
+
+    assert not any(w.startswith("price_outlier:") for w in server._relevance_warnings("iphone 15", priced))
+
+
+async def test_relevance_warnings_reach_the_response(monkeypatch):
+    """The warning is useless if it does not travel with the comparison."""
+
+    async def wb(query, limit):
+        return [offer("wildberries", 990.0, title="Чехол для iPhone 15")]
+
+    async def ozon(query, limit):
+        return [offer("ozon", 52049.0, title="Apple iPhone 15 128GB")]
+
+    stub_sources(monkeypatch, {"wildberries": wb, "ozon": ozon})
+
+    result = await server.compare_prices(query="iphone 15")
+
+    assert any(w.startswith("relevance:") for w in result.warnings), result.warnings
+    # Flagged, not removed: the offer is still ranked and still cheapest.
+    assert result.cheapest.price_rub == 990.0
+
+
+async def test_comparison_exposes_like_for_like_candidate(monkeypatch):
+    async def wb(query, limit):
+        return [offer("wildberries", 990.0, title="Чехол для iPhone 15")]
+
+    async def ozon(query, limit):
+        return [offer("ozon", 52049.0, title="Apple iPhone 15 128GB")]
+
+    stub_sources(monkeypatch, {"wildberries": wb, "ozon": ozon})
+
+    result = await server.compare_prices(query="iphone 15")
+
+    assert result.cheapest.source == "wildberries"
+    assert result.cheapest_comparable.source == "ozon"
+    assert any(w.startswith("comparable_price:") for w in result.warnings)
+
+
+async def test_comparable_candidate_is_none_when_everything_is_suspicious(monkeypatch):
+    async def wb(query, limit):
+        return [offer("wildberries", 990.0, title="Чехол для iPhone 15")]
+
+    stub_sources(monkeypatch, {"wildberries": wb})
+
+    result = await server.compare_prices(query="iphone 15")
+
+    assert result.cheapest_comparable is None
+    assert "comparable_price: every priced listing" in result.warnings[-1]
+
+
+async def test_stock_filter_ranks_only_confirmed_available_offers(monkeypatch):
+    async def wb(query, limit):
+        return [offer("wildberries", 1000.0, title="Product", in_stock=False)]
+
+    async def ozon(query, limit):
+        return [offer("ozon", 1200.0, title="Product", in_stock=True)]
+
+    stub_sources(monkeypatch, {"wildberries": wb, "ozon": ozon})
+
+    result = await server.compare_prices(query="product", in_stock_only=True)
+
+    assert result.cheapest.source == "ozon"
+    assert len(result.offers) == 2
+    assert any(w.startswith("stock_filter:") for w in result.warnings)
+
+
+# ------------------------------------------------------------------- condition ----
+#
+# Checked live on wildberries.ru in July 2026 for the query "iphone 15": the
+# cheap rows were "Смартфон iPhone 15, 256ГБ, Восстановленный" at 35 206 ₽ and
+# "iPhone 15 256GB Витринный образец" — a refurbished phone and a display unit,
+# ranked against new phones from other marketplaces. This is the case the
+# accessory list misses: nothing in the title looks like a case, and 34 224 ₽
+# against a 52 049 ₽ median is not low enough to trip the outlier check.
+
+
+def test_a_refurbished_cheapest_is_flagged():
+    priced = [
+        MarketOffer(
+            source="wildberries",
+            product_id="1",
+            title="Смартфон iPhone 15, 256ГБ, Восстановленный Apple",
+            price_rub=34224.0,
+        ),
+        MarketOffer(source="ozon", product_id="2", title="Apple iPhone 15 128GB", price_rub=52049.0),
+        MarketOffer(source="yandex_market", product_id="3", title="Apple iPhone 15", price_rub=60229.0),
+    ]
+
+    warnings = server._relevance_warnings("iphone 15", priced)
+
+    assert any(w.startswith("condition:") for w in warnings), warnings
+    assert not any(w.startswith("price_outlier:") for w in warnings), (
+        "the real case does not trip the median check — that is why the condition check exists"
+    )
+
+
+def test_a_display_unit_is_flagged():
+    priced = [
+        MarketOffer(
+            source="wildberries", product_id="1", title="iPhone 15 256GB Витринный образец esim", price_rub=40000.0
+        ),
+        MarketOffer(source="ozon", product_id="2", title="Apple iPhone 15 256GB", price_rub=52049.0),
+    ]
+
+    assert any(w.startswith("condition:") for w in server._relevance_warnings("iphone 15", priced))
+
+
+def test_asking_for_a_refurbished_phone_is_not_flagged():
+    """Searching for refurbished and getting refurbished is the right answer."""
+    priced = [
+        MarketOffer(source="wildberries", product_id="1", title="iPhone 15 Восстановленный", price_rub=34224.0),
+        MarketOffer(source="ozon", product_id="2", title="iPhone 15 восстановленный", price_rub=39000.0),
+    ]
+
+    assert not any(w.startswith("condition:") for w in server._relevance_warnings("iphone 15 восстановленный", priced))
+
+
+def test_a_new_product_carries_no_condition_warning():
+    priced = [
+        MarketOffer(source="wildberries", product_id="1", title="Apple iPhone 15 128GB черный", price_rub=49900.0),
+        MarketOffer(source="ozon", product_id="2", title="Apple iPhone 15 128GB", price_rub=52049.0),
+    ]
+
+    assert server._relevance_warnings("iphone 15", priced) == []

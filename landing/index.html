@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Мониторинг конкурентов и агенты для застройщиков — сервис</title>
+<meta name="description" content="Агенты собирают цены и акции конкурентов, готовят кампании в Яндекс Директе и размещают объявления на площадках недвижимости. Отчёт каждую неделю. Заявка — на странице, ответ в течение 2 часов в рабочее время.">
+<link rel="stylesheet" href="../dashboard/public/fonts/fonts.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="glow glow-1"></div>
+<div class="glow glow-2"></div>
+
+<header class="hd">
+  <div class="wrap hd-in">
+    <a class="logo" href="#top">
+      <span class="logo-mark">ЦУ</span>
+      <span class="logo-text">Центр управления агентами</span>
+    </a>
+    <nav class="nav">
+      <a href="#services">Услуги</a>
+      <a href="#report">Пример отчёта</a>
+      <a href="#how">Как это работает</a>
+      <a href="#plans">Тарифы</a>
+      <a href="#faq">Вопросы</a>
+    </nav>
+    <div class="hd-actions">
+      <!-- ВХОД В КАБИНЕТ: ведёт на клиентскую поверхность панели. Если панель будет на другом домене —
+           замените href (см. README-landing.md, раздел «Что заменить»). -->
+      <a class="btn btn-ghost" href="../dashboard/public/index.html?surface=client" data-slot="cabinet-link">Войти в кабинет</a>
+      <a class="btn btn-primary" href="#lead">Оставить заявку</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- 1. ПЕРВЫЙ ЭКРАН -->
+  <section class="hero wrap">
+    <div class="badge-line">Работаем с недвижимостью · Москва и область</div>
+    <h1>Агенты, которые каждую неделю знают цены и акции ваших конкурентов</h1>
+    <p class="lead">Собираем цены, акции и объём предложения по вашему рынку, готовим кампании в Яндекс&nbsp;Директе и приводим в порядок объявления на площадках. Вы получаете готовый отчёт, а не выгрузку, которую нужно разбирать.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary btn-lg" href="#lead">Оставить заявку</a>
+      <a class="btn btn-lg" href="#report">Посмотреть пример отчёта</a>
+    </div>
+    <div class="hero-kpis">
+      <div class="hk"><b>3 услуги</b><span>мониторинг · Директ · площадки</span></div>
+      <div class="hk"><b>1 раз в неделю</b><span>снимок и сравнение с прошлой</span></div>
+      <div class="hk"><b>9 разделов</b><span>в отчёте: главное, цены, акции, риски</span></div>
+      <div class="hk"><b>2 часа</b><span>ответ на заявку в рабочее время</span></div>
+    </div>
+  </section>
+
+  <!-- 2. ТРИ УСЛУГИ -->
+  <section class="wrap" id="services">
+    <h2 class="sec-title">Три услуги</h2>
+    <p class="sec-sub">Каждая закрывает свою задачу. Цены — <b>пример</b>, итоговую считаем от себестоимости прогона. Как услуги складываются в тарифы — в блоке <a href="#prices">«Услуги и тарифы: как связаны»</a>.</p>
+    <div class="cards3">
+      <article class="card svc" id="svc-monitoring">
+        <div class="svc-top"><span class="chip">Хит</span><span class="price">2 900 ₽<i>/мес · пример</i></span></div>
+        <h3>Мониторинг конкурентов и цен</h3>
+        <p>Раз в неделю снимаем цены, акции и объём предложения по выбранным ЖК и конкурентам, сравниваем с прошлой неделей и собираем отчёт.</p>
+        <ul>
+          <li>Снимок цен и акций по лотам</li>
+          <li>Сравнение с прошлой неделей: что изменилось</li>
+          <li>Отчёт Markdown + Excel, 9 разделов</li>
+        </ul>
+        <p class="svc-foot">Входит в тарифы: <a href="#plans">Старт, Бизнес, Премиум</a></p>
+      </article>
+      <article class="card svc" id="svc-direct">
+        <div class="svc-top"><span class="chip chip-alt">Под заказ</span><span class="price">9 900 ₽<i>/мес · пример</i></span></div>
+        <h3>Настройка Яндекс Директа</h3>
+        <p>Собираем и кластеризуем семантику, формируем кампании и группы, пишем объявления и готовим выгрузку для Директа.</p>
+        <ul>
+          <li>Семантика и кластеры под ваш объект</li>
+          <li>Кампании, группы, объявления</li>
+          <li>Готовый файл выгрузки в Директ</li>
+        </ul>
+        <p class="svc-foot">Входит в тарифы: <a href="#plans">Премиум</a> (в «Бизнес» — по запросу)</p>
+      </article>
+      <article class="card svc" id="svc-listings">
+        <div class="svc-top"><span class="chip chip-alt">Под заказ</span><span class="price">5 900 ₽<i>/мес · пример</i></span></div>
+        <h3>Размещение и аудит на площадках</h3>
+        <p>Проверяем текущие объявления и готовим их для Циан, Авито и Яндекс Недвижимости: тексты, параметры, чек-лист по каждому полю.</p>
+        <ul>
+          <li>Аудит текущих объявлений</li>
+          <li>Подготовленные тексты и параметры</li>
+          <li>Чек-лист, что поправить в первую очередь</li>
+        </ul>
+        <p class="svc-foot">Входит в тарифы: <a href="#plans">Бизнес, Премиум</a></p>
+      </article>
+    </div>
+  </section>
+
+  <!-- 3. ПРИМЕР ОТЧЁТА (доказательства до оплаты) -->
+  <section class="wrap" id="report">
+    <h2 class="sec-title">Пример отчёта</h2>
+    <p class="sec-sub">Так выглядит еженедельный отчёт по конкурентам: главное за неделю, медианы ₽/м², изменения цен выше порога, акции и ограничения источников. Ниже — два экрана из панели и файлы, которые получает клиент.</p>
+    <div class="report-grid">
+      <figure class="card shot">
+        <a href="assets/report-agent1.png" target="_blank" rel="noopener">
+          <img src="assets/report-agent1.png" alt="Экран отчёта Агента 1: медианы цен, изменения и сравнение недель">
+        </a>
+        <figcaption>Отчёт по конкурентам: сводка недели, цены и изменения.</figcaption>
+      </figure>
+      <figure class="card shot">
+        <a href="assets/report-agent1-groups.png" target="_blank" rel="noopener">
+          <img src="assets/report-agent1-groups.png" alt="Экран отчёта: группировка по конкурентам и проектам">
+        </a>
+        <figcaption>Тот же отчёт в разрезе конкурентов и проектов.</figcaption>
+      </figure>
+    </div>
+    <div class="card dl-card">
+      <div>
+        <h3>Скачать пример</h3>
+        <p>Демо-отчёт по открытым данным сайта застройщика (ЖК ЗИЛАРТ, данные за 31.10.2026). Это тот же формат, в котором вы будете получать свои отчёты — с вашими конкурентами и ЖК.</p>
+        <p class="small">В примере — демонстрационные данные: реальных клиентов и их цен в файлах нет.</p>
+      </div>
+      <div class="dl-actions">
+        <a class="btn btn-primary" href="downloads/primer-otcheta-konkurenty.md" download>Скачать пример (Markdown)</a>
+        <a class="btn" href="downloads/primer-otcheta-konkurenty.xlsx" download>Скачать пример (Excel)</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. КАК ЭТО РАБОТАЕТ -->
+  <section class="wrap" id="how">
+    <h2 class="sec-title">Как это работает</h2>
+    <p class="sec-sub">Четыре шага, без внедрения и без обучения вашей команды.</p>
+    <div class="steps">
+      <div class="card step"><span class="num">1</span><h3>Подключаем клиента</h3><p>Заводим ваш объект и список конкурентов: какие ЖК и площадки смотреть.</p></div>
+      <div class="card step"><span class="num">2</span><h3>Агент собирает данные</h3><p>Раз в неделю сервис снимает цены, акции и объём предложения по выбранным площадкам.</p></div>
+      <div class="card step"><span class="num">3</span><h3>Считаем изменения</h3><p>Сравниваем с предыдущей неделей и выделяем то, что реально влияет на ваши продажи.</p></div>
+      <div class="card step"><span class="num">4</span><h3>Отдаём отчёт</h3><p>Вы получаете отчёт в двух форматах и краткое «главное за неделю» в мессенджер.</p></div>
+    </div>
+  </section>
+
+  <!-- 5. ПОЧЕМУ МЫ -->
+  <section class="wrap" id="why">
+    <h2 class="sec-title">Почему мы</h2>
+    <div class="why">
+      <div class="card why-item"><h3>Считаем в рублях, а не в попугаях</h3><p>Видно, сколько стоит каждый прогон и каждая модель. Если у модели нет цены в прайсе, сервис честно помечает это, а не показывает ноль.</p></div>
+      <div class="card why-item"><h3>Говорим об ограничениях прямо</h3><p>Если у площадки нет открытого API — так и напишем и предложим выгрузку файлом. Никаких «поддерживаем всё».</p></div>
+      <div class="card why-item"><h3>Ничего не ломаем в ваших данных</h3><p>Правки в справочники идут с копией предыдущей версии и reversible по контрольной сумме: можно вернуть как было.</p></div>
+      <div class="card why-item"><h3>Видно, что агент сделал</h3><p>Журнал прогонов и результатов: когда запускался, сколько длился, что получилось и куда отправлено.</p></div>
+      <div class="card why-item"><h3>Отчёт, а не выгрузка</h3><p>Структура отчёта одинаковая каждую неделю: главное, цены, изменения, акции, ограничения.</p></div>
+      <div class="card why-item"><h3>Работает у вас локально</h3><p>Панель управления можно держать на своей машине — данные не уезжают наружу.</p></div>
+    </div>
+  </section>
+
+  <!-- 6. ЗАЯВКА -->
+  <section class="wrap" id="lead">
+    <h2 class="sec-title">Оставить заявку</h2>
+    <p class="sec-sub">Заполните пять полей — этого достаточно, чтобы вернуться с примером отчёта и ценой под ваш объём. Отвечаем в течение <b>2 часов в рабочее время</b> (пн–пт, 10:00–19:00 МСК).</p>
+    <div class="lead-grid">
+      <form class="card lead-form" id="lead-form" novalidate data-endpoint="/api/lead">
+        <div class="f-row">
+          <label for="lf-name">Как вас зовут <span class="req">*</span></label>
+          <input id="lf-name" name="name" type="text" autocomplete="name" placeholder="Иван" required>
+          <p class="f-err" data-err-for="name" hidden></p>
+        </div>
+        <div class="f-row">
+          <label for="lf-contact">Телефон или Telegram <span class="req">*</span></label>
+          <input id="lf-contact" name="contact" type="text" autocomplete="tel" placeholder="+7 999 123-45-67 или @nickname" required>
+          <p class="f-hint">Куда ответить. Телефон в формате +7… или ник вида @nickname (можно ссылку t.me/…).</p>
+          <p class="f-err" data-err-for="contact" hidden></p>
+        </div>
+        <div class="f-row">
+          <label for="lf-object">Объект (ЖК) <span class="req">*</span></label>
+          <input id="lf-object" name="object" type="text" placeholder="Например: ЖК «Северный», Москва" required>
+          <p class="f-err" data-err-for="object" hidden></p>
+        </div>
+        <div class="f-row">
+          <label for="lf-competitors">Какие конкуренты интересны</label>
+          <textarea id="lf-competitors" name="competitors" rows="3" placeholder="2–5 конкурентов или ЖК, например: ЗИЛАРТ, ЛСР, ПИК — Юго-Запад"></textarea>
+          <p class="f-hint">Не обязательно: если не знаете — подберём сами и покажем список на подтверждение.</p>
+        </div>
+        <div class="f-row">
+          <label for="lf-comment">Комментарий</label>
+          <textarea id="lf-comment" name="comment" rows="3" placeholder="Площадки, сроки, что уже пробовали"></textarea>
+        </div>
+        <label class="f-check">
+          <input type="checkbox" id="lf-consent" name="consent" required>
+          <span>Согласен на обработку данных из формы по <a href="privacy.html">политике обработки данных</a> и с условиями <a href="oferta.html">оферты</a>. <span class="req">*</span></span>
+        </label>
+        <p class="f-err" data-err-for="consent" hidden></p>
+        <div class="f-actions">
+          <button class="btn btn-primary btn-lg" type="submit" id="lf-submit">Отправить заявку</button>
+          <span class="small" id="lf-counter" hidden></span>
+        </div>
+        <div class="f-status" id="lf-status" role="status" aria-live="polite" hidden></div>
+      </form>
+
+      <aside class="lead-aside">
+        <div class="card">
+          <h3>Что будет после заявки</h3>
+          <ol class="f-list">
+            <li>Отвечаем в течение 2 часов в рабочее время и присылаем пример отчёта.</li>
+            <li>Уточняем объект и список конкурентов (2–5 ЖК или застройщиков).</li>
+            <li>Считаем цену под ваш объём и делаем первый отчёт на ваших данных — до оплаты.</li>
+          </ol>
+          <p class="small">Ничего платить на этом шаге не нужно. Если задача не наша — скажем прямо.</p>
+          <p><a class="btn" href="thanks.html">Что дальше после заявки</a></p>
+        </div>
+        <!-- КОНТАКТЫ: заменить на реальные Telegram/почту, когда пользователь их даст.
+             Пока данных нет — честная формулировка вместо заглушки (см. README-landing.md). -->
+        <div class="card contacts-card" id="contacts" data-slot="contacts">
+          <h3>Контакты: уточняются</h3>
+          <p>Публичные Telegram и почта пока не подтверждены, поэтому мы не ставим здесь заглушку вместо адреса. Подтверждённый канал связи сейчас один — <a href="#lead">форма заявки</a>: она попадает оператору, и мы отвечаем сами.</p>
+          <p class="small">Как только реквизиты и публичные контакты будут подтверждены, они появятся здесь — места для замены перечислены в README-landing.md.</p>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- 7. УСЛУГИ И ТАРИФЫ: КАК СВЯЗАНЫ -->
+  <section class="wrap" id="prices">
+    <h2 class="sec-title">Услуги и тарифы: как связаны</h2>
+    <p class="sec-sub">Тариф — это набор услуг со скидкой. Отдельной строкой идёт «Старт»: в нём одна услуга без скидки, чтобы попробовать сервис. Все цены — <b>пример</b>, итог считаем от себестоимости прогона.</p>
+    <div class="card price-card">
+      <table class="price-table">
+        <thead>
+          <tr><th>Тариф</th><th>Состав</th><th>По отдельности</th><th>Цена тарифа</th><th>Выгода</th><th>Кабинет</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><b>Старт</b></td>
+            <td>1 любая услуга</td>
+            <td>2 900 ₽</td>
+            <td>2 900 ₽</td>
+            <td class="td-muted">скидки нет — это цена одной услуги</td>
+            <td>есть</td>
+          </tr>
+          <tr>
+            <td><b>Бизнес</b></td>
+            <td>Мониторинг + Размещение и аудит</td>
+            <td>8 800 ₽<span class="td-note">2 900 + 5 900</span></td>
+            <td>7 900 ₽</td>
+            <td class="td-ok">−900 ₽</td>
+            <td>есть</td>
+          </tr>
+          <tr>
+            <td><b>Премиум</b></td>
+            <td>Все три услуги</td>
+            <td>18 700 ₽<span class="td-note">2 900 + 9 900 + 5 900</span></td>
+            <td>14 900 ₽</td>
+            <td class="td-ok">−3 800 ₽</td>
+            <td>есть</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="small">Пара услуг с Яндекс Директом (мониторинг + Директ = 12 800 ₽) считается отдельно — цена зависит от объёма семантики. Кабинет клиента входит во все тарифы: там видны ваши объекты, отчёты и подписка. Цифры в панели — в своих справочниках услуг и тарифов; здесь они продублированы как пример и синхронизируются вручную.</p>
+    </div>
+  </section>
+
+  <!-- 8. ТАРИФЫ -->
+  <section class="wrap" id="plans">
+    <h2 class="sec-title">Тарифы</h2>
+    <p class="sec-sub">Цены — пример. Считаем от себестоимости прогона под ваш объём объектов. Во всех тарифах есть личный кабинет клиента.</p>
+    <div class="cards3 plans">
+      <div class="card plan">
+        <h3>Старт</h3>
+        <div class="plan-price">2 900 ₽<i>/мес</i></div>
+        <ul>
+          <li>1 услуга на выбор (без скидки — цена одной услуги)</li>
+          <li>1 объект и до 5 конкурентов</li>
+          <li>Отчёт раз в неделю</li>
+          <li>Отчёт в Markdown</li>
+          <li>Личный кабинет клиента</li>
+        </ul>
+        <a class="btn" href="#lead">Выбрать «Старт»</a>
+      </div>
+      <div class="card plan plan-hot">
+        <div class="hot-tag">Выбирают чаще</div>
+        <h3>Бизнес</h3>
+        <div class="plan-price">7 900 ₽<i>/мес</i></div>
+        <ul>
+          <li>2 услуги: мониторинг + размещение и аудит <span class="td-ok">(−900 ₽ к цене по отдельности)</span></li>
+          <li>До 3 объектов, без ограничения конкурентов</li>
+          <li>Отчёт раз в неделю + сравнение недель</li>
+          <li>Markdown и Excel</li>
+          <li>Отправка в Telegram или на почту</li>
+          <li>Личный кабинет клиента</li>
+        </ul>
+        <a class="btn btn-primary" href="#lead">Выбрать «Бизнес»</a>
+      </div>
+      <div class="card plan">
+        <h3>Премиум</h3>
+        <div class="plan-price">14 900 ₽<i>/мес</i></div>
+        <ul>
+          <li>Все три услуги <span class="td-ok">(−3 800 ₽ к цене по отдельности)</span></li>
+          <li>Объектов без ограничения</li>
+          <li>Разбор по вашим ЖК и площадкам</li>
+          <li>Личный кабинет клиента</li>
+          <li>Приоритетная поддержка</li>
+        </ul>
+        <a class="btn" href="#lead">Выбрать «Премиум»</a>
+      </div>
+    </div>
+    <p class="small">Если нужен нестандартный набор (например, мониторинг + Директ), посчитаем отдельно — напишите в заявке.</p>
+  </section>
+
+  <!-- 9. ИНТЕГРАЦИИ -->
+  <section class="wrap" id="integrations">
+    <h2 class="sec-title">С чем работаем</h2>
+    <p class="sec-sub">Подключаем по API там, где он открыт. Где API нет — работаем выгрузкой файлом и говорим об этом прямо.</p>
+    <div class="chips">
+      <span class="chipx">Яндекс Директ</span><span class="chipx">Яндекс Метрика</span>
+      <span class="chipx">VK Реклама</span><span class="chipx">Telegram</span>
+      <span class="chipx">amoCRM</span><span class="chipx">Битрикс24</span>
+      <span class="chipx">Roistat</span><span class="chipx">Calltouch</span>
+      <span class="chipx">Авито</span><span class="chipx">Циан</span>
+      <span class="chipx">Яндекс Недвижимость</span><span class="chipx">Домклик</span>
+      <span class="chipx">наш.дом.рф</span><span class="chipx">ЮKassa</span>
+      <span class="chipx">Т-Банк</span><span class="chipx">1С</span>
+      <span class="chipx">Google Sheets</span><span class="chipx">n8n / Make</span>
+      <span class="chipx chipx-off">WhatsApp — через провайдера</span>
+      <span class="chipx chipx-off">Росреестр — без открытого API</span>
+    </div>
+  </section>
+
+  <!-- 10. FAQ -->
+  <section class="wrap" id="faq">
+    <h2 class="sec-title">Частые вопросы</h2>
+    <div class="faq">
+      <details class="card"><summary>Насколько свежие данные в отчёте?</summary><p>Снимок делается раз в неделю в согласованный день. В отчёте всегда указана дата снимка и дата, с которой идёт сравнение. Если источник не ответил, это отдельно помечается — пустых строк вместо данных не будет.</p></details>
+      <details class="card"><summary>Что если у площадки нет открытого API?</summary><p>Так и напишем. Для таких площадок сервис работает выгрузкой файла: вы присылаете данные, агент разбирает их по той же схеме, что и остальные. Росреестр и «Мой налог» — как раз такой случай.</p></details>
+      <details class="card"><summary>Откуда берётся цена?</summary><p>Считаем от себестоимости: сколько стоит один прогон (токены моделей, сбор данных) — и от этого строим цену. Цены на этой странице — пример, итоговую считаем под ваш объём объектов и набор услуг. Как тариф собирается из услуг — в блоке «Услуги и тарифы: как связаны».</p></details>
+      <details class="card"><summary>Как быстро вы отвечаете на заявку?</summary><p>В течение 2 часов в рабочее время (пн–пт, 10:00–19:00 МСК). Заявки, отправленные вечером, ночью или в выходные, берём в работу утром следующего рабочего дня. В ответ присылаем пример отчёта и вопросы по объекту.</p></details>
+      <details class="card"><summary>Отчёт можно получить в мессенджер?</summary><p>Да. Отправка в Telegram и на почту есть в тарифе «Бизнес» и «Премиум». В базовой версии сервиса отправка выполняется вручную или по команде — так честнее: вы видите, что именно ушло клиенту.</p></details>
+      <details class="card"><summary>Кто отвечает за данные?</summary><p>Мы работаем с открытыми данными площадок и с тем, что вы передаёте сами. Персональные данные клиентов сервису не нужны — обрабатываем только то, что нужно для отчёта. Данные из формы заявки обрабатываются по <a href="privacy.html">политике</a>.</p></details>
+      <details class="card"><summary>Можно посмотреть до оплаты?</summary><p>Да. Первый отчёт по одному объекту делаем на ваших данных — вы смотрите структуру и наполнение, потом решаете про подписку. <a href="#report">Пример отчёта</a> можно скачать прямо сейчас.</p></details>
+      <details class="card"><summary>Есть ли кабинет клиента?</summary><p>Да, личный кабинет входит во все тарифы. Там ваши объекты, отчёты, изменения по неделям и подписка. Открыть его можно по ссылке <a href="../dashboard/public/index.html?surface=client">«Войти в кабинет»</a> — доступ выдаём после подключения.</p></details>
+    </div>
+  </section>
+
+  <!-- 11. CTA -->
+  <section class="wrap" id="cta">
+    <div class="card cta">
+      <h2>Обсудим вашу задачу</h2>
+      <p>Оставьте заявку: имя, контакт и ваш объект. Пришлём пример отчёта, уточним конкурентов и посчитаем цену под ваш объём — первый отчёт делаем до оплаты.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary btn-lg" href="#lead">Оставить заявку</a>
+        <a class="btn btn-lg" href="#report">Скачать пример отчёта</a>
+      </div>
+      <p class="small">Отвечаем в течение 2 часов в рабочее время. Если задача не наша — скажем прямо. Публичные контакты уточняются: единственный подтверждённый канал — форма заявки.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="ft">
+  <div class="wrap ft-in">
+    <div class="ft-col">
+      <div class="logo"><span class="logo-mark">ЦУ</span><span class="logo-text">Центр управления агентами</span></div>
+      <p class="small">Агенты для застройщиков и агентств недвижимости: мониторинг конкурентов, Яндекс Директ, размещение на площадках.</p>
+    </div>
+    <div class="ft-col">
+      <b>Услуги</b>
+      <a href="#svc-monitoring">Мониторинг конкурентов</a>
+      <a href="#svc-direct">Настройка Яндекс Директа</a>
+      <a href="#svc-listings">Размещение и аудит</a>
+      <a href="#report">Пример отчёта</a>
+    </div>
+    <div class="ft-col">
+      <b>Контакты</b>
+      <a href="#lead">Оставить заявку</a>
+      <a href="thanks.html">Что дальше после заявки</a>
+      <span class="small" data-slot="contacts-note">Публичные Telegram и почта — уточняются. Заявка из формы доходит до оператора.</span>
+      <span class="small">Москва и область · пн–пт, 10:00–19:00 МСК</span>
+    </div>
+    <div class="ft-col">
+      <b>Документы</b>
+      <a href="oferta.html">Оферта (черновик)</a>
+      <a href="privacy.html">Политика обработки данных (черновик)</a>
+      <span class="small" data-slot="legal-note">Юридические реквизиты и налоговый режим — уточняются (планируется ИП, УСН 6%). Документы для оплаты — по запросу.</span>
+    </div>
+  </div>
+  <div class="wrap ft-bottom">
+    <span class="small">© 2026 Центр управления агентами. Цены на странице — пример.</span>
+    <span class="small">Данные площадок принадлежат их правообладателям.</span>
+  </div>
+</footer>
+<script src="lead.js" defer></script>
+</body>
+</html>

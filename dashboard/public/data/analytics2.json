@@ -1,0 +1,1988 @@
+{
+ "generatedAtMs": 1793565418391,
+ "today": "2026-11-01",
+ "series": {
+  "day": [
+   {
+    "key": "2026-08-04",
+    "revenue": 0,
+    "cost": 0,
+    "margin": 0,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-08-05",
+    "revenue": 0,
+    "cost": 0,
+    "margin": 0,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-08-06",
+    "revenue": 0,
+    "cost": 0,
+    "margin": 0,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-08-07",
+    "revenue": 0,
+    "cost": 0,
+    "margin": 0,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-08-08",
+    "revenue": 0,
+    "cost": 0,
+    "margin": 0,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-08-09",
+    "revenue": 0,
+    "cost": 0,
+    "margin": 0,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-08-10",
+    "revenue": 0,
+    "cost": 0,
+    "margin": 0,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-08-11",
+    "revenue": 0,
+    "cost": 0,
+    "margin": 0,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-08-12",
+    "revenue": 0,
+    "cost": 0,
+    "margin": 0,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-08-13",
+    "revenue": 0,
+    "cost": 0,
+    "margin": 0,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-08-14",
+    "revenue": 0,
+    "cost": 0,
+    "margin": 0,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-08-15",
+    "revenue": 0,
+    "cost": 0,
+    "margin": 0,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-08-16",
+    "revenue": 0,
+    "cost": 0,
+    "margin": 0,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-08-17",
+    "revenue": 0,
+    "cost": 0,
+    "margin": 0,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-08-18",
+    "revenue": 0,
+    "cost": 0,
+    "margin": 0,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-08-19",
+    "revenue": 0,
+    "cost": 0,
+    "margin": 0,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-08-20",
+    "revenue": 0,
+    "cost": 0,
+    "margin": 0,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-08-21",
+    "revenue": 0,
+    "cost": 0,
+    "margin": 0,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-08-22",
+    "revenue": 0,
+    "cost": 0,
+    "margin": 0,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-08-23",
+    "revenue": 0,
+    "cost": 0,
+    "margin": 0,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-08-24",
+    "revenue": 0,
+    "cost": 0,
+    "margin": 0,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-08-25",
+    "revenue": 0,
+    "cost": 0,
+    "margin": 0,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-08-26",
+    "revenue": 0,
+    "cost": 0,
+    "margin": 0,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-08-27",
+    "revenue": 0,
+    "cost": 0,
+    "margin": 0,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-08-28",
+    "revenue": 0,
+    "cost": 0,
+    "margin": 0,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-08-29",
+    "revenue": 0,
+    "cost": 0,
+    "margin": 0,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-08-30",
+    "revenue": 0,
+    "cost": 0,
+    "margin": 0,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-08-31",
+    "revenue": 0,
+    "cost": 0,
+    "margin": 0,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-09-01",
+    "revenue": 0,
+    "cost": 0,
+    "margin": 0,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-09-02",
+    "revenue": 0,
+    "cost": 0,
+    "margin": 0,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-09-03",
+    "revenue": 0,
+    "cost": 0,
+    "margin": 0,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-09-04",
+    "revenue": 0,
+    "cost": 0,
+    "margin": 0,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-09-05",
+    "revenue": 0,
+    "cost": 0,
+    "margin": 0,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-09-06",
+    "revenue": 0,
+    "cost": 0,
+    "margin": 0,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-09-07",
+    "revenue": 0,
+    "cost": 0,
+    "margin": 0,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-09-08",
+    "revenue": 0,
+    "cost": 0,
+    "margin": 0,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-09-09",
+    "revenue": 0,
+    "cost": 0,
+    "margin": 0,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-09-10",
+    "revenue": 0,
+    "cost": 0,
+    "margin": 0,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-09-11",
+    "revenue": 0,
+    "cost": 0,
+    "margin": 0,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-09-12",
+    "revenue": 0,
+    "cost": 0,
+    "margin": 0,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-09-13",
+    "revenue": 0,
+    "cost": 0,
+    "margin": 0,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-09-14",
+    "revenue": 0,
+    "cost": 0,
+    "margin": 0,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-09-15",
+    "revenue": 0,
+    "cost": 0,
+    "margin": 0,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-09-16",
+    "revenue": 0,
+    "cost": 0,
+    "margin": 0,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-09-17",
+    "revenue": 0,
+    "cost": 0,
+    "margin": 0,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-09-18",
+    "revenue": 0,
+    "cost": 0,
+    "margin": 0,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-09-19",
+    "revenue": 0,
+    "cost": 0,
+    "margin": 0,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-09-20",
+    "revenue": 0,
+    "cost": 0,
+    "margin": 0,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-09-21",
+    "revenue": 0,
+    "cost": 0,
+    "margin": 0,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-09-22",
+    "revenue": 0,
+    "cost": 0,
+    "margin": 0,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-09-23",
+    "revenue": 0,
+    "cost": 0,
+    "margin": 0,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-09-24",
+    "revenue": 0,
+    "cost": 0,
+    "margin": 0,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-09-25",
+    "revenue": 0,
+    "cost": 0,
+    "margin": 0,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-09-26",
+    "revenue": 0,
+    "cost": 0,
+    "margin": 0,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-09-27",
+    "revenue": 0,
+    "cost": 0,
+    "margin": 0,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-09-28",
+    "revenue": 0,
+    "cost": 0,
+    "margin": 0,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-09-29",
+    "revenue": 0,
+    "cost": 0,
+    "margin": 0,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-09-30",
+    "revenue": 0,
+    "cost": 0,
+    "margin": 0,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-10-01",
+    "revenue": 96.67,
+    "cost": 0,
+    "margin": 96.67,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-10-02",
+    "revenue": 96.67,
+    "cost": 0,
+    "margin": 96.67,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-10-03",
+    "revenue": 96.67,
+    "cost": 0,
+    "margin": 96.67,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-10-04",
+    "revenue": 96.67,
+    "cost": 0,
+    "margin": 96.67,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-10-05",
+    "revenue": 96.67,
+    "cost": 0,
+    "margin": 96.67,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-10-06",
+    "revenue": 96.67,
+    "cost": 0,
+    "margin": 96.67,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-10-07",
+    "revenue": 96.67,
+    "cost": 0,
+    "margin": 96.67,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-10-08",
+    "revenue": 96.67,
+    "cost": 0,
+    "margin": 96.67,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-10-09",
+    "revenue": 96.67,
+    "cost": 0,
+    "margin": 96.67,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-10-10",
+    "revenue": 96.67,
+    "cost": 0,
+    "margin": 96.67,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-10-11",
+    "revenue": 96.67,
+    "cost": 0,
+    "margin": 96.67,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-10-12",
+    "revenue": 96.67,
+    "cost": 0,
+    "margin": 96.67,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-10-13",
+    "revenue": 96.67,
+    "cost": 0,
+    "margin": 96.67,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-10-14",
+    "revenue": 96.67,
+    "cost": 0,
+    "margin": 96.67,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-10-15",
+    "revenue": 423.33,
+    "cost": 0,
+    "margin": 423.33,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-10-16",
+    "revenue": 423.33,
+    "cost": 0,
+    "margin": 423.33,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-10-17",
+    "revenue": 423.33,
+    "cost": 0,
+    "margin": 423.33,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-10-18",
+    "revenue": 423.33,
+    "cost": 0,
+    "margin": 423.33,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-10-19",
+    "revenue": 423.33,
+    "cost": 0,
+    "margin": 423.33,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-10-20",
+    "revenue": 620,
+    "cost": 0,
+    "margin": 620,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-10-21",
+    "revenue": 620,
+    "cost": 0,
+    "margin": 620,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-10-22",
+    "revenue": 620,
+    "cost": 0,
+    "margin": 620,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-10-23",
+    "revenue": 620,
+    "cost": 0,
+    "margin": 620,
+    "runs": 0,
+    "results": 1,
+    "sent": 1
+   },
+   {
+    "key": "2026-10-24",
+    "revenue": 620,
+    "cost": 0,
+    "margin": 620,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-10-25",
+    "revenue": 620,
+    "cost": 0,
+    "margin": 620,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-10-26",
+    "revenue": 620,
+    "cost": 0,
+    "margin": 620,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-10-27",
+    "revenue": 620,
+    "cost": 0,
+    "margin": 620,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-10-28",
+    "revenue": 620,
+    "cost": 0,
+    "margin": 620,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-10-29",
+    "revenue": 620,
+    "cost": 0,
+    "margin": 620,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-10-30",
+    "revenue": 620,
+    "cost": 0,
+    "margin": 620,
+    "runs": 0,
+    "results": 2,
+    "sent": 1
+   },
+   {
+    "key": "2026-10-31",
+    "revenue": 620,
+    "cost": 240,
+    "margin": 380,
+    "runs": 2,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-11-01",
+    "revenue": 950,
+    "cost": 2.1997999999999998,
+    "margin": 947.8,
+    "runs": 10,
+    "results": 3,
+    "sent": 0
+   }
+  ],
+  "week": [
+   {
+    "key": "2026-W19",
+    "revenue": 0,
+    "cost": 0,
+    "margin": 0,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-W20",
+    "revenue": 0,
+    "cost": 0,
+    "margin": 0,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-W21",
+    "revenue": 0,
+    "cost": 0,
+    "margin": 0,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-W22",
+    "revenue": 0,
+    "cost": 0,
+    "margin": 0,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-W23",
+    "revenue": 0,
+    "cost": 0,
+    "margin": 0,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-W24",
+    "revenue": 0,
+    "cost": 0,
+    "margin": 0,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-W25",
+    "revenue": 0,
+    "cost": 0,
+    "margin": 0,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-W26",
+    "revenue": 0,
+    "cost": 0,
+    "margin": 0,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-W27",
+    "revenue": 0,
+    "cost": 0,
+    "margin": 0,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-W28",
+    "revenue": 0,
+    "cost": 0,
+    "margin": 0,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-W29",
+    "revenue": 0,
+    "cost": 0,
+    "margin": 0,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-W30",
+    "revenue": 0,
+    "cost": 0,
+    "margin": 0,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-W31",
+    "revenue": 0,
+    "cost": 0,
+    "margin": 0,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-W32",
+    "revenue": 0,
+    "cost": 0,
+    "margin": 0,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-W33",
+    "revenue": 0,
+    "cost": 0,
+    "margin": 0,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-W34",
+    "revenue": 0,
+    "cost": 0,
+    "margin": 0,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-W35",
+    "revenue": 0,
+    "cost": 0,
+    "margin": 0,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-W36",
+    "revenue": 0,
+    "cost": 0,
+    "margin": 0,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-W37",
+    "revenue": 0,
+    "cost": 0,
+    "margin": 0,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-W38",
+    "revenue": 0,
+    "cost": 0,
+    "margin": 0,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-W39",
+    "revenue": 0,
+    "cost": 0,
+    "margin": 0,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-W40",
+    "revenue": 386.68,
+    "cost": 0,
+    "margin": 386.68,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-W41",
+    "revenue": 676.69,
+    "cost": 0,
+    "margin": 676.69,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-W42",
+    "revenue": 1983.33,
+    "cost": 0,
+    "margin": 1983.33,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-W43",
+    "revenue": 4143.33,
+    "cost": 0,
+    "margin": 4143.33,
+    "runs": 0,
+    "results": 1,
+    "sent": 1
+   },
+   {
+    "key": "2026-W44",
+    "revenue": 4670,
+    "cost": 242.1998,
+    "margin": 4427.8,
+    "runs": 12,
+    "results": 5,
+    "sent": 1
+   }
+  ],
+  "month": [
+   {
+    "key": "2026-05",
+    "revenue": 0,
+    "cost": 0,
+    "margin": 0,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-06",
+    "revenue": 0,
+    "cost": 0,
+    "margin": 0,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-07",
+    "revenue": 0,
+    "cost": 0,
+    "margin": 0,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-08",
+    "revenue": 0,
+    "cost": 0,
+    "margin": 0,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-09",
+    "revenue": 0,
+    "cost": 0,
+    "margin": 0,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-10",
+    "revenue": 10910.03,
+    "cost": 240,
+    "margin": 10670.03,
+    "runs": 2,
+    "results": 3,
+    "sent": 2
+   },
+   {
+    "key": "2026-11",
+    "revenue": 950,
+    "cost": 2.1997999999999998,
+    "margin": 947.8,
+    "runs": 10,
+    "results": 3,
+    "sent": 0
+   }
+  ]
+ },
+ "bars": [
+  {
+   "week": "2026-W19",
+   "revenue": 0,
+   "cost": 0,
+   "margin": 0,
+   "runs": 0
+  },
+  {
+   "week": "2026-W20",
+   "revenue": 0,
+   "cost": 0,
+   "margin": 0,
+   "runs": 0
+  },
+  {
+   "week": "2026-W21",
+   "revenue": 0,
+   "cost": 0,
+   "margin": 0,
+   "runs": 0
+  },
+  {
+   "week": "2026-W22",
+   "revenue": 0,
+   "cost": 0,
+   "margin": 0,
+   "runs": 0
+  },
+  {
+   "week": "2026-W23",
+   "revenue": 0,
+   "cost": 0,
+   "margin": 0,
+   "runs": 0
+  },
+  {
+   "week": "2026-W24",
+   "revenue": 0,
+   "cost": 0,
+   "margin": 0,
+   "runs": 0
+  },
+  {
+   "week": "2026-W25",
+   "revenue": 0,
+   "cost": 0,
+   "margin": 0,
+   "runs": 0
+  },
+  {
+   "week": "2026-W26",
+   "revenue": 0,
+   "cost": 0,
+   "margin": 0,
+   "runs": 0
+  },
+  {
+   "week": "2026-W27",
+   "revenue": 0,
+   "cost": 0,
+   "margin": 0,
+   "runs": 0
+  },
+  {
+   "week": "2026-W28",
+   "revenue": 0,
+   "cost": 0,
+   "margin": 0,
+   "runs": 0
+  },
+  {
+   "week": "2026-W29",
+   "revenue": 0,
+   "cost": 0,
+   "margin": 0,
+   "runs": 0
+  },
+  {
+   "week": "2026-W30",
+   "revenue": 0,
+   "cost": 0,
+   "margin": 0,
+   "runs": 0
+  },
+  {
+   "week": "2026-W31",
+   "revenue": 0,
+   "cost": 0,
+   "margin": 0,
+   "runs": 0
+  },
+  {
+   "week": "2026-W32",
+   "revenue": 0,
+   "cost": 0,
+   "margin": 0,
+   "runs": 0
+  },
+  {
+   "week": "2026-W33",
+   "revenue": 0,
+   "cost": 0,
+   "margin": 0,
+   "runs": 0
+  },
+  {
+   "week": "2026-W34",
+   "revenue": 0,
+   "cost": 0,
+   "margin": 0,
+   "runs": 0
+  },
+  {
+   "week": "2026-W35",
+   "revenue": 0,
+   "cost": 0,
+   "margin": 0,
+   "runs": 0
+  },
+  {
+   "week": "2026-W36",
+   "revenue": 0,
+   "cost": 0,
+   "margin": 0,
+   "runs": 0
+  },
+  {
+   "week": "2026-W37",
+   "revenue": 0,
+   "cost": 0,
+   "margin": 0,
+   "runs": 0
+  },
+  {
+   "week": "2026-W38",
+   "revenue": 0,
+   "cost": 0,
+   "margin": 0,
+   "runs": 0
+  },
+  {
+   "week": "2026-W39",
+   "revenue": 0,
+   "cost": 0,
+   "margin": 0,
+   "runs": 0
+  },
+  {
+   "week": "2026-W40",
+   "revenue": 387,
+   "cost": 0,
+   "margin": 387,
+   "runs": 0
+  },
+  {
+   "week": "2026-W41",
+   "revenue": 1063,
+   "cost": 0,
+   "margin": 1063,
+   "runs": 0
+  },
+  {
+   "week": "2026-W42",
+   "revenue": 3047,
+   "cost": 0,
+   "margin": 3047,
+   "runs": 0
+  },
+  {
+   "week": "2026-W43",
+   "revenue": 7190,
+   "cost": 0,
+   "margin": 7190,
+   "runs": 0
+  },
+  {
+   "week": "2026-W44",
+   "revenue": 11860,
+   "cost": 242,
+   "margin": 11618,
+   "runs": 12
+  }
+ ],
+ "byService": [
+  {
+   "id": "competitor-watch",
+   "name": "Мониторинг конкурентов и цен",
+   "value": 6800,
+   "runs": 12,
+   "margin": 2780,
+   "color": null,
+   "share": 0.23859649122807017
+  },
+  {
+   "id": "direct-semantics",
+   "name": "Настройка Яндекс Директа",
+   "value": 9900,
+   "runs": 0,
+   "margin": 9450,
+   "color": null,
+   "share": 0.3473684210526316
+  },
+  {
+   "id": "listing-audit",
+   "name": "Размещение и аудит на площадках недвижимости",
+   "value": 11800,
+   "runs": 0,
+   "margin": 5640,
+   "color": null,
+   "share": 0.41403508771929826
+  }
+ ],
+ "byClient": [
+  {
+   "id": "client-granel",
+   "name": "СЗ «Гранель» — Селигер Сити",
+   "value": 19700,
+   "runs": 1,
+   "status": "active",
+   "share": 0.6912280701754386
+  },
+  {
+   "id": "client-svet",
+   "name": "ЖК «Свет» (Dominanta)",
+   "value": 8800,
+   "runs": 4,
+   "status": "active",
+   "share": 0.3087719298245614
+  }
+ ],
+ "serviceTotal": 28500,
+ "clientTotal": 28500,
+ "funnel": {
+  "runs": 12,
+  "results": 6,
+  "sent": 2,
+  "pending": 3
+ },
+ "heatmap": [
+  [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  [
+   0,
+   2,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   9,
+   0,
+   0,
+   1,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ]
+ ],
+ "slices": {
+  "client": [
+   {
+    "key": "СЗ «Гранель» — Селигер Сити",
+    "count": 3,
+    "value": 19700
+   },
+   {
+    "key": "ЖК «Свет» (Dominanta)",
+    "count": 2,
+    "value": 8800
+   }
+  ],
+  "service": [
+   {
+    "key": "Мониторинг конкурентов и цен",
+    "count": 2,
+    "value": 6800
+   },
+   {
+    "key": "Размещение и аудит на площадках недвижимости",
+    "count": 2,
+    "value": 11800
+   },
+   {
+    "key": "Настройка Яндекс Директа",
+    "count": 1,
+    "value": 9900
+   }
+  ],
+  "agent": [
+   {
+    "key": "agent-1-competitor-watch",
+    "count": 12,
+    "value": 242.19979999999998
+   }
+  ],
+  "source": [
+   {
+    "key": "Сайты застройщиков",
+    "count": 1,
+    "value": 15
+   },
+   {
+    "key": "Партнёрские прайсы застройщиков",
+    "count": 1,
+    "value": 0
+   },
+   {
+    "key": "Ручные материалы (скриншоты, выгрузки)",
+    "count": 1,
+    "value": 0
+   },
+   {
+    "key": "Циан",
+    "count": 1,
+    "value": 289
+   },
+   {
+    "key": "Авито Недвижимость",
+    "count": 1,
+    "value": 0
+   },
+   {
+    "key": "Яндекс Недвижимость",
+    "count": 1,
+    "value": 0
+   },
+   {
+    "key": "Домклик",
+    "count": 1,
+    "value": 0
+   }
+  ],
+  "channel": [
+   {
+    "key": "Telegram",
+    "count": 4,
+    "value": 0
+   },
+   {
+    "key": "Почта",
+    "count": 1,
+    "value": 0
+   },
+   {
+    "key": "Ссылка",
+    "count": 1,
+    "value": 0
+   }
+  ],
+  "plan": [
+   {
+    "key": "premium",
+    "count": 3,
+    "value": 19700
+   },
+   {
+    "key": "business",
+    "count": 2,
+    "value": 8800
+   }
+  ],
+  "project": [
+   {
+    "key": "my-zhk-svet",
+    "count": 2,
+    "value": 0
+   }
+  ],
+  "status": [
+   {
+    "key": "активен",
+    "count": 3,
+    "value": 0
+   },
+   {
+    "key": "лид",
+    "count": 1,
+    "value": 0
+   }
+  ],
+  "runStatus": [
+   {
+    "key": "успешно",
+    "count": 12,
+    "value": 0
+   }
+  ]
+ },
+ "metrics": {
+  "revenue": {
+   "label": "Доход по подпискам",
+   "value": 28500,
+   "unit": "₽",
+   "hint": "сумма цен активных и просроченных подписок"
+  },
+  "cost": {
+   "label": "Себестоимость прогонов",
+   "value": 242.19979999999998,
+   "unit": "₽",
+   "hint": "сумма себестоимости всех записей в runs.jsonl"
+  },
+  "margin": {
+   "label": "Маржа",
+   "value": 28257.8002,
+   "unit": "₽",
+   "hint": "доход − себестоимость"
+  },
+  "marginPct": {
+   "label": "Маржинальность",
+   "value": 0.9915017614035089,
+   "unit": "%",
+   "hint": "маржа / доход"
+  },
+  "arpu": {
+   "label": "Средний чек (ARPU)",
+   "value": 9500,
+   "unit": "₽",
+   "hint": "доход / число активных клиентов"
+  },
+  "runsTotal": {
+   "label": "Прогонов всего",
+   "value": 12,
+   "unit": "",
+   "hint": "записи в registry/runs.jsonl"
+  },
+  "successRate": {
+   "label": "Успешность прогонов",
+   "value": 1,
+   "unit": "%",
+   "hint": "успешные / все прогоны"
+  },
+  "avgRunSec": {
+   "label": "Среднее время прогона",
+   "value": 6.812,
+   "unit": "с",
+   "hint": "среднее по колонке duration_ms"
+  },
+  "tokensTotal": {
+   "label": "Токенов израсходовано",
+   "value": 1226948917,
+   "unit": "",
+   "hint": "все токены из логов DSH, включая чтение кэша"
+  },
+  "tokensIn": {
+   "label": "Токенов на вход",
+   "value": 38887036,
+   "unit": "",
+   "hint": "входные токены"
+  },
+  "tokensOut": {
+   "label": "Токенов на выход",
+   "value": 5785828,
+   "unit": "",
+   "hint": "выходные токены"
+  },
+  "tokensCache": {
+   "label": "Токенов из кэша",
+   "value": 1182128187,
+   "unit": "",
+   "hint": "чтение кэша: дешевле обычных"
+  },
+  "costPanel": {
+   "label": "Расход панели",
+   "value": 3333.39,
+   "unit": "₽",
+   "hint": "расход моделей по логам сессий"
+  },
+  "costPerRun": {
+   "label": "Стоимость одного прогона",
+   "value": 20.183316666666666,
+   "unit": "₽",
+   "hint": "себестоимость / число прогонов"
+  },
+  "results": {
+   "label": "Результатов готово",
+   "value": 6,
+   "unit": "",
+   "hint": "записи в registry/results.yaml"
+  },
+  "resultsSent": {
+   "label": "Отправлено клиенту",
+   "value": 2,
+   "unit": "",
+   "hint": "результаты со статусом «отправлено»"
+  },
+  "resultsPending": {
+   "label": "Ожидает отправки",
+   "value": 3,
+   "unit": "",
+   "hint": "результаты со статусом «ожидает»"
+  },
+  "manualShare": {
+   "label": "Доля ручной отправки",
+   "value": 0.6666666666666666,
+   "unit": "%",
+   "hint": "не отправлено автоматически / все результаты"
+  },
+  "clientsActive": {
+   "label": "Клиенты: активные",
+   "value": 3,
+   "unit": "",
+   "hint": "status = active"
+  },
+  "clientsLead": {
+   "label": "Клиенты: лиды",
+   "value": 1,
+   "unit": "",
+   "hint": "status = lead"
+  },
+  "clientsPaused": {
+   "label": "Клиенты: на паузе",
+   "value": 0,
+   "unit": "",
+   "hint": "status = paused"
+  },
+  "subsActive": {
+   "label": "Подписки активные",
+   "value": 4,
+   "unit": "",
+   "hint": "status = active"
+  },
+  "subsExpiring": {
+   "label": "Подписки истекают",
+   "value": 1,
+   "unit": "",
+   "hint": "до конца ≤ 7 дней"
+  },
+  "subsOverdue": {
+   "label": "Подписки просрочены",
+   "value": 1,
+   "unit": "",
+   "hint": "status = overdue"
+  },
+  "debt": {
+   "label": "Долг по счетам",
+   "value": 9800,
+   "unit": "₽",
+   "hint": "счета со статусом «выставлен»"
+  },
+  "leadConversion": {
+   "label": "Конверсия лид → клиент",
+   "value": 0.75,
+   "unit": "%",
+   "hint": "активные / все клиенты"
+  },
+  "tasksTotal": {
+   "label": "Задач создано",
+   "value": 83,
+   "unit": "",
+   "hint": "записи в реестре задач"
+  },
+  "tasksDone": {
+   "label": "Задач готово",
+   "value": 65,
+   "unit": "",
+   "hint": "status = done"
+  },
+  "tasksOverdue": {
+   "label": "Задач просрочено",
+   "value": 0,
+   "unit": "",
+   "hint": "срок прошёл, задача не закрыта"
+  },
+  "sourcesLots": {
+   "label": "Лотов в источниках",
+   "value": 304,
+   "unit": "",
+   "hint": "сумма по последним снимкам"
+  },
+  "snapshots": {
+   "label": "Снимков собрано",
+   "value": 4,
+   "unit": "",
+   "hint": "число снимков по всем источникам"
+  },
+  "sourcesSuccess": {
+   "label": "Успешность сбора",
+   "value": 0.42857142857142855,
+   "unit": "%",
+   "hint": "работающие источники / все"
+  }
+ },
+ "spark": [
+  423.33,
+  620,
+  620,
+  620,
+  620,
+  620,
+  620,
+  620,
+  620,
+  620,
+  620,
+  620,
+  380,
+  947.8002
+ ],
+ "tops": {
+  "servicesByMargin": [
+   {
+    "name": "Настройка Яндекс Директа",
+    "value": 9450,
+    "unit": "₽",
+    "extra": "95% от цены"
+   },
+   {
+    "name": "Размещение и аудит на площадках недвижимости",
+    "value": 5640,
+    "unit": "₽",
+    "extra": "96% от цены"
+   },
+   {
+    "name": "Мониторинг конкурентов и цен",
+    "value": 2780,
+    "unit": "₽",
+    "extra": "96% от цены"
+   }
+  ],
+  "clientsByRevenue": [
+   {
+    "name": "СЗ «Гранель» — Селигер Сити",
+    "value": 19700,
+    "unit": "₽",
+    "extra": "активен · прогонов 1"
+   },
+   {
+    "name": "ЖК «Свет» (Dominanta)",
+    "value": 8800,
+    "unit": "₽",
+    "extra": "активен · прогонов 4"
+   },
+   {
+    "name": "Пример: убыточный клиент",
+    "value": 0,
+    "unit": "₽",
+    "extra": "активен · прогонов 0"
+   },
+   {
+    "name": "«Донстрой» (лид)",
+    "value": 0,
+    "unit": "₽",
+    "extra": "лид · прогонов 0"
+   }
+  ],
+  "sourcesByLots": [
+   {
+    "name": "Циан",
+    "value": 289,
+    "unit": "лотов",
+    "extra": ""
+   },
+   {
+    "name": "Сайты застройщиков",
+    "value": 15,
+    "unit": "лотов",
+    "extra": ""
+   },
+   {
+    "name": "Партнёрские прайсы застройщиков",
+    "value": 0,
+    "unit": "лотов",
+    "extra": ""
+   },
+   {
+    "name": "Ручные материалы (скриншоты, выгрузки)",
+    "value": 0,
+    "unit": "лотов",
+    "extra": ""
+   },
+   {
+    "name": "Авито Недвижимость",
+    "value": 0,
+    "unit": "лотов",
+    "extra": ""
+   }
+  ],
+  "modelsByCost": [
+   {
+    "name": "deepseek/deepseek-v4.1-flash",
+    "value": 3315.1,
+    "unit": "₽",
+    "extra": "цена неизвестна"
+   },
+   {
+    "name": "openai/gpt-6-luna",
+    "value": 18.29,
+    "unit": "₽",
+    "extra": "цена неизвестна"
+   },
+   {
+    "name": "openai/gpt-4o-mini",
+    "value": null,
+    "unit": "₽",
+    "extra": "цена неизвестна"
+   }
+  ]
+ },
+ "counts": {
+  "metrics": 32,
+  "slices": 9,
+  "charts": 6
+ },
+ "warnings": []
+}

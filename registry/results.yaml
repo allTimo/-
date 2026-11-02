@@ -1,0 +1,170 @@
+# Финальные результаты работы агентов: что сделано и КУДА ОТПРАВЛЕНО.
+#
+# Зачем: пользователь хочет видеть не только прогоны, но и сам результат работы —
+# готовый артефакт и факт его отправки заказчику.
+#
+# Схема одной записи:
+#   id            — идентификатор результата
+#   title         — короткое название («Отчёт по конкурентам за неделю»)
+#   summary       — что сделано, одной фразой
+#   client        — id клиента из clients.yaml (может быть пусто)
+#   project       — id проекта из projects.yaml (может быть пусто)
+#   period        — за какой период («2026-10-23 — 2026-10-30»)
+#   agent         — id агента-исполнителя из agents.yaml
+#   service       — id услуги из services.yaml
+#   created       — когда результат готов (ISO)
+#   artifacts     — список файлов результата (пути от корня marketing-agents)
+#   sent_channel  — канал отправки: telegram | vk | whatsapp | email | link | download | none
+#   sent_to       — куда именно (канал/чат/адрес) — правится вручную
+#   sent_at       — когда отправлено (ISO) или null
+#   sent_status   — отправлено | ожидает | ошибка | не отправлялось
+#
+# В MVP отправка выполняется ВРУЧНУЮ (или агентом по команде): панель фиксирует факт,
+# но сама сообщения не рассылает. Поле «куда отправлено» редактируемое.
+
+version: 1
+updated: "2026-10-31"
+
+results:
+  - id: res-2026-10-30-competitor-watch
+    title: "Отчёт по конкурентам и ценам за неделю"
+    summary: "Сравнили два снимка: цены, акции и объём предложения; собрали отчёт из 9 разделов."
+    client: client-svet
+    project: my-zhk-svet
+    period: "2026-10-23 — 2026-10-30"
+    agent: agent-1-competitor-watch
+    service: competitor-watch
+    created: "2026-10-30T10:12:00+03:00"
+    artifacts:
+      - "01-competitor-watch/reports/2026-10-30-competitor-watch.md"
+      - "01-competitor-watch/reports/2026-10-30-competitor-watch.xlsx"
+    sent_channel: telegram
+    sent_to: "@svet_marketing"
+    sent_at: "2026-10-30T11:05:00+03:00"
+    sent_status: отправлено
+
+  - id: res-2026-10-30-granel
+    title: "Отчёт по конкурентам для Селигер Сити"
+    summary: "Тот же отчёт, но с разбором по площадке заказчика и сравнением недель."
+    client: client-granel
+    project: null
+    period: "2026-10-23 — 2026-10-30"
+    agent: agent-1-competitor-watch
+    service: competitor-watch
+    created: "2026-10-30T10:14:00+03:00"
+    artifacts:
+      - "01-competitor-watch/reports/2026-10-30-competitor-watch.xlsx"
+    sent_channel: email
+    sent_to: "d.granel@example.ru"
+    sent_at: null
+    sent_status: ???????
+
+  - id: res-2026-10-23-competitor-watch
+    title: "Отчёт по конкурентам и ценам за прошлую неделю"
+    summary: "Первый рабочий прогон движка: снимок, сравнение и отчёт."
+    client: client-svet
+    project: my-zhk-svet
+    period: "2026-10-16 — 2026-10-23"
+    agent: agent-1-competitor-watch
+    service: competitor-watch
+    created: "2026-10-23T10:05:00+03:00"
+    artifacts:
+      - "01-competitor-watch/reports/2026-10-23-competitor-watch.md"
+    sent_channel: link
+    sent_to: "ссылка в кабинете клиента"
+    sent_at: "2026-10-23T12:30:00+03:00"
+    sent_status: отправлено
+
+  - id: res-2026-11-01-svet
+    title: "ЖК «Свет»: Мониторинг конкурентов за 2026-11-01"
+    summary: "Собрано источников: 6, лотов в снимке: 25, статусы: developer-sites=ok, manual-inbox=no_data, cian=needs_browser, avito=needs_browser, yandex-realty=ok, domclick=needs_partnership"
+    client: client-svet
+    project: null
+    period: "нет — 2026-11-01"
+    agent: agent-1-competitor-watch
+    service: competitor-watch
+    created: "2026-11-01T14:01:56+03:00"
+    artifacts:
+      - "01-competitor-watch/reports/clients/client-svet/2026-11-01-competitor-watch.md"
+      - "01-competitor-watch/reports/clients/client-svet/2026-11-01-competitor-watch.xlsx"
+      - "01-competitor-watch/reports/clients/client-svet/2026-11-01-competitor-watch.docx"
+      - "01-competitor-watch/reports/clients/client-svet/2026-11-01-competitor-watch.pdf"
+    sent_channel: telegram
+    sent_to: "@svet_marketing"
+    sent_at: null
+    sent_status: "ожидает"
+
+  - id: res-2026-11-01-svet
+    title: "ЖК «Свет»: Мониторинг конкурентов за 2026-11-01"
+    summary: "Собрано источников: 6, лотов в снимке: 39, статусы: developer-sites=ok, manual-inbox=no_data, cian=needs_browser, avito=needs_browser, yandex-realty=ok, domclick=needs_partnership"
+    client: client-svet
+    project: null
+    period: "нет — 2026-11-01"
+    agent: agent-1-competitor-watch
+    service: competitor-watch
+    created: "2026-11-01T14:02:56+03:00"
+    artifacts:
+      - "01-competitor-watch/reports/clients/client-svet/2026-11-01-competitor-watch.md"
+      - "01-competitor-watch/reports/clients/client-svet/2026-11-01-competitor-watch.xlsx"
+      - "01-competitor-watch/reports/clients/client-svet/2026-11-01-competitor-watch.docx"
+    sent_channel: telegram
+    sent_to: "@svet_marketing"
+    sent_at: null
+    sent_status: "ожидает"
+
+  - id: res-2026-11-01-svet
+    title: "ЖК «Свет»: Мониторинг конкурентов за 2026-11-01"
+    summary: "Собрано источников: 6, лотов в снимке: 15, статусы: developer-sites=ok, manual-inbox=no_data, cian=needs_browser, avito=needs_browser, yandex-realty=no_data, domclick=needs_partnership"
+    client: client-svet
+    project: null
+    period: "нет — 2026-11-01"
+    agent: agent-1-competitor-watch
+    service: competitor-watch
+    created: "2026-11-01T14:03:19+03:00"
+    artifacts:
+      - "01-competitor-watch/reports/clients/client-svet/2026-11-01-competitor-watch.md"
+      - "01-competitor-watch/reports/clients/client-svet/2026-11-01-competitor-watch.xlsx"
+      - "01-competitor-watch/reports/clients/client-svet/2026-11-01-competitor-watch.docx"
+      - "01-competitor-watch/reports/clients/client-svet/2026-11-01-competitor-watch.pdf"
+    sent_channel: telegram
+    sent_to: "@svet_marketing"
+    sent_at: null
+    sent_status: "ожидает"
+
+  - id: res-2026-11-02-granel
+    title: "СЗ «Гранель» — Селигер Сити: Мониторинг конкурентов — Селигер Сити за 2026-11-02"
+    summary: "Собрано источников: 3, лотов в снимке: 229, статусы: developer-sites=no_data, cian=ok, yandex-realty=ok"
+    client: client-granel
+    project: null
+    period: "нет — 2026-11-02"
+    agent: agent-1-competitor-watch
+    service: competitor-watch
+    created: "2026-11-02T19:56:54+03:00"
+    artifacts:
+      - "01-competitor-watch/reports/clients/client-granel/2026-11-02-competitor-watch.md"
+      - "01-competitor-watch/reports/clients/client-granel/2026-11-02-competitor-watch.xlsx"
+      - "01-competitor-watch/reports/clients/client-granel/2026-11-02-competitor-watch.docx"
+      - "01-competitor-watch/reports/clients/client-granel/2026-11-02-competitor-watch.pdf"
+    sent_channel: telegram
+    sent_to: ""
+    sent_at: null
+    sent_status: "ожидает"
+
+  - id: res-2026-11-02-svet
+    title: "ЖК «Свет»: Мониторинг конкурентов за 2026-11-02"
+    summary: "Собрано источников: 3, лотов в снимке: 175, статусы: developer-sites=no_data, cian=ok, yandex-realty=ok"
+    client: client-svet
+    project: null
+    period: "2026-11-01 — 2026-11-02"
+    agent: agent-1-competitor-watch
+    service: competitor-watch
+    created: "2026-11-02T19:57:04+03:00"
+    artifacts:
+      - "01-competitor-watch/reports/clients/client-svet/2026-11-02-competitor-watch.md"
+      - "01-competitor-watch/reports/clients/client-svet/2026-11-02-competitor-watch.xlsx"
+      - "01-competitor-watch/reports/clients/client-svet/2026-11-02-competitor-watch.docx"
+      - "01-competitor-watch/reports/clients/client-svet/2026-11-02-competitor-watch.pdf"
+    sent_channel: telegram
+    sent_to: "@svet_marketing"
+    sent_at: null
+    sent_status: "ожидает"

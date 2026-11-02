@@ -1,0 +1,527 @@
+{
+  "checked_at": "2026-11-01",
+  "tls_verification": "отключена",
+  "developers": {
+    "ПИК": {
+      "sources": [
+        {
+          "url": "https://www.pik.ru/investors",
+          "status": 401,
+          "bytes": 265,
+          "reachable": false,
+          "mentions": [],
+          "numbers": [],
+          "documents": [],
+          "note": "HTTP 401"
+        },
+        {
+          "url": "https://pik.ru/ir",
+          "status": 401,
+          "bytes": 265,
+          "reachable": false,
+          "mentions": [],
+          "numbers": [],
+          "documents": [],
+          "note": "HTTP 401"
+        },
+        {
+          "url": "https://www.e-disclosure.ru/portal/company.aspx?id=1486",
+          "status": 200,
+          "bytes": 413002,
+          "reachable": true,
+          "mentions": [],
+          "numbers": [],
+          "documents": [],
+          "note": ""
+        }
+      ],
+      "metrics": {
+        "marketing_spend_company": {
+          "value": null,
+          "unit": "₽",
+          "source": "публичная отчётность застройщика",
+          "collected_at": "2026-11-01",
+          "method": "http",
+          "accuracy": "",
+          "comment": "сумма не извлечена автоматически; проверены открытые источники (1 доступно из 3), документ требует ручного просмотра",
+          "url": "https://www.e-disclosure.ru/portal/company.aspx?id=1486",
+          "level": "по компании/группе (не по ЖК)"
+        },
+        "marketing_spend_documents": {
+          "value": null,
+          "unit": "документов",
+          "source": "публичная отчётность застройщика",
+          "collected_at": "2026-11-01",
+          "method": "http",
+          "accuracy": "",
+          "comment": "документы отчётности на доступных страницах не найдены",
+          "url": "",
+          "level": "по компании/группе (не по ЖК)"
+        }
+      },
+      "promo": {
+        "value": null,
+        "unit": "акций",
+        "source": "наш мониторинг промо-страниц",
+        "collected_at": "2026-11-01",
+        "method": "http",
+        "accuracy": "средняя",
+        "comment": "промо ещё не собирались",
+        "level": "по проекту"
+      },
+      "social": {
+        "value": null,
+        "unit": "страниц",
+        "source": "соцсети застройщика",
+        "collected_at": "2026-11-01",
+        "method": "none",
+        "accuracy": "низкая",
+        "comment": "страницы соцсетей недоступны из этой сети — данных нет",
+        "level": "по компании"
+      },
+      "search_ads": {
+        "value": null,
+        "unit": "факт",
+        "source": "поисковая реклама (Директ)",
+        "collected_at": "2026-11-01",
+        "method": "none",
+        "accuracy": "",
+        "comment": "факт ведения поисковой рекламы программно не проверяется: поисковые системы не отдают выдачу автоматическим запросам. Требуется ручная проверка.",
+        "level": "по проекту/бренду"
+      },
+      "conversion": {
+        "calls_count": {
+          "value": null,
+          "unit": "звонков",
+          "source": "CRM/коллтрекинг конкурента",
+          "collected_at": "2026-11-01",
+          "method": "none",
+          "accuracy": "",
+          "comment": "в открытых источниках не публикуется: это внутренняя аналитика (CRM, коллтрекинг, записи в офис продаж)",
+          "level": "внутренние данные конкурента"
+        },
+        "conversion_rate": {
+          "value": null,
+          "unit": "%",
+          "source": "CRM/коллтрекинг конкурента",
+          "collected_at": "2026-11-01",
+          "method": "none",
+          "accuracy": "",
+          "comment": "в открытых источниках не публикуется: это внутренняя аналитика (CRM, коллтрекинг, записи в офис продаж)",
+          "level": "внутренние данные конкурента"
+        },
+        "office_visits": {
+          "value": null,
+          "unit": "визитов",
+          "source": "CRM/коллтрекинг конкурента",
+          "collected_at": "2026-11-01",
+          "method": "none",
+          "accuracy": "",
+          "comment": "в открытых источниках не публикуется: это внутренняя аналитика (CRM, коллтрекинг, записи в офис продаж)",
+          "level": "внутренние данные конкурента"
+        },
+        "lead_cost": {
+          "value": null,
+          "unit": "₽",
+          "source": "CRM/коллтрекинг конкурента",
+          "collected_at": "2026-11-01",
+          "method": "none",
+          "accuracy": "",
+          "comment": "в открытых источниках не публикуется: это внутренняя аналитика (CRM, коллтрекинг, записи в офис продаж)",
+          "level": "внутренние данные конкурента"
+        }
+      }
+    },
+    "ЛСР": {
+      "sources": [
+        {
+          "url": "https://www.lsr.ru/ru/investors/",
+          "status": 200,
+          "bytes": 1781,
+          "reachable": true,
+          "mentions": [],
+          "numbers": [],
+          "documents": [],
+          "note": ""
+        },
+        {
+          "url": "https://www.lsr.ru/ru/investors/disclosure/",
+          "status": 200,
+          "bytes": 1792,
+          "reachable": true,
+          "mentions": [],
+          "numbers": [],
+          "documents": [],
+          "note": ""
+        },
+        {
+          "url": "https://www.e-disclosure.ru/portal/company.aspx?id=2093",
+          "status": 200,
+          "bytes": 413002,
+          "reachable": true,
+          "mentions": [],
+          "numbers": [],
+          "documents": [],
+          "note": ""
+        }
+      ],
+      "metrics": {
+        "marketing_spend_company": {
+          "value": null,
+          "unit": "₽",
+          "source": "публичная отчётность застройщика",
+          "collected_at": "2026-11-01",
+          "method": "http",
+          "accuracy": "",
+          "comment": "сумма не извлечена автоматически; проверены открытые источники (3 доступно из 3), документ требует ручного просмотра",
+          "url": "https://www.lsr.ru/ru/investors/",
+          "level": "по компании/группе (не по ЖК)"
+        },
+        "marketing_spend_documents": {
+          "value": null,
+          "unit": "документов",
+          "source": "публичная отчётность застройщика",
+          "collected_at": "2026-11-01",
+          "method": "http",
+          "accuracy": "",
+          "comment": "документы отчётности на доступных страницах не найдены",
+          "url": "",
+          "level": "по компании/группе (не по ЖК)"
+        }
+      },
+      "promo": {
+        "value": null,
+        "unit": "акций",
+        "source": "наш мониторинг промо-страниц",
+        "collected_at": "2026-11-01",
+        "method": "http",
+        "accuracy": "средняя",
+        "comment": "промо ещё не собирались",
+        "level": "по проекту"
+      },
+      "social": {
+        "value": 1,
+        "unit": "страниц",
+        "source": "соцсети застройщика",
+        "collected_at": "2026-11-01",
+        "method": "http",
+        "accuracy": "низкая",
+        "comment": "открытые страницы найдены: https://vk.com/lsrgroup",
+        "level": "по компании"
+      },
+      "search_ads": {
+        "value": null,
+        "unit": "факт",
+        "source": "поисковая реклама (Директ)",
+        "collected_at": "2026-11-01",
+        "method": "none",
+        "accuracy": "",
+        "comment": "факт ведения поисковой рекламы программно не проверяется: поисковые системы не отдают выдачу автоматическим запросам. Требуется ручная проверка.",
+        "level": "по проекту/бренду"
+      },
+      "conversion": {
+        "calls_count": {
+          "value": null,
+          "unit": "звонков",
+          "source": "CRM/коллтрекинг конкурента",
+          "collected_at": "2026-11-01",
+          "method": "none",
+          "accuracy": "",
+          "comment": "в открытых источниках не публикуется: это внутренняя аналитика (CRM, коллтрекинг, записи в офис продаж)",
+          "level": "внутренние данные конкурента"
+        },
+        "conversion_rate": {
+          "value": null,
+          "unit": "%",
+          "source": "CRM/коллтрекинг конкурента",
+          "collected_at": "2026-11-01",
+          "method": "none",
+          "accuracy": "",
+          "comment": "в открытых источниках не публикуется: это внутренняя аналитика (CRM, коллтрекинг, записи в офис продаж)",
+          "level": "внутренние данные конкурента"
+        },
+        "office_visits": {
+          "value": null,
+          "unit": "визитов",
+          "source": "CRM/коллтрекинг конкурента",
+          "collected_at": "2026-11-01",
+          "method": "none",
+          "accuracy": "",
+          "comment": "в открытых источниках не публикуется: это внутренняя аналитика (CRM, коллтрекинг, записи в офис продаж)",
+          "level": "внутренние данные конкурента"
+        },
+        "lead_cost": {
+          "value": null,
+          "unit": "₽",
+          "source": "CRM/коллтрекинг конкурента",
+          "collected_at": "2026-11-01",
+          "method": "none",
+          "accuracy": "",
+          "comment": "в открытых источниках не публикуется: это внутренняя аналитика (CRM, коллтрекинг, записи в офис продаж)",
+          "level": "внутренние данные конкурента"
+        }
+      }
+    },
+    "Самолёт": {
+      "sources": [
+        {
+          "url": "https://samoletgroup.ru/",
+          "status": 401,
+          "bytes": 265,
+          "reachable": false,
+          "mentions": [],
+          "numbers": [],
+          "documents": [],
+          "note": "HTTP 401"
+        },
+        {
+          "url": "https://samoletgroup.ru/investors/",
+          "status": 401,
+          "bytes": 265,
+          "reachable": false,
+          "mentions": [],
+          "numbers": [],
+          "documents": [],
+          "note": "HTTP 401"
+        },
+        {
+          "url": "https://www.e-disclosure.ru/portal/company.aspx?id=37499",
+          "status": 200,
+          "bytes": 413003,
+          "reachable": true,
+          "mentions": [],
+          "numbers": [],
+          "documents": [],
+          "note": ""
+        }
+      ],
+      "metrics": {
+        "marketing_spend_company": {
+          "value": null,
+          "unit": "₽",
+          "source": "публичная отчётность застройщика",
+          "collected_at": "2026-11-01",
+          "method": "http",
+          "accuracy": "",
+          "comment": "сумма не извлечена автоматически; проверены открытые источники (1 доступно из 3), документ требует ручного просмотра",
+          "url": "https://www.e-disclosure.ru/portal/company.aspx?id=37499",
+          "level": "по компании/группе (не по ЖК)"
+        },
+        "marketing_spend_documents": {
+          "value": null,
+          "unit": "документов",
+          "source": "публичная отчётность застройщика",
+          "collected_at": "2026-11-01",
+          "method": "http",
+          "accuracy": "",
+          "comment": "документы отчётности на доступных страницах не найдены",
+          "url": "",
+          "level": "по компании/группе (не по ЖК)"
+        }
+      },
+      "promo": {
+        "value": null,
+        "unit": "акций",
+        "source": "наш мониторинг промо-страниц",
+        "collected_at": "2026-11-01",
+        "method": "http",
+        "accuracy": "средняя",
+        "comment": "промо ещё не собирались",
+        "level": "по проекту"
+      },
+      "social": {
+        "value": 1,
+        "unit": "страниц",
+        "source": "соцсети застройщика",
+        "collected_at": "2026-11-01",
+        "method": "http",
+        "accuracy": "низкая",
+        "comment": "открытые страницы найдены: https://vk.com/samolet_official",
+        "level": "по компании"
+      },
+      "search_ads": {
+        "value": null,
+        "unit": "факт",
+        "source": "поисковая реклама (Директ)",
+        "collected_at": "2026-11-01",
+        "method": "none",
+        "accuracy": "",
+        "comment": "факт ведения поисковой рекламы программно не проверяется: поисковые системы не отдают выдачу автоматическим запросам. Требуется ручная проверка.",
+        "level": "по проекту/бренду"
+      },
+      "conversion": {
+        "calls_count": {
+          "value": null,
+          "unit": "звонков",
+          "source": "CRM/коллтрекинг конкурента",
+          "collected_at": "2026-11-01",
+          "method": "none",
+          "accuracy": "",
+          "comment": "в открытых источниках не публикуется: это внутренняя аналитика (CRM, коллтрекинг, записи в офис продаж)",
+          "level": "внутренние данные конкурента"
+        },
+        "conversion_rate": {
+          "value": null,
+          "unit": "%",
+          "source": "CRM/коллтрекинг конкурента",
+          "collected_at": "2026-11-01",
+          "method": "none",
+          "accuracy": "",
+          "comment": "в открытых источниках не публикуется: это внутренняя аналитика (CRM, коллтрекинг, записи в офис продаж)",
+          "level": "внутренние данные конкурента"
+        },
+        "office_visits": {
+          "value": null,
+          "unit": "визитов",
+          "source": "CRM/коллтрекинг конкурента",
+          "collected_at": "2026-11-01",
+          "method": "none",
+          "accuracy": "",
+          "comment": "в открытых источниках не публикуется: это внутренняя аналитика (CRM, коллтрекинг, записи в офис продаж)",
+          "level": "внутренние данные конкурента"
+        },
+        "lead_cost": {
+          "value": null,
+          "unit": "₽",
+          "source": "CRM/коллтрекинг конкурента",
+          "collected_at": "2026-11-01",
+          "method": "none",
+          "accuracy": "",
+          "comment": "в открытых источниках не публикуется: это внутренняя аналитика (CRM, коллтрекинг, записи в офис продаж)",
+          "level": "внутренние данные конкурента"
+        }
+      }
+    },
+    "Эталон": {
+      "sources": [
+        {
+          "url": "https://www.etalongroup.com/ru/investors/",
+          "status": 404,
+          "bytes": 65877,
+          "reachable": false,
+          "mentions": [],
+          "numbers": [],
+          "documents": [],
+          "note": "HTTP 404"
+        },
+        {
+          "url": "https://www.etalongroup.com/ru/investors/disclosure/",
+          "status": 404,
+          "bytes": 65877,
+          "reachable": false,
+          "mentions": [],
+          "numbers": [],
+          "documents": [],
+          "note": "HTTP 404"
+        },
+        {
+          "url": "https://www.e-disclosure.ru/portal/company.aspx?id=1147",
+          "status": 200,
+          "bytes": 413000,
+          "reachable": true,
+          "mentions": [],
+          "numbers": [],
+          "documents": [],
+          "note": ""
+        }
+      ],
+      "metrics": {
+        "marketing_spend_company": {
+          "value": null,
+          "unit": "₽",
+          "source": "публичная отчётность застройщика",
+          "collected_at": "2026-11-01",
+          "method": "http",
+          "accuracy": "",
+          "comment": "сумма не извлечена автоматически; проверены открытые источники (1 доступно из 3), документ требует ручного просмотра",
+          "url": "https://www.e-disclosure.ru/portal/company.aspx?id=1147",
+          "level": "по компании/группе (не по ЖК)"
+        },
+        "marketing_spend_documents": {
+          "value": null,
+          "unit": "документов",
+          "source": "публичная отчётность застройщика",
+          "collected_at": "2026-11-01",
+          "method": "http",
+          "accuracy": "",
+          "comment": "документы отчётности на доступных страницах не найдены",
+          "url": "",
+          "level": "по компании/группе (не по ЖК)"
+        }
+      },
+      "promo": {
+        "value": null,
+        "unit": "акций",
+        "source": "наш мониторинг промо-страниц",
+        "collected_at": "2026-11-01",
+        "method": "http",
+        "accuracy": "средняя",
+        "comment": "промо ещё не собирались",
+        "level": "по проекту"
+      },
+      "social": {
+        "value": 1,
+        "unit": "страниц",
+        "source": "соцсети застройщика",
+        "collected_at": "2026-11-01",
+        "method": "http",
+        "accuracy": "низкая",
+        "comment": "открытые страницы найдены: https://vk.com/etalongroup",
+        "level": "по компании"
+      },
+      "search_ads": {
+        "value": null,
+        "unit": "факт",
+        "source": "поисковая реклама (Директ)",
+        "collected_at": "2026-11-01",
+        "method": "none",
+        "accuracy": "",
+        "comment": "факт ведения поисковой рекламы программно не проверяется: поисковые системы не отдают выдачу автоматическим запросам. Требуется ручная проверка.",
+        "level": "по проекту/бренду"
+      },
+      "conversion": {
+        "calls_count": {
+          "value": null,
+          "unit": "звонков",
+          "source": "CRM/коллтрекинг конкурента",
+          "collected_at": "2026-11-01",
+          "method": "none",
+          "accuracy": "",
+          "comment": "в открытых источниках не публикуется: это внутренняя аналитика (CRM, коллтрекинг, записи в офис продаж)",
+          "level": "внутренние данные конкурента"
+        },
+        "conversion_rate": {
+          "value": null,
+          "unit": "%",
+          "source": "CRM/коллтрекинг конкурента",
+          "collected_at": "2026-11-01",
+          "method": "none",
+          "accuracy": "",
+          "comment": "в открытых источниках не публикуется: это внутренняя аналитика (CRM, коллтрекинг, записи в офис продаж)",
+          "level": "внутренние данные конкурента"
+        },
+        "office_visits": {
+          "value": null,
+          "unit": "визитов",
+          "source": "CRM/коллтрекинг конкурента",
+          "collected_at": "2026-11-01",
+          "method": "none",
+          "accuracy": "",
+          "comment": "в открытых источниках не публикуется: это внутренняя аналитика (CRM, коллтрекинг, записи в офис продаж)",
+          "level": "внутренние данные конкурента"
+        },
+        "lead_cost": {
+          "value": null,
+          "unit": "₽",
+          "source": "CRM/коллтрекинг конкурента",
+          "collected_at": "2026-11-01",
+          "method": "none",
+          "accuracy": "",
+          "comment": "в открытых источниках не публикуется: это внутренняя аналитика (CRM, коллтрекинг, записи в офис продаж)",
+          "level": "внутренние данные конкурента"
+        }
+      }
+    }
+  },
+  "rule": "суммы — только из публичной отчётности, уровень «по компании»; звонки/конверсия/визиты в открытых источниках отсутствуют"
+}

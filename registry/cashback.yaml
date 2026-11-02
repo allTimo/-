@@ -1,0 +1,34 @@
+# КЭШБЭК (вознаграждение за ведение рекламы): начисления и выплаты.
+#
+# Формула начисления: amount_rub = base_rub × rate_pct / 100 + fixed_rub.
+# Проверяется независимым пересчётом в verify-data.mjs — расхождение до копейки не допускается.
+#
+# status: начислено | ожидает | выплачено
+
+version: 1
+updated: "2026-11-01"
+
+accruals:
+  - { id: acc-001, client: client-svet, channel: yandex-direct, period: "2026-10", base_rub: 60400, rate_pct: 10, fixed_rub: 0, amount_rub: 6040, status: начислено, doc: "счёт №14" }
+  - { id: acc-002, client: client-svet, channel: avito, period: "2026-10", base_rub: 22000, rate_pct: 8, fixed_rub: 0, amount_rub: 1760, status: начислено, doc: "счёт №14" }
+  - { id: acc-003, client: client-granel, channel: yandex-direct, period: "2026-10", base_rub: 41000, rate_pct: 12, fixed_rub: 0, amount_rub: 4920, status: ожидает, doc: "счёт №15" }
+  - { id: acc-004, client: client-granel, channel: vk-ads, period: "2026-10", base_rub: 18600, rate_pct: 10, fixed_rub: 0, amount_rub: 1860, status: ожидает, doc: "счёт №15" }
+  - { id: acc-005, client: client-granel, channel: cian, period: "2026-10", base_rub: 12000, rate_pct: 8, fixed_rub: 0, amount_rub: 960, status: ожидает, doc: "счёт №15" }
+  - { id: acc-006, client: client-donstroy, channel: yandex-direct, period: "2026-10", base_rub: 4200, rate_pct: 10, fixed_rub: 0, amount_rub: 420, status: начислено, doc: null }
+
+payouts:
+  - { id: pay-001, client: client-svet, date: "2026-10-31", amount_rub: 7800, method: "СБП", status: выплачено, doc: "акт №14" }
+  - { id: pay-002, client: client-granel, date: "2026-11-05", amount_rub: 7740, method: "счёт для юрлиц", status: ожидает, doc: "счёт №15" }
+
+# --- КЭШБЭК ОПЕРАТОРОВ (третий уровень: платформа -> оператор) ---
+# Формула: amount_rub = base_rub × rate_pct / 100, где base_rub — оборот клиентов оператора.
+# Проверяется независимым пересчётом в verify-data.mjs.
+
+operator_accruals:
+  - { id: opacc-001, operator: op-anna, period: "2026-10", base_rub: 86600, rate_pct: 4, amount_rub: 3464, status: начислено }
+  - { id: opacc-002, operator: op-studio, period: "2026-10", base_rub: 71600, rate_pct: 5, amount_rub: 3580, status: ожидает }
+  # ДЕМО-УБЫТОК: оператору обещано 6% от оборота, а возврат площадки 0 ₽ — платить нечем.
+  - { id: opacc-003, operator: op-sergey, period: "2026-10", base_rub: 120000, rate_pct: 6, amount_rub: 7200, status: начислено }
+
+operator_payouts:
+  - { id: oppay-001, operator: op-anna, date: "2026-11-01", amount_rub: 3464, method: "СБП", status: ожидает, doc: "акт №1" }

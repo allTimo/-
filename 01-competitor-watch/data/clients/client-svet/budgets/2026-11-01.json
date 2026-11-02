@@ -1,0 +1,40 @@
+{
+  "source": "демо-образец выгрузки",
+  "method": "csv",
+  "status": "ok",
+  "note": "оценка сервиса, НЕ фактический расход застройщика | ДЕМОНСТРАЦИОННЫЙ ОБРАЗЕЦ выгрузки, не данные аккаунта пользователя",
+  "collected_at": "2026-11-01",
+  "projects": [
+    {
+      "project": "zhk-mihalkovskiy",
+      "name": "ЖК Михалковский",
+      "domain": "rg-dev.ru",
+      "budget_rub": 346800,
+      "budget_estimate_rub": 346800,
+      "period": "2026-10",
+      "ads_count": 80,
+      "keywords_count": 613,
+      "landings_count": 1,
+      "collected_at": "2026-11-01",
+      "accuracy": "демо-образец: оценка сервиса (не данные аккаунта)",
+      "note": "",
+      "demo": true
+    },
+    {
+      "project": "zhk-seliger-siti",
+      "name": "zhk-seliger-siti",
+      "domain": "seliger-city.ru",
+      "budget_rub": 240900,
+      "budget_estimate_rub": 240900,
+      "period": "2026-10",
+      "ads_count": 51,
+      "keywords_count": 402,
+      "landings_count": 1,
+      "collected_at": "2026-11-01",
+      "accuracy": "демо-образец: оценка сервиса (не данные аккаунта)",
+      "note": "",
+      "demo": true
+    }
+  ],
+  "demo": true
+}

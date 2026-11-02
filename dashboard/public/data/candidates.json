@@ -1,0 +1,176 @@
+{
+ "dir": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\01-competitor-watch\\data\\candidates",
+ "exists": true,
+ "projects": [
+  {
+   "projectId": "my-zhk-svet",
+   "file": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\01-competitor-watch\\data\\candidates\\my-zhk-svet.json",
+   "fileName": "my-zhk-svet.json",
+   "engine": null,
+   "foundAt": "2026-11-01T17:31:22+03:00",
+   "radiusKm": 10,
+   "summary": {
+    "total": 9,
+    "in_radius": 6,
+    "radius_km": 10,
+    "approved": 0,
+    "rejected": 0,
+    "candidate": 9,
+    "without_distance": 3,
+    "without_price": 0,
+    "class_mismatch": 3
+   },
+   "limitations": [
+    "точность геокодирования невысокая (primary/highway) — проверьте координаты или задайте их вручную",
+    "площадки без публичных данных: cian (no_data), avito (needs_browser), yandex-realty (no_data)",
+    "без расстояния: 3 (нет координат — данных нет)"
+   ],
+   "platformAttempts": [
+    {
+     "source": "cian",
+     "status": "no_data",
+     "note": "страница открылась, но лотов на ней нет (видна только цена «от»)",
+     "found": 0
+    },
+    {
+     "source": "avito",
+     "status": "needs_browser",
+     "note": "HTTP 439 (браузер отключён флагом)",
+     "found": 0
+    },
+    {
+     "source": "yandex-realty",
+     "status": "no_data",
+     "note": "страница открылась, но лотов на ней нет (видна только цена «от»)",
+     "found": 0
+    }
+   ],
+   "items": [
+    {
+     "key": "zhk-dmitrovskoe-nebo-gruppa-lsr",
+     "decisionAt": null,
+     "decisionSource": null,
+     "name": "ЖК Дмитровское небо",
+     "developer": "Группа ЛСР",
+     "klass": "бизнес",
+     "distanceKm": 1.16,
+     "pricePerM2": 477272,
+     "sources": [
+      {
+       "platform": "cian",
+       "url": "https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-dmitrovskoe-nebo-4051330-ot-zastroyschika-OTZ/"
+      }
+     ],
+     "foundAt": "2026-11-01T17:31:09+03:00",
+     "confidence": null,
+     "status": "candidate"
+    },
+    {
+     "key": "zhk-seliger-siti-mr-group",
+     "decisionAt": null,
+     "decisionSource": null,
+     "name": "ЖК Селигер Сити",
+     "developer": "MR Group",
+     "klass": "бизнес",
+     "distanceKm": 1.88,
+     "pricePerM2": 577597,
+     "sources": [
+      {
+       "platform": "cian",
+       "url": "https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-seliger-siti-36051-ot-zastroyschika-OTZ/"
+      }
+     ],
+     "foundAt": "2026-11-01T17:31:22+03:00",
+     "confidence": null,
+     "status": "candidate"
+    },
+    {
+     "key": "zhk-mihalkovskiy-rg-development",
+     "decisionAt": null,
+     "decisionSource": null,
+     "name": "ЖК Михалковский",
+     "developer": "РГ-Девелопмент",
+     "klass": "бизнес",
+     "distanceKm": 3.43,
+     "pricePerM2": 859147,
+     "sources": [
+      {
+       "platform": "cian",
+       "url": "https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-mihalkovskiy-3206223-ot-zastroyschika-OTZ/"
+      }
+     ],
+     "foundAt": "2026-11-01T17:31:20+03:00",
+     "confidence": null,
+     "status": "candidate"
+    },
+    {
+     "key": "zhk-narvin-pik",
+     "decisionAt": null,
+     "decisionSource": null,
+     "name": "ЖК Нарвин",
+     "developer": "ПИК",
+     "klass": "комфорт",
+     "distanceKm": 4.28,
+     "pricePerM2": 500350,
+     "sources": [
+      {
+       "platform": "cian",
+       "url": "https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-narvin-5686240-ot-zastroyschika-OTZ/"
+      }
+     ],
+     "foundAt": "2026-11-01T17:31:13+03:00",
+     "confidence": null,
+     "status": "candidate"
+    },
+    {
+     "key": "zhk-soul-forma-pik",
+     "decisionAt": null,
+     "decisionSource": null,
+     "name": "ЖК СОУЛ",
+     "developer": "FORMA (ПИК)",
+     "klass": "бизнес",
+     "distanceKm": 5.01,
+     "pricePerM2": 529339,
+     "sources": [
+      {
+       "platform": "cian",
+       "url": "https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-soul-4183417-ot-zastroyschika-OTZ/"
+      }
+     ],
+     "foundAt": "2026-11-01T17:31:21+03:00",
+     "confidence": null,
+     "status": "candidate"
+    },
+    {
+     "key": "zhk-businovskiy-park-pik",
+     "decisionAt": null,
+     "decisionSource": null,
+     "name": "ЖК Бусиновский парк",
+     "developer": "ПИК",
+     "klass": "комфорт",
+     "distanceKm": 5.15,
+     "pricePerM2": 444996,
+     "sources": [
+      {
+       "platform": "cian",
+       "url": "https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-businovskiy-park-2159741-ot-zastroyschika-OTZ/"
+      }
+     ],
+     "foundAt": "2026-11-01T17:31:14+03:00",
+     "confidence": null,
+     "status": "candidate"
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "projects": 1,
+  "total": 6,
+  "approved": 0,
+  "rejected": 0,
+  "pending": 6
+ },
+ "engineReady": false,
+ "decisionsFiles": [],
+ "newestMtimeMs": 1793543482493.793
+}

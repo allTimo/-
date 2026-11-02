@@ -1,0 +1,212 @@
+{
+ "groups": [
+  {
+   "id": "work",
+   "title": "Работа",
+   "items": [
+    {
+     "id": "overview",
+     "label": "Обзор",
+     "icon": "grid",
+     "counter": "alerts",
+     "counterKind": null
+    },
+    {
+     "id": "clients",
+     "label": "Клиенты",
+     "icon": "users",
+     "counter": null,
+     "counterKind": null
+    },
+    {
+     "id": "subscriptions",
+     "label": "Подписки и тарифы",
+     "icon": "card",
+     "counter": "overdue",
+     "counterKind": "bad"
+    },
+    {
+     "id": "services",
+     "label": "Услуги",
+     "icon": "spark",
+     "counter": null,
+     "counterKind": null
+    },
+    {
+     "id": "ads",
+     "label": "Реклама и кэшбэк",
+     "icon": "wallet",
+     "counter": null,
+     "counterKind": null
+    },
+    {
+     "id": "queue",
+     "label": "Очередь работ",
+     "icon": "list",
+     "counter": "failed",
+     "counterKind": "bad"
+    },
+    {
+     "id": "agents",
+     "label": "Агенты",
+     "icon": "bot",
+     "counter": null,
+     "counterKind": null
+    }
+   ]
+  },
+  {
+   "id": "analytics",
+   "title": "Аналитика",
+   "items": [
+    {
+     "id": "analytics",
+     "label": "Аналитика",
+     "icon": "chart",
+     "counter": null,
+     "counterKind": null
+    },
+    {
+     "id": "results",
+     "label": "Результаты",
+     "icon": "check",
+     "counter": null,
+     "counterKind": null
+    },
+    {
+     "id": "usage",
+     "label": "Расходы: токены и модели",
+     "icon": "ruble",
+     "counter": null,
+     "counterKind": null
+    },
+    {
+     "id": "economy",
+     "label": "Экономика: деньги сервиса",
+     "icon": "trend",
+     "counter": null,
+     "counterKind": null
+    },
+    {
+     "id": "quality",
+     "label": "Качество",
+     "icon": "check",
+     "counter": null,
+     "counterKind": null
+    }
+   ]
+  },
+  {
+   "id": "system",
+   "title": "Система",
+   "items": [
+    {
+     "id": "integrations",
+     "label": "Интеграции",
+     "icon": "box",
+     "counter": null,
+     "counterKind": null
+    },
+    {
+     "id": "payments",
+     "label": "Оплаты",
+     "icon": "wallet",
+     "counter": "unpaid",
+     "counterKind": "bad"
+    },
+    {
+     "id": "notifications",
+     "label": "Уведомления",
+     "icon": "bell",
+     "counter": null,
+     "counterKind": null
+    },
+    {
+     "id": "system",
+     "label": "Состояние системы: здоровье данных",
+     "icon": "pulse",
+     "counter": null,
+     "counterKind": null
+    },
+    {
+     "id": "journal",
+     "label": "Журнал",
+     "icon": "clock",
+     "counter": null,
+     "counterKind": null
+    },
+    {
+     "id": "infra",
+     "label": "Инфраструктура и справка",
+     "icon": "wrench",
+     "counter": null,
+     "counterKind": null
+    }
+   ]
+  },
+  {
+   "id": "manage",
+   "title": "Управление",
+   "items": [
+    {
+     "id": "workspaces",
+     "label": "Рабочие пространства",
+     "icon": "layers",
+     "counter": null,
+     "counterKind": null
+    },
+    {
+     "id": "projects",
+     "label": "Проекты",
+     "icon": "folder",
+     "counter": null,
+     "counterKind": null
+    },
+    {
+     "id": "team",
+     "label": "Команда и доступы",
+     "icon": "userplus",
+     "counter": null,
+     "counterKind": null
+    },
+    {
+     "id": "security",
+     "label": "Безопасность",
+     "icon": "lock",
+     "counter": null,
+     "counterKind": null
+    },
+    {
+     "id": "settings",
+     "label": "Настройки",
+     "icon": "gear",
+     "counter": null,
+     "counterKind": null
+    }
+   ]
+  },
+  {
+   "id": "help",
+   "title": "Помощь",
+   "items": [
+    {
+     "id": "learning",
+     "label": "Обучение",
+     "icon": "book",
+     "counter": null,
+     "counterKind": null
+    },
+    {
+     "id": "support",
+     "label": "Поддержка",
+     "icon": "help",
+     "counter": null,
+     "counterKind": null
+    }
+   ]
+  }
+ ],
+ "file": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\dashboard\\config\\nav.yaml",
+ "exists": true,
+ "total": 25
+}

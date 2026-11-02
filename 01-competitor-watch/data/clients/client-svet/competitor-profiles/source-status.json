@@ -1,0 +1,94 @@
+{
+  "official_sources": {
+    "checked_ts": 1793544814.703944,
+    "attempts": [
+      {
+        "source": "наш.дом.рф (ЕИСЖС)",
+        "url": "https://xn--80asehdb.xn--p1ai/",
+        "http": {
+          "status": null,
+          "bytes": 0,
+          "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'xn--80asehdb.xn--p1ai'. (_ssl.c:1010)>"
+        },
+        "browser": {
+          "bytes": 61917,
+          "transport": "chrome-cdp-no-login-headless",
+          "ignore_cert_errors": true,
+          "note": "Chrome отдал страницу ошибки сертификата — это не данные"
+        },
+        "verdict": "error_page"
+      },
+      {
+        "source": "росреестр",
+        "url": "https://rosreestr.gov.ru/",
+        "http": {
+          "status": null,
+          "bytes": 0,
+          "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1010)>"
+        },
+        "browser": {
+          "bytes": 307611,
+          "transport": "chrome-cdp-no-login-headless",
+          "ignore_cert_errors": true
+        },
+        "verdict": "ok"
+      }
+    ],
+    "summary": {
+      "status": "частично доступен",
+      "detail": "страница открывается через браузер без логина: росреестр; Chrome отдал страницу ошибки сертификата: наш.дом.рф (ЕИСЖС)",
+      "reachable_via_browser": [
+        "росреестр"
+      ],
+      "disabled": [],
+      "attempts": [
+        {
+          "source": "наш.дом.рф (ЕИСЖС)",
+          "url": "https://xn--80asehdb.xn--p1ai/",
+          "http": {
+            "status": null,
+            "bytes": 0,
+            "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'xn--80asehdb.xn--p1ai'. (_ssl.c:1010)>"
+          },
+          "browser": {
+            "bytes": 61917,
+            "transport": "chrome-cdp-no-login-headless",
+            "ignore_cert_errors": true,
+            "note": "Chrome отдал страницу ошибки сертификата — это не данные"
+          },
+          "verdict": "error_page"
+        },
+        {
+          "source": "росреестр",
+          "url": "https://rosreestr.gov.ru/",
+          "http": {
+            "status": null,
+            "bytes": 0,
+            "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1010)>"
+          },
+          "browser": {
+            "bytes": 307611,
+            "transport": "chrome-cdp-no-login-headless",
+            "ignore_cert_errors": true
+          },
+          "verdict": "ok"
+        }
+      ],
+      "per_source": [
+        {
+          "source": "наш.дом.рф (ЕИСЖС)",
+          "verdict": "error_page",
+          "note": "Chrome отдал страницу ошибки сертификата — это не данные"
+        },
+        {
+          "source": "росреестр",
+          "verdict": "ok",
+          "note": "страница открылась (chrome-cdp-no-login-headless), обычный HTTP был заблокирован: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate "
+        }
+      ],
+      "requests_made": 4,
+      "checked_at": "2026-11-01",
+      "from_cache": false
+    }
+  }
+}

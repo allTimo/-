@@ -1,0 +1,32 @@
+/* Вариант 1. «Пульт» — рабочий инструмент: плотно, монохром, минимум движения. */
+:root {
+  --bg: #0a0a0a;
+  --panel: #1a1a1a;
+  --panel2: #222222;
+  --panel3: #2a2a2a;
+  --card-bg: #1a1a1a;
+  --hd-bg: #121212;
+  --side-bg: #121212;
+  --border: #2e2e2e;
+  --border-soft: #242424;
+  --text: #ffffff;
+  --muted: #a1a1a1;
+  --muted2: #737373;
+  --accent: #7553ff;
+  --accent2: #553db8;
+  --accent-soft: rgba(117, 83, 255, 0.16);
+  --ok: #05df72; --ok-soft: rgba(5, 223, 114, 0.14);
+  --bad: #f14c4c; --bad-soft: rgba(241, 76, 76, 0.14);
+  --hover-bg: rgba(255, 255, 255, 0.04);
+  --bar-bg: #7553ff;
+  --logo-bg: linear-gradient(135deg, #7553ff, #553db8);
+  --radius: 12px; --radius-sm: 10px; --radius-xs: 8px;
+  --shadow: none; --shadow-sm: none;
+  --font: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --mono: 'JetBrains Mono', ui-monospace, Consolas, monospace;
+  --gap: 10px; --main-pad: 16px; --card-pad: 12px;
+  --fs: 13px; --fs-h1: 19px; --fs-title: 15px; --fs-kpi: 21px; --fs-card-title: 13px;
+  --side-w: 234px; --side-item-pad: 7px 10px;
+  --btn-transition: background .1s linear;
+  --anim-in: none;
+}

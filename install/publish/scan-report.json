@@ -1,0 +1,50 @@
+{
+  "scannedAt": "2026-10-31T15:06:46.148Z",
+  "site": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\install\\publish\\site",
+  "files": [
+    {
+      "file": "app-views.js",
+      "bytes": 37485,
+      "keywords": {
+        "TOKEN": 67
+      }
+    },
+    {
+      "file": "app.js",
+      "bytes": 36664,
+      "keywords": {
+        "TOKEN": 64
+      }
+    },
+    {
+      "file": "data\\state.js",
+      "bytes": 84505,
+      "keywords": {
+        "ZVENOAI": 32,
+        "SANDBASE": 6,
+        "TOKEN": 422
+      }
+    },
+    {
+      "file": "data\\state.json",
+      "bytes": 120116,
+      "keywords": {
+        "ZVENOAI": 32,
+        "SANDBASE": 6,
+        "TOKEN": 422
+      }
+    },
+    {
+      "file": "index.html",
+      "bytes": 2015,
+      "keywords": {}
+    },
+    {
+      "file": "styles.css",
+      "bytes": 14937,
+      "keywords": {}
+    }
+  ],
+  "findings": [],
+  "blocked": false
+}

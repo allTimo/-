@@ -1,0 +1,213 @@
+### line 344 start=0 end=57 placeholders=0 cjkChars=1
+344	        && /没有自动重试|no automatic retry happens here/.test(
+### line 797 start=30 end=107 placeholders=4 cjkChars=1
+797	${name} 新版要求宿主 ${gate.range},当前运行 ${gate.runtimeVersion},开了也不会生效;${remedy.zh}
+### line 1080 start=65 end=71 placeholders=0 cjkChars=1
+1080	宿主基础设施
+### line 1233 start=16 end=102 placeholders=2 cjkChars=1
+1233	这台宿主只接受按精确版本重新安装，「${name}」改动前在 profile 里写作 ${pinned ?? '（不在 profile 里）'}，市场无法在它上面重建上一版
+### line 1370 start=25 end=67 placeholders=1 cjkChars=1
+1370	更新前无法读取 pnpm-lock.yaml，因此自动回滚不可用：${detail}
+### line 1750 start=16 end=114 placeholders=2 cjkChars=1
+1750	目录条目指向的子目录在仓库里已不存在（${repo} 的 ${subpath}），多半是作者改名或移动了它——这不是你的环境的问题。请到 awesome-dsh-plugin 反馈这条收录已失效。
+### line 2029 start=49 end=152 placeholders=2 cjkChars=1
+2029	} 要求的 DSH 版本是 ${verdict.requirement ?? '未知'}，而当前运行的是 ${host?.version ?? '未知版本'}，装上多半会直接报错。已停止，没有安装任何东西。
+### line 2030 start=49 end=154 placeholders=2 cjkChars=1
+2030	} 要求的 DSH 版本是 ${verdict.requirement ?? '未知'}，而当前运行的是 ${host?.version ?? '未知版本'}，装上多半会直接报错。已停止，插件保持在原来的版本。
+### line 2846 start=86 end=98 placeholders=0 cjkChars=1
+2846	需要 JSON body
+### line 2850 start=103 end=124 placeholders=0 cjkChars=1
+2850	order 必须是 bundle 名称数组
+### line 2864 start=93 end=120 placeholders=0 cjkChars=1
+2864	该顺序违反了插件声明的 before/after 规则
+### line 2875 start=117 end=153 placeholders=1 cjkChars=1
+2875	试启动校验失败：${first?.message ?? '该顺序无法启动
+### line 2943 start=82 end=94 placeholders=0 cjkChars=1
+2943	需要 JSON body
+### line 2979 start=115 end=157 placeholders=0 cjkChars=1
+2979	action 必须是 save | preview | apply | delete
+### line 3037 start=88 end=95 placeholders=0 cjkChars=1
+3037	需要快照 id
+### line 3092 start=88 end=95 placeholders=0 cjkChars=1
+3092	需要备份文件名
+### line 3129 start=88 end=95 placeholders=0 cjkChars=1
+3129	需要快照 id
+### line 3137 start=94 end=99 placeholders=0 cjkChars=1
+3137	快照不存在
+### line 3210 start=62 end=81 placeholders=0 cjkChars=1
+3210	这是供插件使用的依赖库，无需启用或停用
+### line 3218 start=40 end=76 placeholders=1 cjkChars=1
+3218	${name} 属于宿主基础设施,禁止开关(会破坏热加载/传输/存储链)
+### line 3235 start=44 end=121 placeholders=4 cjkChars=1
+3235	${name} 新版要求宿主 ${gate.range},当前运行 ${gate.runtimeVersion},开了也不会生效;${remedy.zh}
+### line 3250 start=87 end=98 placeholders=0 cjkChars=1
+3250	主题启用失败，需要重启
+### line 3336 start=81 end=88 placeholders=0 cjkChars=1
+3336	需要 name
+### line 3376 start=80 end=97 placeholders=0 cjkChars=1
+3376	需要有效的 http(s) url
+### line 3389 start=97 end=129 placeholders=1 cjkChars=1
+3389	收藏已达上限（${String(MAX_FAVORITES)}）
+### line 3431 start=81 end=88 placeholders=0 cjkChars=1
+3431	需要 name
+### line 3444 start=93 end=123 placeholders=1 cjkChars=1
+3444	屏蔽已达上限（${String(MAX_BLOCKED)}）
+### line 3486 start=81 end=88 placeholders=0 cjkChars=1
+3486	需要 name
+### line 3499 start=112 end=150 placeholders=1 cjkChars=1
+3499	不再提示已达上限（${String(MAX_UPDATE_EXEMPT)}）
+### line 3539 start=81 end=88 placeholders=0 cjkChars=1
+3539	需要 name
+### line 3616 start=91 end=96 placeholders=0 cjkChars=1
+3616	分组不存在
+### line 3951 start=40 end=106 placeholders=1 cjkChars=1
+3951	迁移前无法安全读取 profile package.json，未执行任何修改（${manifestCapture.detail}）。
+### line 3970 start=40 end=57 placeholders=0 cjkChars=1
+3970	迁移请求无法识别，没有做任何改动。
+### line 3979 start=44 end=65 placeholders=0 cjkChars=1
+3979	目标包名无效，或仍是当前包名；未执行迁移。
+### line 3990 start=44 end=66 placeholders=0 cjkChars=1
+3990	当前安装不是 npm 依赖，不能按包名迁移。
+### line 4014 start=44 end=92 placeholders=2 cjkChars=1
+4014	目标包名 ${to} 不在市场目录里，或目录没有声明它是「${name}」的新名字；未执行迁移。
+### line 4031 start=44 end=103 placeholders=0 cjkChars=1
+4031	当前 Git 来源无法唯一核验到一个 npm 包，或包含显式 branch/tag/commit/ref；未执行迁移。
+### line 4040 start=68 end=86 placeholders=0 cjkChars=1
+4040	原来的安装' : '原 Git 来源
+### line 4044 start=40 end=90 placeholders=1 cjkChars=1
+4044	目标 npm 包 ${targetName} 已经作为独立依赖安装；为避免覆盖现有安装，未执行迁移。
+### line 4051 start=40 end=104 placeholders=1 cjkChars=1
+4051	有 agent 正在运行（${busyAgents.join(', ')}）。来源迁移会替换插件文件，请等它完成或取消后再迁移。
+### line 4110 start=39 end=79 placeholders=3 cjkChars=1
+4110	${detail}；已恢复${restoredZh}。${noteZh === 
+### line 4111 start=39 end=103 placeholders=3 cjkChars=1
+4111	${detail}；且${restoredZh}未能验证恢复（${rollback.detail ?? 'unknown'}）。
+### line 4131 start=52 end=76 placeholders=0 cjkChars=1
+4131	npm 目标安装完成后未形成可加载且唯一的依赖。
+### line 4161 start=56 end=435 placeholders=12 cjkChars=1
+4161	目录声明 ${name} 已改名为 ${targetName}，但两边的注册行不同（${name}: ${rows(oldInsertIds)}；${targetName}: ${rows(newInsertIds)}），说明它们不是同一个插件。 / The catalog declares ${name} was renamed to ${targetNa
+4161+	me}, but the two packages register different plugin rows (${name}: ${rows(oldInsertIds)}; ${targetName}: ${rows(newInsertIds)}), so they are not the same plugin.`, {}, 409, `原来的版本仍
+4161+	然可用；如果目录写错了，请报告这一条。
+### line 4168 start=52 end=116 placeholders=1 cjkChars=1
+4168	迁移后的 profile 无法通过启动校验（${trial.errors[0]?.message ?? 'unknown'}）。
+### line 4214 start=44 end=111 placeholders=1 cjkChars=1
+4214	市场状态未能持久化：${error instanceof Error ? error.message : String(error)}
+### line 4292 start=40 end=106 placeholders=1 cjkChars=1
+4292	更新前无法安全读取 profile package.json，未执行任何修改（${manifestCapture.detail}）。
+### line 4302 start=62 end=95 placeholders=0 cjkChars=1
+4302	restore 只适用于 link:/file: 的本地开发安装。
+### line 4306 start=62 end=81 placeholders=0 cjkChars=1
+4306	市场的本地开发链接不会被线上版本替换。
+### line 4326 start=48 end=145 placeholders=1 cjkChars=1
+4326	该插件依赖 monorepo workspace 包（${workspaceDeps.join(', ')}），无法从 Git 子目录单独恢复。请继续用本地开发，或等作者发布 npm 后再恢复。
+### line 4336 start=44 end=68 placeholders=0 cjkChars=1
+4336	目录里找不到对应的线上版本，无法从本地开发恢复。
+### line 4351 start=40 end=138 placeholders=1 cjkChars=1
+4351	有 agent 正在运行（${busyAgents.join(', ')}）。更新会直接替换插件文件，正在工作的 agent 可能在执行中途读到缺失或新版本的文件而报错；请等它完成或取消后再更新。
+### line 4369 start=40 end=119 placeholders=1 cjkChars=1
+4369	${name} 只是 profile 里的一个普通依赖，不是插件，市场没法更新它。什么都没有改动，也不需要回滚。如果要升级它，请在命令行里用 pnpm 升级。
+### line 4425 start=44 end=124 placeholders=1 cjkChars=1
+4425	不能更新 ${name}：它是从一个压缩包链接装的，市场里的同名插件是另一个包，按名字更新会把它整个换掉。插件没有改动；想换成市场版本，先卸载它，再从市场安装。
+### line 4481 start=44 end=78 placeholders=0 cjkChars=1
+4481	官方桌面端稳定版 npm 更新不自动选择预发布兼容版本；未修改插件。
+### line 4496 start=48 end=127 placeholders=2 cjkChars=1
+4496	无法用这个版本更新：它为当前 DSH 兼容，但 ${compatVersion} 比已装的 ${installedVersion} 更旧，更新会降级，已停止。
+### line 4515 start=48 end=131 placeholders=2 cjkChars=1
+4515	更新目标已经变化（原目标 ${body.eligibleVersion}；当前合规目标 ${eligible.candidate ?? '无'}）。请刷新后重新选择。
+### line 4523 start=48 end=104 placeholders=2 cjkChars=1
+4523	无法确认 ${name} 存在符合当前等待策略的升级版本（${eligible.reason}），没有修改插件。
+### line 4532 start=89 end=117 placeholders=0 cjkChars=1
+4532	当前最新版仍在等待期；请刷新市场以确认可安装的成熟版本。
+### line 4562 start=48 end=127 placeholders=2 cjkChars=1
+4562	无法用这个版本更新：它为当前 DSH 兼容，但 ${compatVersion} 比已装的 ${installedVersion} 更旧，更新会降级，已停止。
+### line 4622 start=44 end=123 placeholders=2 cjkChars=1
+4622	更新会降级：registry 上的最新版是 ${registryLatest}，比已装的 ${installedVersion} 还旧，已停止，插件保持不变。
+### line 4768 start=76 end=112 placeholders=1 cjkChars=1
+4768	更新前版本未知' : `更新前版本为 v${beforeVersion}
+### line 4778 start=53 end=187 placeholders=3 cjkChars=1
+4778	更新前的 ${sourceKind} 来源使用 monorepo 子目录${beforeCommit === null ? '' : `（提交 ${beforeCommit}）`}，当前 DSH 命令无法表达该精确目标，因此自动回滚不可用；需要时请手工重新安装该提交。
+### line 4784 start=57 end=113 placeholders=1 cjkChars=1
+4784	未能确认更新前的 ${sourceKind} 提交，因此自动回滚不可用；需要时请从可信来源手工重新安装先前版本。
+### line 4790 start=61 end=133 placeholders=2 cjkChars=1
+4790	当前宿主无法安装更新前的精确 ${sourceKind} 提交 ${beforeCommit}，因此自动回滚不可用；需要时请手工重新安装该提交。
+### line 4811 start=53 end=202 placeholders=3 cjkChars=1
+4811	${previousVersionZh}，但先前的 Release 归档没有经过验证的不可变内容标识；同一链接以后可能返回不同文件，因此自动回滚不可用。需要时请从可信来源手工重新安装${beforeVersion === null ? '先前版本' : ` v${beforeVersion}`}。
+### line 4818 start=61 end=109 placeholders=0 cjkChars=1
+4818	未能确认更新前安装的 npm 版本，因此自动回滚不可用；需要时请从可信来源手工重新安装先前版本。
+### line 4838 start=65 end=351 placeholders=8 cjkChars=1
+4838	更新前 node_modules 里装的是 v${beforeVersion}，但 pnpm-lock.yaml 里 ${name} 记的是 ${capturedNpmVersion(lockfileCapture.snapshot, name) ?? '（没有记录）'}，两者不一致，无法证明精确来源，因此自动回滚不可用（要回滚的是 ${name}@${be
+4838+	foreVersion}）。需要时请手工重新安装 ${name}@${beforeVersion}，或先把 package.json 与 pnpm-lock.yaml 对齐到 v${beforeVersion}。
+### line 4844 start=69 end=159 placeholders=3 cjkChars=1
+4844	当前宿主无法安装更新前的精确 npm 目标 ${name}@${beforeVersion}（v${beforeVersion}），因此自动回滚不可用；需要时请手工重新安装该版本。
+### line 4850 start=57 end=137 placeholders=2 cjkChars=1
+4850	更新前的来源 ${spec} 不是受支持的精确回滚目标（${previousVersionZh}），因此自动回滚不可用；需要时请从可信来源手工重新安装先前版本。
+### line 5099 start=64 end=176 placeholders=1 cjkChars=1
+5099	${name} 更新未生效：运行中的 DSH 占用着它的文件，pnpm 无法替换目录；package.json 与 pnpm-lock.yaml 已恢复为更新前的版本，更新前构建的入口仍在。请完全退出 DSH 后再更新一次。
+### line 5108 start=64 end=289 placeholders=1 cjkChars=1
+5108	${name} 更新未生效：运行中的 DSH 占用着它的文件，pnpm 无法替换目录，而且更新前的构建已经残缺。留着一个「声明了却装不起来」的插件会让下一次启动卡在 profile 组装——桌面端会直接打不开窗口——所以市场已经把它从 package.json 与 dsh.profile.bundles 里移除了。目录本身没有被删（它的子进程正占用着，DSH
+5108+	 运行时无法移除），版本声明已记下：**完全退出 DSH 之后**在市场里重新安装它即可。
+### line 5112 start=64 end=180 placeholders=2 cjkChars=1
+5112	${name} 更新未生效：运行中的 DSH 占用着它的文件，pnpm 无法替换目录，且更新前的状态未能完整恢复（${kept.detail ?? 'unknown'}）。DSH 运行期间无法重装，请完全退出 DSH 后再更新一次。
+### line 5124 start=64 end=144 placeholders=2 cjkChars=1
+5124	${name} 更新失败，且更新前的构建未能验证恢复（${rollback.detail ?? 'unknown'}）；请先检查该 profile，再重新启动。
+### line 5236 start=39 end=128 placeholders=3 cjkChars=1
+5236	${name} 更新实际解析为 v${afterVersion ?? 'unknown'}，低于更新前的 v${beforeVersion ?? 'unknown'}；已拒绝降级
+### line 5237 start=39 end=115 placeholders=3 cjkChars=1
+5237	${name} 更新目标为 v${expectedNpmVersion ?? 'unknown'}，但实际安装为 v${afterVersion ?? 
+### line 5242 start=39 end=62 placeholders=1 cjkChars=1
+5242	${mismatchZh}；已自动恢复原版本。
+### line 5243 start=39 end=98 placeholders=2 cjkChars=1
+5243	${mismatchZh}；回滚未能验证恢复原版本（${rollback.detail ?? 'unknown'}）。
+### line 5311 start=39 end=82 placeholders=2 cjkChars=1
+5311	${name} 更新后的组合无法启动（${first}），已自动回滚并恢复原版本文件。
+### line 5312 start=39 end=169 placeholders=4 cjkChars=1
+5312	${name} 更新后的组合无法启动（${first}），回滚未能恢复原版本文件（${rollback.detail ?? 'unknown'}）；请运行 dsh plugin --profile ${config.profile} install 手工恢复。
+### line 5364 start=55 end=130 placeholders=1 cjkChars=1
+5364	更新完成后无法安全捕获 profile 状态（${previousVersionZh}），因此自动回滚不可用；需要时请从可信来源手工重新安装先前版本。
+### line 5389 start=35 end=108 placeholders=0 cjkChars=1
+5389	这个新版本刚发布不久。为了安全，系统默认会等它发布满一天后再安装——刚发布的版本偶尔会被发现问题然后撤回。可以明天再试，或点「立即更新」不再等待。
+### line 5390 start=35 end=87 placeholders=0 cjkChars=1
+5390	更新命令执行完成，但版本没有变化，原因未能确认。点「立即更新」重试通常能解决；若仍不行，请导出日志反馈。
+### line 5396 start=35 end=157 placeholders=1 cjkChars=1
+5396	${name} 更新后缺少入口文件（package.json 的 main/exports 指向的文件不存在），已自动回滚并重新安装原版本文件，下次启动不受影响。这通常是镜像源在新版本刚发布时同步不完整；若仍需这个版本，请先卸载再从官方源重装。
+### line 5397 start=35 end=156 placeholders=2 cjkChars=1
+5397	${name} 更新后缺少入口文件（package.json 的 main/exports 指向的文件不存在），且未能验证恢复原版本文件（${rollbackDetail ?? 'unknown'}）；请先检查该 profile，再重新启动。
+### line 5403 start=35 end=144 placeholders=2 cjkChars=1
+5403	${name} 的上游已把包改名为 ${renamedTo}：新版本会装在旧名字下，DSH 下次启动会拒绝这个 profile，所以本次更新已自动回滚、原版本已恢复。目录如果声明了这次改名，「已安装」里会出现迁移入口。
+### line 5404 start=35 end=109 placeholders=3 cjkChars=1
+5404	${name} 的上游已把包改名为 ${renamedTo}，且未能验证恢复原版本（${rollbackDetail ?? 'unknown'}）。
+### line 5778 start=36 end=141 placeholders=0 cjkChars=1
+5778	buildEnv must be a KEY/value 对象（空对象表示清除）/ buildEnv must be a KEY/value object (an empty object clears it)
+### line 5819 start=32 end=157 placeholders=1 cjkChars=1
+5819	不能从这个地址卸载插件市场（只接受本机同源请求）。请在运行 DSH 的机器上执行 \`dsh plugin --profile ${config.profile} remove dshmarket\`；桌面端也可以在它自己的「设置 → 插件」里移除。
+### line 6210 start=40 end=132 placeholders=1 cjkChars=1
+6210	无法安全卸载 ${name}：当前 profile 的 cordis.patch.yml 无法读取为有效的补丁列表，因此无法排除它仍在引用该包。请先检查补丁文件；确认无关后可强制卸载。
+### line 6223 start=40 end=136 placeholders=2 cjkChars=1
+6223	无法卸载 ${name}：当前 profile 的 cordis.patch.yml 仍通过 insert 引用 ${listed}。请先移除这些用户补丁引用再重试；市场不会自动改写用户补丁。
+### line 6233 start=40 end=122 placeholders=1 cjkChars=1
+6233	有 agent 正在运行（${busyAgents.join(', ')}）。卸载会修改插件文件，正在工作的 agent 可能在中途报错；请等它完成或取消后再卸载。
+### line 6422 start=141 end=159 placeholders=0 cjkChars=1
+6422	回滚已不可用（可能已被后续操作覆盖）
+### line 6433 start=117 end=133 placeholders=0 cjkChars=1
+6433	操作后配置已发生变化，回滚不可用
+### line 6603 start=66 end=95 placeholders=1 cjkChars=1
+6603	已以「${aliasOf}」安装过同一个插件，无需重复安装
+### line 6620 start=44 end=103 placeholders=1 cjkChars=1
+6620	同名冲突：已安装的「${clashName}」来自其他来源，两个同名插件无法共存于一个 profile，请先卸载再安装
+### line 6641 start=39 end=131 placeholders=1 cjkChars=1
+6641	「${predecessor}」是这个插件改名前用的名字，已经装在 profile 里。装新名字会把同一个插件装成两份、下次启动可能失败；改用迁移把它换过来，开关、分组和备注都会保留。
+### line 6642 start=39 end=159 placeholders=1 cjkChars=1
+6642	「${predecessor}」是这个插件改名前用的名字，已经装在 profile 里，而它是从 Git 或本地路径装的。装新名字会把同一个插件装成两份、下次启动可能失败；请先把旧的那份换成 npm 包（「已安装」里会给出可用的移动方式）。
+### line 6650 start=33 end=37 placeholders=0 cjkChars=1
+6650	装上才炸
+### line 6955 start=70 end=118 placeholders=0 cjkChars=1
+6955	安装完成后无法安全捕获 profile 状态，因此自动回滚不可用；需要时请手工卸载新安装的插件。
+### line 7021 start=35 end=217 placeholders=4 cjkChars=1
+7021	「${conflicts[0].name}」与已安装的 ${conflictGroups.map(group => `「${group.owner}」（${group.ids.join('、')}）`).join('、')} 占用相同的 loader 条目 id，无法在同一环境中共存——保留会导致 DeepSeek Harness 下次启动失败，因此已自动移
+7021+	除。
+### line 7028 start=39 end=137 placeholders=0 cjkChars=1
+7028	安装命令报告成功，但 profile 没有任何变化——插件本身没问题，是执行安装的通道没有真正运行。若使用桌面端，请改用命令行 dsh plugin add 验证，并把导出日志附在 issue 中
+### line 7030 start=166 end=216 placeholders=0 cjkChars=1
+7030	没有可安装的内容：插件需要构建授权（allowBuilds，默认拦截）或未附带构建产物，详见导出日志
+### line 7043 start=47 end=185 placeholders=1 cjkChars=1
+7043	pnpm 要求先决定这些依赖能否运行构建脚本（${ignoredBuilds.join(', ')}）：有的是这次安装带进来的，也可能是之前留下的未决定条目。点「放行构建脚本并重试」会把它们写进 pnpm-workspace.yaml 的 allowBuilds，然后重新安装

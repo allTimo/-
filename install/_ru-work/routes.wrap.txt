@@ -1,0 +1,177 @@
+344	        && /没有自动重试|no automatic retry happens here/.test(`${result.stderr}\n${result.stdout}`)) {
+797	                    reason = `${name} 新版要求宿主 ${gate.range},当前运行 ${gate.runtimeVersion},开了也不会生效;${remedy.zh} / ${name} needs host ${gate.range} but this host runs ${gate.runtimeVersion} — enabling it n
+797+	ow would not take effect; ${remedy.en}`;
+1080	                ...(isProtected ? { note: 'host infrastructure / 宿主基础设施' } : {}),
+1233	        return `这台宿主只接受按精确版本重新安装，「${name}」改动前在 profile 里写作 ${pinned ?? '（不在 profile 里）'}，市场无法在它上面重建上一版 / this host can only reinstall an exact version, and "${name}" was declared as ${pinned ?? '(not 
+1233+	in the profile)'}, so the previous build cannot be rematerialized there`;
+1370	                detail: `更新前无法读取 pnpm-lock.yaml，因此自动回滚不可用：${detail} / The pre-update pnpm-lock.yaml could not be read, so automatic rollback is unavailable: ${detail}`,
+1750	        return `目录条目指向的子目录在仓库里已不存在（${repo} 的 ${subpath}），多半是作者改名或移动了它——这不是你的环境的问题。请到 awesome-dsh-plugin 反馈这条收录已失效。 / This catalog entry points at a subdirectory that no longer exists in the repository
+1750+	 (${subpath} in ${repo}); the author most likely renamed or moved it. Nothing is wrong with your setup — please report the stale entry to awesome-dsh-plugin.`;
+2029	                ? `${displayName} ${version ?? ''} 要求的 DSH 版本是 ${verdict.requirement ?? '未知'}，而当前运行的是 ${host?.version ?? '未知版本'}，装上多半会直接报错。已停止，没有安装任何东西。 / ${displayName} ${version ?? ''} declares it n
+2029+	eeds DSH ${verdict.requirement ?? '(unknown)'}, and this host is ${host?.version ?? 'unknown'}; installing it would most likely break the plugin. Nothing was installed.`
+2030	                : `${displayName} ${version ?? ''} 要求的 DSH 版本是 ${verdict.requirement ?? '未知'}，而当前运行的是 ${host?.version ?? '未知版本'}，装上多半会直接报错。已停止，插件保持在原来的版本。 / ${displayName} ${version ?? ''} declares it
+2030+	 needs DSH ${verdict.requirement ?? '(unknown)'}, and this host is ${host?.version ?? 'unknown'}; installing it would most likely break the plugin. Nothing was changed.`,
+2846	                            sendJson(response, 400, { error: 'JSON body is required / 需要 JSON body' });
+2850	                            sendJson(response, 400, { error: 'order must be an array of bundle names / order 必须是 bundle 名称数组' });
+2864	                                    error: 'the order violates declared before/after rules / 该顺序违反了插件声明的 before/after 规则',
+2875	                                error: `trial validation failed — ${first?.message ?? 'this order would not boot'} / 试启动校验失败：${first?.message ?? '该顺序无法启动'}`,
+2943	                        sendJson(response, 400, { error: 'JSON body is required / 需要 JSON body' });
+2979	                                sendJson(response, 400, { error: 'action must be save | preview | apply | delete / action 必须是 save | preview | apply | delete' });
+3037	                            sendJson(response, 400, { error: 'snapshot id is required / 需要快照 id' });
+3092	                            sendJson(response, 400, { error: 'backup name is required / 需要备份文件名' });
+3129	                            sendJson(response, 400, { error: 'snapshot id is required / 需要快照 id' });
+3137	                            sendJson(response, 400, { ok: false, error: 'snapshot not found / 快照不存在' });
+3210	                            sendJson(response, 400, { error: '这是供插件使用的依赖库，无需启用或停用 / this library is for plugins to use; it has no on/off switch' });
+3218	                                error: `${name} 属于宿主基础设施,禁止开关(会破坏热加载/传输/存储链) / ${name} is host infrastructure and cannot be toggled (it would break the hot-reload/transport/storage chain)`,
+3235	                                    error: `${name} 新版要求宿主 ${gate.range},当前运行 ${gate.runtimeVersion},开了也不会生效;${remedy.zh} / ${name} needs host ${gate.range} but this host runs ${gate.runtimeVersion} —
+3235+	 enabling it now would not take effect; ${remedy.en}`,
+3250	                                reason = 'theme activation failed — restart required / 主题启用失败，需要重启';
+3336	                            sendJson(response, 400, { error: 'name is required / 需要 name' });
+3376	                            sendJson(response, 400, { error: 'url is required / 需要有效的 http(s) url' });
+3389	                                    error: `favorites limit reached (${String(MAX_FAVORITES)}) / 收藏已达上限（${String(MAX_FAVORITES)}）`,
+3431	                            sendJson(response, 400, { error: 'name is required / 需要 name' });
+3444	                                    error: `blocked limit reached (${String(MAX_BLOCKED)}) / 屏蔽已达上限（${String(MAX_BLOCKED)}）`,
+3486	                            sendJson(response, 400, { error: 'name is required / 需要 name' });
+3499	                                    error: `update reminder list limit reached (${String(MAX_UPDATE_EXEMPT)}) / 不再提示已达上限（${String(MAX_UPDATE_EXEMPT)}）`,
+3539	                            sendJson(response, 400, { error: 'name is required / 需要 name' });
+3616	                            sendJson(response, 400, { ok: false, error: 'group not found / 分组不存在' });
+3951	                                error: `迁移前无法安全读取 profile package.json，未执行任何修改（${manifestCapture.detail}）。 / The profile package.json could not be captured safely before migration; nothing was changed
+3951+	 (${manifestCapture.detail}).`,
+3970	                                error: '迁移请求无法识别，没有做任何改动。 / This migration request could not be recognised; nothing was changed.',
+3979	                                    error: '目标包名无效，或仍是当前包名；未执行迁移。 / The target package name is invalid, or is still the current one; migration was not performed.',
+3990	                                    error: '当前安装不是 npm 依赖，不能按包名迁移。 / The current install is not an npm dependency, so it cannot be migrated by package name.',
+4014	                                    error: `目标包名 ${to} 不在市场目录里，或目录没有声明它是「${name}」的新名字；未执行迁移。 / The target ${to} is not in the market catalog, or the catalog does not declare it as the new name of "${n
+4014+	ame}"; migration was not performed.`,
+4031	                                    error: '当前 Git 来源无法唯一核验到一个 npm 包，或包含显式 branch/tag/commit/ref；未执行迁移。 / This Git source cannot be uniquely verified to one npm package, or it carries an explicit bran
+4031+	ch/tag/commit/ref; migration was not performed.',
+4040	                        const restoredZh = kind === 'npm-rename' ? '原来的安装' : '原 Git 来源';
+4044	                                error: `目标 npm 包 ${targetName} 已经作为独立依赖安装；为避免覆盖现有安装，未执行迁移。 / The target npm package ${targetName} is already installed as a separate dependency; migration was not perfo
+4044+	rmed to avoid overwriting it.`,
+4051	                                error: `有 agent 正在运行（${busyAgents.join(', ')}）。来源迁移会替换插件文件，请等它完成或取消后再迁移。 / ${busyAgents.length === 1 ? 'An agent is running' : 'Agents are running'} (${busyAgents.join(
+4051+	', ')}). Source migration replaces plugin files; wait for the running work to finish (or cancel it) before migrating.`,
+4110	                                    ? `${detail}；已恢复${restoredZh}。${noteZh === '' ? '' : ` ${noteZh}`} / ${detail}; ${restoredEn} was restored.${noteEn === '' ? '' : ` ${noteEn}`}`
+4111	                                    : `${detail}；且${restoredZh}未能验证恢复（${rollback.detail ?? 'unknown'}）。 / ${detail}; restoration of ${restoredEn} could not be verified (${rollback.detail ?? 'unknown'}
+4111+	).`,
+4131	                            await failWithRollback('npm 目标安装完成后未形成可加载且唯一的依赖。 / The npm target did not produce one loadable replacement dependency.');
+4161	                                await failWithRollback(`目录声明 ${name} 已改名为 ${targetName}，但两边的注册行不同（${name}: ${rows(oldInsertIds)}；${targetName}: ${rows(newInsertIds)}），说明它们不是同一个插件。 / The catalog declar
+4161+	es ${name} was renamed to ${targetName}, but the two packages register different plugin rows (${name}: ${rows(oldInsertIds)}; ${targetName}: ${rows(newInsertIds)}), so they are not the same plugin.`, 
+4161+	{}, 409, `原来的版本仍然可用；如果目录写错了，请报告这一条。`, `The original install is still usable; if the catalog is wrong, report that entry.`);
+4168	                            await failWithRollback(`迁移后的 profile 无法通过启动校验（${trial.errors[0]?.message ?? 'unknown'}）。 / The migrated profile failed boot validation (${trial.errors[0]?.message ?? 'unkno
+4168+	wn'}).`);
+4214	                            stateWarning = `市场状态未能持久化：${error instanceof Error ? error.message : String(error)} / Market state could not be persisted: ${error instanceof Error ? error.message : String
+4214+	(error)}`;
+4292	                                error: `更新前无法安全读取 profile package.json，未执行任何修改（${manifestCapture.detail}）。 / The profile package.json could not be captured safely before update; nothing was changed ($
+4292+	{manifestCapture.detail}).`,
+4302	                            sendJson(response, 400, { error: 'restore 只适用于 link:/file: 的本地开发安装。 / Restore only applies to locally developed link:/file: installs.' });
+4306	                            sendJson(response, 400, { error: '市场的本地开发链接不会被线上版本替换。 / The market\'s local development link is never replaced by an online release.' });
+4326	                                        error: `该插件依赖 monorepo workspace 包（${workspaceDeps.join(', ')}），无法从 Git 子目录单独恢复。请继续用本地开发，或等作者发布 npm 后再恢复。 / This plugin depends on monorepo workspace packages (
+4326+	${workspaceDeps.join(', ')}); a git subdirectory install cannot resolve workspace: protocol. Keep the local checkout, or restore after the author publishes to npm.`,
+4336	                                    error: '目录里找不到对应的线上版本，无法从本地开发恢复。 / No catalog entry matches this local plugin, so it cannot be restored to a registry install.',
+4351	                                error: `有 agent 正在运行（${busyAgents.join(', ')}）。更新会直接替换插件文件，正在工作的 agent 可能在执行中途读到缺失或新版本的文件而报错；请等它完成或取消后再更新。 / ${busyAgents.length === 1 ? 'An agent is running' : 'Agents
+4351+	 are running'} (${busyAgents.join(', ')}). Updating replaces plugin files in place, so a working agent can fail or mix versions mid-turn; wait for it to finish (or cancel it) before updating.`,
+4369	                                error: `${name} 只是 profile 里的一个普通依赖，不是插件，市场没法更新它。什么都没有改动，也不需要回滚。如果要升级它，请在命令行里用 pnpm 升级。 / ${name} is a plain dependency in this profile, not a plugin, so the market can
+4369+	not update it. Nothing was changed and nothing needs rolling back. To upgrade it, use pnpm from the command line.`,
+4425	                                    error: `不能更新 ${name}：它是从一个压缩包链接装的，市场里的同名插件是另一个包，按名字更新会把它整个换掉。插件没有改动；想换成市场版本，先卸载它，再从市场安装。 / Cannot update ${name}: it was installed from an archive link, and the mar
+4425+	ket's same-named plugin is a different package, so updating by name would replace it. Nothing was changed. To switch, uninstall it first, then install from the market.`,
+4481	                                    error: '官方桌面端稳定版 npm 更新不自动选择预发布兼容版本；未修改插件。 / The Desktop stable npm update cannot automatically select a prerelease compatibility target. Nothing was changed.',
+4496	                                        error: `无法用这个版本更新：它为当前 DSH 兼容，但 ${compatVersion} 比已装的 ${installedVersion} 更旧，更新会降级，已停止。 / That version cannot update this plugin: ${compatVersion} is compatible
+4496+	 with this host but older than the installed ${installedVersion}, so it would be a downgrade. Nothing was changed.`,
+4515	                                        error: `更新目标已经变化（原目标 ${body.eligibleVersion}；当前合规目标 ${eligible.candidate ?? '无'}）。请刷新后重新选择。 / The eligible update target changed. Refresh and choose again.`,
+4523	                                        error: `无法确认 ${name} 存在符合当前等待策略的升级版本（${eligible.reason}），没有修改插件。 / No eligible update can be verified against the current release-age policy. Nothing was change
+4523+	d.`,
+4532	                                    sendJson(response, 409, { staleTarget: true, error: '当前最新版仍在等待期；请刷新市场以确认可安装的成熟版本。 / The latest release is held. Refresh the market to confirm the exact mature targe
+4532+	t.' });
+4562	                                        error: `无法用这个版本更新：它为当前 DSH 兼容，但 ${compatVersion} 比已装的 ${installedVersion} 更旧，更新会降级，已停止。 / That version cannot update this plugin: ${compatVersion} is compatible
+4562+	 with this host but older than the installed ${installedVersion}, so it would be a downgrade. Nothing was changed.`,
+4622	                                    error: `更新会降级：registry 上的最新版是 ${registryLatest}，比已装的 ${installedVersion} 还旧，已停止，插件保持不变。 / Updating would downgrade this plugin: the registry's latest (${registryLat
+4622+	est}) is older than the installed ${installedVersion}, so nothing was changed.`,
+4768	                        const previousVersionZh = beforeVersion === null ? '更新前版本未知' : `更新前版本为 v${beforeVersion}`;
+4778	                                            detail: `更新前的 ${sourceKind} 来源使用 monorepo 子目录${beforeCommit === null ? '' : `（提交 ${beforeCommit}）`}，当前 DSH 命令无法表达该精确目标，因此自动回滚不可用；需要时请手工重新安装该提交。 / The previo
+4778+	us ${sourceKind} source uses a monorepo subpath${beforeCommit === null ? '' : ` at commit ${beforeCommit}`}; the current DSH command cannot express that exact target, so automatic rollback is unavaila
+4778+	ble. Reinstall that commit manually if needed.`,
+4784	                                                detail: `未能确认更新前的 ${sourceKind} 提交，因此自动回滚不可用；需要时请从可信来源手工重新安装先前版本。 / The previous ${sourceKind} commit could not be verified, so automatic rollback is un
+4784+	available. Reinstall the prior version manually from a trusted source if needed.`,
+4790	                                                    detail: `当前宿主无法安装更新前的精确 ${sourceKind} 提交 ${beforeCommit}，因此自动回滚不可用；需要时请手工重新安装该提交。 / This host cannot install the exact previous ${sourceKind} commit
+4790+	 ${beforeCommit}, so automatic rollback is unavailable. Reinstall that commit manually if needed.`,
+4811	                                            detail: `${previousVersionZh}，但先前的 Release 归档没有经过验证的不可变内容标识；同一链接以后可能返回不同文件，因此自动回滚不可用。需要时请从可信来源手工重新安装${beforeVersion === null ? '先前版本' : ` v${beforeVersion}`
+4811+	}。 / ${previousVersionEn}, but the previous Release archive has no verified immutable content identity; the same URL may later return different bytes, so automatic rollback is unavailable. Reinstall $
+4811+	{beforeVersion === null ? 'the prior version' : `v${beforeVersion}`} manually from a trusted source if needed.`,
+4818	                                                    detail: '未能确认更新前安装的 npm 版本，因此自动回滚不可用；需要时请从可信来源手工重新安装先前版本。 / The previously installed npm version could not be verified, so automatic rollback is una
+4818+	vailable. Reinstall the prior version manually from a trusted source if needed.',
+4838	                                                        detail: `更新前 node_modules 里装的是 v${beforeVersion}，但 pnpm-lock.yaml 里 ${name} 记的是 ${capturedNpmVersion(lockfileCapture.snapshot, name) ?? '（没有记录）'
+4838+	}，两者不一致，无法证明精确来源，因此自动回滚不可用（要回滚的是 ${name}@${beforeVersion}）。需要时请手工重新安装 ${name}@${beforeVersion}，或先把 package.json 与 pnpm-lock.yaml 对齐到 v${beforeVersion}。 / The build on disk before the update was v${bef
+4838+	oreVersion}, but pnpm-lock.yaml records ${capturedNpmVersion(lockfileCapture.snapshot, name) ?? 'nothing'} for ${name}: they disagree, so the exact source cannot be proven and automatic rollback is un
+4838+	available. Reinstall ${name}@${beforeVersion} manually if needed, or align package.json and pnpm-lock.yaml with v${beforeVersion} first.`,
+4844	                                                            detail: `当前宿主无法安装更新前的精确 npm 目标 ${name}@${beforeVersion}（v${beforeVersion}），因此自动回滚不可用；需要时请手工重新安装该版本。 / This host cannot install the exact pre
+4844+	vious npm target ${name}@${beforeVersion} (v${beforeVersion}), so automatic rollback is unavailable. Reinstall that version manually if needed.`,
+4850	                                                detail: `更新前的来源 ${spec} 不是受支持的精确回滚目标（${previousVersionZh}），因此自动回滚不可用；需要时请从可信来源手工重新安装先前版本。 / The previous source ${spec} is not a supported exact rollbac
+4850+	k target (${previousVersionEn}), so automatic rollback is unavailable. Reinstall the prior version manually from a trusted source if needed.`,
+5099	                                    hardFailureRollbackError = `${name} 更新未生效：运行中的 DSH 占用着它的文件，pnpm 无法替换目录；package.json 与 pnpm-lock.yaml 已恢复为更新前的版本，更新前构建的入口仍在。请完全退出 DSH 后再更新一次。 / ${name} update did no
+5099+	t apply: the running DSH holds its files open and pnpm could not replace the directory; package.json and pnpm-lock.yaml are back to the previous version and the previous build still has its entry. Qui
+5099+	t DSH completely and update again.`;
+5108	                                    hardFailureRollbackError = `${name} 更新未生效：运行中的 DSH 占用着它的文件，pnpm 无法替换目录，而且更新前的构建已经残缺。留着一个「声明了却装不起来」的插件会让下一次启动卡在 profile 组装——桌面端会直接打不开窗口——所以市场已经把它从 package.json 与 dsh
+5108+	.profile.bundles 里移除了。目录本身没有被删（它的子进程正占用着，DSH 运行时无法移除），版本声明已记下：**完全退出 DSH 之后**在市场里重新安装它即可。 / ${name} update did not apply: the running DSH holds its files open, pnpm could not replace the directory, an
+5108+	d the previous build is already incomplete. Leaving a declared-but-uninstallable plugin behind makes the next start fail during profile composition — on Desktop the window does not open at all — so th
+5108+	e market removed it from package.json and dsh.profile.bundles. The directory itself was not deleted (this plugin's own process holds it open, which is why DSH cannot remove it while running); the vers
+5108+	ion it had is recorded: reinstall it from the market after quitting DSH completely.`;
+5112	                                    hardFailureRollbackError = `${name} 更新未生效：运行中的 DSH 占用着它的文件，pnpm 无法替换目录，且更新前的状态未能完整恢复（${kept.detail ?? 'unknown'}）。DSH 运行期间无法重装，请完全退出 DSH 后再更新一次。 / ${name} update di
+5112+	d not apply: the running DSH holds its files open and pnpm could not replace the directory, and the previous state could not be fully restored (${kept.detail ?? 'unknown'}). It cannot be reinstalled w
+5112+	hile DSH is running; quit DSH completely and update again.`;
+5124	                                    hardFailureRollbackError = `${name} 更新失败，且更新前的构建未能验证恢复（${rollback.detail ?? 'unknown'}）；请先检查该 profile，再重新启动。 / ${name} update failed and restoration of the previous
+5124+	 build could not be verified (${rollback.detail ?? 'unknown'}); inspect this profile before restarting.`;
+5236	                                    ? `${name} 更新实际解析为 v${afterVersion ?? 'unknown'}，低于更新前的 v${beforeVersion ?? 'unknown'}；已拒绝降级`
+5237	                                    : `${name} 更新目标为 v${expectedNpmVersion ?? 'unknown'}，但实际安装为 v${afterVersion ?? 'unknown'}`;
+5242	                                    ? `${mismatchZh}；已自动恢复原版本。 / ${mismatchEn}; the previous build was restored.`
+5243	                                    : `${mismatchZh}；回滚未能验证恢复原版本（${rollback.detail ?? 'unknown'}）。 / ${mismatchEn}; restoration of the previous build could not be verified (${rollback.detail ?? 'unkno
+5243+	wn'}).`;
+5311	                                    ? `${name} 更新后的组合无法启动（${first}），已自动回滚并恢复原版本文件。 / ${name} updated to a composition that cannot boot (${first}); the previous build was restored.`
+5312	                                    : `${name} 更新后的组合无法启动（${first}），回滚未能恢复原版本文件（${rollback.detail ?? 'unknown'}）；请运行 dsh plugin --profile ${config.profile} install 手工恢复。 / ${name} updated to a composi
+5312+	tion that cannot boot (${first}); the previous files could not be restored (${rollback.detail ?? 'unknown'}) — run 'dsh plugin --profile ${config.profile} install' to recover manually.`;
+5364	                                                    ? `更新完成后无法安全捕获 profile 状态（${previousVersionZh}），因此自动回滚不可用；需要时请从可信来源手工重新安装先前版本。 / The post-update profile state could not be captured safely (${previ
+5364+	ousVersionEn}), so automatic rollback is unavailable. Reinstall the prior version manually from a trusted source if needed.`
+5389	                                ? '这个新版本刚发布不久。为了安全，系统默认会等它发布满一天后再安装——刚发布的版本偶尔会被发现问题然后撤回。可以明天再试，或点「立即更新」不再等待。 / This version was just released; for safety, installs normally wait about a day after a re
+5389+	lease. Try again tomorrow, or click "Update now" to install it right away.'
+5390	                                : '更新命令执行完成，但版本没有变化，原因未能确认。点「立即更新」重试通常能解决；若仍不行，请导出日志反馈。 / The update command completed but the version did not change; the cause could not be confirmed. Clicking "Updat
+5390+	e now" to retry usually resolves it — if not, export the log and report it.';
+5396	                                ? `${name} 更新后缺少入口文件（package.json 的 main/exports 指向的文件不存在），已自动回滚并重新安装原版本文件，下次启动不受影响。这通常是镜像源在新版本刚发布时同步不完整；若仍需这个版本，请先卸载再从官方源重装。 / ${name} arrived without the entry file i
+5396+	ts package.json points at; the previous build was restored, so the next boot is unaffected. A registry mirror serving an incomplete tarball for a just-published version is the usual cause — remove the
+5396+	 package and reinstall from the official registry if you still want this version.`
+5397	                                : `${name} 更新后缺少入口文件（package.json 的 main/exports 指向的文件不存在），且未能验证恢复原版本文件（${rollbackDetail ?? 'unknown'}）；请先检查该 profile，再重新启动。 / ${name} arrived without the entry file it
+5397+	s package.json points at, and restoration of the previous build could not be verified (${rollbackDetail ?? 'unknown'}); inspect this profile before restarting.`;
+5403	                                ? `${name} 的上游已把包改名为 ${renamedTo}：新版本会装在旧名字下，DSH 下次启动会拒绝这个 profile，所以本次更新已自动回滚、原版本已恢复。目录如果声明了这次改名，「已安装」里会出现迁移入口。 / ${name} was renamed upstream to ${renamedTo}: the new
+5403+	 version would sit under the old name and DSH would refuse to start this profile, so the update was rolled back and the previous build restored. If the catalog declares this rename, the installed list
+5403+	 offers the migration.`
+5404	                                : `${name} 的上游已把包改名为 ${renamedTo}，且未能验证恢复原版本（${rollbackDetail ?? 'unknown'}）。 / ${name} was renamed upstream to ${renamedTo}, and restoration of the previous build coul
+5404+	d not be verified (${rollbackDetail ?? 'unknown'}).`;
+5778	                            error: 'buildEnv must be a KEY/value 对象（空对象表示清除）/ buildEnv must be a KEY/value object (an empty object clears it)',
+5819	                        error: `不能从这个地址卸载插件市场（只接受本机同源请求）。请在运行 DSH 的机器上执行 \`dsh plugin --profile ${config.profile} remove dshmarket\`；桌面端也可以在它自己的「设置 → 插件」里移除。 / The market can only be removed from the 
+5819+	same machine it runs on. Run \`dsh plugin --profile ${config.profile} remove dshmarket\` there, or remove it from the desktop app's Settings → Plugins.`,
+6210	                                error: `无法安全卸载 ${name}：当前 profile 的 cordis.patch.yml 无法读取为有效的补丁列表，因此无法排除它仍在引用该包。请先检查补丁文件；确认无关后可强制卸载。 / Cannot safely uninstall ${name}: this profile's cordis.patch.yml 
+6210+	could not be read as a valid patch list, so the market cannot rule out a remaining package reference. Check the patch file; you can force the uninstall once you are sure it is unrelated.`,
+6223	                                error: `无法卸载 ${name}：当前 profile 的 cordis.patch.yml 仍通过 insert 引用 ${listed}。请先移除这些用户补丁引用再重试；市场不会自动改写用户补丁。 / Cannot uninstall ${name}: this profile's cordis.patch.yml sti
+6223+	ll inserts ${listed}. Remove those user-owned patch references first and retry; the market will not rewrite the user patch automatically.`,
+6233	                                error: `有 agent 正在运行（${busyAgents.join(', ')}）。卸载会修改插件文件，正在工作的 agent 可能在中途报错；请等它完成或取消后再卸载。 / ${busyAgents.length === 1 ? 'An agent is running' : 'Agents are running'} (
+6233+	${busyAgents.join(', ')}). Uninstalling changes plugin files, so a working agent can fail mid-turn; wait for it to finish (or cancel it) before uninstalling.`,
+6422	                            sendJson(response, 400, { error: 'rollback is not available (it may have been superseded by another operation) / 回滚已不可用（可能已被后续操作覆盖）' });
+6433	                                error: 'rollback is not available because the profile changed after this operation / 操作后配置已发生变化，回滚不可用',
+6603	                                sendJson(response, 400, { error: `已以「${aliasOf}」安装过同一个插件，无需重复安装 / this plugin is already installed as "${aliasOf}"` });
+6620	                                    error: `同名冲突：已安装的「${clashName}」来自其他来源，两个同名插件无法共存于一个 profile，请先卸载再安装 / name conflict: an installed plugin already uses the name "${clashName}" but comes from a diffe
+6620+	rent source; two plugins with the same name cannot coexist in one profile — uninstall it first`,
+6641	                                    ? `「${predecessor}」是这个插件改名前用的名字，已经装在 profile 里。装新名字会把同一个插件装成两份、下次启动可能失败；改用迁移把它换过来，开关、分组和备注都会保留。 / "${predecessor}" is already installed under this plugin's former p
+6641+	ackage name. Installing the new name would put two copies of one plugin in the profile and can break the next start — migrate it instead; switches, groups and notes come along.`
+6642	                                    : `「${predecessor}」是这个插件改名前用的名字，已经装在 profile 里，而它是从 Git 或本地路径装的。装新名字会把同一个插件装成两份、下次启动可能失败；请先把旧的那份换成 npm 包（「已安装」里会给出可用的移动方式）。 / "${predecessor}" is already installed 
+6642+	under this plugin's former package name, and it comes from a Git or local path. Installing the new name would put two copies of one plugin in the profile and can break the next start — move the old co
+6642+	py to the npm package first (the installed list shows what can be moved).`,
+6650	                        // same "装上才炸" wall. Same derivation and same cache as the
+6955	                                            : { rollbackUnavailable: '安装完成后无法安全捕获 profile 状态，因此自动回滚不可用；需要时请手工卸载新安装的插件。 / The post-install profile state could not be captured safely, so automatic rollb
+6955+	ack is unavailable. Remove the newly installed plugin manually if needed.' }
+7021	                                ? `「${conflicts[0].name}」与已安装的 ${conflictGroups.map(group => `「${group.owner}」（${group.ids.join('、')}）`).join('、')} 占用相同的 loader 条目 id，无法在同一环境中共存——保留会导致 DeepSeek Harnes
+7021+	s 下次启动失败，因此已自动移除。 / "${conflicts[0].name}" declares the same loader entry id(s) as the installed ${conflictGroups.map(group => `"${group.owner}" (${group.ids.join(', ')})`).join(', ')}; they cannot co
+7021+	exist in one environment — keeping it would stop DeepSeek Harness from starting, so it was removed.`
+7028	                                    ? '安装命令报告成功，但 profile 没有任何变化——插件本身没问题，是执行安装的通道没有真正运行。若使用桌面端，请改用命令行 dsh plugin add 验证，并把导出日志附在 issue 中 / the install command reported success but the profile did not
+7028+	 change — the plugin is not at fault, the channel that should have installed it did not actually run. On a desktop build, verify with `dsh plugin add` from a terminal and attach the exported log'
+7030	                                        ? 'nothing installable: the plugin(s) need a build step (blocked by default, see allowBuilds) or ship no prebuilt artifacts / 没有可安装的内容：插件需要构建授权（allowBuilds，默认拦截
+7030+	）或未附带构建产物，详见导出日志'
+7043	                                            ? `pnpm 要求先决定这些依赖能否运行构建脚本（${ignoredBuilds.join(', ')}）：有的是这次安装带进来的，也可能是之前留下的未决定条目。点「放行构建脚本并重试」会把它们写进 pnpm-workspace.yaml 的 allowBuilds，然后重新安装 / pnpm wants a
+7043+	 decision on these packages before it runs their build scripts (${ignoredBuilds.join(', ')}); some came in with this install, and some may be entries an earlier one left undecided. "Allow build script
+7043+	s and retry" writes them into allowBuilds in pnpm-workspace.yaml and installs again`

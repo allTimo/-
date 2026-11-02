@@ -1,0 +1,41 @@
+# ТОНКИЕ НАСТРОЙКИ АГЕНТА 2 — настройки появятся вместе с агентом.
+version: 1
+agent: agent-2-direct-semantics
+updated: "2026-11-01"
+status: stub
+note: "Агент 2 ещё не реализован: поля показаны для примера и остаются неактивными — сохранять нельзя."
+schedule:
+  enabled: false
+  days: [1]
+  time: "11:00"
+  frequency: on-demand
+  timezone: "Europe/Moscow"
+  only_on_new_data: false
+model:
+  name: "deepseek/deepseek-v4.1-flash"
+  limit_rub: 0
+  limit_tokens: 0
+  on_limit: warn
+priority:
+  level: low
+  max_parallel: 1
+  timeout_sec: 900
+  retries: 0
+report:
+  formats: [xlsx]
+  sections: [summary]
+  language: ru
+  branding: false
+delivery:
+  channels: []
+  addresses: []
+  auto_send: false
+  copy_to: ""
+alerts:
+  when: [never]
+  price_threshold_pct: 0
+  quiet_hours: ""
+limits:
+  skip_weekends: true
+  min_interval_hours: 24
+  stop_switch: true

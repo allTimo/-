@@ -1,0 +1,3493 @@
+{
+ "sessions": [
+  {
+   "id": "session-6381ff03-3116-4515-9130-c07de36e07ee",
+   "title": "Скажи хочу перевести",
+   "agentName": "lead",
+   "member": null,
+   "descriptor": null,
+   "projectKey": "marketing-agents",
+   "projectLabel": "marketing-agents (наш проект)",
+   "cwd": "C:\\Users\\Артем\\Desktop\\тестDH",
+   "createdAt": 1793551545055,
+   "firstTime": 1793551545070,
+   "lastTime": 1793552253057,
+   "origin": "root",
+   "delegationDepth": 0,
+   "parentSession": null,
+   "agentPreset": "standard",
+   "isSubagent": false,
+   "model": "deepseek/deepseek-v4.1-flash",
+   "provider": "zvenoai-vision",
+   "models": [
+    {
+     "key": "deepseek/deepseek-v4.1-flash",
+     "model": "deepseek/deepseek-v4.1-flash",
+     "provider": "zvenoai-vision",
+     "tokens": {
+      "inputTokens": 26479,
+      "outputTokens": 1207,
+      "cacheReadTokens": 0,
+      "cacheWriteTokens": 0,
+      "totalTokens": 27686
+     },
+     "usd": 0.0013,
+     "rub": 0.1,
+     "priceKnown": true
+    }
+   ],
+   "tokens": {
+    "inputTokens": 26479,
+    "outputTokens": 1207,
+    "cacheReadTokens": 0,
+    "cacheWriteTokens": 0,
+    "totalTokens": 27686
+   },
+   "usd": 0.0013,
+   "rub": 0.1,
+   "rubComplete": true,
+   "priceKnown": true,
+   "events": 29,
+   "steps": 2,
+   "turns": 1,
+   "toolCalls": 2,
+   "toolErrors": 0,
+   "userMessages": 4,
+   "assistantMessages": 1,
+   "badLines": 0,
+   "badFrames": 0,
+   "projcacheTokens": {
+    "inputTokens": 26479,
+    "outputTokens": 1207,
+    "cacheReadTokens": 0,
+    "cacheWriteTokens": 0,
+    "totalTokens": 27686
+   },
+   "projcacheDelta": 0,
+   "topTools": [
+    {
+     "name": "skill",
+     "count": 1
+    },
+    {
+     "name": "web_search",
+     "count": 1
+    }
+   ],
+   "sizeBytes": 42164
+  },
+  {
+   "id": "session-932e8d00-4a73-4772-89cf-12fe61c6e310",
+   "title": "добавь, пожалуйста, в",
+   "agentName": "lead",
+   "member": null,
+   "descriptor": null,
+   "projectKey": "marketing-agents",
+   "projectLabel": "marketing-agents (наш проект)",
+   "cwd": "C:\\Users\\Артем\\Desktop\\тестDH",
+   "createdAt": 1793466790340,
+   "firstTime": 1793466790349,
+   "lastTime": 1793552032259,
+   "origin": "root",
+   "delegationDepth": 0,
+   "parentSession": null,
+   "agentPreset": "standard",
+   "isSubagent": false,
+   "model": "deepseek/deepseek-v4.1-flash",
+   "provider": "zvenoai-vision",
+   "models": [
+    {
+     "key": "deepseek/deepseek-v4.1-flash",
+     "model": "deepseek/deepseek-v4.1-flash",
+     "provider": "zvenoai-vision",
+     "tokens": {
+      "inputTokens": 177481,
+      "outputTokens": 86794,
+      "cacheReadTokens": 14126848,
+      "cacheWriteTokens": 0,
+      "totalTokens": 14391123
+     },
+     "usd": 0.4899,
+     "rub": 39.46,
+     "priceKnown": true
+    }
+   ],
+   "tokens": {
+    "inputTokens": 177481,
+    "outputTokens": 86794,
+    "cacheReadTokens": 14126848,
+    "cacheWriteTokens": 0,
+    "totalTokens": 14391123
+   },
+   "usd": 0.4899,
+   "rub": 39.46,
+   "rubComplete": true,
+   "priceKnown": true,
+   "events": 714,
+   "steps": 92,
+   "turns": 2,
+   "toolCalls": 135,
+   "toolErrors": 0,
+   "userMessages": 9,
+   "assistantMessages": 90,
+   "badLines": 0,
+   "badFrames": 0,
+   "projcacheTokens": {
+    "inputTokens": 177481,
+    "outputTokens": 86794,
+    "cacheReadTokens": 14126848,
+    "cacheWriteTokens": 0,
+    "totalTokens": 14391123
+   },
+   "projcacheDelta": 0,
+   "topTools": [
+    {
+     "name": "pwsh",
+     "count": 56
+    },
+    {
+     "name": "read",
+     "count": 36
+    },
+    {
+     "name": "grep",
+     "count": 16
+    },
+    {
+     "name": "edit",
+     "count": 7
+    },
+    {
+     "name": "write",
+     "count": 6
+    },
+    {
+     "name": "team_task_create",
+     "count": 4
+    },
+    {
+     "name": "spawn_teammate",
+     "count": 2
+    },
+    {
+     "name": "working_directory",
+     "count": 1
+    }
+   ],
+   "sizeBytes": 668057
+  },
+  {
+   "id": "e43a1771-9fc1-4400-b4fa-6315d1135359",
+   "title": "Ты — независимый пров",
+   "agentName": "verifier",
+   "member": {
+    "name": "verifier",
+    "description": "Независимая проверка плагина на живом GUI (доступ, скриншоты, DOM-ассерты)",
+    "phase": "active"
+   },
+   "descriptor": {
+    "label": "Независимая проверка плагина на живом GUI (доступ, скриншоты, DOM-ассерты)",
+    "mode": "continuable",
+    "provider": "zvenoai-vision",
+    "model": "deepseek/deepseek-v4.1-flash"
+   },
+   "projectKey": "marketing-agents",
+   "projectLabel": "marketing-agents (наш проект)",
+   "cwd": "C:\\Users\\Артем\\Desktop\\тестDH",
+   "createdAt": 1793551505068,
+   "firstTime": 1793551505070,
+   "lastTime": 1793552032070,
+   "origin": "subagent",
+   "delegationDepth": 1,
+   "parentSession": "session-932e8d00-4a73-4772-89cf-12fe61c6e310",
+   "agentPreset": "standard",
+   "isSubagent": true,
+   "model": "deepseek/deepseek-v4.1-flash",
+   "provider": "zvenoai-vision",
+   "models": [
+    {
+     "key": "deepseek/deepseek-v4.1-flash",
+     "model": "deepseek/deepseek-v4.1-flash",
+     "provider": "zvenoai-vision",
+     "tokens": {
+      "inputTokens": 104152,
+      "outputTokens": 42549,
+      "cacheReadTokens": 5100416,
+      "cacheWriteTokens": 0,
+      "totalTokens": 5247117
+     },
+     "usd": 0.182,
+     "rub": 14.66,
+     "priceKnown": true
+    }
+   ],
+   "tokens": {
+    "inputTokens": 104152,
+    "outputTokens": 42549,
+    "cacheReadTokens": 5100416,
+    "cacheWriteTokens": 0,
+    "totalTokens": 5247117
+   },
+   "usd": 0.182,
+   "rub": 14.66,
+   "rubComplete": true,
+   "priceKnown": true,
+   "events": 430,
+   "steps": 65,
+   "turns": 1,
+   "toolCalls": 71,
+   "toolErrors": 0,
+   "userMessages": 6,
+   "assistantMessages": 64,
+   "badLines": 0,
+   "badFrames": 0,
+   "projcacheTokens": {
+    "inputTokens": 104152,
+    "outputTokens": 42549,
+    "cacheReadTokens": 5100416,
+    "cacheWriteTokens": 0,
+    "totalTokens": 5247117
+   },
+   "projcacheDelta": 0,
+   "topTools": [
+    {
+     "name": "pwsh",
+     "count": 35
+    },
+    {
+     "name": "edit",
+     "count": 11
+    },
+    {
+     "name": "write",
+     "count": 8
+    },
+    {
+     "name": "read",
+     "count": 6
+    },
+    {
+     "name": "vision_describe",
+     "count": 3
+    },
+    {
+     "name": "grep",
+     "count": 2
+    },
+    {
+     "name": "vision_crop",
+     "count": 2
+    },
+    {
+     "name": "team_task_list",
+     "count": 1
+    }
+   ],
+   "sizeBytes": 312878
+  },
+  {
+   "id": "403e9806-3fc0-411e-bfcb-54b96eaade23",
+   "title": "Ты — автор клиентског",
+   "agentName": "plugin-author",
+   "member": {
+    "name": "plugin-author",
+    "description": "Автор клиентского UI-плагина dsh-step-timer (тайминги по этапам)",
+    "phase": "active"
+   },
+   "descriptor": {
+    "label": "Автор клиентского UI-плагина dsh-step-timer (тайминги по этапам)",
+    "mode": "continuable",
+    "provider": "zvenoai-vision",
+    "model": "deepseek/deepseek-v4.1-flash"
+   },
+   "projectKey": "marketing-agents",
+   "projectLabel": "marketing-agents (наш проект)",
+   "cwd": "C:\\Users\\Артем\\Desktop\\тестDH",
+   "createdAt": 1793551495280,
+   "firstTime": 1793551495283,
+   "lastTime": 1793552002046,
+   "origin": "subagent",
+   "delegationDepth": 1,
+   "parentSession": "session-932e8d00-4a73-4772-89cf-12fe61c6e310",
+   "agentPreset": "standard",
+   "isSubagent": true,
+   "model": "deepseek/deepseek-v4.1-flash",
+   "provider": "zvenoai-vision",
+   "models": [
+    {
+     "key": "deepseek/deepseek-v4.1-flash",
+     "model": "deepseek/deepseek-v4.1-flash",
+     "provider": "zvenoai-vision",
+     "tokens": {
+      "inputTokens": 225822,
+      "outputTokens": 85974,
+      "cacheReadTokens": 8841728,
+      "cacheWriteTokens": 0,
+      "totalTokens": 9153524
+     },
+     "usd": 0.3212,
+     "rub": 25.88,
+     "priceKnown": true
+    }
+   ],
+   "tokens": {
+    "inputTokens": 225822,
+    "outputTokens": 85974,
+    "cacheReadTokens": 8841728,
+    "cacheWriteTokens": 0,
+    "totalTokens": 9153524
+   },
+   "usd": 0.3212,
+   "rub": 25.88,
+   "rubComplete": true,
+   "priceKnown": true,
+   "events": 440,
+   "steps": 67,
+   "turns": 1,
+   "toolCalls": 96,
+   "toolErrors": 0,
+   "userMessages": 4,
+   "assistantMessages": 67,
+   "badLines": 0,
+   "badFrames": 0,
+   "projcacheTokens": {
+    "inputTokens": 225822,
+    "outputTokens": 85974,
+    "cacheReadTokens": 8841728,
+    "cacheWriteTokens": 0,
+    "totalTokens": 9153524
+   },
+   "projcacheDelta": 0,
+   "topTools": [
+    {
+     "name": "read",
+     "count": 34
+    },
+    {
+     "name": "pwsh",
+     "count": 15
+    },
+    {
+     "name": "grep",
+     "count": 14
+    },
+    {
+     "name": "write",
+     "count": 10
+    },
+    {
+     "name": "edit",
+     "count": 10
+    },
+    {
+     "name": "vision_html_screenshot",
+     "count": 3
+    },
+    {
+     "name": "vision_colors",
+     "count": 3
+    },
+    {
+     "name": "team_task_update",
+     "count": 2
+    }
+   ],
+   "sizeBytes": 506972
+  },
+  {
+   "id": "session-a1097186-d111-41f5-b0fb-1e9047ac821d",
+   "title": "Аудит плагинов и ру",
+   "agentName": "lead",
+   "member": null,
+   "descriptor": null,
+   "projectKey": "marketing-agents",
+   "projectLabel": "marketing-agents (наш проект)",
+   "cwd": "C:\\Users\\Артем\\Desktop\\тестDH",
+   "createdAt": 1793466236758,
+   "firstTime": 1793466236769,
+   "lastTime": 1793551583190,
+   "origin": "root",
+   "delegationDepth": 0,
+   "parentSession": null,
+   "agentPreset": "cordis",
+   "isSubagent": false,
+   "model": "deepseek/deepseek-v4.1-flash",
+   "provider": "zvenoai",
+   "models": [
+    {
+     "key": "deepseek/deepseek-v4.1-flash",
+     "model": "deepseek/deepseek-v4.1-flash",
+     "provider": "zvenoai",
+     "tokens": {
+      "inputTokens": 551196,
+      "outputTokens": 106272,
+      "cacheReadTokens": 27427072,
+      "cacheWriteTokens": 0,
+      "totalTokens": 28084540
+     },
+     "usd": 0.9363,
+     "rub": 75.42,
+     "priceKnown": true
+    }
+   ],
+   "tokens": {
+    "inputTokens": 551196,
+    "outputTokens": 106272,
+    "cacheReadTokens": 27427072,
+    "cacheWriteTokens": 0,
+    "totalTokens": 28084540
+   },
+   "usd": 0.9363,
+   "rub": 75.42,
+   "rubComplete": true,
+   "priceKnown": true,
+   "events": 1108,
+   "steps": 134,
+   "turns": 4,
+   "toolCalls": 203,
+   "toolErrors": 0,
+   "userMessages": 37,
+   "assistantMessages": 134,
+   "badLines": 0,
+   "badFrames": 0,
+   "projcacheTokens": {
+    "inputTokens": 551196,
+    "outputTokens": 106272,
+    "cacheReadTokens": 27427072,
+    "cacheWriteTokens": 0,
+    "totalTokens": 28084540
+   },
+   "projcacheDelta": 0,
+   "topTools": [
+    {
+     "name": "pwsh",
+     "count": 49
+    },
+    {
+     "name": "wait_agent",
+     "count": 32
+    },
+    {
+     "name": "read",
+     "count": 20
+    },
+    {
+     "name": "list_agents",
+     "count": 17
+    },
+    {
+     "name": "team_task_update",
+     "count": 15
+    },
+    {
+     "name": "send_message",
+     "count": 15
+    },
+    {
+     "name": "team_task_list",
+     "count": 11
+    },
+    {
+     "name": "team_task_create",
+     "count": 10
+    }
+   ],
+   "sizeBytes": 1058431
+  },
+  {
+   "id": "session-162bee51-5867-46f8-be1a-478d35530d29",
+   "title": "Панель управления(основная)",
+   "agentName": "lead",
+   "member": null,
+   "descriptor": null,
+   "projectKey": "marketing-agents",
+   "projectLabel": "marketing-agents (наш проект)",
+   "cwd": "C:\\Users\\Артем\\Desktop\\тестDH",
+   "createdAt": 1793386339032,
+   "firstTime": 1793386339040,
+   "lastTime": 1793550892449,
+   "origin": "root",
+   "delegationDepth": 0,
+   "parentSession": null,
+   "agentPreset": "standard",
+   "isSubagent": false,
+   "model": "deepseek/deepseek-v4.1-flash",
+   "provider": "zvenoai",
+   "models": [
+    {
+     "key": "deepseek/deepseek-v4.1-flash",
+     "model": "deepseek/deepseek-v4.1-flash",
+     "provider": "zvenoai",
+     "tokens": {
+      "inputTokens": 11765224,
+      "outputTokens": 716620,
+      "cacheReadTokens": 171914880,
+      "cacheWriteTokens": 0,
+      "totalTokens": 184396724
+     },
+     "usd": 6.1532,
+     "rub": 495.68,
+     "priceKnown": true
+    }
+   ],
+   "tokens": {
+    "inputTokens": 11765224,
+    "outputTokens": 716620,
+    "cacheReadTokens": 171914880,
+    "cacheWriteTokens": 0,
+    "totalTokens": 184396724
+   },
+   "usd": 6.1532,
+   "rub": 495.68,
+   "rubComplete": true,
+   "priceKnown": true,
+   "events": 6038,
+   "steps": 431,
+   "turns": 94,
+   "toolCalls": 335,
+   "toolErrors": 0,
+   "userMessages": 277,
+   "assistantMessages": 428,
+   "badLines": 0,
+   "badFrames": 0,
+   "projcacheTokens": {
+    "inputTokens": 11765224,
+    "outputTokens": 716620,
+    "cacheReadTokens": 171914880,
+    "cacheWriteTokens": 0,
+    "totalTokens": 184396724
+   },
+   "projcacheDelta": 0,
+   "topTools": [
+    {
+     "name": "run_code",
+     "count": 335
+    }
+   ],
+   "sizeBytes": 7238591
+  },
+  {
+   "id": "830d7f80-26e3-41ae-b091-4b3e697e1072",
+   "title": "Ты — участник команды",
+   "agentName": "dashboard-ui",
+   "member": {
+    "name": "dashboard-ui",
+    "description": "веб-дашборд и сборщик аналитики",
+    "phase": "active"
+   },
+   "descriptor": {
+    "label": "веб-дашборд и сборщик аналитики",
+    "mode": "continuable",
+    "provider": "zvenoai",
+    "model": "deepseek/deepseek-v4.1-flash"
+   },
+   "projectKey": "marketing-agents",
+   "projectLabel": "marketing-agents (наш проект)",
+   "cwd": "C:\\Users\\Артем\\Desktop\\тестDH",
+   "createdAt": 1793455554793,
+   "firstTime": 1793455554795,
+   "lastTime": 1793550811272,
+   "origin": "subagent",
+   "delegationDepth": 1,
+   "parentSession": "session-162bee51-5867-46f8-be1a-478d35530d29",
+   "agentPreset": "ptc",
+   "isSubagent": true,
+   "model": "deepseek/deepseek-v4.1-flash",
+   "provider": "zvenoai",
+   "models": [
+    {
+     "key": "deepseek/deepseek-v4.1-flash",
+     "model": "deepseek/deepseek-v4.1-flash",
+     "provider": "zvenoai",
+     "tokens": {
+      "inputTokens": 8857008,
+      "outputTokens": 1237538,
+      "cacheReadTokens": 292630144,
+      "cacheWriteTokens": 0,
+      "totalTokens": 302724690
+     },
+     "usd": 10.1208,
+     "rub": 815.3,
+     "priceKnown": true
+    }
+   ],
+   "tokens": {
+    "inputTokens": 8857008,
+    "outputTokens": 1237538,
+    "cacheReadTokens": 292630144,
+    "cacheWriteTokens": 0,
+    "totalTokens": 302724690
+   },
+   "usd": 10.1208,
+   "rub": 815.3,
+   "rubComplete": true,
+   "priceKnown": true,
+   "events": 8326,
+   "steps": 638,
+   "turns": 41,
+   "toolCalls": 598,
+   "toolErrors": 0,
+   "userMessages": 100,
+   "assistantMessages": 636,
+   "badLines": 0,
+   "badFrames": 0,
+   "projcacheTokens": {
+    "inputTokens": 8857008,
+    "outputTokens": 1237538,
+    "cacheReadTokens": 292630144,
+    "cacheWriteTokens": 0,
+    "totalTokens": 302724690
+   },
+   "projcacheDelta": 0,
+   "topTools": [
+    {
+     "name": "run_code",
+     "count": 598
+    }
+   ],
+   "sizeBytes": 10074695
+  },
+  {
+   "id": "f05182e9-1a62-4402-9b83-808feca15fe4",
+   "title": "Ты — участник команды",
+   "agentName": "capability-dev",
+   "member": {
+    "name": "capability-dev",
+    "description": "браузер, рабочий стол и зрение для агентов",
+    "phase": "active"
+   },
+   "descriptor": {
+    "label": "браузер, рабочий стол и зрение для агентов",
+    "mode": "continuable",
+    "provider": "zvenoai",
+    "model": "deepseek/deepseek-v4.1-flash"
+   },
+   "projectKey": "marketing-agents",
+   "projectLabel": "marketing-agents (наш проект)",
+   "cwd": "C:\\Users\\Артем\\Desktop\\тестDH",
+   "createdAt": 1793466299633,
+   "firstTime": 1793466299635,
+   "lastTime": 1793550211113,
+   "origin": "subagent",
+   "delegationDepth": 1,
+   "parentSession": "session-162bee51-5867-46f8-be1a-478d35530d29",
+   "agentPreset": "ptc",
+   "isSubagent": true,
+   "model": "deepseek/deepseek-v4.1-flash",
+   "provider": "zvenoai",
+   "models": [
+    {
+     "key": "deepseek/deepseek-v4.1-flash",
+     "model": "deepseek/deepseek-v4.1-flash",
+     "provider": "zvenoai",
+     "tokens": {
+      "inputTokens": 619502,
+      "outputTokens": 89972,
+      "cacheReadTokens": 10632320,
+      "cacheWriteTokens": 0,
+      "totalTokens": 11341794
+     },
+     "usd": 0.3929,
+     "rub": 31.65,
+     "priceKnown": true
+    }
+   ],
+   "tokens": {
+    "inputTokens": 619502,
+    "outputTokens": 89972,
+    "cacheReadTokens": 10632320,
+    "cacheWriteTokens": 0,
+    "totalTokens": 11341794
+   },
+   "usd": 0.3929,
+   "rub": 31.65,
+   "rubComplete": true,
+   "priceKnown": true,
+   "events": 869,
+   "steps": 91,
+   "turns": 3,
+   "toolCalls": 88,
+   "toolErrors": 0,
+   "userMessages": 13,
+   "assistantMessages": 91,
+   "badLines": 0,
+   "badFrames": 0,
+   "projcacheTokens": {
+    "inputTokens": 619502,
+    "outputTokens": 89972,
+    "cacheReadTokens": 10632320,
+    "cacheWriteTokens": 0,
+    "totalTokens": 11341794
+   },
+   "projcacheDelta": 0,
+   "topTools": [
+    {
+     "name": "run_code",
+     "count": 88
+    }
+   ],
+   "sizeBytes": 695381
+  },
+  {
+   "id": "bc3bdbf7-a3cb-400e-b8c3-2617e5d33100",
+   "title": "Ты — независимый вери",
+   "agentName": "verifier",
+   "member": {
+    "name": "verifier",
+    "description": "независимый верификатор Агента 1 и плагина",
+    "phase": "active"
+   },
+   "descriptor": {
+    "label": "независимый верификатор Агента 1 и плагина",
+    "mode": "continuable",
+    "provider": "zvenoai",
+    "model": "deepseek/deepseek-v4.1-flash"
+   },
+   "projectKey": "marketing-agents",
+   "projectLabel": "marketing-agents (наш проект)",
+   "cwd": "C:\\Users\\Артем\\Desktop\\тестDH",
+   "createdAt": 1793388568072,
+   "firstTime": 1793388568075,
+   "lastTime": 1793549668819,
+   "origin": "subagent",
+   "delegationDepth": 1,
+   "parentSession": "session-162bee51-5867-46f8-be1a-478d35530d29",
+   "agentPreset": "ptc",
+   "isSubagent": true,
+   "model": "deepseek/deepseek-v4.1-flash",
+   "provider": "zvenoai",
+   "models": [
+    {
+     "key": "deepseek/deepseek-v4.1-flash",
+     "model": "deepseek/deepseek-v4.1-flash",
+     "provider": "zvenoai",
+     "tokens": {
+      "inputTokens": 2979840,
+      "outputTokens": 239371,
+      "cacheReadTokens": 66873024,
+      "cacheWriteTokens": 0,
+      "totalTokens": 70092235
+     },
+     "usd": 2.3286,
+     "rub": 187.58,
+     "priceKnown": true
+    }
+   ],
+   "tokens": {
+    "inputTokens": 2979840,
+    "outputTokens": 239371,
+    "cacheReadTokens": 66873024,
+    "cacheWriteTokens": 0,
+    "totalTokens": 70092235
+   },
+   "usd": 2.3286,
+   "rub": 187.58,
+   "rubComplete": true,
+   "priceKnown": true,
+   "events": 1931,
+   "steps": 197,
+   "turns": 5,
+   "toolCalls": 193,
+   "toolErrors": 0,
+   "userMessages": 23,
+   "assistantMessages": 197,
+   "badLines": 0,
+   "badFrames": 0,
+   "projcacheTokens": {
+    "inputTokens": 2979840,
+    "outputTokens": 239371,
+    "cacheReadTokens": 66873024,
+    "cacheWriteTokens": 0,
+    "totalTokens": 70092235
+   },
+   "projcacheDelta": 0,
+   "topTools": [
+    {
+     "name": "run_code",
+     "count": 193
+    }
+   ],
+   "sizeBytes": 2136763
+  },
+  {
+   "id": "ab6c1cbd-ae91-443e-95b6-4d598fb42390",
+   "title": "Ты — участник команды",
+   "agentName": "data-engine",
+   "member": {
+    "name": "data-engine",
+    "description": "Python-движок снимок/diff/отчёт и тесты",
+    "phase": "active"
+   },
+   "descriptor": {
+    "label": "Python-движок снимок/diff/отчёт и тесты",
+    "mode": "continuable",
+    "provider": "zvenoai",
+    "model": "deepseek/deepseek-v4.1-flash"
+   },
+   "projectKey": "marketing-agents",
+   "projectLabel": "marketing-agents (наш проект)",
+   "cwd": "C:\\Users\\Артем\\Desktop\\тестDH",
+   "createdAt": 1793387523023,
+   "firstTime": 1793387523024,
+   "lastTime": 1793547524477,
+   "origin": "subagent",
+   "delegationDepth": 1,
+   "parentSession": "session-162bee51-5867-46f8-be1a-478d35530d29",
+   "agentPreset": "ptc",
+   "isSubagent": true,
+   "model": "deepseek/deepseek-v4.1-flash",
+   "provider": "zvenoai",
+   "models": [
+    {
+     "key": "deepseek/deepseek-v4.1-flash",
+     "model": "deepseek/deepseek-v4.1-flash",
+     "provider": "zvenoai",
+     "tokens": {
+      "inputTokens": 3324382,
+      "outputTokens": 860199,
+      "cacheReadTokens": 188246912,
+      "cacheWriteTokens": 0,
+      "totalTokens": 192431493
+     },
+     "usd": 6.4565,
+     "rub": 520.12,
+     "priceKnown": true
+    }
+   ],
+   "tokens": {
+    "inputTokens": 3324382,
+    "outputTokens": 860199,
+    "cacheReadTokens": 188246912,
+    "cacheWriteTokens": 0,
+    "totalTokens": 192431493
+   },
+   "usd": 6.4565,
+   "rub": 520.12,
+   "rubComplete": true,
+   "priceKnown": true,
+   "events": 5336,
+   "steps": 431,
+   "turns": 16,
+   "toolCalls": 416,
+   "toolErrors": 0,
+   "userMessages": 64,
+   "assistantMessages": 431,
+   "badLines": 0,
+   "badFrames": 0,
+   "projcacheTokens": {
+    "inputTokens": 3324382,
+    "outputTokens": 860199,
+    "cacheReadTokens": 188246912,
+    "cacheWriteTokens": 0,
+    "totalTokens": 192431493
+   },
+   "projcacheDelta": 0,
+   "topTools": [
+    {
+     "name": "run_code",
+     "count": 416
+    }
+   ],
+   "sizeBytes": 4483257
+  },
+  {
+   "id": "18edb148-dc05-4424-84d4-d587ac4471b2",
+   "title": "Ты — участник команды",
+   "agentName": "plugin-dev",
+   "member": {
+    "name": "plugin-dev",
+    "description": "разработчик DSH-плагина и провайдера скилов",
+    "phase": "active"
+   },
+   "descriptor": {
+    "label": "разработчик DSH-плагина и провайдера скилов",
+    "mode": "continuable",
+    "provider": "zvenoai",
+    "model": "deepseek/deepseek-v4.1-flash"
+   },
+   "projectKey": "marketing-agents",
+   "projectLabel": "marketing-agents (наш проект)",
+   "cwd": "C:\\Users\\Артем\\Desktop\\тестDH",
+   "createdAt": 1793387522857,
+   "firstTime": 1793387522859,
+   "lastTime": 1793547413147,
+   "origin": "subagent",
+   "delegationDepth": 1,
+   "parentSession": "session-162bee51-5867-46f8-be1a-478d35530d29",
+   "agentPreset": "ptc",
+   "isSubagent": true,
+   "model": "deepseek/deepseek-v4.1-flash",
+   "provider": "zvenoai",
+   "models": [
+    {
+     "key": "deepseek/deepseek-v4.1-flash",
+     "model": "deepseek/deepseek-v4.1-flash",
+     "provider": "zvenoai",
+     "tokens": {
+      "inputTokens": 1642899,
+      "outputTokens": 412595,
+      "cacheReadTokens": 73469952,
+      "cacheWriteTokens": 0,
+      "totalTokens": 75525446
+     },
+     "usd": 2.5575,
+     "rub": 206.03,
+     "priceKnown": true
+    }
+   ],
+   "tokens": {
+    "inputTokens": 1642899,
+    "outputTokens": 412595,
+    "cacheReadTokens": 73469952,
+    "cacheWriteTokens": 0,
+    "totalTokens": 75525446
+   },
+   "usd": 2.5575,
+   "rub": 206.03,
+   "rubComplete": true,
+   "priceKnown": true,
+   "events": 2114,
+   "steps": 215,
+   "turns": 13,
+   "toolCalls": 203,
+   "toolErrors": 0,
+   "userMessages": 46,
+   "assistantMessages": 214,
+   "badLines": 0,
+   "badFrames": 0,
+   "projcacheTokens": {
+    "inputTokens": 1642899,
+    "outputTokens": 412595,
+    "cacheReadTokens": 73469952,
+    "cacheWriteTokens": 0,
+    "totalTokens": 75525446
+   },
+   "projcacheDelta": 0,
+   "topTools": [
+    {
+     "name": "run_code",
+     "count": 203
+    }
+   ],
+   "sizeBytes": 2326717
+  },
+  {
+   "id": "526c6729-9219-46a9-a830-222b627ae94e",
+   "title": "Ты — участник команды",
+   "agentName": "agent1-workspace",
+   "member": {
+    "name": "agent1-workspace",
+    "description": "контур Агента 1: конфиги, шаблоны, регламент, разведка",
+    "phase": "active"
+   },
+   "descriptor": {
+    "label": "контур Агента 1: конфиги, шаблоны, регламент, разведка",
+    "mode": "continuable",
+    "provider": "zvenoai",
+    "model": "deepseek/deepseek-v4.1-flash"
+   },
+   "projectKey": "marketing-agents",
+   "projectLabel": "marketing-agents (наш проект)",
+   "cwd": "C:\\Users\\Артем\\Desktop\\тестDH",
+   "createdAt": 1793387522927,
+   "firstTime": 1793387522930,
+   "lastTime": 1793531322931,
+   "origin": "subagent",
+   "delegationDepth": 1,
+   "parentSession": "session-162bee51-5867-46f8-be1a-478d35530d29",
+   "agentPreset": "ptc",
+   "isSubagent": true,
+   "model": "deepseek/deepseek-v4.1-flash",
+   "provider": "zvenoai",
+   "models": [
+    {
+     "key": "deepseek/deepseek-v4.1-flash",
+     "model": "deepseek/deepseek-v4.1-flash",
+     "provider": "zvenoai",
+     "tokens": {
+      "inputTokens": 1981720,
+      "outputTokens": 271391,
+      "cacheReadTokens": 53652096,
+      "cacheWriteTokens": 0,
+      "totalTokens": 55905207
+     },
+     "usd": 1.8825,
+     "rub": 151.65,
+     "priceKnown": true
+    }
+   ],
+   "tokens": {
+    "inputTokens": 1981720,
+    "outputTokens": 271391,
+    "cacheReadTokens": 53652096,
+    "cacheWriteTokens": 0,
+    "totalTokens": 55905207
+   },
+   "usd": 1.8825,
+   "rub": 151.65,
+   "rubComplete": true,
+   "priceKnown": true,
+   "events": 2120,
+   "steps": 223,
+   "turns": 7,
+   "toolCalls": 217,
+   "toolErrors": 0,
+   "userMessages": 25,
+   "assistantMessages": 222,
+   "badLines": 0,
+   "badFrames": 0,
+   "projcacheTokens": {
+    "inputTokens": 1981720,
+    "outputTokens": 271391,
+    "cacheReadTokens": 53652096,
+    "cacheWriteTokens": 0,
+    "totalTokens": 55905207
+   },
+   "projcacheDelta": 0,
+   "topTools": [
+    {
+     "name": "run_code",
+     "count": 217
+    }
+   ],
+   "sizeBytes": 1976775
+  },
+  {
+   "id": "6280b1b7-a0d1-4515-ba04-d6a2da0210ff",
+   "title": "Ты — участник команды",
+   "agentName": "verifier",
+   "member": {
+    "name": "verifier",
+    "description": "Independent verification of russification and audit results",
+    "phase": "active"
+   },
+   "descriptor": {
+    "label": "Independent verification of russification and audit results",
+    "mode": "continuable",
+    "provider": "zvenoai",
+    "model": "deepseek/deepseek-v4.1-flash"
+   },
+   "projectKey": "marketing-agents",
+   "projectLabel": "marketing-agents (наш проект)",
+   "cwd": "C:\\Users\\Артем\\Desktop\\тестDH",
+   "createdAt": 1793471541170,
+   "firstTime": 1793471541173,
+   "lastTime": 1793471622705,
+   "origin": "subagent",
+   "delegationDepth": 1,
+   "parentSession": "session-a1097186-d111-41f5-b0fb-1e9047ac821d",
+   "agentPreset": "standard",
+   "isSubagent": true,
+   "model": "deepseek/deepseek-v4.1-flash",
+   "provider": "zvenoai",
+   "models": [
+    {
+     "key": "deepseek/deepseek-v4.1-flash",
+     "model": "deepseek/deepseek-v4.1-flash",
+     "provider": "zvenoai",
+     "tokens": {
+      "inputTokens": 55747,
+      "outputTokens": 12607,
+      "cacheReadTokens": 636928,
+      "cacheWriteTokens": 0,
+      "totalTokens": 705282
+     },
+     "usd": 0.0266,
+     "rub": 2.15,
+     "priceKnown": true
+    }
+   ],
+   "tokens": {
+    "inputTokens": 55747,
+    "outputTokens": 12607,
+    "cacheReadTokens": 636928,
+    "cacheWriteTokens": 0,
+    "totalTokens": 705282
+   },
+   "usd": 0.0266,
+   "rub": 2.15,
+   "rubComplete": true,
+   "priceKnown": true,
+   "events": 147,
+   "steps": 15,
+   "turns": 1,
+   "toolCalls": 25,
+   "toolErrors": 0,
+   "userMessages": 4,
+   "assistantMessages": 14,
+   "badLines": 0,
+   "badFrames": 0,
+   "projcacheTokens": {
+    "inputTokens": 55747,
+    "outputTokens": 12607,
+    "cacheReadTokens": 636928,
+    "cacheWriteTokens": 0,
+    "totalTokens": 705282
+   },
+   "projcacheDelta": 0,
+   "topTools": [
+    {
+     "name": "pwsh",
+     "count": 17
+    },
+    {
+     "name": "write",
+     "count": 2
+    },
+    {
+     "name": "edit",
+     "count": 2
+    },
+    {
+     "name": "team_task_get",
+     "count": 1
+    },
+    {
+     "name": "team_task_update",
+     "count": 1
+    },
+    {
+     "name": "todo_write",
+     "count": 1
+    },
+    {
+     "name": "read",
+     "count": 1
+    }
+   ],
+   "sizeBytes": 133427
+  },
+  {
+   "id": "b92ef342-e1fc-4691-a19d-01ede6e42968",
+   "title": "Ты — участник команды",
+   "agentName": "market-lib-ru",
+   "member": {
+    "name": "market-lib-ru",
+    "description": "Russify dshmarket server-side lib/*.js",
+    "phase": "active"
+   },
+   "descriptor": {
+    "label": "Russify dshmarket server-side lib/*.js",
+    "mode": "continuable",
+    "provider": "zvenoai",
+    "model": "deepseek/deepseek-v4.1-flash"
+   },
+   "projectKey": "marketing-agents",
+   "projectLabel": "marketing-agents (наш проект)",
+   "cwd": "C:\\Users\\Артем\\Desktop\\тестDH",
+   "createdAt": 1793467043471,
+   "firstTime": 1793467043475,
+   "lastTime": 1793471431674,
+   "origin": "subagent",
+   "delegationDepth": 1,
+   "parentSession": "session-a1097186-d111-41f5-b0fb-1e9047ac821d",
+   "agentPreset": "standard",
+   "isSubagent": true,
+   "model": "deepseek/deepseek-v4.1-flash",
+   "provider": "zvenoai",
+   "models": [
+    {
+     "key": "deepseek/deepseek-v4.1-flash",
+     "model": "deepseek/deepseek-v4.1-flash",
+     "provider": "zvenoai",
+     "tokens": {
+      "inputTokens": 518184,
+      "outputTokens": 160087,
+      "cacheReadTokens": 35578299,
+      "cacheWriteTokens": 0,
+      "totalTokens": 36256570
+     },
+     "usd": 1.2159,
+     "rub": 97.95,
+     "priceKnown": true
+    }
+   ],
+   "tokens": {
+    "inputTokens": 518184,
+    "outputTokens": 160087,
+    "cacheReadTokens": 35578299,
+    "cacheWriteTokens": 0,
+    "totalTokens": 36256570
+   },
+   "usd": 1.2159,
+   "rub": 97.95,
+   "rubComplete": true,
+   "priceKnown": true,
+   "events": 1172,
+   "steps": 188,
+   "turns": 0,
+   "toolCalls": 208,
+   "toolErrors": 0,
+   "userMessages": 15,
+   "assistantMessages": 187,
+   "badLines": 0,
+   "badFrames": 0,
+   "projcacheTokens": {
+    "inputTokens": 518184,
+    "outputTokens": 160087,
+    "cacheReadTokens": 35578299,
+    "cacheWriteTokens": 0,
+    "totalTokens": 36256570
+   },
+   "projcacheDelta": 0,
+   "topTools": [
+    {
+     "name": "pwsh",
+     "count": 78
+    },
+    {
+     "name": "read",
+     "count": 45
+    },
+    {
+     "name": "edit",
+     "count": 45
+    },
+    {
+     "name": "write",
+     "count": 20
+    },
+    {
+     "name": "grep",
+     "count": 14
+    },
+    {
+     "name": "team_task_get",
+     "count": 2
+    },
+    {
+     "name": "todo_write",
+     "count": 2
+    },
+    {
+     "name": "team_task_update",
+     "count": 1
+    }
+   ],
+   "sizeBytes": 965755
+  },
+  {
+   "id": "ef90afcc-7f73-4802-8b94-6844d30b15d8",
+   "title": "Ты — участник команды",
+   "agentName": "market-ru",
+   "member": {
+    "name": "market-ru",
+    "description": "Russify the dshmarket plugin UI (priority sections)",
+    "phase": "active"
+   },
+   "descriptor": {
+    "label": "Russify the dshmarket plugin UI (priority sections)",
+    "mode": "continuable",
+    "provider": "zvenoai",
+    "model": "deepseek/deepseek-v4.1-flash"
+   },
+   "projectKey": "marketing-agents",
+   "projectLabel": "marketing-agents (наш проект)",
+   "cwd": "C:\\Users\\Артем\\Desktop\\тестDH",
+   "createdAt": 1793466893112,
+   "firstTime": 1793466893113,
+   "lastTime": 1793469500586,
+   "origin": "subagent",
+   "delegationDepth": 1,
+   "parentSession": "session-a1097186-d111-41f5-b0fb-1e9047ac821d",
+   "agentPreset": "standard",
+   "isSubagent": true,
+   "model": "deepseek/deepseek-v4.1-flash",
+   "provider": "zvenoai",
+   "models": [
+    {
+     "key": "deepseek/deepseek-v4.1-flash",
+     "model": "deepseek/deepseek-v4.1-flash",
+     "provider": "zvenoai",
+     "tokens": {
+      "inputTokens": 148005,
+      "outputTokens": 296947,
+      "cacheReadTokens": 52446976,
+      "cacheWriteTokens": 0,
+      "totalTokens": 52891928
+     },
+     "usd": 1.7936,
+     "rub": 144.49,
+     "priceKnown": true
+    }
+   ],
+   "tokens": {
+    "inputTokens": 148005,
+    "outputTokens": 296947,
+    "cacheReadTokens": 52446976,
+    "cacheWriteTokens": 0,
+    "totalTokens": 52891928
+   },
+   "usd": 1.7936,
+   "rub": 144.49,
+   "rubComplete": true,
+   "priceKnown": true,
+   "events": 1520,
+   "steps": 218,
+   "turns": 4,
+   "toolCalls": 287,
+   "toolErrors": 0,
+   "userMessages": 12,
+   "assistantMessages": 217,
+   "badLines": 0,
+   "badFrames": 0,
+   "projcacheTokens": {
+    "inputTokens": 148005,
+    "outputTokens": 296947,
+    "cacheReadTokens": 52446976,
+    "cacheWriteTokens": 0,
+    "totalTokens": 52891928
+   },
+   "projcacheDelta": 0,
+   "topTools": [
+    {
+     "name": "pwsh",
+     "count": 122
+    },
+    {
+     "name": "edit",
+     "count": 58
+    },
+    {
+     "name": "read",
+     "count": 44
+    },
+    {
+     "name": "write",
+     "count": 39
+    },
+    {
+     "name": "team_task_get",
+     "count": 7
+    },
+    {
+     "name": "team_task_update",
+     "count": 6
+    },
+    {
+     "name": "send_message",
+     "count": 5
+    },
+    {
+     "name": "todo_write",
+     "count": 2
+    }
+   ],
+   "sizeBytes": 1535373
+  },
+  {
+   "id": "88d3be0a-cdad-4d6a-a60c-7cccc2110438",
+   "title": "Русификация плагина dsh-skill-browser",
+   "agentName": "skillbrowser-ru",
+   "member": {
+    "name": "skillbrowser-ru",
+    "description": "Russify dsh-skill-browser plugin UI",
+    "phase": "active"
+   },
+   "descriptor": {
+    "label": "Russify dsh-skill-browser plugin UI",
+    "mode": "continuable",
+    "provider": "zvenoai",
+    "model": "deepseek/deepseek-v4.1-flash"
+   },
+   "projectKey": "marketing-agents",
+   "projectLabel": "marketing-agents (наш проект)",
+   "cwd": "C:\\Users\\Артем\\Desktop\\тестDH",
+   "createdAt": 1793467043601,
+   "firstTime": 1793467043602,
+   "lastTime": 1793468518785,
+   "origin": "subagent",
+   "delegationDepth": 1,
+   "parentSession": "session-a1097186-d111-41f5-b0fb-1e9047ac821d",
+   "agentPreset": "standard",
+   "isSubagent": true,
+   "model": "deepseek/deepseek-v4.1-flash",
+   "provider": "zvenoai",
+   "models": [
+    {
+     "key": "deepseek/deepseek-v4.1-flash",
+     "model": "deepseek/deepseek-v4.1-flash",
+     "provider": "zvenoai",
+     "tokens": {
+      "inputTokens": 451881,
+      "outputTokens": 171956,
+      "cacheReadTokens": 31380992,
+      "cacheWriteTokens": 0,
+      "totalTokens": 32004829
+     },
+     "usd": 1.0829,
+     "rub": 87.23,
+     "priceKnown": true
+    }
+   ],
+   "tokens": {
+    "inputTokens": 451881,
+    "outputTokens": 171956,
+    "cacheReadTokens": 31380992,
+    "cacheWriteTokens": 0,
+    "totalTokens": 32004829
+   },
+   "usd": 1.0829,
+   "rub": 87.23,
+   "rubComplete": true,
+   "priceKnown": true,
+   "events": 1014,
+   "steps": 157,
+   "turns": 1,
+   "toolCalls": 174,
+   "toolErrors": 0,
+   "userMessages": 7,
+   "assistantMessages": 157,
+   "badLines": 0,
+   "badFrames": 0,
+   "projcacheTokens": {
+    "inputTokens": 451881,
+    "outputTokens": 171956,
+    "cacheReadTokens": 31380992,
+    "cacheWriteTokens": 0,
+    "totalTokens": 32004829
+   },
+   "projcacheDelta": 0,
+   "topTools": [
+    {
+     "name": "pwsh",
+     "count": 84
+    },
+    {
+     "name": "read",
+     "count": 33
+    },
+    {
+     "name": "edit",
+     "count": 23
+    },
+    {
+     "name": "write",
+     "count": 19
+    },
+    {
+     "name": "grep",
+     "count": 5
+    },
+    {
+     "name": "team_task_get",
+     "count": 3
+    },
+    {
+     "name": "team_task_update",
+     "count": 2
+    },
+    {
+     "name": "todo_write",
+     "count": 2
+    }
+   ],
+   "sizeBytes": 1004286
+  },
+  {
+   "id": "ebd6522a-7ce3-4741-85fd-ae097136ff55",
+   "title": "Ты — участник команды",
+   "agentName": "plugins-ru",
+   "member": {
+    "name": "plugins-ru",
+    "description": "Russify vision-router menu, skill-browser and small plugin UIs",
+    "phase": "active"
+   },
+   "descriptor": {
+    "label": "Russify vision-router menu, skill-browser and small plugin UIs",
+    "mode": "continuable",
+    "provider": "zvenoai",
+    "model": "deepseek/deepseek-v4.1-flash"
+   },
+   "projectKey": "marketing-agents",
+   "projectLabel": "marketing-agents (наш проект)",
+   "cwd": "C:\\Users\\Артем\\Desktop\\тестDH",
+   "createdAt": 1793466893188,
+   "firstTime": 1793466893189,
+   "lastTime": 1793468366939,
+   "origin": "subagent",
+   "delegationDepth": 1,
+   "parentSession": "session-a1097186-d111-41f5-b0fb-1e9047ac821d",
+   "agentPreset": "standard",
+   "isSubagent": true,
+   "model": "deepseek/deepseek-v4.1-flash",
+   "provider": "zvenoai",
+   "models": [
+    {
+     "key": "deepseek/deepseek-v4.1-flash",
+     "model": "deepseek/deepseek-v4.1-flash",
+     "provider": "zvenoai",
+     "tokens": {
+      "inputTokens": 1271359,
+      "outputTokens": 213996,
+      "cacheReadTokens": 55424512,
+      "cacheWriteTokens": 0,
+      "totalTokens": 56909867
+     },
+     "usd": 1.8968,
+     "rub": 152.8,
+     "priceKnown": true
+    }
+   ],
+   "tokens": {
+    "inputTokens": 1271359,
+    "outputTokens": 213996,
+    "cacheReadTokens": 55424512,
+    "cacheWriteTokens": 0,
+    "totalTokens": 56909867
+   },
+   "usd": 1.8968,
+   "rub": 152.8,
+   "rubComplete": true,
+   "priceKnown": true,
+   "events": 1450,
+   "steps": 238,
+   "turns": 3,
+   "toolCalls": 235,
+   "toolErrors": 0,
+   "userMessages": 10,
+   "assistantMessages": 237,
+   "badLines": 0,
+   "badFrames": 0,
+   "projcacheTokens": {
+    "inputTokens": 1271359,
+    "outputTokens": 213996,
+    "cacheReadTokens": 55424512,
+    "cacheWriteTokens": 0,
+    "totalTokens": 56909867
+   },
+   "projcacheDelta": 0,
+   "topTools": [
+    {
+     "name": "pwsh",
+     "count": 113
+    },
+    {
+     "name": "write",
+     "count": 52
+    },
+    {
+     "name": "read",
+     "count": 26
+    },
+    {
+     "name": "edit",
+     "count": 23
+    },
+    {
+     "name": "grep",
+     "count": 8
+    },
+    {
+     "name": "team_task_update",
+     "count": 4
+    },
+    {
+     "name": "team_task_get",
+     "count": 3
+    },
+    {
+     "name": "todo_write",
+     "count": 2
+    }
+   ],
+   "sizeBytes": 1278090
+  },
+  {
+   "id": "session-06d4ce57-3829-4572-a0da-fad4457652ed",
+   "title": "Панель управления (тест)",
+   "agentName": "lead",
+   "member": null,
+   "descriptor": null,
+   "projectKey": "marketing-agents",
+   "projectLabel": "marketing-agents (наш проект)",
+   "cwd": "C:\\Users\\Артем\\Desktop\\тестDH",
+   "createdAt": 1793466515300,
+   "firstTime": 1793386339040,
+   "lastTime": 1793467704576,
+   "origin": "root",
+   "delegationDepth": 0,
+   "parentSession": "session-162bee51-5867-46f8-be1a-478d35530d29",
+   "agentPreset": "ptc",
+   "isSubagent": false,
+   "model": "deepseek/deepseek-v4.1-flash",
+   "provider": "zvenoai",
+   "models": [
+    {
+     "key": "deepseek/deepseek-v4.1-flash",
+     "model": "deepseek/deepseek-v4.1-flash",
+     "provider": "zvenoai",
+     "tokens": {
+      "inputTokens": 2663107,
+      "outputTokens": 321877,
+      "cacheReadTokens": 53418880,
+      "cacheWriteTokens": 0,
+      "totalTokens": 56403864
+     },
+     "usd": 1.9143,
+     "rub": 154.21,
+     "priceKnown": true
+    }
+   ],
+   "tokens": {
+    "inputTokens": 2663107,
+    "outputTokens": 321877,
+    "cacheReadTokens": 53418880,
+    "cacheWriteTokens": 0,
+    "totalTokens": 56403864
+   },
+   "usd": 1.9143,
+   "rub": 154.21,
+   "rubComplete": true,
+   "priceKnown": true,
+   "events": 2933,
+   "steps": 198,
+   "turns": 29,
+   "toolCalls": 171,
+   "toolErrors": 0,
+   "userMessages": 118,
+   "assistantMessages": 196,
+   "badLines": 0,
+   "badFrames": 0,
+   "projcacheTokens": {
+    "inputTokens": 2663107,
+    "outputTokens": 321877,
+    "cacheReadTokens": 53418880,
+    "cacheWriteTokens": 0,
+    "totalTokens": 56403864
+   },
+   "projcacheDelta": 0,
+   "topTools": [
+    {
+     "name": "run_code",
+     "count": 171
+    }
+   ],
+   "sizeBytes": 1363244
+  },
+  {
+   "id": "b584c756-0f46-4910-bddd-4fa3101f9786",
+   "title": "Ты — участник команды",
+   "agentName": "locale-core",
+   "member": {
+    "name": "locale-core",
+    "description": "Russian language pack: 8 agent-preset guides + ru-locale pipeline gaps",
+    "phase": "active"
+   },
+   "descriptor": {
+    "label": "Russian language pack: 8 agent-preset guides + ru-locale pipeline gaps",
+    "mode": "continuable",
+    "provider": "zvenoai",
+    "model": "deepseek/deepseek-v4.1-flash"
+   },
+   "projectKey": "marketing-agents",
+   "projectLabel": "marketing-agents (наш проект)",
+   "cwd": "C:\\Users\\Артем\\Desktop\\тестDH",
+   "createdAt": 1793466893029,
+   "firstTime": 1793466893031,
+   "lastTime": 1793467359970,
+   "origin": "subagent",
+   "delegationDepth": 1,
+   "parentSession": "session-a1097186-d111-41f5-b0fb-1e9047ac821d",
+   "agentPreset": "standard",
+   "isSubagent": true,
+   "model": "deepseek/deepseek-v4.1-flash",
+   "provider": "zvenoai",
+   "models": [
+    {
+     "key": "deepseek/deepseek-v4.1-flash",
+     "model": "deepseek/deepseek-v4.1-flash",
+     "provider": "zvenoai",
+     "tokens": {
+      "inputTokens": 376308,
+      "outputTokens": 64395,
+      "cacheReadTokens": 6670848,
+      "cacheWriteTokens": 0,
+      "totalTokens": 7111551
+     },
+     "usd": 0.2488,
+     "rub": 20.04,
+     "priceKnown": true
+    }
+   ],
+   "tokens": {
+    "inputTokens": 376308,
+    "outputTokens": 64395,
+    "cacheReadTokens": 6670848,
+    "cacheWriteTokens": 0,
+    "totalTokens": 7111551
+   },
+   "usd": 0.2488,
+   "rub": 20.04,
+   "rubComplete": true,
+   "priceKnown": true,
+   "events": 534,
+   "steps": 77,
+   "turns": 2,
+   "toolCalls": 91,
+   "toolErrors": 0,
+   "userMessages": 6,
+   "assistantMessages": 76,
+   "badLines": 0,
+   "badFrames": 0,
+   "projcacheTokens": {
+    "inputTokens": 376308,
+    "outputTokens": 64395,
+    "cacheReadTokens": 6670848,
+    "cacheWriteTokens": 0,
+    "totalTokens": 7111551
+   },
+   "projcacheDelta": 0,
+   "topTools": [
+    {
+     "name": "pwsh",
+     "count": 48
+    },
+    {
+     "name": "read",
+     "count": 13
+    },
+    {
+     "name": "edit",
+     "count": 13
+    },
+    {
+     "name": "write",
+     "count": 8
+    },
+    {
+     "name": "team_task_get",
+     "count": 3
+    },
+    {
+     "name": "present",
+     "count": 3
+    },
+    {
+     "name": "team_task_update",
+     "count": 2
+    },
+    {
+     "name": "send_message",
+     "count": 1
+    }
+   ],
+   "sizeBytes": 447362
+  },
+  {
+   "id": "b5ebf23a-6c81-4ca0-8876-dfb2df683750",
+   "title": "Ты — участник команды",
+   "agentName": "auditor",
+   "member": {
+    "name": "auditor",
+    "description": "Internal read-only audit of plugins and skills",
+    "phase": "active"
+   },
+   "descriptor": {
+    "label": "Internal read-only audit of plugins and skills",
+    "mode": "continuable",
+    "provider": "zvenoai",
+    "model": "deepseek/deepseek-v4.1-flash"
+   },
+   "projectKey": "marketing-agents",
+   "projectLabel": "marketing-agents (наш проект)",
+   "cwd": "C:\\Users\\Артем\\Desktop\\тестDH",
+   "createdAt": 1793466893298,
+   "firstTime": 1793466893299,
+   "lastTime": 1793467255526,
+   "origin": "subagent",
+   "delegationDepth": 1,
+   "parentSession": "session-a1097186-d111-41f5-b0fb-1e9047ac821d",
+   "agentPreset": "standard",
+   "isSubagent": true,
+   "model": "deepseek/deepseek-v4.1-flash",
+   "provider": "zvenoai",
+   "models": [
+    {
+     "key": "deepseek/deepseek-v4.1-flash",
+     "model": "deepseek/deepseek-v4.1-flash",
+     "provider": "zvenoai",
+     "tokens": {
+      "inputTokens": 117159,
+      "outputTokens": 52100,
+      "cacheReadTokens": 4914688,
+      "cacheWriteTokens": 0,
+      "totalTokens": 5083947
+     },
+     "usd": 0.1798,
+     "rub": 14.48,
+     "priceKnown": true
+    }
+   ],
+   "tokens": {
+    "inputTokens": 117159,
+    "outputTokens": 52100,
+    "cacheReadTokens": 4914688,
+    "cacheWriteTokens": 0,
+    "totalTokens": 5083947
+   },
+   "usd": 0.1798,
+   "rub": 14.48,
+   "rubComplete": true,
+   "priceKnown": true,
+   "events": 520,
+   "steps": 68,
+   "turns": 2,
+   "toolCalls": 101,
+   "toolErrors": 0,
+   "userMessages": 6,
+   "assistantMessages": 67,
+   "badLines": 0,
+   "badFrames": 0,
+   "projcacheTokens": {
+    "inputTokens": 117159,
+    "outputTokens": 52100,
+    "cacheReadTokens": 4914688,
+    "cacheWriteTokens": 0,
+    "totalTokens": 5083947
+   },
+   "projcacheDelta": 0,
+   "topTools": [
+    {
+     "name": "pwsh",
+     "count": 44
+    },
+    {
+     "name": "grep",
+     "count": 16
+    },
+    {
+     "name": "read",
+     "count": 15
+    },
+    {
+     "name": "write",
+     "count": 5
+    },
+    {
+     "name": "edit",
+     "count": 3
+    },
+    {
+     "name": "team_task_get",
+     "count": 2
+    },
+    {
+     "name": "team_task_update",
+     "count": 2
+    },
+    {
+     "name": "todo_write",
+     "count": 2
+    }
+   ],
+   "sizeBytes": 396931
+  },
+  {
+   "id": "9d66e28b-6708-401a-9046-e6f91c21f01a",
+   "title": "Русификация интерфейса DeepSeek Harness и плагинов",
+   "agentName": "localizer",
+   "member": {
+    "name": "localizer",
+    "description": "русификация интерфейса DSH и плагинов",
+    "phase": "active"
+   },
+   "descriptor": {
+    "label": "русификация интерфейса DSH и плагинов",
+    "mode": "continuable",
+    "provider": "zvenoai",
+    "model": "deepseek/deepseek-v4.1-flash"
+   },
+   "projectKey": "marketing-agents",
+   "projectLabel": "marketing-agents (наш проект)",
+   "cwd": "C:\\Users\\Артем\\Desktop\\тестDH",
+   "createdAt": 1793466299758,
+   "firstTime": 1793466299759,
+   "lastTime": 1793466430453,
+   "origin": "subagent",
+   "delegationDepth": 1,
+   "parentSession": "session-162bee51-5867-46f8-be1a-478d35530d29",
+   "agentPreset": "ptc",
+   "isSubagent": true,
+   "model": "deepseek/deepseek-v4.1-flash",
+   "provider": "zvenoai",
+   "models": [
+    {
+     "key": "deepseek/deepseek-v4.1-flash",
+     "model": "deepseek/deepseek-v4.1-flash",
+     "provider": "zvenoai",
+     "tokens": {
+      "inputTokens": 226622,
+      "outputTokens": 12402,
+      "cacheReadTokens": 1447424,
+      "cacheWriteTokens": 0,
+      "totalTokens": 1686448
+     },
+     "usd": 0.0581,
+     "rub": 4.68,
+     "priceKnown": true
+    }
+   ],
+   "tokens": {
+    "inputTokens": 226622,
+    "outputTokens": 12402,
+    "cacheReadTokens": 1447424,
+    "cacheWriteTokens": 0,
+    "totalTokens": 1686448
+   },
+   "usd": 0.0581,
+   "rub": 4.68,
+   "rubComplete": true,
+   "priceKnown": true,
+   "events": 266,
+   "steps": 29,
+   "turns": 1,
+   "toolCalls": 28,
+   "toolErrors": 0,
+   "userMessages": 5,
+   "assistantMessages": 29,
+   "badLines": 0,
+   "badFrames": 0,
+   "projcacheTokens": {
+    "inputTokens": 226622,
+    "outputTokens": 12402,
+    "cacheReadTokens": 1447424,
+    "cacheWriteTokens": 0,
+    "totalTokens": 1686448
+   },
+   "projcacheDelta": 0,
+   "topTools": [
+    {
+     "name": "run_code",
+     "count": 28
+    }
+   ],
+   "sizeBytes": 248955
+  },
+  {
+   "id": "7d702bb7-4e55-45cc-a14d-5d5683181960",
+   "title": null,
+   "agentName": "dashboard-dev",
+   "member": {
+    "name": "dashboard-dev",
+    "description": "веб-дашборд и сборщик аналитики",
+    "phase": "failed"
+   },
+   "descriptor": {
+    "label": "веб-дашборд и сборщик аналитики",
+    "mode": "continuable",
+    "provider": "zvenoai",
+    "model": "deepseek/deepseek-v4.1-flash"
+   },
+   "projectKey": "marketing-agents",
+   "projectLabel": "marketing-agents (наш проект)",
+   "cwd": "C:\\Users\\Артем\\Desktop\\тестDH",
+   "createdAt": 1793455525920,
+   "firstTime": 1793455525923,
+   "lastTime": 1793455525965,
+   "origin": "subagent",
+   "delegationDepth": 1,
+   "parentSession": "session-162bee51-5867-46f8-be1a-478d35530d29",
+   "agentPreset": "ptc",
+   "isSubagent": true,
+   "model": null,
+   "provider": null,
+   "models": [],
+   "tokens": {
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "cacheReadTokens": 0,
+    "cacheWriteTokens": 0,
+    "totalTokens": 0
+   },
+   "usd": null,
+   "rub": null,
+   "rubComplete": true,
+   "priceKnown": false,
+   "events": 9,
+   "steps": 0,
+   "turns": 1,
+   "toolCalls": 0,
+   "toolErrors": 0,
+   "userMessages": 0,
+   "assistantMessages": 0,
+   "badLines": 0,
+   "badFrames": 0,
+   "projcacheTokens": {
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "cacheReadTokens": 0,
+    "cacheWriteTokens": 0,
+    "totalTokens": 0
+   },
+   "projcacheDelta": 0,
+   "topTools": [],
+   "sizeBytes": 4949
+  },
+  {
+   "id": "session-2d57bdb8-70df-439c-89d8-cedfc264d157",
+   "title": null,
+   "agentName": "lead",
+   "member": null,
+   "descriptor": null,
+   "projectKey": "C:\\Users\\Артем\\Desktop\\DeepSeek Harness",
+   "projectLabel": "Desktop/DeepSeek Harness",
+   "cwd": "C:\\Users\\Артем\\Desktop\\DeepSeek Harness",
+   "createdAt": 1793386298873,
+   "firstTime": 1793386298882,
+   "lastTime": 1793390636751,
+   "origin": "root",
+   "delegationDepth": 0,
+   "parentSession": null,
+   "agentPreset": "standard",
+   "isSubagent": false,
+   "model": null,
+   "provider": null,
+   "models": [],
+   "tokens": {
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "cacheReadTokens": 0,
+    "cacheWriteTokens": 0,
+    "totalTokens": 0
+   },
+   "usd": null,
+   "rub": null,
+   "rubComplete": true,
+   "priceKnown": false,
+   "events": 12,
+   "steps": 0,
+   "turns": 0,
+   "toolCalls": 0,
+   "toolErrors": 0,
+   "userMessages": 0,
+   "assistantMessages": 0,
+   "badLines": 0,
+   "badFrames": 0,
+   "projcacheTokens": {
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "cacheReadTokens": 0,
+    "cacheWriteTokens": 0,
+    "totalTokens": 0
+   },
+   "projcacheDelta": 0,
+   "topTools": [],
+   "sizeBytes": 997
+  },
+  {
+   "id": "session-52dc73aa-3ec7-40a4-877b-a8d7dd8ae6ad",
+   "title": "Как убрать компактный вид",
+   "agentName": "lead",
+   "member": null,
+   "descriptor": null,
+   "projectKey": "C:\\Users\\Артем\\Desktop\\DeepSeek Harness",
+   "projectLabel": "Desktop/DeepSeek Harness",
+   "cwd": "C:\\Users\\Артем\\Desktop\\DeepSeek Harness",
+   "createdAt": 1793386014110,
+   "firstTime": 1793386014121,
+   "lastTime": 1793386220963,
+   "origin": "root",
+   "delegationDepth": 0,
+   "parentSession": null,
+   "agentPreset": "standard",
+   "isSubagent": false,
+   "model": "deepseek/deepseek-v4.1-flash",
+   "provider": "zvenoai",
+   "models": [
+    {
+     "key": "deepseek/deepseek-v4.1-flash",
+     "model": "deepseek/deepseek-v4.1-flash",
+     "provider": "zvenoai",
+     "tokens": {
+      "inputTokens": 49087,
+      "outputTokens": 5868,
+      "cacheReadTokens": 536832,
+      "cacheWriteTokens": 0,
+      "totalTokens": 591787
+     },
+     "usd": 0.0209,
+     "rub": 1.68,
+     "priceKnown": true
+    }
+   ],
+   "tokens": {
+    "inputTokens": 49087,
+    "outputTokens": 5868,
+    "cacheReadTokens": 536832,
+    "cacheWriteTokens": 0,
+    "totalTokens": 591787
+   },
+   "usd": 0.0209,
+   "rub": 1.68,
+   "rubComplete": true,
+   "priceKnown": true,
+   "events": 131,
+   "steps": 14,
+   "turns": 1,
+   "toolCalls": 21,
+   "toolErrors": 0,
+   "userMessages": 4,
+   "assistantMessages": 14,
+   "badLines": 0,
+   "badFrames": 0,
+   "projcacheTokens": {
+    "inputTokens": 49087,
+    "outputTokens": 5868,
+    "cacheReadTokens": 536832,
+    "cacheWriteTokens": 0,
+    "totalTokens": 591787
+   },
+   "projcacheDelta": 0,
+   "topTools": [
+    {
+     "name": "grep",
+     "count": 7
+    },
+    {
+     "name": "pwsh",
+     "count": 7
+    },
+    {
+     "name": "read",
+     "count": 5
+    },
+    {
+     "name": "list_agents",
+     "count": 1
+    },
+    {
+     "name": "glob",
+     "count": 1
+    }
+   ],
+   "sizeBytes": 88422
+  },
+  {
+   "id": "session-d57e2763-93ac-434c-873c-6065a4f67044",
+   "title": "Установка плагинов для доступа к интернету",
+   "agentName": "lead",
+   "member": null,
+   "descriptor": null,
+   "projectKey": "C:\\Users\\Артем\\Desktop\\DeepSeek Harness",
+   "projectLabel": "Desktop/DeepSeek Harness",
+   "cwd": "C:\\Users\\Артем\\Desktop\\DeepSeek Harness",
+   "createdAt": 1793306599966,
+   "firstTime": 1793306599976,
+   "lastTime": 1793385293816,
+   "origin": "root",
+   "delegationDepth": 0,
+   "parentSession": null,
+   "agentPreset": "standard",
+   "isSubagent": false,
+   "model": "openai/gpt-6-luna",
+   "provider": "zvenoai",
+   "models": [
+    {
+     "key": "openai/gpt-6-luna",
+     "model": "openai/gpt-6-luna",
+     "provider": "zvenoai",
+     "tokens": {
+      "inputTokens": 66,
+      "outputTokens": 13672,
+      "cacheReadTokens": 852577,
+      "cacheWriteTokens": 134802,
+      "totalTokens": 1001117
+     },
+     "usd": 0.221,
+     "rub": 17.8,
+     "priceKnown": true
+    }
+   ],
+   "tokens": {
+    "inputTokens": 66,
+    "outputTokens": 13672,
+    "cacheReadTokens": 852577,
+    "cacheWriteTokens": 134802,
+    "totalTokens": 1001117
+   },
+   "usd": 0.221,
+   "rub": 17.8,
+   "rubComplete": true,
+   "priceKnown": true,
+   "events": 232,
+   "steps": 22,
+   "turns": 5,
+   "toolCalls": 17,
+   "toolErrors": 0,
+   "userMessages": 10,
+   "assistantMessages": 22,
+   "badLines": 0,
+   "badFrames": 0,
+   "projcacheTokens": {
+    "inputTokens": 66,
+    "outputTokens": 13672,
+    "cacheReadTokens": 852577,
+    "cacheWriteTokens": 134802,
+    "totalTokens": 1001117
+   },
+   "projcacheDelta": 0,
+   "topTools": [
+    {
+     "name": "run_code",
+     "count": 17
+    }
+   ],
+   "sizeBytes": 416239
+  },
+  {
+   "id": "session-ad2b3733-831f-444e-9133-1d95214226de",
+   "title": "d",
+   "agentName": "lead",
+   "member": null,
+   "descriptor": null,
+   "projectKey": "C:\\Users\\Артем\\Desktop\\DeepSeek Harness",
+   "projectLabel": "Desktop/DeepSeek Harness",
+   "cwd": "C:\\Users\\Артем\\Desktop\\DeepSeek Harness",
+   "createdAt": 1793307245223,
+   "firstTime": 1793307245233,
+   "lastTime": 1793307261165,
+   "origin": "root",
+   "delegationDepth": 0,
+   "parentSession": null,
+   "agentPreset": "cordis",
+   "isSubagent": false,
+   "model": "openai/gpt-6-luna",
+   "provider": "zvenoai",
+   "models": [
+    {
+     "key": "openai/gpt-6-luna",
+     "model": "openai/gpt-6-luna",
+     "provider": "zvenoai",
+     "tokens": {
+      "inputTokens": 9,
+      "outputTokens": 218,
+      "cacheReadTokens": 24031,
+      "cacheWriteTokens": 13064,
+      "totalTokens": 37322
+     },
+     "usd": 0.006,
+     "rub": 0.49,
+     "priceKnown": true
+    }
+   ],
+   "tokens": {
+    "inputTokens": 9,
+    "outputTokens": 218,
+    "cacheReadTokens": 24031,
+    "cacheWriteTokens": 13064,
+    "totalTokens": 37322
+   },
+   "usd": 0.006,
+   "rub": 0.49,
+   "rubComplete": true,
+   "priceKnown": true,
+   "events": 32,
+   "steps": 3,
+   "turns": 1,
+   "toolCalls": 2,
+   "toolErrors": 0,
+   "userMessages": 4,
+   "assistantMessages": 3,
+   "badLines": 0,
+   "badFrames": 0,
+   "projcacheTokens": {
+    "inputTokens": 9,
+    "outputTokens": 218,
+    "cacheReadTokens": 24031,
+    "cacheWriteTokens": 13064,
+    "totalTokens": 37322
+   },
+   "projcacheDelta": 0,
+   "topTools": [
+    {
+     "name": "skill",
+     "count": 1
+    },
+    {
+     "name": "list_agents",
+     "count": 1
+    }
+   ],
+   "sizeBytes": 33468
+  },
+  {
+   "id": "session-03100911-a000-4103-9dcd-5bf6e24cbb87",
+   "title": "Возможности и доступ к браузеру и ПК",
+   "agentName": "lead",
+   "member": null,
+   "descriptor": null,
+   "projectKey": "C:\\Users\\Артем\\Desktop\\DeepSeek Harness",
+   "projectLabel": "Desktop/DeepSeek Harness",
+   "cwd": "C:\\Users\\Артем\\Desktop\\DeepSeek Harness",
+   "createdAt": 1793214581895,
+   "firstTime": 1793214581902,
+   "lastTime": 1793306362319,
+   "origin": "root",
+   "delegationDepth": 0,
+   "parentSession": null,
+   "agentPreset": "standard",
+   "isSubagent": false,
+   "model": "deepseek/deepseek-v4.1-flash",
+   "provider": "zvenoai",
+   "models": [
+    {
+     "key": "deepseek/deepseek-v4.1-flash",
+     "model": "deepseek/deepseek-v4.1-flash",
+     "provider": "zvenoai",
+     "tokens": {
+      "inputTokens": 314810,
+      "outputTokens": 57758,
+      "cacheReadTokens": 1846272,
+      "cacheWriteTokens": 0,
+      "totalTokens": 2218840
+     },
+     "usd": 0.0894,
+     "rub": 7.21,
+     "priceKnown": true
+    }
+   ],
+   "tokens": {
+    "inputTokens": 314810,
+    "outputTokens": 57758,
+    "cacheReadTokens": 1846272,
+    "cacheWriteTokens": 0,
+    "totalTokens": 2218840
+   },
+   "usd": 0.0894,
+   "rub": 7.21,
+   "rubComplete": true,
+   "priceKnown": true,
+   "events": 550,
+   "steps": 39,
+   "turns": 6,
+   "toolCalls": 34,
+   "toolErrors": 0,
+   "userMessages": 13,
+   "assistantMessages": 38,
+   "badLines": 0,
+   "badFrames": 0,
+   "projcacheTokens": {
+    "inputTokens": 314810,
+    "outputTokens": 57758,
+    "cacheReadTokens": 1846272,
+    "cacheWriteTokens": 0,
+    "totalTokens": 2218840
+   },
+   "projcacheDelta": 0,
+   "topTools": [
+    {
+     "name": "run_code",
+     "count": 34
+    }
+   ],
+   "sizeBytes": 404659
+  },
+  {
+   "id": "session-62c83488-322c-4f7c-a435-a22ee9c9fb3e",
+   "title": "Русский интер",
+   "agentName": "lead",
+   "member": null,
+   "descriptor": null,
+   "projectKey": "C:\\Users\\Артем\\Desktop\\DeepSeek Harness",
+   "projectLabel": "Desktop/DeepSeek Harness",
+   "cwd": "C:\\Users\\Артем\\Desktop\\DeepSeek Harness",
+   "createdAt": 1793213613167,
+   "firstTime": 1793213613178,
+   "lastTime": 1793214567344,
+   "origin": "root",
+   "delegationDepth": 0,
+   "parentSession": null,
+   "agentPreset": "standard",
+   "isSubagent": false,
+   "model": "deepseek/deepseek-v4.1-flash",
+   "provider": "zvenoai",
+   "models": [
+    {
+     "key": "deepseek/deepseek-v4.1-flash",
+     "model": "deepseek/deepseek-v4.1-flash",
+     "provider": "zvenoai",
+     "tokens": {
+      "inputTokens": 157457,
+      "outputTokens": 153305,
+      "cacheReadTokens": 21922816,
+      "cacheWriteTokens": 0,
+      "totalTokens": 22233578
+     },
+     "usd": 0.7629,
+     "rub": 61.46,
+     "priceKnown": true
+    }
+   ],
+   "tokens": {
+    "inputTokens": 157457,
+    "outputTokens": 153305,
+    "cacheReadTokens": 21922816,
+    "cacheWriteTokens": 0,
+    "totalTokens": 22233578
+   },
+   "usd": 0.7629,
+   "rub": 61.46,
+   "rubComplete": true,
+   "priceKnown": true,
+   "events": 1151,
+   "steps": 155,
+   "turns": 4,
+   "toolCalls": 193,
+   "toolErrors": 0,
+   "userMessages": 24,
+   "assistantMessages": 152,
+   "badLines": 0,
+   "badFrames": 0,
+   "projcacheTokens": {
+    "inputTokens": 157457,
+    "outputTokens": 153305,
+    "cacheReadTokens": 21922816,
+    "cacheWriteTokens": 0,
+    "totalTokens": 22233578
+   },
+   "projcacheDelta": 0,
+   "topTools": [
+    {
+     "name": "pwsh",
+     "count": 101
+    },
+    {
+     "name": "edit",
+     "count": 26
+    },
+    {
+     "name": "write",
+     "count": 22
+    },
+    {
+     "name": "read",
+     "count": 20
+    },
+    {
+     "name": "subagent",
+     "count": 15
+    },
+    {
+     "name": "session_search",
+     "count": 2
+    },
+    {
+     "name": "list_subagent_models",
+     "count": 2
+    },
+    {
+     "name": "load_workspace_dependencies",
+     "count": 1
+    }
+   ],
+   "sizeBytes": 888032
+  },
+  {
+   "id": "02dd29fb-c824-474e-bbbd-e5a3409a50aa",
+   "title": "Перевод интерфейса DSH на русский",
+   "agentName": "субагент (разовый)",
+   "member": null,
+   "descriptor": {
+    "label": "Translate remaining six namespaces",
+    "mode": "continuable",
+    "provider": "zvenoai",
+    "model": "openai/gpt-4o-mini"
+   },
+   "projectKey": "C:\\Users\\Артем\\Desktop\\DeepSeek Harness",
+   "projectLabel": "Desktop/DeepSeek Harness",
+   "cwd": "C:\\Users\\Артем\\Desktop\\DeepSeek Harness",
+   "createdAt": 1793214356583,
+   "firstTime": 1793214356584,
+   "lastTime": 1793214441387,
+   "origin": "subagent",
+   "delegationDepth": 1,
+   "parentSession": "session-62c83488-322c-4f7c-a435-a22ee9c9fb3e",
+   "agentPreset": "standard",
+   "isSubagent": true,
+   "model": "openai/gpt-4o-mini",
+   "provider": "zvenoai",
+   "models": [
+    {
+     "key": "openai/gpt-4o-mini",
+     "model": "openai/gpt-4o-mini",
+     "provider": "zvenoai",
+     "tokens": {
+      "inputTokens": 13162,
+      "outputTokens": 7817,
+      "cacheReadTokens": 99840,
+      "cacheWriteTokens": 0,
+      "totalTokens": 120819
+     },
+     "usd": null,
+     "rub": null,
+     "priceKnown": false
+    }
+   ],
+   "tokens": {
+    "inputTokens": 13162,
+    "outputTokens": 7817,
+    "cacheReadTokens": 99840,
+    "cacheWriteTokens": 0,
+    "totalTokens": 120819
+   },
+   "usd": null,
+   "rub": null,
+   "rubComplete": false,
+   "priceKnown": false,
+   "events": 79,
+   "steps": 6,
+   "turns": 1,
+   "toolCalls": 21,
+   "toolErrors": 0,
+   "userMessages": 4,
+   "assistantMessages": 6,
+   "badLines": 0,
+   "badFrames": 0,
+   "projcacheTokens": {
+    "inputTokens": 13162,
+    "outputTokens": 7817,
+    "cacheReadTokens": 99840,
+    "cacheWriteTokens": 0,
+    "totalTokens": 120819
+   },
+   "projcacheDelta": 0,
+   "topTools": [
+    {
+     "name": "write",
+     "count": 12
+    },
+    {
+     "name": "read",
+     "count": 8
+    },
+    {
+     "name": "send_message",
+     "count": 1
+    }
+   ],
+   "sizeBytes": 90764
+  },
+  {
+   "id": "ccfb40e8-2345-45e6-8c54-7b5a7b4fe542",
+   "title": "Перевод интерфейса на русский язык",
+   "agentName": "субагент (разовый)",
+   "member": null,
+   "descriptor": {
+    "label": "Translate conversation namespace",
+    "mode": "continuable",
+    "provider": "zvenoai",
+    "model": "openai/gpt-4o-mini"
+   },
+   "projectKey": "C:\\Users\\Артем\\Desktop\\DeepSeek Harness",
+   "projectLabel": "Desktop/DeepSeek Harness",
+   "cwd": "C:\\Users\\Артем\\Desktop\\DeepSeek Harness",
+   "createdAt": 1793214323442,
+   "firstTime": 1793214323446,
+   "lastTime": 1793214428002,
+   "origin": "subagent",
+   "delegationDepth": 1,
+   "parentSession": "session-62c83488-322c-4f7c-a435-a22ee9c9fb3e",
+   "agentPreset": "standard",
+   "isSubagent": true,
+   "model": "openai/gpt-4o-mini",
+   "provider": "zvenoai",
+   "models": [
+    {
+     "key": "openai/gpt-4o-mini",
+     "model": "openai/gpt-4o-mini",
+     "provider": "zvenoai",
+     "tokens": {
+      "inputTokens": 11339,
+      "outputTokens": 9645,
+      "cacheReadTokens": 111744,
+      "cacheWriteTokens": 0,
+      "totalTokens": 132728
+     },
+     "usd": null,
+     "rub": null,
+     "priceKnown": false
+    }
+   ],
+   "tokens": {
+    "inputTokens": 11339,
+    "outputTokens": 9645,
+    "cacheReadTokens": 111744,
+    "cacheWriteTokens": 0,
+    "totalTokens": 132728
+   },
+   "usd": null,
+   "rub": null,
+   "rubComplete": false,
+   "priceKnown": false,
+   "events": 55,
+   "steps": 6,
+   "turns": 1,
+   "toolCalls": 9,
+   "toolErrors": 0,
+   "userMessages": 4,
+   "assistantMessages": 6,
+   "badLines": 0,
+   "badFrames": 0,
+   "projcacheTokens": {
+    "inputTokens": 11339,
+    "outputTokens": 9645,
+    "cacheReadTokens": 111744,
+    "cacheWriteTokens": 0,
+    "totalTokens": 132728
+   },
+   "projcacheDelta": 0,
+   "topTools": [
+    {
+     "name": "read",
+     "count": 4
+    },
+    {
+     "name": "write",
+     "count": 4
+    },
+    {
+     "name": "send_message",
+     "count": 1
+    }
+   ],
+   "sizeBytes": 87203
+  },
+  {
+   "id": "b4a87bf2-a4a3-4ed5-8248-50709246c386",
+   "title": "Перевод интерфейса DSH на русский",
+   "agentName": "субагент (разовый)",
+   "member": null,
+   "descriptor": {
+    "label": "Translate trajectory and workspace",
+    "mode": "continuable",
+    "provider": "zvenoai",
+    "model": "openai/gpt-4o-mini"
+   },
+   "projectKey": "C:\\Users\\Артем\\Desktop\\DeepSeek Harness",
+   "projectLabel": "Desktop/DeepSeek Harness",
+   "cwd": "C:\\Users\\Артем\\Desktop\\DeepSeek Harness",
+   "createdAt": 1793214323443,
+   "firstTime": 1793214323452,
+   "lastTime": 1793214415741,
+   "origin": "subagent",
+   "delegationDepth": 1,
+   "parentSession": "session-62c83488-322c-4f7c-a435-a22ee9c9fb3e",
+   "agentPreset": "standard",
+   "isSubagent": true,
+   "model": "openai/gpt-4o-mini",
+   "provider": "zvenoai",
+   "models": [
+    {
+     "key": "openai/gpt-4o-mini",
+     "model": "openai/gpt-4o-mini",
+     "provider": "zvenoai",
+     "tokens": {
+      "inputTokens": 10707,
+      "outputTokens": 8267,
+      "cacheReadTokens": 132096,
+      "cacheWriteTokens": 0,
+      "totalTokens": 151070
+     },
+     "usd": null,
+     "rub": null,
+     "priceKnown": false
+    }
+   ],
+   "tokens": {
+    "inputTokens": 10707,
+    "outputTokens": 8267,
+    "cacheReadTokens": 132096,
+    "cacheWriteTokens": 0,
+    "totalTokens": 151070
+   },
+   "usd": null,
+   "rub": null,
+   "rubComplete": false,
+   "priceKnown": false,
+   "events": 70,
+   "steps": 7,
+   "turns": 1,
+   "toolCalls": 15,
+   "toolErrors": 0,
+   "userMessages": 4,
+   "assistantMessages": 7,
+   "badLines": 0,
+   "badFrames": 0,
+   "projcacheTokens": {
+    "inputTokens": 10707,
+    "outputTokens": 8267,
+    "cacheReadTokens": 132096,
+    "cacheWriteTokens": 0,
+    "totalTokens": 151070
+   },
+   "projcacheDelta": 0,
+   "topTools": [
+    {
+     "name": "write",
+     "count": 8
+    },
+    {
+     "name": "read",
+     "count": 6
+    },
+    {
+     "name": "send_message",
+     "count": 1
+    }
+   ],
+   "sizeBytes": 89187
+  },
+  {
+   "id": "3f699b00-7e11-4e14-9a5e-04980a050c8a",
+   "title": "Перевод интерфейса DSH на русский",
+   "agentName": "субагент (разовый)",
+   "member": null,
+   "descriptor": {
+    "label": "Translate twelve small namespaces",
+    "mode": "continuable",
+    "provider": "zvenoai",
+    "model": "openai/gpt-4o-mini"
+   },
+   "projectKey": "C:\\Users\\Артем\\Desktop\\DeepSeek Harness",
+   "projectLabel": "Desktop/DeepSeek Harness",
+   "cwd": "C:\\Users\\Артем\\Desktop\\DeepSeek Harness",
+   "createdAt": 1793214323444,
+   "firstTime": 1793214323467,
+   "lastTime": 1793214382083,
+   "origin": "subagent",
+   "delegationDepth": 1,
+   "parentSession": "session-62c83488-322c-4f7c-a435-a22ee9c9fb3e",
+   "agentPreset": "standard",
+   "isSubagent": true,
+   "model": "openai/gpt-4o-mini",
+   "provider": "zvenoai",
+   "models": [
+    {
+     "key": "openai/gpt-4o-mini",
+     "model": "openai/gpt-4o-mini",
+     "provider": "zvenoai",
+     "tokens": {
+      "inputTokens": 22467,
+      "outputTokens": 3343,
+      "cacheReadTokens": 228224,
+      "cacheWriteTokens": 0,
+      "totalTokens": 254034
+     },
+     "usd": null,
+     "rub": null,
+     "priceKnown": false
+    }
+   ],
+   "tokens": {
+    "inputTokens": 22467,
+    "outputTokens": 3343,
+    "cacheReadTokens": 228224,
+    "cacheWriteTokens": 0,
+    "totalTokens": 254034
+   },
+   "usd": null,
+   "rub": null,
+   "rubComplete": false,
+   "priceKnown": false,
+   "events": 118,
+   "steps": 15,
+   "turns": 1,
+   "toolCalls": 27,
+   "toolErrors": 0,
+   "userMessages": 4,
+   "assistantMessages": 15,
+   "badLines": 0,
+   "badFrames": 0,
+   "projcacheTokens": {
+    "inputTokens": 22467,
+    "outputTokens": 3343,
+    "cacheReadTokens": 228224,
+    "cacheWriteTokens": 0,
+    "totalTokens": 254034
+   },
+   "projcacheDelta": 0,
+   "topTools": [
+    {
+     "name": "read",
+     "count": 14
+    },
+    {
+     "name": "write",
+     "count": 12
+    },
+    {
+     "name": "send_message",
+     "count": 1
+    }
+   ],
+   "sizeBytes": 73601
+  },
+  {
+   "id": "81d91edc-83b2-4c96-b9fa-ad18cb8b0b9b",
+   "title": "Перевод интерфейса DSH на русский",
+   "agentName": "субагент (разовый)",
+   "member": null,
+   "descriptor": {
+    "label": "Translate six small namespaces",
+    "mode": "continuable",
+    "provider": "zvenoai",
+    "model": "openai/gpt-4o-mini"
+   },
+   "projectKey": "C:\\Users\\Артем\\Desktop\\DeepSeek Harness",
+   "projectLabel": "Desktop/DeepSeek Harness",
+   "cwd": "C:\\Users\\Артем\\Desktop\\DeepSeek Harness",
+   "createdAt": 1793214323444,
+   "firstTime": 1793214323460,
+   "lastTime": 1793214365712,
+   "origin": "subagent",
+   "delegationDepth": 1,
+   "parentSession": "session-62c83488-322c-4f7c-a435-a22ee9c9fb3e",
+   "agentPreset": "standard",
+   "isSubagent": true,
+   "model": "openai/gpt-4o-mini",
+   "provider": "zvenoai",
+   "models": [
+    {
+     "key": "openai/gpt-4o-mini",
+     "model": "openai/gpt-4o-mini",
+     "provider": "zvenoai",
+     "tokens": {
+      "inputTokens": 11705,
+      "outputTokens": 3314,
+      "cacheReadTokens": 68224,
+      "cacheWriteTokens": 0,
+      "totalTokens": 83243
+     },
+     "usd": null,
+     "rub": null,
+     "priceKnown": false
+    }
+   ],
+   "tokens": {
+    "inputTokens": 11705,
+    "outputTokens": 3314,
+    "cacheReadTokens": 68224,
+    "cacheWriteTokens": 0,
+    "totalTokens": 83243
+   },
+   "usd": null,
+   "rub": null,
+   "rubComplete": false,
+   "priceKnown": false,
+   "events": 64,
+   "steps": 5,
+   "turns": 1,
+   "toolCalls": 15,
+   "toolErrors": 0,
+   "userMessages": 4,
+   "assistantMessages": 5,
+   "badLines": 0,
+   "badFrames": 0,
+   "projcacheTokens": {
+    "inputTokens": 11705,
+    "outputTokens": 3314,
+    "cacheReadTokens": 68224,
+    "cacheWriteTokens": 0,
+    "totalTokens": 83243
+   },
+   "projcacheDelta": 0,
+   "topTools": [
+    {
+     "name": "read",
+     "count": 8
+    },
+    {
+     "name": "write",
+     "count": 6
+    },
+    {
+     "name": "send_message",
+     "count": 1
+    }
+   ],
+   "sizeBytes": 63874
+  },
+  {
+   "id": "3493f622-7252-4846-86a2-682b382f2c00",
+   "title": "Перевод интерфейса DSH на русский",
+   "agentName": "субагент (разовый)",
+   "member": null,
+   "descriptor": {
+    "label": "Translate batch 1 to Russian",
+    "mode": "continuable",
+    "provider": "zvenoai",
+    "model": "openai/gpt-4o-mini"
+   },
+   "projectKey": "C:\\Users\\Артем\\Desktop\\DeepSeek Harness",
+   "projectLabel": "Desktop/DeepSeek Harness",
+   "cwd": "C:\\Users\\Артем\\Desktop\\DeepSeek Harness",
+   "createdAt": 1793214104101,
+   "firstTime": 1793214104106,
+   "lastTime": 1793214348988,
+   "origin": "subagent",
+   "delegationDepth": 1,
+   "parentSession": "session-62c83488-322c-4f7c-a435-a22ee9c9fb3e",
+   "agentPreset": "standard",
+   "isSubagent": true,
+   "model": "openai/gpt-4o-mini",
+   "provider": "zvenoai",
+   "models": [
+    {
+     "key": "openai/gpt-4o-mini",
+     "model": "openai/gpt-4o-mini",
+     "provider": "zvenoai",
+     "tokens": {
+      "inputTokens": 65115,
+      "outputTokens": 22519,
+      "cacheReadTokens": 137856,
+      "cacheWriteTokens": 0,
+      "totalTokens": 225490
+     },
+     "usd": null,
+     "rub": null,
+     "priceKnown": false
+    }
+   ],
+   "tokens": {
+    "inputTokens": 65115,
+    "outputTokens": 22519,
+    "cacheReadTokens": 137856,
+    "cacheWriteTokens": 0,
+    "totalTokens": 225490
+   },
+   "usd": null,
+   "rub": null,
+   "rubComplete": false,
+   "priceKnown": false,
+   "events": 145,
+   "steps": 8,
+   "turns": 1,
+   "toolCalls": 51,
+   "toolErrors": 0,
+   "userMessages": 4,
+   "assistantMessages": 8,
+   "badLines": 0,
+   "badFrames": 0,
+   "projcacheTokens": {
+    "inputTokens": 65115,
+    "outputTokens": 22519,
+    "cacheReadTokens": 137856,
+    "cacheWriteTokens": 0,
+    "totalTokens": 225490
+   },
+   "projcacheDelta": 0,
+   "topTools": [
+    {
+     "name": "read",
+     "count": 22
+    },
+    {
+     "name": "write",
+     "count": 15
+    },
+    {
+     "name": "glob",
+     "count": 13
+    },
+    {
+     "name": "send_message",
+     "count": 1
+    }
+   ],
+   "sizeBytes": 137955
+  },
+  {
+   "id": "5e237ae7-9b77-4bce-a03d-ff8e5afcc84d",
+   "title": "Перевод строк интерфейса DSH",
+   "agentName": "субагент (разовый)",
+   "member": null,
+   "descriptor": {
+    "label": "Translate batch 3 to Russian",
+    "mode": "continuable",
+    "provider": "zvenoai",
+    "model": "openai/gpt-4o-mini"
+   },
+   "projectKey": "C:\\Users\\Артем\\Desktop\\DeepSeek Harness",
+   "projectLabel": "Desktop/DeepSeek Harness",
+   "cwd": "C:\\Users\\Артем\\Desktop\\DeepSeek Harness",
+   "createdAt": 1793214104102,
+   "firstTime": 1793214104120,
+   "lastTime": 1793214192655,
+   "origin": "subagent",
+   "delegationDepth": 1,
+   "parentSession": "session-62c83488-322c-4f7c-a435-a22ee9c9fb3e",
+   "agentPreset": "standard",
+   "isSubagent": true,
+   "model": "openai/gpt-4o-mini",
+   "provider": "zvenoai",
+   "models": [
+    {
+     "key": "openai/gpt-4o-mini",
+     "model": "openai/gpt-4o-mini",
+     "provider": "zvenoai",
+     "tokens": {
+      "inputTokens": 21591,
+      "outputTokens": 7749,
+      "cacheReadTokens": 69888,
+      "cacheWriteTokens": 0,
+      "totalTokens": 99228
+     },
+     "usd": null,
+     "rub": null,
+     "priceKnown": false
+    }
+   ],
+   "tokens": {
+    "inputTokens": 21591,
+    "outputTokens": 7749,
+    "cacheReadTokens": 69888,
+    "cacheWriteTokens": 0,
+    "totalTokens": 99228
+   },
+   "usd": null,
+   "rub": null,
+   "rubComplete": false,
+   "priceKnown": false,
+   "events": 117,
+   "steps": 6,
+   "turns": 1,
+   "toolCalls": 40,
+   "toolErrors": 0,
+   "userMessages": 4,
+   "assistantMessages": 5,
+   "badLines": 0,
+   "badFrames": 0,
+   "projcacheTokens": {
+    "inputTokens": 21591,
+    "outputTokens": 7749,
+    "cacheReadTokens": 69888,
+    "cacheWriteTokens": 0,
+    "totalTokens": 99228
+   },
+   "projcacheDelta": 0,
+   "topTools": [
+    {
+     "name": "read",
+     "count": 21
+    },
+    {
+     "name": "glob",
+     "count": 12
+    },
+    {
+     "name": "write",
+     "count": 7
+    }
+   ],
+   "sizeBytes": 123807
+  },
+  {
+   "id": "5ca8221a-32a9-4f4e-9ad2-a22bff78a0b7",
+   "title": "Перевод интерфейса DSH на русский",
+   "agentName": "субагент (разовый)",
+   "member": null,
+   "descriptor": {
+    "label": "Translate batch 5 to Russian",
+    "mode": "continuable",
+    "provider": "zvenoai",
+    "model": "openai/gpt-4o-mini"
+   },
+   "projectKey": "C:\\Users\\Артем\\Desktop\\DeepSeek Harness",
+   "projectLabel": "Desktop/DeepSeek Harness",
+   "cwd": "C:\\Users\\Артем\\Desktop\\DeepSeek Harness",
+   "createdAt": 1793214104104,
+   "firstTime": 1793214104131,
+   "lastTime": 1793214192651,
+   "origin": "subagent",
+   "delegationDepth": 1,
+   "parentSession": "session-62c83488-322c-4f7c-a435-a22ee9c9fb3e",
+   "agentPreset": "standard",
+   "isSubagent": true,
+   "model": "openai/gpt-4o-mini",
+   "provider": "zvenoai",
+   "models": [
+    {
+     "key": "openai/gpt-4o-mini",
+     "model": "openai/gpt-4o-mini",
+     "provider": "zvenoai",
+     "tokens": {
+      "inputTokens": 35568,
+      "outputTokens": 6771,
+      "cacheReadTokens": 124032,
+      "cacheWriteTokens": 0,
+      "totalTokens": 166371
+     },
+     "usd": null,
+     "rub": null,
+     "priceKnown": false
+    }
+   ],
+   "tokens": {
+    "inputTokens": 35568,
+    "outputTokens": 6771,
+    "cacheReadTokens": 124032,
+    "cacheWriteTokens": 0,
+    "totalTokens": 166371
+   },
+   "usd": null,
+   "rub": null,
+   "rubComplete": false,
+   "priceKnown": false,
+   "events": 119,
+   "steps": 8,
+   "turns": 1,
+   "toolCalls": 38,
+   "toolErrors": 0,
+   "userMessages": 4,
+   "assistantMessages": 7,
+   "badLines": 0,
+   "badFrames": 0,
+   "projcacheTokens": {
+    "inputTokens": 35568,
+    "outputTokens": 6771,
+    "cacheReadTokens": 124032,
+    "cacheWriteTokens": 0,
+    "totalTokens": 166371
+   },
+   "projcacheDelta": 0,
+   "topTools": [
+    {
+     "name": "read",
+     "count": 30
+    },
+    {
+     "name": "write",
+     "count": 5
+    },
+    {
+     "name": "glob",
+     "count": 3
+    }
+   ],
+   "sizeBytes": 136904
+  },
+  {
+   "id": "2682b414-4695-493b-a704-68d9d156c250",
+   "title": "Перевод интерфейса DSH на русский",
+   "agentName": "субагент (разовый)",
+   "member": null,
+   "descriptor": {
+    "label": "Translate batch 4 to Russian",
+    "mode": "continuable",
+    "provider": "zvenoai",
+    "model": "openai/gpt-4o-mini"
+   },
+   "projectKey": "C:\\Users\\Артем\\Desktop\\DeepSeek Harness",
+   "projectLabel": "Desktop/DeepSeek Harness",
+   "cwd": "C:\\Users\\Артем\\Desktop\\DeepSeek Harness",
+   "createdAt": 1793214104103,
+   "firstTime": 1793214104125,
+   "lastTime": 1793214192644,
+   "origin": "subagent",
+   "delegationDepth": 1,
+   "parentSession": "session-62c83488-322c-4f7c-a435-a22ee9c9fb3e",
+   "agentPreset": "standard",
+   "isSubagent": true,
+   "model": "openai/gpt-4o-mini",
+   "provider": "zvenoai",
+   "models": [
+    {
+     "key": "openai/gpt-4o-mini",
+     "model": "openai/gpt-4o-mini",
+     "provider": "zvenoai",
+     "tokens": {
+      "inputTokens": 22538,
+      "outputTokens": 5512,
+      "cacheReadTokens": 36992,
+      "cacheWriteTokens": 0,
+      "totalTokens": 65042
+     },
+     "usd": null,
+     "rub": null,
+     "priceKnown": false
+    }
+   ],
+   "tokens": {
+    "inputTokens": 22538,
+    "outputTokens": 5512,
+    "cacheReadTokens": 36992,
+    "cacheWriteTokens": 0,
+    "totalTokens": 65042
+   },
+   "usd": null,
+   "rub": null,
+   "rubComplete": false,
+   "priceKnown": false,
+   "events": 98,
+   "steps": 5,
+   "turns": 1,
+   "toolCalls": 32,
+   "toolErrors": 0,
+   "userMessages": 4,
+   "assistantMessages": 4,
+   "badLines": 0,
+   "badFrames": 0,
+   "projcacheTokens": {
+    "inputTokens": 22538,
+    "outputTokens": 5512,
+    "cacheReadTokens": 36992,
+    "cacheWriteTokens": 0,
+    "totalTokens": 65042
+   },
+   "projcacheDelta": 0,
+   "topTools": [
+    {
+     "name": "read",
+     "count": 12
+    },
+    {
+     "name": "glob",
+     "count": 10
+    },
+    {
+     "name": "write",
+     "count": 10
+    }
+   ],
+   "sizeBytes": 88987
+  },
+  {
+   "id": "81dec683-df4c-4740-8230-457c700587fb",
+   "title": "Перевод интерфейса DSH на русский",
+   "agentName": "субагент (разовый)",
+   "member": null,
+   "descriptor": {
+    "label": "Translate batch 2 to Russian",
+    "mode": "continuable",
+    "provider": "zvenoai",
+    "model": "openai/gpt-4o-mini"
+   },
+   "projectKey": "C:\\Users\\Артем\\Desktop\\DeepSeek Harness",
+   "projectLabel": "Desktop/DeepSeek Harness",
+   "cwd": "C:\\Users\\Артем\\Desktop\\DeepSeek Harness",
+   "createdAt": 1793214104102,
+   "firstTime": 1793214104112,
+   "lastTime": 1793214179113,
+   "origin": "subagent",
+   "delegationDepth": 1,
+   "parentSession": "session-62c83488-322c-4f7c-a435-a22ee9c9fb3e",
+   "agentPreset": "standard",
+   "isSubagent": true,
+   "model": "openai/gpt-4o-mini",
+   "provider": "zvenoai",
+   "models": [
+    {
+     "key": "openai/gpt-4o-mini",
+     "model": "openai/gpt-4o-mini",
+     "provider": "zvenoai",
+     "tokens": {
+      "inputTokens": 20576,
+      "outputTokens": 6459,
+      "cacheReadTokens": 102656,
+      "cacheWriteTokens": 0,
+      "totalTokens": 129691
+     },
+     "usd": null,
+     "rub": null,
+     "priceKnown": false
+    }
+   ],
+   "tokens": {
+    "inputTokens": 20576,
+    "outputTokens": 6459,
+    "cacheReadTokens": 102656,
+    "cacheWriteTokens": 0,
+    "totalTokens": 129691
+   },
+   "usd": null,
+   "rub": null,
+   "rubComplete": false,
+   "priceKnown": false,
+   "events": 91,
+   "steps": 6,
+   "turns": 1,
+   "toolCalls": 27,
+   "toolErrors": 0,
+   "userMessages": 4,
+   "assistantMessages": 6,
+   "badLines": 0,
+   "badFrames": 0,
+   "projcacheTokens": {
+    "inputTokens": 20576,
+    "outputTokens": 6459,
+    "cacheReadTokens": 102656,
+    "cacheWriteTokens": 0,
+    "totalTokens": 129691
+   },
+   "projcacheDelta": 0,
+   "topTools": [
+    {
+     "name": "read",
+     "count": 14
+    },
+    {
+     "name": "write",
+     "count": 10
+    },
+    {
+     "name": "glob",
+     "count": 2
+    },
+    {
+     "name": "send_message",
+     "count": 1
+    }
+   ],
+   "sizeBytes": 95457
+  },
+  {
+   "id": "session-2152775f-bb73-43a0-a060-7a8fb356e9ef",
+   "title": "ты работаешь ?",
+   "agentName": "lead",
+   "member": null,
+   "descriptor": null,
+   "projectKey": "C:\\Users\\Артем\\Desktop\\DeepSeek Harness",
+   "projectLabel": "Desktop/DeepSeek Harness",
+   "cwd": "C:\\Users\\Артем\\Desktop\\DeepSeek Harness",
+   "createdAt": 1793211919833,
+   "firstTime": 1793211919843,
+   "lastTime": 1793212275413,
+   "origin": "root",
+   "delegationDepth": 0,
+   "parentSession": null,
+   "agentPreset": "standard",
+   "isSubagent": false,
+   "model": "deepseek/deepseek-v4.1-flash",
+   "provider": "zvenoai",
+   "models": [
+    {
+     "key": "deepseek/deepseek-v4.1-flash",
+     "model": "deepseek/deepseek-v4.1-flash",
+     "provider": "zvenoai",
+     "tokens": {
+      "inputTokens": 46762,
+      "outputTokens": 16762,
+      "cacheReadTokens": 999168,
+      "cacheWriteTokens": 0,
+      "totalTokens": 1062692
+     },
+     "usd": 0.0394,
+     "rub": 3.18,
+     "priceKnown": true
+    }
+   ],
+   "tokens": {
+    "inputTokens": 46762,
+    "outputTokens": 16762,
+    "cacheReadTokens": 999168,
+    "cacheWriteTokens": 0,
+    "totalTokens": 1062692
+   },
+   "usd": 0.0394,
+   "rub": 3.18,
+   "rubComplete": true,
+   "priceKnown": true,
+   "events": 232,
+   "steps": 28,
+   "turns": 2,
+   "toolCalls": 41,
+   "toolErrors": 0,
+   "userMessages": 5,
+   "assistantMessages": 28,
+   "badLines": 0,
+   "badFrames": 0,
+   "projcacheTokens": {
+    "inputTokens": 46762,
+    "outputTokens": 16762,
+    "cacheReadTokens": 999168,
+    "cacheWriteTokens": 0,
+    "totalTokens": 1062692
+   },
+   "projcacheDelta": 0,
+   "topTools": [
+    {
+     "name": "pwsh",
+     "count": 21
+    },
+    {
+     "name": "read",
+     "count": 7
+    },
+    {
+     "name": "grep",
+     "count": 6
+    },
+    {
+     "name": "write",
+     "count": 4
+    },
+    {
+     "name": "working_directory",
+     "count": 1
+    },
+    {
+     "name": "glob",
+     "count": 1
+    },
+    {
+     "name": "web_search",
+     "count": 1
+    }
+   ],
+   "sizeBytes": 143661
+  },
+  {
+   "id": "session-7fbb15a9-b8f5-4f67-a9c1-d9e67ff8716d",
+   "title": null,
+   "agentName": "lead",
+   "member": null,
+   "descriptor": null,
+   "projectKey": "C:\\Users\\Артем\\Documents\\deepseek-harness\\default-workspace",
+   "projectLabel": "deepseek-harness/default-workspace",
+   "cwd": "C:\\Users\\Артем\\Documents\\deepseek-harness\\default-workspace",
+   "createdAt": 1793126503285,
+   "firstTime": 1793126503290,
+   "lastTime": 1793210723626,
+   "origin": "root",
+   "delegationDepth": 0,
+   "parentSession": null,
+   "agentPreset": "standard",
+   "isSubagent": false,
+   "model": null,
+   "provider": null,
+   "models": [],
+   "tokens": {
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "cacheReadTokens": 0,
+    "cacheWriteTokens": 0,
+    "totalTokens": 0
+   },
+   "usd": null,
+   "rub": null,
+   "rubComplete": true,
+   "priceKnown": false,
+   "events": 5,
+   "steps": 0,
+   "turns": 0,
+   "toolCalls": 0,
+   "toolErrors": 0,
+   "userMessages": 0,
+   "assistantMessages": 0,
+   "badLines": 0,
+   "badFrames": 0,
+   "projcacheTokens": {
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "cacheReadTokens": 0,
+    "cacheWriteTokens": 0,
+    "totalTokens": 0
+   },
+   "projcacheDelta": 0,
+   "topTools": [],
+   "sizeBytes": 447
+  }
+ ],
+ "count": 40
+}

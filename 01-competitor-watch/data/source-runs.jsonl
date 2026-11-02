@@ -1,0 +1,26 @@
+{"ts": "2026-10-31T18:10:01", "source": "developer-sites", "status": "empty", "lots": 0, "projects": 0, "note": "в снимке нет лотов от этого источника"}
+{"ts": "2026-10-31T18:10:01", "source": "manual-inbox", "status": "empty", "lots": 0, "projects": 0, "note": "ждём материалы"}
+{"ts": "2026-11-01T14:01:56", "source": "developer-sites", "status": "ok", "lots": 1, "projects": 1, "note": "получено обычным HTTP, без логина; пустой ответ; ещё 17 цен без площади/комнатности — в снимок не попали (не додумываем)"}
+{"ts": "2026-11-01T14:01:56", "source": "manual-inbox", "status": "empty", "lots": 0, "projects": 0, "note": "ждём материалы в inbox"}
+{"ts": "2026-11-01T14:01:56", "source": "cian", "status": "partial", "lots": 0, "projects": 0, "note": "страница отдала капчу/проверку бота"}
+{"ts": "2026-11-01T14:01:56", "source": "avito", "status": "partial", "lots": 0, "projects": 0, "note": "страница отдала капчу/проверку бота"}
+{"ts": "2026-11-01T14:01:56", "source": "yandex-realty", "status": "ok", "lots": 24, "projects": 1, "note": "получено обычным HTTP, без логина"}
+{"ts": "2026-11-01T14:01:56", "source": "domclick", "status": "partial", "lots": 0, "projects": 0, "note": "HTTP 401: площадка отдаёт данные только по договору/API (партнёрский API Домклик — по договору)"}
+{"ts": "2026-11-01T14:02:56", "source": "developer-sites", "status": "ok", "lots": 15, "projects": 1, "note": "адаптер zilart: цены «от» по позициям каталога (HTTP, без логина). Гранулярность: цена «от» по позиции каталога (корпус + тип квартиры + площадь); это НЕ шахматка по каждому лоту. "}
+{"ts": "2026-11-01T14:02:56", "source": "manual-inbox", "status": "empty", "lots": 0, "projects": 0, "note": "ждём материалы в inbox"}
+{"ts": "2026-11-01T14:02:56", "source": "cian", "status": "partial", "lots": 0, "projects": 0, "note": "страница отдала капчу/проверку бота"}
+{"ts": "2026-11-01T14:02:56", "source": "avito", "status": "partial", "lots": 0, "projects": 0, "note": "страница отдала капчу/проверку бота"}
+{"ts": "2026-11-01T14:02:56", "source": "yandex-realty", "status": "ok", "lots": 24, "projects": 1, "note": "получено обычным HTTP, без логина"}
+{"ts": "2026-11-01T14:02:56", "source": "domclick", "status": "partial", "lots": 0, "projects": 0, "note": "HTTP 401: площадка отдаёт данные только по договору/API (партнёрский API Домклик — по договору)"}
+{"ts": "2026-11-01T14:03:19", "source": "developer-sites", "status": "ok", "lots": 15, "projects": 1, "note": "адаптер zilart: цены «от» по позициям каталога (HTTP, без логина). Гранулярность: цена «от» по позиции каталога (корпус + тип квартиры + площадь); это НЕ шахматка по каждому лоту. "}
+{"ts": "2026-11-01T14:03:19", "source": "manual-inbox", "status": "empty", "lots": 0, "projects": 0, "note": "ждём материалы в inbox"}
+{"ts": "2026-11-01T14:03:19", "source": "cian", "status": "partial", "lots": 0, "projects": 0, "note": "страница отдала капчу/проверку бота"}
+{"ts": "2026-11-01T14:03:19", "source": "avito", "status": "partial", "lots": 0, "projects": 0, "note": "страница отдала капчу/проверку бота"}
+{"ts": "2026-11-01T14:03:19", "source": "yandex-realty", "status": "empty", "lots": 0, "projects": 0, "note": "страница не упоминает «ЗИЛАРТ» — похоже на каталожную выдачу; лоты не привязаны к проекту"}
+{"ts": "2026-11-01T14:03:19", "source": "domclick", "status": "partial", "lots": 0, "projects": 0, "note": "HTTP 401: площадка отдаёт данные только по договору/API (партнёрский API Домклик — по договору)"}
+{"ts": "2026-11-02T19:56:54", "source": "developer-sites", "status": "empty", "lots": 0, "projects": 0, "note": "HTTP 401: площадка отдаёт данные только по договору/API (—) (браузер отключён флагом); получено обычным HTTP (User-Agent Chrome), без логина (каталожная/поисковая страница: список "}
+{"ts": "2026-11-02T19:56:54", "source": "cian", "status": "ok", "lots": 221, "projects": 8, "note": "получено обычным HTTP (User-Agent Chrome), без логина (каталожная/поисковая страница: список лотов рыночный, привязка к конкретному ЖК условная)"}
+{"ts": "2026-11-02T19:56:54", "source": "yandex-realty", "status": "ok", "lots": 8, "projects": 2, "note": "получено обычным HTTP (User-Agent Chrome), без логина (каталожная/поисковая страница: список лотов рыночный, привязка к конкретному ЖК условная)"}
+{"ts": "2026-11-02T19:57:04", "source": "developer-sites", "status": "empty", "lots": 0, "projects": 0, "note": "HTTP 401: площадка отдаёт данные только по договору/API (—) (браузер отключён флагом); получено обычным HTTP (User-Agent Chrome), без логина (каталожная/поисковая страница: список "}
+{"ts": "2026-11-02T19:57:04", "source": "cian", "status": "ok", "lots": 167, "projects": 6, "note": "получено обычным HTTP (User-Agent Chrome), без логина (каталожная/поисковая страница: список лотов рыночный, привязка к конкретному ЖК условная)"}
+{"ts": "2026-11-02T19:57:04", "source": "yandex-realty", "status": "ok", "lots": 8, "projects": 2, "note": "получено обычным HTTP (User-Agent Chrome), без логина (каталожная/поисковая страница: список лотов рыночный, привязка к конкретному ЖК условная)"}

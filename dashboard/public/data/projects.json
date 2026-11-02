@@ -1,0 +1,128 @@
+{
+ "projects": [
+  {
+   "id": "my-zhk-svet",
+   "name": "Свет",
+   "developer": "Dominanta",
+   "klass": "бизнес",
+   "agents": [
+    "agent-1-competitor-watch"
+   ],
+   "status": "active",
+   "origin": "registry",
+   "agentsDetail": [
+    {
+     "id": "agent-1-competitor-watch",
+     "name": "Агент 1 — Мониторинг конкурентов",
+     "enabled": true,
+     "status": "active",
+     "model": "deepseek/deepseek-v4.1-flash"
+    }
+   ],
+   "linkedMembers": [
+    "agent1-workspace",
+    "data-engine",
+    "verifier"
+   ],
+   "metrics": {
+    "tasks": {
+     "total": 1,
+     "byStatus": {
+      "new": 1
+     }
+    },
+    "sessions": 5,
+    "tokens": {
+     "inputTokens": 8445841,
+     "outputTokens": 1426117,
+     "cacheReadTokens": 314509376,
+     "cacheWriteTokens": 0,
+     "totalTokens": 324381334
+    },
+    "usd": 10.8762,
+    "rub": 876.16,
+    "rubComplete": true,
+    "lastActivityAt": 1793552032070
+   }
+  }
+ ],
+ "sessionProjects": [
+  {
+   "key": "marketing-agents",
+   "label": "marketing-agents (наш проект)",
+   "cwd": "C:\\Users\\Артем\\Desktop\\тестDH",
+   "sessions": 22,
+   "tokens": {
+    "inputTokens": 38084077,
+    "outputTokens": 5456849,
+    "cacheReadTokens": 1154834939,
+    "cacheWriteTokens": 0,
+    "totalTokens": 1198375865
+   },
+   "usd": 40.2395,
+   "rub": 3241.56,
+   "rubComplete": true,
+   "lastActivityAt": 1793552253057,
+   "agents": [
+    "lead",
+    "verifier",
+    "plugin-author",
+    "dashboard-ui",
+    "capability-dev",
+    "data-engine",
+    "plugin-dev",
+    "agent1-workspace",
+    "market-lib-ru",
+    "market-ru",
+    "skillbrowser-ru",
+    "plugins-ru",
+    "locale-core",
+    "auditor",
+    "localizer",
+    "dashboard-dev"
+   ]
+  },
+  {
+   "key": "C:\\Users\\Артем\\Desktop\\DeepSeek Harness",
+   "label": "Desktop/DeepSeek Harness",
+   "cwd": "C:\\Users\\Артем\\Desktop\\DeepSeek Harness",
+   "sessions": 17,
+   "tokens": {
+    "inputTokens": 802959,
+    "outputTokens": 328979,
+    "cacheReadTokens": 27293248,
+    "cacheWriteTokens": 0,
+    "totalTokens": 28573052
+   },
+   "usd": 1.1396,
+   "rub": 91.82,
+   "rubComplete": false,
+   "lastActivityAt": 1793390636751,
+   "agents": [
+    "lead",
+    "субагент (разовый)"
+   ]
+  },
+  {
+   "key": "C:\\Users\\Артем\\Documents\\deepseek-harness\\default-workspace",
+   "label": "deepseek-harness/default-workspace",
+   "cwd": "C:\\Users\\Артем\\Documents\\deepseek-harness\\default-workspace",
+   "sessions": 1,
+   "tokens": {
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "cacheReadTokens": 0,
+    "cacheWriteTokens": 0,
+    "totalTokens": 0
+   },
+   "usd": null,
+   "rub": null,
+   "rubComplete": true,
+   "lastActivityAt": 1793210723626,
+   "agents": [
+    "lead"
+   ]
+  }
+ ],
+ "registryFile": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\registry\\projects.yaml"
+}

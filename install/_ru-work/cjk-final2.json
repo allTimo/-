@@ -1,0 +1,320 @@
+[
+  {
+    "file": "accelerate.js",
+    "cjk": 0,
+    "lines": 195,
+    "cjkLines": 0
+  },
+  {
+    "file": "agents.js",
+    "cjk": 0,
+    "lines": 37,
+    "cjkLines": 0
+  },
+  {
+    "file": "backup.js",
+    "cjk": 235,
+    "lines": 608,
+    "cjkLines": 7
+  },
+  {
+    "file": "body-progress.js",
+    "cjk": 0,
+    "lines": 174,
+    "cjkLines": 0
+  },
+  {
+    "file": "catalog-local-match.js",
+    "cjk": 0,
+    "lines": 161,
+    "cjkLines": 0
+  },
+  {
+    "file": "catalog-npm.js",
+    "cjk": 0,
+    "lines": 152,
+    "cjkLines": 0
+  },
+  {
+    "file": "changelog.js",
+    "cjk": 0,
+    "lines": 461,
+    "cjkLines": 0
+  },
+  {
+    "file": "channels.js",
+    "cjk": 0,
+    "lines": 65,
+    "cjkLines": 0
+  },
+  {
+    "file": "check.js",
+    "cjk": 86,
+    "lines": 1491,
+    "cjkLines": 3
+  },
+  {
+    "file": "compatibility.js",
+    "cjk": 0,
+    "lines": 244,
+    "cjkLines": 0
+  },
+  {
+    "file": "diagnostics.js",
+    "cjk": 0,
+    "lines": 50,
+    "cjkLines": 0
+  },
+  {
+    "file": "discovery-compatibility.js",
+    "cjk": 0,
+    "lines": 438,
+    "cjkLines": 0
+  },
+  {
+    "file": "dsh-cli.js",
+    "cjk": 797,
+    "lines": 1374,
+    "cjkLines": 14
+  },
+  {
+    "file": "dsh-install.js",
+    "cjk": 0,
+    "lines": 207,
+    "cjkLines": 0
+  },
+  {
+    "file": "entry-identity.js",
+    "cjk": 0,
+    "lines": 86,
+    "cjkLines": 0
+  },
+  {
+    "file": "gist.js",
+    "cjk": 0,
+    "lines": 350,
+    "cjkLines": 0
+  },
+  {
+    "file": "groups.js",
+    "cjk": 57,
+    "lines": 109,
+    "cjkLines": 10
+  },
+  {
+    "file": "home-paths.js",
+    "cjk": 0,
+    "lines": 30,
+    "cjkLines": 0
+  },
+  {
+    "file": "host-recovery.js",
+    "cjk": 76,
+    "lines": 160,
+    "cjkLines": 5
+  },
+  {
+    "file": "hot.js",
+    "cjk": 88,
+    "lines": 820,
+    "cjkLines": 5
+  },
+  {
+    "file": "http.js",
+    "cjk": 36,
+    "lines": 253,
+    "cjkLines": 2
+  },
+  {
+    "file": "index.js",
+    "cjk": 0,
+    "lines": 359,
+    "cjkLines": 0
+  },
+  {
+    "file": "install.js",
+    "cjk": 331,
+    "lines": 1095,
+    "cjkLines": 8
+  },
+  {
+    "file": "lifecycle.js",
+    "cjk": 0,
+    "lines": 38,
+    "cjkLines": 0
+  },
+  {
+    "file": "log-redaction.js",
+    "cjk": 0,
+    "lines": 25,
+    "cjkLines": 0
+  },
+  {
+    "file": "log.js",
+    "cjk": 0,
+    "lines": 197,
+    "cjkLines": 0
+  },
+  {
+    "file": "ndjson.js",
+    "cjk": 0,
+    "lines": 155,
+    "cjkLines": 0
+  },
+  {
+    "file": "net.js",
+    "cjk": 0,
+    "lines": 175,
+    "cjkLines": 0
+  },
+  {
+    "file": "official-desktop.js",
+    "cjk": 752,
+    "lines": 586,
+    "cjkLines": 20
+  },
+  {
+    "file": "order.js",
+    "cjk": 29,
+    "lines": 285,
+    "cjkLines": 3
+  },
+  {
+    "file": "patch.js",
+    "cjk": 119,
+    "lines": 724,
+    "cjkLines": 7
+  },
+  {
+    "file": "pending-rows.js",
+    "cjk": 0,
+    "lines": 142,
+    "cjkLines": 0
+  },
+  {
+    "file": "pending-updates.js",
+    "cjk": 0,
+    "lines": 319,
+    "cjkLines": 0
+  },
+  {
+    "file": "pnpm-compat.js",
+    "cjk": 3027,
+    "lines": 876,
+    "cjkLines": 49
+  },
+  {
+    "file": "presets.js",
+    "cjk": 151,
+    "lines": 283,
+    "cjkLines": 16
+  },
+  {
+    "file": "profile.js",
+    "cjk": 10,
+    "lines": 1890,
+    "cjkLines": 1
+  },
+  {
+    "file": "recovery.js",
+    "cjk": 246,
+    "lines": 1082,
+    "cjkLines": 19
+  },
+  {
+    "file": "region-probe.js",
+    "cjk": 0,
+    "lines": 94,
+    "cjkLines": 0
+  },
+  {
+    "file": "regions.js",
+    "cjk": 0,
+    "lines": 309,
+    "cjkLines": 0
+  },
+  {
+    "file": "registry.js",
+    "cjk": 0,
+    "lines": 288,
+    "cjkLines": 0
+  },
+  {
+    "file": "release-candidates.js",
+    "cjk": 0,
+    "lines": 102,
+    "cjkLines": 0
+  },
+  {
+    "file": "restart.js",
+    "cjk": 15,
+    "lines": 689,
+    "cjkLines": 2
+  },
+  {
+    "file": "routes.js",
+    "cjk": 2863,
+    "lines": 7078,
+    "cjkLines": 103
+  },
+  {
+    "file": "settings.js",
+    "cjk": 0,
+    "lines": 165,
+    "cjkLines": 0
+  },
+  {
+    "file": "snapshot.js",
+    "cjk": 184,
+    "lines": 501,
+    "cjkLines": 26
+  },
+  {
+    "file": "source-migration.js",
+    "cjk": 0,
+    "lines": 165,
+    "cjkLines": 0
+  },
+  {
+    "file": "sources.js",
+    "cjk": 0,
+    "lines": 1013,
+    "cjkLines": 0
+  },
+  {
+    "file": "store.js",
+    "cjk": 0,
+    "lines": 164,
+    "cjkLines": 0
+  },
+  {
+    "file": "themes.js",
+    "cjk": 0,
+    "lines": 312,
+    "cjkLines": 0
+  },
+  {
+    "file": "trial.js",
+    "cjk": 50,
+    "lines": 127,
+    "cjkLines": 4
+  },
+  {
+    "file": "update-api-v1.js",
+    "cjk": 0,
+    "lines": 240,
+    "cjkLines": 0
+  },
+  {
+    "file": "updates.js",
+    "cjk": 8,
+    "lines": 915,
+    "cjkLines": 2
+  },
+  {
+    "file": "verify.js",
+    "cjk": 529,
+    "lines": 909,
+    "cjkLines": 27
+  }
+]
