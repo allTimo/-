@@ -1,28 +1,29 @@
-# ТОНКИЕ НАСТРОЙКИ АГЕНТА 2 — настройки появятся вместе с агентом.
+# ТОНКИЕ НАСТРОЙКИ АГЕНТА 2 — рабочие (Агент 2 подключён 10.11.2026).
+# Правка из панели разрешена: status: active. Чувствительные действия (ставки, бюджеты,
+# включение кампаний) агент без подтверждения не выполняет — см. skills/direct-keywords/SKILL.md.
 version: 1
 agent: agent-2-direct-semantics
-updated: "2026-11-01"
-status: stub
-note: "Агент 2 ещё не реализован: поля показаны для примера и остаются неактивными — сохранять нельзя."
+updated: "2026-11-10"
+status: active
 schedule:
   enabled: false
-  days: [1]
+  days: []
   time: "11:00"
   frequency: on-demand
   timezone: "Europe/Moscow"
   only_on_new_data: false
 model:
-  name: "deepseek/deepseek-v4.1-flash"
+  name: "deepseek/deepseek-v4-pro"
   limit_rub: 0
   limit_tokens: 0
   on_limit: warn
 priority:
-  level: low
+  level: normal
   max_parallel: 1
   timeout_sec: 900
-  retries: 0
+  retries: 1
 report:
-  formats: [xlsx]
+  formats: [xlsx, md]
   sections: [summary]
   language: ru
   branding: false
@@ -32,10 +33,10 @@ delivery:
   auto_send: false
   copy_to: ""
 alerts:
-  when: [never]
+  when: [fail]
   price_threshold_pct: 0
   quiet_hours: ""
 limits:
-  skip_weekends: true
-  min_interval_hours: 24
-  stop_switch: true
+  skip_weekends: false
+  min_interval_hours: 1
+  stop_switch: false

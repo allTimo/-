@@ -168,3 +168,273 @@ results:
     sent_to: "@svet_marketing"
     sent_at: null
     sent_status: "ожидает"
+
+  - id: res-2026-11-03-granel
+    title: "СЗ «Гранель» — Селигер Сити: Мониторинг конкурентов — Селигер Сити за 2026-11-03"
+    summary: "Собрано источников: 3, лотов в снимке: 229, статусы: developer-sites=no_data, cian=ok, yandex-realty=ok"
+    client: client-granel
+    project: null
+    period: "2026-11-02 — 2026-11-03"
+    agent: agent-1-competitor-watch
+    service: competitor-watch
+    created: "2026-11-03T22:34:29+03:00"
+    artifacts:
+      - "01-competitor-watch/reports/clients/client-granel/2026-11-03-competitor-watch.md"
+      - "01-competitor-watch/reports/clients/client-granel/.cache/analytics-2026-11-03.json"
+    sent_channel: email
+    sent_to: "tyurina@d-a.ru, vodnev@d-a.ru"
+    sent_at: null
+    sent_status: "не отправлено: нет SMTP-доступа: в settings.yaml -> delivery.email не задан smtp_host"
+
+  - id: res-2026-11-03-svet
+    title: "ЖК «Свет»: Мониторинг конкурентов за 2026-11-03"
+    summary: "Собрано источников: 3, лотов в снимке: 175, статусы: developer-sites=no_data, cian=ok, yandex-realty=ok"
+    client: client-svet
+    project: null
+    period: "2026-11-02 — 2026-11-03"
+    agent: agent-1-competitor-watch
+    service: competitor-watch
+    created: "2026-11-03T22:34:38+03:00"
+    artifacts:
+      - "01-competitor-watch/reports/clients/client-svet/2026-11-03-competitor-watch.md"
+      - "01-competitor-watch/reports/clients/client-svet/.cache/analytics-2026-11-03.json"
+    sent_channel: email
+    sent_to: "tyurina@d-a.ru, vodnev@d-a.ru"
+    sent_at: null
+    sent_status: "не отправлено: нет SMTP-доступа: в settings.yaml -> delivery.email не задан smtp_host"
+
+  - id: res-2026-11-03-granel
+    title: "СЗ «Гранель» — Селигер Сити: Мониторинг конкурентов — Селигер Сити за 2026-11-03"
+    summary: "Собрано источников: 3, лотов в снимке: 229, статусы: developer-sites=no_data, cian=ok, yandex-realty=ok"
+    client: client-granel
+    project: null
+    period: "2026-11-02 — 2026-11-03"
+    agent: agent-1-competitor-watch
+    service: competitor-watch
+    created: "2026-11-03T22:41:26+03:00"
+    artifacts:
+      - "01-competitor-watch/reports/clients/client-granel/2026-11-03-competitor-watch.md"
+      - "01-competitor-watch/reports/clients/client-granel/2026-11-03-competitor-watch.xlsx"
+      - "01-competitor-watch/reports/clients/client-granel/2026-11-03-competitor-watch.docx"
+      - "01-competitor-watch/reports/clients/client-granel/2026-11-03-competitor-watch.pdf"
+      - "01-competitor-watch/reports/clients/client-granel/.cache/analytics-2026-11-03.json"
+    sent_channel: email
+    sent_to: "tyurina@d-a.ru, vodnev@d-a.ru"
+    sent_at: null
+    sent_status: "не отправлено: нет SMTP-доступа: в settings.yaml -> delivery.email не задан smtp_host"
+
+  - id: res-2026-11-03-svet
+    title: "ЖК «Свет»: Мониторинг конкурентов за 2026-11-03"
+    summary: "Собрано источников: 3, лотов в снимке: 175, статусы: developer-sites=no_data, cian=ok, yandex-realty=ok"
+    client: client-svet
+    project: null
+    period: "2026-11-02 — 2026-11-03"
+    agent: agent-1-competitor-watch
+    service: competitor-watch
+    created: "2026-11-03T22:41:37+03:00"
+    artifacts:
+      - "01-competitor-watch/reports/clients/client-svet/2026-11-03-competitor-watch.md"
+      - "01-competitor-watch/reports/clients/client-svet/2026-11-03-competitor-watch.xlsx"
+      - "01-competitor-watch/reports/clients/client-svet/2026-11-03-competitor-watch.docx"
+      - "01-competitor-watch/reports/clients/client-svet/2026-11-03-competitor-watch.pdf"
+      - "01-competitor-watch/reports/clients/client-svet/.cache/analytics-2026-11-03.json"
+    sent_channel: email
+    sent_to: "tyurina@d-a.ru, vodnev@d-a.ru"
+    sent_at: null
+    sent_status: "не отправлено: нет SMTP-доступа: в settings.yaml -> delivery.email не задан smtp_host"
+
+  - id: res-2026-11-03-granel
+    title: "СЗ «Гранель» — Селигер Сити: Мониторинг конкурентов — Селигер Сити за 2026-11-03"
+    summary: "Собрано источников: 3, лотов в снимке: 229, статусы: developer-sites=no_data, cian=ok, yandex-realty=ok"
+    client: client-granel
+    project: null
+    period: "2026-11-02 — 2026-11-03"
+    agent: agent-1-competitor-watch
+    service: competitor-watch
+    created: "2026-11-03T22:44:36+03:00"
+    artifacts:
+      - "01-competitor-watch/reports/clients/client-granel/2026-11-03-competitor-watch.md"
+      - "01-competitor-watch/reports/clients/client-granel/2026-11-03-competitor-watch.xlsx"
+      - "01-competitor-watch/reports/clients/client-granel/2026-11-03-competitor-watch.docx"
+      - "01-competitor-watch/reports/clients/client-granel/2026-11-03-competitor-watch.pdf"
+      - "01-competitor-watch/reports/clients/client-granel/.cache/analytics-2026-11-03.json"
+    sent_channel: email
+    sent_to: "tyurina@d-a.ru, vodnev@d-a.ru"
+    sent_at: null
+    sent_status: "не отправлено: нет SMTP-доступа: в settings.yaml -> delivery.email не задан smtp_host"
+
+  - id: res-2026-11-03-svet
+    title: "ЖК «Свет»: Мониторинг конкурентов за 2026-11-03"
+    summary: "Собрано источников: 3, лотов в снимке: 175, статусы: developer-sites=no_data, cian=ok, yandex-realty=ok"
+    client: client-svet
+    project: null
+    period: "2026-11-02 — 2026-11-03"
+    agent: agent-1-competitor-watch
+    service: competitor-watch
+    created: "2026-11-03T22:45:40+03:00"
+    artifacts:
+      - "01-competitor-watch/reports/clients/client-svet/2026-11-03-competitor-watch.md"
+      - "01-competitor-watch/reports/clients/client-svet/2026-11-03-competitor-watch.xlsx"
+      - "01-competitor-watch/reports/clients/client-svet/2026-11-03-competitor-watch.docx"
+      - "01-competitor-watch/reports/clients/client-svet/2026-11-03-competitor-watch.pdf"
+      - "01-competitor-watch/reports/clients/client-svet/.cache/analytics-2026-11-03.json"
+    sent_channel: email
+    sent_to: "tyurina@d-a.ru, vodnev@d-a.ru"
+    sent_at: null
+    sent_status: "не отправлено: нет SMTP-доступа: в settings.yaml -> delivery.email не задан smtp_host"
+
+  - id: res-2026-11-03-granel
+    title: "СЗ «Гранель» — Селигер Сити: Мониторинг конкурентов — Селигер Сити за 2026-11-03"
+    summary: "Собрано источников: 3, лотов в снимке: 229, статусы: developer-sites=no_data, cian=ok, yandex-realty=ok"
+    client: client-granel
+    project: null
+    period: "2026-11-02 — 2026-11-03"
+    agent: agent-1-competitor-watch
+    service: competitor-watch
+    created: "2026-11-03T22:55:26+03:00"
+    artifacts:
+      - "01-competitor-watch/reports/clients/client-granel/2026-11-03-competitor-watch.md"
+      - "01-competitor-watch/reports/clients/client-granel/2026-11-03-competitor-watch.xlsx"
+      - "01-competitor-watch/reports/clients/client-granel/2026-11-03-competitor-watch.docx"
+      - "01-competitor-watch/reports/clients/client-granel/2026-11-03-competitor-watch.pdf"
+      - "01-competitor-watch/reports/clients/client-granel/.cache/analytics-2026-11-03.json"
+    sent_channel: email
+    sent_to: "tyurina@d-a.ru, vodnev@d-a.ru"
+    sent_at: null
+    sent_status: "не отправлено: нет SMTP-доступа: в settings.yaml -> delivery.email не задан smtp_host"
+
+  - id: res-2026-11-03-svet
+    title: "ЖК «Свет»: Мониторинг конкурентов за 2026-11-03"
+    summary: "Собрано источников: 3, лотов в снимке: 154, статусы: developer-sites=ok, cian=ok, yandex-realty=ok"
+    client: client-svet
+    project: null
+    period: "2026-11-02 — 2026-11-03"
+    agent: agent-1-competitor-watch
+    service: competitor-watch
+    created: "2026-11-03T22:55:42+03:00"
+    artifacts:
+      - "01-competitor-watch/reports/clients/client-svet/2026-11-03-competitor-watch.md"
+      - "01-competitor-watch/reports/clients/client-svet/2026-11-03-competitor-watch.xlsx"
+      - "01-competitor-watch/reports/clients/client-svet/2026-11-03-competitor-watch.docx"
+      - "01-competitor-watch/reports/clients/client-svet/2026-11-03-competitor-watch.pdf"
+      - "01-competitor-watch/reports/clients/client-svet/.cache/analytics-2026-11-03.json"
+    sent_channel: email
+    sent_to: "tyurina@d-a.ru, vodnev@d-a.ru"
+    sent_at: null
+    sent_status: "не отправлено: нет SMTP-доступа: в settings.yaml -> delivery.email не задан smtp_host"
+
+  - id: res-2026-11-04-granel
+    title: "СЗ «Гранель» — Селигер Сити: Мониторинг конкурентов — Селигер Сити за 2026-11-04"
+    summary: "Собрано источников: 3, лотов в снимке: 229, статусы: developer-sites=no_data, cian=ok, yandex-realty=ok"
+    client: client-granel
+    project: null
+    period: "2026-11-03 — 2026-11-04"
+    agent: agent-1-competitor-watch
+    service: competitor-watch
+    created: "2026-11-04T15:45:16+03:00"
+    artifacts:
+      - "01-competitor-watch/reports/clients/client-granel/2026-11-04-competitor-watch.md"
+      - "01-competitor-watch/reports/clients/client-granel/2026-11-04-competitor-watch.xlsx"
+      - "01-competitor-watch/reports/clients/client-granel/2026-11-04-competitor-watch.docx"
+      - "01-competitor-watch/reports/clients/client-granel/2026-11-04-competitor-watch.pdf"
+      - "01-competitor-watch/reports/clients/client-granel/.cache/analytics-2026-11-04.json"
+    sent_channel: email
+    sent_to: "tyurina@d-a.ru"
+    sent_at: null
+    sent_status: "письмо не отправлено: режим отправки never — отчёт формируется, но не рассылается"
+
+  - id: res-2026-11-04-svet
+    title: "ЖК «Свет»: Мониторинг конкурентов за 2026-11-04"
+    summary: "Собрано источников: 3, лотов в снимке: 154, статусы: developer-sites=ok, cian=ok, yandex-realty=ok"
+    client: client-svet
+    project: null
+    period: "2026-11-03 — 2026-11-04"
+    agent: agent-1-competitor-watch
+    service: competitor-watch
+    created: "2026-11-04T15:45:31+03:00"
+    artifacts:
+      - "01-competitor-watch/reports/clients/client-svet/2026-11-04-competitor-watch.md"
+      - "01-competitor-watch/reports/clients/client-svet/2026-11-04-competitor-watch.xlsx"
+      - "01-competitor-watch/reports/clients/client-svet/2026-11-04-competitor-watch.docx"
+      - "01-competitor-watch/reports/clients/client-svet/2026-11-04-competitor-watch.pdf"
+      - "01-competitor-watch/reports/clients/client-svet/.cache/analytics-2026-11-04.json"
+    sent_channel: email
+    sent_to: "tyurina@d-a.ru"
+    sent_at: null
+    sent_status: "письмо не отправлено: режим отправки never — отчёт формируется, но не рассылается"
+
+  - id: res-2026-11-05-granel
+    title: "СЗ «Гранель» — Селигер Сити: Мониторинг конкурентов — Селигер Сити за 2026-11-05"
+    summary: "Собрано источников: 5, лотов в снимке: 80, статусы: developer-sites=ok, cian=ok, avito=no_data, yandex-realty=ok, domclick=no_data"
+    client: client-granel
+    project: null
+    period: "2026-11-04 — 2026-11-05"
+    agent: agent-1-competitor-watch
+    service: competitor-watch
+    created: "2026-11-05T19:15:31+03:00"
+    artifacts:
+      - "01-competitor-watch/reports/clients/client-granel/2026-11-05-competitor-watch.md"
+      - "01-competitor-watch/reports/clients/client-granel/2026-11-05-competitor-watch.xlsx"
+      - "01-competitor-watch/reports/clients/client-granel/2026-11-05-competitor-watch.docx"
+      - "01-competitor-watch/reports/clients/client-granel/.cache/analytics-2026-11-05.json"
+    sent_channel: email
+    sent_to: "vodnev@d-a.ru, tyurina@d-a.ru"
+    sent_at: 2026-11-05T19:15:30
+    sent_status: "отправлено: 2 адрес(ов)"
+
+  - id: res-2026-11-05-svet
+    title: "ЖК «Свет»: Мониторинг конкурентов за 2026-11-05"
+    summary: "Собрано источников: 5, лотов в снимке: 55, статусы: developer-sites=ok, cian=ok, avito=no_data, yandex-realty=ok, domclick=no_data"
+    client: client-svet
+    project: null
+    period: "2026-11-04 — 2026-11-05"
+    agent: agent-1-competitor-watch
+    service: competitor-watch
+    created: "2026-11-05T19:20:10+03:00"
+    artifacts:
+      - "01-competitor-watch/reports/clients/client-svet/2026-11-05-competitor-watch.md"
+      - "01-competitor-watch/reports/clients/client-svet/2026-11-05-competitor-watch.xlsx"
+      - "01-competitor-watch/reports/clients/client-svet/2026-11-05-competitor-watch.docx"
+      - "01-competitor-watch/reports/clients/client-svet/.cache/analytics-2026-11-05.json"
+    sent_channel: whatsapp
+    sent_to: "vodnev@d-a.ru, tyurina@d-a.ru"
+    sent_at: 2026-11-05T19:20:09
+    sent_status: "отправлено: 2 адрес(ов)"
+
+  - id: res-2026-11-12-granel
+    title: "СЗ «Гранель» — Селигер Сити: Мониторинг конкурентов — Селигер Сити за 2026-11-12"
+    summary: "Собрано источников: 5, лотов в снимке: 4, статусы: developer-sites=ok, cian=needs_browser, avito=no_data, yandex-realty=ok, domclick=no_data"
+    client: client-granel
+    project: null
+    period: "2026-11-05 — 2026-11-12"
+    agent: agent-1-competitor-watch
+    service: competitor-watch
+    created: "2026-11-12T21:02:24+03:00"
+    artifacts:
+      - "01-competitor-watch/reports/clients/client-granel/2026-11-12-competitor-watch.md"
+      - "01-competitor-watch/reports/clients/client-granel/2026-11-12-competitor-watch.xlsx"
+      - "01-competitor-watch/reports/clients/client-granel/2026-11-12-competitor-watch.docx"
+      - "01-competitor-watch/reports/clients/client-granel/.cache/analytics-2026-11-12.json"
+    sent_channel: email
+    sent_to: "vodnev@d-a.ru, tyurina@d-a.ru"
+    sent_at: 2026-11-12T21:02:23
+    sent_status: "отправлено: 2 адрес(ов)"
+
+  - id: res-2026-11-12-svet
+    title: "ЖК «Свет»: Мониторинг конкурентов за 2026-11-12"
+    summary: "Собрано источников: 5, лотов в снимке: 16, статусы: developer-sites=ok, cian=needs_browser, avito=no_data, yandex-realty=ok, domclick=no_data"
+    client: client-svet
+    project: null
+    period: "2026-11-05 — 2026-11-12"
+    agent: agent-1-competitor-watch
+    service: competitor-watch
+    created: "2026-11-12T21:07:07+03:00"
+    artifacts:
+      - "01-competitor-watch/reports/clients/client-svet/2026-11-12-competitor-watch.md"
+      - "01-competitor-watch/reports/clients/client-svet/2026-11-12-competitor-watch.xlsx"
+      - "01-competitor-watch/reports/clients/client-svet/2026-11-12-competitor-watch.docx"
+      - "01-competitor-watch/reports/clients/client-svet/.cache/analytics-2026-11-12.json"
+    sent_channel: download
+    sent_to: "vodnev@d-a.ru, tyurina@d-a.ru"
+    sent_at: 2026-11-12T21:07:06
+    sent_status: "отправлено: 2 адрес(ов)"

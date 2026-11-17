@@ -18,6 +18,9 @@ import sys
 from pathlib import Path
 
 import cwlib as cw
+import analytics
+import marketing_settings as ms
+import delivery_email
 import build_weekly_report as bwr
 import clients as clients_mod
 
@@ -227,13 +230,62 @@ def docx_to_pdf(docx_path, pdf_path, node_exe=None, cli=None, timeout=180):
     return pdf_path
 
 
-def build_client_report(client, payload, curr_rows, sources_summary, month_summary, out_dir, date):
-    """Собирает md/xlsx/docx/pdf клиента. Возвращает пути и проблемы."""
+def build_client_report(client, payload, curr_rows, sources_summary, month_summary, out_dir, date,
+                        prev_rows=None, snapshots_dir=None, config_dir=None, registry_dir=None,
+                        agent_settings=None, toggles=None, history=None, send_email=None,
+                        email_mode=None, dry_run=False, environ=None, smtp_transport=None):
+    """Собирает md/xlsx/docx/pdf клиента + аналитику (JSON) + отправку почтой.
+
+    WP2 additions:
+      * reports/clients/<client-id>/.cache/analytics-<date>.json — машиночитаемый
+        блок аналитики ровно по контракту Lead (schema_version 1 + metrics/truth
+        контракта v2 §5.1/§5.3);
+      * тот же блок как раздел Markdown и лист XLSX «Аналитика»;
+      * письмо получателям из delivery.addresses (иначе recipients клиента):
+        при отсутствии SMTP-доступа письмо сохраняется как .eml, а журнал
+        получает статус «не отправлено: нет SMTP-доступа» — без падения.
+
+    Почта (контракт v2 §5.4): по умолчанию `email_mode=never` — отчёт только
+    формируется. `email_mode=always|on-request` шлёт письмо, если `delivery.channels`
+    содержит email (для `always` ещё и `delivery.auto_send: true`); отказ, прогон
+    --dry-run и сохранение настроек ничего не отправляют и объясняют причину словами.
+    """
     out_dir = Path(out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
     formats = clients_mod.report_of(client)["formats"]
     written = {}
     problems = []
+
+    # ---- аналитика (WP2) ----------------------------------------------
+    if agent_settings is None:
+        agent_settings = cw.load_agent_settings(registry_dir=registry_dir)
+    marketing = ms.load(agent_settings=agent_settings)
+    for warning in marketing.warnings:
+        problems.append("agent-settings: %s" % warning)
+    if toggles is None:
+        toggles = analytics.resolve_toggles(agent_settings)
+    bwr.configure_promos(toggles)
+    analytics_file = None
+    analytics_data = None
+    if analytics.analytics_enabled(toggles):
+        if history is None:
+            if snapshots_dir is None:
+                snapshots_dir = cw.DATA_DIR / "clients" / str(client.get("client_id")) / "snapshots"
+            history = analytics.history_medians(snapshots_dir)
+        source_status = [{"source": item.get("source"), "status": item.get("status"),
+                          "note": item.get("note")}
+                         for item in sources_summary or [] if item.get("source")]
+        analytics_data = analytics.build_analytics(
+            curr_rows, prev_rows, payload, toggles,
+            client_id=client.get("client_id"), date=date, history=history,
+            source_status=source_status,
+            selection=marketing.selection,
+            min_lots=marketing.agent1.get("min_lots"),
+            competitors=client.get("competitors"))
+        analytics_file = analytics.write_analytics(
+            analytics.analytics_path(out_dir, date), analytics_data)
+    payload = dict(payload)
+    payload["analytics"] = analytics_data
 
     body = bwr.build_markdown(payload, curr_rows, None, out_dir / ".cache" / ("limitations-%s.md" % date))
     period = payload["totals"].get("prev_date") or "нет"
@@ -245,9 +297,14 @@ def build_client_report(client, payload, curr_rows, sources_summary, month_summa
 
     if "xlsx" in formats:
         xlsx_path = out_dir / ("%s-competitor-watch.xlsx" % date)
-        bwr.build_xlsx(payload, curr_rows, xlsx_path,
-                       settings_note="собрано Агентом 1 из публичных страниц без логина")
-        written["xlsx"] = xlsx_path
+        # an unavailable openpyxl must not kill the whole client run: the report
+        # is still delivered as MD, and the problem is recorded honestly.
+        try:
+            bwr.build_xlsx(payload, curr_rows, xlsx_path,
+                           settings_note="собрано Агентом 1 из публичных страниц без логина")
+            written["xlsx"] = xlsx_path
+        except ImportError as exc:
+            problems.append("XLSX не собран (нет openpyxl): %s" % exc)
 
     if "pdf" in formats or "docx" in formats:
         docx_path = out_dir / ("%s-competitor-watch.docx" % date)
@@ -261,4 +318,32 @@ def build_client_report(client, payload, curr_rows, sources_summary, month_summa
                 written["pdf"] = docx_to_pdf(docx_path, out_dir / ("%s-competitor-watch.pdf" % date))
             except Exception as exc:
                 problems.append("PDF не собран: %s" % exc)
-    return {"files": written, "problems": problems}
+
+    # ---- почта (WP2 + контракт v2 §5.4) --------------------------------
+    # Легаси-совместимость: send_email без email_mode = старый булев флаг.
+    if email_mode is None:
+        email_mode = delivery_email.DEFAULT_EMAIL_MODE if send_email is None \
+            else ("always" if send_email else "never")
+    email_records = []
+    if dry_run:
+        # D-DRY: сухой прогон не создаёт ни транспорта, ни записей отправки.
+        email_status = delivery_email.DRY_RUN_REASON
+    else:
+        allowed, email_status = delivery_email.email_allowed(email_mode, agent_settings)
+        if allowed:
+            transport = smtp_transport or delivery_email.email_transport(config_dir)
+            recipients = delivery_email.recipients_from(agent_settings, client)
+            email_records = delivery_email.deliver_report(
+                written, recipients, out_dir, date, transport=transport,
+                prev_date=payload["totals"].get("prev_date"), curr_date=date, client=client,
+                environ=environ)
+            email_status = delivery_email.journal_status(email_records)
+            if analytics_data is not None:
+                analytics_data["email"] = email_records
+                analytics.write_analytics(analytics_file, analytics_data)
+
+    return {"files": written, "problems": problems, "analytics": analytics_file,
+            "metrics": (analytics_data or {}).get("metrics"),
+            "truth": (analytics_data or {}).get("truth"),
+            "email": email_records, "email_mode": email_mode,
+            "email_status": email_status}

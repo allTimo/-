@@ -1,8 +1,8 @@
 {
- "generatedAt": "2026-11-01T20:36:54.688Z",
- "generatedAtMs": 1793565414688,
- "durationMs": 3753,
- "today": "2026-11-01",
+ "generatedAt": "2026-11-13T18:34:02.350Z",
+ "generatedAtMs": 1794594842350,
+ "durationMs": 4301,
+ "today": "2026-11-13",
  "workspaceRoot": "C:\\Users\\Артем\\Desktop\\тестDH",
  "projectDir": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents",
  "dashboardDir": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\dashboard",
@@ -14,15 +14,15 @@
    "label": "Логи сессий DSH (multi-frame zstd + JSONL)",
    "path": "C:\\Users\\Артем\\.dsh\\sessions",
    "exists": true,
-   "items": 40,
-   "note": "events: 42321"
+   "items": 140,
+   "note": "events: 102065"
   },
   {
    "id": "projcache",
    "label": "Проекция сессий (tokenUsage, agentTeam)",
    "path": "C:\\Users\\Артем\\.dsh\\storages\\session_projcache\\sessions",
    "exists": true,
-   "items": 40,
+   "items": 140,
    "note": "контрольные суммы токенов"
   },
   {
@@ -78,8 +78,8 @@
    "label": "Профиль DSH (что реально подключено)",
    "path": "C:\\Users\\Артем\\.dsh\\profiles\\desktop\\package.json",
    "exists": true,
-   "items": 28,
-   "note": "бандлов: 28, сообщества: 12"
+   "items": 9,
+   "note": "бандлов: 9, сообщества: 3"
   },
   {
    "id": "integrations",
@@ -94,7 +94,7 @@
    "label": "Реестр источников мониторинга",
    "path": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\registry\\sources.yaml",
    "exists": true,
-   "items": 7,
+   "items": 8,
    "note": "включено: 6"
   },
   {
@@ -110,8 +110,8 @@
    "label": "Журнал запусков источников",
    "path": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\01-competitor-watch\\data\\source-runs.jsonl",
    "exists": true,
-   "items": 20,
-   "note": "запусков: 20"
+   "items": 82,
+   "note": "запусков: 82"
   },
   {
    "id": "agent-tabs",
@@ -136,6 +136,22 @@
    "exists": true,
    "items": 6,
    "note": "найдено 6"
+  },
+  {
+   "id": "agent1-status",
+   "label": "Статус Агента 1 (последний прогон)",
+   "path": "registry/runs.jsonl + registry/results.yaml + data/**/snapshots/*",
+   "exists": true,
+   "items": 47,
+   "note": "Работа сделана — Последний прогон 2026-11-12 21:07:07 — результат ok, артефакт 2026-11-12-competitor-watch.md."
+  },
+  {
+   "id": "competitor-analytics",
+   "label": "Аналитика конкурентов от движка (по клиентам)",
+   "path": "01-competitor-watch/reports/clients/*/.cache/analytics-<дата>.json",
+   "exists": true,
+   "items": 2,
+   "note": "клиентов 2, конкурентов 7, лотов 20"
   },
   {
    "id": "agent-settings",
@@ -166,7 +182,7 @@
    "label": "Структура левого меню",
    "path": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\dashboard\\config\\nav.yaml",
    "exists": true,
-   "items": 25,
+   "items": 27,
    "note": "правится одним файлом"
   },
   {
@@ -198,8 +214,8 @@
    "label": "Журнал прогонов",
    "path": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\registry\\runs.jsonl",
    "exists": true,
-   "items": 12,
-   "note": "успешно: 12, ошибок: 0"
+   "items": 54,
+   "note": "успешно: 51, ошибок: 3"
   },
   {
    "id": "invoices",
@@ -214,40 +230,40 @@
    "label": "История переключений тумблеров (копии .bak-*)",
    "path": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\registry",
    "exists": true,
-   "items": 88,
-   "note": "агенты: 57, источники: 31"
+   "items": 89,
+   "note": "агенты: 58, источники: 31"
   }
  ],
  "totals": {
-  "sessions": 40,
-  "events": 42321,
+  "sessions": 140,
+  "events": 102065,
   "agents": 4,
   "agentsEnabled": 1,
-  "members": 17,
+  "members": 85,
   "tasks": 83,
   "projects": 1,
-  "alerts": 6,
+  "alerts": 7,
   "clients": 4,
   "services": 3,
   "subscriptions": 5,
-  "runs": 12,
+  "runs": 54,
   "revenueRub": 28500,
-  "marginRub": 28257.8002,
-  "alertsCritical": 2,
+  "marginRub": 28242.9497,
+  "alertsCritical": 3,
   "integrations": 12,
-  "integrationsConnected": 10,
-  "sources": 7,
+  "integrationsConnected": 1,
+  "sources": 8,
   "sourcesEnabled": 6,
   "lots": 304,
   "tokens": {
-   "inputTokens": 38887036,
-   "outputTokens": 5785828,
-   "cacheReadTokens": 1182128187,
+   "inputTokens": 91760382,
+   "outputTokens": 14096999,
+   "cacheReadTokens": 2617163710,
    "cacheWriteTokens": 0,
-   "totalTokens": 1226948917
+   "totalTokens": 2723168957
   },
-  "usd": 41.379,
-  "rub": 3333.39,
+  "usd": 92.5086,
+  "rub": 7452.25,
   "rubComplete": false
  },
  "pricing": {
@@ -278,6 +294,18 @@
  },
  "history": {
   "agents": {
+   "agent-1-competitor-watch": {
+    "at": 1794345388911.2434,
+    "previous": true,
+    "now": false,
+    "backup": "agents.yaml.bak-20261113-212553-396"
+   },
+   "agent-2-direct-semantics": {
+    "at": 1793530368766.9883,
+    "previous": false,
+    "now": true,
+    "backup": "agents.yaml.bak-20261101-135250-646"
+   },
    "agent-3-creative": {
     "at": 1793530368766.9883,
     "previous": true,
@@ -289,12 +317,6 @@
     "previous": true,
     "now": false,
     "backup": "agents.yaml.bak-20261101-133823-320"
-   },
-   "agent-1-competitor-watch": {
-    "at": 1793460449487.3916,
-    "previous": false,
-    "now": true,
-    "backup": "agents.yaml.bak-20261031-182730"
    }
   },
   "sources": {
@@ -343,8 +365,8 @@
   },
   "backups": {
    "agents": {
-    "count": 57,
-    "newestAt": 1793530368766.9883
+    "count": 58,
+    "newestAt": 1794345388911.2434
    },
    "sources": {
     "count": 31,
@@ -356,6 +378,26 @@
   {
    "level": "warn",
    "message": "prices: для 10 моделей не опубликована цена чтения из кэша (deepseek/deepseek-v4.1-flash, deepseek/deepseek-v4-flash, deepseek/deepseek-v4-flash-vision-exp) — кэш считается по цене входа, это ОЦЕНКА СВЕРХУ"
+  },
+  {
+   "level": "warn",
+   "message": "integration vision-router: в каталоге отмечено как подключённое, по факту — установлено, выключено из загрузки"
+  },
+  {
+   "level": "warn",
+   "message": "integration delegate-router: в каталоге отмечено как подключённое, по факту — установлено, выключено из загрузки"
+  },
+  {
+   "level": "warn",
+   "message": "integration scrape-webpage: в каталоге отмечено как подключённое, по факту — не установлено"
+  },
+  {
+   "level": "warn",
+   "message": "integration skill-browser: в каталоге отмечено как подключённое, по факту — установлено, выключено из загрузки"
+  },
+  {
+   "level": "warn",
+   "message": "integration superdesign: в каталоге отмечено как подключённое, по факту — не установлено"
   }
  ],
  "files": [
@@ -367,47 +409,47 @@
   {
    "name": "integrations.json",
    "path": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\dashboard\\public\\data\\integrations.json",
-   "bytes": 67040
+   "bytes": 64461
   },
   {
    "name": "sources.json",
    "path": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\dashboard\\public\\data\\sources.json",
-   "bytes": 12973
+   "bytes": 14791
   },
   {
    "name": "analytics.json",
    "path": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\dashboard\\public\\data\\analytics.json",
-   "bytes": 8211
+   "bytes": 9764
   },
   {
    "name": "settings.json",
    "path": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\dashboard\\public\\data\\settings.json",
-   "bytes": 39677
+   "bytes": 35294
   },
   {
    "name": "alerts.json",
    "path": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\dashboard\\public\\data\\alerts.json",
-   "bytes": 3674
+   "bytes": 4464
   },
   {
    "name": "service.json",
    "path": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\dashboard\\public\\data\\service.json",
-   "bytes": 26819
+   "bytes": 72773
   },
   {
    "name": "nav.json",
    "path": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\dashboard\\public\\data\\nav.json",
-   "bytes": 4233
+   "bytes": 4499
   },
   {
    "name": "analytics2.json",
    "path": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\dashboard\\public\\data\\analytics2.json",
-   "bytes": 31238
+   "bytes": 32055
   },
   {
    "name": "ads.json",
    "path": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\dashboard\\public\\data\\ads.json",
-   "bytes": 29404
+   "bytes": 29813
   },
   {
    "name": "agent-tabs.json",
@@ -417,42 +459,62 @@
   {
    "name": "agent-settings.json",
    "path": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\dashboard\\public\\data\\agent-settings.json",
-   "bytes": 8633
+   "bytes": 12220
   },
   {
    "name": "candidates.json",
    "path": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\dashboard\\public\\data\\candidates.json",
-   "bytes": 5138
+   "bytes": 5452
   },
   {
    "name": "competitor-report.json",
    "path": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\dashboard\\public\\data\\competitor-report.json",
-   "bytes": 192879
+   "bytes": 193330
+  },
+  {
+   "name": "agent1-status.json",
+   "path": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\dashboard\\public\\data\\agent1-status.json",
+   "bytes": 13483
+  },
+  {
+   "name": "agent-runs.json",
+   "path": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\dashboard\\public\\data\\agent-runs.json",
+   "bytes": 13255
+  },
+  {
+   "name": "competitor-analytics.json",
+   "path": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\dashboard\\public\\data\\competitor-analytics.json",
+   "bytes": 43276
+  },
+  {
+   "name": "skills.json",
+   "path": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\dashboard\\public\\data\\skills.json",
+   "bytes": 11447
   },
   {
    "name": "agents.json",
    "path": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\dashboard\\public\\data\\agents.json",
-   "bytes": 18226
+   "bytes": 70222
   },
   {
    "name": "tasks.json",
    "path": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\dashboard\\public\\data\\tasks.json",
-   "bytes": 484409
+   "bytes": 490499
   },
   {
    "name": "projects.json",
    "path": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\dashboard\\public\\data\\projects.json",
-   "bytes": 2881
+   "bytes": 4148
   },
   {
    "name": "sessions.json",
    "path": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\dashboard\\public\\data\\sessions.json",
-   "bytes": 82750
+   "bytes": 323965
   },
   {
    "name": "usage.json",
    "path": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\dashboard\\public\\data\\usage.json",
-   "bytes": 14749
+   "bytes": 48875
   }
  ],
  "dataFiles": [
@@ -470,6 +532,10 @@
   "agent-settings.json",
   "candidates.json",
   "competitor-report.json",
+  "agent1-status.json",
+  "agent-runs.json",
+  "competitor-analytics.json",
+  "skills.json",
   "agents.json",
   "tasks.json",
   "projects.json",

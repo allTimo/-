@@ -1,0 +1,2437 @@
+{
+ "network": "ok",
+ "bidmodifiers": [
+  {
+   "CampaignId": 714762514,
+   "AdGroupId": null,
+   "Id": 102124097692,
+   "Level": "CAMPAIGN",
+   "Type": "MOBILE_ADJUSTMENT"
+  },
+  {
+   "CampaignId": 715702484,
+   "AdGroupId": null,
+   "Id": 102131311775,
+   "Level": "CAMPAIGN",
+   "Type": "MOBILE_ADJUSTMENT"
+  },
+  {
+   "CampaignId": 713617279,
+   "AdGroupId": null,
+   "Id": 112108137633,
+   "Level": "CAMPAIGN",
+   "Type": "DEMOGRAPHICS_ADJUSTMENT"
+  },
+  {
+   "CampaignId": 713617279,
+   "AdGroupId": null,
+   "Id": 112108137634,
+   "Level": "CAMPAIGN",
+   "Type": "DEMOGRAPHICS_ADJUSTMENT"
+  },
+  {
+   "CampaignId": 713935594,
+   "AdGroupId": null,
+   "Id": 112108765415,
+   "Level": "CAMPAIGN",
+   "Type": "DEMOGRAPHICS_ADJUSTMENT"
+  },
+  {
+   "CampaignId": 713935594,
+   "AdGroupId": null,
+   "Id": 112108765416,
+   "Level": "CAMPAIGN",
+   "Type": "DEMOGRAPHICS_ADJUSTMENT"
+  },
+  {
+   "CampaignId": 713311426,
+   "AdGroupId": null,
+   "Id": 112108982949,
+   "Level": "CAMPAIGN",
+   "Type": "DEMOGRAPHICS_ADJUSTMENT"
+  },
+  {
+   "CampaignId": 713311426,
+   "AdGroupId": null,
+   "Id": 112108982968,
+   "Level": "CAMPAIGN",
+   "Type": "DEMOGRAPHICS_ADJUSTMENT"
+  },
+  {
+   "CampaignId": 713617279,
+   "AdGroupId": null,
+   "Id": 112109417683,
+   "Level": "CAMPAIGN",
+   "Type": "DEMOGRAPHICS_ADJUSTMENT"
+  },
+  {
+   "CampaignId": 714038332,
+   "AdGroupId": null,
+   "Id": 112109838715,
+   "Level": "CAMPAIGN",
+   "Type": "DEMOGRAPHICS_ADJUSTMENT"
+  },
+  {
+   "CampaignId": 714038332,
+   "AdGroupId": null,
+   "Id": 112109839040,
+   "Level": "CAMPAIGN",
+   "Type": "DEMOGRAPHICS_ADJUSTMENT"
+  },
+  {
+   "CampaignId": 714762514,
+   "AdGroupId": null,
+   "Id": 112121609362,
+   "Level": "CAMPAIGN",
+   "Type": "DEMOGRAPHICS_ADJUSTMENT"
+  },
+  {
+   "CampaignId": 714762514,
+   "AdGroupId": null,
+   "Id": 112121609363,
+   "Level": "CAMPAIGN",
+   "Type": "DEMOGRAPHICS_ADJUSTMENT"
+  },
+  {
+   "CampaignId": 715702484,
+   "AdGroupId": null,
+   "Id": 112131311772,
+   "Level": "CAMPAIGN",
+   "Type": "DEMOGRAPHICS_ADJUSTMENT"
+  },
+  {
+   "CampaignId": 715702484,
+   "AdGroupId": null,
+   "Id": 112131311773,
+   "Level": "CAMPAIGN",
+   "Type": "DEMOGRAPHICS_ADJUSTMENT"
+  },
+  {
+   "CampaignId": 715810384,
+   "AdGroupId": null,
+   "Id": 112131981906,
+   "Level": "CAMPAIGN",
+   "Type": "DEMOGRAPHICS_ADJUSTMENT"
+  },
+  {
+   "CampaignId": 715810384,
+   "AdGroupId": null,
+   "Id": 112131981907,
+   "Level": "CAMPAIGN",
+   "Type": "DEMOGRAPHICS_ADJUSTMENT"
+  },
+  {
+   "CampaignId": 713617279,
+   "AdGroupId": null,
+   "Id": 122109837990,
+   "Level": "CAMPAIGN",
+   "Type": "RETARGETING_ADJUSTMENT"
+  },
+  {
+   "CampaignId": 714038332,
+   "AdGroupId": null,
+   "Id": 122109837994,
+   "Level": "CAMPAIGN",
+   "Type": "RETARGETING_ADJUSTMENT"
+  },
+  {
+   "CampaignId": 713311426,
+   "AdGroupId": null,
+   "Id": 122109837996,
+   "Level": "CAMPAIGN",
+   "Type": "RETARGETING_ADJUSTMENT"
+  },
+  {
+   "CampaignId": 713935594,
+   "AdGroupId": null,
+   "Id": 122109838006,
+   "Level": "CAMPAIGN",
+   "Type": "RETARGETING_ADJUSTMENT"
+  },
+  {
+   "CampaignId": 714762514,
+   "AdGroupId": null,
+   "Id": 122121609360,
+   "Level": "CAMPAIGN",
+   "Type": "RETARGETING_ADJUSTMENT"
+  },
+  {
+   "CampaignId": 715702484,
+   "AdGroupId": null,
+   "Id": 122131311777,
+   "Level": "CAMPAIGN",
+   "Type": "RETARGETING_ADJUSTMENT"
+  },
+  {
+   "CampaignId": 715810384,
+   "AdGroupId": null,
+   "Id": 122131981909,
+   "Level": "CAMPAIGN",
+   "Type": "RETARGETING_ADJUSTMENT"
+  },
+  {
+   "CampaignId": 714762514,
+   "AdGroupId": null,
+   "Id": 132121609366,
+   "Level": "CAMPAIGN",
+   "Type": "REGIONAL_ADJUSTMENT"
+  },
+  {
+   "CampaignId": 714762514,
+   "AdGroupId": null,
+   "Id": 132121609367,
+   "Level": "CAMPAIGN",
+   "Type": "REGIONAL_ADJUSTMENT"
+  },
+  {
+   "CampaignId": 714762514,
+   "AdGroupId": null,
+   "Id": 132121609368,
+   "Level": "CAMPAIGN",
+   "Type": "REGIONAL_ADJUSTMENT"
+  },
+  {
+   "CampaignId": 714762514,
+   "AdGroupId": null,
+   "Id": 132121609369,
+   "Level": "CAMPAIGN",
+   "Type": "REGIONAL_ADJUSTMENT"
+  },
+  {
+   "CampaignId": 714762514,
+   "AdGroupId": null,
+   "Id": 132121609370,
+   "Level": "CAMPAIGN",
+   "Type": "REGIONAL_ADJUSTMENT"
+  },
+  {
+   "CampaignId": 714762514,
+   "AdGroupId": null,
+   "Id": 132121609371,
+   "Level": "CAMPAIGN",
+   "Type": "REGIONAL_ADJUSTMENT"
+  },
+  {
+   "CampaignId": 714762514,
+   "AdGroupId": null,
+   "Id": 132121609372,
+   "Level": "CAMPAIGN",
+   "Type": "REGIONAL_ADJUSTMENT"
+  },
+  {
+   "CampaignId": 714762514,
+   "AdGroupId": null,
+   "Id": 132121609373,
+   "Level": "CAMPAIGN",
+   "Type": "REGIONAL_ADJUSTMENT"
+  },
+  {
+   "CampaignId": 714762514,
+   "AdGroupId": null,
+   "Id": 132121609374,
+   "Level": "CAMPAIGN",
+   "Type": "REGIONAL_ADJUSTMENT"
+  },
+  {
+   "CampaignId": 714762514,
+   "AdGroupId": null,
+   "Id": 132121609375,
+   "Level": "CAMPAIGN",
+   "Type": "REGIONAL_ADJUSTMENT"
+  },
+  {
+   "CampaignId": 714762514,
+   "AdGroupId": null,
+   "Id": 132121609376,
+   "Level": "CAMPAIGN",
+   "Type": "REGIONAL_ADJUSTMENT"
+  },
+  {
+   "CampaignId": 714762514,
+   "AdGroupId": null,
+   "Id": 132121609377,
+   "Level": "CAMPAIGN",
+   "Type": "REGIONAL_ADJUSTMENT"
+  },
+  {
+   "CampaignId": 714762514,
+   "AdGroupId": null,
+   "Id": 132121609378,
+   "Level": "CAMPAIGN",
+   "Type": "REGIONAL_ADJUSTMENT"
+  },
+  {
+   "CampaignId": 714762514,
+   "AdGroupId": null,
+   "Id": 132121609379,
+   "Level": "CAMPAIGN",
+   "Type": "REGIONAL_ADJUSTMENT"
+  },
+  {
+   "CampaignId": 714762514,
+   "AdGroupId": null,
+   "Id": 132121609380,
+   "Level": "CAMPAIGN",
+   "Type": "REGIONAL_ADJUSTMENT"
+  },
+  {
+   "CampaignId": 714762514,
+   "AdGroupId": null,
+   "Id": 132121609381,
+   "Level": "CAMPAIGN",
+   "Type": "REGIONAL_ADJUSTMENT"
+  },
+  {
+   "CampaignId": 714762514,
+   "AdGroupId": null,
+   "Id": 132121609382,
+   "Level": "CAMPAIGN",
+   "Type": "REGIONAL_ADJUSTMENT"
+  },
+  {
+   "CampaignId": 714762514,
+   "AdGroupId": null,
+   "Id": 132121609383,
+   "Level": "CAMPAIGN",
+   "Type": "REGIONAL_ADJUSTMENT"
+  },
+  {
+   "CampaignId": 714762514,
+   "AdGroupId": null,
+   "Id": 132121609384,
+   "Level": "CAMPAIGN",
+   "Type": "REGIONAL_ADJUSTMENT"
+  },
+  {
+   "CampaignId": 714762514,
+   "AdGroupId": null,
+   "Id": 132121609385,
+   "Level": "CAMPAIGN",
+   "Type": "REGIONAL_ADJUSTMENT"
+  },
+  {
+   "CampaignId": 714762514,
+   "AdGroupId": null,
+   "Id": 132121609386,
+   "Level": "CAMPAIGN",
+   "Type": "REGIONAL_ADJUSTMENT"
+  },
+  {
+   "CampaignId": 714762514,
+   "AdGroupId": null,
+   "Id": 132121609387,
+   "Level": "CAMPAIGN",
+   "Type": "REGIONAL_ADJUSTMENT"
+  },
+  {
+   "CampaignId": 714762514,
+   "AdGroupId": null,
+   "Id": 132121609388,
+   "Level": "CAMPAIGN",
+   "Type": "REGIONAL_ADJUSTMENT"
+  },
+  {
+   "CampaignId": 714762514,
+   "AdGroupId": null,
+   "Id": 132121609389,
+   "Level": "CAMPAIGN",
+   "Type": "REGIONAL_ADJUSTMENT"
+  },
+  {
+   "CampaignId": 715702484,
+   "AdGroupId": null,
+   "Id": 132131311780,
+   "Level": "CAMPAIGN",
+   "Type": "REGIONAL_ADJUSTMENT"
+  },
+  {
+   "CampaignId": 715702484,
+   "AdGroupId": null,
+   "Id": 132131311781,
+   "Level": "CAMPAIGN",
+   "Type": "REGIONAL_ADJUSTMENT"
+  },
+  {
+   "CampaignId": 715702484,
+   "AdGroupId": null,
+   "Id": 132131311782,
+   "Level": "CAMPAIGN",
+   "Type": "REGIONAL_ADJUSTMENT"
+  },
+  {
+   "CampaignId": 715702484,
+   "AdGroupId": null,
+   "Id": 132131311783,
+   "Level": "CAMPAIGN",
+   "Type": "REGIONAL_ADJUSTMENT"
+  },
+  {
+   "CampaignId": 715702484,
+   "AdGroupId": null,
+   "Id": 132131311784,
+   "Level": "CAMPAIGN",
+   "Type": "REGIONAL_ADJUSTMENT"
+  },
+  {
+   "CampaignId": 715702484,
+   "AdGroupId": null,
+   "Id": 132131311785,
+   "Level": "CAMPAIGN",
+   "Type": "REGIONAL_ADJUSTMENT"
+  },
+  {
+   "CampaignId": 715702484,
+   "AdGroupId": null,
+   "Id": 132131311786,
+   "Level": "CAMPAIGN",
+   "Type": "REGIONAL_ADJUSTMENT"
+  },
+  {
+   "CampaignId": 715702484,
+   "AdGroupId": null,
+   "Id": 132131311787,
+   "Level": "CAMPAIGN",
+   "Type": "REGIONAL_ADJUSTMENT"
+  },
+  {
+   "CampaignId": 715702484,
+   "AdGroupId": null,
+   "Id": 132131311788,
+   "Level": "CAMPAIGN",
+   "Type": "REGIONAL_ADJUSTMENT"
+  },
+  {
+   "CampaignId": 715702484,
+   "AdGroupId": null,
+   "Id": 132131311789,
+   "Level": "CAMPAIGN",
+   "Type": "REGIONAL_ADJUSTMENT"
+  },
+  {
+   "CampaignId": 715702484,
+   "AdGroupId": null,
+   "Id": 132131311790,
+   "Level": "CAMPAIGN",
+   "Type": "REGIONAL_ADJUSTMENT"
+  },
+  {
+   "CampaignId": 715702484,
+   "AdGroupId": null,
+   "Id": 132131311791,
+   "Level": "CAMPAIGN",
+   "Type": "REGIONAL_ADJUSTMENT"
+  },
+  {
+   "CampaignId": 715702484,
+   "AdGroupId": null,
+   "Id": 132131311792,
+   "Level": "CAMPAIGN",
+   "Type": "REGIONAL_ADJUSTMENT"
+  },
+  {
+   "CampaignId": 715702484,
+   "AdGroupId": null,
+   "Id": 132131311793,
+   "Level": "CAMPAIGN",
+   "Type": "REGIONAL_ADJUSTMENT"
+  },
+  {
+   "CampaignId": 715702484,
+   "AdGroupId": null,
+   "Id": 132131311794,
+   "Level": "CAMPAIGN",
+   "Type": "REGIONAL_ADJUSTMENT"
+  },
+  {
+   "CampaignId": 715702484,
+   "AdGroupId": null,
+   "Id": 132131311795,
+   "Level": "CAMPAIGN",
+   "Type": "REGIONAL_ADJUSTMENT"
+  },
+  {
+   "CampaignId": 715702484,
+   "AdGroupId": null,
+   "Id": 132131311796,
+   "Level": "CAMPAIGN",
+   "Type": "REGIONAL_ADJUSTMENT"
+  },
+  {
+   "CampaignId": 715702484,
+   "AdGroupId": null,
+   "Id": 132131311797,
+   "Level": "CAMPAIGN",
+   "Type": "REGIONAL_ADJUSTMENT"
+  },
+  {
+   "CampaignId": 715702484,
+   "AdGroupId": null,
+   "Id": 132131311798,
+   "Level": "CAMPAIGN",
+   "Type": "REGIONAL_ADJUSTMENT"
+  },
+  {
+   "CampaignId": 715702484,
+   "AdGroupId": null,
+   "Id": 132131311799,
+   "Level": "CAMPAIGN",
+   "Type": "REGIONAL_ADJUSTMENT"
+  },
+  {
+   "CampaignId": 715702484,
+   "AdGroupId": null,
+   "Id": 132131311800,
+   "Level": "CAMPAIGN",
+   "Type": "REGIONAL_ADJUSTMENT"
+  },
+  {
+   "CampaignId": 715702484,
+   "AdGroupId": null,
+   "Id": 132131311801,
+   "Level": "CAMPAIGN",
+   "Type": "REGIONAL_ADJUSTMENT"
+  },
+  {
+   "CampaignId": 715702484,
+   "AdGroupId": null,
+   "Id": 132131311802,
+   "Level": "CAMPAIGN",
+   "Type": "REGIONAL_ADJUSTMENT"
+  },
+  {
+   "CampaignId": 715702484,
+   "AdGroupId": null,
+   "Id": 132131311803,
+   "Level": "CAMPAIGN",
+   "Type": "REGIONAL_ADJUSTMENT"
+  },
+  {
+   "CampaignId": 714038332,
+   "AdGroupId": null,
+   "Id": 232110630883,
+   "Level": "CAMPAIGN",
+   "Type": "SERP_LAYOUT_ADJUSTMENT"
+  },
+  {
+   "CampaignId": 714038332,
+   "AdGroupId": null,
+   "Id": 232110630884,
+   "Level": "CAMPAIGN",
+   "Type": "SERP_LAYOUT_ADJUSTMENT"
+  },
+  {
+   "CampaignId": 715810384,
+   "AdGroupId": null,
+   "Id": 232131981900,
+   "Level": "CAMPAIGN",
+   "Type": "SERP_LAYOUT_ADJUSTMENT"
+  },
+  {
+   "CampaignId": 715810384,
+   "AdGroupId": null,
+   "Id": 232131981901,
+   "Level": "CAMPAIGN",
+   "Type": "SERP_LAYOUT_ADJUSTMENT"
+  },
+  {
+   "CampaignId": 713311426,
+   "AdGroupId": null,
+   "Id": 262103959577,
+   "Level": "CAMPAIGN",
+   "Type": "SMART_TV_ADJUSTMENT"
+  },
+  {
+   "CampaignId": 713617279,
+   "AdGroupId": null,
+   "Id": 262108139762,
+   "Level": "CAMPAIGN",
+   "Type": "SMART_TV_ADJUSTMENT"
+  },
+  {
+   "CampaignId": 713935594,
+   "AdGroupId": null,
+   "Id": 262108765412,
+   "Level": "CAMPAIGN",
+   "Type": "SMART_TV_ADJUSTMENT"
+  },
+  {
+   "CampaignId": 714038332,
+   "AdGroupId": null,
+   "Id": 262109839454,
+   "Level": "CAMPAIGN",
+   "Type": "SMART_TV_ADJUSTMENT"
+  },
+  {
+   "CampaignId": 714762514,
+   "AdGroupId": null,
+   "Id": 262121609364,
+   "Level": "CAMPAIGN",
+   "Type": "SMART_TV_ADJUSTMENT"
+  },
+  {
+   "CampaignId": 715702484,
+   "AdGroupId": null,
+   "Id": 262131311778,
+   "Level": "CAMPAIGN",
+   "Type": "SMART_TV_ADJUSTMENT"
+  },
+  {
+   "CampaignId": 715810384,
+   "AdGroupId": null,
+   "Id": 262131981902,
+   "Level": "CAMPAIGN",
+   "Type": "SMART_TV_ADJUSTMENT"
+  },
+  {
+   "CampaignId": 713311426,
+   "AdGroupId": null,
+   "Id": 272103959576,
+   "Level": "CAMPAIGN",
+   "Type": "TABLET_ADJUSTMENT"
+  },
+  {
+   "CampaignId": 713935594,
+   "AdGroupId": null,
+   "Id": 272108982867,
+   "Level": "CAMPAIGN",
+   "Type": "TABLET_ADJUSTMENT"
+  },
+  {
+   "CampaignId": 713617279,
+   "AdGroupId": null,
+   "Id": 272109417682,
+   "Level": "CAMPAIGN",
+   "Type": "TABLET_ADJUSTMENT"
+  },
+  {
+   "CampaignId": 714038332,
+   "AdGroupId": null,
+   "Id": 272109839543,
+   "Level": "CAMPAIGN",
+   "Type": "TABLET_ADJUSTMENT"
+  },
+  {
+   "CampaignId": 714762514,
+   "AdGroupId": null,
+   "Id": 272124097691,
+   "Level": "CAMPAIGN",
+   "Type": "TABLET_ADJUSTMENT"
+  },
+  {
+   "CampaignId": 715702484,
+   "AdGroupId": null,
+   "Id": 272131311804,
+   "Level": "CAMPAIGN",
+   "Type": "TABLET_ADJUSTMENT"
+  },
+  {
+   "CampaignId": 715810384,
+   "AdGroupId": null,
+   "Id": 272131981904,
+   "Level": "CAMPAIGN",
+   "Type": "TABLET_ADJUSTMENT"
+  },
+  {
+   "CampaignId": 714762514,
+   "AdGroupId": null,
+   "Id": 282122677194,
+   "Level": "CAMPAIGN",
+   "Type": "DESKTOP_ONLY_ADJUSTMENT"
+  },
+  {
+   "CampaignId": 714038332,
+   "AdGroupId": null,
+   "Id": 282125601527,
+   "Level": "CAMPAIGN",
+   "Type": "DESKTOP_ONLY_ADJUSTMENT"
+  },
+  {
+   "CampaignId": 715702484,
+   "AdGroupId": null,
+   "Id": 282131311774,
+   "Level": "CAMPAIGN",
+   "Type": "DESKTOP_ONLY_ADJUSTMENT"
+  },
+  {
+   "CampaignId": 715810384,
+   "AdGroupId": null,
+   "Id": 282131981903,
+   "Level": "CAMPAIGN",
+   "Type": "DESKTOP_ONLY_ADJUSTMENT"
+  }
+ ],
+ "bids": {
+  "713311426": {
+   "count_sample": 20,
+   "bids": [
+    {
+     "Bid": 300000,
+     "StrategyPriority": "NORMAL",
+     "CampaignId": 713311426,
+     "AdGroupId": 5780512236,
+     "KeywordId": 57789018564
+    },
+    {
+     "Bid": 300000,
+     "StrategyPriority": "NORMAL",
+     "CampaignId": 713311426,
+     "AdGroupId": 5780512236,
+     "KeywordId": 57789018565
+    },
+    {
+     "Bid": 300000,
+     "StrategyPriority": "NORMAL",
+     "CampaignId": 713311426,
+     "AdGroupId": 5780512236,
+     "KeywordId": 57789018566
+    },
+    {
+     "Bid": 300000,
+     "StrategyPriority": "NORMAL",
+     "CampaignId": 713311426,
+     "AdGroupId": 5780512236,
+     "KeywordId": 57789018567
+    },
+    {
+     "Bid": 300000,
+     "StrategyPriority": "NORMAL",
+     "CampaignId": 713311426,
+     "AdGroupId": 5780512236,
+     "KeywordId": 57789018568
+    },
+    {
+     "Bid": 300000,
+     "StrategyPriority": "NORMAL",
+     "CampaignId": 713311426,
+     "AdGroupId": 5780512236,
+     "KeywordId": 57789018569
+    },
+    {
+     "Bid": 300000,
+     "StrategyPriority": "NORMAL",
+     "CampaignId": 713311426,
+     "AdGroupId": 5780512442,
+     "KeywordId": 57789018570
+    },
+    {
+     "Bid": 300000,
+     "StrategyPriority": "NORMAL",
+     "CampaignId": 713311426,
+     "AdGroupId": 5780512442,
+     "KeywordId": 57789018571
+    },
+    {
+     "Bid": 300000,
+     "StrategyPriority": "NORMAL",
+     "CampaignId": 713311426,
+     "AdGroupId": 5780512442,
+     "KeywordId": 57789018572
+    },
+    {
+     "Bid": 300000,
+     "StrategyPriority": "NORMAL",
+     "CampaignId": 713311426,
+     "AdGroupId": 5780512442,
+     "KeywordId": 57789018573
+    }
+   ]
+  },
+  "713935594": {
+   "count_sample": 1,
+   "bids": [
+    {
+     "Bid": 30000000,
+     "StrategyPriority": "NORMAL",
+     "CampaignId": 713935594,
+     "AdGroupId": 5793533706,
+     "KeywordId": 205793533706
+    }
+   ]
+  },
+  "714038332": {
+   "count_sample": 20,
+   "bids": [
+    {
+     "Bid": 300000,
+     "StrategyPriority": "NORMAL",
+     "CampaignId": 714038332,
+     "AdGroupId": 5794667108,
+     "KeywordId": 57968058055
+    },
+    {
+     "Bid": 300000,
+     "StrategyPriority": "NORMAL",
+     "CampaignId": 714038332,
+     "AdGroupId": 5794667108,
+     "KeywordId": 57968058056
+    },
+    {
+     "Bid": 300000,
+     "StrategyPriority": "NORMAL",
+     "CampaignId": 714038332,
+     "AdGroupId": 5794667108,
+     "KeywordId": 57968058057
+    },
+    {
+     "Bid": 300000,
+     "StrategyPriority": "NORMAL",
+     "CampaignId": 714038332,
+     "AdGroupId": 5794667108,
+     "KeywordId": 57968058059
+    },
+    {
+     "Bid": 300000,
+     "StrategyPriority": "NORMAL",
+     "CampaignId": 714038332,
+     "AdGroupId": 5794667108,
+     "KeywordId": 57968058060
+    },
+    {
+     "Bid": 300000,
+     "StrategyPriority": "NORMAL",
+     "CampaignId": 714038332,
+     "AdGroupId": 5794667108,
+     "KeywordId": 57968058061
+    },
+    {
+     "Bid": 300000,
+     "StrategyPriority": "NORMAL",
+     "CampaignId": 714038332,
+     "AdGroupId": 5794667108,
+     "KeywordId": 57968058062
+    },
+    {
+     "Bid": 300000,
+     "StrategyPriority": "NORMAL",
+     "CampaignId": 714038332,
+     "AdGroupId": 5794667108,
+     "KeywordId": 57968058063
+    },
+    {
+     "Bid": 300000,
+     "StrategyPriority": "NORMAL",
+     "CampaignId": 714038332,
+     "AdGroupId": 5794667108,
+     "KeywordId": 57968058064
+    },
+    {
+     "Bid": 300000,
+     "StrategyPriority": "NORMAL",
+     "CampaignId": 714038332,
+     "AdGroupId": 5794667108,
+     "KeywordId": 57968058065
+    }
+   ]
+  },
+  "714762514": {
+   "count_sample": 20,
+   "bids": [
+    {
+     "Bid": 300000,
+     "StrategyPriority": "NORMAL",
+     "CampaignId": 714762514,
+     "AdGroupId": 5803194160,
+     "KeywordId": 58133142691
+    },
+    {
+     "Bid": 300000,
+     "StrategyPriority": "NORMAL",
+     "CampaignId": 714762514,
+     "AdGroupId": 5803194160,
+     "KeywordId": 58133142692
+    },
+    {
+     "Bid": 300000,
+     "StrategyPriority": "NORMAL",
+     "CampaignId": 714762514,
+     "AdGroupId": 5803194160,
+     "KeywordId": 58133142693
+    },
+    {
+     "Bid": 300000,
+     "StrategyPriority": "NORMAL",
+     "CampaignId": 714762514,
+     "AdGroupId": 5803194160,
+     "KeywordId": 58133142694
+    },
+    {
+     "Bid": 300000,
+     "StrategyPriority": "NORMAL",
+     "CampaignId": 714762514,
+     "AdGroupId": 5803194160,
+     "KeywordId": 58133142695
+    },
+    {
+     "Bid": 300000,
+     "StrategyPriority": "NORMAL",
+     "CampaignId": 714762514,
+     "AdGroupId": 5803194160,
+     "KeywordId": 58133142696
+    },
+    {
+     "Bid": 300000,
+     "StrategyPriority": "NORMAL",
+     "CampaignId": 714762514,
+     "AdGroupId": 5803194160,
+     "KeywordId": 58133142697
+    },
+    {
+     "Bid": 300000,
+     "StrategyPriority": "NORMAL",
+     "CampaignId": 714762514,
+     "AdGroupId": 5803194160,
+     "KeywordId": 58133142698
+    },
+    {
+     "Bid": 300000,
+     "StrategyPriority": "NORMAL",
+     "CampaignId": 714762514,
+     "AdGroupId": 5803194160,
+     "KeywordId": 58133142699
+    },
+    {
+     "Bid": 300000,
+     "StrategyPriority": "NORMAL",
+     "CampaignId": 714762514,
+     "AdGroupId": 5803194160,
+     "KeywordId": 58133142700
+    }
+   ]
+  },
+  "715702484": {
+   "count_sample": 20,
+   "bids": [
+    {
+     "Bid": 300000,
+     "StrategyPriority": "NORMAL",
+     "CampaignId": 715702484,
+     "AdGroupId": 5819038929,
+     "KeywordId": 58391826031
+    },
+    {
+     "Bid": 300000,
+     "StrategyPriority": "NORMAL",
+     "CampaignId": 715702484,
+     "AdGroupId": 5819038929,
+     "KeywordId": 58391826032
+    },
+    {
+     "Bid": 300000,
+     "StrategyPriority": "NORMAL",
+     "CampaignId": 715702484,
+     "AdGroupId": 5819038929,
+     "KeywordId": 58391826033
+    },
+    {
+     "Bid": 300000,
+     "StrategyPriority": "NORMAL",
+     "CampaignId": 715702484,
+     "AdGroupId": 5819038929,
+     "KeywordId": 58391826034
+    },
+    {
+     "Bid": 300000,
+     "StrategyPriority": "NORMAL",
+     "CampaignId": 715702484,
+     "AdGroupId": 5819038929,
+     "KeywordId": 58391826035
+    },
+    {
+     "Bid": 300000,
+     "StrategyPriority": "NORMAL",
+     "CampaignId": 715702484,
+     "AdGroupId": 5819038929,
+     "KeywordId": 58391826036
+    },
+    {
+     "Bid": 300000,
+     "StrategyPriority": "NORMAL",
+     "CampaignId": 715702484,
+     "AdGroupId": 5819038929,
+     "KeywordId": 58391826037
+    },
+    {
+     "Bid": 300000,
+     "StrategyPriority": "NORMAL",
+     "CampaignId": 715702484,
+     "AdGroupId": 5819038929,
+     "KeywordId": 58391826038
+    },
+    {
+     "Bid": 300000,
+     "StrategyPriority": "NORMAL",
+     "CampaignId": 715702484,
+     "AdGroupId": 5819038929,
+     "KeywordId": 58391826039
+    },
+    {
+     "Bid": 300000,
+     "StrategyPriority": "NORMAL",
+     "CampaignId": 715702484,
+     "AdGroupId": 5819038929,
+     "KeywordId": 58391826040
+    }
+   ]
+  },
+  "715810384": {
+   "count_sample": 20,
+   "bids": [
+    {
+     "Bid": 300000,
+     "StrategyPriority": "NORMAL",
+     "CampaignId": 715810384,
+     "AdGroupId": 5820354623,
+     "KeywordId": 58421325799
+    },
+    {
+     "Bid": 300000,
+     "StrategyPriority": "NORMAL",
+     "CampaignId": 715810384,
+     "AdGroupId": 5820354623,
+     "KeywordId": 58421325800
+    },
+    {
+     "Bid": 300000,
+     "StrategyPriority": "NORMAL",
+     "CampaignId": 715810384,
+     "AdGroupId": 5820354623,
+     "KeywordId": 58421325801
+    },
+    {
+     "Bid": 300000,
+     "StrategyPriority": "NORMAL",
+     "CampaignId": 715810384,
+     "AdGroupId": 5820354623,
+     "KeywordId": 58421325802
+    },
+    {
+     "Bid": 300000,
+     "StrategyPriority": "NORMAL",
+     "CampaignId": 715810384,
+     "AdGroupId": 5820354623,
+     "KeywordId": 58421325803
+    },
+    {
+     "Bid": 300000,
+     "StrategyPriority": "NORMAL",
+     "CampaignId": 715810384,
+     "AdGroupId": 5820354623,
+     "KeywordId": 58421325804
+    },
+    {
+     "Bid": 300000,
+     "StrategyPriority": "NORMAL",
+     "CampaignId": 715810384,
+     "AdGroupId": 5820354623,
+     "KeywordId": 58421325805
+    },
+    {
+     "Bid": 300000,
+     "StrategyPriority": "NORMAL",
+     "CampaignId": 715810384,
+     "AdGroupId": 5820354623,
+     "KeywordId": 58421325806
+    },
+    {
+     "Bid": 300000,
+     "StrategyPriority": "NORMAL",
+     "CampaignId": 715810384,
+     "AdGroupId": 5820354623,
+     "KeywordId": 58421325807
+    },
+    {
+     "Bid": 300000,
+     "StrategyPriority": "NORMAL",
+     "CampaignId": 715810384,
+     "AdGroupId": 5820354623,
+     "KeywordId": 58421325808
+    }
+   ]
+  },
+  "713617279": {
+   "count_sample": 20,
+   "bids": [
+    {
+     "Bid": 300000,
+     "StrategyPriority": "NORMAL",
+     "CampaignId": 713617279,
+     "AdGroupId": 5788433506,
+     "KeywordId": 57868081116
+    },
+    {
+     "Bid": 300000,
+     "StrategyPriority": "NORMAL",
+     "CampaignId": 713617279,
+     "AdGroupId": 5788433506,
+     "KeywordId": 57868081117
+    },
+    {
+     "Bid": 300000,
+     "StrategyPriority": "NORMAL",
+     "CampaignId": 713617279,
+     "AdGroupId": 5788433506,
+     "KeywordId": 57868081118
+    },
+    {
+     "Bid": 300000,
+     "StrategyPriority": "NORMAL",
+     "CampaignId": 713617279,
+     "AdGroupId": 5788433506,
+     "KeywordId": 57868081119
+    },
+    {
+     "Bid": 300000,
+     "StrategyPriority": "NORMAL",
+     "CampaignId": 713617279,
+     "AdGroupId": 5788433506,
+     "KeywordId": 57868081120
+    },
+    {
+     "Bid": 300000,
+     "StrategyPriority": "NORMAL",
+     "CampaignId": 713617279,
+     "AdGroupId": 5788433506,
+     "KeywordId": 57868081121
+    },
+    {
+     "Bid": 300000,
+     "StrategyPriority": "NORMAL",
+     "CampaignId": 713617279,
+     "AdGroupId": 5788433506,
+     "KeywordId": 57868081122
+    },
+    {
+     "Bid": 300000,
+     "StrategyPriority": "NORMAL",
+     "CampaignId": 713617279,
+     "AdGroupId": 5788433506,
+     "KeywordId": 57868081123
+    },
+    {
+     "Bid": 300000,
+     "StrategyPriority": "NORMAL",
+     "CampaignId": 713617279,
+     "AdGroupId": 5788433506,
+     "KeywordId": 57868081124
+    },
+    {
+     "Bid": 300000,
+     "StrategyPriority": "NORMAL",
+     "CampaignId": 713617279,
+     "AdGroupId": 5788433506,
+     "KeywordId": 57868081125
+    }
+   ]
+  }
+ },
+ "last14": "ok",
+ "audience_targets": [],
+ "retargetinglists": [
+  {
+   "Type": "RETARGETING",
+   "Id": 42251315,
+   "Scope": "FOR_TARGETS_AND_ADJUSTMENTS",
+   "Name": "Исключение: спам-звонки 01.09.2026",
+   "Rules": [
+    {
+     "Arguments": [
+      {
+       "MembershipLifeSpan": 540,
+       "ExternalId": 2059259583
+      }
+     ],
+     "Operator": "ANY"
+    }
+   ]
+  },
+  {
+   "Type": "AUDIENCE",
+   "Id": 43247191,
+   "Scope": "FOR_TARGETS_ONLY",
+   "Name": "Интересы и привычки",
+   "Rules": [
+    {
+     "Arguments": [
+      {
+       "MembershipLifeSpan": 0,
+       "ExternalId": 19000107580
+      }
+     ],
+     "Operator": "ANY"
+    }
+   ]
+  }
+ ],
+ "ads_meta": [
+  {
+   "Id": 1917616507621200727,
+   "CampaignId": 713311426,
+   "AdGroupId": 5780512236,
+   "Status": "ACCEPTED",
+   "State": "ON",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1919379376946362386,
+   "CampaignId": 713311426,
+   "AdGroupId": 5780512236,
+   "Status": "ACCEPTED",
+   "State": "ON",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1917616507621200728,
+   "CampaignId": 713311426,
+   "AdGroupId": 5780512442,
+   "Status": "ACCEPTED",
+   "State": "ON",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1919379376946362387,
+   "CampaignId": 713311426,
+   "AdGroupId": 5780512442,
+   "Status": "ACCEPTED",
+   "State": "ON",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1917616507621200729,
+   "CampaignId": 713311426,
+   "AdGroupId": 5780512443,
+   "Status": "ACCEPTED",
+   "State": "ON",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1919379376946362388,
+   "CampaignId": 713311426,
+   "AdGroupId": 5780512443,
+   "Status": "ACCEPTED",
+   "State": "ON",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1922288215487321221,
+   "CampaignId": 714762514,
+   "AdGroupId": 5803194160,
+   "Status": "ACCEPTED",
+   "State": "OFF",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1922288229445634503,
+   "CampaignId": 714762514,
+   "AdGroupId": 5803194476,
+   "Status": "ACCEPTED",
+   "State": "OFF",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1922288459227369100,
+   "CampaignId": 714762514,
+   "AdGroupId": 5803194918,
+   "Status": "UNKNOWN",
+   "State": "ARCHIVED",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1922288662163399081,
+   "CampaignId": 714762514,
+   "AdGroupId": 5803195137,
+   "Status": "ACCEPTED",
+   "State": "OFF",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1922288795312533686,
+   "CampaignId": 714762514,
+   "AdGroupId": 5803195234,
+   "Status": "ACCEPTED",
+   "State": "OFF",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1922289105620941352,
+   "CampaignId": 714762514,
+   "AdGroupId": 5803195538,
+   "Status": "ACCEPTED",
+   "State": "OFF",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1926088128747511959,
+   "CampaignId": 715810384,
+   "AdGroupId": 5820354623,
+   "Status": "ACCEPTED",
+   "State": "OFF",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1926088128747511960,
+   "CampaignId": 715810384,
+   "AdGroupId": 5820354623,
+   "Status": "ACCEPTED",
+   "State": "OFF",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1926088128747511961,
+   "CampaignId": 715810384,
+   "AdGroupId": 5820354624,
+   "Status": "ACCEPTED",
+   "State": "OFF",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1926088128747511962,
+   "CampaignId": 715810384,
+   "AdGroupId": 5820354624,
+   "Status": "ACCEPTED",
+   "State": "OFF",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1926088128747511963,
+   "CampaignId": 715810384,
+   "AdGroupId": 5820354625,
+   "Status": "UNKNOWN",
+   "State": "ARCHIVED",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1926088128747511964,
+   "CampaignId": 715810384,
+   "AdGroupId": 5820354625,
+   "Status": "UNKNOWN",
+   "State": "ARCHIVED",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1926088128747511965,
+   "CampaignId": 715810384,
+   "AdGroupId": 5820354626,
+   "Status": "UNKNOWN",
+   "State": "ARCHIVED",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1926088128747511966,
+   "CampaignId": 715810384,
+   "AdGroupId": 5820354626,
+   "Status": "UNKNOWN",
+   "State": "ARCHIVED",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1926088128747511967,
+   "CampaignId": 715810384,
+   "AdGroupId": 5820354627,
+   "Status": "ACCEPTED",
+   "State": "OFF",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1926088128747511968,
+   "CampaignId": 715810384,
+   "AdGroupId": 5820354627,
+   "Status": "ACCEPTED",
+   "State": "OFF",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1926088128747511969,
+   "CampaignId": 715810384,
+   "AdGroupId": 5820354628,
+   "Status": "ACCEPTED",
+   "State": "OFF",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1926088128747511970,
+   "CampaignId": 715810384,
+   "AdGroupId": 5820354628,
+   "Status": "ACCEPTED",
+   "State": "OFF",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1926088128747511971,
+   "CampaignId": 715810384,
+   "AdGroupId": 5820354629,
+   "Status": "UNKNOWN",
+   "State": "ARCHIVED",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1926088128747511972,
+   "CampaignId": 715810384,
+   "AdGroupId": 5820354629,
+   "Status": "UNKNOWN",
+   "State": "ARCHIVED",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1926088128747511973,
+   "CampaignId": 715810384,
+   "AdGroupId": 5820354630,
+   "Status": "UNKNOWN",
+   "State": "ARCHIVED",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1926088128747511974,
+   "CampaignId": 715810384,
+   "AdGroupId": 5820354630,
+   "Status": "UNKNOWN",
+   "State": "ARCHIVED",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1926088128747511975,
+   "CampaignId": 715810384,
+   "AdGroupId": 5820354631,
+   "Status": "UNKNOWN",
+   "State": "ARCHIVED",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1926088128747511976,
+   "CampaignId": 715810384,
+   "AdGroupId": 5820354631,
+   "Status": "UNKNOWN",
+   "State": "ARCHIVED",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1926088128747511977,
+   "CampaignId": 715810384,
+   "AdGroupId": 5820354632,
+   "Status": "UNKNOWN",
+   "State": "ARCHIVED",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1926088128747511978,
+   "CampaignId": 715810384,
+   "AdGroupId": 5820354632,
+   "Status": "UNKNOWN",
+   "State": "ARCHIVED",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1926088128747511979,
+   "CampaignId": 715810384,
+   "AdGroupId": 5820354633,
+   "Status": "UNKNOWN",
+   "State": "ARCHIVED",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1926088128747511980,
+   "CampaignId": 715810384,
+   "AdGroupId": 5820354633,
+   "Status": "UNKNOWN",
+   "State": "ARCHIVED",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1926088128747511981,
+   "CampaignId": 715810384,
+   "AdGroupId": 5820354634,
+   "Status": "ACCEPTED",
+   "State": "OFF",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1926088128747511982,
+   "CampaignId": 715810384,
+   "AdGroupId": 5820354634,
+   "Status": "ACCEPTED",
+   "State": "OFF",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1926088128747511983,
+   "CampaignId": 715810384,
+   "AdGroupId": 5820354635,
+   "Status": "ACCEPTED",
+   "State": "OFF",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1926088128747511984,
+   "CampaignId": 715810384,
+   "AdGroupId": 5820354635,
+   "Status": "ACCEPTED",
+   "State": "OFF",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1926088128747511985,
+   "CampaignId": 715810384,
+   "AdGroupId": 5820354636,
+   "Status": "ACCEPTED",
+   "State": "OFF",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1926088128747511986,
+   "CampaignId": 715810384,
+   "AdGroupId": 5820354636,
+   "Status": "ACCEPTED",
+   "State": "OFF",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1926088128747511987,
+   "CampaignId": 715810384,
+   "AdGroupId": 5820354637,
+   "Status": "ACCEPTED",
+   "State": "OFF",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1926088128747511988,
+   "CampaignId": 715810384,
+   "AdGroupId": 5820354637,
+   "Status": "ACCEPTED",
+   "State": "OFF",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1926088128747511989,
+   "CampaignId": 715810384,
+   "AdGroupId": 5820354638,
+   "Status": "ACCEPTED",
+   "State": "OFF",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1926088128747511990,
+   "CampaignId": 715810384,
+   "AdGroupId": 5820354638,
+   "Status": "ACCEPTED",
+   "State": "OFF",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1926088128747511991,
+   "CampaignId": 715810384,
+   "AdGroupId": 5820354639,
+   "Status": "ACCEPTED",
+   "State": "OFF",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1926088128747511992,
+   "CampaignId": 715810384,
+   "AdGroupId": 5820354639,
+   "Status": "ACCEPTED",
+   "State": "OFF",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1919770602298258496,
+   "CampaignId": 713935594,
+   "AdGroupId": 5793533706,
+   "Status": "ACCEPTED",
+   "State": "ON",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1919770602298258497,
+   "CampaignId": 713935594,
+   "AdGroupId": 5793533706,
+   "Status": "ACCEPTED",
+   "State": "ON",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1919770602298258494,
+   "CampaignId": 713935594,
+   "AdGroupId": 5793533706,
+   "Status": "ACCEPTED",
+   "State": "ON",
+   "Type": "SHOPPING_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1919770602298258495,
+   "CampaignId": 713935594,
+   "AdGroupId": 5793533706,
+   "Status": "ACCEPTED",
+   "State": "ON",
+   "Type": "LISTING_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1918742674890862971,
+   "CampaignId": 713617279,
+   "AdGroupId": 5788433506,
+   "Status": "ACCEPTED",
+   "State": "OFF",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1919379405938003401,
+   "CampaignId": 713617279,
+   "AdGroupId": 5788433506,
+   "Status": "ACCEPTED",
+   "State": "OFF",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1918742674890862974,
+   "CampaignId": 713617279,
+   "AdGroupId": 5788433507,
+   "Status": "ACCEPTED",
+   "State": "OFF",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1919379405938003402,
+   "CampaignId": 713617279,
+   "AdGroupId": 5788433507,
+   "Status": "ACCEPTED",
+   "State": "OFF",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1918742674890862977,
+   "CampaignId": 713617279,
+   "AdGroupId": 5788433508,
+   "Status": "ACCEPTED",
+   "State": "SUSPENDED",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1919379405938003403,
+   "CampaignId": 713617279,
+   "AdGroupId": 5788433508,
+   "Status": "ACCEPTED",
+   "State": "SUSPENDED",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1918742606168783618,
+   "CampaignId": 713617279,
+   "AdGroupId": 5788433509,
+   "Status": "UNKNOWN",
+   "State": "SUSPENDED",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1919379405938003404,
+   "CampaignId": 713617279,
+   "AdGroupId": 5788433509,
+   "Status": "UNKNOWN",
+   "State": "SUSPENDED",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1918742674890862980,
+   "CampaignId": 713617279,
+   "AdGroupId": 5788433510,
+   "Status": "UNKNOWN",
+   "State": "SUSPENDED",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1919379405938003405,
+   "CampaignId": 713617279,
+   "AdGroupId": 5788433510,
+   "Status": "ACCEPTED",
+   "State": "SUSPENDED",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1918742674890862983,
+   "CampaignId": 713617279,
+   "AdGroupId": 5788433511,
+   "Status": "UNKNOWN",
+   "State": "SUSPENDED",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1919379405938003406,
+   "CampaignId": 713617279,
+   "AdGroupId": 5788433511,
+   "Status": "ACCEPTED",
+   "State": "SUSPENDED",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1918742606168783630,
+   "CampaignId": 713617279,
+   "AdGroupId": 5788433512,
+   "Status": "ACCEPTED",
+   "State": "SUSPENDED",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1919379405938003407,
+   "CampaignId": 713617279,
+   "AdGroupId": 5788433512,
+   "Status": "UNKNOWN",
+   "State": "SUSPENDED",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1918762201956413776,
+   "CampaignId": 713617279,
+   "AdGroupId": 5788433513,
+   "Status": "UNKNOWN",
+   "State": "ARCHIVED",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1918762201956413777,
+   "CampaignId": 713617279,
+   "AdGroupId": 5788433514,
+   "Status": "UNKNOWN",
+   "State": "ARCHIVED",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1918762201956413778,
+   "CampaignId": 713617279,
+   "AdGroupId": 5788433516,
+   "Status": "UNKNOWN",
+   "State": "ARCHIVED",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1918762201956413779,
+   "CampaignId": 713617279,
+   "AdGroupId": 5788433517,
+   "Status": "UNKNOWN",
+   "State": "ARCHIVED",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1918762201956413780,
+   "CampaignId": 713617279,
+   "AdGroupId": 5788433518,
+   "Status": "UNKNOWN",
+   "State": "ARCHIVED",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1918762201956413781,
+   "CampaignId": 713617279,
+   "AdGroupId": 5788433519,
+   "Status": "ACCEPTED",
+   "State": "SUSPENDED",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1918762201956413782,
+   "CampaignId": 713617279,
+   "AdGroupId": 5788433520,
+   "Status": "ACCEPTED",
+   "State": "SUSPENDED",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1918762201956413783,
+   "CampaignId": 713617279,
+   "AdGroupId": 5788433521,
+   "Status": "UNKNOWN",
+   "State": "ARCHIVED",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1918762201956413784,
+   "CampaignId": 713617279,
+   "AdGroupId": 5788433522,
+   "Status": "UNKNOWN",
+   "State": "ARCHIVED",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1918762201956413785,
+   "CampaignId": 713617279,
+   "AdGroupId": 5788433523,
+   "Status": "UNKNOWN",
+   "State": "ARCHIVED",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1918762201956413786,
+   "CampaignId": 713617279,
+   "AdGroupId": 5788433524,
+   "Status": "UNKNOWN",
+   "State": "ARCHIVED",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1918762201956413787,
+   "CampaignId": 713617279,
+   "AdGroupId": 5788433525,
+   "Status": "ACCEPTED",
+   "State": "SUSPENDED",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1918762201956413788,
+   "CampaignId": 713617279,
+   "AdGroupId": 5788433526,
+   "Status": "UNKNOWN",
+   "State": "ARCHIVED",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1918762201956413789,
+   "CampaignId": 713617279,
+   "AdGroupId": 5788433527,
+   "Status": "UNKNOWN",
+   "State": "SUSPENDED",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1919379405938003411,
+   "CampaignId": 713617279,
+   "AdGroupId": 5788433527,
+   "Status": "UNKNOWN",
+   "State": "SUSPENDED",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1918742606168783632,
+   "CampaignId": 713617279,
+   "AdGroupId": 5788433528,
+   "Status": "UNKNOWN",
+   "State": "SUSPENDED",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1919379405938003412,
+   "CampaignId": 713617279,
+   "AdGroupId": 5788433528,
+   "Status": "ACCEPTED",
+   "State": "SUSPENDED",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1920117096635825936,
+   "CampaignId": 713617279,
+   "AdGroupId": 5794513006,
+   "Status": "UNKNOWN",
+   "State": "ARCHIVED",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1920117096635825937,
+   "CampaignId": 713617279,
+   "AdGroupId": 5794513006,
+   "Status": "UNKNOWN",
+   "State": "ARCHIVED",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1920117096635825938,
+   "CampaignId": 713617279,
+   "AdGroupId": 5794513008,
+   "Status": "UNKNOWN",
+   "State": "ARCHIVED",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1920117096635825939,
+   "CampaignId": 713617279,
+   "AdGroupId": 5794513008,
+   "Status": "UNKNOWN",
+   "State": "ARCHIVED",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1920117096635825940,
+   "CampaignId": 713617279,
+   "AdGroupId": 5794513009,
+   "Status": "UNKNOWN",
+   "State": "ARCHIVED",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1920117096635825941,
+   "CampaignId": 713617279,
+   "AdGroupId": 5794513009,
+   "Status": "UNKNOWN",
+   "State": "ARCHIVED",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1920117096635825942,
+   "CampaignId": 713617279,
+   "AdGroupId": 5794513010,
+   "Status": "UNKNOWN",
+   "State": "ARCHIVED",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1920117096635825943,
+   "CampaignId": 713617279,
+   "AdGroupId": 5794513010,
+   "Status": "UNKNOWN",
+   "State": "ARCHIVED",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1920117096635825944,
+   "CampaignId": 713617279,
+   "AdGroupId": 5794513011,
+   "Status": "UNKNOWN",
+   "State": "ARCHIVED",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1920117096635825945,
+   "CampaignId": 713617279,
+   "AdGroupId": 5794513011,
+   "Status": "UNKNOWN",
+   "State": "ARCHIVED",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1920117096635825946,
+   "CampaignId": 713617279,
+   "AdGroupId": 5794513015,
+   "Status": "UNKNOWN",
+   "State": "ARCHIVED",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1920117096635825947,
+   "CampaignId": 713617279,
+   "AdGroupId": 5794513015,
+   "Status": "UNKNOWN",
+   "State": "ARCHIVED",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1920117096635825948,
+   "CampaignId": 713617279,
+   "AdGroupId": 5794513019,
+   "Status": "UNKNOWN",
+   "State": "ARCHIVED",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1920117096635825949,
+   "CampaignId": 713617279,
+   "AdGroupId": 5794513019,
+   "Status": "UNKNOWN",
+   "State": "ARCHIVED",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1920117096635825950,
+   "CampaignId": 713617279,
+   "AdGroupId": 5794513020,
+   "Status": "UNKNOWN",
+   "State": "ARCHIVED",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1920117096635825951,
+   "CampaignId": 713617279,
+   "AdGroupId": 5794513020,
+   "Status": "UNKNOWN",
+   "State": "ARCHIVED",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1920117096635825952,
+   "CampaignId": 713617279,
+   "AdGroupId": 5794513021,
+   "Status": "UNKNOWN",
+   "State": "ARCHIVED",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1920117096635825953,
+   "CampaignId": 713617279,
+   "AdGroupId": 5794513021,
+   "Status": "UNKNOWN",
+   "State": "ARCHIVED",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1920117096635825954,
+   "CampaignId": 713617279,
+   "AdGroupId": 5794513024,
+   "Status": "UNKNOWN",
+   "State": "ARCHIVED",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1920117096635825955,
+   "CampaignId": 713617279,
+   "AdGroupId": 5794513024,
+   "Status": "UNKNOWN",
+   "State": "ARCHIVED",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1925874301653851359,
+   "CampaignId": 715702484,
+   "AdGroupId": 5819038929,
+   "Status": "ACCEPTED",
+   "State": "OFF",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1925874301653851360,
+   "CampaignId": 715702484,
+   "AdGroupId": 5819038930,
+   "Status": "ACCEPTED",
+   "State": "OFF",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1925874301653851361,
+   "CampaignId": 715702484,
+   "AdGroupId": 5819038931,
+   "Status": "UNKNOWN",
+   "State": "ARCHIVED",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1925874301653851362,
+   "CampaignId": 715702484,
+   "AdGroupId": 5819038932,
+   "Status": "ACCEPTED",
+   "State": "OFF",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1925874301653851363,
+   "CampaignId": 715702484,
+   "AdGroupId": 5819038933,
+   "Status": "ACCEPTED",
+   "State": "OFF",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1925874301653851364,
+   "CampaignId": 715702484,
+   "AdGroupId": 5819038934,
+   "Status": "ACCEPTED",
+   "State": "OFF",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1920138576843046264,
+   "CampaignId": 714038332,
+   "AdGroupId": 5794667108,
+   "Status": "ACCEPTED",
+   "State": "OFF",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1920138576843046265,
+   "CampaignId": 714038332,
+   "AdGroupId": 5794667108,
+   "Status": "ACCEPTED",
+   "State": "OFF",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1920138576843046266,
+   "CampaignId": 714038332,
+   "AdGroupId": 5794667109,
+   "Status": "ACCEPTED",
+   "State": "OFF",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1920138576843046267,
+   "CampaignId": 714038332,
+   "AdGroupId": 5794667109,
+   "Status": "ACCEPTED",
+   "State": "OFF",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1920138576843046268,
+   "CampaignId": 714038332,
+   "AdGroupId": 5794667113,
+   "Status": "UNKNOWN",
+   "State": "ARCHIVED",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1920138576843046269,
+   "CampaignId": 714038332,
+   "AdGroupId": 5794667113,
+   "Status": "UNKNOWN",
+   "State": "ARCHIVED",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1920138576843046270,
+   "CampaignId": 714038332,
+   "AdGroupId": 5794667121,
+   "Status": "UNKNOWN",
+   "State": "ARCHIVED",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1920138576843046271,
+   "CampaignId": 714038332,
+   "AdGroupId": 5794667121,
+   "Status": "UNKNOWN",
+   "State": "ARCHIVED",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1920138576843046272,
+   "CampaignId": 714038332,
+   "AdGroupId": 5794667123,
+   "Status": "ACCEPTED",
+   "State": "OFF",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1920138576843046273,
+   "CampaignId": 714038332,
+   "AdGroupId": 5794667123,
+   "Status": "ACCEPTED",
+   "State": "OFF",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1920138576843046274,
+   "CampaignId": 714038332,
+   "AdGroupId": 5794667125,
+   "Status": "ACCEPTED",
+   "State": "OFF",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1920138576843046275,
+   "CampaignId": 714038332,
+   "AdGroupId": 5794667125,
+   "Status": "ACCEPTED",
+   "State": "OFF",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1920138576843046276,
+   "CampaignId": 714038332,
+   "AdGroupId": 5794667127,
+   "Status": "UNKNOWN",
+   "State": "ARCHIVED",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1920138576843046277,
+   "CampaignId": 714038332,
+   "AdGroupId": 5794667127,
+   "Status": "UNKNOWN",
+   "State": "ARCHIVED",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1920138576843046278,
+   "CampaignId": 714038332,
+   "AdGroupId": 5794667128,
+   "Status": "UNKNOWN",
+   "State": "ARCHIVED",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1920138576843046279,
+   "CampaignId": 714038332,
+   "AdGroupId": 5794667128,
+   "Status": "UNKNOWN",
+   "State": "ARCHIVED",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1920138576843046280,
+   "CampaignId": 714038332,
+   "AdGroupId": 5794667131,
+   "Status": "UNKNOWN",
+   "State": "ARCHIVED",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1920138576843046281,
+   "CampaignId": 714038332,
+   "AdGroupId": 5794667131,
+   "Status": "UNKNOWN",
+   "State": "ARCHIVED",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1920138576843046282,
+   "CampaignId": 714038332,
+   "AdGroupId": 5794667221,
+   "Status": "UNKNOWN",
+   "State": "ARCHIVED",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1920138576843046283,
+   "CampaignId": 714038332,
+   "AdGroupId": 5794667221,
+   "Status": "UNKNOWN",
+   "State": "ARCHIVED",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1920138576843046284,
+   "CampaignId": 714038332,
+   "AdGroupId": 5794667226,
+   "Status": "UNKNOWN",
+   "State": "ARCHIVED",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1920138576843046285,
+   "CampaignId": 714038332,
+   "AdGroupId": 5794667226,
+   "Status": "UNKNOWN",
+   "State": "ARCHIVED",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1920138576843046286,
+   "CampaignId": 714038332,
+   "AdGroupId": 5794667228,
+   "Status": "ACCEPTED",
+   "State": "OFF",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1920138576843046287,
+   "CampaignId": 714038332,
+   "AdGroupId": 5794667228,
+   "Status": "ACCEPTED",
+   "State": "OFF",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1920138576843046288,
+   "CampaignId": 714038332,
+   "AdGroupId": 5794667235,
+   "Status": "ACCEPTED",
+   "State": "OFF",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1920138576843046289,
+   "CampaignId": 714038332,
+   "AdGroupId": 5794667235,
+   "Status": "ACCEPTED",
+   "State": "OFF",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1920138576843046290,
+   "CampaignId": 714038332,
+   "AdGroupId": 5794667239,
+   "Status": "ACCEPTED",
+   "State": "OFF",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1920138576843046291,
+   "CampaignId": 714038332,
+   "AdGroupId": 5794667239,
+   "Status": "ACCEPTED",
+   "State": "OFF",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1920138576843046292,
+   "CampaignId": 714038332,
+   "AdGroupId": 5794667319,
+   "Status": "ACCEPTED",
+   "State": "OFF",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1920138576843046293,
+   "CampaignId": 714038332,
+   "AdGroupId": 5794667319,
+   "Status": "ACCEPTED",
+   "State": "OFF",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1920138576843046294,
+   "CampaignId": 714038332,
+   "AdGroupId": 5794667324,
+   "Status": "ACCEPTED",
+   "State": "OFF",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1920138576843046295,
+   "CampaignId": 714038332,
+   "AdGroupId": 5794667324,
+   "Status": "ACCEPTED",
+   "State": "OFF",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1920138576843046296,
+   "CampaignId": 714038332,
+   "AdGroupId": 5794667329,
+   "Status": "ACCEPTED",
+   "State": "OFF",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  },
+  {
+   "Id": 1920138576843046297,
+   "CampaignId": 714038332,
+   "AdGroupId": 5794667329,
+   "Status": "ACCEPTED",
+   "State": "OFF",
+   "Type": "TEXT_AD",
+   "Subtype": "NONE"
+  }
+ ],
+ "sample_ads": []
+}

@@ -18,23 +18,24 @@ brand:
   accent: "#1f8f4e"
 
 schedule:
-  weekday: monday
-  time: "10:00"
+  weekday: thursday            # как в registry/agent-settings: присылать по четвергам
+  time: "11:00"                # Europe/Moscow
 
 report:
   title: "Мониторинг конкурентов — Селигер Сити"
   formats: [md, xlsx, pdf]
 
 recipients:
-  - { channel: telegram, address: "" }   # TODO (от пользователя): телеграм получателя не задан
-  - { channel: email, address: "d.granel@example.ru" }   # из registry/clients.yaml (контакт)
+  # Решение пользователя 04.11.2026: только эти два адреса, телеграм-канал не используется.
+  - { channel: email, address: "tyurina@d-a.ru" }        # получатель отчёта
+  - { channel: email, address: "vodnev@d-a.ru" }         # получатель отчёта
 
 sources:
   - { id: developer-sites, enabled: true }
   - { id: cian,           enabled: true, mode: public-pages, auth: none }     # проверено: 200, лоты с ценами в HTML
-  - { id: avito,          enabled: false, mode: public-pages, auth: none }    # 439 «проверка безопасности»
-  - { id: yandex-realty,  enabled: true, mode: public-pages, auth: none }     # 200 на проверенных ЖК
-  - { id: domclick,       enabled: false, mode: public-pages, auth: none }    # 401
+  - { id: avito,          enabled: true,  mode: public-pages, auth: none }    # включено 04.11: нужен Chrome (439), ссылок на карточки пока нет
+  - { id: yandex-realty,  enabled: true,  mode: public-pages, auth: none }    # 200 на проверенных ЖК
+  - { id: domclick,       enabled: true,  mode: public-pages, auth: none }    # включено 04.11: без договора отдаёт 401 — ждём партнёрский доступ
 
 competitors:
   # 1. Прямой конкурент: наш же локационный кластер, Дмитровское шоссе.
@@ -126,7 +127,7 @@ competitors:
 # TODO для пользователя: завести наш объект в 00-admin/config/my-objects.yaml, если «Селигер Сити» — наш ЖК.
 
 # ЧТО НУЖНО ОТ ПОЛЬЗОВАТЕЛЯ (TODO):
-#   1. Логотип client-granel и телеграм получателя.
+#   1. Логотип client-granel.
 #   2. Сайт ЖК «Селигер Сити» у застройщика (домен не отвечает).
 #   3. Рабочие ссылки Авито и Домклик (площадки режут обычный HTTP: 439 и 401).
 #   4. Завести наш объект my-zhk-seliger-siti в 00-admin/config/my-objects.yaml, если «Селигер Сити» — наш ЖК.

@@ -1,0 +1,22 @@
+{
+  "campaigns": {
+    "status": "ok",
+    "rows": 15,
+    "file": "direct-report-campaigns.tsv"
+  },
+  "search_queries": {
+    "status": "ok",
+    "rows": 103519,
+    "file": "direct-report-search_queries.tsv"
+  },
+  "placements": {
+    "status": "ok",
+    "rows": 16361,
+    "file": "direct-report-placements.tsv"
+  },
+  "criteria": {
+    "status": "ok",
+    "rows": 1733,
+    "file": "direct-report-criteria.tsv"
+  }
+}

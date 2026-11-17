@@ -162,6 +162,7 @@ function showClient(c) {
 VIEWS.subscriptions = function (view) {
   var d = STATE.service;
   if (!d) { view.appendChild(note('bad', 'Нет данных сервиса.')); return; }
+  if (d.demo) view.appendChild(note('bad', 'ДЕМО-ДАННЫЕ. ' + d.demoReason));
   var k = el('div', 'grid kpi');
   k.appendChild(kpi('Подписок', String(d.counts.subscriptions), 'активных: ' + d.counts.subsActive, 'accent'));
   k.appendChild(kpi('Просрочено', String(d.counts.overdue), 'нужно связаться с клиентом', d.counts.overdue ? 'bad' : 'ok'));
@@ -218,6 +219,7 @@ VIEWS.subscriptions = function (view) {
 VIEWS.services = function (view) {
   var d = STATE.service;
   if (!d) { view.appendChild(note('bad', 'Нет данных сервиса.')); return; }
+  if (d.demo) view.appendChild(note('bad', 'ДЕМО-ДАННЫЕ. ' + d.demoReason));
   var agents = (STATE.agents && STATE.agents.agents) ? STATE.agents.agents : [];
   var k = el('div', 'grid kpi');
   k.appendChild(kpi('Услуг в каталоге', String(d.counts.services), 'включено: ' + d.counts.servicesEnabled, 'accent'));
@@ -380,6 +382,7 @@ VIEWS.queue = function (view) {
 VIEWS.economy = function (view) {
   var d = STATE.service;
   if (!d) { view.appendChild(note('bad', 'Нет данных сервиса.')); return; }
+  if (d.demo) view.appendChild(note('bad', 'ДЕМО-ДАННЫЕ. ' + d.demoReason));
   var e = d.economy;
   var k = el('div', 'grid kpi');
   k.appendChild(kpi('Доход', money(e.revenueRub, true), 'по активным подпискам', 'ok'));

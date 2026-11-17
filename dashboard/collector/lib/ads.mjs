@@ -408,6 +408,12 @@ export function buildAdsDoc(ctx) {
   return {
     generatedAtMs: Date.now(),
     today: ctx.today,
+    // ЧЕСТНОСТЬ (G9): бюджеты, кошелёк, возвраты и кэшбэк собраны из демонстрационных
+    // записей registry/ad-budgets.yaml, registry/cashback.yaml и registry/ad-channels.yaml.
+    // Пока реестр демонстрационный, раздел помечается «демо», иначе суммы читаются как факт.
+    demo: true,
+    demoReason: 'Бюджеты, кошелёк, возвраты площадок и кэшбэк операторам — демонстрационные записи реестра, ' +
+      'а не фактические расходы и выплаты. Реальный контур включается после партнёрских договоров и первых клиентов.',
     platform: platform,
     operators: operators,
     operatorRows: operatorRows,

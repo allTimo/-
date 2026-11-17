@@ -8,8 +8,8 @@ updated: "2026-11-01"
 
 schedule:
   enabled: true
-  days: [1, 4]
-  time: "10:00"
+  days: [4]
+  time: "11:00"
   frequency: weekly
   timezone: "Europe/Moscow"
   only_on_new_data: true
@@ -33,9 +33,13 @@ report:
   branding: true
 
 delivery:
-  channels: [telegram]
-  addresses: ["@svet_marketing"]
-  auto_send: false
+  # Решение пользователя 04.11.2026: только e-mail и только два адреса.
+  # Telegram-транспорта в движке нет, поэтому канал не заявляем.
+  # Письма жёстко ограничены белым списком:
+  # 00-admin/config/settings.yaml -> delivery.recipients_allowlist.
+  channels: [email]
+  addresses: ["vodnev@d-a.ru", "tyurina@d-a.ru"]
+  auto_send: true
   copy_to: ""
 
 alerts:
@@ -61,6 +65,7 @@ agent1:
   # ЖК ДЛЯ НАБЛЮДЕНИЯ — свой проект, вокруг которого ищем конкурентов.
   # Радиус по умолчанию 10 км; если координаты пусты, агент определит их по адресу.
   watch:
+    query: "https://svetdom.ru/"
     name: "ЖК «Свет»"
     address: "Москва, Западное Дегунино, Дмитровское шоссе, 83А"
     url: "https://svetdom.ru/"
@@ -72,6 +77,41 @@ agent1:
     price_max_per_m2: 450000
     sources: ["cian", "avito", "yandex-realty"]
     max_candidates: 20
+
+  # ЧТО АНАЛИЗИРОВАТЬ (маркетинговый срез лотов).
+  # Контракт: docs/agent-1-marketing-settings-contract.md, группа 2.
+  # Пустое значение = без ограничения; фильтры применяет движок при формировании снимка.
+  selection:
+    room_types: ["0", "1", "2", "3", "4", "5+"]
+    area_min_m2: 0
+    area_max_m2: 0
+    price_min_rub: 0
+    price_max_rub: 0
+    exclude_first_floor: false
+    exclude_last_floor: false
+    finishes: ["без отделки", "white box", "чистовая", "с мебелью", "unknown"]
+    only_active: true
+    promo_only: false
+    price_metric: "median"
+    outlier_guard: true
+    outlier_same_price_min_lots: 5
+    outlier_ppm2_min: 150000
+    outlier_ppm2_max: 800000
+
+  # Сравнение и выводы (сколько лотов в топах изменений).
+  top_deals_count: 5
+
+  # ТУМБЛЕРЫ АНАЛИТИКИ — имена фиксированы: их читают панель и движок.
+  # enabled — общий выключатель аналитики; остальные включают отдельные отчёты/срезы.
+  analytics:
+    enabled: true
+    lots_all_on_sale: true
+    price_dynamics: true
+    promos: true
+    new_promos_only: true
+    dedup_promos: true
+    developers_sites: true
+    forecast: true
 
   # ДОМЕНЫ КОНКУРЕНТОВ: карта «домен → канонический ключ проекта».
   # Нужна для сопоставления срезов, где движок отдаёт только домен (например seliger-city.ru),

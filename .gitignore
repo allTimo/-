@@ -264,3 +264,28 @@ __pycache__/
 Thumbs.db
 desktop.ini
 $RECYCLE.BIN/
+
+# --- Правила секретов из marketing-agents/.gitignore ---
+# Локальные секреты и служебные файлы — не публиковать.
+# Пароль SMTP Агента 1 (см. 00-admin/config/settings.yaml -> delivery.email.smtp_password_file).
+00-admin/config/.smtp-password.local
+*.local
+*.bak-*
+__pycache__/
+.pytest_cache/
+*.pyc
+logs/
+
+# Временные каталоги тестов панели (cw-*) и рабочие артефакты
+cw-*/
+
+# Ключи доступа к внешним API — только локально, в репозитории лежит .env.example.
+.env
+.env.*
+!.env.example
+
+# Письма-отчёты с реальными адресами получателей — не публиковать.
+*.eml
+
+# Локальное состояние кабинетов (client_id, аккаунты) — не публиковать.
+*.local.json

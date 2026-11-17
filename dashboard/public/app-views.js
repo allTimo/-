@@ -438,6 +438,114 @@ VIEWS.infra = function (view) {
   s1.appendChild(c1);
   view.appendChild(s1);
 
+  // Выгрузка в Obsidian: единственное место панели, которое пишет в vault.
+  // Два объёма: scope='panel' — только подпапка «выгрузка-панели» (старая кнопка),
+  // scope='full' — вся база (домены «Скилы» и «База знаний» тоже). Путь приходит из ответа сервера.
+  var sExp = section('Выгрузка в Obsidian', 'заметки панели → подпапка «выгрузка-панели» в вашем vault');
+  var cExp = card();
+  cExp.appendChild(el('div', 'small muted', 'Свежие данные панели раскладываются в заметки Obsidian. Запись идёт только в подпапку «выгрузка-панели» — остальные заметки не трогаются, а перед перезаписью файла рядом кладётся копия .bak-<дата>.'));
+  var expPath = el('div', 'small muted', 'Путь к vault: появится в ответе сервера.');
+  cExp.appendChild(expPath);
+  var expActions = el('div', 'filters');
+  var expOut = el('div');
+  cExp.appendChild(expActions);
+
+  var VAULT_FILES_SHOWN = 5; // в интерфейс — только первые имена, остальное сворачиваем
+
+  function renderVaultResult(res, dryRun, scope) {
+    clear(expOut);
+    if (res && res.vaultPath) expPath.textContent = 'Путь к vault: ' + res.vaultPath;
+    if (!res) { expOut.appendChild(note('bad', 'Сервер не вернул ответ — результат выгрузки неизвестен.')); return; }
+    if (!res.ok) { expOut.appendChild(note('bad', 'Не удалось: ' + (res.message || 'неизвестная ошибка'))); return; }
+    var created = Array.isArray(res.written) ? res.written.length : null;
+    var updated = Array.isArray(res.updated) ? res.updated.length : null;
+    var skipped = Array.isArray(res.skipped) ? res.skipped.length : null;
+    // Честность данных: без счётчиков от сервера пишем «неизвестно», а не нули.
+    if (created === null || updated === null || skipped === null) {
+      expOut.appendChild(note('warn', 'Сервер ответил без счётчиков выгрузки (нет полей written/updated/skipped) — результат неизвестен.'));
+      return;
+    }
+    var errs = Array.isArray(res.errors) ? res.errors : null;
+    var mode = (dryRun ? 'Проверка без записи' : 'Выгрузка') + (scope === 'full' ? ' — вся база' : ' — только панель');
+    expOut.appendChild(note(!dryRun && errs && errs.length ? 'warn' : (dryRun ? null : 'ok'),
+      mode + ': ' + (dryRun ? 'ничего не записано, это план. ' : '') +
+      'создано ' + created + ' · обновлено ' + updated + ' · пропущено ' + skipped + (errs ? ' · ошибок ' + errs.length : '')));
+    if (!res.scope) expOut.appendChild(el('div', 'small muted', 'Сервер не вернул поле scope — какой объём выгружен, неизвестно.'));
+    var names = (res.updated || []).concat(res.written || []);
+    if (names.length) {
+      expOut.appendChild(el('div', 'small muted', 'Файлы (' + names.length + '): ' + names.slice(0, VAULT_FILES_SHOWN).join(', ') + (names.length > VAULT_FILES_SHOWN ? ' …' : '')));
+      if (names.length > VAULT_FILES_SHOWN) {
+        var det = el('details');
+        det.appendChild(el('summary', 'small muted', 'Показать все имена файлов (' + names.length + ')'));
+        det.appendChild(el('pre', null, names.join('\n')));
+        expOut.appendChild(det);
+      }
+    }
+    if (errs && errs.length) {
+      var detE = el('details');
+      detE.appendChild(el('summary', 'small muted', 'Показать ошибки (' + errs.length + ')'));
+      detE.appendChild(el('pre', null, errs.join('\n')));
+      expOut.appendChild(detE);
+    }
+  }
+
+  function vaultExport(dryRun, ctl, scope) {
+    if (STANDALONE) { toast('Это автономная копия — выгрузка доступна в живой панели.', 'bad'); return; }
+    var where = scope === 'full' ? 'всю базу Obsidian' : 'заметки панели в Obsidian';
+    if (!dryRun && !window.confirm('Обновить ' + where + '?\n\nБудут перезаписаны заметки выгрузки в vault; перед каждой перезаписью рядом кладётся копия .bak. Нажмите кнопку ещё раз, чтобы подтвердить.')) return;
+    clearConfirmNote();
+    ctl.disabled = true;
+    clear(expOut);
+    expOut.appendChild(el('div', 'small muted', 'Выполняю: ' + (dryRun ? 'проверка без записи' : 'выгрузка') + (scope === 'full' ? ', вся база' : ', панель') + '…'));
+    showBusy('Выполняется: выгрузка в Obsidian… Это может занять до минуты.');
+    return fetch('/api/vault/export', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ dryRun: dryRun, scope: scope })
+    }).then(function (r) {
+      return r.json().catch(function () { return { ok: false, message: 'ответ сервера не разобран (HTTP ' + r.status + ')' }; });
+    }).then(function (res) {
+      ctl.disabled = false;
+      clearBusy();
+      clearConfirmNote();
+      renderVaultResult(res, dryRun, scope);
+      if (res && res.ok) {
+        var errs = (res.errors || []).length;
+        var head = dryRun ? 'Проверка без записи: ' : 'Готово: ';
+        toast(head + 'создано ' + (res.written || []).length + ', обновлено ' + (res.updated || []).length +
+          ', пропущено ' + (res.skipped || []).length + (errs ? ' · ошибок ' + errs : '') + (dryRun ? ' (ничего не записано)' : ''), errs ? 'bad' : undefined);
+      } else {
+        toast('Не удалось: ' + ((res && res.message) || 'сервер не вернул ответ'), 'bad');
+      }
+      return res;
+    }).catch(function (e) { ctl.disabled = false; clearBusy(); renderVaultResult(null, dryRun, scope); toast('Ошибка: ' + e.message, 'bad'); });
+  }
+
+  var expBtn = el('button', 'btn small primary', 'Выгрузить в Obsidian');
+  expBtn.title = 'Обновить заметки панели (scope: panel)';
+  expBtn.addEventListener('click', function () { vaultExport(false, expBtn, 'panel'); });
+  expActions.appendChild(expBtn);
+  var dryBtn = el('button', 'btn small', 'Проверить без записи');
+  dryBtn.title = 'dryRun: сервер только покажет план выгрузки и ничего не запишет';
+  dryBtn.addEventListener('click', function () { vaultExport(true, dryBtn, 'panel'); });
+  expActions.appendChild(dryBtn);
+
+  // Полная выгрузка: одна кнопка обновляет ВСЮ базу Obsidian (scope: full),
+  // а не только подпапку панели. Подтверждение — внутрипанельное, в два шага (window.confirm в app.js).
+  cExp.appendChild(el('div', 'small muted', 'Полная выгрузка обновляет всю базу Obsidian (scope: full), а не только подпапку «выгрузка-панели». Кнопка спрашивает подтверждение: нажмите её дважды.'));
+  var fullActions = el('div', 'filters');
+  var fullBtn = el('button', 'btn small primary', 'Обновить всю базу Obsidian');
+  fullBtn.title = 'scope: full — обновить всю базу Obsidian; нужно подтверждение (два нажатия)';
+  fullBtn.addEventListener('click', function () { vaultExport(false, fullBtn, 'full'); });
+  fullActions.appendChild(fullBtn);
+  var fullDryBtn = el('button', 'btn small', 'Проверить всю базу без записи');
+  fullDryBtn.title = 'dryRun + scope: full — сервер покажет план полной выгрузки и ничего не запишет';
+  fullDryBtn.addEventListener('click', function () { vaultExport(true, fullDryBtn, 'full'); });
+  fullActions.appendChild(fullDryBtn);
+  cExp.appendChild(fullActions);
+  cExp.appendChild(expOut);
+  cExp.appendChild(note('warn', 'Пишем только в базу Obsidian; перед перезаписью делается копия .bak. Кнопки «Проверить … без записи» ничего не меняют.'));
+  sExp.appendChild(cExp);
+  view.appendChild(sExp);
+
   // форма добавления агента
   var s2 = section('Добавить агента', 'заполните поля — получите готовый фрагмент для registry/agents.yaml');
   var c2 = card();

@@ -1,0 +1,46 @@
+{
+ "campaigns": {
+  "status": "ok",
+  "rows": 15,
+  "file": "direct-report-campaigns.tsv"
+ },
+ "campaigns_daily": {
+  "status": "ok",
+  "rows": 300,
+  "file": "direct-report-campaigns_daily.tsv"
+ },
+ "search_queries": {
+  "status": "ok",
+  "rows": 105577,
+  "file": "direct-report-search_queries.tsv"
+ },
+ "placements": {
+  "status": "ok",
+  "rows": 16811,
+  "file": "direct-report-placements.tsv"
+ },
+ "criteria": {
+  "status": "ok",
+  "rows": 1733,
+  "file": "direct-report-criteria.tsv"
+ },
+ "ads": {
+  "status": "ok",
+  "rows": 139,
+  "file": "direct-report-ads.tsv"
+ },
+ "adgroups": {
+  "status": "error",
+  "message": "HTTP 400 Bad Request для https://api.direct.yandex.com/json/v5/reports; ответ: {\"error\":{\"error_code\":\"8000\",\"error_string\":\"Некорректный запрос\",\"request_id\":\"4270377509614419197\",\"error_detail\":\"ReportType содержит неверное значение перечисления\"}}"
+ },
+ "device": {
+  "status": "ok",
+  "rows": 33,
+  "file": "direct-report-device.tsv"
+ },
+ "age_gender": {
+  "status": "ok",
+  "rows": 194,
+  "file": "direct-report-age_gender.tsv"
+ }
+}

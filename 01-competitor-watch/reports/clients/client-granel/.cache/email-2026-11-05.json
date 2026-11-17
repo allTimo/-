@@ -1,0 +1,20 @@
+{
+  "date": "2026-11-05",
+  "generated_at": "2026-11-05T19:15:31",
+  "records": [
+    {
+      "to": "vodnev@d-a.ru",
+      "status": "sent",
+      "sent_at": "2026-11-05T19:15:30",
+      "file": null,
+      "reason": null
+    },
+    {
+      "to": "tyurina@d-a.ru",
+      "status": "sent",
+      "sent_at": "2026-11-05T19:15:31",
+      "file": null,
+      "reason": null
+    }
+  ]
+}

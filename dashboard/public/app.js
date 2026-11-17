@@ -466,6 +466,20 @@ function goTab(tab, anchor) {
 
 var ALERT_LABEL = { critical: ['критично', 'bad'], warning: ['внимание', 'warn'], info: ['заметка', 'grey'] };
 
+/* ЕДИНЫЙ СПИСОК ДЕЙСТВИЙ: блока «Действия» на «Обзоре» и кнопок внутри тревог.
+   Один источник нужен, чтобы кнопка тревоги делала ровно то, что написано на ней,
+   а не просто прокручивала страницу: у тревоги может быть action.run — id действия. */
+var ACTION_SPECS = [
+  { id: 'collect', label: 'Собрать данные сейчас', hint: 'Перечитать логи сессий DSH и реестр, обновить все цифры панели. Ничего не удаляется и не портится.', agent: null },
+  { id: 'report', label: 'Сформировать отчёт за неделю', hint: 'Запустить движок Агента 1: сравнить два последних снимка и собрать отчёт (Markdown + Excel, 9 разделов).', agent: null },
+  { id: 'agent', label: 'Запустить агента', hint: 'Полный недельный цикл Агента 1: проверка снимка, сравнение прошлой и текущей недели, сборка отчёта. Сбор с площадок пропускается — он требует входа в Chrome.', agent: 'agent-1-competitor-watch' },
+  { id: 'agent2', label: 'Проверить доступ к API Директа', hint: 'Проверка токена и доступа к Яндекс.Директу (API v5): какие кампании видит аккаунт. Только чтение — кампании, ставки и бюджет не меняются.', agent: 'agent-2-direct-semantics' }
+];
+function actionSpec(id) {
+  for (var i = 0; i < ACTION_SPECS.length; i++) if (ACTION_SPECS[i].id === id) return ACTION_SPECS[i];
+  return null;
+}
+
 function alertCard(al) {
   var lv = ALERT_LABEL[al.level] || ['заметка', 'grey'];
   var c = el('div', 'card alert ' + al.level);
@@ -484,11 +498,25 @@ function alertCard(al) {
     });
     c.appendChild(ul);
   }
+  if (!al.action) return c;
   var row = el('div', 'filters');
-  var b = el('button', 'btn small primary', al.action.label);
-  b.title = 'Перейти в раздел';
-  b.addEventListener('click', function () { goTab(al.action.tab, al.action.anchor); });
-  row.appendChild(b);
+  var out = el('div');
+  var spec = al.action.run ? actionSpec(al.action.run) : null;
+  if (spec) {
+    // Кнопка тревоги ВЫПОЛНЯЕТ действие и показывает результат здесь же, в карточке:
+    // иначе пользователь нажимает «Собрать данные сейчас» и не видит ничего.
+    var b = el('button', 'btn small primary', spec.label);
+    b.title = spec.hint;
+    b.addEventListener('click', function () { runAction(spec, b, out); });
+    row.appendChild(b);
+    c.appendChild(row);
+    c.appendChild(out);
+    return c;
+  }
+  var b2 = el('button', 'btn small primary', 'Перейти к действиям');
+  b2.title = 'Открыть раздел «' + (al.action.tab || '') + '»' + (al.action.label ? '; там действие: ' + al.action.label : '');
+  b2.addEventListener('click', function () { goTab(al.action.tab, al.action.anchor); });
+  row.appendChild(b2);
   c.appendChild(row);
   return c;
 }
@@ -518,12 +546,15 @@ function runAction(a, btn, outHost) {
       if (res.output) outHost.appendChild(el('pre', null, res.output));
       return;
     }
-    outHost.appendChild(note('ok', res.message + ' — за ' + secs + ' с.'));
+    var st = res.result && res.result.status ? String(res.result.status) : null;
+    if (st === 'skipped_no_key') outHost.appendChild(note('warn', res.message + ' — за ' + secs + ' с.'));
+    else outHost.appendChild(note('ok', res.message + ' — за ' + secs + ' с.'));
     var details = [];
     if (res.result) {
       if (res.result.sessions !== undefined) details.push('сессий: ' + res.result.sessions);
       if (res.result.tasks !== undefined) details.push('задач: ' + res.result.tasks);
       if (res.result.rub !== undefined && res.result.rub !== null) details.push('расход: ' + money(res.result.rub, true));
+      if (res.result.campaigns !== undefined && res.result.campaigns !== null) details.push('кампаний: ' + res.result.campaigns);
       if (res.result.curr) details.push('снимок: ' + res.result.curr + (res.result.prev ? ', сравнение с ' + res.result.prev : ''));
     }
     if (details.length) outHost.appendChild(el('div', 'small muted', details.join(' · ')));
@@ -664,11 +695,7 @@ VIEWS.overview = function (view) {
   actCard.appendChild(note(null, 'Каждое действие спрашивает подтверждение и выполняется на сервере. Файлы реестра при этом не меняются — правки параметров живут во вкладке «Настройки» с копиями .bak-.'));
   var actRow = el('div', 'group-actions');
   var actOut = el('div');
-  [
-    { id: 'collect', label: 'Собрать данные сейчас', hint: 'Перечитать логи сессий DSH и реестр, обновить все цифры панели. Ничего не удаляется и не портится.', agent: null },
-    { id: 'report', label: 'Сформировать отчёт за неделю', hint: 'Запустить движок Агента 1: сравнить два последних снимка и собрать отчёт (Markdown + Excel, 9 разделов).', agent: null },
-    { id: 'agent', label: 'Запустить агента', hint: 'Полный недельный цикл Агента 1: проверка снимка, сравнение прошлой и текущей недели, сборка отчёта. Сбор с площадок пропускается — он требует входа в Chrome.', agent: 'agent-1-competitor-watch' }
-  ].forEach(function (a) {
+  ACTION_SPECS.forEach(function (a) {
     var b = el('button', 'btn', a.label);
     b.title = a.hint;
     b.addEventListener('click', function () { runAction(a, b, actOut); });
@@ -790,6 +817,234 @@ VIEWS.overview = function (view) {
 };
 
 /* ---------------- Агенты ---------------- */
+
+// Метрики карточки Агента 1 (контракт v2, §4): «конкурентов в анализе», «с данными»,
+// «лотов проанализировано», «самый дешёвый лот» — вместо «задач / токенов / расхода».
+// D-CARD (task-7): плитки берут ТОЛЬКО метрики движка (`metrics.*`, суммарно из `totals`).
+// Размер истинного списка (`truth.competitors`) сюда НЕ подставляется — он показывается
+// отдельной строкой-подсказкой (a1CardListHint). Нет метрики — «данных нет», не 0 и не список.
+// Для остальных агентов возвращаем null: их карточки показывают прежние три плитки.
+function a1CardStats(a) {
+  if (!a || a.id !== 'agent-1-competitor-watch') return null;
+  var doc = STATE['competitor-analytics'];
+  var clients = ((doc && doc.clients) || []).filter(function (c) { return c && c.exists !== false; });
+  var totals = (doc && doc.totals) || {};
+  function num(v) { return (typeof v === 'number' && isFinite(v)) ? v : null; }
+  // Имя поля в totals и в per-client metrics отличается: по §5.3 в totals это `withData`,
+  // а в metrics клиента — `competitorsWithData`. Принимаем оба, чтобы не выдумывать числа.
+  function firstNum(src, fields) {
+    if (!src) return null;
+    for (var i = 0; i < fields.length; i++) { var v = num(src[fields[i]]); if (v !== null) return v; }
+    return null;
+  }
+  // Суммарная метрика: сначала итог коллектора, иначе сумма per-client metrics.
+  function pickSum(fields) {
+    var t = firstNum(totals, fields);
+    if (t !== null) return t;
+    var sum = null;
+    clients.forEach(function (c) {
+      var v = firstNum(c.metrics, fields);
+      if (v !== null) sum = (sum === null ? 0 : sum) + v;
+    });
+    return sum;
+  }
+  // «Самый дешёвый лот» — минимум, а не сумма.
+  function pickMin(fields) {
+    var t = firstNum(totals, fields);
+    if (t !== null) return t;
+    var min = null;
+    clients.forEach(function (c) {
+      var v = firstNum(c.metrics, fields);
+      if (v !== null) min = (min === null || v < min) ? v : min;
+    });
+    return min;
+  }
+  var inAnalysis = pickSum(['competitorsInAnalysis']);
+  var withData = pickSum(['competitorsWithData', 'withData']);
+  var lots = pickSum(['lotsAnalyzed']);
+  var cheapest = pickMin(['cheapestLotRub']);
+  return [
+    ['конкурентов в анализе', inAnalysis === null ? 'данных нет' : fmtInt(inAnalysis),
+      inAnalysis === null ? 'движок ещё не прислал метрику «конкурентов в анализе»' : 'число движка (metrics.competitorsInAnalysis), а не размер истинного списка'],
+    ['с данными', withData === null ? 'данных нет' : (fmtInt(withData) + (inAnalysis === null ? '' : ' из ' + fmtInt(inAnalysis))),
+      withData === null ? 'движок ещё не прислал метрику «с данными»' : 'сколько конкурентов реально дали данные (metrics.competitorsWithData); меньше, чем в анализе — это норма'],
+    ['лотов проанализировано', lots === null ? 'данных нет' : fmtInt(lots),
+      lots === null ? 'движок ещё не прислал метрику «лотов проанализировано»' : 'лоты, попавшие в анализ после фильтров «Что анализировать»'],
+    ['самый дешёвый лот', cheapest === null ? 'данных нет' : money(cheapest),
+      cheapest === null ? 'движок ещё не прислал метрику «самый дешёвый лот»' : 'минимум цены по лотам, попавшим в анализ']
+  ];
+}
+
+/* ---------------- СТЕНД АГЕНТОВ (шаг 1B, 09.11.2026) ----------------
+   Карточка каждого агента показывает: готовность к прогону, историю прогонов, длительность,
+   стоимость и кнопку запуска. Данные — STATE['agent-runs'] (сборщик collector/lib/agent-runs.mjs,
+   источник registry/runs.jsonl).
+   Честность: нет прогонов — «прогонов нет»; нет длительности или стоимости — «данных нет», не ноль. */
+function standFor(agentId) {
+  var doc = STATE['agent-runs'];
+  if (!doc || !doc.agents) return null;
+  for (var i = 0; i < doc.agents.length; i++) if (doc.agents[i].id === agentId) return doc.agents[i];
+  return null;
+}
+
+function fmtDuration(ms) {
+  if (ms === null || ms === undefined || !isFinite(Number(ms))) return 'данных нет';
+  var v = Number(ms);
+  if (v < 1000) return v + ' мс';
+  if (v < 60000) return (v / 1000).toFixed(1).replace('.', ',') + ' с';
+  return Math.floor(v / 60000) + ' мин ' + Math.round((v % 60000) / 1000) + ' с';
+}
+
+var STAND_STATUS = { ok: ['успешно', 'ok'], failed: ['ошибка', 'bad'], error: ['ошибка', 'bad'] };
+
+function standStatusBadge(st) {
+  var s = STAND_STATUS[st] || [st ? String(st) : 'статус не указан', 'grey'];
+  return badge(s[0], s[1]);
+}
+
+function baseName(p) {
+  if (!p) return null;
+  var parts = String(p).split(/[\\/]/);
+  return parts[parts.length - 1] || null;
+}
+
+function agentStandBlock(s) {
+  var box = el('div', 'agent-stand');
+  box.setAttribute('data-stand', s.id);
+
+  var head = el('div', 'agent-stand-head');
+  head.appendChild(el('div', 'agent-stand-title', 'Стенд: прогоны'));
+  head.appendChild(s.ready ? badge('готов к прогону', 'ok') : badge('не готов', 'grey'));
+  box.appendChild(head);
+
+  if (!s.ready && s.readinessReason) box.appendChild(note('warn', s.readinessReason));
+
+  var stats = el('div', 'agent-stats');
+  function stat(k, v, title) {
+    var d = el('div', 'stat');
+    d.appendChild(el('div', 'k', k));
+    var val = el('div', 'v', v);
+    if (title) val.title = title;
+    d.appendChild(val);
+    return d;
+  }
+  var r = s.runs || {};
+  stats.appendChild(stat('прогонов', r.total ? String(r.total) : 'прогонов нет',
+    r.total ? 'записей в registry/runs.jsonl по этому агенту: ' + r.total : 'в журнале прогонов записей по этому агенту нет'));
+  if (r.total) {
+    stats.appendChild(stat('успешно', String(r.ok || 0),
+      'с ошибкой: ' + (r.failed || 0) + ', прочих: ' + (r.other || 0)));
+  }
+  stats.appendChild(stat('средняя длительность', fmtDuration(s.duration && s.duration.avgMs),
+    (s.duration && s.duration.count) ? ('по ' + s.duration.count + ' прогонам, где длительность записана') : 'длительность в записях журнала отсутствует'));
+  var cost = s.cost || {};
+  stats.appendChild(stat('стоимость по журналу', (cost.totalRub === null || cost.totalRub === undefined) ? 'данных нет' : money(cost.totalRub, true),
+    cost.count ? ('по ' + cost.count + ' прогонам, где стоимость записана') : 'стоимость в записях журнала не записана'));
+  box.appendChild(stats);
+
+  if (r.total) {
+    var last = el('div', 'agent-stand-last');
+    last.appendChild(el('span', 'small muted', 'последний прогон: ' + (r.lastTs ? fmtDateTime(Date.parse(r.lastTs)) : 'время не указано')));
+    last.appendChild(el('span', 'small muted', ' · '));
+    last.appendChild(standStatusBadge(r.lastStatus));
+    last.appendChild(el('span', 'small muted', ' · ' + fmtDuration(s.duration ? s.duration.lastMs : null) +
+      ' · ' + (r.lastClient || 'клиент не указан') +
+      ' · ' + ((cost.lastRub === null || cost.lastRub === undefined) ? 'стоимость не записана' : money(cost.lastRub, true)) +
+      (baseName(r.lastArtifact) ? ' · файл: ' + baseName(r.lastArtifact) : '')));
+    box.appendChild(last);
+    if (r.lastError) box.appendChild(note('warn', 'Последний прогон закончился с замечанием: ' + String(r.lastError).slice(0, 300)));
+  } else {
+    box.appendChild(el('div', 'hintline', 'Прогонов в журнале нет — запускать пока нечего. Запись появится здесь, как только агент отработает цикл.'));
+  }
+
+  if (s.recent && s.recent.length) {
+    var host = el('div');
+    rowsTable(host, [['Когда'], ['Клиент'], ['Статус'], ['Длительность'], ['Стоимость'], ['Отчёт']], s.recent.map(function (x) {
+      var f = baseName(x.artifact);
+      return [
+        x.ts ? fmtDateTime(Date.parse(x.ts)) : '—',
+        x.client || '—',
+        standStatusBadge(x.status),
+        fmtDuration(x.durationMs),
+        (x.costRub === null || x.costRub === undefined) ? 'не записана' : money(x.costRub, true),
+        f ? el('span', 'small', f) : '—'
+      ];
+    }));
+    box.appendChild(el('div', 'small muted', 'Последние прогоны (до 8):'));
+    box.appendChild(host);
+  }
+
+  if (s.byClient && s.byClient.length) {
+    box.appendChild(el('div', 'hintline', 'По клиентам: ' + s.byClient.map(function (c) {
+      return (c.client === '(без клиента)' ? 'без клиента' : c.client) + ' — прогонов ' + c.runs + ' (успешно ' + c.ok + ')';
+    }).join(' · ')));
+  }
+
+  var row = el('div', 'filters');
+  var out = el('div');
+  var isA1 = s.id === 'agent-1-competitor-watch';
+  var isA2 = s.id === 'agent-2-direct-semantics';
+  var specs = [];
+  if (isA1) specs.push(actionSpec('agent'));
+  if (isA2) {
+    specs.push(actionSpec('agent2'));
+    // Локальное действие карточки Агента 2: НЕ добавляем в ACTION_SPECS —
+    // общий список действий проверяется замороженным ux-check по индексам кнопок.
+    specs.push({
+      id: 'agent2-metrika',
+      label: 'Отчёт Метрики за 30 дней',
+      hint: 'Собрать отчёт Метрики по счётчику из marketing-agents/.env: визиты, пользователи, цели. Только чтение.',
+      agent: 'agent-2-direct-semantics'
+    });
+  }
+  specs = specs.filter(Boolean);
+  var canRun = s.ready === true;
+  if (specs.length) {
+    specs.forEach(function (spec) {
+      var btn = el('button', 'btn small primary', spec.label);
+      if (canRun) {
+        btn.title = spec.hint;
+        btn.addEventListener('click', function () { runAction(spec, btn, out); });
+      } else {
+        btn.disabled = true;
+        btn.title = s.readinessReason || 'запуск из панели для этого агента пока не настроен';
+      }
+      row.appendChild(btn);
+    });
+  } else {
+    var noBtn = el('button', 'btn small primary', 'Запуск недоступен');
+    noBtn.disabled = true;
+    noBtn.title = s.readinessReason || 'запуск из панели для этого агента пока не настроен';
+    row.appendChild(noBtn);
+  }
+  box.appendChild(row);
+  box.appendChild(out);
+  box.appendChild(el('div', 'hintline', isA1
+    ? 'Прогон идёт сразу по всем клиентам — выбор одного клиента движок пока не поддерживает. Сбор с площадок пропускается (--skip-sources): он требует входа в Chrome.'
+    : (isA2
+      ? 'Проверка только читает аккаунт: токен из marketing-agents/.env (YANDEX_DIRECT_TOKEN). Кампании, ставки и бюджет не меняются; если токена нет — панель честно скажет, чего не хватает.'
+      : 'Вход (клиент / ЖК / бюджет) и команда запуска для этого агента не реализованы: в реестре он в статусе «запланирован».')));
+  return box;
+}
+
+// Строка-подсказка под плитками карточки Агента 1: почему «в анализе» меньше, чем в списках.
+// Числа берутся из истинного списка (`truth.competitors` / `truth.withoutSource`). Нет списка — нет строки.
+function a1CardListHint(a) {
+  if (!a || a.id !== 'agent-1-competitor-watch') return null;
+  var doc = STATE['competitor-analytics'];
+  var clients = ((doc && doc.clients) || []).filter(function (c) { return c && c.exists !== false; });
+  var list = null, noSrc = null;
+  clients.forEach(function (c) {
+    var t = c.truth || null;
+    if (t && typeof t.competitors === 'number') list = (list === null ? 0 : list) + t.competitors;
+    if (t && typeof t.withoutSource === 'number') noSrc = (noSrc === null ? 0 : noSrc) + t.withoutSource;
+  });
+  if (list === null) return null;
+  return 'Истинный список конкурентов: в списках ' + fmtInt(list)
+    + (noSrc === null ? '' : ', без источника ' + fmtInt(noSrc))
+    + ' — в анализ попадают только записи с сайтом или площадкой, поэтому «в анализе» меньше.';
+}
+
 function openDrawer(title, build) {
   var drawer = q('drawer');
   var backdrop = q('drawerBackdrop');
@@ -911,6 +1166,14 @@ VIEWS.agents = function (view) {
   var agentsDoc = STATE.agents;
   if (!agentsDoc) { view.appendChild(note('bad', 'Нет данных по агентам.')); return; }
 
+  // Стенд агентов (шаг 1B): записи журнала, которые не удалось отнести ни к одному агенту
+  // реестра, показываем ОДИН раз здесь, а не в каждой карточке.
+  var standDoc = STATE['agent-runs'];
+  if (standDoc && standDoc.totals && standDoc.totals.unattributed > 0) {
+    view.appendChild(note('warn', 'В журнале прогонов ' + standDoc.totals.unattributed +
+      ' записей с пустым или неизвестным агентом — они не показаны ни в одной карточке стенда и не учтены в её цифрах.'));
+  }
+
   var s = agentsDoc.summary;
   var kpis = el('div', 'grid kpi');
   kpis.appendChild(kpi('Агентов в реестре', String(s.total), 'включено: ' + s.enabled + ' · выключено: ' + s.disabled, 'accent'));
@@ -1014,10 +1277,37 @@ VIEWS.agents = function (view) {
       return d;
     }
     var m = a.metrics;
-    stats.appendChild(stat('задач', String(m.tasks.total), 'всего задач на агенте'));
-    stats.appendChild(stat('токенов', fmtTokens(m.tokens.totalTokens), fmtInt(m.tokens.totalTokens)));
-    stats.appendChild(stat('расход', m.tokens.totalTokens === 0 ? '—' : money(m.rub, m.rubComplete), m.tokens.totalTokens === 0 ? 'агент ещё не запускался' : ''));
+    // Контракт v2 (§4): у карточки Агента 1 — метрики анализа конкурентов; у остальных агентов
+    // остаются прежние «задач / токенов / расход» (их карточки не меняются).
+    var a1stats = a1CardStats(a);
+    if (a1stats) {
+      a1stats.forEach(function (s) { stats.appendChild(stat(s[0], s[1], s[2])); });
+    } else {
+      stats.appendChild(stat('задач', String(m.tasks.total), 'всего задач на агенте'));
+      stats.appendChild(stat('токенов', fmtTokens(m.tokens.totalTokens), fmtInt(m.tokens.totalTokens)));
+      stats.appendChild(stat('расход', m.tokens.totalTokens === 0 ? '—' : money(m.rub, m.rubComplete), m.tokens.totalTokens === 0 ? 'агент ещё не запускался' : ''));
+    }
     c.appendChild(stats);
+    // D-CARD (task-7): плитки берут метрики движка, а размер истинного списка показываем
+    // отдельной честной строкой-подсказкой, чтобы разница «в анализе» vs «в списках» была видна.
+    if (a1stats) {
+      var a1listHint = a1CardListHint(a);
+      if (a1listHint) c.appendChild(el('div', 'hintline', a1listHint));
+    }
+
+    // СТЕНД (шаг 1B): прогоны, длительность, стоимость и запуск — в карточке каждого агента.
+    var standRow = standFor(a.id);
+    if (standRow) c.appendChild(agentStandBlock(standRow));
+
+    // Регламенты (скиллы) агента: по ним агент работает. Источник — registry/agents.yaml -> skills.
+    if (a.skills && a.skills.length) {
+      var skBox = el('div', 'agent-skills');
+      skBox.appendChild(el('div', 'small muted', 'Регламенты (скиллы), по которым работает агент: ' + a.skills.length));
+      var skList = el('ul', 'clean');
+      a.skills.forEach(function (name) { skList.appendChild(el('li', null, name)); });
+      skBox.appendChild(skList);
+      c.appendChild(skBox);
+    }
 
     var foot = el('div', 'small muted');
     var parts = [];
@@ -1035,12 +1325,17 @@ VIEWS.agents = function (view) {
       c.appendChild(el('div', 'hintline', 'Через дашборд этот агент ещё не переключали.'));
     }
 
-    var more = el('button', 'btn small', 'Подробнее и задачи');
-    more.addEventListener('click', function () { showAgent(a); });
+    // Отдельная кнопка «Детали»: клик по самой карточке больше НЕ открывает боковое
+    // меню (раньше любое нажатие на блок агента вытаскивало drawer). Остальные экраны,
+    // где открытие меню осмысленно, продолжают вызывать openDrawer из своих кнопок.
+    var more = el('button', 'btn small', 'Детали');
+    more.title = 'Открыть карточку агента подробно: статистика, задачи и настройки';
+    more.addEventListener('click', function (e) {
+      e.stopPropagation();
+      showAgent(a);
+    });
     c.appendChild(more);
 
-    c.classList.add('clickable');
-    c.addEventListener('click', function () { showAgent(a); });
     grid.appendChild(c);
   });
   listSection.appendChild(grid);

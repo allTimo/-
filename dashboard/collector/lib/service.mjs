@@ -253,9 +253,22 @@ export function buildServiceDoc(ctx) {
     note: 'Себестоимость и расход считаются по данным панели: прогоны берутся из registry/runs.jsonl, план — из services.yaml. Цена модели без прайса помечается «цена неизвестна».',
   };
 
+  // ЧЕСТНОСТЬ ДАННЫХ (G9): подписки, счета и доход ниже — демонстрационные записи
+  // реестра (registry/subscriptions.yaml, registry/invoices.yaml), а не факт оплат.
+  // Пользователь подтвердил 04.11.2026, что долга клиента нет и цифры не реальны.
+  // Пока в реестре демо-данные, панель обязана помечать раздел «демо», иначе
+  // 28 500 ₽ дохода и счета читаются как факт. Снять флаг после перевода реестра
+  // на реальные записи (или когда в записях появится собственный признак demo).
+  const demo = true;
+  const demoReason = 'Подписки, счета и доход в этом разделе — демонстрационные записи реестра, ' +
+    'а не факт оплат. Реальных платежей в системе нет: цифры нужны только чтобы проверить работу панели. ' +
+    'Пометка снимется, когда реестр перейдёт на реальные данные.';
+
   return {
     generatedAtMs: Date.now(),
     today: today,
+    demo: demo,
+    demoReason: demoReason,
     files: { clients: CLIENTS, services: SERVICES, subscriptions: SUBS, invoices: INVOICES, runs: RUNS, results: RESULTS },
     labels: { clientStatus: CLIENT_STATUS, subStatus: SUB_STATUS, invoiceStatus: INV_STATUS, runStatus: RUN_STATUS, serviceStatus: SVC_STATUS },
     clients: clients,

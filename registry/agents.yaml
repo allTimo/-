@@ -8,13 +8,13 @@ agents:
   - id: agent-1-competitor-watch
     name: "Агент 1 — Мониторинг конкурентов"
     role: "Раз в неделю собирает снимок предложения конкурентов (цены, акции, количество лотов), сравнивает с прошлой неделей и готовит отчёт."
-    enabled: true
+    enabled: false
     status: active
     model: "deepseek/deepseek-v4.1-flash"
     model_hint: "лёгкий сбор данных + расчёты движка; сильную модель подключать только для выводов"
     projects: []          # пусто = все проекты из projects.yaml
     groups: ["Мониторинг", "Конкуренты"]
-    schedule: "weekly:monday:10:00"
+    schedule: "weekly:thursday:11:00"
     inputs: ["registry/intake/inbox", "01-competitor-watch/inbox", "cian-connector", "avito-connector"]
     outputs: ["01-competitor-watch/reports", "01-competitor-watch/data/snapshots"]
     runbook: "00-admin/runbook.md"
@@ -22,9 +22,9 @@ agents:
 
   - id: agent-2-direct-semantics
     name: "Агент 2 — Семантика и кампании Яндекс Директа"
-    role: "Собирает и кластеризует семантику, собирает кампании и группы, пишет объявления, готовит выгрузку в Директ."
-    enabled: false
-    status: planned
+    role: "Собирает семантику и кластеры, готовит кампании и объявления; читает кампании, отчёты и поисковые запросы Директа через API v5, аналитика Метрики."
+    enabled: true
+    status: active
     model: "deepseek/deepseek-v4-pro"
     model_hint: "задача творческая и объёмная — здесь сильная модель оправдана"
     projects: []
@@ -33,7 +33,9 @@ agents:
     inputs: ["registry/intake", "00-admin/config/my-objects.yaml"]
     outputs: ["02-keywords-direct"]
     runbook: "02-keywords-direct/README.md"
-    notes: "Следующий этап. Запуск — по команде пользователя."
+    skills: ["direct-keywords", "yandex-performance-head", "performance-unit-economics", "direct-campaign-management", "metrika-cross-analytics", "yandex-wordstat", "yandex-audience", "ppc-audit", "performance-ops", "ppc-checklist"]
+    bundle: "agents/agent-2-direct-semantics/prompt-bundle.md"
+    notes: "Движок skills/direct_api — только чтение. Живой доступ есть: 13 кампаний кабинета intel-denisov (Client-Login), Метрика ok. Создание кампаний и изменение ставок/бюджетов не реализованы — только по явному подтверждению, когда появится исполнитель. Счётчик ЖК «Свет» не подключён (в .env — «Цветы»)."
 
   - id: agent-3-creative
     name: "Агент 3 — Креативы и дизайн (заготовка)"

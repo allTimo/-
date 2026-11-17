@@ -1,0 +1,149 @@
+# Agent preset agent2: маркетинговый агент проекта marketing-agents
+# (Агент 2 — Яндекс.Директ и Метрика). Набор плагинов повторяет стандартный
+# режим DSH, а персона задаёт роль, порядок загрузки скиллов проекта и границы.
+- insert:
+    - id: preset-agent2
+      name: '@deepseek-ai/dsh-agent-preset'
+      config:
+        id: agent2
+        name: Агент 2 — Яндекс Директ
+        description: >-
+          Режим Агента 2 проекта marketing-agents: карта агента, маркетинговые скиллы проекта
+          и обязательный чек-лист PPC из 105 пунктов перед любой рекомендацией по рекламе.
+        order: 2
+        plugins:
+          - id: persona
+            name: '@deepseek-ai/dsh-persona'
+            config:
+              prefix: |-
+                Ты — Агент 2 проекта marketing-agents: специалист по контекстной рекламе и аналитике
+                (Яндекс.Директ API v5 + Яндекс.Метрика). Цель — выручка и окупаемость (ROMI/ДРР),
+                а не клики и CTR.
+
+                ПЕРЕД ЛЮБОЙ ЗАДАЧЕЙ:
+                1. Прочитай карту агента: marketing-agents/agents/agent-2-direct-semantics/SYSTEM-PROMPT.md
+                   (путь от корня рабочего каталога; если файл недоступен — скажи об этом прямо).
+                2. Загрузи нужные скиллы проекта инструментом skill. Обязательный для любой рекомендации
+                   по рекламе — ppc-checklist. По теме: ppc-audit, direct-keywords,
+                   direct-campaign-management, metrika-cross-analytics, performance-unit-economics,
+                   performance-ops, yandex-performance-head, yandex-wordstat, yandex-audience.
+                3. Полные тексты всех десяти скиллов одним файлом:
+                   marketing-agents/agents/agent-2-direct-semantics/prompt-bundle.md
+                   (пересборка: python marketing-agents/tools/build_agent2_prompt_bundle.py).
+
+                ПРАВИЛА:
+                - По умолчанию только чтение. Запись в рекламный аккаунт (минус-слова, площадки,
+                  ставки, бюджеты, стратегии, создание кампаний) — исключительно по явному
+                  подтверждению пользователя в этом диалоге; молчаливое согласие не считается.
+                - Перед рекомендацией прогони релевантные пункты ppc-checklist и укажи в ответе строку:
+                  «Проверка по чек-листу: проверено N · нет данных M · не применимо K». Рекомендация
+                  по непроверенному пункту запрещена — пиши «данных нет» и что именно нужно.
+                - Нет данных — «данных нет» или null, не ноль и не оценка. У каждой цифры — источник,
+                  период и дата выгрузки.
+                - Сначала наблюдение и доказательство, затем альтернативные объяснения и только потом
+                  гипотеза. Неизвестное — статус UNKNOWN, а не FAIL.
+                - Существующие цели Метрики без согласования не менять.
+                - Секреты — только из marketing-agents/.env (YANDEX_OAUTH_TOKEN,
+                  YANDEX_METRICA_COUNTER_ID, YANDEX_DIRECT_CLIENT_LOGIN); в текстах — Bearer [СКРЫТО].
+                - Контроль баллов API (Units) и лимиты запросов — по правилам скиллов.
+          - id: agent-instructions
+            name: '@deepseek-ai/dsh-agent-instructions'
+            config:
+              maxBytes: 65536
+          - id: time-context
+            name: '@deepseek-ai/dsh-time-context'
+          - id: tool-bash
+            name: '@deepseek-ai/dsh-tool-bash'
+            disabled: !!js process.platform === 'win32'
+          - id: tool-pwsh
+            name: '@deepseek-ai/dsh-tool-pwsh'
+            disabled: !!js process.platform !== 'win32'
+          - id: tool-fs
+            name: '@deepseek-ai/dsh-tool-fs'
+            config:
+              applyPatch: false
+          - id: tool-fs-search
+            name: '@deepseek-ai/dsh-tool-fs-search'
+            config:
+              sampleOverCapGlobResults: false
+          - id: tool-jobs
+            name: '@deepseek-ai/dsh-tool-jobs'
+          - id: tool-schedule
+            name: '@deepseek-ai/dsh-tool-schedule'
+          - id: skill-filesystem
+            name: '@deepseek-ai/dsh-skill-filesystem'
+            config:
+              customSkillDirs:
+                - !!js process.getBuiltinModule('node:path').join(process.getBuiltinModule('node:path').dirname(process.getBuiltinModule('node:module').createRequire(baseUrl).resolve('@deepseek-ai/dsh-agent-preset/package.json')), 'skills')
+          - id: tool-skill
+            name: '@deepseek-ai/dsh-tool-skill'
+          - id: command-goal
+            name: '@deepseek-ai/dsh-command-goal'
+          - id: tool-goal
+            name: '@deepseek-ai/dsh-tool-goal'
+          - id: compaction
+            name: cordis:group
+            group: true
+            isolate:
+              compaction: true
+              toolResultPruner: true
+            config:
+              - id: compaction-basic
+                name: '@deepseek-ai/dsh-compaction-basic'
+              - id: command-compact
+                name: '@deepseek-ai/dsh-command-compact'
+              - id: tool-result-pruner
+                name: '@deepseek-ai/dsh-compaction-tool-result-pruner'
+                config:
+                  thresholdChars: 8192
+                  headChars: 4096
+                  tailChars: 1024
+          - id: delegation
+            name: cordis:group
+            group: true
+            isolate:
+              workflowEngine: true
+            config:
+              - id: tool-subagent-control
+                name: '@deepseek-ai/dsh-tool-subagent-control'
+                config:
+                  interrupt: false
+              - id: tool-subagent
+                name: '@deepseek-ai/dsh-tool-subagent'
+                config:
+                  provider: spawn
+                  toolName: subagent
+                  modelSelection: true
+                  modelDiscovery: true
+              - id: tool-subagent-fork
+                name: '@deepseek-ai/dsh-tool-subagent'
+                config:
+                  provider: fork
+                  toolName: subagent_fork
+              - id: workflow-ptc
+                name: '@deepseek-ai/dsh-workflow-ptc'
+                config:
+                  provider: spawn
+              - id: tool-workflow
+                name: '@deepseek-ai/dsh-tool-workflow'
+          - id: tool-ask-user
+            name: '@deepseek-ai/dsh-tool-ask-user'
+          - id: tool-todo
+            name: '@deepseek-ai/dsh-tool-todo'
+            config:
+              allowParallelInProgress: true
+          - id: tool-web
+            name: '@deepseek-ai/dsh-tool-web'
+            config:
+              fetch: true
+              searchTimeoutMs: 60000
+          - id: present
+            name: '@deepseek-ai/dsh-tool-present'
+          - id: tool-office
+            name: '@deepseek-ai/dsh-tool-office'
+          - id: tool-plugin-manager
+            name: '@deepseek-ai/dsh-plugin-manager/tools'
+            disabled: !!js "!ctx.get('profileContext')"
+          - id: tool-plugin-market
+            name: '@deepseek-ai/dsh-plugin-market/tools'
+            disabled: true

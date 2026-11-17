@@ -94,13 +94,29 @@ JS_ONLY_MARKERS = ("включите javascript", "enable javascript", "похо
 
 PRICE_RE = re.compile(r"([0-9]{1,3}(?:[ \u00a0][0-9]{3})+|[0-9]{4,})\s*(?:₽|руб)")
 MLN_RE = re.compile(r"([0-9]+(?:[.,][0-9]+)?)\s*млн")
-AREA_RE = re.compile(r"([0-9]+(?:[.,][0-9]+)?)\s*(?:м²|м2|кв\.?\s?м)")
+AREA_RE = re.compile(r"([0-9]+(?:[.,][0-9]+)?)\s*(?:м\s*²|м\s*2|кв\.?\s*м)")
+#: Процент скидки на карточке («-35%», «скидка 20 %»).
+DISCOUNT_PCT_RE = re.compile(r"(\d{1,2})\s*%")
 ROOMS_RE = re.compile(r"([1-5])\s*[-\s]?\s*(?:комн|к\.|комнатн)")
 STUDIO_RE = re.compile(r"студи", re.IGNORECASE)
 FLOOR_RE = re.compile(r"([0-9]{1,3})\s*/\s*([0-9]{1,3})\s*(?:эт|этаж)")
 DELIVERY_RE = re.compile(r"(20[2-9][0-9])\s*(?:год|г\.|кв|квартал|Q([1-4]))?", re.IGNORECASE)
 PROMO_WORDS = ("скидк", "акци", "рассрочк", "ипотек", "субсидирован", "трейд-ин", "старт продаж",
                "последние лоты", "кэшбэк", "мебель в подарок", "паркинг в подарок", "промо")
+
+#: Слова рядом с суммой, после которых это НЕ цена лота, а сопутствующая цифра
+#: (взнос, платёж, ставка, цена за м²). Правило честности F10.
+MONEY_NOISE = ("взнос", "платёж", "платеж", "ипотек", "ставка", "скидк", "кэшбэк", "кешбэк",
+               "трейд-ин", "паркинг", "кладов", "машиноместо", "аренд", "ремонт", "мебел",
+               "₽/м", "руб/м", "/м²", "/м2", "за м²", "за м2", "за метр", "в месяц", "/мес")
+#: Насколько близко к числу искать слово-обманку (знаков в каждую сторону).
+NOISE_WINDOW = 30
+#: Правдоподобный коридор ₽/м²; тот же, что в ``lot_history_pipeline.PLAUSIBLE_PPM2``.
+PLAUSIBLE_PPM2 = (120_000, 1_200_000)
+#: Признаки адреса, который НЕ является карточкой лота: паркинг, ипотека, каталог, акции.
+NON_LOT_URL_MARKERS = ("/parking", "/parkovka", "/machin", "/машином", "/mortgage", "/ipoteka",
+                       "/filter", "/purchase", "/actions", "/akcii", "/promo", "/news",
+                       "/contacts", "/about")
 
 CARD_SPLIT = {
     "cian": r'data-testid="offer-card"|<article[^>]*class="[^"]*offer',
@@ -149,6 +165,157 @@ def parse_price(text):
     return None
 
 
+def money_candidates(text):
+    """Все денежные числа текста: ``(начало, конец, рубли)``.
+
+    «12 500 000 ₽» → 12 500 000; «23,18 млн» → 23 180 000.
+    """
+    found = []
+    for match in MLN_RE.finditer(text or ""):
+        try:
+            value = float(match.group(1).replace(",", ".")) * 1_000_000
+        except ValueError:
+            continue
+        found.append((match.start(), match.end(), int(round(value))))
+    for match in PRICE_RE.finditer(text or ""):
+        digits = re.sub(r"[^0-9]", "", match.group(1))
+        if digits:
+            found.append((match.start(), match.end(), int(digits)))
+    found.sort()
+    return found
+
+
+def marked_by_noise(text, candidates):
+    """Индексы чисел, к которым привязаны слова-обманки («взнос», «₽/м²», «/мес»).
+
+    Слово относится к **ближайшему** числу. Живой level.ru: «84 903 руб./мес.
+    25 364 668 руб. 16 487 034 руб. -35%» — «/мес» про первое число, и настоящая
+    цена из-за него не отбрасывается.
+    """
+    marked = set()
+    lowered = (text or "").lower()
+    for noise in MONEY_NOISE:
+        start = 0
+        while True:
+            position = lowered.find(noise, start)
+            if position < 0:
+                break
+            start = position + 1
+            best = None
+            for index, (cstart, cend, _value) in enumerate(candidates):
+                distance = 0 if cstart <= position <= cend else min(abs(cstart - position),
+                                                                   abs(position - cend))
+                if best is None or distance < best[0]:
+                    best = (distance, index)
+            if best is not None:
+                marked.add(best[1])
+    return marked
+
+
+def is_lot_price(text, index, candidates):
+    """Число не подписано словами-обманками («взнос», «₽/м²», «в месяц» …)."""
+    return index not in marked_by_noise(text, candidates)
+
+
+def pick_lot_price(text):
+    """Цена лота: самое крупное «честное» денежное число карточки, иначе ``None``.
+
+    Дефект F10: сайты застройщиков печатают в карточке «первоначальный взнос» и
+    «платёж по ипотеке» рядом с ценой. Первое совпадение давало 34 700 и
+    74 928 ₽/м². Здесь такие суммы отбрасываются, берётся цена квартиры.
+    """
+    cleaned = clean_text(text)
+    candidates = money_candidates(cleaned)
+    best = None
+    for index, (_start, _end, value) in enumerate(candidates):
+        if not is_lot_price(cleaned, index, candidates):
+            continue
+        if best is None or value > best:
+            best = value
+    return best
+
+
+def discount_pair(text):
+    """``(текущая цена, цена до скидки)`` — только если процент на странице сходится.
+
+    Живой level.ru (04.11.2026) пишет в карточке «25 364 668 руб. 16 487 034 руб. -35%»:
+    текущая цена — меньшая, и это подтверждается процентом на самой странице
+    (1 − 16 487 034 / 25 364 668 = 35 %). Если процент не сходится, ничего не выдумываем.
+    """
+    cleaned = clean_text(text)
+    candidates = money_candidates(cleaned)
+    honest = [item for index, item in enumerate(candidates) if is_lot_price(cleaned, index, candidates)]
+    for left, right in zip(honest, honest[1:]):
+        larger, smaller = (left[2], right[2]) if left[2] >= right[2] else (right[2], left[2])
+        if smaller <= 0 or larger == smaller:
+            continue
+        pct = round((1 - smaller / larger) * 100)
+        if pct <= 0 or pct > 90:
+            continue
+        window = cleaned[left[1]:right[1] + 40]
+        if any(abs(int(match.group(1)) - pct) <= 1 for match in DISCOUNT_PCT_RE.finditer(window)):
+            return smaller, larger
+    return None, None
+
+
+def pick_lot_price_details(text):
+    """Цена лота и (если подтверждено процентом) цена до скидки.
+
+    Правило честности: сначала проверяем подтверждённую скидку, иначе берём самое
+    крупное «честное» денежное число карточки.
+    """
+    smaller, larger = discount_pair(text)
+    if smaller:
+        return {"price_rub": smaller, "price_before_rub": larger}
+    return {"price_rub": pick_lot_price(text), "price_before_rub": None}
+
+
+def plausible_ppm2(price, area):
+    """Сходится ли цена с площадью: ₽/м² внутри :data:`PLAUSIBLE_PPM2`."""
+    if not price or not area:
+        return True
+    return PLAUSIBLE_PPM2[0] <= (price / area) <= PLAUSIBLE_PPM2[1]
+
+
+def pick_site_url(block, page_url=""):
+    """Адрес позиции из карточки сайта застройщика; нет ссылки — адрес страницы."""
+    match = re.search(r'href="([^"#]+)"', block or "")
+    if not match:
+        return page_url or ""
+    href = match.group(1).strip()
+    if href.startswith("http"):
+        return href
+    if href.startswith("/"):
+        root = re.match(r"^(https?://[^/]+)", page_url or "")
+        if root:
+            return root.group(1) + href
+    return page_url or ""
+
+
+def project_slug(url):
+    """Слаг проекта из адреса страницы застройщика (``/projects/<slug>/``)."""
+    match = re.search(r"/projects/([^/?#]+)", str(url or ""), re.IGNORECASE)
+    return match.group(1).lower() if match else ""
+
+
+def is_lot_position_url(position_url, page_url=""):
+    """Адрес позиции — это лот, а не паркинг/ипотека/каталог и не другой ЖК.
+
+    Проверено на живом level.ru (04.11.2026): в выдаче каталога попадаются
+    страницы ``/parking``, ``/purchase/mortgage``, ``/filter/...`` и карточки
+    другого проекта (``/projects/lesnoy/`` при разборе ``/projects/southport/``).
+    Их цены к нашему конкуренту отношения не имеют.
+    """
+    url = str(position_url or "").lower()
+    if any(marker in url for marker in NON_LOT_URL_MARKERS):
+        return False
+    page = project_slug(page_url)
+    found = project_slug(position_url)
+    if page and found and page != found:
+        return False
+    return True
+
+
 def parse_area_m2(text):
     match = AREA_RE.search(clean_text(text))
     if match:
@@ -178,13 +345,39 @@ def parse_floor(text):
     return None, None
 
 
+#: Квартал перед годом: «IV кв. 2027», «3 квартал 2028».
+DELIVERY_QUARTER_BEFORE_RE = re.compile(
+    r"\b(IV|III|II|I|[1-4])\s*(?:кв\.?|квартал[а-я]*)\s*(20[2-9][0-9])", re.IGNORECASE)
+#: Римские и арабские номера кварталов.
+QUARTER_NUMBERS = {"i": 1, "ii": 2, "iii": 3, "iv": 4, "1": 1, "2": 2, "3": 3, "4": 4}
+#: Признаки настоящего срока сдачи рядом с годом.
+DELIVERY_DEADLINE_WORDS = ("срок", "сдач", "ввод", "готовност", "передач", "окончан", "завершен")
+#: Признаки того, что год — не срок, а ипотечное/платёжное условие (дефект F12).
+DELIVERY_NOISE_WORDS = ("ставк", "ипотек", "кредит", "взнос", "платёж", "платеж", "рассрочк", "процент")
+
+
 def parse_delivery(text):
-    match = DELIVERY_RE.search(clean_text(text))
-    if not match:
-        return ""
-    year = match.group(1)
-    quarter = match.group(2)
-    return "%s-Q%s" % (year, quarter) if quarter else year
+    """Срок сдачи: «2027-Q2», если квартал известен, иначе год «2027», иначе пусто.
+
+    Год рядом с ипотечными или платёжными словами («ставка 13 % на 2027 год») сроком
+    сдачи не считается: именно так в колонку попадал мусор (дефект F12). Если рядом
+    есть прямое слово о сроке («сдача 2027») — год берём.
+    """
+    cleaned = clean_text(text)
+    before = DELIVERY_QUARTER_BEFORE_RE.search(cleaned)
+    if before:
+        quarter = QUARTER_NUMBERS.get(before.group(1).lower())
+        if quarter:
+            return "%s-Q%d" % (before.group(2), quarter)
+    for match in DELIVERY_RE.finditer(cleaned):
+        window = cleaned[max(0, match.start() - 18):match.end() + 18].lower()
+        deadline = any(word in window for word in DELIVERY_DEADLINE_WORDS)
+        if not deadline and any(word in window for word in DELIVERY_NOISE_WORDS):
+            continue
+        year = match.group(1)
+        quarter = match.group(2)
+        return "%s-Q%s" % (year, quarter) if quarter else year
+    return ""
 
 
 # фрагменты вёрстки/JSON, которые не являются текстом акции
@@ -299,8 +492,15 @@ def extract_offer_id(block, platform="cian"):
     return None, ""
 
 
-def parse_cards(html, platform):
-    """Карточки предложений: цена/площадь/комнатность/этаж — что есть на странице."""
+def parse_cards(html, platform, page_url=""):
+    """Карточки предложений: цена/площадь/комнатность/этаж — что есть на странице.
+
+    Для сайта застройщика (``platform == "site"``) цена берётся правилом
+    :func:`pick_lot_price`, а не первым денежным числом карточки, и ₽/м² вне
+    :data:`PLAUSIBLE_PPM2` считается недостоверным — в этом случае цена не
+    публикуется вовсе (дефект F10). Адрес позиции берётся из ссылки карточки,
+    если она есть (раньше поле ``url`` оставалось пустым).
+    """
     splitter = CARD_SPLIT.get(platform, CARD_SPLIT["site"])
     raw_blocks = re.split("(?=" + splitter + ")", html)
     if len(raw_blocks) <= 1:
@@ -309,14 +509,32 @@ def parse_cards(html, platform):
     blocks = [block for block in raw_blocks if block.strip()]
     lots = []
     for block in blocks[1:] if len(blocks) > 1 else []:
-        price = parse_price(block)
+        if platform == "site":
+            details = pick_lot_price_details(block)
+        else:
+            details = {"price_rub": parse_price(block), "price_before_rub": None}
+        price = details["price_rub"]
         area = parse_area_m2(block)
         rooms = parse_rooms(block)
         floor, floors_total = parse_floor(block)
+        if price is not None and not plausible_ppm2(price, area):
+            # цена не сходится с площадью: публикуем «данных нет», а не аномалию
+            price = None
         if price is None and area is None and rooms is None:
             continue
         title_match = re.search(r">([^<>]{4,80})<", clean_text(block) or "")
         offer_id, offer_url = extract_offer_id(block, platform)
+        if platform == "site":
+            if not offer_url:
+                offer_url = pick_site_url(block, page_url)
+            if not is_lot_position_url(offer_url, page_url):
+                # карточка паркинга, ипотеки, каталога или другого ЖК — это не лот
+                continue
+        promo_text = parse_promo(block)
+        if details.get("price_before_rub"):
+            discount_note = "скидка на странице: было %s ₽, сейчас %s ₽" % (
+                cw.fmt_int(details["price_before_rub"]), cw.fmt_int(price))
+            promo_text = ("%s; %s" % (promo_text, discount_note)) if promo_text else discount_note
         lots.append({
             "price_rub": price,
             "area_m2": area,
@@ -324,7 +542,7 @@ def parse_cards(html, platform):
             "floor": floor,
             "floors_total": floors_total,
             "delivery": parse_delivery(block),
-            "promo_text": parse_promo(block),
+            "promo_text": promo_text,
             "building": "",
             "offer_id": offer_id,
             "offer_url": offer_url,
@@ -336,7 +554,7 @@ def parse_cards(html, platform):
 def parse_page(html, platform, url=""):
     """Результат разбора: список лотов и признак гранулярности."""
     lots = []
-    cards = parse_cards(html, platform) if html else []
+    cards = parse_cards(html, platform, url) if html else []
     for card in cards:
         if card.get("price_rub") is None:
             continue
@@ -467,39 +685,66 @@ def is_chrome_error_page(html):
     return any(marker in text for marker in CHROME_ERROR_MARKERS)
 
 
-def chrome_launch_args(port, profile_dir, headless=False, ignore_cert_errors=False):
+def chrome_launch_args(port, profile_dir, headless=False, ignore_cert_errors=False, no_sandbox=False):
     """Аргументы запуска: отдельный временный профиль => ни одной сохранённой сессии."""
     args = [str(find_chrome()),
             "--remote-debugging-port=%d" % int(port),
             "--user-data-dir=%s" % str(profile_dir),
             "--no-first-run", "--no-default-browser-check", "--disable-extensions",
-            "--disable-sync", "--disable-background-networking", "about:blank"]
+            "--disable-sync", "--disable-background-networking", "--disable-gpu", "about:blank"]
     if headless:
         args.insert(1, "--headless=new")
     if ignore_cert_errors:
         # сеть площадки подменяет сертификат (self-signed в цепочке); включается ЯВНО и только
         # для чтения публичных страниц, факт отмечается в метрике
         args.insert(1, "--ignore-certificate-errors")
+    if no_sandbox:
+        # Проверено 04.11.2026: внутри песочницы DSH собственный sandbox Chrome не поднимается —
+        # процесс падает сразу (код 0x80000003), порт отладки не открывается. Флаг включается
+        # ТОЛЬКО как вынужденный откат, с временным профилем и для чтения публичных страниц.
+        args.insert(1, "--no-sandbox")
     return args
 
 
-def launch_chrome(port=9333, profile_dir=None, headless=False, timeout=25, ignore_cert_errors=False):
-    """Поднимает Chrome с чистым профилем. Возвращает (process, profile_path)."""
-    profile = Path(profile_dir) if profile_dir else Path(tempfile.mkdtemp(prefix="cw-cdp-profile-"))
+#: Как поднялся Chrome в последнем запуске: пусто — обычным способом, иначе причина отката.
+LAST_CHROME_NOTE = ""
+
+
+def launch_chrome(port=9333, profile_dir=None, headless=False, timeout=25, ignore_cert_errors=False,
+                  allow_no_sandbox_fallback=True):
+    """Поднимает Chrome с чистым профилем. Возвращает (process, profile_path).
+
+    Если Chrome умирает при старте (под песочницей это ожидаемо), делается одна
+    повторная попытка с ``--no-sandbox``; причина отката остаётся в
+    :data:`LAST_CHROME_NOTE`, чтобы её можно было показать в отчёте, а не скрыть.
+    """
+    global LAST_CHROME_NOTE
     chrome = find_chrome()
     if not chrome or not Path(chrome).exists():
         raise RuntimeError("chrome.exe не найден")
-    process = subprocess.Popen(chrome_launch_args(port, profile, headless, ignore_cert_errors),
-                               stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-    deadline = time.time() + timeout
-    while time.time() < deadline:
-        try:
-            with urllib.request.urlopen("http://127.0.0.1:%d/json/version" % int(port), timeout=2):
-                return process, profile
-        except Exception:
-            time.sleep(0.4)
-    stop_chrome(process)
-    raise RuntimeError("Chrome не поднял порт %d за %d с" % (port, timeout))
+    LAST_CHROME_NOTE = ""
+    attempts = [False] + ([True] if allow_no_sandbox_fallback else [])
+    last_error = "Chrome не поднял порт %d за %d с" % (int(port), timeout)
+    for no_sandbox in attempts:
+        profile = Path(profile_dir) if profile_dir else Path(tempfile.mkdtemp(prefix="cw-cdp-profile-"))
+        process = subprocess.Popen(chrome_launch_args(port, profile, headless, ignore_cert_errors, no_sandbox),
+                                   stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        deadline = time.time() + timeout
+        while time.time() < deadline:
+            if process.poll() is not None:
+                # процесс уже умер: ждать таймаут бессмысленно, сразу переходим к откату
+                last_error = "Chrome завершился при старте (код %s)" % process.poll()
+                break
+            try:
+                with urllib.request.urlopen("http://127.0.0.1:%d/json/version" % int(port), timeout=2):
+                    if no_sandbox:
+                        LAST_CHROME_NOTE = ("Chrome запущен с --no-sandbox: внутри песочницы "
+                                            "обычный запуск падает (код 0x80000003)")
+                    return process, profile
+            except Exception:
+                time.sleep(0.4)
+        stop_chrome(process, profile)
+    raise RuntimeError(last_error)
 
 
 def stop_chrome(process, profile=None):

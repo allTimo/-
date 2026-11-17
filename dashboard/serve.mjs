@@ -9,19 +9,40 @@
 //   POST /api/collect             - re-run the collector
 //   GET  /api/agents              - registry agents as they are on disk right now
 //   POST /api/agents/:id/toggle   - flip (or set) 'enabled' in registry/agents.yaml
+//   POST /api/vault/export        - write dashboard notes into the Obsidian vault (subfolder only)
 //
-// The toggle is the ONLY write this project does outside dashboard/: it rewrites
+// Кабинеты Яндекс.Директа (Агент 2) — токены только в 00-admin/config/direct-accounts.local.json
+// (вне репозитория, правило *.local), наружу — маска из последних 4 символов:
+//   GET  /api/direct/accounts         - OAuth-настройки (маска client_id) + кабинеты
+//   POST /api/direct/oauth            - {"clientId"} сохранить client_id приложения
+//   POST /api/direct/accounts         - {"token","login","sandbox"} проверить живым
+//                                       запросом к API v5 и только при успехе сохранить
+//   POST /api/direct/accounts/check   - {"id"} перепроверить кабинет
+//   POST /api/direct/accounts/delete  - {"id"} удалить кабинет
+//
+// Two writes leave dashboard/: (1) the agent/source toggle rewrites
 // registry/agents.yaml atomically (temp file + rename) after making a
-// .bak-<timestamp> copy. Everything else is read-only.
+// .bak-<timestamp> copy; (2) the Obsidian export writes notes INSIDE the vault,
+// but only into its «выгрузка-панели» subfolder and also after a .bak copy.
+// Плюс (3) API кабинетов Яндекс.Директа пишет токены в
+// 00-admin/config/direct-accounts.local.json — файл вне репозитория (*.local).
+// Everything else is read-only.
 import fs from 'node:fs';
 import crypto from 'node:crypto';
 import { execFileSync } from 'node:child_process';
 import http from 'node:http';
+import os from 'node:os';
 import path from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { PUBLIC_DIR, DATA_DIR, REGISTRY_DIR, DASHBOARD_DIR, PROJECT_DIR, WORKSPACE_ROOT } from './collector/lib/paths.mjs';
-import { parseYaml, setListItemFlag, setYamlScalar, setYamlList, setListItemField, setListItemArray } from './collector/lib/yaml.mjs';
+import { parseYaml, parseScalar, setListItemFlag, setYamlScalar, setYamlList, setListItemField, setListItemArray, insertChildBlock } from './collector/lib/yaml.mjs';
 import { collect } from './collector/collect.mjs';
+// Кабинеты Яндекс.Директа (Агент 2): хранилище токенов вне репозитория + маскирование.
+import {
+  ACCOUNTS_FILE,
+  readStore, publicOauth, publicAccount, saveClientId,
+  findAccount, upsertVerifiedAccount, updateAccountCheck, deleteAccount, maskToken,
+} from './lib/direct-accounts.mjs';
 
 const AGENTS_FILE = path.join(REGISTRY_DIR, 'agents.yaml');
 const SOURCES_FILE = path.join(REGISTRY_DIR, 'sources.yaml');
@@ -39,8 +60,27 @@ const CW_DIR = path.join(PROJECT_DIR, '01-competitor-watch');
 const CW_SCRIPTS = path.join(CW_DIR, 'scripts');
 const SNAPSHOTS_DIR = path.join(CW_DIR, 'data', 'snapshots');
 const REPORTS_DIR = path.join(CW_DIR, 'reports');
+const CW_CANDIDATES_DIR = path.join(CW_DIR, 'data', 'candidates');
+// КЛИЕНТСКИЕ КОНФИГИ — ИСТИНА списка конкурентов (контракт v2, §5.1). Пишет только панель,
+// атомарно с копией .bak. Переопределяется лишь для автотестов: e2e add/remove идёт
+// на КОПИИ конфига, реальный client-*.yaml при проверке не меняется.
+const CW_CLIENTS_DIR = process.env.DASHBOARD_CW_CLIENTS_DIR && process.env.DASHBOARD_CW_CLIENTS_DIR.trim() !== ''
+  ? process.env.DASHBOARD_CW_CLIENTS_DIR
+  : path.join(CW_DIR, 'config', 'clients');
 const COLLECT_SCRIPT = path.join(DASHBOARD_DIR, 'collector', 'collect.mjs');
+// --- выгрузка в Obsidian: модуль-исполнитель (его создаёт отдельный агент) ---
+// Маршрут POST /api/vault/export зовёт exportVault({ dryRun }) — ВТОРОЕ (после тумблера
+// агентов) исключение из правила «пишем только внутри dashboard/»: заметки ложатся
+// в подпапку «выгрузка-панели» внутри vault, перед перезаписью модуль кладёт .bak.
+// Файл может ещё не существовать — поэтому импорт динамический и с проверкой:
+// панель обязана ответить понятной ошибкой, а не упасть при старте.
+const EXPORT_VAULT_FILE = path.join(DASHBOARD_DIR, 'collector', 'export-vault.mjs');
 const PYTHON = process.env.DSH_PYTHON || path.join(process.env.USERPROFILE || process.env.HOME || '', '.dsh', 'dsh-runtimes', 'dsh-primary-runtime', 'dependencies', 'python', 'python.exe');
+// Python ДВИЖКА Агента 1: рабочий интерпретатор — проектный venv (там есть PyYAML,
+// без него движок не читает YAML-настройки). Порядок: DSH_PYTHON (тесты/переопределение)
+// → проектный venv → рантайм DSH. Так панель не «теряет» движок из-за не того Python.
+const CW_VENV_PYTHON = path.join(PROJECT_DIR, 'connectors', 'ru-marketplace-mcp', '.venv', 'Scripts', 'python.exe');
+const CW_PYTHON = process.env.DSH_PYTHON || (fs.existsSync(CW_VENV_PYTHON) ? CW_VENV_PYTHON : PYTHON);
 
 // --- каркас сервиса: файлы модели данных ---
 const CLIENTS_FILE = path.join(REGISTRY_DIR, 'clients.yaml');
@@ -53,7 +93,9 @@ const AD_CHANNELS_FILE = path.join(REGISTRY_DIR, 'ad-channels.yaml');
 const AD_BUDGETS_FILE = path.join(REGISTRY_DIR, 'ad-budgets.yaml');
 const CASHBACK_FILE = path.join(REGISTRY_DIR, 'cashback.yaml');
 const OPERATORS_FILE = path.join(REGISTRY_DIR, 'operators.yaml');
-const AGENT_SETTINGS_DIR = path.join(REGISTRY_DIR, 'agent-settings');
+const AGENT_SETTINGS_DIR = process.env.DASHBOARD_AGENT_SETTINGS_DIR && process.env.DASHBOARD_AGENT_SETTINGS_DIR.trim() !== ''
+  ? process.env.DASHBOARD_AGENT_SETTINGS_DIR
+  : path.join(REGISTRY_DIR, 'agent-settings');
 const AGENT_SETTINGS_FILE = path.join(REGISTRY_DIR, 'agents.yaml');
 
 // Схема тонких настроек: что и как разрешено править из панели.
@@ -94,16 +136,49 @@ const AGENT_SETTINGS_SCHEMA = {
     price_threshold_pct: { t: 'num', min: 0, max: 100 }, min_lots: { t: 'int', min: 0, max: 100000 },
     collect_mode: { t: 'enum', values: ['http', 'browser'] },
     compare_depth_weeks: { t: 'int', min: 1, max: 52 },
+    // Сколько лотов показывать в топах изменений (контракт, группа 3).
+    top_deals_count: { t: 'int', min: 1, max: 20 },
     projects: { t: 'list' }, promo_words: { t: 'list' },
   },
-  // ЖК для наблюдения — трёхуровневый путь agent1.watch.<поле>
+  // ЖК для наблюдения — трёхуровневый путь agent1.watch.<поле>.
+  // query — единственное поле, которое видно в карточке («название проекта или сайт»);
+  // остальные остаются в файле как значения по умолчанию и прячутся под «дополнительно».
   'agent1.watch': {
+    query: { t: 'str' },
     name: { t: 'str' }, address: { t: 'str' }, url: { t: 'str' }, lat: { t: 'str' }, lon: { t: 'str' },
     radius_km: { t: 'num', min: 1, max: 100 },
-    klass: { t: 'list' },
+    klass: { t: 'list', values: ['комфорт', 'бизнес', 'премиум', 'элит'] },
     price_min_per_m2: { t: 'int', min: 0, max: 10000000 }, price_max_per_m2: { t: 'int', min: 0, max: 10000000 },
     sources: { t: 'list', values: ['cian', 'avito', 'yandex-realty', 'domclick', 'web-search'] },
     max_candidates: { t: 'int', min: 1, max: 200 },
+  },
+  // ЧТО АНАЛИЗИРОВАТЬ (Агент 1): маркетинговый срез лотов.
+  // РОВНО контракт docs/agent-1-marketing-settings-contract.md, группа 2.
+  // Список обязан совпадать с SELECTION_FIELDS в collector/lib/agent-settings.mjs
+  // и с проверкой контракта в verify-data.mjs.
+  'agent1.selection': {
+    room_types: { t: 'list', values: ['0', '1', '2', '3', '4', '5+'] },
+    area_min_m2: { t: 'num', min: 0, max: 400 },
+    area_max_m2: { t: 'num', min: 0, max: 400 },
+    price_min_rub: { t: 'int', min: 0, max: 1000000000 },
+    price_max_rub: { t: 'int', min: 0, max: 1000000000 },
+    exclude_first_floor: { t: 'bool' },
+    exclude_last_floor: { t: 'bool' },
+    finishes: { t: 'list', values: ['без отделки', 'white box', 'чистовая', 'с мебелью', 'unknown'] },
+    only_active: { t: 'bool' },
+    promo_only: { t: 'bool' },
+    price_metric: { t: 'enum', values: ['median', 'mean', 'min_max'] },
+    outlier_guard: { t: 'bool' },
+    outlier_same_price_min_lots: { t: 'int', min: 2, max: 50 },
+    outlier_ppm2_min: { t: 'int', min: 0, max: 10000000 },
+    outlier_ppm2_max: { t: 'int', min: 0, max: 10000000 },
+  },
+  // ТУМБЛЕРЫ АНАЛИТИКИ Агента 1 (WP1/WP2): восемь переключателей, только bool.
+  // Список обязан совпадать с ANALYTICS_FIELDS в collector/lib/agent-settings.mjs.
+  'agent1.analytics': {
+    enabled: { t: 'bool' }, lots_all_on_sale: { t: 'bool' }, price_dynamics: { t: 'bool' },
+    promos: { t: 'bool' }, new_promos_only: { t: 'bool' }, dedup_promos: { t: 'bool' },
+    developers_sites: { t: 'bool' }, forecast: { t: 'bool' },
   },
   // Режим сбора по источнику: http | browser | off (выключен).
   'agent1.source_modes': {
@@ -118,6 +193,43 @@ const AGENT_SETTINGS_SCHEMA = {
     max_pages: { t: 'int', min: 1, max: 100 }, timeout_sec: { t: 'int', min: 5, max: 600 },
     stop_on_block: { t: 'bool' }, use_browser: { t: 'bool' },
   },
+};
+// Значения по умолчанию для блока, которого может ещё не быть в YAML.
+// Нужны, когда панель знает параметр раньше файла (тумблеры аналитики WP1):
+// сохранение тумблера не должно падать, а обязано создать блок.
+// ВНИМАНИЕ: список ключей совпадает с ANALYTICS_FIELDS в collector/lib/agent-settings.mjs
+// и с 'agent1.analytics' в AGENT_SETTINGS_SCHEMA выше.
+const SETTINGS_BLOCK_DEFAULTS = {
+  'agent1.analytics': [
+    'enabled: true',
+    'lots_all_on_sale: true',
+    'price_dynamics: true',
+    'promos: true',
+    'new_promos_only: true',
+    'dedup_promos: true',
+    'developers_sites: true',
+    'forecast: true',
+  ],
+  // «Что анализировать»: если блока нет в YAML, панель не падает, а создаёт его
+  // со значениями по умолчанию из контракта (docs/agent-1-marketing-settings-contract.md, группа 2).
+  // Список обязан совпадать с SELECTION_FIELDS/SELECTION_DEFAULTS в collector/lib/agent-settings.mjs.
+  'agent1.selection': [
+    'room_types: ["0", "1", "2", "3", "4", "5+"]',
+    'area_min_m2: 0',
+    'area_max_m2: 0',
+    'price_min_rub: 0',
+    'price_max_rub: 0',
+    'exclude_first_floor: false',
+    'exclude_last_floor: false',
+    'finishes: ["без отделки", "white box", "чистовая", "с мебелью", "unknown"]',
+    'only_active: true',
+    'promo_only: false',
+    'price_metric: median',
+    'outlier_guard: true',
+    'outlier_same_price_min_lots: 5',
+    'outlier_ppm2_min: 150000',
+    'outlier_ppm2_max: 800000',
+  ],
 };
 const CLIENT_REPORTS_DIR = path.join(CW_DIR, 'reports', 'clients');
 
@@ -137,6 +249,29 @@ const SERVICE_EDIT = {
 function appendRunLine(entry) {
   fs.appendFileSync(RUNS_FILE, JSON.stringify(entry) + '\n', 'utf8');
   return entry;
+}
+
+// Прогон, запущенный из панели (POST /api/actions/run): без записи в журнал
+// запуск не виден в истории прогонов и на стенде агентов.
+// Себестоимость панельного запуска не измеряется — cost_rub: null (ноль вместо
+// «нет данных» писать запрещено правилом честности данных).
+function appendDashboardRun(started, proc, artifact, meta) {
+  const m = meta || {};
+  const errText = String(proc.output || '').split('\n').slice(-3).join(' ').trim();
+  return appendRunLine({
+    run_id: 'dash-' + crypto.randomBytes(4).toString('hex'),
+    ts: new Date().toISOString(),
+    service: m.service || 'competitor-watch',
+    client: null,
+    agent: m.agent || 'agent-1-competitor-watch',
+    status: proc.ok ? 'ok' : 'failed',
+    duration_ms: Date.now() - started,
+    cost_rub: null,
+    cost_source: 'none',
+    trigger: 'dashboard',
+    artifact: artifact || null,
+    error: m.error !== undefined ? (m.error || null) : (proc.ok ? null : (errText || 'ошибка движка')),
+  });
 }
 
 function readYamlFile(file) {
@@ -188,15 +323,68 @@ function snapshotDates() {
   return fs.readdirSync(SNAPSHOTS_DIR).filter(function (n) { return /^\d{4}-\d{2}-\d{2}$/.test(n); }).sort();
 }
 
-function runProcess(exe, args, cwd, timeoutMs) {
+// Отказ именно на ЗАПУСКЕ процесса: песочница DSH не даёт дочернему процессу
+// piped stdio, и execFileSync с захватом вывода в трубу падает с EPERM
+// («spawnSync <exe> EPERM»), даже когда сам интерпретатор на месте.
+// Отличаем от «процесс запустился и упал»: во втором случае есть status.
+function spawnDenied(e) {
+  return !!(e && (e.code === 'EPERM' || e.code === 'EACCES') && (e.status === undefined || e.status === null));
+}
+
+function readFileQuiet(file) {
+  try { return fs.readFileSync(file, 'utf8'); } catch (e) { return ''; }
+}
+
+// Захват вывода дочернего процесса БЕЗ обязательной трубы.
+// Сначала обычный заход (труба, как было). Если песочница запретила трубу —
+// ровно одна повторная попытка с выводом в ВРЕМЕННЫЙ ФАЙЛ. Повтор безопасен:
+// EPERM на запуске означает, что дочерний процесс не стартовал, поэтому
+// побочных эффектов не будет (важно для «Собрать данные» и отчёта).
+// Пятый аргумент env (необязательный) — переменные окружения дочернего процесса:
+// нужен проверке кабинета Директа (YANDEX_DIRECT_TOKEN и т.п.). Старые вызовы
+// без него работают как раньше (окружение панели по умолчанию).
+function execCapture(exe, args, cwd, timeoutMs, env) {
+  const childEnv = env && typeof env === 'object' ? env : undefined;
   try {
-    const out = execFileSync(exe, args, { cwd: cwd, encoding: 'utf8', timeout: timeoutMs, maxBuffer: 8 * 1024 * 1024, windowsHide: true });
-    return { ok: true, exitCode: 0, output: String(out || '') };
+    const out = execFileSync(exe, args, { cwd: cwd, encoding: 'utf8', timeout: timeoutMs, maxBuffer: 8 * 1024 * 1024, windowsHide: true, env: childEnv });
+    return { ok: true, exitCode: 0, output: String(out || ''), via: 'pipe' };
   } catch (e) {
-    const out = (e && e.stdout ? String(e.stdout) : '') + (e && e.stderr ? String(e.stderr) : '');
-    const timedOut = !!(e && (e.killed || e.signal));
-    return { ok: false, exitCode: e && e.status !== undefined && e.status !== null ? e.status : null, output: out || String(e && e.message ? e.message : e), timedOut: timedOut };
+    if (!spawnDenied(e)) {
+      const out = (e && e.stdout ? String(e.stdout) : '') + (e && e.stderr ? String(e.stderr) : '');
+      return { ok: false, exitCode: e && e.status !== undefined && e.status !== null ? e.status : null, output: out || String(e && e.message ? e.message : e), timedOut: !!(e && (e.killed || e.signal)), via: 'pipe' };
+    }
   }
+  const outFile = path.join(os.tmpdir(), 'dsh-panel-out-' + process.pid + '-' + Date.now().toString(36) + '-' + Math.random().toString(36).slice(2, 8) + '.log');
+  let fd = null;
+  let res = null;
+  try {
+    fd = fs.openSync(outFile, 'w');
+    try {
+      execFileSync(exe, args, { cwd: cwd, stdio: ['ignore', fd, fd], timeout: timeoutMs, windowsHide: true, env: childEnv });
+      res = { ok: true, exitCode: 0, timedOut: false, via: 'file' };
+    } catch (e2) {
+      res = {
+        ok: false,
+        exitCode: e2 && e2.status !== undefined && e2.status !== null ? e2.status : null,
+        timedOut: !!(e2 && (e2.killed || e2.signal)),
+        via: spawnDenied(e2) ? 'spawn-denied' : 'file',
+        error: e2 && e2.message ? String(e2.message) : '',
+      };
+    }
+  } catch (e3) {
+    return { ok: false, exitCode: null, output: String(e3 && e3.message ? e3.message : e3), timedOut: false, via: 'temp-file' };
+  } finally {
+    if (fd !== null) { try { fs.closeSync(fd); } catch (e) { /* ignore */ } }
+  }
+  const text = readFileQuiet(outFile);
+  try { fs.rmSync(outFile, { force: true }); } catch (e) { /* ignore */ }
+  res.output = text || (res.ok ? '' : (res.error || 'дочерний процесс не оставил вывода'));
+  delete res.error;
+  return res;
+}
+
+function runProcess(exe, args, cwd, timeoutMs, env) {
+  return execCapture(exe, args, cwd, timeoutMs, env);
 }
 
 function newestReport() {
@@ -273,14 +461,11 @@ function originalBundleIndex(pkg) {
 }
 
 // Проверка профиля после правки. Возвращает {ok, output}.
+// Идёт через execCapture: в песочнице DSH обычная труба запрещена (EPERM),
+// а проверка профиля обязана работать и здесь.
 function checkProfile() {
-  try {
-    const out = execFileSync(process.execPath, [PROFILE_CHECKER, PROFILE_DIR], { encoding: 'utf8', timeout: 60000 });
-    return { ok: true, output: String(out || '') };
-  } catch (e) {
-    const out = (e && (e.stdout || e.stderr)) ? String(e.stdout || '') + String(e.stderr || '') : String(e && e.message ? e.message : e);
-    return { ok: false, output: out };
-  }
+  const r = execCapture(process.execPath, [PROFILE_CHECKER, PROFILE_DIR], undefined, 60000);
+  return { ok: r.ok, output: String(r.output || '') };
 }
 const PRICES_FILE = path.join(REGISTRY_DIR, 'prices.yaml');
 
@@ -339,6 +524,245 @@ function applyAtomicEdit(file, label, mutate) {
     return { ok: false, code: 500, message: 'не удалось записать ' + label + ', файл восстановлен из копии: ' + e.message };
   }
   return { ok: true, changed: true, previous: res.previous, line: res.line, backup: path.basename(backupFile), file: file, label: label };
+}
+
+// ===========================================================================
+// АГЕНТ 1: истинный список конкурентов, подбор, отправка отчёта (контракт v2, §5)
+// ===========================================================================
+
+function panelLocalDate() {
+  const d = new Date();
+  function p(n) { return String(n).padStart(2, '0'); }
+  return d.getFullYear() + '-' + p(d.getMonth() + 1) + '-' + p(d.getDate());
+}
+
+function clientConfigFile(clientId) {
+  return path.join(CW_CLIENTS_DIR, clientId + '.yaml');
+}
+
+function panelSlug(s) {
+  const t = String(s === undefined || s === null ? '' : s).toLowerCase()
+    .replace(/[^a-z0-9а-яё]+/gi, '-').replace(/^-+|-+$/g, '');
+  return t || '';
+}
+
+function panelNormName(s) {
+  return String(s === undefined || s === null ? '' : s).toLowerCase()
+    .replace(/[«»"'`]/g, '').replace(/\s+/g, ' ').trim();
+}
+
+// Сколько записей в clients-конфиге: считаем по разобранному YAML (истина для ответа).
+function countCompetitorsInText(text) {
+  try {
+    const doc = parseYaml(text);
+    return doc && Array.isArray(doc.competitors) ? doc.competitors.filter(function (c) { return c && typeof c === 'object'; }).length : 0;
+  } catch (e) { return null; }
+}
+
+// Границы секции competitors: от ключа верхнего уровня до последней строки, реально
+// принадлежащей секции (элемент списка или его вложенное поле/комментарий с отступом
+// глубже секции). Комментарии уровня файла после списка в секцию НЕ входят — иначе
+// удаление последней записи уносило бы хвост конфига вместе с ним.
+function competitorsSection(lines) {
+  let start = -1, indent = 0;
+  for (let i = 0; i < lines.length; i++) {
+    const m = /^(\s*)competitors\s*:\s*(#.*)?$/.exec(lines[i]);
+    if (m) { start = i; indent = m[1].length; break; }
+  }
+  if (start < 0) return null;
+  let lastOwned = start;
+  for (let i = lines.length - 1; i > start; i--) {
+    const line = lines[i];
+    if (line.trim() === '') continue;
+    if (line.match(/^ */)[0].length > indent) { lastOwned = i; break; }
+  }
+  return { start: start, end: lastOwned + 1, indent: indent };
+}
+
+// Ключ записи (id и название) прямо из её строк — запись может быть и инлайн-объектом, и блоком.
+function competitorRecordKeys(blockLines) {
+  const out = { id: null, name: null, nameKey: null };
+  const first = String(blockLines[0] || '');
+  const body = first.replace(/^\s*-\s*/, '');
+  let rec = null;
+  if (body.trim().charAt(0) === '{') {
+    rec = parseScalar(body.trim());
+  } else {
+    // Дефис заменяем на пробелы ТОЙ ЖЕ ширины: иначе продолжение записи (поля ниже дефиса)
+    // оказывается глубже её первой строки и разбор видит только name (теряет id и поля).
+    const shifted = blockLines.map(function (l, i) {
+      if (i !== 0) return l;
+      return l.replace(/^(\s*)-( +|$)/, '$1 $2');
+    });
+    try { rec = parseYaml(shifted.join('\n')); } catch (e) { rec = null; }
+  }
+  if (rec && typeof rec === 'object' && !Array.isArray(rec)) {
+    if (rec.id !== undefined && rec.id !== null && String(rec.id) !== '') out.id = String(rec.id);
+    const nm = rec.name !== undefined && rec.name !== null ? String(rec.name) : (rec.project !== undefined && rec.project !== null ? String(rec.project) : '');
+    if (nm !== '') { out.name = nm; out.nameKey = panelNormName(nm); }
+  }
+  if (!out.name) {
+    // запасной путь: имя вытаскиваем регуляркой, если YAML-разбор не сложился
+    const m = /(?:^|[{\s,])name\s*:\s*("([^"]*)"|'([^']*)'|[^,}\n]+)/.exec(first);
+    if (m) { const v = (m[2] !== undefined ? m[2] : (m[3] !== undefined ? m[3] : m[1])).trim(); out.name = v; out.nameKey = panelNormName(v); }
+  }
+  return out;
+}
+
+// Удаление РОВНО одной записи из competitors: по стабильному ключу (id, иначе имя).
+// Чужие записи и остальной файл не трогаем; неоднозначный ключ → отказ, а не догадка.
+function removeCompetitorFromText(text, opts) {
+  const eol = text.indexOf('\r\n') >= 0 ? '\r\n' : '\n';
+  const lines = text.split(/\r?\n/);
+  const sec = competitorsSection(lines);
+  if (!sec) return { ok: false, reason: 'нет секции competitors:' };
+  const starts = [];
+  for (let i = sec.start + 1; i < sec.end; i++) {
+    if (/^\s*-\s/.test(lines[i]) || /^\s*-\s*$/.test(lines[i])) starts.push(i);
+  }
+  if (!starts.length) return { ok: false, reason: 'в секции competitors: нет ни одной записи' };
+  const wantId = opts.id !== undefined && opts.id !== null && String(opts.id) !== '' ? String(opts.id) : '';
+  const wantName = opts.name ? panelNormName(opts.name) : '';
+  if (!wantId && !wantName) return { ok: false, reason: 'нужен id или имя записи' };
+  const hits = [];
+  starts.forEach(function (start, idx) {
+    const end = idx + 1 < starts.length ? starts[idx + 1] : sec.end;
+    const rec = competitorRecordKeys(lines.slice(start, end));
+    const slug = panelSlug(rec.name);
+    const idHit = wantId && (rec.id === wantId || (!rec.id && slug && slug === wantId));
+    const nameHit = wantName && rec.nameKey === wantName;
+    if (wantId && !wantName) { if (idHit) hits.push({ start: start, end: end, rec: rec }); return; }
+    if (!wantId && wantName) { if (nameHit) hits.push({ start: start, end: end, rec: rec }); return; }
+    if (idHit || nameHit) hits.push({ start: start, end: end, rec: rec });
+  });
+  if (!hits.length) return { ok: false, reason: 'запись не найдена — ' + (wantId ? 'id «' + wantId + '»' : '') + (wantId && wantName ? ' и ' : '') + (wantName ? 'имя «' + opts.name + '»' : '') };
+  if (hits.length > 1) return { ok: false, reason: 'по этому ключу найдено записей: ' + hits.length + ' — уточните id, чтобы не удалить чужую' };
+  const hit = hits[0];
+  // с записью убираем и её комментарий-заголовок (сплошные #-строки прямо над ней);
+  // пустые строки-разделители остаются на месте
+  let from = hit.start;
+  while (from - 1 > sec.start && /^\s*#/.test(lines[from - 1])) from--;
+  let to = hit.end;
+  // хвост блока: пустые строки и комментарии уровня ФАЙЛА (не глубже секции) остаются —
+  // их нельзя уносить вместе с записью
+  while (to > hit.start) {
+    const l = lines[to - 1];
+    if (l.trim() === '') { to--; continue; }
+    if (/^\s*#/.test(l) && l.match(/^ */)[0].length <= sec.indent) { to--; continue; }
+    break;
+  }
+  const out = lines.slice(0, from).concat(lines.slice(to));
+  return { ok: true, changed: true, text: out.join(eol), previous: { id: hit.rec.id, name: hit.rec.name }, removed: { id: hit.rec.id, name: hit.rec.name } };
+}
+
+// Дописать запись в конец списка competitors — сразу после последней записи секции,
+// не задевая комментарии и остальной файл.
+// ВАЖНО (баг данных, подтверждён Lead 04.11.2026): отступ берём у САМОГО ВЕРХНЕГО
+// (канонического) элемента списка, а не у последнего. В client-svet.yaml запись
+// «ЖК Нарвин» вложена на 4 пробела; старый appendListBlock подхватывал её отступ
+// и писал новые записи так же — строгий YAML (PyYAML) падал на всём файле,
+// а движок молча не видел вложенную запись.
+function appendCompetitorBlock(text, blockLine) {
+  const eol = text.indexOf('\r\n') >= 0 ? '\r\n' : '\n';
+  const lines = text.split(/\r?\n/);
+  const sec = competitorsSection(lines);
+  if (!sec) return { ok: false, reason: 'нет секции competitors:' };
+  let itemIndent = null;
+  let lastOwn = sec.start;
+  for (let i = sec.start + 1; i < sec.end; i++) {
+    const l = lines[i];
+    if (l.trim() === '' || /^\s*#/.test(l)) continue;
+    if (/^\s*-\s/.test(l) || /^\s*-\s*$/.test(l)) {
+      const ind = l.match(/^ */)[0];
+      if (itemIndent === null || ind.length < itemIndent.length) itemIndent = ind;
+    }
+    lastOwn = i;
+  }
+  if (itemIndent === null) itemIndent = '  ';
+  const block = String(blockLine).replace(/\s+$/, '');
+  const out = lines.slice(0, lastOwn + 1).concat([itemIndent + block], lines.slice(lastOwn + 1));
+  return { ok: true, changed: true, text: out.join(eol), line: lastOwn + 2 };
+}
+
+// Записи секции, вложенные глубже канонического отступа: строгий YAML их не разберёт
+// или молча отбросит, а движок такую запись в анализ не возьмёт. Возвращаем имена —
+// чтобы панель сказала об этом словами, а не молчала.
+function competitorIndentIssues(text) {
+  const lines = String(text).split(/\r?\n/);
+  const sec = competitorsSection(lines);
+  if (!sec) return { total: 0, broken: 0, names: [] };
+  const starts = [];
+  for (let i = sec.start + 1; i < sec.end; i++) {
+    if (/^\s*-\s/.test(lines[i]) || /^\s*-\s*$/.test(lines[i])) starts.push({ i: i, indent: lines[i].match(/^ */)[0].length });
+  }
+  if (!starts.length) return { total: 0, broken: 0, names: [] };
+  const canonical = Math.min.apply(null, starts.map(function (s) { return s.indent; }));
+  const names = [];
+  starts.forEach(function (s, idx) {
+    if (s.indent === canonical) return;
+    const end = idx + 1 < starts.length ? starts[idx + 1].i : sec.end;
+    const rec = competitorRecordKeys(lines.slice(s.i, end));
+    if (rec && (rec.name || rec.id)) names.push(rec.name || rec.id);
+  });
+  return { total: starts.length, broken: names.length, names: names };
+}
+
+function readJsonQuiet(file) {
+  try { return JSON.parse(fs.readFileSync(file, 'utf8')); } catch (e) { return null; }
+}
+
+function tailLines(text, count) {
+  return String(text || '').split('\n').filter(function (l, i, a) { return i < a.length - 1 || l !== ''; }).slice(-count).join('\n');
+}
+
+// Файлы кандидатов движка: <project-id>.json, без решений (*.decisions.json) и копий (*.bak-*).
+function candidateFilesMap() {
+  const map = {};
+  if (!fs.existsSync(CW_CANDIDATES_DIR)) return map;
+  let names = [];
+  try { names = fs.readdirSync(CW_CANDIDATES_DIR); } catch (e) { return map; }
+  names.forEach(function (n) {
+    if (!/\.json$/.test(n) || /\.decisions\.json$/.test(n) || /\.bak-/.test(n)) return;
+    try { map[n] = fs.statSync(path.join(CW_CANDIDATES_DIR, n)).mtimeMs; } catch (e) { /* ignore */ }
+  });
+  return map;
+}
+
+// Файл кандидатов, который обновил именно этот прогон: сначала по проекту, потом самый свежий.
+function pickChangedCandidate(before, after, project) {
+  const changed = Object.keys(after).filter(function (n) { return before[n] === undefined || after[n] > before[n]; });
+  if (!changed.length) return null;
+  const preferred = project ? changed.filter(function (n) { return n.indexOf(project) >= 0; })[0] : null;
+  const name = preferred || changed.sort(function (a, b) { return after[b] - after[a]; })[0];
+  return { name: name, file: path.join(CW_CANDIDATES_DIR, name), fresh: true };
+}
+
+function clientReportsDir(clientId) {
+  return path.join(CLIENT_REPORTS_DIR, clientId);
+}
+
+function emailCachesMap(clientId) {
+  const dir = path.join(clientReportsDir(clientId), '.cache');
+  const map = {};
+  if (!fs.existsSync(dir)) return map;
+  let names = [];
+  try { names = fs.readdirSync(dir); } catch (e) { return map; }
+  names.forEach(function (n) {
+    if (!/^email-.*\.json$/.test(n)) return;
+    try { map[n] = fs.statSync(path.join(dir, n)).mtimeMs; } catch (e) { /* ignore */ }
+  });
+  return map;
+}
+
+function pickChangedEmailCache(clientId, before) {
+  const dir = path.join(clientReportsDir(clientId), '.cache');
+  const after = emailCachesMap(clientId);
+  const names = Object.keys(after);
+  if (!names.length) return null;
+  const changed = names.filter(function (n) { return before[n] === undefined || after[n] > before[n]; });
+  const pick = (changed.length ? changed : names).sort(function (a, b) { return after[b] - after[a]; })[0];
+  const doc = readJsonQuiet(path.join(dir, pick));
+  return { name: pick, file: path.join(dir, pick), doc: doc, fresh: changed.length > 0 };
 }
 
 // --- ключ доступа -----------------------------------------------------------
@@ -404,11 +828,69 @@ function keyPage(res) {
 const HOST = process.env.DASHBOARD_HOST || '127.0.0.1';
 const PORT = Number(process.env.DASHBOARD_PORT || process.env.PORT || 8787);
 
+// Группы настроек, после правки которых панель обязана пересобрать данные,
+// чтобы тумблер/поле сразу показывали новое значение (как тумблер агента).
+const REFRESH_AFTER_WRITE = ['agent1.analytics', 'agent1.watch', 'agent1.selection'];
+
+// Разрешение метки файла настроек из панели в реальный путь.
+// Поддерживаются именованные файлы (agents, sources, …) и тонкие настройки агента
+// вида 'agent-settings/<agent-id>'. Путь всегда остаётся внутри своей папки.
+function resolveSettingsTarget(which) {
+  const named = {
+    settings: SETTINGS_FILE, prices: PRICES_FILE, agents: AGENTS_FILE, sources: SOURCES_FILE,
+    router: ROUTER_FILE, profile: PROFILE_MANIFEST,
+    clients: CLIENTS_FILE, services: SERVICES_FILE, subscriptions: SUBS_FILE,
+    invoices: INVOICES_FILE, results: RESULTS_FILE,
+  };
+  if (named[which]) return named[which];
+  const m = /^agent-settings\/([a-z0-9-]{3,40})$/.exec(which);
+  if (m) return path.join(AGENT_SETTINGS_DIR, m[1] + '.yaml');
+  return null;
+}
+
+function sha256Of(file) {
+  try { return crypto.createHash('sha256').update(fs.readFileSync(file)).digest('hex'); }
+  catch (e) { return null; }
+}
+
+function backupsOf(file) {
+  const dir = path.dirname(file);
+  const base = path.basename(file) + '.bak-';
+  let names = [];
+  try { names = fs.readdirSync(dir); } catch (e) { return []; }
+  return names.filter(function (n) { return n.indexOf(base) === 0; })
+    .map(function (n) {
+      const full = path.join(dir, n);
+      let st = null;
+      try { st = fs.statSync(full); } catch (e) { st = null; }
+      return { name: n, mtimeMs: st ? st.mtimeMs : null, bytes: st ? st.size : null, sha256: sha256Of(full) };
+    })
+    .sort(function (a, b) { return (b.mtimeMs || 0) - (a.mtimeMs || 0); });
+}
+
+// СУХОЙ ПРОГОН ДЕЙСТВИЙ ДВИЖКА (только для автотестов интерфейса).
+// Зачем: ux-check.mjs нажимает «Сформировать отчёт за неделю», а это запускает
+// Python-движок Агента 1 и пишет в 01-competitor-watch/reports — вне зоны записи
+// панели. С DASHBOARD_ACTIONS_DRY_RUN=1 сервер отвечает так же, как при успехе,
+// но НИЧЕГО не запускает. По умолчанию режим выключен, поведение не меняется.
+const ACTIONS_DRY_RUN = process.env.DASHBOARD_ACTIONS_DRY_RUN === '1';
+
+function dryRunAnswer(action, curr, prev) {
+  return {
+    ok: true, action: action, dryRun: true, durationMs: 0, exitCode: 0,
+    output: 'сухой прогон: движок не запускался (DASHBOARD_ACTIONS_DRY_RUN=1)',
+    result: { curr: curr, prev: prev, report: null },
+    message: action === 'report'
+      ? ('Отчёт построен за ' + curr + ' (сравнение с ' + (prev || '—') + ') — сухой прогон, движок не запускался')
+      : ('Агент отработал цикл за ' + curr + ' — сухой прогон, движок не запускался'),
+  };
+}
+
 // Вопросы клиентов (кабинет): реестр вопросов и лимит частоты.
 const QUESTIONS_FILE = path.join(REGISTRY_DIR, 'client-questions.json');
 const RATE = {};
 
-const DATA_FILES = ['meta.json', 'agents.json', 'tasks.json', 'projects.json', 'sessions.json', 'usage.json', 'prices.json', 'integrations.json', 'sources.json', 'analytics.json', 'settings.json', 'alerts.json', 'service.json', 'nav.json', 'analytics2.json', 'ads.json', 'agent-tabs.json', 'agent-settings.json', 'candidates.json', 'competitor-report.json'];
+const DATA_FILES = ['meta.json', 'agents.json', 'tasks.json', 'projects.json', 'sessions.json', 'usage.json', 'prices.json', 'integrations.json', 'sources.json', 'analytics.json', 'settings.json', 'alerts.json', 'service.json', 'nav.json', 'analytics2.json', 'ads.json', 'agent-tabs.json', 'agent-settings.json', 'candidates.json', 'competitor-report.json', 'agent1-status.json', 'competitor-analytics.json', 'agent-runs.json'];
 
 const MIME = {
   '.html': 'text/html; charset=utf-8',
@@ -537,6 +1019,59 @@ function readBody(req) {
     });
     req.on('error', function () { resolve(null); });
   });
+}
+
+// --- Кабинеты Яндекс.Директа (Агент 2): живая проверка токена -----------------
+// Проверка идёт дочерним процессом CLI скилла, а токен передаётся ТОЛЬКО через
+// окружение: в аргументах командной строки секрет не мелькает (его было бы видно
+// в списке процессов). Таймаут 60 с — Директ иногда отвечает заметно медленнее,
+// чем локальные команды.
+const DIRECT_CHECK_TIMEOUT_MS = 60000;
+
+// Секрет не должен утечь даже в текст ошибки: если он там случайно оказался,
+// подменяем на ту же маску, что уходит в ответ API (и, значит, в логи не попадёт).
+function scrubSecret(text, secret) {
+  const s = String(text === undefined || text === null ? '' : text);
+  const needle = secret ? String(secret) : '';
+  if (needle === '') return s;
+  return s.split(needle).join(maskToken(needle));
+}
+
+function verifyDirectAccount(token, login, sandbox) {
+  const env = Object.assign({}, process.env, {
+    YANDEX_DIRECT_TOKEN: String(token || ''),
+    YANDEX_DIRECT_CLIENT_LOGIN: login ? String(login) : '',
+    YANDEX_DIRECT_SANDBOX: sandbox ? '1' : '0',
+  });
+  const proc = runProcess(PYTHON, ['-m', 'skills.direct_api', '--check', '--json'], PROJECT_DIR, DIRECT_CHECK_TIMEOUT_MS, env);
+  const output = String(proc.output || '');
+  let report = null;
+  // CLI печатает один JSON-объект; предупреждения рантайма идут в stderr — берём
+  // последнюю строку stdout/stderr, начинающуюся с '{'.
+  const jsonLines = output.split('\n').map(function (l) { return l.trim(); }).filter(function (l) { return l.charAt(0) === '{'; });
+  if (jsonLines.length) { try { report = JSON.parse(jsonLines[jsonLines.length - 1]); } catch (e) { report = null; } }
+
+  const status = report && report.status ? String(report.status) : 'error';
+  const fallback = proc.timedOut
+    ? ('проверка не ответила за ' + Math.round(DIRECT_CHECK_TIMEOUT_MS / 1000) + ' с (таймаут)')
+    : ('проверка не вернула разборчивый JSON (код ' + proc.exitCode + '): ' + output.split('\n').slice(-2).join(' ').slice(0, 300));
+  return {
+    ok: status === 'ok',
+    status: status,
+    // skipped_no_key при заданном токене — тоже ошибка проверки: message отдаём как есть.
+    message: scrubSecret(report && report.message ? String(report.message) : fallback, token),
+    exitCode: proc.exitCode,
+    sandbox: report && report.sandbox !== undefined ? !!report.sandbox : !!sandbox,
+    clientLogin: report && report.clientLogin ? String(report.clientLogin) : (login ? String(login) : ''),
+    campaigns: report && typeof report.campaigns === 'number' ? report.campaigns : null,
+  };
+}
+
+// Провал проверки -> поле status для API: 401/403 и «токен недействителен» — это
+// invalid, всё остальное (сеть, таймаут, поломка CLI) — error.
+function directFailureStatus(status, message) {
+  const text = String(status || '') + ' ' + String(message || '');
+  return /HTTP\s*40[13]|Unauthorized|Forbidden|invalid[_ -]?oauth|invalid[_ -]?token|недействител/i.test(text) ? 'invalid' : 'error';
 }
 
 function serveStatic(req, res, urlPath) {
@@ -718,25 +1253,241 @@ const server = http.createServer(function (req, res) {
     });
   }
 
-  // --- ПОДБОР КОНКУРЕНТОВ (движок делает data-engine, задача T57) ---
-  // Честная заглушка: панель НЕ выдумывает кандидатов. Пока движок не сформировал файлы
-  // в 01-competitor-watch/data/candidates/, здесь так и написано.
+  // --- ПОДБОР КОНКУРЕНТОВ ПО РАДИУСУ (контракт v2, §5.2): панель РЕАЛЬНО запускает движок ---
+  // Панель не выдумывает кандидатов: итог — это честный ответ прогона (ran, exitCode) плюс
+  // summary/limitations ИЗ ФАЙЛА кандидатов, который записал движок. Проект/радиус/класс
+  // движок берёт из agent1.watch того же файла настроек, что правит панель.
   if (p === '/api/agent1/discover' && method === 'POST') {
     return readBody(req).then(function (body) {
-      const project = String((body && body.project) || '');
-      const candDir = path.join(PROJECT_DIR, '01-competitor-watch', 'data', 'candidates');
-      const found = fs.existsSync(candDir)
-        ? fs.readdirSync(candDir).filter(function (n) { return /\.json$/.test(n); })
-        : [];
-      const own = found.filter(function (n) { return !project || n.indexOf(project) >= 0; });
-      if (own.length === 0) {
-        return sendJson(res, 501, {
-          ok: false, stub: true,
-          message: 'Поиск конкурентов появится после подключения движка (задача T57, исполнитель data-engine). Панель не показывает выдуманных кандидатов: сейчас в 01-competitor-watch/data/candidates/ нет ни одного файла.',
-          checked: { dir: candDir, dirExists: fs.existsSync(candDir), files: found.length },
+      const started = Date.now();
+      const project = String((body && body.project) || '').trim();
+      if (project && !/^[a-z0-9][a-z0-9._-]{0,60}$/i.test(project)) {
+        return sendJson(res, 400, { ok: false, ran: false, exitCode: null, message: 'неверный id проекта' });
+      }
+      const settingsFile = path.join(AGENT_SETTINGS_DIR, 'agent-1-competitor-watch.yaml');
+      const scriptFile = path.join(CW_SCRIPTS, 'discover_competitors.py');
+      if (!fs.existsSync(scriptFile)) {
+        return sendJson(res, 501, { ok: false, ran: false, exitCode: null, message: 'движок подбора не найден: ' + scriptFile });
+      }
+      if (!fs.existsSync(settingsFile)) {
+        return sendJson(res, 404, { ok: false, ran: false, exitCode: null, message: 'нет файла настроек Агента 1 (agent1.watch): ' + settingsFile });
+      }
+      if (ACTIONS_DRY_RUN) {
+        return sendJson(res, 200, {
+          ok: true, action: 'discover', dryRun: true, ran: false, exitCode: 0, durationMs: Date.now() - started,
+          message: 'Сухой прогон (DASHBOARD_ACTIONS_DRY_RUN=1): движок discover_competitors.py не запускался, файлы не изменялись. Кандидатов панель не выдумывает.',
+          summary: null, limitations: [], candidates: null, stdoutTail: '', summaryFrom: null,
         });
       }
-      return sendJson(res, 200, { ok: true, stub: false, message: 'Найдены ранее сохранённые кандидаты: файлов ' + own.length + '.', files: own });
+      const args = [scriptFile, '--settings-file', settingsFile, '--json'];
+      if (project) args.push('--project', project);
+      const before = candidateFilesMap();
+      const proc = runProcess(CW_PYTHON, args, PROJECT_DIR, 300000);
+      const after = candidateFilesMap();
+      const picked = pickChangedCandidate(before, after, project);
+      const doc = picked ? readJsonQuiet(picked.file) : null;
+      const summary = doc && doc.summary && typeof doc.summary === 'object' ? doc.summary : null;
+      const limitations = doc && Array.isArray(doc.limitations) ? doc.limitations : [];
+      const visible = doc && Array.isArray(doc.candidates) ? doc.candidates.length : null;
+      const ran = proc.via !== 'spawn-denied' && proc.via !== 'temp-file';
+      let message;
+      if (!proc.ok && proc.timedOut) {
+        message = 'Движок подбора не успел за 300 с и был остановлен. Кандидатов панель не выдумывает: см. вывод движка ниже.';
+      } else if (!proc.ok && proc.via === 'spawn-denied') {
+        message = 'Не удалось запустить Python движка (' + CW_PYTHON + '): песочница запретила запуск. Подбор не выполнялся.';
+      } else if (!proc.ok) {
+        message = 'Движок подбора завершился с кодом ' + String(proc.exitCode) + '. Кандидатов панель не выдумывает: см. вывод движка ниже.';
+      } else if (!summary) {
+        message = 'Движок отработал (код 0), но файла кандидатов в ' + CW_CANDIDATES_DIR + ' прогон не обновил — итога подбора нет, панель кандидатов не выдумывает.';
+      } else {
+        message = 'Подбор выполнен: кандидатов в радиусе ' + summary.radius_km + ' км — ' + summary.in_radius + ' из ' + summary.total
+          + ' найденных' + (picked ? ' (файл ' + picked.name + ')' : '') + '.';
+      }
+      return sendJson(res, proc.ok ? 200 : 500, {
+        ok: proc.ok, action: 'discover', dryRun: false, ran: ran, exitCode: proc.exitCode,
+        timedOut: !!proc.timedOut, durationMs: Date.now() - started,
+        message: message, summary: summary, limitations: limitations,
+        candidates: visible, summaryFrom: picked ? picked.name : null,
+        project: doc && doc.project_id ? doc.project_id : (project || null),
+        stdoutTail: tailLines(proc.output, 25),
+      });
+    });
+  }
+
+  // --- ИСТИННЫЙ СПИСОК КОНКУРЕНТОВ (контракт v2, §5.1/§5.2): ручное добавление и удаление ---
+  // Пишем ТОЛЬКО клиентский конфиг 01-competitor-watch/config/clients/<client>.yaml → competitors[].
+  // Атомарно (temp + rename) с копией .bak-<timestamp>; удаление — по стабильному ключу
+  // (id, иначе имя), ровно одной записи: чужие записи не трогаем.
+  if (p === '/api/agent1/competitor-list' && method === 'POST') {
+    return readBody(req).then(function (body) {
+      const clientId = String((body && body.client) || '');
+      const action = String((body && body.action) || '');
+      if (!/^[a-z0-9-]{3,60}$/.test(clientId)) return sendJson(res, 400, { ok: false, message: 'неверный id клиента' });
+      if (action !== 'add' && action !== 'remove') return sendJson(res, 400, { ok: false, message: 'действие: add или remove' });
+      const confFile = clientConfigFile(clientId);
+      if (!fs.existsSync(confFile)) return sendJson(res, 404, { ok: false, message: 'нет клиентского конфига: ' + confFile });
+      const original = fs.readFileSync(confFile, 'utf8');
+
+      if (action === 'remove') {
+        const id = String((body && body.id) || '').trim();
+        const name = String((body && body.name) || '').trim();
+        if (!id && !name) return sendJson(res, 400, { ok: false, message: 'нужен id или имя удаляемой записи' });
+        const result = applyAtomicEdit(confFile, clientId + '.yaml', function (text) {
+          return removeCompetitorFromText(text, { id: id, name: name });
+        });
+        if (!result.ok) return sendJson(res, result.code || 400, { ok: false, message: 'удалить не удалось: ' + result.message, client: clientId });
+        const text = fs.readFileSync(confFile, 'utf8');
+        const count = countCompetitorsInText(text);
+        const issues = competitorIndentIssues(text);
+        return sendJson(res, 200, {
+          ok: true, action: 'remove', client: clientId, clientFile: confFile, backup: result.backup,
+          removed: result.previous, competitorsCount: count,
+          competitorsInFile: issues.total, brokenIndentCount: issues.broken, brokenIndentNames: issues.names,
+          message: 'Запись убрана из истинного списка конкурентов (в ближайшем прогоне в анализ не попадёт)'
+            + (result.changed === false ? ' — но менять не пришлось' : '')
+            + (issues.broken ? '. ВНИМАНИЕ: в конфиге осталась запись с битым отступом (' + issues.names.join(', ') + ') — движок её не видит, нужна правка конфига (решает Lead).' : '') + '.',
+        });
+      }
+
+      const name = String((body && body.name) || '').trim();
+      if (!name) return sendJson(res, 400, { ok: false, message: 'укажите название конкурента' });
+      if (name.length > 200) return sendJson(res, 400, { ok: false, message: 'слишком длинное название (максимум 200 символов)' });
+      let developer = String((body && body.developer) || '').trim();
+      const klass = String((body && (body.klass !== undefined ? body.klass : body['class'])) || '').trim();
+      const site = String((body && body.site) || '').trim();
+      if (developer.length > 200 || klass.length > 60 || site.length > 500) return sendJson(res, 400, { ok: false, message: 'слишком длинное значение поля' });
+      if (site !== '' && !/^https?:\/\/\S+$/i.test(site)) return sendJson(res, 400, { ok: false, message: 'сайт должен начинаться с http:// или https:// (или оставьте пустым)' });
+      let id = String((body && body.id) || '').trim();
+      if (id !== '' && !/^[a-z0-9а-яё][a-z0-9а-яё-]{0,59}$/i.test(id)) return sendJson(res, 400, { ok: false, message: 'id записи: латиница/цифры/дефис, до 60 символов' });
+      if (!id) id = panelSlug(name);
+      if (!id) return sendJson(res, 400, { ok: false, message: 'из названия не получился id — укажите id явно' });
+      const srcPlatforms = (body && body.platforms && typeof body.platforms === 'object' && !Array.isArray(body.platforms)) ? body.platforms : {};
+      const platforms = { cian: '', avito: '', yandex_realty: '', domclick: '' };
+      let badPlatform = null;
+      Object.keys(srcPlatforms).forEach(function (k) {
+        const key = String(k).toLowerCase().replace(/-/g, '_');
+        const v = String(srcPlatforms[k] === undefined || srcPlatforms[k] === null ? '' : srcPlatforms[k]).trim();
+        if (v !== '' && !/^https?:\/\/\S+$/i.test(v)) { badPlatform = key; return; }
+        platforms[key] = v;
+      });
+      if (badPlatform) return sendJson(res, 400, { ok: false, message: 'ссылка площадки ' + badPlatform + ' должна начинаться с http:// или https://' });
+
+      // Дубль не создаём: совпадение по id, по нормализованному имени или по слагу имени.
+      const dup = (function () {
+        const list = (function () { try { const d = parseYaml(original); return d && Array.isArray(d.competitors) ? d.competitors : []; } catch (e) { return []; } })();
+        return list.filter(function (c) {
+          if (!c || typeof c !== 'object') return false;
+          const cid = c.id !== undefined && c.id !== null ? String(c.id) : '';
+          const cnm = c.name !== undefined && c.name !== null ? String(c.name) : '';
+          return (cid !== '' && cid === id) || panelNormName(cnm) === panelNormName(name) || (panelSlug(cnm) === id);
+        })[0] || null;
+      })();
+      if (dup) {
+        return sendJson(res, 409, {
+          ok: false, message: 'такой конкурент уже в истинном списке («' + (dup.name || dup.id) + '») — дубль не добавляю',
+          competitorsCount: countCompetitorsInText(original),
+        });
+      }
+
+      const clean = function (s) { return String(s).replace(/["\\]/g, '').replace(/\s+/g, ' ').trim(); };
+      const block = '- { id: ' + clean(id) + ', name: "' + clean(name) + '", developer: "' + clean(developer)
+        + '", class: "' + clean(klass) + '", site: "' + clean(site)
+        + '", platforms: { cian: "' + clean(platforms.cian) + '", avito: "' + clean(platforms.avito)
+        + '", yandex_realty: "' + clean(platforms.yandex_realty) + '", domclick: "' + clean(platforms.domclick)
+        + '" }, source: "вручную", added: "' + panelLocalDate() + '" }';
+      const result = applyAtomicEdit(confFile, clientId + '.yaml', function (text) {
+        // ПРОВЕРКА ПЕРЕД ЗАПИСЬЮ: элемент competitors[] обязан встать отдельной записью
+        // канонического отступа (2 пробела) и быть видимым парсеру. Иначе правку не применяем —
+        // именно так однажды появилась запись с отступом 4, которую роняли оба парсера.
+        const beforeIssues = competitorIndentIssues(text);
+        const beforeVisible = countCompetitorsInText(text);
+        const appended = appendCompetitorBlock(text, block);
+        if (!appended.ok) return appended;
+        const afterIssues = competitorIndentIssues(appended.text);
+        const afterVisible = countCompetitorsInText(appended.text);
+        if (afterIssues.total !== beforeIssues.total + 1) {
+          return { ok: false, reason: 'новая запись не встала отдельным элементом списка competitors' };
+        }
+        if (afterIssues.broken > beforeIssues.broken) {
+          return { ok: false, reason: 'новая запись оказалась вложенной глубже списка (битый отступ) — правку не применяю' };
+        }
+        if (beforeIssues.broken === 0 && (afterVisible === null || beforeVisible === null || afterVisible !== beforeVisible + 1)) {
+          return { ok: false, reason: 'парсер не видит новую запись после добавления — правку не применяю' };
+        }
+        return appended;
+      });
+      if (!result.ok) return sendJson(res, result.code || 400, { ok: false, message: 'добавить не удалось: ' + result.message, client: clientId });
+      const text = fs.readFileSync(confFile, 'utf8');
+      const count = countCompetitorsInText(text);
+      const issues = competitorIndentIssues(text);
+      const hasSource = site !== '' || Object.keys(platforms).some(function (k) { return platforms[k] !== ''; });
+      return sendJson(res, 200, {
+        ok: true, action: 'add', client: clientId, clientFile: confFile, backup: result.backup,
+        added: { id: id, name: name }, hasSource: hasSource, competitorsCount: count,
+        competitorsInFile: issues.total, brokenIndentCount: issues.broken, brokenIndentNames: issues.names,
+        message: 'Конкурент «' + name + '» добавлен в истинный список'
+          + (hasSource ? ' — в ближайшем прогоне попадёт в анализ.' : '. ВНИМАНИЕ: без сайта и без ссылок площадок — без источника, в анализ не попадает.')
+          + (issues.broken ? ' В конфиге есть запись с битым отступом (' + issues.names.join(', ') + ') — движок её не видит, нужна правка конфига (решает Lead).' : ''),
+      });
+    });
+  }
+
+  // --- ЯВНАЯ ОТПРАВКА ОТЧЁТА (контракт v2, §5.2/§5.4) — только по кнопке «Отправить сейчас» ---
+  // Ни один другой маршрут панели почту не отправляет: сохранение настроек и «Обновить данные»
+  // (collect.mjs / build_weekly_report.py / run_weekly.py) движок с почтой не зовут. Здесь
+  // движок запускается в режиме on-request с --send-only: письмо уходит по ПОСЛЕДНЕМУ готовому
+  // отчёту, без повторного сбора данных. Факт отправки панель берёт из машиной строки EMAIL_RESULT
+  // и из файла reports/clients/<client>/.cache/email-<дата>.json — своих «успехов» не выдумывает.
+  if (p === '/api/agent1/send-report' && method === 'POST') {
+    return readBody(req).then(function (body) {
+      const started = Date.now();
+      const clientId = String((body && body.client) || 'client-svet');
+      if (!/^[a-z0-9-]{3,60}$/.test(clientId)) return sendJson(res, 400, { ok: false, ran: false, sent: [], message: 'неверный id клиента' });
+      const confFile = clientConfigFile(clientId);
+      const scriptFile = path.join(CW_SCRIPTS, 'collect_clients.py');
+      if (!fs.existsSync(scriptFile)) return sendJson(res, 501, { ok: false, ran: false, sent: [], message: 'движок отправки не найден: ' + scriptFile });
+      if (!fs.existsSync(confFile)) return sendJson(res, 404, { ok: false, ran: false, sent: [], message: 'нет клиентского конфига: ' + confFile });
+      if (ACTIONS_DRY_RUN) {
+        return sendJson(res, 200, {
+          ok: true, action: 'send-report', dryRun: true, ran: false, exitCode: 0, durationMs: Date.now() - started,
+          sent: [], records: [], emailFile: null, emailFileFresh: false, stdoutTail: '',
+          message: 'Сухой прогон (DASHBOARD_ACTIONS_DRY_RUN=1): движок не запускался, письмо не отправлялось.',
+        });
+      }
+      const before = emailCachesMap(clientId);
+      const args = [scriptFile, '--client', clientId, '--email-mode', 'on-request', '--send-only'];
+      const proc = runProcess(CW_PYTHON, args, PROJECT_DIR, 300000);
+      const tail = proc.output || '';
+      let parsed = null;
+      const m = /EMAIL_RESULT\s+(\{.*\})\s*$/m.exec(tail);
+      if (m) { try { parsed = JSON.parse(m[1]); } catch (e) { parsed = null; } }
+      const cache = pickChangedEmailCache(clientId, before);
+      const records = parsed && Array.isArray(parsed.records) ? parsed.records
+        : (cache && cache.doc && Array.isArray(cache.doc.records) ? cache.doc.records : []);
+      const sent = (parsed && Array.isArray(parsed.sent) && parsed.sent.length)
+        ? parsed.sent.map(String)
+        : records.filter(function (r) { return r && String(r.status) === 'sent'; }).map(function (r) { return String(r.to); }).filter(Boolean);
+      let message;
+      const lastLine = tailLines(tail, 1).trim();
+      if (!proc.ok && proc.exitCode === 2 && /(--email-mode|--send-only|unrecognized arguments)/.test(tail)) {
+        message = 'Письмо НЕ отправлено: движок ещё не поддерживает режим on-request (--email-mode/--send-only). Нужна правка движка Агента 1.';
+      } else if (!proc.ok && proc.timedOut) {
+        message = 'Письмо НЕ отправлено: движок не успел ответить за 300 с.';
+      } else if (!proc.ok) {
+        message = 'Письмо НЕ отправлено: движок завершился с кодом ' + String(proc.exitCode) + (lastLine ? ' — ' + lastLine : '. См. вывод ниже.');
+      } else if (sent.length) {
+        message = 'Отчёт отправлен: ' + sent.join(', ') + '.';
+      } else {
+        const reasons = records.filter(function (r) { return r && r.reason; }).map(function (r) { return String(r.reason); });
+        message = 'Письмо НЕ отправлено: ' + (parsed && parsed.message ? String(parsed.message)
+          : (reasons[0] || (records.length ? 'движок не подтвердил отправку' : 'движок не создал записей отправки (канал email или автоотправка выключены)')));
+      }
+      return sendJson(res, 200, {
+        ok: proc.ok && sent.length > 0, action: 'send-report', ran: true, exitCode: proc.exitCode,
+        timedOut: !!proc.timedOut, durationMs: Date.now() - started, client: clientId,
+        sent: sent, records: records, emailFile: cache ? cache.name : null, emailFileFresh: cache ? cache.fresh : false,
+        message: message, stdoutTail: tailLines(tail, 15),
+      });
     });
   }
 
@@ -793,20 +1544,51 @@ const server = http.createServer(function (req, res) {
       if (!decisions.ok) return sendJson(res, decisions.code || 400, decisions);
 
       if (action === 'approve') {
-        const confDir = path.join(PROJECT_DIR, '01-competitor-watch', 'config', 'clients');
-        const confFile = path.join(confDir, clientId + '.yaml');
-        if (!fs.existsSync(confDir)) {
-          fs.mkdirSync(confDir, { recursive: true });
+        if (!fs.existsSync(CW_CLIENTS_DIR)) {
+          fs.mkdirSync(CW_CLIENTS_DIR, { recursive: true });
         }
+        const confFile = clientConfigFile(clientId);
         const exists = fs.existsSync(confFile);
-        const seed = exists ? null : ('# Клиентский конфиг Агента 1: подтверждённые конкуренты.\n# Файл создан панелью при первом добавлении кандидата.\nversion: 1\nclient: ' + clientId + '\nupdated: "' + new Date().toISOString().slice(0, 10) + '"\n\ncompetitors:\n');
-        const block = ['  - { id: ' + String(name).toLowerCase().replace(/[^a-z0-9а-я]+/gi, '-').slice(0, 40) + ', name: "' + name.replace(/"/g, '') + '", developer: "' + String(item.developer || '').replace(/"/g, '') + '", distance_km: ' + (item.distance_km === undefined || item.distance_km === null ? 'null' : item.distance_km) + ', source: "автоподбор", added: "' + new Date().toISOString().slice(0, 10) + '" }'];
+        const today = panelLocalDate();
+        const seed = exists ? null : ('# Клиентский конфиг Агента 1: подтверждённые конкуренты.\n# Файл создан панелью при первом добавлении кандидата.\nversion: 1\nclient: ' + clientId + '\nupdated: "' + today + '"\n\ncompetitors:\n');
+        // Формат записи — контракт v2 §5.1: у записи есть id, class и site/platforms.
+        // Без site/platforms движок не сможет взять её в анализ (запись «без источника»),
+        // поэтому ссылки площадок переносим из sources[] кандидата движка.
+        const platforms = { cian: '', avito: '', yandex_realty: '', domclick: '' };
+        (Array.isArray(item.sources) ? item.sources : []).forEach(function (s) {
+          const key = String((s && (s.platform || s.source)) || '').toLowerCase().replace(/-/g, '_');
+          const url = String((s && (s.url || s.link)) || '').trim();
+          if (key && url) platforms[key] = url;
+        });
+        const candId = String(item.id === undefined || item.id === null ? '' : item.id).trim() || panelSlug(String(name));
+        const clean = function (v) { return String(v === undefined || v === null ? '' : v).replace(/["\\]/g, '').replace(/\s+/g, ' ').trim(); };
+        const block = '- { id: ' + clean(candId) + ', name: "' + clean(name) + '", developer: "' + clean(item.developer || '')
+          + '", class: "' + clean(item['class'] || item.klass || '') + '", site: "' + clean(item.site || item.url || '')
+          + '", platforms: { cian: "' + clean(platforms.cian) + '", avito: "' + clean(platforms.avito)
+          + '", yandex_realty: "' + clean(platforms.yandex_realty) + '", domclick: "' + clean(platforms.domclick)
+          + '" }, source: "автоподбор", distance_km: ' + (item.distance_km === undefined || item.distance_km === null ? 'null' : item.distance_km)
+          + ', added: "' + today + '" }';
         if (!exists) fs.writeFileSync(confFile, seed, 'utf8');
+        // Дубль не создаём: повторное «Добавить в анализ» по тому же кандидату список не раздувает.
+        const already = (function () {
+          try {
+            const d = parseYaml(fs.readFileSync(confFile, 'utf8'));
+            const list = d && Array.isArray(d.competitors) ? d.competitors : [];
+            return list.filter(function (c) {
+              return c && typeof c === 'object'
+                && (String(c.id === undefined || c.id === null ? '' : c.id) === candId || panelNormName(c.name) === panelNormName(String(name)));
+            })[0] || null;
+          } catch (e) { return null; }
+        })();
+        if (already) {
+          try { collect({}); } catch (e) { /* best effort */ }
+          return sendJson(res, 200, Object.assign({}, decisions, {
+            added: false, alreadyInList: true, clientFile: confFile, candidateKey: candKey, decisionsFile: decFile,
+            target: 'конкурент «' + name + '» уже в истинном списке клиента ' + clientId + ' — повторно не добавляю · решение записано в ' + projectId + '.decisions.json по ключу «' + candKey + '»',
+          }));
+        }
         const add = applyAtomicEdit(confFile, clientId + '.yaml', function (text) {
-          if (/competitors:\s*\n(\s*#|\s*$)/.test(text) || /competitors:\s*$/.test(text.trim()) || text.indexOf('competitors:') < 0) {
-            return appendListBlock(text.indexOf('competitors:') >= 0 ? text : text + '\ncompetitors:\n', 'competitors', block);
-          }
-          return appendListBlock(text, 'competitors', block);
+          return appendCompetitorBlock(text, block);
         });
         if (!add.ok) return sendJson(res, add.code || 400, add);
         try { collect({}); } catch (e) { /* best effort: пересобираем, чтобы статусы сразу попали в панель */ }
@@ -880,14 +1662,27 @@ const server = http.createServer(function (req, res) {
         writeValue = '"' + v.replace(/"/g, '') + '"'; human = v || 'пусто';
       }
       const pathArr = group.split('.').concat([field]);
+      const blockDefaults = SETTINGS_BLOCK_DEFAULTS[group] || null;
       const result = applyAtomicEdit(file, agent + '.yaml', function (text) {
         // Динамический домен: если ключа ещё нет — дописываем пару в конец карты.
         if (grp.__dynamicDomain && setYamlScalar(text, pathArr, writeValue).ok === false) {
           return appendListBlock(text, 'competitor_domains', ['  ' + field + ': ' + String(value).replace(/"/g, '')]);
         }
-        return rule.t === 'list' ? setYamlList(text, pathArr, writeValue) : setYamlScalar(text, pathArr, writeValue);
+        const direct = rule.t === 'list' ? setYamlList(text, pathArr, writeValue) : setYamlScalar(text, pathArr, writeValue);
+        if (direct.ok || !blockDefaults || pathArr.length < 3) return direct;
+        // Родительского блока ещё нет в файле (новый параметр пришёл из панели раньше,
+        // чем из конфига). Дописываем блок с умолчаниями и повторяем правку — иначе
+        // тумблер молча не сохранился бы.
+        const withBlock = insertChildBlock(text, pathArr.slice(0, pathArr.length - 2), pathArr[pathArr.length - 2], blockDefaults);
+        if (!withBlock.ok) return direct;
+        return rule.t === 'list' ? setYamlList(withBlock.text, pathArr, writeValue) : setYamlScalar(withBlock.text, pathArr, writeValue);
       });
       if (!result.ok) return sendJson(res, result.code || 400, result);
+      // Тумблеры и поле ввода Агента 1 обязаны показывать новое состояние сразу —
+      // как тумблер самого агента: тот после правки реестра пересобирает данные.
+      if (REFRESH_AFTER_WRITE.indexOf(group) >= 0) {
+        try { collect({}); } catch (e) { /* пересборка best-effort */ }
+      }
       return sendJson(res, 200, Object.assign({}, result, { target: 'настройка ' + agent + ' · ' + group + '.' + field + ' = ' + human, agent: agent, group: group, field: field }));
     });
   }
@@ -1289,14 +2084,17 @@ const server = http.createServer(function (req, res) {
 
       if (action === 'report') {
         if (!curr) return sendJson(res, 400, { ok: false, message: 'нет снимков — сначала соберите данные' });
+        if (ACTIONS_DRY_RUN) return sendJson(res, 200, dryRunAnswer('report', curr, prev));
         const args = [path.join(CW_SCRIPTS, 'build_weekly_report.py'), '--curr', curr];
         if (prev) args.push('--prev', prev);
         const res2 = runProcess(PYTHON, args, PROJECT_DIR, 180000);
         const rep = newestReport();
+        const run = appendDashboardRun(started, res2, rep ? rep.path : null);
         return sendJson(res, res2.ok ? 200 : 500, {
           ok: res2.ok, action: action, durationMs: Date.now() - started, exitCode: res2.exitCode,
           output: res2.output.split('\n').slice(-25).join('\n'),
           result: { curr: curr, prev: prev, report: rep },
+          run: run,
           message: res2.ok ? ('Отчёт построен за ' + curr + (prev ? ' (сравнение с ' + prev + ')' : '')) : 'Построение отчёта завершилось с ошибкой',
         });
       }
@@ -1307,17 +2105,99 @@ const server = http.createServer(function (req, res) {
           return sendJson(res, 400, { ok: false, message: 'для агента «' + agentId + '» команда запуска пока не настроена: он в статусе «запланирован». Настроенный агент — «Агент 1 — Мониторинг конкурентов».' });
         }
         if (!curr) return sendJson(res, 400, { ok: false, message: 'нет снимков — сначала соберите данные' });
+        if (ACTIONS_DRY_RUN) return sendJson(res, 200, dryRunAnswer('agent', curr, prev));
         const args = [path.join(CW_SCRIPTS, 'run_weekly.py'), '--date', curr, '--skip-sources'];
         if (prev) args.push('--prev', prev);
         const res2 = runProcess(PYTHON, args, PROJECT_DIR, 180000);
         const rep = newestReport();
+        const run = appendDashboardRun(started, res2, rep ? rep.path : null);
         return sendJson(res, res2.ok ? 200 : 500, {
           ok: res2.ok, action: action, agent: agentId, durationMs: Date.now() - started, exitCode: res2.exitCode,
           output: res2.output.split('\n').slice(-25).join('\n'),
           result: { curr: curr, prev: prev, report: rep, skipSources: true },
+          run: run,
           message: res2.ok
             ? ('Агент отработал цикл за ' + curr + ': проверка снимка, сравнение и отчёт. С сбором с площадок пропущен (--skip-sources) — он требует входа в Chrome.')
             : 'Цикл агента завершился с ошибкой',
+        });
+      }
+
+      // Агент 2 «Яндекс Директ»: панель проверяет доступ к API v5 и ничего не меняет
+      // в аккаунте (только чтение). Токен берётся из marketing-agents/.env.
+      if (action === 'agent2') {
+        const agentId = String((body && body.agent) || 'agent-2-direct-semantics');
+        if (ACTIONS_DRY_RUN) return sendJson(res, 200, dryRunAnswer('agent2', curr, prev));
+        const res2 = runProcess(PYTHON, ['-m', 'skills.direct_api', '--check', '--json'], PROJECT_DIR, 90000);
+        // CLI печатает один JSON-объект; предупреждения рантайма идут в stderr.
+        let check = null;
+        try {
+          const lines = String(res2.output || '').split('\n').map(function (l) { return l.trim(); }).filter(function (l) { return l.charAt(0) === '{'; });
+          check = lines.length ? JSON.parse(lines[lines.length - 1]) : null;
+        } catch (e) { check = null; }
+        const ok = res2.ok && check !== null && String(check.status) !== 'error';
+        const status = check && check.status ? String(check.status) : (res2.ok ? 'unknown' : 'error');
+        const campaigns = check && check.campaigns !== undefined ? check.campaigns : null;
+        const metrika = check && check.metrika ? check.metrika : null;
+        const metrikaNote = metrika
+          ? (String(metrika.status) === 'ok'
+            ? ' · Метрика доступна' + (metrika.counter && metrika.counter.name ? ' (счётчик «' + metrika.counter.name + '»)' : '')
+            : ' · Метрика: ' + String(metrika.message || metrika.status))
+          : '';
+        const message = !check
+          ? ('Проверка не вернула разборчивый ответ (код ' + res2.exitCode + '): ' + String(res2.output || '').split('\n').slice(-2).join(' ').slice(0, 300))
+          : (status === 'ok'
+            ? ('Доступ к API Директа есть: кампаний ' + (campaigns === null ? 'нет данных' : campaigns) + (check.sandbox ? ' (песочница)' : ''))
+            : String(check.message || ('статус проверки: ' + status)));
+        const run = appendDashboardRun(started, { ok: ok, output: res2.output }, null, {
+          agent: agentId, service: 'direct-api',
+          error: status === 'ok' ? null : message,
+        });
+        return sendJson(res, ok ? 200 : 500, {
+          ok: ok, action: action, agent: agentId, durationMs: Date.now() - started, exitCode: res2.exitCode,
+          output: res2.output.split('\n').slice(-25).join('\n'),
+          result: { status: status, sandbox: check ? !!check.sandbox : null, campaigns: campaigns, metrika: metrika },
+          run: run,
+          message: message + metrikaNote,
+        });
+      }
+
+      // Отчёт Метрики по регламенту metrika-cross-analytics: только чтение,
+      // счётчик берётся из marketing-agents/.env (YANDEX_METRICA_COUNTER_ID).
+      if (action === 'agent2-metrika') {
+        const agentId = String((body && body.agent) || 'agent-2-direct-semantics');
+        if (ACTIONS_DRY_RUN) return sendJson(res, 200, dryRunAnswer('agent2-metrika', curr, prev));
+        const to = new Date().toISOString().slice(0, 10);
+        const from = new Date(Date.now() - 30 * 24 * 3600 * 1000).toISOString().slice(0, 10);
+        const res2 = runProcess(PYTHON, ['-m', 'skills.direct_api', '--metrika-report', '--from', from, '--to', to, '--json'], PROJECT_DIR, 90000);
+        let report = null;
+        try {
+          const lines = String(res2.output || '').split('\n').map(function (l) { return l.trim(); }).filter(function (l) { return l.charAt(0) === '{'; });
+          report = lines.length ? JSON.parse(lines[lines.length - 1]) : null;
+        } catch (e) { report = null; }
+        const ok = res2.ok && report !== null && report.ok === true;
+        const run = appendDashboardRun(started, { ok: ok, output: res2.output }, null, { agent: agentId, service: 'metrika' });
+        const totals = report && report.totals ? report.totals : null;
+        const message = !report
+          ? ('Отчёт Метрики не собрался (код ' + res2.exitCode + '): ' + String(res2.output || '').split('\n').slice(-2).join(' ').slice(0, 300))
+          : (report.ok
+            ? ('Отчёт Метрики за ' + (report.period ? report.period[0] + '..' + report.period[1] : 'период неизвестен') +
+               ': трафик ' + (report.has_data ? 'есть' : 'данных нет') +
+               (totals ? ', визиты ' + Math.round(Number(totals[0] || 0)) + ', пользователи ' + Math.round(Number(totals[1] || 0)) : '') +
+               ', целей ' + ((report.goals || []).length))
+            : String(report.message || 'ошибка отчёта'));
+        return sendJson(res, ok ? 200 : 500, {
+          ok: ok, action: action, agent: agentId, durationMs: Date.now() - started, exitCode: res2.exitCode,
+          output: res2.output.split('\n').slice(-25).join('\n'),
+          result: {
+            status: report && report.ok ? 'ok' : 'error',
+            period: report ? report.period : null,
+            hasData: report ? !!report.has_data : null,
+            totals: totals,
+            goals: report ? (report.goals || []).length : null,
+            rows: report ? (report.rows || []).length : null,
+          },
+          run: run,
+          message: message,
         });
       }
 
@@ -1442,14 +2322,9 @@ const server = http.createServer(function (req, res) {
     return readBody(req).then(function (body) {
       const which = String((body && body.file) || '');
       const backup = String((body && body.backup) || '');
-      const files = {
-        settings: SETTINGS_FILE, prices: PRICES_FILE, agents: AGENTS_FILE, sources: SOURCES_FILE,
-        router: ROUTER_FILE, profile: PROFILE_MANIFEST,
-        clients: CLIENTS_FILE, services: SERVICES_FILE, subscriptions: SUBS_FILE,
-        invoices: INVOICES_FILE, results: RESULTS_FILE,
-      };
-      const target = files[which];
+      const target = resolveSettingsTarget(which);
       if (!target) return sendJson(res, 400, { ok: false, message: 'неизвестный файл: ' + which });
+      if (!fs.existsSync(target)) return sendJson(res, 404, { ok: false, message: 'файл не найден: ' + target });
       // Копия должна лежать рядом с файлом и называться <файл>.bak-<штамп> — без путей.
       if (backup.indexOf('/') >= 0 || backup.indexOf('\\') >= 0 || backup.indexOf('..') >= 0) {
         return sendJson(res, 400, { ok: false, message: 'недопустимое имя копии' });
@@ -1486,9 +2361,27 @@ const server = http.createServer(function (req, res) {
       try { meta = collect({}); } catch (e) { /* best effort */ }
       return sendJson(res, 200, {
         ok: true, changed: true, file: target, restoredFrom: backup, backup: path.basename(safety),
+        sha256: sha256Of(target), sha256Restored: sha256Of(backupPath),
         target: 'возврат к состоянию до правки', generatedAt: meta ? meta.generatedAt : null,
-        note: 'файл восстановлен из копии ' + backup + '; текущее состояние сохранено в ' + path.basename(safety),
+        note: 'файл восстановлен из копии ' + backup + '; текущее состояние сохранено в ' + path.basename(safety)
+          + '. SHA-256 файла теперь совпадает с SHA-256 копии — откат проверяем.',
       });
+    });
+  }
+
+  // --- СПИСОК КОПИЙ для кнопки «Вернуть как было» ---
+  // Нужен и тонким настройкам агентов: раньше маршрута не было, и откат тумблеров
+  // не работал. Отдаём SHA-256 текущего файла и каждой копии — обратимость проверяема.
+  if (p === '/api/settings/backups' && method === 'GET') {
+    const which = String(url.searchParams.get('file') || '');
+    const target = resolveSettingsTarget(which);
+    if (!target) return sendJson(res, 400, { ok: false, message: 'неизвестный файл: ' + which });
+    if (!fs.existsSync(target)) return sendJson(res, 404, { ok: false, message: 'файл не найден: ' + target });
+    return sendJson(res, 200, {
+      ok: true, file: target, label: which,
+      current: { sha256: sha256Of(target), bytes: fs.statSync(target).size },
+      backups: backupsOf(target),
+      note: 'Копии делает панель при каждой правке (.bak-<timestamp>). Возврат — POST /api/settings/revert с именем копии.',
     });
   }
 
@@ -1607,6 +2500,163 @@ const server = http.createServer(function (req, res) {
         generatedAt: meta ? meta.generatedAt : null,
         note: 'enabled записан в registry/sources.yaml атомарно; копия: ' + (result.backup || 'не потребовалась'),
       }));
+    });
+  }
+
+  // --- выгрузка в Obsidian (POST /api/vault/export) ---
+  // Второе исключение из «пишем только в dashboard/»: заметки уходят в vault,
+  // но строго в подпапку «выгрузка-панели», и только через модуль
+  // collector/export-vault.mjs — он же делает .bak перед перезаписью.
+  // dryRun:true ничего не пишет, только считает план.
+  // scope:'panel' (по умолчанию) — заметки панели; scope:'full' — плюс разделы
+  // «Скилы» и «База знаний». Любое другое значение — 400.
+  // Контракт модуля: exportVault({ dryRun, scope }) -> { ok, vaultPath, scope, written[], updated[], skipped[], errors[] }.
+  if (p === '/api/vault/export' && method === 'POST') {
+    return readBody(req).then(async function (body) {
+      if (body === null) return sendJson(res, 400, { ok: false, message: 'тело запроса не разобрано: нужен JSON вида {"dryRun":false}' });
+      const dryRun = !!(body && body.dryRun === true);
+      const rawScope = body && body.scope !== undefined && body.scope !== null && String(body.scope).trim() !== ''
+        ? body.scope : 'panel';
+      const scope = typeof rawScope === 'string' ? rawScope.trim() : rawScope;
+      if (scope !== 'panel' && scope !== 'full') {
+        return sendJson(res, 400, {
+          ok: false,
+          dryRun: dryRun,
+          scope: scope,
+          message: 'неизвестный scope: ' + JSON.stringify(rawScope) + ' (допустимо: panel | full)',
+        });
+      }
+      if (!fs.existsSync(EXPORT_VAULT_FILE)) {
+        return sendJson(res, 500, { ok: false, dryRun: dryRun, scope: scope, message: 'модуль экспорта не найден: ' + EXPORT_VAULT_FILE });
+      }
+      let mod = null;
+      try {
+        // ?v=<mtime> — чтобы после появления/правки модуля панель подхватила новую версию без перезапуска.
+        const stamp = String(fs.statSync(EXPORT_VAULT_FILE).mtimeMs);
+        mod = await import(pathToFileURL(EXPORT_VAULT_FILE).href + '?v=' + stamp);
+      } catch (e) {
+        return sendJson(res, 500, { ok: false, dryRun: dryRun, scope: scope, message: 'модуль экспорта не загрузился: ' + (e && e.message ? e.message : String(e)) });
+      }
+      if (!mod || typeof mod.exportVault !== 'function') {
+        return sendJson(res, 500, { ok: false, dryRun: dryRun, scope: scope, message: 'модуль экспорта не экспортирует функцию exportVault: ' + EXPORT_VAULT_FILE });
+      }
+      let out = null;
+      try {
+        out = await mod.exportVault({ dryRun: dryRun, scope: scope });
+      } catch (e) {
+        return sendJson(res, 500, { ok: false, dryRun: dryRun, scope: scope, message: 'экспорт упал: ' + (e && e.message ? e.message : String(e)), stack: String(e && e.stack ? e.stack : '') });
+      }
+      const r = (out && typeof out === 'object') ? out : {};
+      const list = function (v) { return Array.isArray(v) ? v : []; };
+      const errors = list(r.errors);
+      const payload = {
+        ok: r.ok !== false,
+        dryRun: dryRun,
+        scope: r.scope !== undefined ? String(r.scope) : scope,
+        vaultPath: r.vaultPath !== undefined ? r.vaultPath : null,
+        written: list(r.written),
+        updated: list(r.updated),
+        skipped: list(r.skipped),
+        errors: errors,
+        message: r.message !== undefined ? String(r.message)
+          : (r.ok === false ? (errors.length ? String(errors[0]) : 'экспорт завершился с ошибкой') : (dryRun ? 'проверка без записи: план выгрузки' : 'выгрузка завершена')),
+      };
+      return sendJson(res, payload.ok ? 200 : 500, payload);
+    });
+  }
+
+  // --- кабинеты Яндекс.Директа (Агент 2) ---
+  // Токен живёт только в ACCOUNTS_FILE (00-admin/config/direct-accounts.local.json,
+  // вне репозитория). В ответах — маска из последних 4 символов; в консоль панели
+  // токен не печатается ни при успехе, ни при ошибке.
+
+  if (p === '/api/direct/accounts' && method === 'GET') {
+    let store = null;
+    try { store = readStore(); }
+    catch (e) { return sendJson(res, 500, { ok: false, message: 'хранилище кабинетов не прочитано: ' + e.message, file: ACCOUNTS_FILE }); }
+    return sendJson(res, 200, {
+      ok: true,
+      oauth: publicOauth(store),
+      accounts: store.accounts.map(publicAccount),
+    });
+  }
+
+  if (p === '/api/direct/oauth' && method === 'POST') {
+    return readBody(req).then(function (body) {
+      if (body === null) return sendJson(res, 400, { ok: false, message: 'тело запроса не разобрано: нужен JSON вида {"clientId":"..."}' });
+      const clientId = String((body && body.clientId) || '').trim();
+      if (clientId === '') return sendJson(res, 400, { ok: false, message: 'нужен clientId — идентификатор приложения из кабинета OAuth Яндекса' });
+      if (!/^[A-Za-z0-9._-]{4,128}$/.test(clientId)) return sendJson(res, 400, { ok: false, message: 'clientId: латиница, цифры, точка, дефис или подчёркивание, от 4 символов' });
+      let store = null;
+      try { store = saveClientId(clientId); }
+      catch (e) { return sendJson(res, 500, { ok: false, message: 'clientId не сохранён: ' + e.message, file: ACCOUNTS_FILE }); }
+      return sendJson(res, 200, { ok: true, oauth: publicOauth(store) });
+    });
+  }
+
+  // Привязка кабинета: сначала ЖИВАЯ проверка доступа к API v5, запись — только
+  // после успеха. Токен в ответе и в логах не появляется — ни целиком, ни в тексте ошибки.
+  if (p === '/api/direct/accounts' && method === 'POST') {
+    return readBody(req).then(function (body) {
+      if (body === null) return sendJson(res, 400, { ok: false, message: 'тело запроса не разобрано: нужен JSON вида {"token":"...","login":"","sandbox":false}' });
+      const token = String((body && body.token) || '').trim();
+      if (token === '') return sendJson(res, 400, { ok: false, message: 'нужен OAuth-токен кабинета (поле token)' });
+      const login = String((body && body.login) || '').trim();
+      const sandbox = !!(body && body.sandbox === true);
+      const check = verifyDirectAccount(token, login, sandbox);
+      if (!check.ok) {
+        return sendJson(res, 502, { ok: false, status: directFailureStatus(check.status, check.message), message: check.message });
+      }
+      let saved = null;
+      try {
+        saved = upsertVerifiedAccount({
+          token: token,
+          login: login || check.clientLogin || '',
+          sandbox: check.sandbox,
+          campaigns: check.campaigns,
+        });
+      } catch (e) { return sendJson(res, 500, { ok: false, message: 'кабинет проверен, но не сохранился: ' + e.message, file: ACCOUNTS_FILE }); }
+      return sendJson(res, 200, { ok: true, account: publicAccount(saved.account), message: check.message });
+    });
+  }
+
+  if (p === '/api/direct/accounts/check' && method === 'POST') {
+    return readBody(req).then(function (body) {
+      if (body === null) return sendJson(res, 400, { ok: false, message: 'тело запроса не разобрано: нужен JSON вида {"id":"direct-1"}' });
+      const id = String((body && body.id) || '').trim();
+      if (id === '') return sendJson(res, 400, { ok: false, message: 'нужен id кабинета' });
+      let store = null;
+      try { store = readStore(); }
+      catch (e) { return sendJson(res, 500, { ok: false, message: 'хранилище кабинетов не прочитано: ' + e.message, file: ACCOUNTS_FILE }); }
+      const account = findAccount(store, id);
+      if (!account) return sendJson(res, 404, { ok: false, message: 'кабинет не найден: ' + id });
+      const check = verifyDirectAccount(account.token, account.login, account.sandbox);
+      let updated = null;
+      try {
+        updated = updateAccountCheck(id, {
+          // Статусы кабинета: ok | invalid | unchecked. Любой провал проверки — invalid,
+          // причина видна в message (401, сеть и таймаут отличаются текстом).
+          status: check.ok ? 'ok' : 'invalid',
+          campaigns: check.ok ? check.campaigns : null,
+        });
+      } catch (e) { return sendJson(res, 500, { ok: false, message: 'результат проверки не записан: ' + e.message, file: ACCOUNTS_FILE }); }
+      if (!updated) return sendJson(res, 404, { ok: false, message: 'кабинет не найден: ' + id });
+      // Контракт: перепроверка обновляет запись и возвращает её (200). Провал виден
+      // в account.status = 'invalid' и в message/checkStatus, а не в HTTP-коде.
+      return sendJson(res, 200, { ok: true, account: publicAccount(updated), checkStatus: check.status, message: check.message });
+    });
+  }
+
+  if (p === '/api/direct/accounts/delete' && method === 'POST') {
+    return readBody(req).then(function (body) {
+      if (body === null) return sendJson(res, 400, { ok: false, message: 'тело запроса не разобрано: нужен JSON вида {"id":"direct-1"}' });
+      const id = String((body && body.id) || '').trim();
+      if (id === '') return sendJson(res, 400, { ok: false, message: 'нужен id кабинета' });
+      let removed = false;
+      try { removed = deleteAccount(id); }
+      catch (e) { return sendJson(res, 500, { ok: false, message: 'кабинет не удалён: ' + e.message, file: ACCOUNTS_FILE }); }
+      if (!removed) return sendJson(res, 404, { ok: false, message: 'кабинет не найден: ' + id });
+      return sendJson(res, 200, { ok: true, removed: id });
     });
   }
 

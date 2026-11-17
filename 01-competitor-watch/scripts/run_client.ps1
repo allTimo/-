@@ -1,4 +1,4 @@
-﻿#Requires -Version 5.1
+#Requires -Version 5.1
 <#
 .SYNOPSIS
     Прогон Агента 1 по расписанию для одного клиента.
@@ -14,6 +14,14 @@
     Не поднимать Chrome: только анонимный HTTP (площадки, которым нужен браузер,
     получат честный статус needs_browser).
 
+.PARAMETER DryRun
+    Ничего не писать: только показать, что было бы собрано (и не отправлять письмо).
+
+.PARAMETER EmailMode
+    Режим отправки отчёта почтой: never | always | on-request (контракт v2 §5.4).
+    По умолчанию always — это планировщик/ручной прогон, письмо уходит только если
+    в настройках агента включён канал email (и auto_send для always).
+
 .EXAMPLE
     powershell -NoProfile -ExecutionPolicy Bypass -File run_client.ps1 -Client client-svet
 #>
@@ -23,7 +31,9 @@ param(
     [string]$ClientsDir,
     [string]$Date,
     [switch]$NoBrowser,
-    [switch]$DryRun
+    [switch]$DryRun,
+    [ValidateSet('never', 'always', 'on-request')]
+    [string]$EmailMode = 'always'
 )
 
 $ErrorActionPreference = 'Stop'
@@ -47,6 +57,7 @@ if ($ClientsDir) { $arguments += @('--clients-dir', $ClientsDir) }
 if ($Date) { $arguments += @('--date', $Date) }
 if ($NoBrowser) { $arguments += '--no-browser' }
 if ($DryRun) { $arguments += '--dry-run' }
+if ($EmailMode) { $arguments += @('--email-mode', $EmailMode) }
 
 $previousPreference = $ErrorActionPreference
 $ErrorActionPreference = 'Continue'

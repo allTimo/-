@@ -1,0 +1,143 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-30",
+  "generated_at": "2026-11-11T00:19:07",
+  "client_id": null,
+  "toggles": {
+    "enabled": true,
+    "lots_all_on_sale": true,
+    "price_dynamics": true,
+    "promos": true,
+    "developers_sites": true,
+    "dedup_promos": true,
+    "new_promos_only": true,
+    "forecast": true
+  },
+  "metrics": {
+    "competitorsInAnalysis": null,
+    "competitorsWithData": null,
+    "lotsAnalyzed": 10,
+    "cheapestLotRub": 8040000
+  },
+  "truth": null,
+  "by_competitor": [
+    {
+      "project": "City Bay",
+      "developer": "MR Group",
+      "lots_on_sale": 3,
+      "price_per_m2": {
+        "min": 370000,
+        "median": 380000,
+        "max": 400000
+      },
+      "cheapest_lot_rub": 10070000,
+      "sources": [
+        "cian"
+      ],
+      "reliable": true
+    },
+    {
+      "project": "Символ",
+      "developer": "Донстрой",
+      "lots_on_sale": 2,
+      "price_per_m2": {
+        "min": 260000,
+        "median": 275000,
+        "max": 290000
+      },
+      "cheapest_lot_rub": 11600000,
+      "sources": [
+        "cian"
+      ],
+      "reliable": true
+    },
+    {
+      "project": "Селигер Сити",
+      "developer": "СЗ Гранель",
+      "lots_on_sale": 5,
+      "price_per_m2": {
+        "min": 300897,
+        "median": 330000,
+        "max": 335000
+      },
+      "cheapest_lot_rub": 8040000,
+      "sources": [
+        "cian"
+      ],
+      "reliable": true
+    }
+  ],
+  "by_source": [
+    {
+      "source": "cian",
+      "lots_on_sale": 10,
+      "median_price_per_m2": 331518,
+      "min": 260000,
+      "max": 400000
+    }
+  ],
+  "dynamics": [
+    {
+      "project": "City Bay",
+      "lots_new": 0,
+      "lots_gone": 0,
+      "median_delta_pct": 0.0,
+      "period": {
+        "prev": "2026-10-23",
+        "curr": "2026-10-30"
+      }
+    },
+    {
+      "project": "Символ",
+      "lots_new": 1,
+      "lots_gone": 0,
+      "median_delta_pct": 5.77,
+      "period": {
+        "prev": "2026-10-23",
+        "curr": "2026-10-30"
+      }
+    },
+    {
+      "project": "Селигер Сити",
+      "lots_new": 1,
+      "lots_gone": 0,
+      "median_delta_pct": 2.38,
+      "period": {
+        "prev": "2026-10-23",
+        "curr": "2026-10-30"
+      }
+    }
+  ],
+  "promos_new": [
+    {
+      "project": "Селигер Сити",
+      "text": "Скидка 5% при 100% оплате",
+      "first_seen": "2026-10-30"
+    },
+    {
+      "project": "Символ",
+      "text": "Скидка 7% на старте продаж",
+      "first_seen": "2026-10-30"
+    }
+  ],
+  "promos_known_count": 0,
+  "forecast": null,
+  "email": [],
+  "data_status": [
+    {
+      "source": "forecast:City Bay",
+      "status": "no_data",
+      "reason": "истории мало: 2 точек из 3 нужных — прогноз не строится"
+    },
+    {
+      "source": "forecast:Селигер Сити",
+      "status": "no_data",
+      "reason": "истории мало: 2 точек из 3 нужных — прогноз не строится"
+    },
+    {
+      "source": "forecast:Символ",
+      "status": "no_data",
+      "reason": "истории мало: 2 точек из 3 нужных — прогноз не строится"
+    }
+  ]
+}

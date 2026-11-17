@@ -1,0 +1,316 @@
+{
+ "agent": "agent-1-competitor-watch",
+ "generatedAtMs": 1794594846165,
+ "files": {
+  "runs": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\registry\\runs.jsonl",
+  "results": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\registry\\results.yaml",
+  "snapshotsDir": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\01-competitor-watch\\data\\snapshots",
+  "clientsDir": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\01-competitor-watch\\data\\clients"
+ },
+ "runs": {
+  "exists": true,
+  "file": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\registry\\runs.jsonl",
+  "total": 47,
+  "ok": 47,
+  "failed": 0,
+  "other": 0,
+  "last": {
+   "runId": "run-45bf4140",
+   "ts": "2026-11-12T21:07:07.446+03:00",
+   "status": "ok",
+   "kind": null,
+   "client": "client-svet",
+   "durationMs": 282958,
+   "costRub": 0.5638,
+   "artifact": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\01-competitor-watch\\reports\\clients\\client-svet\\2026-11-12-competitor-watch.md",
+   "error": "PDF не собран: LibreOffice Kit вернул код 1: {\"code\":\"failed\",\"error\":\"EPERM: operation not permitted, mkdtemp 'C:\\\\Users\\\\328F~1\\\\AppData\\\\Local\\\\Temp\\\\libreoffice-kit-XXXXXX'\"}\n"
+  },
+  "lastOk": {
+   "runId": "run-45bf4140",
+   "ts": "2026-11-12T21:07:07.446+03:00",
+   "status": "ok",
+   "kind": null,
+   "client": "client-svet",
+   "durationMs": 282958,
+   "costRub": 0.5638,
+   "artifact": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\01-competitor-watch\\reports\\clients\\client-svet\\2026-11-12-competitor-watch.md",
+   "error": "PDF не собран: LibreOffice Kit вернул код 1: {\"code\":\"failed\",\"error\":\"EPERM: operation not permitted, mkdtemp 'C:\\\\Users\\\\328F~1\\\\AppData\\\\Local\\\\Temp\\\\libreoffice-kit-XXXXXX'\"}\n"
+  },
+  "lastFailed": null
+ },
+ "results": {
+  "exists": true,
+  "file": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\registry\\results.yaml",
+  "total": 22,
+  "last": {
+   "id": "res-2026-11-12-svet",
+   "title": "ЖК «Свет»: Мониторинг конкурентов за 2026-11-12",
+   "created": "2026-11-12T21:07:07+03:00",
+   "period": "2026-11-05 — 2026-11-12",
+   "artifacts": [
+    "01-competitor-watch/reports/clients/client-svet/2026-11-12-competitor-watch.md",
+    "01-competitor-watch/reports/clients/client-svet/2026-11-12-competitor-watch.xlsx",
+    "01-competitor-watch/reports/clients/client-svet/2026-11-12-competitor-watch.docx",
+    "01-competitor-watch/reports/clients/client-svet/.cache/analytics-2026-11-12.json"
+   ],
+   "sentChannel": "download",
+   "sentTo": "vodnev@d-a.ru, tyurina@d-a.ru",
+   "sentAt": "2026-11-12T21:07:06",
+   "sentStatus": "отправлено: 2 адрес(ов)"
+  }
+ },
+ "snapshots": {
+  "roots": [
+   "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\01-competitor-watch\\data\\snapshots",
+   "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\01-competitor-watch\\data\\clients\\client-granel\\snapshots",
+   "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\01-competitor-watch\\data\\clients\\client-svet\\snapshots"
+  ],
+  "items": [
+   {
+    "name": "2026-10-23",
+    "dir": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\01-competitor-watch\\data\\snapshots\\2026-10-23",
+    "kind": "общие снимки",
+    "date": "2026-10-23",
+    "special": null,
+    "csv": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\01-competitor-watch\\data\\snapshots\\2026-10-23\\lots.csv",
+    "lots": 9,
+    "mtimeMs": 1793387859802.3198
+   },
+   {
+    "name": "2026-10-30",
+    "dir": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\01-competitor-watch\\data\\snapshots\\2026-10-30",
+    "kind": "общие снимки",
+    "date": "2026-10-30",
+    "special": null,
+    "csv": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\01-competitor-watch\\data\\snapshots\\2026-10-30\\lots.csv",
+    "lots": 10,
+    "mtimeMs": 1794345525473.5298
+   },
+   {
+    "name": "_demo-site-zilart-2026-10-31",
+    "dir": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\01-competitor-watch\\data\\snapshots\\_demo-site-zilart-2026-10-31",
+    "kind": "общие снимки",
+    "date": null,
+    "special": "demo-site-zilart-2026-10-31",
+    "csv": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\01-competitor-watch\\data\\snapshots\\_demo-site-zilart-2026-10-31\\lots.csv",
+    "lots": 15,
+    "mtimeMs": 1793458080332.3953
+   },
+   {
+    "name": "_paused-cian-2026-10-31",
+    "dir": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\01-competitor-watch\\data\\snapshots\\_paused-cian-2026-10-31",
+    "kind": "общие снимки",
+    "date": null,
+    "special": "paused-cian-2026-10-31",
+    "csv": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\01-competitor-watch\\data\\snapshots\\_paused-cian-2026-10-31\\lots.csv",
+    "lots": 270,
+    "mtimeMs": 1793456899858.1978
+   },
+   {
+    "name": "2026-11-02",
+    "dir": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\01-competitor-watch\\data\\clients\\client-granel\\snapshots\\2026-11-02",
+    "kind": "снимки клиента client-granel",
+    "date": "2026-11-02",
+    "special": null,
+    "csv": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\01-competitor-watch\\data\\clients\\client-granel\\snapshots\\2026-11-02\\lots.csv",
+    "lots": 229,
+    "mtimeMs": 1793800046927.8953
+   },
+   {
+    "name": "2026-11-03",
+    "dir": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\01-competitor-watch\\data\\clients\\client-granel\\snapshots\\2026-11-03",
+    "kind": "снимки клиента client-granel",
+    "date": "2026-11-03",
+    "special": null,
+    "csv": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\01-competitor-watch\\data\\clients\\client-granel\\snapshots\\2026-11-03\\lots.csv",
+    "lots": 229,
+    "mtimeMs": 1793800046936.464
+   },
+   {
+    "name": "2026-11-04",
+    "dir": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\01-competitor-watch\\data\\clients\\client-granel\\snapshots\\2026-11-04",
+    "kind": "снимки клиента client-granel",
+    "date": "2026-11-04",
+    "special": null,
+    "csv": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\01-competitor-watch\\data\\clients\\client-granel\\snapshots\\2026-11-04\\lots.csv",
+    "lots": 229,
+    "mtimeMs": 1793800024044.5889
+   },
+   {
+    "name": "2026-11-05",
+    "dir": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\01-competitor-watch\\data\\clients\\client-granel\\snapshots\\2026-11-05",
+    "kind": "снимки клиента client-granel",
+    "date": "2026-11-05",
+    "special": null,
+    "csv": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\01-competitor-watch\\data\\clients\\client-granel\\snapshots\\2026-11-05\\lots.csv",
+    "lots": 80,
+    "mtimeMs": 1793895328906.1692
+   },
+   {
+    "name": "2026-11-12",
+    "dir": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\01-competitor-watch\\data\\clients\\client-granel\\snapshots\\2026-11-12",
+    "kind": "снимки клиента client-granel",
+    "date": "2026-11-12",
+    "special": null,
+    "csv": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\01-competitor-watch\\data\\clients\\client-granel\\snapshots\\2026-11-12\\lots.csv",
+    "lots": 4,
+    "mtimeMs": 1794506541524.0317
+   },
+   {
+    "name": "2026-11-01",
+    "dir": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\01-competitor-watch\\data\\clients\\client-svet\\snapshots\\2026-11-01",
+    "kind": "снимки клиента client-svet",
+    "date": "2026-11-01",
+    "special": null,
+    "csv": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\01-competitor-watch\\data\\clients\\client-svet\\snapshots\\2026-11-01\\lots.csv",
+    "lots": 15,
+    "mtimeMs": 1793530998029.001
+   },
+   {
+    "name": "2026-11-02",
+    "dir": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\01-competitor-watch\\data\\clients\\client-svet\\snapshots\\2026-11-02",
+    "kind": "снимки клиента client-svet",
+    "date": "2026-11-02",
+    "special": null,
+    "csv": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\01-competitor-watch\\data\\clients\\client-svet\\snapshots\\2026-11-02\\lots.csv",
+    "lots": 175,
+    "mtimeMs": 1793800046950.4695
+   },
+   {
+    "name": "2026-11-03",
+    "dir": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\01-competitor-watch\\data\\clients\\client-svet\\snapshots\\2026-11-03",
+    "kind": "снимки клиента client-svet",
+    "date": "2026-11-03",
+    "special": null,
+    "csv": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\01-competitor-watch\\data\\clients\\client-svet\\snapshots\\2026-11-03\\lots.csv",
+    "lots": 154,
+    "mtimeMs": 1793800046956.5007
+   },
+   {
+    "name": "2026-11-04",
+    "dir": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\01-competitor-watch\\data\\clients\\client-svet\\snapshots\\2026-11-04",
+    "kind": "снимки клиента client-svet",
+    "date": "2026-11-04",
+    "special": null,
+    "csv": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\01-competitor-watch\\data\\clients\\client-svet\\snapshots\\2026-11-04\\lots.csv",
+    "lots": 154,
+    "mtimeMs": 1793800041346.798
+   },
+   {
+    "name": "2026-11-05",
+    "dir": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\01-competitor-watch\\data\\clients\\client-svet\\snapshots\\2026-11-05",
+    "kind": "снимки клиента client-svet",
+    "date": "2026-11-05",
+    "special": null,
+    "csv": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\01-competitor-watch\\data\\clients\\client-svet\\snapshots\\2026-11-05\\lots.csv",
+    "lots": 55,
+    "mtimeMs": 1793895607831.9753
+   },
+   {
+    "name": "2026-11-12",
+    "dir": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\01-competitor-watch\\data\\clients\\client-svet\\snapshots\\2026-11-12",
+    "kind": "снимки клиента client-svet",
+    "date": "2026-11-12",
+    "special": null,
+    "csv": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\01-competitor-watch\\data\\clients\\client-svet\\snapshots\\2026-11-12\\lots.csv",
+    "lots": 16,
+    "mtimeMs": 1794506824540.7043
+   }
+  ],
+  "count": 15,
+  "last": {
+   "name": "2026-11-12",
+   "dir": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\01-competitor-watch\\data\\clients\\client-svet\\snapshots\\2026-11-12",
+   "kind": "снимки клиента client-svet",
+   "date": "2026-11-12",
+   "special": null,
+   "csv": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\01-competitor-watch\\data\\clients\\client-svet\\snapshots\\2026-11-12\\lots.csv",
+   "lots": 16,
+   "mtimeMs": 1794506824540.7043
+  },
+  "byRoot": [
+   {
+    "root": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\01-competitor-watch\\data\\snapshots",
+    "kind": "общие снимки",
+    "exists": true,
+    "count": 4
+   },
+   {
+    "root": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\01-competitor-watch\\data\\clients\\client-granel\\snapshots",
+    "kind": "снимки клиента client-granel",
+    "exists": true,
+    "count": 5
+   },
+   {
+    "root": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\01-competitor-watch\\data\\clients\\client-svet\\snapshots",
+    "kind": "снимки клиента client-svet",
+    "exists": true,
+    "count": 6
+   }
+  ],
+  "dated": [
+   "2026-10-23",
+   "2026-10-30",
+   "2026-11-01",
+   "2026-11-02",
+   "2026-11-02",
+   "2026-11-03",
+   "2026-11-03",
+   "2026-11-04",
+   "2026-11-04",
+   "2026-11-05",
+   "2026-11-05",
+   "2026-11-12",
+   "2026-11-12"
+  ]
+ },
+ "state": "done",
+ "done": true,
+ "verdict": "Работа сделана",
+ "reason": "Последний прогон 2026-11-12 21:07:07 — результат ok, артефакт 2026-11-12-competitor-watch.md.",
+ "sourceOfTruth": "registry/runs.jsonl",
+ "evidence": [
+  {
+   "label": "Дата снимка",
+   "value": "2026-11-12 (16 лотов)"
+  },
+  {
+   "label": "Время прогона",
+   "value": "2026-11-12 21:07:07"
+  },
+  {
+   "label": "Результат",
+   "value": "ok"
+  },
+  {
+   "label": "Источник данных",
+   "value": "registry/runs.jsonl · артефакт 2026-11-12-competitor-watch.md"
+  }
+ ],
+ "sources": [
+  {
+   "id": "runs",
+   "label": "Журнал прогонов",
+   "path": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\registry\\runs.jsonl",
+   "exists": true,
+   "items": 47,
+   "note": "успешно 47, ошибок 0"
+  },
+  {
+   "id": "results",
+   "label": "Результаты работы агента",
+   "path": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\registry\\results.yaml",
+   "exists": true,
+   "items": 22,
+   "note": "последний: 2026-11-12T21:07:07+03:00"
+  },
+  {
+   "id": "snapshots",
+   "label": "Снимки лотов (даты)",
+   "path": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\01-competitor-watch\\data\\snapshots",
+   "exists": true,
+   "items": 15,
+   "note": "последний 2026-11-12, лотов 16"
+  }
+ ]
+}

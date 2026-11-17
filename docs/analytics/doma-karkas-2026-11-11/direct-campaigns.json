@@ -1,0 +1,275 @@
+[
+  {
+    "source": "yandex_direct",
+    "id": 713311426,
+    "title": "РСЯ / Интел Групп / Газобетон + Каменные дома + Керамоблок / Москва и МО",
+    "price": null,
+    "area": null,
+    "year_built": null,
+    "address": null,
+    "url": null,
+    "raw": {
+      "Id": 713311426,
+      "Name": "РСЯ / Интел Групп / Газобетон + Каменные дома + Керамоблок / Москва и МО",
+      "Type": "TEXT_CAMPAIGN",
+      "Status": "ACCEPTED",
+      "State": "ON"
+    },
+    "name": "РСЯ / Интел Групп / Газобетон + Каменные дома + Керамоблок / Москва и МО",
+    "state": "ON",
+    "type": "TEXT_CAMPAIGN",
+    "status": "ACCEPTED"
+  },
+  {
+    "source": "yandex_direct",
+    "id": 713617279,
+    "title": "Поиск-газобетон",
+    "price": null,
+    "area": null,
+    "year_built": null,
+    "address": null,
+    "url": null,
+    "raw": {
+      "Id": 713617279,
+      "Name": "Поиск-газобетон",
+      "Type": "TEXT_CAMPAIGN",
+      "Status": "ACCEPTED",
+      "State": "SUSPENDED"
+    },
+    "name": "Поиск-газобетон",
+    "state": "SUSPENDED",
+    "type": "TEXT_CAMPAIGN",
+    "status": "ACCEPTED"
+  },
+  {
+    "source": "yandex_direct",
+    "id": 713617283,
+    "title": "Поиск-каменные дома",
+    "price": null,
+    "area": null,
+    "year_built": null,
+    "address": null,
+    "url": null,
+    "raw": {
+      "Id": 713617283,
+      "Name": "Поиск-каменные дома",
+      "Type": "TEXT_CAMPAIGN",
+      "Status": "MODERATION",
+      "State": "ARCHIVED"
+    },
+    "name": "Поиск-каменные дома",
+    "state": "ARCHIVED",
+    "type": "TEXT_CAMPAIGN",
+    "status": "MODERATION"
+  },
+  {
+    "source": "yandex_direct",
+    "id": 713617288,
+    "title": "Поиск-керамические дома",
+    "price": null,
+    "area": null,
+    "year_built": null,
+    "address": null,
+    "url": null,
+    "raw": {
+      "Id": 713617288,
+      "Name": "Поиск-керамические дома",
+      "Type": "TEXT_CAMPAIGN",
+      "Status": "MODERATION",
+      "State": "ARCHIVED"
+    },
+    "name": "Поиск-керамические дома",
+    "state": "ARCHIVED",
+    "type": "TEXT_CAMPAIGN",
+    "status": "MODERATION"
+  },
+  {
+    "source": "yandex_direct",
+    "id": 713617296,
+    "title": "Поиск-строительство",
+    "price": null,
+    "area": null,
+    "year_built": null,
+    "address": null,
+    "url": null,
+    "raw": {
+      "Id": 713617296,
+      "Name": "Поиск-строительство",
+      "Type": "TEXT_CAMPAIGN",
+      "Status": "MODERATION",
+      "State": "ARCHIVED"
+    },
+    "name": "Поиск-строительство",
+    "state": "ARCHIVED",
+    "type": "TEXT_CAMPAIGN",
+    "status": "MODERATION"
+  },
+  {
+    "source": "yandex_direct",
+    "id": 713631672,
+    "title": "Товарная кампания / газобетон",
+    "price": null,
+    "area": null,
+    "year_built": null,
+    "address": null,
+    "url": null,
+    "raw": {
+      "Id": 713631672,
+      "Name": "Товарная кампания / газобетон",
+      "Type": "TEXT_CAMPAIGN",
+      "Status": "MODERATION",
+      "State": "ARCHIVED"
+    },
+    "name": "Товарная кампания / газобетон",
+    "state": "ARCHIVED",
+    "type": "TEXT_CAMPAIGN",
+    "status": "MODERATION"
+  },
+  {
+    "source": "yandex_direct",
+    "id": 713631836,
+    "title": "МК / газобетон",
+    "price": null,
+    "area": null,
+    "year_built": null,
+    "address": null,
+    "url": null,
+    "raw": {
+      "Id": 713631836,
+      "Name": "МК / газобетон",
+      "Type": "TEXT_CAMPAIGN",
+      "Status": "MODERATION",
+      "State": "ARCHIVED"
+    },
+    "name": "МК / газобетон",
+    "state": "ARCHIVED",
+    "type": "TEXT_CAMPAIGN",
+    "status": "MODERATION"
+  },
+  {
+    "source": "yandex_direct",
+    "id": 713935594,
+    "title": "Товарная кампания / газобетон (копия)",
+    "price": null,
+    "area": null,
+    "year_built": null,
+    "address": null,
+    "url": null,
+    "raw": {
+      "Id": 713935594,
+      "Name": "Товарная кампания / газобетон (копия)",
+      "Type": "TEXT_CAMPAIGN",
+      "Status": "ACCEPTED",
+      "State": "ON"
+    },
+    "name": "Товарная кампания / газобетон (копия)",
+    "state": "ON",
+    "type": "TEXT_CAMPAIGN",
+    "status": "ACCEPTED"
+  },
+  {
+    "source": "yandex_direct",
+    "id": 713935610,
+    "title": "Товарная кампания / газобетон (копия)",
+    "price": null,
+    "area": null,
+    "year_built": null,
+    "address": null,
+    "url": null,
+    "raw": {
+      "Id": 713935610,
+      "Name": "Товарная кампания / газобетон (копия)",
+      "Type": "TEXT_CAMPAIGN",
+      "Status": "MODERATION",
+      "State": "ARCHIVED"
+    },
+    "name": "Товарная кампания / газобетон (копия)",
+    "state": "ARCHIVED",
+    "type": "TEXT_CAMPAIGN",
+    "status": "MODERATION"
+  },
+  {
+    "source": "yandex_direct",
+    "id": 714038332,
+    "title": "2. Поиск Прошлый директолог (Мобилки)",
+    "price": null,
+    "area": null,
+    "year_built": null,
+    "address": null,
+    "url": null,
+    "raw": {
+      "Id": 714038332,
+      "Name": "2. Поиск Прошлый директолог (Мобилки)",
+      "Type": "TEXT_CAMPAIGN",
+      "Status": "ACCEPTED",
+      "State": "SUSPENDED"
+    },
+    "name": "2. Поиск Прошлый директолог (Мобилки)",
+    "state": "SUSPENDED",
+    "type": "TEXT_CAMPAIGN",
+    "status": "ACCEPTED"
+  },
+  {
+    "source": "yandex_direct",
+    "id": 714762514,
+    "title": "1. Поиск (Газобетон, Керамические)",
+    "price": null,
+    "area": null,
+    "year_built": null,
+    "address": null,
+    "url": null,
+    "raw": {
+      "Id": 714762514,
+      "Name": "1. Поиск (Газобетон, Керамические)",
+      "Type": "TEXT_CAMPAIGN",
+      "Status": "ACCEPTED",
+      "State": "SUSPENDED"
+    },
+    "name": "1. Поиск (Газобетон, Керамические)",
+    "state": "SUSPENDED",
+    "type": "TEXT_CAMPAIGN",
+    "status": "ACCEPTED"
+  },
+  {
+    "source": "yandex_direct",
+    "id": 715702484,
+    "title": "1.1 Поиск (Газобетон, Керамические)",
+    "price": null,
+    "area": null,
+    "year_built": null,
+    "address": null,
+    "url": null,
+    "raw": {
+      "Id": 715702484,
+      "Name": "1.1 Поиск (Газобетон, Керамические)",
+      "Type": "TEXT_CAMPAIGN",
+      "Status": "ACCEPTED",
+      "State": "SUSPENDED"
+    },
+    "name": "1.1 Поиск (Газобетон, Керамические)",
+    "state": "SUSPENDED",
+    "type": "TEXT_CAMPAIGN",
+    "status": "ACCEPTED"
+  },
+  {
+    "source": "yandex_direct",
+    "id": 715810384,
+    "title": "2.1 Поиск Прошлый директолог (Мобилки)",
+    "price": null,
+    "area": null,
+    "year_built": null,
+    "address": null,
+    "url": null,
+    "raw": {
+      "Id": 715810384,
+      "Name": "2.1 Поиск Прошлый директолог (Мобилки)",
+      "Type": "TEXT_CAMPAIGN",
+      "Status": "ACCEPTED",
+      "State": "SUSPENDED"
+    },
+    "name": "2.1 Поиск Прошлый директолог (Мобилки)",
+    "state": "SUSPENDED",
+    "type": "TEXT_CAMPAIGN",
+    "status": "ACCEPTED"
+  }
+]

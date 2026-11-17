@@ -1,0 +1,38 @@
+# ОПЕРАТОРЫ ПЛАТФОРМЫ — второй уровень модели.
+#
+# Модель: ПЛАТФОРМА (ИП) -> ОПЕРАТОР (маркетолог или агентство) -> КЛИЕНТ ОПЕРАТОРА (рекламодатель).
+# Деньги проводятся через платформу. Платформа берёт КОМИССИЮ ЗА СЕРВИС, оператор получает
+# КЭШБЭК за ведение рекламы. Клиенты оператора связываются с оператором полем operator_id
+# в registry/clients.yaml.
+#
+# cashback_pct — ставка кэшбэка оператора, % от оборота его клиентов.
+
+version: 1
+updated: "2026-11-01"
+
+settings:
+  platform_commission_pct: 7      # комиссия платформы за сервис, % от оборота — это ДОХОД платформы
+  ipo_registered: false           # оформлен ли ИП. Пока false — режим «через сервис» заблокирован предупреждением
+  note: "Оборот — это чужие деньги, прошедшие через платформу. Налоговая база считается с КОМИССИИ, а не с оборота."
+
+operators:
+  - id: op-anna
+    name: "Анна Петрова"
+    contact: "anna@example.ru · Telegram @anna_ads"
+    cashback_pct: 4
+    status: active
+    contract: "договор №1 от 01.10.2026"
+
+  - id: op-studio
+    name: "Студия «Восток»"
+    contact: "hello@vostok.example · +7 999 000-00-03"
+    cashback_pct: 5
+    status: active
+    contract: "договор №2 от 05.10.2026"
+
+  - id: op-sergey
+    name: "Сергей Ильин"
+    contact: "sergey@example.ru"
+    cashback_pct: 6
+    status: paused
+    contract: "договора нет"

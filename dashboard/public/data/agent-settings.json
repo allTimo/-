@@ -10,10 +10,9 @@
    "schedule": {
     "enabled": true,
     "days": [
-     1,
      4
     ],
-    "time": "10:00",
+    "time": "11:00",
     "frequency": "weekly",
     "timezone": "Europe/Moscow",
     "only_on_new_data": true
@@ -47,12 +46,13 @@
    },
    "delivery": {
     "channels": [
-     "telegram"
+     "email"
     ],
     "addresses": [
-     "@svet_marketing"
+     "vodnev@d-a.ru",
+     "tyurina@d-a.ru"
     ],
-    "auto_send": false,
+    "auto_send": true,
     "copy_to": ""
    },
    "alerts": {
@@ -83,6 +83,7 @@
     "collect_mode": "http",
     "compare_depth_weeks": 2,
     "watch": {
+     "query": "https://svetdom.ru/",
      "name": "ЖК «Свет»",
      "address": "Москва, Западное Дегунино, Дмитровское шоссе, 83А",
      "url": "https://svetdom.ru/",
@@ -99,7 +100,49 @@
       "avito",
       "yandex-realty"
      ],
-     "max_candidates": 20
+     "max_candidates": 20,
+     "queryPresent": true
+    },
+    "selection": {
+     "room_types": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5+"
+     ],
+     "area_min_m2": 0,
+     "area_max_m2": 0,
+     "price_min_rub": 0,
+     "price_max_rub": 0,
+     "exclude_first_floor": false,
+     "exclude_last_floor": false,
+     "finishes": [
+      "без отделки",
+      "white box",
+      "чистовая",
+      "с мебелью",
+      "unknown"
+     ],
+     "only_active": true,
+     "promo_only": false,
+     "price_metric": "median",
+     "outlier_guard": true,
+     "outlier_same_price_min_lots": 5,
+     "outlier_ppm2_min": 150000,
+     "outlier_ppm2_max": 800000
+    },
+    "top_deals_count": 5,
+    "analytics": {
+     "enabled": true,
+     "lots_all_on_sale": true,
+     "price_dynamics": true,
+     "promos": true,
+     "new_promos_only": true,
+     "dedup_promos": true,
+     "developers_sites": true,
+     "forecast": true
     },
     "competitor_domains": {
      "seliger-city.ru": "zhk-seliger-siti"
@@ -111,6 +154,12 @@
      "domclick": "off",
      "developer-sites": "http"
     },
+    "analyticsPresent": true,
+    "analyticsInvalid": [],
+    "analyticsUnknown": [],
+    "selectionPresent": true,
+    "selectionInvalid": [],
+    "selectionUnknown": [],
     "competitorDomains": {
      "seliger-city.ru": "zhk-seliger-siti"
     }
@@ -122,34 +171,33 @@
    "agent": "agent-2-direct-semantics",
    "file": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\registry\\agent-settings\\agent-2-direct-semantics.yaml",
    "fileName": "agent-2-direct-semantics.yaml",
-   "updated": "2026-11-01",
-   "status": "stub",
-   "note": "Агент 2 ещё не реализован: поля показаны для примера и остаются неактивными — сохранять нельзя.",
+   "updated": "2026-11-10",
+   "status": "active",
+   "note": null,
    "schedule": {
     "enabled": false,
-    "days": [
-     1
-    ],
+    "days": [],
     "time": "11:00",
     "frequency": "on-demand",
     "timezone": "Europe/Moscow",
     "only_on_new_data": false
    },
    "model": {
-    "name": "deepseek/deepseek-v4.1-flash",
+    "name": "deepseek/deepseek-v4-pro",
     "limit_rub": 0,
     "limit_tokens": 0,
     "on_limit": "warn"
    },
    "priority": {
-    "level": "low",
+    "level": "normal",
     "max_parallel": 1,
     "timeout_sec": 900,
-    "retries": 0
+    "retries": 1
    },
    "report": {
     "formats": [
-     "xlsx"
+     "xlsx",
+     "md"
     ],
     "sections": [
      "summary"
@@ -165,19 +213,19 @@
    },
    "alerts": {
     "when": [
-     "never"
+     "fail"
     ],
     "price_threshold_pct": 0,
     "quiet_hours": ""
    },
    "limits": {
-    "skip_weekends": true,
-    "min_interval_hours": 24,
-    "stop_switch": true
+    "skip_weekends": false,
+    "min_interval_hours": 1,
+    "stop_switch": false
    },
    "agent1": null,
    "sourceAgent": null,
-   "editable": false
+   "editable": true
   },
   "agent-3-creative": {
    "agent": "agent-3-creative",
@@ -379,12 +427,12 @@
   {
    "agent": "agent-1-competitor-watch",
    "fileName": "agent-1-competitor-watch.yaml",
-   "bytes": 4321
+   "bytes": 6152
   },
   {
    "agent": "agent-2-direct-semantics",
    "fileName": "agent-2-direct-semantics.yaml",
-   "bytes": 980
+   "bytes": 1091
   },
   {
    "agent": "agent-3-creative",
@@ -407,8 +455,160 @@
  "counts": {
   "files": 5,
   "agents": 5,
-  "stub": 3
+  "stub": 2
  },
  "warnings": [],
- "newestMtimeMs": 1793546653327.3599
+ "newestMtimeMs": 1794344777199.983,
+ "analyticsContract": {
+  "fields": [
+   "enabled",
+   "lots_all_on_sale",
+   "price_dynamics",
+   "promos",
+   "new_promos_only",
+   "dedup_promos",
+   "developers_sites",
+   "forecast"
+  ],
+  "defaults": {
+   "enabled": true,
+   "lots_all_on_sale": true,
+   "price_dynamics": true,
+   "promos": true,
+   "new_promos_only": true,
+   "dedup_promos": true,
+   "developers_sites": true,
+   "forecast": true
+  }
+ },
+ "selectionContract": {
+  "fields": [
+   "room_types",
+   "area_min_m2",
+   "area_max_m2",
+   "price_min_rub",
+   "price_max_rub",
+   "exclude_first_floor",
+   "exclude_last_floor",
+   "finishes",
+   "only_active",
+   "promo_only",
+   "price_metric",
+   "outlier_guard",
+   "outlier_same_price_min_lots",
+   "outlier_ppm2_min",
+   "outlier_ppm2_max"
+  ],
+  "defaults": {
+   "room_types": [
+    "0",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5+"
+   ],
+   "area_min_m2": 0,
+   "area_max_m2": 0,
+   "price_min_rub": 0,
+   "price_max_rub": 0,
+   "exclude_first_floor": false,
+   "exclude_last_floor": false,
+   "finishes": [
+    "без отделки",
+    "white box",
+    "чистовая",
+    "с мебелью",
+    "unknown"
+   ],
+   "only_active": true,
+   "promo_only": false,
+   "price_metric": "median",
+   "outlier_guard": true,
+   "outlier_same_price_min_lots": 5,
+   "outlier_ppm2_min": 150000,
+   "outlier_ppm2_max": 800000
+  },
+  "spec": {
+   "room_types": {
+    "kind": "list",
+    "values": [
+     "0",
+     "1",
+     "2",
+     "3",
+     "4",
+     "5+"
+    ]
+   },
+   "area_min_m2": {
+    "kind": "num",
+    "min": 0,
+    "max": 400
+   },
+   "area_max_m2": {
+    "kind": "num",
+    "min": 0,
+    "max": 400
+   },
+   "price_min_rub": {
+    "kind": "int",
+    "min": 0,
+    "max": 1000000000
+   },
+   "price_max_rub": {
+    "kind": "int",
+    "min": 0,
+    "max": 1000000000
+   },
+   "exclude_first_floor": {
+    "kind": "bool"
+   },
+   "exclude_last_floor": {
+    "kind": "bool"
+   },
+   "finishes": {
+    "kind": "list",
+    "values": [
+     "без отделки",
+     "white box",
+     "чистовая",
+     "с мебелью",
+     "unknown"
+    ]
+   },
+   "only_active": {
+    "kind": "bool"
+   },
+   "promo_only": {
+    "kind": "bool"
+   },
+   "price_metric": {
+    "kind": "enum",
+    "values": [
+     "median",
+     "mean",
+     "min_max"
+    ]
+   },
+   "outlier_guard": {
+    "kind": "bool"
+   },
+   "outlier_same_price_min_lots": {
+    "kind": "int",
+    "min": 2,
+    "max": 50
+   },
+   "outlier_ppm2_min": {
+    "kind": "int",
+    "min": 0,
+    "max": 10000000
+   },
+   "outlier_ppm2_max": {
+    "kind": "int",
+    "min": 0,
+    "max": 10000000
+   }
+  }
+ }
 }

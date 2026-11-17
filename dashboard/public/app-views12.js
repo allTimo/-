@@ -48,7 +48,29 @@ var AG_SCHEMA = [
     ['min_lots', 'Минимум лотов', 'int', 'Если лотов меньше — данные считаются неполными.'],
     ['collect_mode', 'Режим сбора', 'enum', 'HTTP — быстрее и без браузера; браузер — если сайт отдаёт данные только в окне.', ['http', 'browser']],
     ['compare_depth_weeks', 'Глубина сравнения, недель', 'int', 'С какой неделей сравнивать текущий снимок.'],
+    ['top_deals_count', 'Лотов в топах изменений', 'int', 'Сколько лотов показывать в топах подорожаний и подешевений.'],
     ['promo_words', 'Словарь акций', 'list', 'Слова, по которым ищем промо в текстах.']
+  ]],
+  // ЧТО АНАЛИЗИРОВАТЬ (Агент 1) — группа agent1.selection.
+  // Контракт: docs/agent-1-marketing-settings-contract.md, группа 2.
+  // Имена и типы обязаны совпадать с serve.mjs (AGENT_SETTINGS_SCHEMA['agent1.selection'])
+  // и collector/lib/agent-settings.mjs (SELECTION_FIELDS/SELECTION_SPEC).
+  ['agent1.selection', 'Что анализировать', [
+    ['room_types', 'Типы квартир', 'list', 'Какие типы учитывать: 0 — студия, 1, 2, 3, 4, 5+. Пусто — все. Ограничение применяется к лотам конкурентов при сборе.', ['0', '1', '2', '3', '4', '5+']],
+    ['area_min_m2', 'Площадь от, м²', 'num', 'Лоты меньшей площади не попадут в срез. 0 — без ограничения.', null, null, { min: 0, max: 400 }],
+    ['area_max_m2', 'Площадь до, м²', 'num', 'Лоты большей площади не попадут в срез. 0 — без ограничения.', null, null, { min: 0, max: 400 }],
+    ['price_min_rub', 'Цена от, ₽', 'int', 'Лоты дешевле не попадут в срез. 0 — без ограничения.', null, null, { min: 0, max: 1000000000 }],
+    ['price_max_rub', 'Цена до, ₽', 'int', 'Лоты дороже не попадут в срез. 0 — без ограничения.', null, null, { min: 0, max: 1000000000 }],
+    ['exclude_first_floor', 'Не учитывать первые этажи', 'bool', 'Лоты на первом этаже исключаются из расчёта.'],
+    ['exclude_last_floor', 'Не учитывать последние этажи', 'bool', 'Лоты на последнем этаже исключаются из расчёта.'],
+    ['finishes', 'Тип отделки', 'list', 'Какие типы отделки учитывать. Пусто — все.', ['без отделки', 'white box', 'чистовая', 'с мебелью', 'unknown']],
+    ['only_active', 'Только лоты в продаже', 'bool', 'Учитывать только лоты «в продаже»: забронированные и проданные — нет.'],
+    ['promo_only', 'Только лоты с акцией', 'bool', 'Оставить в срезе только лоты, у которых есть акция.'],
+    ['price_metric', 'Показатель цены', 'enum', 'Что печатать в отчёте: медиана, среднее или минимум и максимум.', ['median', 'mean', 'min_max']],
+    ['outlier_guard', 'Отбраковывать аномалии', 'bool', 'Аномальные цены не искажают медиану; срез при этом помечается как недостоверный.'],
+    ['outlier_same_price_min_lots', 'Порог одинаковой цены, лотов', 'int', 'С какого числа лотов с одинаковой ценой срез считается артефактом парсинга.', null, null, { min: 2, max: 50 }],
+    ['outlier_ppm2_min', 'Правдоподобная цена от, ₽/м²', 'int', 'Ниже этой границы цена считается аномальной.', null, null, { min: 0, max: 10000000 }],
+    ['outlier_ppm2_max', 'Правдоподобная цена до, ₽/м²', 'int', 'Выше этой границы цена считается аномальной.', null, null, { min: 0, max: 10000000 }]
   ]],
   ['source_agent', 'Специфика агента-источника', [
     ['rate_limit_per_min', 'Запросов в минуту', 'int', 'Сколько запросов к площадке делать в минуту.'],
@@ -81,12 +103,31 @@ function agDefaultsOf(group, field) {
     channels: [], auto_send: false, copy_to: '',
     when: ['fail'], price_threshold_pct: 5, quiet_hours: '',
     skip_weekends: true, min_interval_hours: 24, stop_switch: false,
-    min_lots: 10, collect_mode: 'http', compare_depth_weeks: 2, promo_words: [],
+    min_lots: 10, collect_mode: 'http', compare_depth_weeks: 2, promo_words: [], top_deals_count: 5,
+    // «Что анализировать» (agent1.selection) — дефолты контракта, группа 2.
+    room_types: ['0', '1', '2', '3', '4', '5+'], area_min_m2: 0, area_max_m2: 0,
+    price_min_rub: 0, price_max_rub: 0, exclude_first_floor: false, exclude_last_floor: false,
+    finishes: ['без отделки', 'white box', 'чистовая', 'с мебелью', 'unknown'],
+    only_active: true, promo_only: false, price_metric: 'median', outlier_guard: true,
+    outlier_same_price_min_lots: 5, outlier_ppm2_min: 150000, outlier_ppm2_max: 800000,
     rate_limit_per_min: 10, pause_ms: 1500, max_pages: 5, stop_on_block: true, use_browser: false };
   return D[field];
 }
 
-function agInput(rec, group, field, type, options, extra) {
+// Белый список групп для карточки конкретного агента. null = показывать всю схему.
+// Переопределяется в app-views13.js: в карточке Агента 1 остаются только
+// маркетинговые группы, системные (расписание, модель, приоритет, лимиты, источник) — нет.
+function agGroupsForAgent(agentId) { return null; }
+// Заголовок группы в карточке. Переопределяется там же: у Агента 1 группы называются
+// по-маркетинговому («Охват и радиус», «Что анализировать», «Сравнение и выводы»).
+function agGroupTitle(agentId, group, fallback) { return fallback; }
+// Подпись у «Тонкие настройки». Тоже переопределяется для Агента 1: там нет
+// системных групп, и подпись обязана называть только то, что реально видно.
+function agSummaryHint(agentId, rec) {
+  return rec ? (rec.editable ? 'расписание, модель, отчёт, доставка, алерты, ограничения' : 'настройки появятся вместе с агентом') : 'файл настроек не найден';
+}
+
+function agInput(rec, group, field, type, options, extra, limits) {
   var cur = agFieldValue(rec, group, field);
   var w = el('div', 'ag-field');
   var v;
@@ -117,6 +158,10 @@ function agInput(rec, group, field, type, options, extra) {
     v = el('input'); v.type = (type === 'num' || type === 'int') ? 'number' : 'text';
     v.value = cur === undefined || cur === null ? '' : String(cur);
     if (type === 'int') v.step = '1';
+    // Границы из контракта: браузер подсказывает предел ещё до отправки,
+    // а серверная валидация остаётся последним словом.
+    if (limits && limits.min !== undefined) v.min = String(limits.min);
+    if (limits && limits.max !== undefined) v.max = String(limits.max);
     v.addEventListener('input', function () { w.dataset.changed = '1'; });
   }
   v.disabled = !rec.editable;
@@ -140,7 +185,7 @@ function agentSettingsBlock(agentId) {
   var box = el('details', 'ag-settings');
   var sum = el('summary');
   sum.appendChild(el('span', 'ag-sum-title', 'Тонкие настройки'));
-  sum.appendChild(el('span', 'ag-sum-hint', rec ? (rec.editable ? 'расписание, модель, отчёт, доставка, алерты, ограничения' : 'настройки появятся вместе с агентом') : 'файл настроек не найден'));
+  sum.appendChild(el('span', 'ag-sum-hint', agSummaryHint(agentId, rec)));
   box.appendChild(sum);
   if (!rec) {
     box.appendChild(note('warn', 'Для этого агента нет файла registry/agent-settings/' + agentId + '.yaml'));
@@ -150,18 +195,34 @@ function agentSettingsBlock(agentId) {
   box.appendChild(el('div', 'hintline', 'Файл: registry/agent-settings/' + rec.fileName + (rec.updated ? ' · обновлён ' + rec.updated : '') + '. Правка атомарная, с копией .bak-<timestamp>; обратимость по SHA-256.'));
 
   var pending = [];
+  var visibleGroups = agGroupsForAgent(agentId);
   AG_SCHEMA.forEach(function (grp) {
+    // Прячем группы, которых в карточке этого агента быть не должно (например,
+    // системные у Агента 1): они не рендерятся вовсе, а не просто скрыты стилями.
+    if (visibleGroups && visibleGroups.indexOf(grp[0]) < 0) return;
     var sectionEl = el('div', 'ag-group');
-    sectionEl.appendChild(el('div', 'ag-group-title', grp[1]));
+    sectionEl.dataset.group = grp[0];
+    sectionEl.appendChild(el('div', 'ag-group-title', agGroupTitle(agentId, grp[0], grp[1])));
     if (grp[0] === 'agent1' && !rec.agent1) return sectionEl;
     if (grp[0] === 'source_agent' && !rec.sourceAgent) return sectionEl;
+    // Поля с пометкой 'hidden' (7-й элемент описания) не удаляются из YAML, а прячутся
+    // под «дополнительно». Сейчас так не помечено ни одно поле Агента 1 (его маркетинговые
+    // группы показываются целиком) — механизм оставлен рабочим для будущих групп.
+    var moreRows = [];
     grp[2].forEach(function (f) {
+      // Подраздел внутри одной группы: строка вида ['id', 'Заголовок', 'sub'].
+      // Нужна, чтобы «Сравнение и выводы» (agent1) и «Тумблеры аналитики» (agent1.analytics)
+      // были ОДНОЙ группой, а не двумя однотипными заголовками.
+      if (f[2] === 'sub') { sectionEl.appendChild(el('div', 'ag-sub-title', f[1])); return; }
+      // 9-й элемент описания поля — группа, из которой читается и куда пишется значение.
+      // Пусто — группа самой секции. Так поля agent1.analytics живут внутри группы agent1.
+      var fgroup = f[8] || grp[0];
       var row = el('div', 'ag-row');
       var lab = el('div', 'ag-label');
       lab.appendChild(el('div', 'ag-name', f[1]));
       lab.appendChild(el('div', 'ag-what', f[3] || ''));
       row.appendChild(lab);
-      var ctl = agInput(rec, grp[0], f[0], f[2], f[4], f[5]);
+      var ctl = agInput(rec, fgroup, f[0], f[2], f[4], f[5], f[7]);
       if (f[2] === 'list') ctl.dataset.listlike = '1';
       row.appendChild(ctl);
       var was = el('button', 'btn small ag-revert', 'вернуть как было');
@@ -169,9 +230,17 @@ function agentSettingsBlock(agentId) {
       was.title = 'Вернуть значение из последней копии файла';
       was.addEventListener('click', function () { agRevertLast(agentId, was); });
       row.appendChild(was);
-      sectionEl.appendChild(row);
-      pending.push({ group: grp[0], field: f[0], type: f[2], host: ctl, label: f[1] });
+      if (f[6] === 'hidden') moreRows.push(row);
+      else sectionEl.appendChild(row);
+      pending.push({ group: fgroup, field: f[0], type: f[2], host: ctl, label: f[1] });
     });
+    if (moreRows.length) {
+      var more = el('details', 'ag-more');
+      var msum = el('summary', 'ag-more-sum', 'дополнительно' + (grp[4] ? ': ' + grp[4] : '') + ' (' + moreRows.length + ')');
+      more.appendChild(msum);
+      moreRows.forEach(function (r) { more.appendChild(r); });
+      sectionEl.appendChild(more);
+    }
     box.appendChild(sectionEl);
   });
 
@@ -257,16 +326,26 @@ function refreshState() {
 }
 
 function agRevertLast(agentId, ctl, backup) {
-  var b = backup || null;
-  if (!b) {
-    fetch('/api/settings/backups?file=' + encodeURIComponent(agentId + '.yaml')).then(function (r) { return r.json(); }).catch(function () { return null; });
-    toast('Нет копии для возврата: сначала сохраните изменение — панель сделает копию автоматически.', 'bad');
-    return;
-  }
-  if (!window.confirm('Вернуть настройки агента «' + agentId + '» из копии ' + b + '?')) return;
+  if (backup) { agDoRevert(agentId, backup); return; }
+  // Копий у тонких настроек агента может быть несколько: берём самую свежую.
+  fetch('/api/settings/backups?file=' + encodeURIComponent('agent-settings/' + agentId))
+    .then(function (r) { return r.json(); })
+    .then(function (res) {
+      var list = (res && res.backups) || [];
+      if (!list.length) {
+        toast('Нет копии для возврата: сначала сохраните изменение — панель сделает копию автоматически.', 'bad');
+        return;
+      }
+      agDoRevert(agentId, list[0].name, res.current);
+    })
+    .catch(function (e) { toast('Не удалось получить список копий: ' + e.message, 'bad'); });
+}
+
+function agDoRevert(agentId, b, current) {
+  if (!window.confirm('Вернуть настройки агента «' + agentId + '» из копии ' + b + '?\n\nТекущее состояние тоже сохранится отдельной копией.')) return;
   fetch('/api/settings/revert', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ file: 'agent-settings/' + agentId, backup: b }) })
     .then(function (r) { return r.json(); }).then(function (res) {
-      toast(res.ok ? 'Настройки возвращены из копии' : ('Не удалось: ' + res.message), res.ok ? 'ok' : 'bad');
+      toast(res.ok ? ('Настройки возвращены из копии ' + b + (res.sha256 ? ' · SHA-256 совпал' : '')) : ('Не удалось: ' + res.message), res.ok ? 'ok' : 'bad');
       if (res.ok) refreshState();
     });
 }
@@ -292,6 +371,9 @@ function agRevertLast(agentId, ctl, backup) {
       agentIds.forEach(function (id) { if (!agentId && name && name.indexOf(id) >= 0) agentId = id; });
       if (!agentId && agentIds.length > idx) agentId = agentIds[idx];
       if (!agentId) return;
+      // Защита от дубля: на карточке может быть ровно ОДИН блок «Тонкие настройки».
+      // Даже если обёртку VIEWS.agentsExecutors зарегистрируют повторно, второй блок не появится.
+      if (card.querySelector && card.querySelector('.ag-settings')) return;
       card.appendChild(agentSettingsBlock(agentId));
     });
   }

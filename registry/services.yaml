@@ -8,7 +8,7 @@ services:
     name: "Мониторинг конкурентов и цен"
     what: "Раз в неделю собирает цены, акции и объём предложения конкурентов, сравнивает с прошлой неделей и готовит отчёт."
     agent: agent-1-competitor-watch
-    schedule: "weekly:monday:10:00"
+    schedule: "weekly:thursday:11:00"
     artifacts: ["Отчёт Markdown", "Отчёт Excel (5 листов)", "Снимок lots.csv"]
     cost_rub: 120
     price_rub: 2900

@@ -1,0 +1,122 @@
+{
+ "textcampaigns": {
+  "http_error": 404,
+  "body": ""
+ },
+ "campaigns": {
+  "result": {
+   "Campaigns": [
+    {
+     "Id": 713311426,
+     "Name": "РСЯ / Интел Групп / Газобетон + Каменные дома + Керамоблок / Москва и МО",
+     "Type": "TEXT_CAMPAIGN",
+     "State": "ON"
+    },
+    {
+     "Id": 713617279,
+     "Name": "Поиск-газобетон",
+     "Type": "TEXT_CAMPAIGN",
+     "State": "SUSPENDED"
+    },
+    {
+     "Id": 713617283,
+     "Name": "Поиск-каменные дома",
+     "Type": "TEXT_CAMPAIGN",
+     "State": "ARCHIVED"
+    },
+    {
+     "Id": 713617288,
+     "Name": "Поиск-керамические дома",
+     "Type": "TEXT_CAMPAIGN",
+     "State": "ARCHIVED"
+    },
+    {
+     "Id": 713617296,
+     "Name": "Поиск-строительство",
+     "Type": "TEXT_CAMPAIGN",
+     "State": "ARCHIVED"
+    },
+    {
+     "Id": 713631672,
+     "Name": "Товарная кампания / газобетон",
+     "Type": "TEXT_CAMPAIGN",
+     "State": "ARCHIVED"
+    },
+    {
+     "Id": 713631836,
+     "Name": "МК / газобетон",
+     "Type": "TEXT_CAMPAIGN",
+     "State": "ARCHIVED"
+    },
+    {
+     "Id": 713935594,
+     "Name": "Товарная кампания / газобетон (копия)",
+     "Type": "TEXT_CAMPAIGN",
+     "State": "ON"
+    },
+    {
+     "Id": 713935610,
+     "Name": "Товарная кампания / газобетон (копия)",
+     "Type": "TEXT_CAMPAIGN",
+     "State": "ARCHIVED"
+    },
+    {
+     "Id": 714038332,
+     "Name": "2. Поиск Прошлый директолог (Мобилки)",
+     "Type": "TEXT_CAMPAIGN",
+     "State": "SUSPENDED"
+    },
+    {
+     "Id": 714762514,
+     "Name": "1. Поиск (Газобетон, Керамические)",
+     "Type": "TEXT_CAMPAIGN",
+     "State": "SUSPENDED"
+    },
+    {
+     "Id": 715702484,
+     "Name": "1.1 Поиск (Газобетон, Керамические)",
+     "Type": "TEXT_CAMPAIGN",
+     "State": "SUSPENDED"
+    },
+    {
+     "Id": 715810384,
+     "Name": "2.1 Поиск Прошлый директолог (Мобилки)",
+     "Type": "TEXT_CAMPAIGN",
+     "State": "SUSPENDED"
+    }
+   ]
+  }
+ },
+ "campaigns_strategy": {
+  "error": {
+   "request_id": "8189281150166189962",
+   "error_code": 8000,
+   "error_detail": "Элемент массива FieldNames содержит неверное значение перечисления, ожидается одно из значений: BlockedIps, ExcludedSites, Currency, DailyBudget, Notification, EndDate, Funds, ClientInfo, Id, Name, NegativeKeywords, RepresentedBy, StartDate, CreateTime, Statistics, State, Status, StatusPayment, StatusClarification, SourceId, TimeTargeting, TimeZone, Type",
+   "error_string": "Некорректный запрос"
+  }
+ },
+ "bidmodifiers": {
+  "error": {
+   "request_id": "1863283017698133156",
+   "error_code": 8000,
+   "error_detail": "Отсутствует обязательный параметр Levels",
+   "error_string": "Некорректный запрос"
+  }
+ },
+ "audiencetargets": {
+  "result": {}
+ },
+ "bids": {
+  "result": {
+   "Bids": [
+    {
+     "Bid": 30000000,
+     "StrategyPriority": "NORMAL",
+     "CampaignId": 713935594,
+     "AdGroupId": 5793533706,
+     "KeywordId": 205793533706
+    }
+   ]
+  }
+ }
+}

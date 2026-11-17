@@ -17,6 +17,13 @@ export const WORKSPACE_ROOT = path.resolve(PROJECT_DIR, '..');           // work
 export const REGISTRY_DIR = path.join(PROJECT_DIR, 'registry');
 export const TASKS_DIR = path.join(REGISTRY_DIR, 'tasks');
 
+// Папка тонких настроек агентов. Переопределяется только для автотестов панели
+// (serve.mjs читает тот же DASHBOARD_AGENT_SETTINGS_DIR) — иначе сборщик читал бы
+// реестр, пока тест пишет в копию, и проверка «панель видит новое значение» врала бы.
+export const AGENT_SETTINGS_DIR = process.env.DASHBOARD_AGENT_SETTINGS_DIR && process.env.DASHBOARD_AGENT_SETTINGS_DIR.trim() !== ''
+  ? process.env.DASHBOARD_AGENT_SETTINGS_DIR
+  : path.join(REGISTRY_DIR, 'agent-settings');
+
 export const DSH_HOME = process.env.DSH_HOME && process.env.DSH_HOME.trim() !== ''
   ? process.env.DSH_HOME
   : path.join(os.homedir(), '.dsh');

@@ -32,6 +32,10 @@ import { loadCandidates } from './lib/candidates.mjs';
 import { loadCompetitorReport } from './lib/competitor-report.mjs';
 import { buildServiceDoc } from './lib/service.mjs';
 import { buildAnalyticsDoc } from './lib/analytics.mjs';
+import { loadAgent1Status } from './lib/agent1-status.mjs';
+import { buildSkillsDoc } from './lib/skills.mjs';
+import { loadCompetitorAnalytics } from './lib/competitor-analytics.mjs';
+import { buildAgentRunsDoc } from './lib/agent-runs.mjs';
 
 function dedupeWarnings(list) {
   const seen = {};
@@ -108,6 +112,21 @@ export function collect(options) {
   const agentSettingsDoc = loadAgentSettings(warnings);
   const competitorReportDoc = loadCompetitorReport(warnings);
   const candidatesDoc = loadCandidates(warnings);
+  // Статус Агента 1 «работа сделана / не сделана»: прогоны, снимки, результаты.
+  const agent1StatusDoc = loadAgent1Status(warnings);
+  // Стенд агентов (шаг 1B): по каждому агенту — готовность, история прогонов из registry/runs.jsonl,
+  // длительность и стоимость. Нет прогонов — «прогонов нет», а не нули.
+  const agentRunsDoc = buildAgentRunsDoc({ agentsDoc: built.agents, today: today });
+  for (const w of agentRunsDoc.warnings) warnings.push(w);
+  // Аналитика конкурентов от движка (WP2): лоты, медианы ₽/м², динамика, новые акции, прогноз,
+  // статус отправки на почту. Файлов может ещё не быть — тогда честное пустое состояние.
+  const competitorAnalyticsDoc = loadCompetitorAnalytics({
+    agentSettings: agentSettingsDoc,
+    competitorReport: competitorReportDoc,
+    serviceResults: serviceDoc.results,
+    today: today,
+  });
+  for (const w of competitorAnalyticsDoc.warnings) warnings.push(w);
 
   const sources = [
     { id: 'sessions', label: 'Логи сессий DSH (multi-frame zstd + JSONL)', path: SESSIONS_ROOT, exists: fs.existsSync(SESSIONS_ROOT), items: sessionsData.sessions.length, note: 'events: ' + sessionsData.sessions.reduce(function (s, x) { return s + x.events; }, 0) },
@@ -126,6 +145,8 @@ export function collect(options) {
     { id: 'agent-tabs', label: 'Вкладки раздела «Агенты»', path: 'config/agents-tabs.yaml', exists: true, items: 4, note: 'правится одним файлом' },
     { id: 'competitor-report', label: 'Отчёт Агента 1 по конкурентам', path: '01-competitor-watch/data/clients/<client>/competitor-profiles/*.json', exists: competitorReportDoc.exists, items: competitorReportDoc.profilesFound, note: competitorReportDoc.profilesFound ? ('профилей ' + competitorReportDoc.profilesFound + ', лотов ' + competitorReportDoc.counts.lots) : 'движок ещё не сформировал профили' },
     { id: 'candidates', label: 'Кандидаты в конкуренты (автоподбор)', path: '01-competitor-watch/data/candidates/*.json', exists: candidatesDoc.exists, items: candidatesDoc.counts.total, note: candidatesDoc.exists ? 'найдено ' + candidatesDoc.counts.total : 'движок поиска ещё не сформировал список' },
+    { id: 'agent1-status', label: 'Статус Агента 1 (последний прогон)', path: 'registry/runs.jsonl + registry/results.yaml + data/**/snapshots/*', exists: agent1StatusDoc.runs.exists || agent1StatusDoc.snapshots.count > 0, items: agent1StatusDoc.runs.total, note: agent1StatusDoc.verdict + (agent1StatusDoc.reason ? ' — ' + agent1StatusDoc.reason : '') },
+    { id: 'competitor-analytics', label: 'Аналитика конкурентов от движка (по клиентам)', path: '01-competitor-watch/reports/clients/*/.cache/analytics-<дата>.json', exists: competitorAnalyticsDoc.exists, items: competitorAnalyticsDoc.totals.clientsWithData, note: competitorAnalyticsDoc.totals.clientsWithData ? ('клиентов ' + competitorAnalyticsDoc.totals.clientsWithData + ', конкурентов ' + competitorAnalyticsDoc.totals.competitors + ', лотов ' + (competitorAnalyticsDoc.totals.lotsOnSale === null ? '—' : competitorAnalyticsDoc.totals.lotsOnSale)) : (competitorAnalyticsDoc.emptyReason || 'данных аналитики ещё нет') },
     { id: 'agent-settings', label: 'Тонкие настройки агентов', path: 'registry/agent-settings/*.yaml', exists: agentSettingsDoc.exists, items: agentSettingsDoc.counts.files || 0, note: 'файл на каждого агента, отдельно правится' },
     { id: 'ads', label: 'Реклама и кэшбэк', path: 'public/data/ads.json', exists: true, items: 5, note: 'каналов 5, записей бюджета и кэшбэка' },
     { id: 'analytics2', label: 'Аналитика: серии, срезы, метрики', path: 'public/data/analytics2.json', exists: true, items: 28, note: 'графиков 6, срезов 9' },
@@ -202,6 +223,8 @@ export function collect(options) {
     rubComplete: usage.totals.rubComplete,
   };
 
+  const skillsDoc = buildSkillsDoc();
+
   const docs = {
     'prices.json': buildPricesDoc(prices),
     'integrations.json': integrationsDoc,
@@ -217,6 +240,10 @@ export function collect(options) {
     'agent-settings.json': agentSettingsDoc,
     'candidates.json': candidatesDoc,
     'competitor-report.json': competitorReportDoc,
+    'agent1-status.json': agent1StatusDoc,
+    'agent-runs.json': agentRunsDoc,
+    'competitor-analytics.json': competitorAnalyticsDoc,
+    'skills.json': skillsDoc,
     'agents.json': built.agents,
     'tasks.json': tasksDoc,
     'projects.json': built.projects,

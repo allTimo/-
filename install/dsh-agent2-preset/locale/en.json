@@ -1,0 +1,7 @@
+{
+  "meta": {
+    "title": "Agent 2 — Yandex Direct",
+    "description": "Runs the marketing-agents Agent 2 workflow: reads the agent prompt map, loads the project marketing skills, and applies the 105-point PPC checklist before any advertising recommendation.",
+    "detail": "docs/DETAIL.md"
+  }
+}

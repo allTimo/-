@@ -1,0 +1,2058 @@
+{
+ "network": [
+  {
+   "AdNetworkType": "AD_NETWORK",
+   "Impressions": 11848024.0,
+   "Clicks": 90611.0,
+   "Cost": 1056043.91,
+   "Conversions": 15437.0
+  },
+  {
+   "AdNetworkType": "SEARCH",
+   "Impressions": 674378.0,
+   "Clicks": 15930.0,
+   "Cost": 1663696.0899999999,
+   "Conversions": 7356.0
+  },
+  {
+   "AdNetworkType": "Total rows: 16",
+   "Impressions": 0.0,
+   "Clicks": 0.0,
+   "Cost": 0.0,
+   "Conversions": 0.0
+  }
+ ],
+ "network_by_campaign": [
+  {
+   "AdNetworkType": "AD_NETWORK",
+   "CampaignId": "713311426",
+   "CampaignName": "РСЯ / Интел Групп / Газобетон + Каменные дома + Керамоблок / Москва и МО",
+   "Impressions": 4662223.0,
+   "Clicks": 60274.0,
+   "Cost": 772843.23,
+   "Conversions": 10589.0,
+   "Ctr": 1.29
+  },
+  {
+   "AdNetworkType": "AD_NETWORK",
+   "CampaignId": "713631672",
+   "CampaignName": "Товарная кампания / газобетон",
+   "Impressions": 59183.0,
+   "Clicks": 191.0,
+   "Cost": 488.34,
+   "Conversions": 32.0,
+   "Ctr": 0.32
+  },
+  {
+   "AdNetworkType": "AD_NETWORK",
+   "CampaignId": "713631836",
+   "CampaignName": "МК / газобетон",
+   "Impressions": 344705.0,
+   "Clicks": 454.0,
+   "Cost": 11827.93,
+   "Conversions": 120.0,
+   "Ctr": 0.13
+  },
+  {
+   "AdNetworkType": "AD_NETWORK",
+   "CampaignId": "713935594",
+   "CampaignName": "Товарная кампания / газобетон (копия)",
+   "Impressions": 6565130.0,
+   "Clicks": 29163.0,
+   "Cost": 245590.73,
+   "Conversions": 4641.0,
+   "Ctr": 0.44
+  },
+  {
+   "AdNetworkType": "AD_NETWORK",
+   "CampaignId": "715734434",
+   "CampaignName": "Рекламное объявление в MAX № 13 от 02-11-2026",
+   "Impressions": 216783.0,
+   "Clicks": 529.0,
+   "Cost": 25293.68,
+   "Conversions": 55.0,
+   "Ctr": 0.24
+  },
+  {
+   "AdNetworkType": "SEARCH",
+   "CampaignId": "713617279",
+   "CampaignName": "Поиск-газобетон",
+   "Impressions": 1249.0,
+   "Clicks": 45.0,
+   "Cost": 0.0,
+   "Conversions": 12.0,
+   "Ctr": 3.6
+  },
+  {
+   "AdNetworkType": "SEARCH",
+   "CampaignId": "713617283",
+   "CampaignName": "Поиск-каменные дома",
+   "Impressions": 638.0,
+   "Clicks": 38.0,
+   "Cost": 0.0,
+   "Conversions": 13.0,
+   "Ctr": 5.96
+  },
+  {
+   "AdNetworkType": "SEARCH",
+   "CampaignId": "713617288",
+   "CampaignName": "Поиск-керамические дома",
+   "Impressions": 750.0,
+   "Clicks": 33.0,
+   "Cost": 0.0,
+   "Conversions": 14.0,
+   "Ctr": 4.4
+  },
+  {
+   "AdNetworkType": "SEARCH",
+   "CampaignId": "713617296",
+   "CampaignName": "Поиск-строительство",
+   "Impressions": 1727.0,
+   "Clicks": 66.0,
+   "Cost": 0.0,
+   "Conversions": 35.0,
+   "Ctr": 3.82
+  },
+  {
+   "AdNetworkType": "SEARCH",
+   "CampaignId": "713631672",
+   "CampaignName": "Товарная кампания / газобетон",
+   "Impressions": 124.0,
+   "Clicks": 5.0,
+   "Cost": 0.0,
+   "Conversions": 2.0,
+   "Ctr": 4.03
+  },
+  {
+   "AdNetworkType": "SEARCH",
+   "CampaignId": "713631836",
+   "CampaignName": "МК / газобетон",
+   "Impressions": 17882.0,
+   "Clicks": 410.0,
+   "Cost": 6375.87,
+   "Conversions": 176.0,
+   "Ctr": 2.29
+  },
+  {
+   "AdNetworkType": "SEARCH",
+   "CampaignId": "713935594",
+   "CampaignName": "Товарная кампания / газобетон (копия)",
+   "Impressions": 563051.0,
+   "Clicks": 6674.0,
+   "Cost": 525959.09,
+   "Conversions": 3146.0,
+   "Ctr": 1.19
+  },
+  {
+   "AdNetworkType": "SEARCH",
+   "CampaignId": "714038332",
+   "CampaignName": "2. Поиск Прошлый директолог (Мобилки)",
+   "Impressions": 68526.0,
+   "Clicks": 5856.0,
+   "Cost": 703208.02,
+   "Conversions": 2626.0,
+   "Ctr": 8.55
+  },
+  {
+   "AdNetworkType": "SEARCH",
+   "CampaignId": "714762514",
+   "CampaignName": "1. Поиск (Газобетон, Керамические)",
+   "Impressions": 10084.0,
+   "Clicks": 1733.0,
+   "Cost": 322546.61,
+   "Conversions": 901.0,
+   "Ctr": 17.19
+  },
+  {
+   "AdNetworkType": "SEARCH",
+   "CampaignId": "715702484",
+   "CampaignName": "1.1 Поиск (Газобетон, Керамические)",
+   "Impressions": 1253.0,
+   "Clicks": 191.0,
+   "Cost": 31215.25,
+   "Conversions": 97.0,
+   "Ctr": 15.24
+  },
+  {
+   "AdNetworkType": "SEARCH",
+   "CampaignId": "715810384",
+   "CampaignName": "2.1 Поиск Прошлый директолог (Мобилки)",
+   "Impressions": 9094.0,
+   "Clicks": 879.0,
+   "Cost": 74391.25,
+   "Conversions": 334.0,
+   "Ctr": 9.67
+  },
+  {
+   "AdNetworkType": "Total rows: 16",
+   "CampaignId": NaN,
+   "CampaignName": NaN,
+   "Impressions": 0.0,
+   "Clicks": 0.0,
+   "Cost": 0.0,
+   "Conversions": 0.0,
+   "Ctr": 0.0
+  }
+ ],
+ "last14": [
+  {
+   "CampaignId": "713935594",
+   "CampaignName": "Товарная кампания / газобетон (копия)",
+   "Impressions": 1090083.0,
+   "Clicks": 5755.0,
+   "Cost": 158312.12,
+   "Conversions": 1312.0
+  },
+  {
+   "CampaignId": "713311426",
+   "CampaignName": "РСЯ / Интел Групп / Газобетон + Каменные дома + Керамоблок / Москва и МО",
+   "Impressions": 457225.0,
+   "Clicks": 6719.0,
+   "Cost": 122461.66,
+   "Conversions": 1359.0
+  },
+  {
+   "CampaignId": "715810384",
+   "CampaignName": "2.1 Поиск Прошлый директолог (Мобилки)",
+   "Impressions": 9094.0,
+   "Clicks": 879.0,
+   "Cost": 74391.23999999999,
+   "Conversions": 334.0
+  },
+  {
+   "CampaignId": "715702484",
+   "CampaignName": "1.1 Поиск (Газобетон, Керамические)",
+   "Impressions": 1253.0,
+   "Clicks": 191.0,
+   "Cost": 31215.25,
+   "Conversions": 97.0
+  },
+  {
+   "CampaignId": "715734434",
+   "CampaignName": "Рекламное объявление в MAX № 13 от 02-11-2026",
+   "Impressions": 216783.0,
+   "Clicks": 529.0,
+   "Cost": 25293.7,
+   "Conversions": 55.0
+  },
+  {
+   "CampaignId": "714762514",
+   "CampaignName": "1. Поиск (Газобетон, Керамические)",
+   "Impressions": 120.0,
+   "Clicks": 24.0,
+   "Cost": 5438.48,
+   "Conversions": 16.0
+  }
+ ],
+ "placements_expensive": {
+  "count": 1,
+  "spend": 3061.53,
+  "top": [
+   [
+    "Яндекс",
+    3061.53,
+    47,
+    3,
+    1021.0
+   ]
+  ]
+ },
+ "rya_summary": {
+  "campaigns": [
+   "РСЯ / Интел Групп / Газобетон + Каменные дома + Керамоблок / Москва и МО",
+   "Товарная кампания / газобетон",
+   "Товарная кампания / газобетон (копия)"
+  ],
+  "spend": 1544856.3699999999,
+  "clicks": 96304,
+  "conversions": 18408
+ },
+ "minus_candidates": {
+  "count": 31,
+  "spend": 24720.88,
+  "rows": [
+   [
+    "проектирование домов москва",
+    4857.73,
+    26,
+    "Товарная кампания / газобетон (копия)"
+   ],
+   [
+    "строительные компании в москве и московской области",
+    2464.27,
+    3,
+    "Товарная кампания / газобетон (копия)"
+   ],
+   [
+    "дачный дом",
+    1426.35,
+    3,
+    "2. Поиск Прошлый директолог (Мобилки)"
+   ],
+   [
+    "дом из газоблока под ключ цена московская область",
+    1123.09,
+    5,
+    "2. Поиск Прошлый директолог (Мобилки)"
+   ],
+   [
+    "дома из газобетона под ключ московская область",
+    1112.2,
+    4,
+    "2. Поиск Прошлый директолог (Мобилки)"
+   ],
+   [
+    "дом из газобетона под ключ",
+    996.74,
+    5,
+    "2. Поиск Прошлый директолог (Мобилки)"
+   ],
+   [
+    "дом из газоблоков под ключ цена в московской области",
+    930.37,
+    3,
+    "1. Поиск (Газобетон, Керамические)"
+   ],
+   [
+    "построить дом по семейной ипотеке",
+    930.09,
+    4,
+    "2. Поиск Прошлый директолог (Мобилки)"
+   ],
+   [
+    "строительные услуги",
+    909.53,
+    4,
+    "Товарная кампания / газобетон (копия)"
+   ],
+   [
+    "дом на заказ",
+    640.6,
+    6,
+    "2. Поиск Прошлый директолог (Мобилки)"
+   ],
+   [
+    "построить дом в рассрочку",
+    628.31,
+    5,
+    "2. Поиск Прошлый директолог (Мобилки)"
+   ],
+   [
+    "дом из газобетона",
+    622.6,
+    3,
+    "2. Поиск Прошлый директолог (Мобилки)"
+   ],
+   [
+    "дом из газобетона",
+    585.63,
+    3,
+    "1.1 Поиск (Газобетон, Керамические)"
+   ],
+   [
+    "дом под ключ",
+    582.64,
+    4,
+    "2. Поиск Прошлый директолог (Мобилки)"
+   ],
+   [
+    "дом одноэтажный под ключ",
+    563.48,
+    4,
+    "2. Поиск Прошлый директолог (Мобилки)"
+   ],
+   [
+    "построить дом в рассрочку",
+    551.92,
+    4,
+    "Товарная кампания / газобетон (копия)"
+   ],
+   [
+    "одноэтажные дома под ключ проекты и цены",
+    540.63,
+    4,
+    "Товарная кампания / газобетон (копия)"
+   ],
+   [
+    "одноэтажный дом",
+    523.67,
+    5,
+    "2.1 Поиск Прошлый директолог (Мобилки)"
+   ],
+   [
+    "каменные дома под ключ",
+    459.51,
+    3,
+    "2. Поиск Прошлый директолог (Мобилки)"
+   ],
+   [
+    "дома из сэндвич панелей",
+    454.3,
+    3,
+    "2. Поиск Прошлый директолог (Мобилки)"
+   ],
+   [
+    "дома из газобетона под ключ",
+    406.34,
+    3,
+    "2.1 Поиск Прошлый директолог (Мобилки)"
+   ],
+   [
+    "дом 17 на 17 одноэтажный",
+    396.48,
+    3,
+    "2. Поиск Прошлый директолог (Мобилки)"
+   ],
+   [
+    "построить дом из газобетона под ключ",
+    381.9,
+    3,
+    "2. Поиск Прошлый директолог (Мобилки)"
+   ],
+   [
+    "дом под ключ из газобетона проекты и цены",
+    374.32,
+    6,
+    "Товарная кампания / газобетон (копия)"
+   ],
+   [
+    "построить дом в воскресенске",
+    343.01,
+    3,
+    "2.1 Поиск Прошлый директолог (Мобилки)"
+   ],
+   [
+    "строительство домов из камня",
+    331.38,
+    4,
+    "Товарная кампания / газобетон (копия)"
+   ],
+   [
+    "дом баня",
+    322.45,
+    5,
+    "Товарная кампания / газобетон (копия)"
+   ],
+   [
+    "дом под заказ",
+    320.07,
+    3,
+    "2. Поиск Прошлый директолог (Мобилки)"
+   ],
+   [
+    "проекты домов из газобетона 1 этажные",
+    319.11,
+    6,
+    "Товарная кампания / газобетон (копия)"
+   ],
+   [
+    "стоимость дома из газобетона под ключ 80 кв",
+    318.28,
+    4,
+    "2. Поиск Прошлый директолог (Мобилки)"
+   ],
+   [
+    "проект дома из газобетонных блоков распродажа рассрочка",
+    303.88,
+    7,
+    "Товарная кампания / газобетон (копия)"
+   ]
+  ]
+ },
+ "trash_queries": {
+  "count": 142,
+  "spend": 31495.630000000005,
+  "rows": [
+   [
+    "сколько стоит дом из газобетона",
+    1603.96,
+    38
+   ],
+   [
+    "узнать стоимость дома 170 м2 из газобетона калькулятор",
+    1079.21,
+    1
+   ],
+   [
+    "проект одноэтажного дома с 3 спальнями и кухней гостиной",
+    674.77,
+    19
+   ],
+   [
+    "гостевой дом проект",
+    576.41,
+    2
+   ],
+   [
+    "сколько будет стоить построить дом из газобетона 100м2 под ключ",
+    555.21,
+    2
+   ],
+   [
+    "сколько стоит построить дом из газобетона",
+    541.55,
+    5
+   ],
+   [
+    "сколько стоит построить дом",
+    532.15,
+    3
+   ],
+   [
+    "сколько газоблоков понадобится для того чтобы построить 70 кв дома",
+    518.49,
+    1
+   ],
+   [
+    "сколько стоит дом из газобетона",
+    493.11,
+    11
+   ],
+   [
+    "строительные компании которые работают с ипотекой",
+    470.16,
+    1
+   ],
+   [
+    "калькулятор строительства дома из газобетона",
+    463.98,
+    2
+   ],
+   [
+    "сколько стоит построить дом",
+    448.69,
+    3
+   ],
+   [
+    "сколько стоит домик 6 3",
+    447.58,
+    1
+   ],
+   [
+    "сколько нужно газоблока на дом 60 квадратов",
+    441.59,
+    3
+   ],
+   [
+    "проекты небольших домов где кухня отделена от столовой и гостевой",
+    440.62,
+    1
+   ],
+   [
+    "дом из газобетона калькулятор",
+    409.01,
+    1
+   ],
+   [
+    "сколько стоит дом из газобетона под ключ",
+    408.71,
+    4
+   ],
+   [
+    "сколько стоит дом из газобетона",
+    385.87,
+    3
+   ],
+   [
+    "строительство гостевых домиков",
+    383.56,
+    2
+   ],
+   [
+    "сколько стоит построить жилой дом из блоков",
+    381.05,
+    1
+   ],
+   [
+    "сколько стоит построить одноэтажный дом из газобетона под ключ",
+    370.75,
+    1
+   ],
+   [
+    "сколько стоит домик из газобетона 6 х7",
+    324.23,
+    2
+   ],
+   [
+    "газоблок калькулятор расчета на дом",
+    317.9,
+    1
+   ],
+   [
+    "проект дома 3 спальни кухня гостиная",
+    315.88,
+    1
+   ],
+   [
+    "строительные компании работающие с семейной ипотекой",
+    312.25,
+    2
+   ],
+   [
+    "сколько стоит построить дом 120 кв м из газобетона",
+    308.91,
+    1
+   ],
+   [
+    "сколько стоит построить дом из газобетона",
+    283.76,
+    7
+   ],
+   [
+    "сколько стоит положить 1 куб газобетонных блоков",
+    281.42,
+    1
+   ],
+   [
+    "за сколько реально можно построить дом из газобетона",
+    280.19,
+    1
+   ],
+   [
+    "красивые одноэтажные гостевые дома",
+    278.43,
+    1
+   ],
+   [
+    "сколько стоит дом построить в ипотеку",
+    273.1,
+    2
+   ],
+   [
+    "калькулятор газоблока",
+    269.44,
+    10
+   ],
+   [
+    "дом с кухней столовой гостиной совмещенный с камином 2 спальни ванная ",
+    266.87,
+    2
+   ],
+   [
+    "подрядчики работающие с военной ипотекой",
+    265.65,
+    1
+   ],
+   [
+    "калькулятор стоимости дома из газобетона",
+    264.52,
+    5
+   ],
+   [
+    "сколько стоит построить дом в подмосковье",
+    260.96,
+    3
+   ],
+   [
+    "сколько стоит проект дома из газобетона",
+    260.32,
+    1
+   ],
+   [
+    "сколько стоит построить дом 120 кв м из газобетона",
+    260.12,
+    1
+   ],
+   [
+    "калькулятор дома из газоблока рассчитать стоимость",
+    255.21,
+    1
+   ],
+   [
+    "расчет стоимости газоблоков на дом",
+    244.24,
+    1
+   ],
+   [
+    "проект одноэтажного дома с 4 спальнями и большой кухней гостиной",
+    240.18,
+    4
+   ],
+   [
+    "как недорого построить дом из газоблоков",
+    233.9,
+    1
+   ],
+   [
+    "сколько стоит построить дом 100 м2 из газобетона",
+    230.84,
+    1
+   ],
+   [
+    "одноэтажный дом с 4 спальнями и кухней гостиной",
+    216.12,
+    2
+   ],
+   [
+    "сколько стоит построить дом из газобетона",
+    215.64,
+    1
+   ],
+   [
+    "как выбрать газоблок для строительства дома",
+    211.02,
+    2
+   ],
+   [
+    "одноэтажный дом гостиная на юг план",
+    210.73,
+    1
+   ],
+   [
+    "дом газобетон отзывы о компании",
+    206.4,
+    1
+   ],
+   [
+    "строительная компания которая работает с материнским капиталом",
+    205.41,
+    1
+   ],
+   [
+    "сколько стоит дом из блоков под ключ 6х4",
+    205.29,
+    1
+   ],
+   [
+    "сколько нужно штук газобетона на дом 250м2",
+    200.99,
+    1
+   ],
+   [
+    "калькулятор постройки дома из газобетона",
+    200.93,
+    3
+   ],
+   [
+    "калькулятор расчета газоблока",
+    197.49,
+    3
+   ],
+   [
+    "сколько стоит построить дом из газобетона под ключ 150 кв",
+    196.78,
+    4
+   ],
+   [
+    "рассчитать дом из газобетона калькулятор количество",
+    195.83,
+    3
+   ],
+   [
+    "сколько нужно блоков газобетона на дом 100м2",
+    188.16,
+    1
+   ],
+   [
+    "строительные компании работающие с маткапиталом",
+    183.43,
+    1
+   ],
+   [
+    "калькулятор газоблока",
+    181.46,
+    5
+   ],
+   [
+    "сколько стоит построить дом",
+    181.34,
+    4
+   ],
+   [
+    "план дома один этаж веранда три комнаты кабинет кухня гостинная больша",
+    175.6,
+    1
+   ],
+   [
+    "проект гостевого дома с сауной",
+    175.25,
+    1
+   ],
+   [
+    "сколько стоит построить дом в 2026",
+    173.8,
+    1
+   ],
+   [
+    "что дороже сруб или газоблоки",
+    170.73,
+    1
+   ],
+   [
+    "сколько стоит построить дом из газоблоков 60кв в мопод чистовую отделк",
+    169.43,
+    1
+   ],
+   [
+    "планировка одноэтажного дома с 4 спальнями и кухней гостиной",
+    167.39,
+    2
+   ],
+   [
+    "калькулятор цены дома из газоблока рассчитать стоимость",
+    166.66,
+    1
+   ],
+   [
+    "энергоэффективные дома 3 комнаты 2 санузла кухня гостиная чтобы не чув",
+    164.48,
+    1
+   ],
+   [
+    "калькулятор дома из газобетона онлайн",
+    161.82,
+    2
+   ],
+   [
+    "проект одноэтажного дома из газоблока на семью из 5 челокек 4 спальни ",
+    161.25,
+    1
+   ],
+   [
+    "дом в ипотеку московская область под ключ отзывы",
+    160.27,
+    1
+   ],
+   [
+    "проект одноэтажного дома с двухскатной крышей с кухней гостиной по цен",
+    159.64,
+    1
+   ],
+   [
+    "дом с мансардой и гаражом справа на первом этаже кухня столовая гостин",
+    154.7,
+    2
+   ],
+   [
+    "калькулятор строительства дома из газобетона с крышей",
+    154.13,
+    1
+   ],
+   [
+    "какая плотность газосиликатных блоков подходит для строительства дома ",
+    153.01,
+    1
+   ],
+   [
+    "сколько стоит построить одноэтажный дом из газобетона под ключ цена",
+    149.13,
+    1
+   ],
+   [
+    "сколько стоит построить жилой дом из блоков",
+    146.6,
+    1
+   ],
+   [
+    "сколько стоит построить дом в подмосковье",
+    146.38,
+    3
+   ],
+   [
+    "сколько будет стоить дом из блока",
+    145.62,
+    1
+   ],
+   [
+    "сколько стоит проект дома",
+    145.04,
+    1
+   ],
+   [
+    "дом из газобетона 3 спальни 2 санузла котельная кухня гостиная 50 метр",
+    144.99,
+    1
+   ]
+  ]
+ },
+ "minus_words_freq": [
+  [
+   "дом",
+   93
+  ],
+  [
+   "дома",
+   54
+  ],
+  [
+   "сколько",
+   54
+  ],
+  [
+   "газобетона",
+   46
+  ],
+  [
+   "стоит",
+   40
+  ],
+  [
+   "построить",
+   38
+  ],
+  [
+   "под",
+   24
+  ],
+  [
+   "ключ",
+   21
+  ],
+  [
+   "проект",
+   21
+  ],
+  [
+   "газоблока",
+   20
+  ],
+  [
+   "калькулятор",
+   20
+  ],
+  [
+   "гостиной",
+   19
+  ],
+  [
+   "кухней",
+   18
+  ],
+  [
+   "спальнями",
+   16
+  ],
+  [
+   "кухня",
+   16
+  ],
+  [
+   "одноэтажный",
+   15
+  ],
+  [
+   "гостиная",
+   13
+  ],
+  [
+   "одноэтажного",
+   12
+  ],
+  [
+   "блоков",
+   10
+  ],
+  [
+   "спальни",
+   10
+  ],
+  [
+   "строительные",
+   6
+  ],
+  [
+   "компании",
+   6
+  ],
+  [
+   "газоблоков",
+   6
+  ],
+  [
+   "для",
+   6
+  ],
+  [
+   "строительства",
+   6
+  ],
+  [
+   "планировка",
+   6
+  ],
+  [
+   "домов",
+   5
+  ],
+  [
+   "проекты",
+   5
+  ],
+  [
+   "нужно",
+   5
+  ],
+  [
+   "расчет",
+   5
+  ],
+  [
+   "цена",
+   4
+  ],
+  [
+   "стоимость",
+   4
+  ],
+  [
+   "гостевой",
+   4
+  ],
+  [
+   "будет",
+   4
+  ],
+  [
+   "стоить",
+   4
+  ],
+  [
+   "ипотекой",
+   4
+  ],
+  [
+   "работающие",
+   4
+  ],
+  [
+   "санузла",
+   4
+  ],
+  [
+   "как",
+   4
+  ],
+  [
+   "план",
+   4
+  ],
+  [
+   "этаж",
+   4
+  ],
+  [
+   "гостинная",
+   4
+  ],
+  [
+   "первом",
+   4
+  ],
+  [
+   "этаже",
+   4
+  ],
+  [
+   "санузел",
+   4
+  ],
+  [
+   "московской",
+   3
+  ],
+  [
+   "области",
+   3
+  ],
+  [
+   "московская",
+   3
+  ],
+  [
+   "область",
+   3
+  ],
+  [
+   "семейной",
+   3
+  ],
+  [
+   "цены",
+   3
+  ],
+  [
+   "100м2",
+   3
+  ],
+  [
+   "домик",
+   3
+  ],
+  [
+   "газоблок",
+   3
+  ],
+  [
+   "расчета",
+   3
+  ],
+  [
+   "ванная",
+   3
+  ],
+  [
+   "рассчитать",
+   3
+  ],
+  [
+   "100",
+   3
+  ],
+  [
+   "отзывы",
+   3
+  ],
+  [
+   "три",
+   3
+  ]
+ ],
+ "criteria_by_type": [
+  {
+   "CriterionType": "AUTOTARGETING",
+   "Cost": 1664036.42,
+   "Clicks": 44019.0,
+   "Conversions": 11272.0
+  },
+  {
+   "CriterionType": "KEYWORD",
+   "Cost": 1043305.09,
+   "Clicks": 61845.0,
+   "Conversions": 11320.0
+  },
+  {
+   "CriterionType": "OFFER_RETARGETING",
+   "Cost": 12373.13,
+   "Clicks": 674.0,
+   "Conversions": 199.0
+  }
+ ],
+ "criteria_expensive": [
+  [
+   "строительство домов из газобетона -под -загородный -калькуля",
+   "KEYWORD",
+   14420.65,
+   28,
+   961.0
+  ],
+  [
+   "строительство домов из газобетона под ключ московская",
+   "KEYWORD",
+   11186.51,
+   14,
+   1598.0
+  ],
+  [
+   "построить дом из газобетона -московский -ключ -коробка -ипот",
+   "KEYWORD",
+   9528.75,
+   26,
+   681.0
+  ],
+  [
+   "строительство домов из газобетона под ключ -московский -цена",
+   "KEYWORD",
+   8085.04,
+   14,
+   622.0
+  ],
+  [
+   "---autotargeting",
+   "AUTOTARGETING",
+   5215.04,
+   71,
+   1304.0
+  ],
+  [
+   "построить дом из газобетона в московской области",
+   "KEYWORD",
+   4500.45,
+   13,
+   500.0
+  ],
+  [
+   "строительство газобетонных домов -блок",
+   "KEYWORD",
+   4358.83,
+   20,
+   1090.0
+  ],
+  [
+   "---autotargeting",
+   "AUTOTARGETING",
+   4245.47,
+   22,
+   531.0
+  ],
+  [
+   "одноэтажный дом из газобетона -100 -терраса -цена -100м2 -10",
+   "KEYWORD",
+   2698.11,
+   14,
+   540.0
+  ],
+  [
+   "дом из газобетона для постоянного проживания",
+   "KEYWORD",
+   2526.93,
+   13,
+   505.0
+  ],
+  [
+   "купить проект дома из газобетона -готовый -двухэтажный -одно",
+   "KEYWORD",
+   2447.07,
+   8,
+   612.0
+  ],
+  [
+   "семейная ипотека московская область строительство дома",
+   "KEYWORD",
+   2240.58,
+   9,
+   2241.0
+  ]
+ ],
+ "landings_checked": [
+  {
+   "url": "https://doma-karkas.ru/",
+   "visits": 9053.0,
+   "bounce": 25.03037667,
+   "orders": 20.0,
+   "paid": 8.0,
+   "calls": 24.0,
+   "status": 200,
+   "load_s": 0.25,
+   "bytes": 226372,
+   "has_metrika": true,
+   "has_form": true,
+   "has_quiz": false
+  },
+  {
+   "url": "https://doma-karkas.ru/catalog/gazobetonnye/",
+   "visits": 2967.0,
+   "bounce": 16.00943714,
+   "orders": 1.0,
+   "paid": 1.0,
+   "calls": 4.0,
+   "status": 200,
+   "load_s": 0.11,
+   "bytes": 337251,
+   "has_metrika": true,
+   "has_form": true,
+   "has_quiz": true
+  },
+  {
+   "url": "https://doma-karkas.ru/catalog/gazobetonnye/kapri/",
+   "visits": 1167.0,
+   "bounce": 27.93487575,
+   "orders": 0.0,
+   "paid": 0.0,
+   "calls": 1.0,
+   "status": 200,
+   "load_s": 0.1,
+   "bytes": 208639,
+   "has_metrika": true,
+   "has_form": true,
+   "has_quiz": false
+  },
+  {
+   "url": "https://doma-karkas.ru/articles/kreplenie-mauerlata-k-gazobetonu-instruktsiya/",
+   "visits": 1096.0,
+   "bounce": 9.03284672,
+   "orders": 0.0,
+   "paid": 0.0,
+   "calls": 2.0,
+   "status": 200,
+   "load_s": 0.08,
+   "bytes": 74761,
+   "has_metrika": true,
+   "has_form": true,
+   "has_quiz": false
+  },
+  {
+   "url": "https://doma-karkas.ru/catalog/",
+   "visits": 654.0,
+   "bounce": 20.79510703,
+   "orders": 2.0,
+   "paid": 1.0,
+   "calls": 1.0,
+   "status": 200,
+   "load_s": 0.14,
+   "bytes": 287134,
+   "has_metrika": true,
+   "has_form": true,
+   "has_quiz": true
+  },
+  {
+   "url": "https://doma-karkas.ru/catalog/keramicheskie/",
+   "visits": 621.0,
+   "bounce": 57.48792271,
+   "orders": 0.0,
+   "paid": 0.0,
+   "calls": 3.0,
+   "status": 200,
+   "load_s": 0.11,
+   "bytes": 327166,
+   "has_metrika": true,
+   "has_form": true,
+   "has_quiz": true
+  },
+  {
+   "url": "https://doma-karkas.ru/catalog/gazobetonnye/vilnyus/",
+   "visits": 548.0,
+   "bounce": 17.51824818,
+   "orders": 0.0,
+   "paid": 0.0,
+   "calls": 0.0,
+   "status": 200,
+   "load_s": 0.3,
+   "bytes": 209223,
+   "has_metrika": true,
+   "has_form": true,
+   "has_quiz": false
+  },
+  {
+   "url": "https://doma-karkas.ru/catalog/karkasnye-doma/",
+   "visits": 513.0,
+   "bounce": 10.72124756,
+   "orders": 1.0,
+   "paid": 0.0,
+   "calls": 4.0,
+   "status": 200,
+   "load_s": 0.11,
+   "bytes": 337490,
+   "has_metrika": true,
+   "has_form": true,
+   "has_quiz": true
+  },
+  {
+   "url": "https://doma-karkas.ru/catalog/gazobetonnye/verona/",
+   "visits": 492.0,
+   "bounce": 20.73170732,
+   "orders": 0.0,
+   "paid": 0.0,
+   "calls": 1.0,
+   "status": 200,
+   "load_s": 0.34,
+   "bytes": 207676,
+   "has_metrika": true,
+   "has_form": true,
+   "has_quiz": false
+  },
+  {
+   "url": "https://doma-karkas.ru/catalog/gazobetonnye/bavariya/",
+   "visits": 437.0,
+   "bounce": 9.61098398,
+   "orders": 0.0,
+   "paid": 0.0,
+   "calls": 0.0,
+   "status": 200,
+   "load_s": 0.11,
+   "bytes": 208002,
+   "has_metrika": true,
+   "has_form": true,
+   "has_quiz": false
+  },
+  {
+   "url": "https://doma-karkas.ru/catalog/gazobetonnye/lyutsern/",
+   "visits": 405.0,
+   "bounce": 17.28395062,
+   "orders": 0.0,
+   "paid": 0.0,
+   "calls": 1.0,
+   "status": 200,
+   "load_s": 0.16,
+   "bytes": 207170,
+   "has_metrika": true,
+   "has_form": true,
+   "has_quiz": false
+  },
+  {
+   "url": "https://doma-karkas.ru/catalog/gazobetonnye/monreal/",
+   "visits": 402.0,
+   "bounce": 21.64179104,
+   "orders": 1.0,
+   "paid": 0.0,
+   "calls": 0.0,
+   "status": 200,
+   "load_s": 0.46,
+   "bytes": 207661,
+   "has_metrika": true,
+   "has_form": true,
+   "has_quiz": false
+  },
+  {
+   "url": "https://doma-karkas.ru/catalog/gazobetonnye/bavariya/",
+   "visits": 357.0,
+   "bounce": 29.9719888,
+   "orders": 0.0,
+   "paid": 0.0,
+   "calls": 0.0,
+   "status": 200,
+   "load_s": 0.11,
+   "bytes": 208002,
+   "has_metrika": true,
+   "has_form": true,
+   "has_quiz": false
+  },
+  {
+   "url": "https://doma-karkas.ru/catalog/gazobetonnye/bavariya/",
+   "visits": 330.0,
+   "bounce": 23.93939394,
+   "orders": 0.0,
+   "paid": 0.0,
+   "calls": 0.0,
+   "status": 200,
+   "load_s": 0.11,
+   "bytes": 208002,
+   "has_metrika": true,
+   "has_form": true,
+   "has_quiz": false
+  },
+  {
+   "url": "https://doma-karkas.ru/articles/armopoyas-v-chastnom-dome-kogda-nuzhen-a-kogda-mozhno-oboytis/",
+   "visits": 309.0,
+   "bounce": 11.00323625,
+   "orders": 0.0,
+   "paid": 0.0,
+   "calls": 2.0,
+   "status": 200,
+   "load_s": 0.09,
+   "bytes": 77688,
+   "has_metrika": true,
+   "has_form": true,
+   "has_quiz": false
+  },
+  {
+   "url": "https://doma-karkas.ru/catalog/gazobetonnye/glazgo/",
+   "visits": 281.0,
+   "bounce": 20.28469751,
+   "orders": 0.0,
+   "paid": 0.0,
+   "calls": 0.0,
+   "status": 200,
+   "load_s": 0.12,
+   "bytes": 209315,
+   "has_metrika": true,
+   "has_form": true,
+   "has_quiz": false
+  },
+  {
+   "url": "https://doma-karkas.ru/catalog/gazobetonnye/dovil/",
+   "visits": 278.0,
+   "bounce": 27.69784173,
+   "orders": 0.0,
+   "paid": 0.0,
+   "calls": 1.0,
+   "status": 200,
+   "load_s": 0.27,
+   "bytes": 209990,
+   "has_metrika": true,
+   "has_form": true,
+   "has_quiz": false
+  },
+  {
+   "url": "https://doma-karkas.ru/articles/skolko-sotok-dolzhen-byt-uchastok-dlya-izhs/",
+   "visits": 264.0,
+   "bounce": 21.96969697,
+   "orders": 0.0,
+   "paid": 0.0,
+   "calls": 1.0,
+   "status": 200,
+   "load_s": 0.1,
+   "bytes": 75555,
+   "has_metrika": true,
+   "has_form": true,
+   "has_quiz": false
+  },
+  {
+   "url": "https://doma-karkas.ru/catalog/gazobetonnye/malaga/",
+   "visits": 256.0,
+   "bounce": 19.53125,
+   "orders": 0.0,
+   "paid": 0.0,
+   "calls": 1.0,
+   "status": 200,
+   "load_s": 0.19,
+   "bytes": 209034,
+   "has_metrika": true,
+   "has_form": true,
+   "has_quiz": false
+  },
+  {
+   "url": "https://doma-karkas.ru/articles/kakoi-dom-postroit-na-6-sotkakh/",
+   "visits": 239.0,
+   "bounce": 15.48117155,
+   "orders": 0.0,
+   "paid": 0.0,
+   "calls": 0.0,
+   "status": 200,
+   "load_s": 0.11,
+   "bytes": 82013,
+   "has_metrika": true,
+   "has_form": true,
+   "has_quiz": false
+  },
+  {
+   "url": "https://doma-karkas.ru/catalog/gazobetonnye/tinen/",
+   "visits": 218.0,
+   "bounce": 25.68807339,
+   "orders": 0.0,
+   "paid": 0.0,
+   "calls": 0.0,
+   "status": 200,
+   "load_s": 0.09,
+   "bytes": 174753,
+   "has_metrika": true,
+   "has_form": true,
+   "has_quiz": false
+  },
+  {
+   "url": "https://doma-karkas.ru/catalog/kirpichniye/",
+   "visits": 218.0,
+   "bounce": 24.31192661,
+   "orders": 0.0,
+   "paid": 0.0,
+   "calls": 0.0,
+   "status": 200,
+   "load_s": 0.12,
+   "bytes": 339313,
+   "has_metrika": true,
+   "has_form": true,
+   "has_quiz": true
+  },
+  {
+   "url": "https://doma-karkas.ru/catalog/doma-iz-penobloka-pod-klyuch/doma-iz-penobloka-10-na-10/",
+   "visits": 209.0,
+   "bounce": 4.784689,
+   "orders": 0.0,
+   "paid": 0.0,
+   "calls": 0.0,
+   "status": 200,
+   "load_s": 0.13,
+   "bytes": 278936,
+   "has_metrika": true,
+   "has_form": true,
+   "has_quiz": true
+  },
+  {
+   "url": "https://doma-karkas.ru/catalog/gazobetonnye/kenigsberg/",
+   "visits": 209.0,
+   "bounce": 27.27272727,
+   "orders": 0.0,
+   "paid": 0.0,
+   "calls": 0.0,
+   "status": 200,
+   "load_s": 0.13,
+   "bytes": 210208,
+   "has_metrika": true,
+   "has_form": true,
+   "has_quiz": false
+  },
+  {
+   "url": "https://doma-karkas.ru/",
+   "visits": 206.0,
+   "bounce": 24.27184466,
+   "orders": 0.0,
+   "paid": 0.0,
+   "calls": 0.0,
+   "status": 200,
+   "load_s": 0.13,
+   "bytes": 226372,
+   "has_metrika": true,
+   "has_form": true,
+   "has_quiz": false
+  },
+  {
+   "url": "https://doma-karkas.ru/aktsii/",
+   "visits": 205.0,
+   "bounce": 14.14634146,
+   "orders": 1.0,
+   "paid": 0.0,
+   "calls": 1.0,
+   "status": 200,
+   "load_s": 0.25,
+   "bytes": 236902,
+   "has_metrika": true,
+   "has_form": true,
+   "has_quiz": true
+  },
+  {
+   "url": "https://doma-karkas.ru/catalog/doma-iz-penobloka-pod-klyuch/",
+   "visits": 202.0,
+   "bounce": 25.74257426,
+   "orders": 0.0,
+   "paid": 0.0,
+   "calls": 0.0,
+   "status": 200,
+   "load_s": 0.14,
+   "bytes": 311493,
+   "has_metrika": true,
+   "has_form": true,
+   "has_quiz": true
+  },
+  {
+   "url": "https://doma-karkas.ru/catalog/gazobetonnye/monreal/",
+   "visits": 201.0,
+   "bounce": 28.85572139,
+   "orders": 0.0,
+   "paid": 0.0,
+   "calls": 0.0,
+   "status": 200,
+   "load_s": 0.1,
+   "bytes": 207661,
+   "has_metrika": true,
+   "has_form": true,
+   "has_quiz": false
+  },
+  {
+   "url": "https://doma-karkas.ru/catalog/gazobetonnye/monreal/",
+   "visits": 196.0,
+   "bounce": 10.20408163,
+   "orders": 0.0,
+   "paid": 0.0,
+   "calls": 2.0,
+   "status": 200,
+   "load_s": 0.12,
+   "bytes": 207661,
+   "has_metrika": true,
+   "has_form": true,
+   "has_quiz": false
+  },
+  {
+   "url": "https://doma-karkas.ru/articles/chto-takoe-monolitno-karkasnye-doma-nedostatki-kotorykh-interesuyut-potrebiteley/",
+   "visits": 193.0,
+   "bounce": 12.95336788,
+   "orders": 0.0,
+   "paid": 0.0,
+   "calls": 0.0,
+   "status": 200,
+   "load_s": 0.09,
+   "bytes": 65515,
+   "has_metrika": true,
+   "has_form": true,
+   "has_quiz": false
+  },
+  {
+   "url": "https://doma-karkas.ru/catalog/kirpichniye/",
+   "visits": 192.0,
+   "bounce": 46.875,
+   "orders": 0.0,
+   "paid": 0.0,
+   "calls": 0.0,
+   "status": 200,
+   "load_s": 0.11,
+   "bytes": 339313,
+   "has_metrika": true,
+   "has_form": true,
+   "has_quiz": true
+  },
+  {
+   "url": "https://doma-karkas.ru/catalog/gazobetonnye/lira/",
+   "visits": 191.0,
+   "bounce": 49.21465969,
+   "orders": 0.0,
+   "paid": 0.0,
+   "calls": 0.0,
+   "status": 200,
+   "load_s": 0.11,
+   "bytes": 207447,
+   "has_metrika": true,
+   "has_form": true,
+   "has_quiz": false
+  },
+  {
+   "url": "https://doma-karkas.ru/catalog/gazobetonnye/monreal/",
+   "visits": 189.0,
+   "bounce": 24.86772487,
+   "orders": 0.0,
+   "paid": 0.0,
+   "calls": 0.0,
+   "status": 200,
+   "load_s": 0.1,
+   "bytes": 207661,
+   "has_metrika": true,
+   "has_form": true,
+   "has_quiz": false
+  },
+  {
+   "url": "https://doma-karkas.ru/catalog/gazobetonnye/monreal/",
+   "visits": 186.0,
+   "bounce": 7.52688172,
+   "orders": 0.0,
+   "paid": 0.0,
+   "calls": 0.0,
+   "status": 200,
+   "load_s": 0.1,
+   "bytes": 207661,
+   "has_metrika": true,
+   "has_form": true,
+   "has_quiz": false
+  },
+  {
+   "url": "https://doma-karkas.ru/articles/mozhno-li-ostavit-dom-iz-gazobetona-na-zimu-bez-otdelki/",
+   "visits": 184.0,
+   "bounce": 9.7826087,
+   "orders": 0.0,
+   "paid": 0.0,
+   "calls": 0.0,
+   "status": 200,
+   "load_s": 0.11,
+   "bytes": 75155,
+   "has_metrika": true,
+   "has_form": true,
+   "has_quiz": false
+  },
+  {
+   "url": "https://doma-karkas.ru/catalog/gazobetonnye/glendeyl/",
+   "visits": 174.0,
+   "bounce": 18.96551724,
+   "orders": 1.0,
+   "paid": 1.0,
+   "calls": 0.0,
+   "status": 200,
+   "load_s": 0.17,
+   "bytes": 211076,
+   "has_metrika": true,
+   "has_form": true,
+   "has_quiz": false
+  },
+  {
+   "url": "https://doma-karkas.ru/articles/gde-luchshe-pokupat-uchastok-v-podmoskove/",
+   "visits": 171.0,
+   "bounce": 11.69590643,
+   "orders": 0.0,
+   "paid": 0.0,
+   "calls": 0.0,
+   "status": 200,
+   "load_s": 0.1,
+   "bytes": 79803,
+   "has_metrika": true,
+   "has_form": true,
+   "has_quiz": false
+  },
+  {
+   "url": "https://doma-karkas.ru/articles/srok-sluzhby-doma-iz-penoblokov/",
+   "visits": 170.0,
+   "bounce": 14.70588235,
+   "orders": 0.0,
+   "paid": 0.0,
+   "calls": 0.0,
+   "status": 200,
+   "load_s": 0.09,
+   "bytes": 67049,
+   "has_metrika": true,
+   "has_form": true,
+   "has_quiz": false
+  },
+  {
+   "url": "https://doma-karkas.ru/catalog/gazobetonnye/tinen/",
+   "visits": 166.0,
+   "bounce": 24.09638554,
+   "orders": 0.0,
+   "paid": 0.0,
+   "calls": 0.0,
+   "status": 200,
+   "load_s": 0.1,
+   "bytes": 174753,
+   "has_metrika": true,
+   "has_form": true,
+   "has_quiz": false
+  },
+  {
+   "url": "https://doma-karkas.ru/catalog/gazobetonnye/vichentsa/",
+   "visits": 166.0,
+   "bounce": 18.6746988,
+   "orders": 0.0,
+   "paid": 0.0,
+   "calls": 0.0,
+   "status": 200,
+   "load_s": 0.09,
+   "bytes": 206827,
+   "has_metrika": true,
+   "has_form": true,
+   "has_quiz": false
+  },
+  {
+   "url": "https://doma-karkas.ru/catalog/gazobetonnye/bavariya/",
+   "visits": 165.0,
+   "bounce": 26.06060606,
+   "orders": 0.0,
+   "paid": 0.0,
+   "calls": 1.0,
+   "status": 200,
+   "load_s": 0.1,
+   "bytes": 208002,
+   "has_metrika": true,
+   "has_form": true,
+   "has_quiz": false
+  },
+  {
+   "url": "https://doma-karkas.ru/catalog/gazobetonnye/bavariya/",
+   "visits": 164.0,
+   "bounce": 25.6097561,
+   "orders": 0.0,
+   "paid": 0.0,
+   "calls": 1.0,
+   "status": 200,
+   "load_s": 0.14,
+   "bytes": 208002,
+   "has_metrika": true,
+   "has_form": true,
+   "has_quiz": false
+  },
+  {
+   "url": "https://doma-karkas.ru/catalog/gazobetonnye/",
+   "visits": 163.0,
+   "bounce": 1.8404908,
+   "orders": 0.0,
+   "paid": 0.0,
+   "calls": 0.0,
+   "status": 200,
+   "load_s": 0.13,
+   "bytes": 337251,
+   "has_metrika": true,
+   "has_form": true,
+   "has_quiz": true
+  },
+  {
+   "url": "https://doma-karkas.ru/catalog/gazobetonnye/monreal/",
+   "visits": 162.0,
+   "bounce": 27.16049383,
+   "orders": 0.0,
+   "paid": 0.0,
+   "calls": 1.0,
+   "status": 200,
+   "load_s": 0.11,
+   "bytes": 207661,
+   "has_metrika": true,
+   "has_form": true,
+   "has_quiz": false
+  },
+  {
+   "url": "https://doma-karkas.ru/kontakty/",
+   "visits": 160.0,
+   "bounce": 26.25,
+   "orders": 0.0,
+   "paid": 0.0,
+   "calls": 0.0,
+   "status": 200,
+   "load_s": 0.1,
+   "bytes": 55713,
+   "has_metrika": true,
+   "has_form": true,
+   "has_quiz": false
+  },
+  {
+   "url": "https://doma-karkas.ru/catalog/gazobetonnye/myunkhen/",
+   "visits": 155.0,
+   "bounce": 19.35483871,
+   "orders": 0.0,
+   "paid": 0.0,
+   "calls": 0.0,
+   "status": 200,
+   "load_s": 0.14,
+   "bytes": 209827,
+   "has_metrika": true,
+   "has_form": true,
+   "has_quiz": false
+  },
+  {
+   "url": "https://doma-karkas.ru/catalog/gazobetonnye/",
+   "visits": 154.0,
+   "bounce": 23.37662338,
+   "orders": 0.0,
+   "paid": 0.0,
+   "calls": 0.0,
+   "status": 200,
+   "load_s": 0.11,
+   "bytes": 337251,
+   "has_metrika": true,
+   "has_form": true,
+   "has_quiz": true
+  },
+  {
+   "url": "https://doma-karkas.ru/articles/iz-chego-postroit-dom-v-podmoskove/",
+   "visits": 151.0,
+   "bounce": 15.89403974,
+   "orders": 0.0,
+   "paid": 0.0,
+   "calls": 3.0,
+   "status": 200,
+   "load_s": 0.1,
+   "bytes": 81736,
+   "has_metrika": true,
+   "has_form": true,
+   "has_quiz": false
+  },
+  {
+   "url": "https://doma-karkas.ru/catalog/gazobetonnye/sakramento/",
+   "visits": 151.0,
+   "bounce": 38.41059603,
+   "orders": 0.0,
+   "paid": 0.0,
+   "calls": 0.0,
+   "status": 200,
+   "load_s": 0.12,
+   "bytes": 206523,
+   "has_metrika": true,
+   "has_form": true,
+   "has_quiz": false
+  },
+  {
+   "url": "https://doma-karkas.ru/catalog/kirpichniye/",
+   "visits": 141.0,
+   "bounce": 48.93617021,
+   "orders": 0.0,
+   "paid": 0.0,
+   "calls": 0.0,
+   "status": 200,
+   "load_s": 0.13,
+   "bytes": 339313,
+   "has_metrika": true,
+   "has_form": true,
+   "has_quiz": true
+  },
+  {
+   "url": "https://doma-karkas.ru/catalog/",
+   "visits": 139.0,
+   "bounce": 1.43884892,
+   "orders": 0.0,
+   "paid": 0.0,
+   "calls": 0.0,
+   "status": 200,
+   "load_s": 0.16,
+   "bytes": 287134,
+   "has_metrika": true,
+   "has_form": true,
+   "has_quiz": true
+  },
+  {
+   "url": "https://doma-karkas.ru/catalog/gazobetonnye/kenigsberg/",
+   "visits": 139.0,
+   "bounce": 19.42446043,
+   "orders": 0.0,
+   "paid": 0.0,
+   "calls": 0.0,
+   "status": 200,
+   "load_s": 0.1,
+   "bytes": 210208,
+   "has_metrika": true,
+   "has_form": true,
+   "has_quiz": false
+  },
+  {
+   "url": "https://doma-karkas.ru/foto-i-video/photogallery/",
+   "visits": 137.0,
+   "bounce": 11.67883212,
+   "orders": 0.0,
+   "paid": 0.0,
+   "calls": 0.0,
+   "status": 200,
+   "load_s": 0.29,
+   "bytes": 364559,
+   "has_metrika": true,
+   "has_form": true,
+   "has_quiz": false
+  },
+  {
+   "url": "https://doma-karkas.ru/catalog/gazobetonnye/monreal/",
+   "visits": 134.0,
+   "bounce": 8.20895522,
+   "orders": 0.0,
+   "paid": 0.0,
+   "calls": 0.0,
+   "status": 200,
+   "load_s": 0.1,
+   "bytes": 207661,
+   "has_metrika": true,
+   "has_form": true,
+   "has_quiz": false
+  },
+  {
+   "url": "https://doma-karkas.ru/catalog/karkasnye-doma/fedinburg/",
+   "visits": 132.0,
+   "bounce": 32.57575758,
+   "orders": 0.0,
+   "paid": 0.0,
+   "calls": 0.0,
+   "status": 200,
+   "load_s": 0.12,
+   "bytes": 211315,
+   "has_metrika": true,
+   "has_form": true,
+   "has_quiz": false
+  },
+  {
+   "url": "https://doma-karkas.ru/catalog/gazobetonnye/",
+   "visits": 131.0,
+   "bounce": 8.39694656,
+   "orders": 0.0,
+   "paid": 0.0,
+   "calls": 0.0,
+   "status": 200,
+   "load_s": 0.12,
+   "bytes": 337251,
+   "has_metrika": true,
+   "has_form": true,
+   "has_quiz": true
+  },
+  {
+   "url": "https://doma-karkas.ru/catalog/gazobetonnye/florenvil/",
+   "visits": 128.0,
+   "bounce": 16.40625,
+   "orders": 0.0,
+   "paid": 0.0,
+   "calls": 0.0,
+   "status": 200,
+   "load_s": 0.3,
+   "bytes": 208110,
+   "has_metrika": true,
+   "has_form": true,
+   "has_quiz": false
+  },
+  {
+   "url": "https://doma-karkas.ru/",
+   "visits": 125.0,
+   "bounce": 32.0,
+   "orders": 0.0,
+   "paid": 0.0,
+   "calls": 0.0,
+   "status": 200,
+   "load_s": 0.12,
+   "bytes": 226372,
+   "has_metrika": true,
+   "has_form": true,
+   "has_quiz": false
+  },
+  {
+   "url": "https://doma-karkas.ru/catalog/gazobetonnye/frimont/",
+   "visits": 125.0,
+   "bounce": 16.8,
+   "orders": 0.0,
+   "paid": 0.0,
+   "calls": 1.0,
+   "status": 200,
+   "load_s": 0.1,
+   "bytes": 207963,
+   "has_metrika": true,
+   "has_form": true,
+   "has_quiz": false
+  },
+  {
+   "url": "https://doma-karkas.ru/catalog/gazobetonnye/monreal/",
+   "visits": 124.0,
+   "bounce": 6.4516129,
+   "orders": 0.0,
+   "paid": 0.0,
+   "calls": 0.0,
+   "status": 200,
+   "load_s": 0.1,
+   "bytes": 207661,
+   "has_metrika": true,
+   "has_form": true,
+   "has_quiz": false
+  }
+ ]
+}

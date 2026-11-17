@@ -1,0 +1,6943 @@
+{
+ "counter": "22595095",
+ "period": {
+  "current": [
+   "2026-08-19",
+   "2026-11-16"
+  ],
+  "previous": [
+   "2026-05-21",
+   "2026-08-18"
+  ]
+ },
+ "collected_at": "2026-11-16T16:48:31",
+ "card": {
+  "id": 22595095,
+  "status": "Active",
+  "owner_login": "intel.denisov",
+  "code_status": "CS_ERR_UNKNOWN",
+  "activity_status": "high",
+  "name": "doma-karkas.ru",
+  "type": "simple",
+  "favorite": 0,
+  "hide_address": 0,
+  "pro": 0,
+  "permission": "view",
+  "webvisor": {
+   "urls": "regexp:.*",
+   "arch_enabled": 1,
+   "arch_type": "load",
+   "load_player_type": "proxy",
+   "wv_version": 2,
+   "allow_wv2": true,
+   "wv_forms": 1
+  },
+  "code_options": {
+   "async": 1,
+   "informer": {
+    "enabled": 0,
+    "type": "ext",
+    "size": 3,
+    "indicator": "pageviews",
+    "color_start": "FFFFFFFF",
+    "color_end": "EFEFEFFF",
+    "color_text": 0,
+    "color_arrow": 1
+   },
+   "modules": {
+    "prebid_enabled": 0
+   },
+   "visor": 1,
+   "track_hash": 0,
+   "xml_site": 0,
+   "clickmap": 1,
+   "in_one_line": 0,
+   "ecommerce": 0,
+   "alternative_cdn": 0,
+   "ecommerce_object": "dataLayer",
+   "ytm": false,
+   "ssr": false
+  },
+  "create_time": "2013-10-15T15:34:40+04:00",
+  "time_zone_name": "Europe/Moscow",
+  "time_zone_offset": 180,
+  "partner_id": 0,
+  "update_time": "2026-10-30 12:16:18",
+  "code": "\n<!-- Yandex.Metrika counter -->\n<script type=\"text/javascript\">\n    (function(m,e,t,r,i,k,a){\n        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};\n        m[i].l=1*new Date();\n        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}\n        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)\n    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js', 'ym');\n\n    ym(22595095, 'init', {webvisor:true, clickmap:true, params: {__ym: {isFromApi: 'yesIsFromApi'}}, referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});\n</script>\n<noscript><div><img src=\"https://mc.yandex.ru/watch/22595095\" style=\"position:absolute; left:-9999px;\" alt=\"\" /></div></noscript>\n<!-- /Yandex.Metrika counter -->\n\n\n",
+  "filter_robots": 2,
+  "currency": 643,
+  "currency_code": "RUB",
+  "visit_threshold": 1800,
+  "max_goals": 200,
+  "max_operations": 30,
+  "max_filters": 30,
+  "features": [
+   "offline_calls",
+   "direct",
+   "webvisor2",
+   "russian_market",
+   "target_calls",
+   "turbo_page",
+   "ecommerce",
+   "experiment_ab",
+   "expenses",
+   "cdp",
+   "favorite_goals",
+   "benchmarks"
+  ],
+  "site": "www.doma-karkas.ru",
+  "site2": {
+   "site": "www.doma-karkas.ru",
+   "domain": "doma-karkas.ru",
+   "status": "ok"
+  },
+  "gdpr_agreement_accepted": 0,
+  "mirrors": [
+   "m.doma-karkas.ru",
+   "wonder.doma-karkas.ru",
+   "www.doma-karkas.ru/landing.html"
+  ],
+  "mirrors2": [
+   {
+    "site": "m.doma-karkas.ru",
+    "domain": "m.doma-karkas.ru"
+   },
+   {
+    "site": "wonder.doma-karkas.ru",
+    "domain": "wonder.doma-karkas.ru"
+   },
+   {
+    "site": "www.doma-karkas.ru/landing.html",
+    "domain": "doma-karkas.ru",
+    "status": "ok"
+   }
+  ],
+  "autogoals_enabled": false,
+  "ecommerce_deduplicator_enabled": false,
+  "ecom_options": {
+   "has_manual_ecom": true,
+   "has_auto_ecom": false,
+   "ecom_source_type": "manual_ecom"
+  }
+ },
+ "sections": {
+  "goals": {
+   "goals": [
+    {
+     "id": 41224933,
+     "name": "Звонок",
+     "type": "call",
+     "default_price": 0.0,
+     "is_retargeting": 0,
+     "goal_source": "auto",
+     "is_favorite": 1,
+     "status": "Active",
+     "labels": []
+    },
+    {
+     "id": 309041787,
+     "name": "Лид",
+     "type": "step",
+     "default_price": 0.0,
+     "is_retargeting": 0,
+     "goal_source": "user",
+     "is_favorite": 1,
+     "status": "Active",
+     "labels": [],
+     "steps": [
+      {
+       "id": 309041789,
+       "name": "Лид.",
+       "type": "url",
+       "default_price": 0.0,
+       "is_retargeting": 0,
+       "goal_source": "user",
+       "is_favorite": 0,
+       "status": "Active",
+       "conditions": [
+        {
+         "type": "action",
+         "url": "send-form-call-me"
+        },
+        {
+         "type": "action",
+         "url": "send-form-calc-project"
+        },
+        {
+         "type": "action",
+         "url": "send-form-order-construct"
+        },
+        {
+         "type": "action",
+         "url": "send-form-action"
+        },
+        {
+         "type": "action",
+         "url": "send-formЛучше-один-раз-увидеть"
+        },
+        {
+         "type": "action",
+         "url": "send-form-credit"
+        },
+        {
+         "type": "action",
+         "url": "send-form-changes-project"
+        },
+        {
+         "type": "action",
+         "url": "send-form-meeting"
+        },
+        {
+         "type": "action",
+         "url": "send-form-buy-project"
+        },
+        {
+         "type": "action",
+         "url": "Jivo_User_gave_contacts_during_chat"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": 672664042,
+     "name": "онлайн расчёт",
+     "type": "action",
+     "default_price": 0.0,
+     "is_retargeting": 0,
+     "goal_source": "user",
+     "is_favorite": 1,
+     "status": "Active",
+     "labels": [],
+     "conditions": [
+      {
+       "type": "contain",
+       "url": "online-calculation"
+      }
+     ]
+    },
+    {
+     "id": 679914588,
+     "name": "Выполнил комбинированную цель",
+     "type": "action",
+     "default_price": 300.0,
+     "is_retargeting": 0,
+     "goal_source": "user",
+     "is_favorite": 1,
+     "status": "Active",
+     "labels": [],
+     "conditions": [
+      {
+       "type": "contain",
+       "url": "engaged_visit"
+      }
+     ]
+    },
+    {
+     "id": 201424006,
+     "name": "Уникальный звонок",
+     "type": "conditional_call",
+     "default_price": 0.0,
+     "is_retargeting": 0,
+     "goal_source": "auto",
+     "is_favorite": 0,
+     "status": "Active",
+     "labels": [],
+     "conditions": [
+      {
+       "field": "call_first",
+       "type": "exact",
+       "url": "true"
+      }
+     ]
+    },
+    {
+     "id": 201424009,
+     "name": "Уникально-целевой звонок",
+     "type": "conditional_call",
+     "default_price": 0.0,
+     "is_retargeting": 0,
+     "goal_source": "auto",
+     "is_favorite": 0,
+     "status": "Active",
+     "labels": [],
+     "conditions": [
+      {
+       "field": "call_first",
+       "type": "exact",
+       "url": "true"
+      },
+      {
+       "field": "call_duration",
+       "type": "greater",
+       "url": "30"
+      }
+     ]
+    },
+    {
+     "id": 201424012,
+     "name": "Целевой звонок",
+     "type": "conditional_call",
+     "default_price": 0.0,
+     "is_retargeting": 0,
+     "goal_source": "auto",
+     "is_favorite": 0,
+     "status": "Active",
+     "labels": [],
+     "conditions": [
+      {
+       "field": "call_duration",
+       "type": "greater",
+       "url": "30"
+      }
+     ]
+    },
+    {
+     "id": 307252364,
+     "name": "Звонок первичный более 60 сек",
+     "type": "conditional_call",
+     "default_price": 0.0,
+     "is_retargeting": 0,
+     "goal_source": "user",
+     "is_favorite": 0,
+     "status": "Active",
+     "labels": [],
+     "conditions": [
+      {
+       "field": "call_first",
+       "type": "exact",
+       "url": "true"
+      },
+      {
+       "field": "call_duration",
+       "type": "greater",
+       "url": "60"
+      }
+     ]
+    },
+    {
+     "id": 297819512,
+     "name": "Отправка всех форм",
+     "type": "form",
+     "default_price": 0.0,
+     "is_retargeting": 0,
+     "goal_source": "user",
+     "is_favorite": 0,
+     "status": "Active",
+     "labels": [],
+     "conditions": [],
+     "price_locations": []
+    },
+    {
+     "id": 237812268,
+     "name": "Глубина просмотров (5 страниц)",
+     "type": "number",
+     "default_price": 0.0,
+     "is_retargeting": 0,
+     "goal_source": "user",
+     "is_favorite": 0,
+     "status": "Active",
+     "labels": [],
+     "depth": 5
+    },
+    {
+     "id": 237812275,
+     "name": "Глубина просмотров (10 страниц)",
+     "type": "number",
+     "default_price": 0.0,
+     "is_retargeting": 0,
+     "goal_source": "user",
+     "is_favorite": 0,
+     "status": "Active",
+     "labels": [],
+     "depth": 10
+    },
+    {
+     "id": 237818602,
+     "name": "На сайте >5 минут",
+     "type": "action",
+     "default_price": 0.0,
+     "is_retargeting": 0,
+     "goal_source": "user",
+     "is_favorite": 0,
+     "status": "Active",
+     "labels": [],
+     "conditions": [
+      {
+       "type": "exact",
+       "url": "timeToSiteMore5Min"
+      }
+     ]
+    },
+    {
+     "id": 237835942,
+     "name": "Скролл страницы на 70%",
+     "type": "action",
+     "default_price": 0.0,
+     "is_retargeting": 0,
+     "goal_source": "user",
+     "is_favorite": 0,
+     "status": "Active",
+     "labels": [],
+     "conditions": [
+      {
+       "type": "exact",
+       "url": "scrollAt70Persent"
+      }
+     ]
+    },
+    {
+     "id": 260580704,
+     "name": "Отправка формы \"Рассчитать проект\"",
+     "type": "form",
+     "default_price": 0.0,
+     "is_retargeting": 0,
+     "goal_source": "user",
+     "is_favorite": 0,
+     "status": "Active",
+     "labels": [],
+     "conditions": [
+      {
+       "type": "form_xpath",
+       "url": "FAAA1A1A]b\\[A16"
+      }
+     ],
+     "price_locations": []
+    },
+    {
+     "id": 277230352,
+     "name": "Зимний лендинг - Отправка формы \"Получить смету\"",
+     "type": "form",
+     "default_price": 0.0,
+     "is_retargeting": 0,
+     "goal_source": "user",
+     "is_favorite": 0,
+     "status": "Active",
+     "labels": [],
+     "conditions": [
+      {
+       "type": "form_xpath",
+       "url": "FAAA1"
+      }
+     ],
+     "price_locations": []
+    },
+    {
+     "id": 277233446,
+     "name": "Переход на соцсети",
+     "type": "social",
+     "default_price": 0.0,
+     "is_retargeting": 0,
+     "goal_source": "user",
+     "is_favorite": 0,
+     "status": "Active",
+     "labels": [],
+     "conditions": [
+      {
+       "type": "all_social"
+      }
+     ]
+    },
+    {
+     "id": 309041485,
+     "name": "Форма Заказать звонок",
+     "type": "action",
+     "default_price": 0.0,
+     "is_retargeting": 0,
+     "goal_source": "user",
+     "is_favorite": 0,
+     "status": "Active",
+     "labels": [],
+     "conditions": [
+      {
+       "type": "exact",
+       "url": "send-form-call-me"
+      }
+     ]
+    },
+    {
+     "id": 309041486,
+     "name": "Форма Рассчитать проект",
+     "type": "action",
+     "default_price": 0.0,
+     "is_retargeting": 0,
+     "goal_source": "user",
+     "is_favorite": 0,
+     "status": "Active",
+     "labels": [],
+     "conditions": [
+      {
+       "type": "exact",
+       "url": "send-form-calc-project"
+      }
+     ]
+    },
+    {
+     "id": 309041783,
+     "name": "Форма Заказать строительство",
+     "type": "action",
+     "default_price": 0.0,
+     "is_retargeting": 0,
+     "goal_source": "user",
+     "is_favorite": 0,
+     "status": "Active",
+     "labels": [],
+     "conditions": [
+      {
+       "type": "exact",
+       "url": "send-form-order-construct"
+      }
+     ]
+    },
+    {
+     "id": 309073895,
+     "name": "Форма Заявка на участие в акции",
+     "type": "action",
+     "default_price": 0.0,
+     "is_retargeting": 0,
+     "goal_source": "user",
+     "is_favorite": 0,
+     "status": "Active",
+     "labels": [],
+     "conditions": [
+      {
+       "type": "exact",
+       "url": "send-form-action"
+      }
+     ]
+    },
+    {
+     "id": 309074110,
+     "name": "Форма Посетить объект",
+     "type": "action",
+     "default_price": 0.0,
+     "is_retargeting": 0,
+     "goal_source": "user",
+     "is_favorite": 0,
+     "status": "Active",
+     "labels": [],
+     "conditions": [
+      {
+       "type": "exact",
+       "url": "send-form-visit"
+      }
+     ]
+    },
+    {
+     "id": 309074304,
+     "name": "Форма Купить в кредит",
+     "type": "action",
+     "default_price": 0.0,
+     "is_retargeting": 0,
+     "goal_source": "user",
+     "is_favorite": 0,
+     "status": "Active",
+     "labels": [],
+     "conditions": [
+      {
+       "type": "exact",
+       "url": "send-form-credit"
+      }
+     ]
+    },
+    {
+     "id": 309074452,
+     "name": "Форма Внести правки в проект",
+     "type": "action",
+     "default_price": 0.0,
+     "is_retargeting": 0,
+     "goal_source": "user",
+     "is_favorite": 0,
+     "status": "Active",
+     "labels": [],
+     "conditions": [
+      {
+       "type": "exact",
+       "url": "send-form-changes-project"
+      }
+     ]
+    },
+    {
+     "id": 309074582,
+     "name": "Форма Ответить на вопрос",
+     "type": "action",
+     "default_price": 0.0,
+     "is_retargeting": 0,
+     "goal_source": "user",
+     "is_favorite": 0,
+     "status": "Active",
+     "labels": [],
+     "conditions": [
+      {
+       "type": "exact",
+       "url": "send-form-answer-question"
+      }
+     ]
+    },
+    {
+     "id": 309074702,
+     "name": "Форма Купить проект дома",
+     "type": "action",
+     "default_price": 0.0,
+     "is_retargeting": 0,
+     "goal_source": "user",
+     "is_favorite": 0,
+     "status": "Active",
+     "labels": [],
+     "conditions": [
+      {
+       "type": "exact",
+       "url": "send-form-buy-project"
+      }
+     ]
+    },
+    {
+     "id": 332581105,
+     "name": "Форма Лучше-один-раз-увидеть",
+     "type": "action",
+     "default_price": 0.0,
+     "is_retargeting": 0,
+     "goal_source": "user",
+     "is_favorite": 0,
+     "status": "Active",
+     "labels": [],
+     "conditions": [
+      {
+       "type": "exact",
+       "url": "send-formЛучше-один-раз-увидеть"
+      }
+     ]
+    },
+    {
+     "id": 332581241,
+     "name": "Форма Договоримся о нашей встрече",
+     "type": "action",
+     "default_price": 0.0,
+     "is_retargeting": 0,
+     "goal_source": "user",
+     "is_favorite": 0,
+     "status": "Active",
+     "labels": [],
+     "conditions": [
+      {
+       "type": "exact",
+       "url": "send-form-meeting"
+      }
+     ]
+    },
+    {
+     "id": 585877682,
+     "name": "Фильтр: подобрать проекты",
+     "type": "action",
+     "default_price": 0.0,
+     "is_retargeting": 0,
+     "goal_source": "user",
+     "is_favorite": 0,
+     "status": "Active",
+     "labels": [],
+     "conditions": [
+      {
+       "type": "contain",
+       "url": "selectprojects"
+      }
+     ]
+    },
+    {
+     "id": 595094381,
+     "name": "CRM: Заказ создан",
+     "type": "cdp_order_in_progress",
+     "default_price": 0.0,
+     "is_retargeting": 0,
+     "goal_source": "auto",
+     "is_favorite": 0,
+     "status": "Active",
+     "labels": []
+    },
+    {
+     "id": 595094382,
+     "name": "CRM: Заказ оплачен",
+     "type": "cdp_order_paid",
+     "default_price": 0.0,
+     "is_retargeting": 0,
+     "goal_source": "auto",
+     "is_favorite": 0,
+     "status": "Active",
+     "labels": []
+    },
+    {
+     "id": 595094383,
+     "name": "CRM: Спам заказ",
+     "type": "cdp_order_spam",
+     "default_price": 0.0,
+     "is_retargeting": 0,
+     "goal_source": "auto",
+     "is_favorite": 0,
+     "status": "Active",
+     "labels": []
+    },
+    {
+     "id": 595094384,
+     "name": "CRM: Заказ отменен",
+     "type": "cdp_order_cancelled",
+     "default_price": 0.0,
+     "is_retargeting": 0,
+     "goal_source": "auto",
+     "is_favorite": 0,
+     "status": "Active",
+     "labels": []
+    }
+   ]
+  },
+  "filters": {
+   "filters": [
+    {
+     "id": 42239795,
+     "attr": "url",
+     "type": "only_mirrors",
+     "value": "",
+     "action": "include",
+     "status": "active",
+     "with_subdomains": 1
+    },
+    {
+     "id": 67427603,
+     "attr": "client_ip",
+     "type": "equal",
+     "value": "92.248.191.211",
+     "action": "exclude",
+     "status": "active",
+     "with_subdomains": 0
+    }
+   ]
+  },
+  "operations": {
+   "operations": []
+  },
+  "grants": {
+   "error": "HTTP 403: {\"errors\":[{\"error_type\":\"access_denied\",\"message\":\"Access Denied\"}],\"code\":403,\"message\":\"Access Denied\"}"
+  },
+  "segments": {
+   "segments": [
+    {
+     "segment_id": 1006599729,
+     "counter_id": 22595095,
+     "name": "Покупатели",
+     "expression": "EXISTS ym:u:userID WITH (ym:u:productsBought>0)",
+     "is_retargeting": 1,
+     "status": "active",
+     "segment_source": "api",
+     "create_time": "2022-12-28T13:11:13+03:00",
+     "raw_filter_expression": {
+      "counter_id": 22595095,
+      "owner_uid": 721993533,
+      "expression": "EXISTS ym:u:userID WITH (ym:u:productsBought>0)"
+     },
+     "retargeting": true
+    },
+    {
+     "segment_id": 1006629459,
+     "counter_id": 22595095,
+     "name": "Брошенные корзины",
+     "expression": "EXISTS ym:u:userID WITH ((ym:u:productsAdded>0) AND (ym:u:productsBought==0))",
+     "is_retargeting": 1,
+     "status": "active",
+     "segment_source": "api",
+     "create_time": "2023-01-28T11:00:44+03:00",
+     "raw_filter_expression": {
+      "counter_id": 22595095,
+      "owner_uid": 721993533,
+      "expression": "EXISTS ym:u:userID WITH ((ym:u:productsAdded>0) AND (ym:u:productsBought==0))"
+     },
+     "retargeting": true
+    },
+    {
+     "segment_id": 1007245401,
+     "counter_id": 22595095,
+     "name": "Botfaqtor == bot (segment)",
+     "expression": "ym:s:paramsLevel1=='Botfaqtor' AND ym:s:paramsLevel2=='bot'",
+     "is_retargeting": 1,
+     "status": "active",
+     "segment_source": "api",
+     "create_time": "2024-06-21T12:49:48+03:00",
+     "raw_filter_expression": {
+      "counter_id": 22595095,
+      "owner_uid": 721993533,
+      "expression": "ym:s:paramsLevel1=='Botfaqtor' AND ym:s:paramsLevel2=='bot'"
+     },
+     "retargeting": true
+    }
+   ]
+  },
+  "user_params": {
+   "error": "HTTP 404: {\"errors\":[{\"error_type\":\"not_found\",\"message\":\"No endpoint GET /management/v1/counter/22595095/user_params.\"}],\"code\":404,\"message\":\"No endpoint GET /management/v1/counter/22595095/user_params.\"}"
+  },
+  "alerts": {
+   "error": "HTTP 404: {\"errors\":[{\"error_type\":\"not_found\",\"message\":\"No endpoint GET /management/v1/counter/22595095/alerts.\"}],\"code\":404,\"message\":\"No endpoint GET /management/v1/counter/22595095/alerts.\"}"
+  },
+  "data_sources": {
+   "error": "HTTP 404: {\"errors\":[{\"error_type\":\"not_found\",\"message\":\"No endpoint GET /management/v1/counter/22595095/data_sources.\"}],\"code\":404,\"message\":\"No endpoint GET /management/v1/counter/22595095/data_sources.\"}"
+  },
+  "labels": {
+   "error": "HTTP 404: {\"errors\":[{\"error_type\":\"not_found\",\"message\":\"No endpoint GET /management/v1/counter/22595095/labels.\"}],\"code\":404,\"message\":\"No endpoint GET /management/v1/counter/22595095/labels.\"}"
+  },
+  "experiments": {
+   "error": "HTTP 404: {\"errors\":[{\"error_type\":\"not_found\",\"message\":\"No endpoint GET /management/v1/counter/22595095/experiments.\"}],\"code\":404,\"message\":\"No endpoint GET /management/v1/counter/22595095/experiments.\"}"
+  },
+  "annotations": {
+   "chart_annotations": [
+    {
+     "id": 521718,
+     "date": "2023-07-24",
+     "time": "15:30:00.000",
+     "title": "Отображаются неполные данные",
+     "message": "По техническим причинам данные в период 15:30 - 19:00 частично не фиксировались.",
+     "group": "E"
+    }
+   ]
+  },
+  "offline_conversions": {
+   "error": "HTTP 404: {\"errors\":[{\"error_type\":\"not_found\",\"message\":\"No endpoint GET /management/v1/counter/22595095/offline_conversions.\"}],\"code\":404,\"message\":\"No endpoint GET /management/v1/counter/22595095/offline_conversions.\"}"
+  },
+  "accounts": {
+   "error": "HTTP 404: {\"errors\":[{\"error_type\":\"not_found\",\"message\":\"No endpoint GET /management/v1/counter/22595095/accounts.\"}],\"code\":404,\"message\":\"No endpoint GET /management/v1/counter/22595095/accounts.\"}"
+  },
+  "tracking_params": {
+   "error": "HTTP 404: {\"errors\":[{\"error_type\":\"not_found\",\"message\":\"No endpoint GET /management/v1/counter/22595095/tracking_params.\"}],\"code\":404,\"message\":\"No endpoint GET /management/v1/counter/22595095/tracking_params.\"}"
+  }
+ },
+ "goals": [
+  {
+   "id": 41224933,
+   "name": "Звонок",
+   "type": "call",
+   "default_price": 0.0,
+   "is_retargeting": 0,
+   "goal_source": "auto",
+   "is_favorite": 1,
+   "status": "Active",
+   "labels": []
+  },
+  {
+   "id": 309041787,
+   "name": "Лид",
+   "type": "step",
+   "default_price": 0.0,
+   "is_retargeting": 0,
+   "goal_source": "user",
+   "is_favorite": 1,
+   "status": "Active",
+   "labels": [],
+   "steps": [
+    {
+     "id": 309041789,
+     "name": "Лид.",
+     "type": "url",
+     "default_price": 0.0,
+     "is_retargeting": 0,
+     "goal_source": "user",
+     "is_favorite": 0,
+     "status": "Active",
+     "conditions": [
+      {
+       "type": "action",
+       "url": "send-form-call-me"
+      },
+      {
+       "type": "action",
+       "url": "send-form-calc-project"
+      },
+      {
+       "type": "action",
+       "url": "send-form-order-construct"
+      },
+      {
+       "type": "action",
+       "url": "send-form-action"
+      },
+      {
+       "type": "action",
+       "url": "send-formЛучше-один-раз-увидеть"
+      },
+      {
+       "type": "action",
+       "url": "send-form-credit"
+      },
+      {
+       "type": "action",
+       "url": "send-form-changes-project"
+      },
+      {
+       "type": "action",
+       "url": "send-form-meeting"
+      },
+      {
+       "type": "action",
+       "url": "send-form-buy-project"
+      },
+      {
+       "type": "action",
+       "url": "Jivo_User_gave_contacts_during_chat"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 672664042,
+   "name": "онлайн расчёт",
+   "type": "action",
+   "default_price": 0.0,
+   "is_retargeting": 0,
+   "goal_source": "user",
+   "is_favorite": 1,
+   "status": "Active",
+   "labels": [],
+   "conditions": [
+    {
+     "type": "contain",
+     "url": "online-calculation"
+    }
+   ]
+  },
+  {
+   "id": 679914588,
+   "name": "Выполнил комбинированную цель",
+   "type": "action",
+   "default_price": 300.0,
+   "is_retargeting": 0,
+   "goal_source": "user",
+   "is_favorite": 1,
+   "status": "Active",
+   "labels": [],
+   "conditions": [
+    {
+     "type": "contain",
+     "url": "engaged_visit"
+    }
+   ]
+  },
+  {
+   "id": 201424006,
+   "name": "Уникальный звонок",
+   "type": "conditional_call",
+   "default_price": 0.0,
+   "is_retargeting": 0,
+   "goal_source": "auto",
+   "is_favorite": 0,
+   "status": "Active",
+   "labels": [],
+   "conditions": [
+    {
+     "field": "call_first",
+     "type": "exact",
+     "url": "true"
+    }
+   ]
+  },
+  {
+   "id": 201424009,
+   "name": "Уникально-целевой звонок",
+   "type": "conditional_call",
+   "default_price": 0.0,
+   "is_retargeting": 0,
+   "goal_source": "auto",
+   "is_favorite": 0,
+   "status": "Active",
+   "labels": [],
+   "conditions": [
+    {
+     "field": "call_first",
+     "type": "exact",
+     "url": "true"
+    },
+    {
+     "field": "call_duration",
+     "type": "greater",
+     "url": "30"
+    }
+   ]
+  },
+  {
+   "id": 201424012,
+   "name": "Целевой звонок",
+   "type": "conditional_call",
+   "default_price": 0.0,
+   "is_retargeting": 0,
+   "goal_source": "auto",
+   "is_favorite": 0,
+   "status": "Active",
+   "labels": [],
+   "conditions": [
+    {
+     "field": "call_duration",
+     "type": "greater",
+     "url": "30"
+    }
+   ]
+  },
+  {
+   "id": 307252364,
+   "name": "Звонок первичный более 60 сек",
+   "type": "conditional_call",
+   "default_price": 0.0,
+   "is_retargeting": 0,
+   "goal_source": "user",
+   "is_favorite": 0,
+   "status": "Active",
+   "labels": [],
+   "conditions": [
+    {
+     "field": "call_first",
+     "type": "exact",
+     "url": "true"
+    },
+    {
+     "field": "call_duration",
+     "type": "greater",
+     "url": "60"
+    }
+   ]
+  },
+  {
+   "id": 297819512,
+   "name": "Отправка всех форм",
+   "type": "form",
+   "default_price": 0.0,
+   "is_retargeting": 0,
+   "goal_source": "user",
+   "is_favorite": 0,
+   "status": "Active",
+   "labels": [],
+   "conditions": [],
+   "price_locations": []
+  },
+  {
+   "id": 237812268,
+   "name": "Глубина просмотров (5 страниц)",
+   "type": "number",
+   "default_price": 0.0,
+   "is_retargeting": 0,
+   "goal_source": "user",
+   "is_favorite": 0,
+   "status": "Active",
+   "labels": [],
+   "depth": 5
+  },
+  {
+   "id": 237812275,
+   "name": "Глубина просмотров (10 страниц)",
+   "type": "number",
+   "default_price": 0.0,
+   "is_retargeting": 0,
+   "goal_source": "user",
+   "is_favorite": 0,
+   "status": "Active",
+   "labels": [],
+   "depth": 10
+  },
+  {
+   "id": 237818602,
+   "name": "На сайте >5 минут",
+   "type": "action",
+   "default_price": 0.0,
+   "is_retargeting": 0,
+   "goal_source": "user",
+   "is_favorite": 0,
+   "status": "Active",
+   "labels": [],
+   "conditions": [
+    {
+     "type": "exact",
+     "url": "timeToSiteMore5Min"
+    }
+   ]
+  },
+  {
+   "id": 237835942,
+   "name": "Скролл страницы на 70%",
+   "type": "action",
+   "default_price": 0.0,
+   "is_retargeting": 0,
+   "goal_source": "user",
+   "is_favorite": 0,
+   "status": "Active",
+   "labels": [],
+   "conditions": [
+    {
+     "type": "exact",
+     "url": "scrollAt70Persent"
+    }
+   ]
+  },
+  {
+   "id": 260580704,
+   "name": "Отправка формы \"Рассчитать проект\"",
+   "type": "form",
+   "default_price": 0.0,
+   "is_retargeting": 0,
+   "goal_source": "user",
+   "is_favorite": 0,
+   "status": "Active",
+   "labels": [],
+   "conditions": [
+    {
+     "type": "form_xpath",
+     "url": "FAAA1A1A]b\\[A16"
+    }
+   ],
+   "price_locations": []
+  },
+  {
+   "id": 277230352,
+   "name": "Зимний лендинг - Отправка формы \"Получить смету\"",
+   "type": "form",
+   "default_price": 0.0,
+   "is_retargeting": 0,
+   "goal_source": "user",
+   "is_favorite": 0,
+   "status": "Active",
+   "labels": [],
+   "conditions": [
+    {
+     "type": "form_xpath",
+     "url": "FAAA1"
+    }
+   ],
+   "price_locations": []
+  },
+  {
+   "id": 277233446,
+   "name": "Переход на соцсети",
+   "type": "social",
+   "default_price": 0.0,
+   "is_retargeting": 0,
+   "goal_source": "user",
+   "is_favorite": 0,
+   "status": "Active",
+   "labels": [],
+   "conditions": [
+    {
+     "type": "all_social"
+    }
+   ]
+  },
+  {
+   "id": 309041485,
+   "name": "Форма Заказать звонок",
+   "type": "action",
+   "default_price": 0.0,
+   "is_retargeting": 0,
+   "goal_source": "user",
+   "is_favorite": 0,
+   "status": "Active",
+   "labels": [],
+   "conditions": [
+    {
+     "type": "exact",
+     "url": "send-form-call-me"
+    }
+   ]
+  },
+  {
+   "id": 309041486,
+   "name": "Форма Рассчитать проект",
+   "type": "action",
+   "default_price": 0.0,
+   "is_retargeting": 0,
+   "goal_source": "user",
+   "is_favorite": 0,
+   "status": "Active",
+   "labels": [],
+   "conditions": [
+    {
+     "type": "exact",
+     "url": "send-form-calc-project"
+    }
+   ]
+  },
+  {
+   "id": 309041783,
+   "name": "Форма Заказать строительство",
+   "type": "action",
+   "default_price": 0.0,
+   "is_retargeting": 0,
+   "goal_source": "user",
+   "is_favorite": 0,
+   "status": "Active",
+   "labels": [],
+   "conditions": [
+    {
+     "type": "exact",
+     "url": "send-form-order-construct"
+    }
+   ]
+  },
+  {
+   "id": 309073895,
+   "name": "Форма Заявка на участие в акции",
+   "type": "action",
+   "default_price": 0.0,
+   "is_retargeting": 0,
+   "goal_source": "user",
+   "is_favorite": 0,
+   "status": "Active",
+   "labels": [],
+   "conditions": [
+    {
+     "type": "exact",
+     "url": "send-form-action"
+    }
+   ]
+  },
+  {
+   "id": 309074110,
+   "name": "Форма Посетить объект",
+   "type": "action",
+   "default_price": 0.0,
+   "is_retargeting": 0,
+   "goal_source": "user",
+   "is_favorite": 0,
+   "status": "Active",
+   "labels": [],
+   "conditions": [
+    {
+     "type": "exact",
+     "url": "send-form-visit"
+    }
+   ]
+  },
+  {
+   "id": 309074304,
+   "name": "Форма Купить в кредит",
+   "type": "action",
+   "default_price": 0.0,
+   "is_retargeting": 0,
+   "goal_source": "user",
+   "is_favorite": 0,
+   "status": "Active",
+   "labels": [],
+   "conditions": [
+    {
+     "type": "exact",
+     "url": "send-form-credit"
+    }
+   ]
+  },
+  {
+   "id": 309074452,
+   "name": "Форма Внести правки в проект",
+   "type": "action",
+   "default_price": 0.0,
+   "is_retargeting": 0,
+   "goal_source": "user",
+   "is_favorite": 0,
+   "status": "Active",
+   "labels": [],
+   "conditions": [
+    {
+     "type": "exact",
+     "url": "send-form-changes-project"
+    }
+   ]
+  },
+  {
+   "id": 309074582,
+   "name": "Форма Ответить на вопрос",
+   "type": "action",
+   "default_price": 0.0,
+   "is_retargeting": 0,
+   "goal_source": "user",
+   "is_favorite": 0,
+   "status": "Active",
+   "labels": [],
+   "conditions": [
+    {
+     "type": "exact",
+     "url": "send-form-answer-question"
+    }
+   ]
+  },
+  {
+   "id": 309074702,
+   "name": "Форма Купить проект дома",
+   "type": "action",
+   "default_price": 0.0,
+   "is_retargeting": 0,
+   "goal_source": "user",
+   "is_favorite": 0,
+   "status": "Active",
+   "labels": [],
+   "conditions": [
+    {
+     "type": "exact",
+     "url": "send-form-buy-project"
+    }
+   ]
+  },
+  {
+   "id": 332581105,
+   "name": "Форма Лучше-один-раз-увидеть",
+   "type": "action",
+   "default_price": 0.0,
+   "is_retargeting": 0,
+   "goal_source": "user",
+   "is_favorite": 0,
+   "status": "Active",
+   "labels": [],
+   "conditions": [
+    {
+     "type": "exact",
+     "url": "send-formЛучше-один-раз-увидеть"
+    }
+   ]
+  },
+  {
+   "id": 332581241,
+   "name": "Форма Договоримся о нашей встрече",
+   "type": "action",
+   "default_price": 0.0,
+   "is_retargeting": 0,
+   "goal_source": "user",
+   "is_favorite": 0,
+   "status": "Active",
+   "labels": [],
+   "conditions": [
+    {
+     "type": "exact",
+     "url": "send-form-meeting"
+    }
+   ]
+  },
+  {
+   "id": 585877682,
+   "name": "Фильтр: подобрать проекты",
+   "type": "action",
+   "default_price": 0.0,
+   "is_retargeting": 0,
+   "goal_source": "user",
+   "is_favorite": 0,
+   "status": "Active",
+   "labels": [],
+   "conditions": [
+    {
+     "type": "contain",
+     "url": "selectprojects"
+    }
+   ]
+  },
+  {
+   "id": 595094381,
+   "name": "CRM: Заказ создан",
+   "type": "cdp_order_in_progress",
+   "default_price": 0.0,
+   "is_retargeting": 0,
+   "goal_source": "auto",
+   "is_favorite": 0,
+   "status": "Active",
+   "labels": []
+  },
+  {
+   "id": 595094382,
+   "name": "CRM: Заказ оплачен",
+   "type": "cdp_order_paid",
+   "default_price": 0.0,
+   "is_retargeting": 0,
+   "goal_source": "auto",
+   "is_favorite": 0,
+   "status": "Active",
+   "labels": []
+  },
+  {
+   "id": 595094383,
+   "name": "CRM: Спам заказ",
+   "type": "cdp_order_spam",
+   "default_price": 0.0,
+   "is_retargeting": 0,
+   "goal_source": "auto",
+   "is_favorite": 0,
+   "status": "Active",
+   "labels": []
+  },
+  {
+   "id": 595094384,
+   "name": "CRM: Заказ отменен",
+   "type": "cdp_order_cancelled",
+   "default_price": 0.0,
+   "is_retargeting": 0,
+   "goal_source": "auto",
+   "is_favorite": 0,
+   "status": "Active",
+   "labels": []
+  }
+ ],
+ "totals_current": {
+  "ym:s:visits": 153195.0,
+  "ym:s:users": 98806.0,
+  "ym:s:pageviews": 340021.0,
+  "ym:s:bounceRate": 27.243709,
+  "ym:s:pageDepth": 2.21953066,
+  "ym:s:avgVisitDurationSeconds": 161.86154248,
+  "ym:s:robotPercentage": 0.0
+ },
+ "totals_previous": {
+  "ym:s:visits": 211662.0,
+  "ym:s:users": 137757.0,
+  "ym:s:pageviews": 381799.0,
+  "ym:s:bounceRate": 28.10518657,
+  "ym:s:pageDepth": 1.80381457,
+  "ym:s:avgVisitDurationSeconds": 138.4676985,
+  "ym:s:robotPercentage": 0.0
+ },
+ "daily": [
+  {
+   "date": {
+    "name": "2026-08-19"
+   },
+   "visits": 1826.0
+  },
+  {
+   "date": {
+    "name": "2026-08-20"
+   },
+   "visits": 2401.0
+  },
+  {
+   "date": {
+    "name": "2026-08-21"
+   },
+   "visits": 2044.0
+  },
+  {
+   "date": {
+    "name": "2026-08-22"
+   },
+   "visits": 1718.0
+  },
+  {
+   "date": {
+    "name": "2026-08-23"
+   },
+   "visits": 1467.0
+  },
+  {
+   "date": {
+    "name": "2026-08-24"
+   },
+   "visits": 3348.0
+  },
+  {
+   "date": {
+    "name": "2026-08-25"
+   },
+   "visits": 2428.0
+  },
+  {
+   "date": {
+    "name": "2026-08-26"
+   },
+   "visits": 811.0
+  },
+  {
+   "date": {
+    "name": "2026-08-27"
+   },
+   "visits": 493.0
+  },
+  {
+   "date": {
+    "name": "2026-08-28"
+   },
+   "visits": 484.0
+  },
+  {
+   "date": {
+    "name": "2026-08-29"
+   },
+   "visits": 1946.0
+  },
+  {
+   "date": {
+    "name": "2026-08-30"
+   },
+   "visits": 1869.0
+  },
+  {
+   "date": {
+    "name": "2026-08-31"
+   },
+   "visits": 1358.0
+  },
+  {
+   "date": {
+    "name": "2026-09-01"
+   },
+   "visits": 1048.0
+  },
+  {
+   "date": {
+    "name": "2026-09-02"
+   },
+   "visits": 974.0
+  },
+  {
+   "date": {
+    "name": "2026-09-03"
+   },
+   "visits": 1435.0
+  },
+  {
+   "date": {
+    "name": "2026-09-04"
+   },
+   "visits": 1748.0
+  },
+  {
+   "date": {
+    "name": "2026-09-05"
+   },
+   "visits": 1472.0
+  },
+  {
+   "date": {
+    "name": "2026-09-06"
+   },
+   "visits": 2360.0
+  },
+  {
+   "date": {
+    "name": "2026-09-07"
+   },
+   "visits": 2486.0
+  },
+  {
+   "date": {
+    "name": "2026-09-08"
+   },
+   "visits": 1608.0
+  },
+  {
+   "date": {
+    "name": "2026-09-09"
+   },
+   "visits": 3817.0
+  },
+  {
+   "date": {
+    "name": "2026-09-10"
+   },
+   "visits": 4031.0
+  },
+  {
+   "date": {
+    "name": "2026-09-11"
+   },
+   "visits": 2368.0
+  },
+  {
+   "date": {
+    "name": "2026-09-12"
+   },
+   "visits": 2485.0
+  },
+  {
+   "date": {
+    "name": "2026-09-13"
+   },
+   "visits": 2253.0
+  },
+  {
+   "date": {
+    "name": "2026-09-14"
+   },
+   "visits": 1920.0
+  },
+  {
+   "date": {
+    "name": "2026-09-15"
+   },
+   "visits": 1784.0
+  },
+  {
+   "date": {
+    "name": "2026-09-16"
+   },
+   "visits": 1777.0
+  },
+  {
+   "date": {
+    "name": "2026-09-17"
+   },
+   "visits": 2647.0
+  },
+  {
+   "date": {
+    "name": "2026-09-18"
+   },
+   "visits": 1968.0
+  },
+  {
+   "date": {
+    "name": "2026-09-19"
+   },
+   "visits": 1778.0
+  },
+  {
+   "date": {
+    "name": "2026-09-20"
+   },
+   "visits": 2526.0
+  },
+  {
+   "date": {
+    "name": "2026-09-21"
+   },
+   "visits": 1465.0
+  },
+  {
+   "date": {
+    "name": "2026-09-22"
+   },
+   "visits": 1276.0
+  },
+  {
+   "date": {
+    "name": "2026-09-23"
+   },
+   "visits": 1605.0
+  },
+  {
+   "date": {
+    "name": "2026-09-24"
+   },
+   "visits": 2247.0
+  },
+  {
+   "date": {
+    "name": "2026-09-25"
+   },
+   "visits": 2210.0
+  },
+  {
+   "date": {
+    "name": "2026-09-26"
+   },
+   "visits": 2238.0
+  },
+  {
+   "date": {
+    "name": "2026-09-27"
+   },
+   "visits": 2007.0
+  },
+  {
+   "date": {
+    "name": "2026-09-28"
+   },
+   "visits": 2251.0
+  },
+  {
+   "date": {
+    "name": "2026-09-29"
+   },
+   "visits": 1928.0
+  },
+  {
+   "date": {
+    "name": "2026-09-30"
+   },
+   "visits": 1842.0
+  },
+  {
+   "date": {
+    "name": "2026-10-01"
+   },
+   "visits": 1995.0
+  },
+  {
+   "date": {
+    "name": "2026-10-02"
+   },
+   "visits": 2618.0
+  },
+  {
+   "date": {
+    "name": "2026-10-03"
+   },
+   "visits": 2283.0
+  },
+  {
+   "date": {
+    "name": "2026-10-04"
+   },
+   "visits": 2644.0
+  },
+  {
+   "date": {
+    "name": "2026-10-05"
+   },
+   "visits": 3025.0
+  },
+  {
+   "date": {
+    "name": "2026-10-06"
+   },
+   "visits": 2186.0
+  },
+  {
+   "date": {
+    "name": "2026-10-07"
+   },
+   "visits": 2533.0
+  },
+  {
+   "date": {
+    "name": "2026-10-08"
+   },
+   "visits": 1637.0
+  },
+  {
+   "date": {
+    "name": "2026-10-09"
+   },
+   "visits": 1472.0
+  },
+  {
+   "date": {
+    "name": "2026-10-10"
+   },
+   "visits": 1583.0
+  },
+  {
+   "date": {
+    "name": "2026-10-11"
+   },
+   "visits": 2166.0
+  },
+  {
+   "date": {
+    "name": "2026-10-12"
+   },
+   "visits": 1579.0
+  },
+  {
+   "date": {
+    "name": "2026-10-13"
+   },
+   "visits": 1985.0
+  },
+  {
+   "date": {
+    "name": "2026-10-14"
+   },
+   "visits": 1739.0
+  },
+  {
+   "date": {
+    "name": "2026-10-15"
+   },
+   "visits": 2125.0
+  },
+  {
+   "date": {
+    "name": "2026-10-16"
+   },
+   "visits": 1761.0
+  },
+  {
+   "date": {
+    "name": "2026-10-17"
+   },
+   "visits": 113.0
+  },
+  {
+   "date": {
+    "name": "2026-10-18"
+   },
+   "visits": 84.0
+  },
+  {
+   "date": {
+    "name": "2026-10-19"
+   },
+   "visits": 273.0
+  },
+  {
+   "date": {
+    "name": "2026-10-20"
+   },
+   "visits": 1177.0
+  },
+  {
+   "date": {
+    "name": "2026-10-21"
+   },
+   "visits": 1681.0
+  },
+  {
+   "date": {
+    "name": "2026-10-22"
+   },
+   "visits": 1509.0
+  },
+  {
+   "date": {
+    "name": "2026-10-23"
+   },
+   "visits": 1452.0
+  },
+  {
+   "date": {
+    "name": "2026-10-24"
+   },
+   "visits": 1479.0
+  },
+  {
+   "date": {
+    "name": "2026-10-25"
+   },
+   "visits": 1826.0
+  },
+  {
+   "date": {
+    "name": "2026-10-26"
+   },
+   "visits": 1386.0
+  },
+  {
+   "date": {
+    "name": "2026-10-27"
+   },
+   "visits": 1367.0
+  },
+  {
+   "date": {
+    "name": "2026-10-28"
+   },
+   "visits": 1222.0
+  },
+  {
+   "date": {
+    "name": "2026-10-29"
+   },
+   "visits": 1166.0
+  },
+  {
+   "date": {
+    "name": "2026-10-30"
+   },
+   "visits": 1004.0
+  },
+  {
+   "date": {
+    "name": "2026-10-31"
+   },
+   "visits": 930.0
+  },
+  {
+   "date": {
+    "name": "2026-11-01"
+   },
+   "visits": 899.0
+  },
+  {
+   "date": {
+    "name": "2026-11-02"
+   },
+   "visits": 1253.0
+  },
+  {
+   "date": {
+    "name": "2026-11-03"
+   },
+   "visits": 1463.0
+  },
+  {
+   "date": {
+    "name": "2026-11-04"
+   },
+   "visits": 1338.0
+  },
+  {
+   "date": {
+    "name": "2026-11-05"
+   },
+   "visits": 1030.0
+  },
+  {
+   "date": {
+    "name": "2026-11-06"
+   },
+   "visits": 1270.0
+  },
+  {
+   "date": {
+    "name": "2026-11-07"
+   },
+   "visits": 965.0
+  },
+  {
+   "date": {
+    "name": "2026-11-08"
+   },
+   "visits": 1130.0
+  },
+  {
+   "date": {
+    "name": "2026-11-09"
+   },
+   "visits": 476.0
+  },
+  {
+   "date": {
+    "name": "2026-11-10"
+   },
+   "visits": 1171.0
+  },
+  {
+   "date": {
+    "name": "2026-11-11"
+   },
+   "visits": 1113.0
+  },
+  {
+   "date": {
+    "name": "2026-11-12"
+   },
+   "visits": 1916.0
+  },
+  {
+   "date": {
+    "name": "2026-11-13"
+   },
+   "visits": 1471.0
+  },
+  {
+   "date": {
+    "name": "2026-11-14"
+   },
+   "visits": 1268.0
+  },
+  {
+   "date": {
+    "name": "2026-11-15"
+   },
+   "visits": 1370.0
+  },
+  {
+   "date": {
+    "name": "2026-11-16"
+   },
+   "visits": 1316.0
+  }
+ ],
+ "daily_raw": {
+  "query": {
+   "ids": [
+    22595095
+   ],
+   "dimensions": [
+    "ym:s:date"
+   ],
+   "metrics": [
+    "ym:s:visits",
+    "ym:s:bounceRate",
+    "ym:s:goal41224933reaches"
+   ],
+   "sort": [
+    "ym:s:date"
+   ],
+   "date1": "2026-08-19",
+   "date2": "2026-11-16",
+   "limit": 120,
+   "offset": 1,
+   "group": "Week",
+   "benchmarks_version": "1793577600000",
+   "benchmarks_sub_industry": "false",
+   "auto_group_size": "1",
+   "exp_bucket_size": "100",
+   "attr_name": "",
+   "funnel_window": "",
+   "benchmarks_quantile": "50",
+   "time_interval": "1SECOND",
+   "intervals": "1",
+   "quantile": "50",
+   "offline_window": "21",
+   "attribution": "CROSS_DEVICE_LAST_SIGNIFICANT",
+   "currency": "RUB",
+   "benchmarks_attribution": "Automatic",
+   "adfox_event_id": "0",
+   "funnel_pattern": ""
+  },
+  "data": [
+   {
+    "dimensions": [
+     {
+      "name": "2026-08-19"
+     }
+    ],
+    "metrics": [
+     1826.0,
+     24.64403067,
+     2.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "2026-08-20"
+     }
+    ],
+    "metrics": [
+     2401.0,
+     26.23906706,
+     1.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "2026-08-21"
+     }
+    ],
+    "metrics": [
+     2044.0,
+     26.1741683,
+     4.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "2026-08-22"
+     }
+    ],
+    "metrics": [
+     1718.0,
+     24.27240978,
+     3.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "2026-08-23"
+     }
+    ],
+    "metrics": [
+     1467.0,
+     27.67552829,
+     0.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "2026-08-24"
+     }
+    ],
+    "metrics": [
+     3348.0,
+     26.61290323,
+     2.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "2026-08-25"
+     }
+    ],
+    "metrics": [
+     2428.0,
+     23.02306425,
+     3.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "2026-08-26"
+     }
+    ],
+    "metrics": [
+     811.0,
+     25.03082614,
+     4.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "2026-08-27"
+     }
+    ],
+    "metrics": [
+     493.0,
+     18.86409736,
+     3.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "2026-08-28"
+     }
+    ],
+    "metrics": [
+     484.0,
+     26.65289256,
+     1.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "2026-08-29"
+     }
+    ],
+    "metrics": [
+     1946.0,
+     40.18499486,
+     0.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "2026-08-30"
+     }
+    ],
+    "metrics": [
+     1869.0,
+     30.12306046,
+     0.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "2026-08-31"
+     }
+    ],
+    "metrics": [
+     1358.0,
+     22.82768778,
+     3.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "2026-09-01"
+     }
+    ],
+    "metrics": [
+     1048.0,
+     18.79770992,
+     4.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "2026-09-02"
+     }
+    ],
+    "metrics": [
+     974.0,
+     21.97125257,
+     2.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "2026-09-03"
+     }
+    ],
+    "metrics": [
+     1435.0,
+     21.60278746,
+     1.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "2026-09-04"
+     }
+    ],
+    "metrics": [
+     1748.0,
+     24.48512586,
+     5.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "2026-09-05"
+     }
+    ],
+    "metrics": [
+     1472.0,
+     24.52445652,
+     1.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "2026-09-06"
+     }
+    ],
+    "metrics": [
+     2360.0,
+     28.47457627,
+     2.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "2026-09-07"
+     }
+    ],
+    "metrics": [
+     2486.0,
+     30.28962188,
+     5.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "2026-09-08"
+     }
+    ],
+    "metrics": [
+     1608.0,
+     26.18159204,
+     1.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "2026-09-09"
+     }
+    ],
+    "metrics": [
+     3817.0,
+     31.6740896,
+     5.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "2026-09-10"
+     }
+    ],
+    "metrics": [
+     4031.0,
+     28.60332424,
+     1.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "2026-09-11"
+     }
+    ],
+    "metrics": [
+     2368.0,
+     29.51858108,
+     4.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "2026-09-12"
+     }
+    ],
+    "metrics": [
+     2485.0,
+     35.85513078,
+     1.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "2026-09-13"
+     }
+    ],
+    "metrics": [
+     2253.0,
+     32.04616067,
+     1.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "2026-09-14"
+     }
+    ],
+    "metrics": [
+     1920.0,
+     24.94791667,
+     6.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "2026-09-15"
+     }
+    ],
+    "metrics": [
+     1784.0,
+     24.71973094,
+     5.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "2026-09-16"
+     }
+    ],
+    "metrics": [
+     1777.0,
+     28.19358469,
+     3.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "2026-09-17"
+     }
+    ],
+    "metrics": [
+     2647.0,
+     37.06082357,
+     8.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "2026-09-18"
+     }
+    ],
+    "metrics": [
+     1968.0,
+     34.19715447,
+     2.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "2026-09-19"
+     }
+    ],
+    "metrics": [
+     1778.0,
+     34.47694038,
+     2.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "2026-09-20"
+     }
+    ],
+    "metrics": [
+     2526.0,
+     33.72921615,
+     0.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "2026-09-21"
+     }
+    ],
+    "metrics": [
+     1465.0,
+     22.52559727,
+     3.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "2026-09-22"
+     }
+    ],
+    "metrics": [
+     1276.0,
+     20.21943574,
+     4.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "2026-09-23"
+     }
+    ],
+    "metrics": [
+     1605.0,
+     24.11214953,
+     4.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "2026-09-24"
+     }
+    ],
+    "metrics": [
+     2247.0,
+     34.40142412,
+     2.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "2026-09-25"
+     }
+    ],
+    "metrics": [
+     2210.0,
+     34.11764706,
+     3.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "2026-09-26"
+     }
+    ],
+    "metrics": [
+     2238.0,
+     34.71849866,
+     3.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "2026-09-27"
+     }
+    ],
+    "metrics": [
+     2007.0,
+     26.55705032,
+     1.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "2026-09-28"
+     }
+    ],
+    "metrics": [
+     2251.0,
+     25.54420258,
+     3.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "2026-09-29"
+     }
+    ],
+    "metrics": [
+     1928.0,
+     27.17842324,
+     1.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "2026-09-30"
+     }
+    ],
+    "metrics": [
+     1842.0,
+     20.41259501,
+     2.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "2026-10-01"
+     }
+    ],
+    "metrics": [
+     1995.0,
+     23.20802005,
+     1.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "2026-10-02"
+     }
+    ],
+    "metrics": [
+     2618.0,
+     19.289534,
+     2.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "2026-10-03"
+     }
+    ],
+    "metrics": [
+     2283.0,
+     24.17871222,
+     2.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "2026-10-04"
+     }
+    ],
+    "metrics": [
+     2644.0,
+     27.49621785,
+     2.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "2026-10-05"
+     }
+    ],
+    "metrics": [
+     3025.0,
+     25.05785124,
+     7.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "2026-10-06"
+     }
+    ],
+    "metrics": [
+     2186.0,
+     21.22598353,
+     5.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "2026-10-07"
+     }
+    ],
+    "metrics": [
+     2533.0,
+     23.05566522,
+     5.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "2026-10-08"
+     }
+    ],
+    "metrics": [
+     1637.0,
+     25.35125229,
+     0.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "2026-10-09"
+     }
+    ],
+    "metrics": [
+     1472.0,
+     26.69836957,
+     2.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "2026-10-10"
+     }
+    ],
+    "metrics": [
+     1583.0,
+     29.31143399,
+     0.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "2026-10-11"
+     }
+    ],
+    "metrics": [
+     2166.0,
+     29.96306556,
+     0.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "2026-10-12"
+     }
+    ],
+    "metrics": [
+     1579.0,
+     25.33248892,
+     3.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "2026-10-13"
+     }
+    ],
+    "metrics": [
+     1985.0,
+     28.76574307,
+     4.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "2026-10-14"
+     }
+    ],
+    "metrics": [
+     1739.0,
+     36.3427257,
+     7.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "2026-10-15"
+     }
+    ],
+    "metrics": [
+     2125.0,
+     39.38823529,
+     7.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "2026-10-16"
+     }
+    ],
+    "metrics": [
+     1761.0,
+     31.28904032,
+     2.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "2026-10-17"
+     }
+    ],
+    "metrics": [
+     113.0,
+     25.66371681,
+     1.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "2026-10-18"
+     }
+    ],
+    "metrics": [
+     84.0,
+     21.42857143,
+     0.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "2026-10-19"
+     }
+    ],
+    "metrics": [
+     273.0,
+     23.07692308,
+     1.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "2026-10-20"
+     }
+    ],
+    "metrics": [
+     1177.0,
+     28.63211555,
+     0.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "2026-10-21"
+     }
+    ],
+    "metrics": [
+     1681.0,
+     27.78108269,
+     4.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "2026-10-22"
+     }
+    ],
+    "metrics": [
+     1509.0,
+     27.50165673,
+     1.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "2026-10-23"
+     }
+    ],
+    "metrics": [
+     1452.0,
+     26.51515152,
+     2.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "2026-10-24"
+     }
+    ],
+    "metrics": [
+     1479.0,
+     30.96686951,
+     0.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "2026-10-25"
+     }
+    ],
+    "metrics": [
+     1826.0,
+     32.31106243,
+     0.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "2026-10-26"
+     }
+    ],
+    "metrics": [
+     1386.0,
+     24.67532468,
+     3.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "2026-10-27"
+     }
+    ],
+    "metrics": [
+     1367.0,
+     24.87198244,
+     3.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "2026-10-28"
+     }
+    ],
+    "metrics": [
+     1222.0,
+     23.2405892,
+     4.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "2026-10-29"
+     }
+    ],
+    "metrics": [
+     1166.0,
+     26.84391081,
+     7.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "2026-10-30"
+     }
+    ],
+    "metrics": [
+     1004.0,
+     25.19920319,
+     1.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "2026-10-31"
+     }
+    ],
+    "metrics": [
+     930.0,
+     27.95698925,
+     0.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "2026-11-01"
+     }
+    ],
+    "metrics": [
+     899.0,
+     24.58286986,
+     0.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "2026-11-02"
+     }
+    ],
+    "metrics": [
+     1253.0,
+     22.42617717,
+     1.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "2026-11-03"
+     }
+    ],
+    "metrics": [
+     1463.0,
+     22.76144908,
+     0.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "2026-11-04"
+     }
+    ],
+    "metrics": [
+     1338.0,
+     23.31838565,
+     0.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "2026-11-05"
+     }
+    ],
+    "metrics": [
+     1030.0,
+     23.59223301,
+     5.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "2026-11-06"
+     }
+    ],
+    "metrics": [
+     1270.0,
+     21.96850394,
+     4.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "2026-11-07"
+     }
+    ],
+    "metrics": [
+     965.0,
+     22.48704663,
+     1.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "2026-11-08"
+     }
+    ],
+    "metrics": [
+     1130.0,
+     24.77876106,
+     1.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "2026-11-09"
+     }
+    ],
+    "metrics": [
+     476.0,
+     19.53781513,
+     3.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "2026-11-10"
+     }
+    ],
+    "metrics": [
+     1171.0,
+     18.27497865,
+     2.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "2026-11-11"
+     }
+    ],
+    "metrics": [
+     1113.0,
+     18.50853549,
+     2.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "2026-11-12"
+     }
+    ],
+    "metrics": [
+     1916.0,
+     18.99791232,
+     4.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "2026-11-13"
+     }
+    ],
+    "metrics": [
+     1471.0,
+     23.65737593,
+     0.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "2026-11-14"
+     }
+    ],
+    "metrics": [
+     1268.0,
+     28.70662461,
+     0.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "2026-11-15"
+     }
+    ],
+    "metrics": [
+     1370.0,
+     25.83941606,
+     0.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "2026-11-16"
+     }
+    ],
+    "metrics": [
+     1316.0,
+     21.58054711,
+     3.0
+    ]
+   }
+  ],
+  "total_rows": 90,
+  "total_rows_rounded": false,
+  "sampled": false,
+  "contains_sensitive_data": false,
+  "sample_share": 1.0,
+  "sample_size": 153715,
+  "sample_space": 153715,
+  "data_lag": 0,
+  "totals": [
+   153196.0,
+   27.24418392,
+   213.0
+  ],
+  "min": [
+   84.0,
+   18.27497865,
+   0.0
+  ],
+  "max": [
+   4031.0,
+   40.18499486,
+   8.0
+  ]
+ },
+ "goal_reaches": {
+  "ym:s:goal41224933reaches": 213.0,
+  "ym:s:goal309041787reaches": 93.0,
+  "ym:s:goal672664042reaches": 59.0,
+  "ym:s:goal679914588reaches": 170.0,
+  "ym:s:goal201424006reaches": 181.0,
+  "ym:s:goal201424009reaches": 122.0,
+  "ym:s:goal201424012reaches": 146.0,
+  "ym:s:goal307252364reaches": 78.0,
+  "ym:s:goal297819512reaches": 9305.0,
+  "ym:s:goal237812268reaches": 13833.0,
+  "ym:s:goal237812275reaches": 6572.0,
+  "ym:s:goal237818602reaches": 30945.0,
+  "ym:s:goal237835942reaches": 12847.0,
+  "ym:s:goal260580704reaches": 0.0,
+  "ym:s:goal277230352reaches": 0.0,
+  "ym:s:goal277233446reaches": 167.0,
+  "ym:s:goal309041485reaches": 54.0,
+  "ym:s:goal309041486reaches": 5.0,
+  "ym:s:goal309041783reaches": 15.0,
+  "ym:s:goal309073895reaches": 0.0,
+  "ym:s:goal309074110reaches": 0.0,
+  "ym:s:goal309074304reaches": 7.0,
+  "ym:s:goal309074452reaches": 0.0,
+  "ym:s:goal309074582reaches": 0.0,
+  "ym:s:goal309074702reaches": 1.0,
+  "ym:s:goal332581105reaches": 4.0,
+  "ym:s:goal332581241reaches": 7.0,
+  "ym:s:goal585877682reaches": 7422.0,
+  "ym:s:goal595094381reaches": 51.0,
+  "ym:s:goal595094382reaches": 23.0,
+  "ym:s:goal595094383reaches": 20.0,
+  "ym:s:goal595094384reaches": 9.0
+ },
+ "goal_reaches_previous": {
+  "ym:s:goal41224933reaches": 315.0,
+  "ym:s:goal309041787reaches": 96.0,
+  "ym:s:goal672664042reaches": 0.0,
+  "ym:s:goal679914588reaches": 0.0,
+  "ym:s:goal201424006reaches": 240.0,
+  "ym:s:goal201424009reaches": 158.0,
+  "ym:s:goal201424012reaches": 202.0,
+  "ym:s:goal307252364reaches": 102.0,
+  "ym:s:goal297819512reaches": 8179.0,
+  "ym:s:goal237812268reaches": 12953.0,
+  "ym:s:goal237812275reaches": 5527.0,
+  "ym:s:goal237818602reaches": 36181.0,
+  "ym:s:goal237835942reaches": 16691.0,
+  "ym:s:goal260580704reaches": 0.0,
+  "ym:s:goal277230352reaches": 0.0,
+  "ym:s:goal277233446reaches": 274.0,
+  "ym:s:goal309041485reaches": 39.0,
+  "ym:s:goal309041486reaches": 5.0,
+  "ym:s:goal309041783reaches": 12.0,
+  "ym:s:goal309073895reaches": 0.0,
+  "ym:s:goal309074110reaches": 2.0,
+  "ym:s:goal309074304reaches": 9.0,
+  "ym:s:goal309074452reaches": 0.0,
+  "ym:s:goal309074582reaches": 0.0,
+  "ym:s:goal309074702reaches": 4.0,
+  "ym:s:goal332581105reaches": 14.0,
+  "ym:s:goal332581241reaches": 13.0,
+  "ym:s:goal585877682reaches": 2762.0,
+  "ym:s:goal595094381reaches": 12.0,
+  "ym:s:goal595094382reaches": 6.0,
+  "ym:s:goal595094383reaches": 11.0,
+  "ym:s:goal595094384reaches": 2.0
+ },
+ "goal_conversion_rate": {
+  "ym:s:goal41224933conversionRate": 0.12076033,
+  "ym:s:goal309041787conversionRate": 0.04830413,
+  "ym:s:goal672664042conversionRate": 0.03133241,
+  "ym:s:goal679914588conversionRate": 0.10835792,
+  "ym:s:goal201424006conversionRate": 0.11227447,
+  "ym:s:goal201424009conversionRate": 0.07702551,
+  "ym:s:goal201424012conversionRate": 0.08681689,
+  "ym:s:goal307252364conversionRate": 0.05026241,
+  "ym:s:goal297819512conversionRate": 4.07190788,
+  "ym:s:goal237812268conversionRate": 8.67450847,
+  "ym:s:goal237812275conversionRate": 4.19266822,
+  "ym:s:goal237818602conversionRate": 16.50108358,
+  "ym:s:goal237835942conversionRate": 7.16794172,
+  "ym:s:goal260580704conversionRate": 0.0,
+  "ym:s:goal277230352conversionRate": 0.0,
+  "ym:s:goal277233446conversionRate": 0.07180344,
+  "ym:s:goal309041485conversionRate": 0.03263793,
+  "ym:s:goal309041486conversionRate": 0.00326379,
+  "ym:s:goal309041783conversionRate": 0.00979138,
+  "ym:s:goal309073895conversionRate": 0.0,
+  "ym:s:goal309074110conversionRate": 0.0,
+  "ym:s:goal309074304conversionRate": 0.00456931,
+  "ym:s:goal309074452conversionRate": 0.0,
+  "ym:s:goal309074582conversionRate": 0.0,
+  "ym:s:goal309074702conversionRate": 0.00065276,
+  "ym:s:goal332581105conversionRate": 0.00261103,
+  "ym:s:goal332581241conversionRate": 0.00456931,
+  "ym:s:goal585877682conversionRate": 3.37867829,
+  "ym:s:goal595094381conversionRate": 0.03329069,
+  "ym:s:goal595094382conversionRate": 0.01501345,
+  "ym:s:goal595094383conversionRate": 0.01305517,
+  "ym:s:goal595094384conversionRate": 0.00587483
+ },
+ "macro_goals": [
+  {
+   "id": 41224933,
+   "name": "Звонок"
+  },
+  {
+   "id": 309041787,
+   "name": "Лид"
+  },
+  {
+   "id": 201424006,
+   "name": "Уникальный звонок"
+  },
+  {
+   "id": 201424009,
+   "name": "Уникально-целевой звонок"
+  },
+  {
+   "id": 201424012,
+   "name": "Целевой звонок"
+  },
+  {
+   "id": 307252364,
+   "name": "Звонок первичный более 60 сек"
+  },
+  {
+   "id": 297819512,
+   "name": "Отправка всех форм"
+  },
+  {
+   "id": 260580704,
+   "name": "Отправка формы \"Рассчитать проект\""
+  },
+  {
+   "id": 277230352,
+   "name": "Зимний лендинг - Отправка формы \"Получить смету\""
+  },
+  {
+   "id": 309041485,
+   "name": "Форма Заказать звонок"
+  },
+  {
+   "id": 309041486,
+   "name": "Форма Рассчитать проект"
+  },
+  {
+   "id": 309041783,
+   "name": "Форма Заказать строительство"
+  },
+  {
+   "id": 309073895,
+   "name": "Форма Заявка на участие в акции"
+  },
+  {
+   "id": 309074110,
+   "name": "Форма Посетить объект"
+  },
+  {
+   "id": 309074304,
+   "name": "Форма Купить в кредит"
+  },
+  {
+   "id": 309074452,
+   "name": "Форма Внести правки в проект"
+  },
+  {
+   "id": 309074582,
+   "name": "Форма Ответить на вопрос"
+  },
+  {
+   "id": 309074702,
+   "name": "Форма Купить проект дома"
+  },
+  {
+   "id": 332581105,
+   "name": "Форма Лучше-один-раз-увидеть"
+  },
+  {
+   "id": 332581241,
+   "name": "Форма Договоримся о нашей встрече"
+  },
+  {
+   "id": 595094381,
+   "name": "CRM: Заказ создан"
+  },
+  {
+   "id": 595094382,
+   "name": "CRM: Заказ оплачен"
+  },
+  {
+   "id": 595094383,
+   "name": "CRM: Спам заказ"
+  },
+  {
+   "id": 595094384,
+   "name": "CRM: Заказ отменен"
+  }
+ ],
+ "splits": {
+  "traffic_source": {
+   "dims": [
+    "ym:s:lastsignTrafficSource"
+   ],
+   "metrics": [
+    "ym:s:visits",
+    "ym:s:users",
+    "ym:s:bounceRate",
+    "ym:s:pageDepth"
+   ],
+   "rows": [
+    {
+     "ym:s:lastsignTrafficSource": {
+      "icon_id": "3",
+      "icon_type": "traffic-source",
+      "name": "Ad traffic",
+      "id": "ad"
+     },
+     "ym:s:visits": 124843.0,
+     "ym:s:users": 76686.0,
+     "ym:s:bounceRate": 28.24827984,
+     "ym:s:pageDepth": 2.07011206
+    },
+    {
+     "ym:s:lastsignTrafficSource": {
+      "icon_id": "2",
+      "icon_type": "traffic-source",
+      "name": "Search engine traffic",
+      "id": "organic"
+     },
+     "ym:s:visits": 15371.0,
+     "ym:s:users": 12805.0,
+     "ym:s:bounceRate": 18.57393794,
+     "ym:s:pageDepth": 3.39210201
+    },
+    {
+     "ym:s:lastsignTrafficSource": {
+      "icon_id": "0",
+      "icon_type": "traffic-source",
+      "name": "Direct traffic",
+      "id": "direct"
+     },
+     "ym:s:visits": 9049.0,
+     "ym:s:users": 8011.0,
+     "ym:s:bounceRate": 30.19118135,
+     "ym:s:pageDepth": 1.96286883
+    },
+    {
+     "ym:s:lastsignTrafficSource": {
+      "icon_id": "-1",
+      "icon_type": "traffic-source",
+      "name": "Internal traffic",
+      "id": "internal"
+     },
+     "ym:s:visits": 1609.0,
+     "ym:s:users": 867.0,
+     "ym:s:bounceRate": 23.86575513,
+     "ym:s:pageDepth": 2.45183344
+    },
+    {
+     "ym:s:lastsignTrafficSource": {
+      "icon_id": "1",
+      "icon_type": "traffic-source",
+      "name": "Link traffic",
+      "id": "referral"
+     },
+     "ym:s:visits": 1180.0,
+     "ym:s:users": 518.0,
+     "ym:s:bounceRate": 8.22033898,
+     "ym:s:pageDepth": 3.70423729
+    },
+    {
+     "ym:s:lastsignTrafficSource": {
+      "icon_id": "9",
+      "icon_type": "traffic-source",
+      "name": "Recommendation system traffic",
+      "id": "recommend"
+     },
+     "ym:s:visits": 525.0,
+     "ym:s:users": 492.0,
+     "ym:s:bounceRate": 5.33333333,
+     "ym:s:pageDepth": 3.99047619
+    },
+    {
+     "ym:s:lastsignTrafficSource": {
+      "icon_id": "8",
+      "icon_type": "traffic-source",
+      "name": "Social network traffic",
+      "id": "social"
+     },
+     "ym:s:visits": 175.0,
+     "ym:s:users": 83.0,
+     "ym:s:bounceRate": 8.0,
+     "ym:s:pageDepth": 3.72571429
+    },
+    {
+     "ym:s:lastsignTrafficSource": {
+      "icon_id": "10",
+      "icon_type": "traffic-source",
+      "name": "Messenger traffic",
+      "id": "messenger"
+     },
+     "ym:s:visits": 67.0,
+     "ym:s:users": 17.0,
+     "ym:s:bounceRate": 10.44776119,
+     "ym:s:pageDepth": 3.20895522
+    }
+   ],
+   "error": null
+  },
+  "search_engine": {
+   "dims": [
+    "ym:s:lastsignSearchEngine"
+   ],
+   "metrics": [
+    "ym:s:visits",
+    "ym:s:bounceRate"
+   ],
+   "rows": [
+    {
+     "ym:s:lastsignSearchEngine": {
+      "name": "Google",
+      "id": "google",
+      "favicon": "google.com"
+     },
+     "ym:s:visits": 8322.0,
+     "ym:s:bounceRate": 15.41696708
+    },
+    {
+     "ym:s:lastsignSearchEngine": {
+      "name": "Yandex",
+      "id": "yandex",
+      "favicon": "www.yandex.ru"
+     },
+     "ym:s:visits": 6977.0,
+     "ym:s:bounceRate": 22.33051455
+    },
+    {
+     "ym:s:lastsignSearchEngine": {
+      "name": "Bing",
+      "id": "bing",
+      "favicon": "bing.com"
+     },
+     "ym:s:visits": 41.0,
+     "ym:s:bounceRate": 21.95121951
+    },
+    {
+     "ym:s:lastsignSearchEngine": {
+      "name": "Mail.ru",
+      "id": "mail_ru",
+      "favicon": "go.mail.ru"
+     },
+     "ym:s:visits": 22.0,
+     "ym:s:bounceRate": 18.18181818
+    },
+    {
+     "ym:s:lastsignSearchEngine": {
+      "name": "DuckDuckGo",
+      "id": "duckduckgo",
+      "favicon": "duckduckgo.com"
+     },
+     "ym:s:visits": 5.0,
+     "ym:s:bounceRate": 20.0
+    },
+    {
+     "ym:s:lastsignSearchEngine": {
+      "name": "Rambler",
+      "id": "rambler",
+      "favicon": "rambler.ru"
+     },
+     "ym:s:visits": 1.0,
+     "ym:s:bounceRate": 0.0
+    },
+    {
+     "ym:s:lastsignSearchEngine": {
+      "name": "Yahoo!",
+      "id": "yahoo",
+      "favicon": "yahoo.com"
+     },
+     "ym:s:visits": 1.0,
+     "ym:s:bounceRate": 0.0
+    },
+    {
+     "ym:s:lastsignSearchEngine": {
+      "name": "Baidu",
+      "id": "baidu",
+      "favicon": "baidu.com"
+     },
+     "ym:s:visits": 1.0,
+     "ym:s:bounceRate": 0.0
+    },
+    {
+     "ym:s:lastsignSearchEngine": {
+      "name": "Ecosia",
+      "id": "ecosia",
+      "favicon": "ecosia.org"
+     },
+     "ym:s:visits": 1.0,
+     "ym:s:bounceRate": 0.0
+    }
+   ],
+   "error": null
+  },
+  "device": {
+   "dims": [
+    "ym:s:deviceCategory"
+   ],
+   "metrics": [
+    "ym:s:visits",
+    "ym:s:bounceRate",
+    "ym:s:pageDepth",
+    "ym:s:avgVisitDurationSeconds"
+   ],
+   "rows": [
+    {
+     "ym:s:deviceCategory": {
+      "icon_id": "mobile",
+      "icon_type": "device",
+      "name": "Smartphones",
+      "id": "mobile"
+     },
+     "ym:s:visits": 102767.0,
+     "ym:s:bounceRate": 31.77089922,
+     "ym:s:pageDepth": 1.98071365,
+     "ym:s:avgVisitDurationSeconds": 139.00856306
+    },
+    {
+     "ym:s:deviceCategory": {
+      "icon_id": "desktop",
+      "icon_type": "device",
+      "name": "PC",
+      "id": "desktop"
+     },
+     "ym:s:visits": 48862.0,
+     "ym:s:bounceRate": 17.81752691,
+     "ym:s:pageDepth": 2.72768204,
+     "ym:s:avgVisitDurationSeconds": 209.86648111
+    },
+    {
+     "ym:s:deviceCategory": {
+      "icon_id": "tablet",
+      "icon_type": "device",
+      "name": "Tablets",
+      "id": "tablet"
+     },
+     "ym:s:visits": 1559.0,
+     "ym:s:bounceRate": 24.43874278,
+     "ym:s:pageDepth": 2.00705581,
+     "ym:s:avgVisitDurationSeconds": 162.00705581
+    },
+    {
+     "ym:s:deviceCategory": {
+      "icon_id": "tv",
+      "icon_type": "device",
+      "name": "TV",
+      "id": "tv"
+     },
+     "ym:s:visits": 8.0,
+     "ym:s:bounceRate": 0.0,
+     "ym:s:pageDepth": 7.625,
+     "ym:s:avgVisitDurationSeconds": 483.5
+    }
+   ],
+   "error": null
+  },
+  "landing": {
+   "dims": [
+    "ym:s:startURL"
+   ],
+   "metrics": [
+    "ym:s:visits",
+    "ym:s:bounceRate",
+    "ym:s:pageDepth"
+   ],
+   "rows": [
+    {
+     "ym:s:startURL": {
+      "name": "https://doma-karkas.ru/",
+      "favicon": "doma-karkas.ru"
+     },
+     "ym:s:visits": 9053.0,
+     "ym:s:bounceRate": 25.03037667,
+     "ym:s:pageDepth": 3.64696786
+    },
+    {
+     "ym:s:startURL": {
+      "name": "https://doma-karkas.ru/catalog/gazobetonnye/",
+      "favicon": "doma-karkas.ru"
+     },
+     "ym:s:visits": 2967.0,
+     "ym:s:bounceRate": 16.00943714,
+     "ym:s:pageDepth": 5.16717223
+    },
+    {
+     "ym:s:startURL": {
+      "name": "https://doma-karkas.ru/catalog/gazobetonnye/kapri/?ybaip=1",
+      "favicon": "doma-karkas.ru"
+     },
+     "ym:s:visits": 1167.0,
+     "ym:s:bounceRate": 27.93487575,
+     "ym:s:pageDepth": 1.65981148
+    },
+    {
+     "ym:s:startURL": {
+      "name": "https://doma-karkas.ru/articles/kreplenie-mauerlata-k-gazobetonu-instruktsiya/",
+      "favicon": "doma-karkas.ru"
+     },
+     "ym:s:visits": 1096.0,
+     "ym:s:bounceRate": 9.03284672,
+     "ym:s:pageDepth": 1.19343066
+    },
+    {
+     "ym:s:startURL": {
+      "name": "https://doma-karkas.ru/catalog/",
+      "favicon": "doma-karkas.ru"
+     },
+     "ym:s:visits": 654.0,
+     "ym:s:bounceRate": 20.79510703,
+     "ym:s:pageDepth": 4.70183486
+    },
+    {
+     "ym:s:startURL": {
+      "name": "https://doma-karkas.ru/catalog/keramicheskie/",
+      "favicon": "doma-karkas.ru"
+     },
+     "ym:s:visits": 621.0,
+     "ym:s:bounceRate": 57.48792271,
+     "ym:s:pageDepth": 2.84863124
+    },
+    {
+     "ym:s:startURL": {
+      "name": "https://doma-karkas.ru/catalog/gazobetonnye/vilnyus/?ybaip=1",
+      "favicon": "doma-karkas.ru"
+     },
+     "ym:s:visits": 548.0,
+     "ym:s:bounceRate": 17.51824818,
+     "ym:s:pageDepth": 2.03832117
+    },
+    {
+     "ym:s:startURL": {
+      "name": "https://doma-karkas.ru/catalog/karkasnye-doma/",
+      "favicon": "doma-karkas.ru"
+     },
+     "ym:s:visits": 513.0,
+     "ym:s:bounceRate": 10.72124756,
+     "ym:s:pageDepth": 4.76218324
+    },
+    {
+     "ym:s:startURL": {
+      "name": "https://doma-karkas.ru/catalog/gazobetonnye/verona/?ybaip=1",
+      "favicon": "doma-karkas.ru"
+     },
+     "ym:s:visits": 492.0,
+     "ym:s:bounceRate": 20.73170732,
+     "ym:s:pageDepth": 1.65447154
+    },
+    {
+     "ym:s:startURL": {
+      "name": "https://doma-karkas.ru/catalog/gazobetonnye/bavariya/?utm_device=desktop&utm_region=Москва&utm_position=none_0&utm_match=context&calltouch_tm=yd_c:713935594_gb:5793533706_ad:1919770602298258494_ph:205793533706_st:context_pt:none_p:0_s:dzen.ru_dt:desktop_reg:213_ret:205793533706_apt:none",
+      "favicon": "doma-karkas.ru"
+     },
+     "ym:s:visits": 437.0,
+     "ym:s:bounceRate": 9.61098398,
+     "ym:s:pageDepth": 1.66590389
+    },
+    {
+     "ym:s:startURL": {
+      "name": "https://doma-karkas.ru/catalog/gazobetonnye/lyutsern/?ybaip=1",
+      "favicon": "doma-karkas.ru"
+     },
+     "ym:s:visits": 405.0,
+     "ym:s:bounceRate": 17.28395062,
+     "ym:s:pageDepth": 1.77777778
+    },
+    {
+     "ym:s:startURL": {
+      "name": "https://doma-karkas.ru/catalog/gazobetonnye/monreal/?utm_device=desktop&utm_region=Москва&utm_position=none_0&utm_match=context&calltouch_tm=yd_c:713935594_gb:5793533706_ad:1919770602298258494_ph:205793533706_st:context_pt:none_p:0_s:yandex.ru_dt:desktop_reg:213_ret:205793533706_apt:none",
+      "favicon": "doma-karkas.ru"
+     },
+     "ym:s:visits": 402.0,
+     "ym:s:bounceRate": 21.64179104,
+     "ym:s:pageDepth": 1.44527363
+    },
+    {
+     "ym:s:startURL": {
+      "name": "https://doma-karkas.ru/catalog/gazobetonnye/bavariya/?utm_device=mobile&utm_region=Moscow&utm_position=none_0&utm_match=context&calltouch_tm=yd_c:713935594_gb:5793533706_ad:1919770602298258494_ph:205793533706_st:context_pt:none_p:0_s:dzen.ru_dt:mobile_reg:213_ret:205793533706_apt:none",
+      "favicon": "doma-karkas.ru"
+     },
+     "ym:s:visits": 357.0,
+     "ym:s:bounceRate": 29.9719888,
+     "ym:s:pageDepth": 1.56302521
+    },
+    {
+     "ym:s:startURL": {
+      "name": "https://doma-karkas.ru/catalog/gazobetonnye/bavariya/?utm_device=desktop&utm_region=Москва&utm_position=none_0&utm_match=context&calltouch_tm=yd_c:713935594_gb:5793533706_ad:1919770602298258494_ph:205793533706_st:context_pt:none_p:0_s:yandex.ru_dt:desktop_reg:213_ret:205793533706_apt:none",
+      "favicon": "doma-karkas.ru"
+     },
+     "ym:s:visits": 330.0,
+     "ym:s:bounceRate": 23.93939394,
+     "ym:s:pageDepth": 1.52424242
+    },
+    {
+     "ym:s:startURL": {
+      "name": "https://doma-karkas.ru/articles/armopoyas-v-chastnom-dome-kogda-nuzhen-a-kogda-mozhno-oboytis/",
+      "favicon": "doma-karkas.ru"
+     },
+     "ym:s:visits": 309.0,
+     "ym:s:bounceRate": 11.00323625,
+     "ym:s:pageDepth": 1.20064725
+    },
+    {
+     "ym:s:startURL": {
+      "name": "https://doma-karkas.ru/catalog/gazobetonnye/glazgo/?ybaip=1",
+      "favicon": "doma-karkas.ru"
+     },
+     "ym:s:visits": 281.0,
+     "ym:s:bounceRate": 20.28469751,
+     "ym:s:pageDepth": 1.55160142
+    },
+    {
+     "ym:s:startURL": {
+      "name": "https://doma-karkas.ru/catalog/gazobetonnye/dovil/?ybaip=1",
+      "favicon": "doma-karkas.ru"
+     },
+     "ym:s:visits": 278.0,
+     "ym:s:bounceRate": 27.69784173,
+     "ym:s:pageDepth": 1.77697842
+    },
+    {
+     "ym:s:startURL": {
+      "name": "https://doma-karkas.ru/articles/skolko-sotok-dolzhen-byt-uchastok-dlya-izhs/",
+      "favicon": "doma-karkas.ru"
+     },
+     "ym:s:visits": 264.0,
+     "ym:s:bounceRate": 21.96969697,
+     "ym:s:pageDepth": 1.21590909
+    },
+    {
+     "ym:s:startURL": {
+      "name": "https://doma-karkas.ru/catalog/gazobetonnye/malaga/?utm_device=desktop&utm_region=Москва&utm_position=none_0&utm_match=context&calltouch_tm=yd_c:713935594_gb:5793533706_ad:1919770602298258494_ph:205793533706_st:context_pt:none_p:0_s:yandex.ru_dt:desktop_reg:213_ret:205793533706_apt:none",
+      "favicon": "doma-karkas.ru"
+     },
+     "ym:s:visits": 256.0,
+     "ym:s:bounceRate": 19.53125,
+     "ym:s:pageDepth": 1.97265625
+    },
+    {
+     "ym:s:startURL": {
+      "name": "https://doma-karkas.ru/articles/kakoi-dom-postroit-na-6-sotkakh/",
+      "favicon": "doma-karkas.ru"
+     },
+     "ym:s:visits": 239.0,
+     "ym:s:bounceRate": 15.48117155,
+     "ym:s:pageDepth": 1.34728033
+    },
+    {
+     "ym:s:startURL": {
+      "name": "https://doma-karkas.ru/catalog/gazobetonnye/tinen/?utm_device=mobile&utm_region=Moscow&utm_position=none_0&utm_match=context&calltouch_tm=yd_c:713935594_gb:5793533706_ad:1919770602298258494_ph:205793533706_st:context_pt:none_p:0_s:dzen.ru_dt:mobile_reg:213_ret:205793533706_apt:none",
+      "favicon": "doma-karkas.ru"
+     },
+     "ym:s:visits": 218.0,
+     "ym:s:bounceRate": 25.68807339,
+     "ym:s:pageDepth": 1.22477064
+    },
+    {
+     "ym:s:startURL": {
+      "name": "https://doma-karkas.ru/catalog/kirpichniye/",
+      "favicon": "doma-karkas.ru"
+     },
+     "ym:s:visits": 218.0,
+     "ym:s:bounceRate": 24.31192661,
+     "ym:s:pageDepth": 2.48623853
+    },
+    {
+     "ym:s:startURL": {
+      "name": "https://doma-karkas.ru/catalog/doma-iz-penobloka-pod-klyuch/doma-iz-penobloka-10-na-10/",
+      "favicon": "doma-karkas.ru"
+     },
+     "ym:s:visits": 209.0,
+     "ym:s:bounceRate": 4.784689,
+     "ym:s:pageDepth": 2.03827751
+    },
+    {
+     "ym:s:startURL": {
+      "name": "https://doma-karkas.ru/catalog/gazobetonnye/kenigsberg/?utm_device=desktop&utm_region=Москва&utm_position=none_0&utm_match=context&calltouch_tm=yd_c:713935594_gb:5793533706_ad:1919770602298258494_ph:205793533706_st:context_pt:none_p:0_s:yandex.ru_dt:desktop_reg:213_ret:205793533706_apt:none",
+      "favicon": "doma-karkas.ru"
+     },
+     "ym:s:visits": 209.0,
+     "ym:s:bounceRate": 27.27272727,
+     "ym:s:pageDepth": 1.19617225
+    },
+    {
+     "ym:s:startURL": {
+      "name": "https://doma-karkas.ru/?utm_extra=cidl|Reklamnoe_ob_yavlenie_vMAX_13_ot02_11_2026|gid|5819432781|source|dsp.yandex.ru|region|213|device|mobile&calltouch_tm=yd_c:715734434_gb:5819432781_ad:1925921863048068966_ph:205819432781_st:context_pt:none_p:0_s:dsp.yandex.ru_dt:mobile_reg:213_ret:205819432781_apt:none&click_target=6",
+      "favicon": "doma-karkas.ru"
+     },
+     "ym:s:visits": 206.0,
+     "ym:s:bounceRate": 24.27184466,
+     "ym:s:pageDepth": 2.76699029
+    },
+    {
+     "ym:s:startURL": {
+      "name": "https://doma-karkas.ru/aktsii/",
+      "favicon": "doma-karkas.ru"
+     },
+     "ym:s:visits": 205.0,
+     "ym:s:bounceRate": 14.14634146,
+     "ym:s:pageDepth": 3.29268293
+    },
+    {
+     "ym:s:startURL": {
+      "name": "https://doma-karkas.ru/catalog/doma-iz-penobloka-pod-klyuch/",
+      "favicon": "doma-karkas.ru"
+     },
+     "ym:s:visits": 202.0,
+     "ym:s:bounceRate": 25.74257426,
+     "ym:s:pageDepth": 2.8960396
+    },
+    {
+     "ym:s:startURL": {
+      "name": "https://doma-karkas.ru/catalog/gazobetonnye/monreal/?utm_device=mobile&utm_region=Москва&utm_position=none_0&utm_match=context&calltouch_tm=yd_c:713935594_gb:5793533706_ad:1919770602298258494_ph:205793533706_st:context_pt:none_p:0_s:yandex.ru_dt:mobile_reg:213_ret:205793533706_apt:none",
+      "favicon": "doma-karkas.ru"
+     },
+     "ym:s:visits": 201.0,
+     "ym:s:bounceRate": 28.85572139,
+     "ym:s:pageDepth": 1.06965174
+    },
+    {
+     "ym:s:startURL": {
+      "name": "https://doma-karkas.ru/catalog/gazobetonnye/monreal/?utm_device=desktop&utm_region=Москва&utm_position=none_0&utm_match=context&calltouch_tm=yd_c:713935594_gb:5793533706_ad:1919770602298258494_ph:205793533706_st:context_pt:none_p:0_s:ya.ru_dt:desktop_reg:213_ret:205793533706_apt:none",
+      "favicon": "doma-karkas.ru"
+     },
+     "ym:s:visits": 196.0,
+     "ym:s:bounceRate": 10.20408163,
+     "ym:s:pageDepth": 1.48469388
+    },
+    {
+     "ym:s:startURL": {
+      "name": "https://doma-karkas.ru/articles/chto-takoe-monolitno-karkasnye-doma-nedostatki-kotorykh-interesuyut-potrebiteley/",
+      "favicon": "doma-karkas.ru"
+     },
+     "ym:s:visits": 193.0,
+     "ym:s:bounceRate": 12.95336788,
+     "ym:s:pageDepth": 1.45595855
+    },
+    {
+     "ym:s:startURL": {
+      "name": "https://doma-karkas.ru/catalog/kirpichniye/?utm_extra=cidl|Tovarnaya_kampaniya_kirpich|gid|5721909626|source|dsp.yandex.ru|region|213|device|mobile&calltouch_tm=yd_c:707570484_gb:5721909626_ad:17729894225_ph:205721909626_st:context_pt:none_p:0_s:dsp.yandex.ru_dt:mobile_reg:213_ret:205721909626_apt:none&yd_campaign_id=707570484&yd_campaign_name=Tovarnaya_kampaniya_kirpich&yd_ad_id=17729894225&yd_group_id=5721909626&yd_phrase_id=205721909626&yd_keyword=---autotargeting&yd_match_type=&yd_source_type=context&yd_source=dsp.yandex.ru&yd_position_type=none&yd_position=0&yd_device=mobile&yd_region_id=213&ybaip=1",
+      "favicon": "doma-karkas.ru"
+     },
+     "ym:s:visits": 192.0,
+     "ym:s:bounceRate": 46.875,
+     "ym:s:pageDepth": 1.00520833
+    },
+    {
+     "ym:s:startURL": {
+      "name": "https://doma-karkas.ru/catalog/gazobetonnye/lira/?utm_device=mobile&utm_region=Moscow&utm_position=none_0&utm_match=context&calltouch_tm=yd_c:713935594_gb:5793533706_ad:1919770602298258494_ph:205793533706_st:context_pt:none_p:0_s:com.block.juggle_dt:mobile_reg:213_ret:205793533706_apt:none",
+      "favicon": "doma-karkas.ru"
+     },
+     "ym:s:visits": 191.0,
+     "ym:s:bounceRate": 49.21465969,
+     "ym:s:pageDepth": 1.0
+    },
+    {
+     "ym:s:startURL": {
+      "name": "https://doma-karkas.ru/catalog/gazobetonnye/monreal/?utm_device=mobile&utm_region=Moscow&utm_position=none_0&utm_match=context&calltouch_tm=yd_c:713935594_gb:5793533706_ad:1919770602298258494_ph:205793533706_st:context_pt:none_p:0_s:dzen.ru_dt:mobile_reg:213_ret:205793533706_apt:none",
+      "favicon": "doma-karkas.ru"
+     },
+     "ym:s:visits": 189.0,
+     "ym:s:bounceRate": 24.86772487,
+     "ym:s:pageDepth": 1.43915344
+    },
+    {
+     "ym:s:startURL": {
+      "name": "https://doma-karkas.ru/catalog/gazobetonnye/monreal/?utm_device=desktop&utm_region=Москва&utm_position=none_0&utm_match=context&calltouch_tm=yd_c:713935594_gb:5793533706_ad:1919770602298258494_ph:205793533706_st:context_pt:none_p:0_s:dzen.ru_dt:desktop_reg:213_ret:205793533706_apt:none",
+      "favicon": "doma-karkas.ru"
+     },
+     "ym:s:visits": 186.0,
+     "ym:s:bounceRate": 7.52688172,
+     "ym:s:pageDepth": 1.47311828
+    },
+    {
+     "ym:s:startURL": {
+      "name": "https://doma-karkas.ru/articles/mozhno-li-ostavit-dom-iz-gazobetona-na-zimu-bez-otdelki/",
+      "favicon": "doma-karkas.ru"
+     },
+     "ym:s:visits": 184.0,
+     "ym:s:bounceRate": 9.7826087,
+     "ym:s:pageDepth": 1.25543478
+    },
+    {
+     "ym:s:startURL": {
+      "name": "https://doma-karkas.ru/catalog/gazobetonnye/glendeyl/",
+      "favicon": "doma-karkas.ru"
+     },
+     "ym:s:visits": 174.0,
+     "ym:s:bounceRate": 18.96551724,
+     "ym:s:pageDepth": 3.62643678
+    },
+    {
+     "ym:s:startURL": {
+      "name": "https://doma-karkas.ru/articles/gde-luchshe-pokupat-uchastok-v-podmoskove/",
+      "favicon": "doma-karkas.ru"
+     },
+     "ym:s:visits": 171.0,
+     "ym:s:bounceRate": 11.69590643,
+     "ym:s:pageDepth": 1.1871345
+    },
+    {
+     "ym:s:startURL": {
+      "name": "https://doma-karkas.ru/articles/srok-sluzhby-doma-iz-penoblokov/",
+      "favicon": "doma-karkas.ru"
+     },
+     "ym:s:visits": 170.0,
+     "ym:s:bounceRate": 14.70588235,
+     "ym:s:pageDepth": 1.61176471
+    },
+    {
+     "ym:s:startURL": {
+      "name": "https://doma-karkas.ru/catalog/gazobetonnye/tinen/?utm_device=desktop&utm_region=Москва&utm_position=none_0&utm_match=context&calltouch_tm=yd_c:713935594_gb:5793533706_ad:1919770602298258494_ph:205793533706_st:context_pt:none_p:0_s:yandex.ru_dt:desktop_reg:213_ret:205793533706_apt:none",
+      "favicon": "doma-karkas.ru"
+     },
+     "ym:s:visits": 166.0,
+     "ym:s:bounceRate": 24.09638554,
+     "ym:s:pageDepth": 1.69879518
+    },
+    {
+     "ym:s:startURL": {
+      "name": "https://doma-karkas.ru/catalog/gazobetonnye/vichentsa/",
+      "favicon": "doma-karkas.ru"
+     },
+     "ym:s:visits": 166.0,
+     "ym:s:bounceRate": 18.6746988,
+     "ym:s:pageDepth": 2.40963855
+    },
+    {
+     "ym:s:startURL": {
+      "name": "https://doma-karkas.ru/catalog/gazobetonnye/bavariya/?utm_device=mobile&utm_region=Москва&utm_position=none_0&utm_match=context&calltouch_tm=yd_c:713935594_gb:5793533706_ad:1919770602298258494_ph:205793533706_st:context_pt:none_p:0_s:dzen.ru_dt:mobile_reg:213_ret:205793533706_apt:none",
+      "favicon": "doma-karkas.ru"
+     },
+     "ym:s:visits": 165.0,
+     "ym:s:bounceRate": 26.06060606,
+     "ym:s:pageDepth": 1.52121212
+    },
+    {
+     "ym:s:startURL": {
+      "name": "https://doma-karkas.ru/catalog/gazobetonnye/bavariya/?utm_device=mobile&utm_region=Москва&utm_position=none_0&utm_match=context&calltouch_tm=yd_c:713935594_gb:5793533706_ad:1919770602298258494_ph:205793533706_st:context_pt:none_p:0_s:m.dzen.ru_dt:mobile_reg:213_ret:205793533706_apt:none",
+      "favicon": "doma-karkas.ru"
+     },
+     "ym:s:visits": 164.0,
+     "ym:s:bounceRate": 25.6097561,
+     "ym:s:pageDepth": 1.81097561
+    },
+    {
+     "ym:s:startURL": {
+      "name": "https://doma-karkas.ru/catalog/gazobetonnye/?arrFilter_46_MIN=66&arrFilter_46_MAX=176&arrFilter_P1_MIN=3037910&arrFilter_P1_MAX=5091029&set_filter=&PAGEN_1=2",
+      "favicon": "doma-karkas.ru"
+     },
+     "ym:s:visits": 163.0,
+     "ym:s:bounceRate": 1.8404908,
+     "ym:s:pageDepth": 1.01226994
+    },
+    {
+     "ym:s:startURL": {
+      "name": "https://doma-karkas.ru/catalog/gazobetonnye/monreal/?utm_device=mobile&utm_region=Москва&utm_position=none_0&utm_match=context&calltouch_tm=yd_c:713935594_gb:5793533706_ad:1919770602298258494_ph:205793533706_st:context_pt:none_p:0_s:m.dzen.ru_dt:mobile_reg:213_ret:205793533706_apt:none",
+      "favicon": "doma-karkas.ru"
+     },
+     "ym:s:visits": 162.0,
+     "ym:s:bounceRate": 27.16049383,
+     "ym:s:pageDepth": 1.45061728
+    },
+    {
+     "ym:s:startURL": {
+      "name": "https://doma-karkas.ru/kontakty/",
+      "favicon": "doma-karkas.ru"
+     },
+     "ym:s:visits": 160.0,
+     "ym:s:bounceRate": 26.25,
+     "ym:s:pageDepth": 2.53125
+    },
+    {
+     "ym:s:startURL": {
+      "name": "https://doma-karkas.ru/catalog/gazobetonnye/myunkhen/?ybaip=1",
+      "favicon": "doma-karkas.ru"
+     },
+     "ym:s:visits": 155.0,
+     "ym:s:bounceRate": 19.35483871,
+     "ym:s:pageDepth": 1.86451613
+    },
+    {
+     "ym:s:startURL": {
+      "name": "https://doma-karkas.ru/catalog/gazobetonnye/?utm_extra=cidl|MK_gazobeton|gid|5754342044|source|video.like|region|213|device|mobile&calltouch_tm=yd_c:710169488_gb:5754342044_ad:1910927416030765868_ph:205754342044_st:context_pt:none_p:0_s:video.like_dt:mobile_reg:213_ret:205754342044_apt:none&yd_campaign_id=710169488&yd_campaign_name=MK_gazobeton&yd_ad_id=1910927416030765868&yd_group_id=5754342044&yd_phrase_id=205754342044&yd_keyword=---autotargeting&yd_match_type=&yd_source_type=context&yd_source=video.like&yd_position_type=none&yd_position=0&yd_device=mobile&yd_region_id=213&ybaip=1",
+      "favicon": "doma-karkas.ru"
+     },
+     "ym:s:visits": 154.0,
+     "ym:s:bounceRate": 23.37662338,
+     "ym:s:pageDepth": 1.01948052
+    },
+    {
+     "ym:s:startURL": {
+      "name": "https://doma-karkas.ru/articles/iz-chego-postroit-dom-v-podmoskove/",
+      "favicon": "doma-karkas.ru"
+     },
+     "ym:s:visits": 151.0,
+     "ym:s:bounceRate": 15.89403974,
+     "ym:s:pageDepth": 1.27152318
+    },
+    {
+     "ym:s:startURL": {
+      "name": "https://doma-karkas.ru/catalog/gazobetonnye/sakramento/",
+      "favicon": "doma-karkas.ru"
+     },
+     "ym:s:visits": 151.0,
+     "ym:s:bounceRate": 38.41059603,
+     "ym:s:pageDepth": 2.43046358
+    },
+    {
+     "ym:s:startURL": {
+      "name": "https://doma-karkas.ru/catalog/kirpichniye/?utm_extra=cidl|Tovarnaya_kampaniya_kirpich|gid|5721909626|source|dsp.yandex.ru|region|213|device|mobile&calltouch_tm=yd_c:707570484_gb:5721909626_ad:17729894224_ph:205721909626_st:context_pt:none_p:0_s:dsp.yandex.ru_dt:mobile_reg:213_ret:205721909626_apt:none&yd_campaign_id=707570484&yd_campaign_name=Tovarnaya_kampaniya_kirpich&yd_ad_id=17729894224&yd_group_id=5721909626&yd_phrase_id=205721909626&yd_keyword=---autotargeting&yd_match_type=&yd_source_type=context&yd_source=dsp.yandex.ru&yd_position_type=none&yd_position=0&yd_device=mobile&yd_region_id=213&ybaip=1",
+      "favicon": "doma-karkas.ru"
+     },
+     "ym:s:visits": 141.0,
+     "ym:s:bounceRate": 48.93617021,
+     "ym:s:pageDepth": 1.0
+    },
+    {
+     "ym:s:startURL": {
+      "name": "https://doma-karkas.ru/catalog/?PAGEN_1=6",
+      "favicon": "doma-karkas.ru"
+     },
+     "ym:s:visits": 139.0,
+     "ym:s:bounceRate": 1.43884892,
+     "ym:s:pageDepth": 1.27338129
+    },
+    {
+     "ym:s:startURL": {
+      "name": "https://doma-karkas.ru/catalog/gazobetonnye/kenigsberg/?utm_device=mobile&utm_region=Moscow&utm_position=none_0&utm_match=context&calltouch_tm=yd_c:713935594_gb:5793533706_ad:1919770602298258494_ph:205793533706_st:context_pt:none_p:0_s:dzen.ru_dt:mobile_reg:213_ret:205793533706_apt:none",
+      "favicon": "doma-karkas.ru"
+     },
+     "ym:s:visits": 139.0,
+     "ym:s:bounceRate": 19.42446043,
+     "ym:s:pageDepth": 1.31654676
+    },
+    {
+     "ym:s:startURL": {
+      "name": "https://doma-karkas.ru/foto-i-video/photogallery/",
+      "favicon": "doma-karkas.ru"
+     },
+     "ym:s:visits": 137.0,
+     "ym:s:bounceRate": 11.67883212,
+     "ym:s:pageDepth": 2.18978102
+    },
+    {
+     "ym:s:startURL": {
+      "name": "https://doma-karkas.ru/catalog/gazobetonnye/monreal/?ybaip=1",
+      "favicon": "doma-karkas.ru"
+     },
+     "ym:s:visits": 134.0,
+     "ym:s:bounceRate": 8.20895522,
+     "ym:s:pageDepth": 1.05223881
+    },
+    {
+     "ym:s:startURL": {
+      "name": "https://doma-karkas.ru/catalog/karkasnye-doma/fedinburg/",
+      "favicon": "doma-karkas.ru"
+     },
+     "ym:s:visits": 132.0,
+     "ym:s:bounceRate": 32.57575758,
+     "ym:s:pageDepth": 1.90909091
+    },
+    {
+     "ym:s:startURL": {
+      "name": "https://doma-karkas.ru/catalog/gazobetonnye/?calltouch_tm=yd_c:713935594_gb:5793533706_ad:1919770602298258496_ph:205793533706_st:search_pt:dynamic_places_p:1_s:yandex.ru_dt:mobile_reg:213_ret:205793533706_apt:none&utm_device=mobile&utm_extra=cidl|Tovarnaya_kampaniya_gazobeton_kopiya|gid|5793533706|source|yandex.ru|region|213|device|mobile&utm_match=search&utm_position=dynamic_places_1&utm_region=Москва",
+      "favicon": "doma-karkas.ru"
+     },
+     "ym:s:visits": 131.0,
+     "ym:s:bounceRate": 8.39694656,
+     "ym:s:pageDepth": 5.25954198
+    },
+    {
+     "ym:s:startURL": {
+      "name": "https://doma-karkas.ru/catalog/gazobetonnye/florenvil/?ybaip=1",
+      "favicon": "doma-karkas.ru"
+     },
+     "ym:s:visits": 128.0,
+     "ym:s:bounceRate": 16.40625,
+     "ym:s:pageDepth": 1.65625
+    },
+    {
+     "ym:s:startURL": {
+      "name": "https://doma-karkas.ru/?calltouch_tm=yd_c:710812832_gb:5761505292_ad:17754465213_ph:205761505292_st:context_pt:none_p:0_s:com.wood.bolt.wordle.screw.nuts.puzzle_dt:mobile_reg:213_ret:205761505292_apt:none&ybaip=1",
+      "favicon": "doma-karkas.ru"
+     },
+     "ym:s:visits": 125.0,
+     "ym:s:bounceRate": 32.0,
+     "ym:s:pageDepth": 1.0
+    },
+    {
+     "ym:s:startURL": {
+      "name": "https://doma-karkas.ru/catalog/gazobetonnye/frimont/",
+      "favicon": "doma-karkas.ru"
+     },
+     "ym:s:visits": 125.0,
+     "ym:s:bounceRate": 16.8,
+     "ym:s:pageDepth": 3.44
+    },
+    {
+     "ym:s:startURL": {
+      "name": "https://doma-karkas.ru/catalog/gazobetonnye/monreal/?utm_device=desktop&utm_region=Moscow&utm_position=none_0&utm_match=context&calltouch_tm=yd_c:713935594_gb:5793533706_ad:1919770602298258494_ph:205793533706_st:context_pt:none_p:0_s:dzen.ru_dt:desktop_reg:213_ret:205793533706_apt:none",
+      "favicon": "doma-karkas.ru"
+     },
+     "ym:s:visits": 124.0,
+     "ym:s:bounceRate": 6.4516129,
+     "ym:s:pageDepth": 1.48387097
+    }
+   ],
+   "error": null
+  },
+  "geo": {
+   "dims": [
+    "ym:s:regionCity"
+   ],
+   "metrics": [
+    "ym:s:visits",
+    "ym:s:bounceRate"
+   ],
+   "rows": [
+    {
+     "ym:s:regionCity": {
+      "iso_name": "RU-MOW",
+      "id": "213",
+      "name": "Moscow"
+     },
+     "ym:s:visits": 67319.0,
+     "ym:s:bounceRate": 27.49001025
+    },
+    {
+     "ym:s:regionCity": {
+      "iso_name": "RU BLA",
+      "id": "10716",
+      "name": "Balashiha"
+     },
+     "ym:s:visits": 2564.0,
+     "ym:s:bounceRate": 25.5850234
+    },
+    {
+     "ym:s:regionCity": {
+      "iso_name": "RU KKI",
+      "id": "10758",
+      "name": "Himki"
+     },
+     "ym:s:visits": 2053.0,
+     "ym:s:bounceRate": 27.81295665
+    },
+    {
+     "ym:s:regionCity": {
+      "iso_name": "RU-SPE",
+      "id": "2",
+      "name": "Saint Petersburg"
+     },
+     "ym:s:visits": 1901.0,
+     "ym:s:bounceRate": 31.87795897
+    },
+    {
+     "ym:s:regionCity": {
+      "iso_name": "RU PDK",
+      "id": "10747",
+      "name": "Podolsk"
+     },
+     "ym:s:visits": 1839.0,
+     "ym:s:bounceRate": 26.4274062
+    },
+    {
+     "ym:s:regionCity": {
+      "iso_name": null,
+      "id": "10725",
+      "name": "Domodedovo"
+     },
+     "ym:s:visits": 1431.0,
+     "ym:s:bounceRate": 31.93570929
+    },
+    {
+     "ym:s:regionCity": {
+      "iso_name": null,
+      "id": "10738",
+      "name": "Lubercy"
+     },
+     "ym:s:visits": 1246.0,
+     "ym:s:bounceRate": 24.15730337
+    },
+    {
+     "ym:s:regionCity": {
+      "iso_name": null,
+      "id": "10740",
+      "name": "Mytischi"
+     },
+     "ym:s:visits": 1231.0,
+     "ym:s:bounceRate": 28.67587327
+    },
+    {
+     "ym:s:regionCity": {
+      "iso_name": "RU OSO",
+      "id": "10743",
+      "name": "Odincovo"
+     },
+     "ym:s:visits": 1091.0,
+     "ym:s:bounceRate": 23.28139322
+    },
+    {
+     "ym:s:regionCity": {
+      "iso_name": "RU KAD",
+      "id": "20728",
+      "name": "Korolev"
+     },
+     "ym:s:visits": 1071.0,
+     "ym:s:bounceRate": 27.9178338
+    },
+    {
+     "ym:s:regionCity": {
+      "iso_name": "RU SGV",
+      "id": "10752",
+      "name": "Sergiev Posad"
+     },
+     "ym:s:visits": 1031.0,
+     "ym:s:bounceRate": 24.92725509
+    },
+    {
+     "ym:s:regionCity": {
+      "iso_name": "RU EKA",
+      "id": "54",
+      "name": "Yekaterinburg"
+     },
+     "ym:s:visits": 1013.0,
+     "ym:s:bounceRate": 12.63573544
+    },
+    {
+     "ym:s:regionCity": {
+      "iso_name": "RU KLM",
+      "id": "10734",
+      "name": "Kolomna"
+     },
+     "ym:s:visits": 952.0,
+     "ym:s:bounceRate": 33.29831933
+    },
+    {
+     "ym:s:regionCity": {
+      "iso_name": "RU KLN",
+      "id": "10733",
+      "name": "Klin"
+     },
+     "ym:s:visits": 936.0,
+     "ym:s:bounceRate": 18.26923077
+    },
+    {
+     "ym:s:regionCity": {
+      "iso_name": "RU RAM",
+      "id": "10750",
+      "name": "Ramenskoe"
+     },
+     "ym:s:visits": 920.0,
+     "ym:s:bounceRate": 26.19565217
+    },
+    {
+     "ym:s:regionCity": {
+      "iso_name": "RU SHC",
+      "id": "10765",
+      "name": "Shelkovo"
+     },
+     "ym:s:visits": 909.0,
+     "ym:s:bounceRate": 28.27282728
+    },
+    {
+     "ym:s:regionCity": {
+      "iso_name": "RU SHV",
+      "id": "10754",
+      "name": "Serpuhov"
+     },
+     "ym:s:visits": 879.0,
+     "ym:s:bounceRate": 28.55517634
+    },
+    {
+     "ym:s:regionCity": {
+      "iso_name": "RU LBA",
+      "id": "21641",
+      "name": "Lobnja"
+     },
+     "ym:s:visits": 874.0,
+     "ym:s:bounceRate": 15.90389016
+    },
+    {
+     "ym:s:regionCity": {
+      "iso_name": "RU KRS",
+      "id": "10735",
+      "name": "Krasnogorsk"
+     },
+     "ym:s:visits": 727.0,
+     "ym:s:bounceRate": 22.14580468
+    },
+    {
+     "ym:s:regionCity": {
+      "iso_name": "RU NGI",
+      "id": "10742",
+      "name": "Noginsk"
+     },
+     "ym:s:visits": 711.0,
+     "ym:s:bounceRate": 27.98874824
+    },
+    {
+     "ym:s:regionCity": {
+      "iso_name": "RU SPO",
+      "id": "10756",
+      "name": "Stupino"
+     },
+     "ym:s:visits": 701.0,
+     "ym:s:bounceRate": 32.38231098
+    },
+    {
+     "ym:s:regionCity": {
+      "iso_name": null,
+      "id": "20523",
+      "name": "Elektrostal"
+     },
+     "ym:s:visits": 674.0,
+     "ym:s:bounceRate": 27.59643917
+    },
+    {
+     "ym:s:regionCity": {
+      "iso_name": "RU GOJ",
+      "id": "47",
+      "name": "Nizhny Novgorod"
+     },
+     "ym:s:visits": 663.0,
+     "ym:s:bounceRate": 31.07088989
+    },
+    {
+     "ym:s:regionCity": {
+      "iso_name": "RU ZSY",
+      "id": "20571",
+      "name": "Zhukovskiy"
+     },
+     "ym:s:visits": 643.0,
+     "ym:s:bounceRate": 23.01710731
+    },
+    {
+     "ym:s:regionCity": {
+      "iso_name": "RU PSH",
+      "id": "10748",
+      "name": "Pushkino"
+     },
+     "ym:s:visits": 593.0,
+     "ym:s:bounceRate": 28.33052277
+    },
+    {
+     "ym:s:regionCity": {
+      "iso_name": "RU DTV",
+      "id": "10723",
+      "name": "Dmitrov"
+     },
+     "ym:s:visits": 583.0,
+     "ym:s:bounceRate": 29.67409949
+    },
+    {
+     "ym:s:regionCity": {
+      "iso_name": null,
+      "id": "10719",
+      "name": "Vidnoe"
+     },
+     "ym:s:visits": 573.0,
+     "ym:s:bounceRate": 24.60732984
+    },
+    {
+     "ym:s:regionCity": {
+      "iso_name": "RU OVB",
+      "id": "65",
+      "name": "Novosibirsk"
+     },
+     "ym:s:visits": 552.0,
+     "ym:s:bounceRate": 17.75362319
+    },
+    {
+     "ym:s:regionCity": {
+      "iso_name": "RU DOL",
+      "id": "214",
+      "name": "Dolgoprudniy"
+     },
+     "ym:s:visits": 550.0,
+     "ym:s:bounceRate": 25.45454545
+    },
+    {
+     "ym:s:regionCity": {
+      "iso_name": null,
+      "id": "215",
+      "name": "Dubna"
+     },
+     "ym:s:visits": 523.0,
+     "ym:s:bounceRate": 25.8126195
+    },
+    {
+     "ym:s:regionCity": {
+      "iso_name": "RU IST",
+      "id": "10731",
+      "name": "Istra"
+     },
+     "ym:s:visits": 520.0,
+     "ym:s:bounceRate": 28.65384615
+    },
+    {
+     "ym:s:regionCity": {
+      "iso_name": "RU HZO",
+      "id": "10745",
+      "name": "Orehovo-Zuevo"
+     },
+     "ym:s:visits": 518.0,
+     "ym:s:bounceRate": 28.18532819
+    },
+    {
+     "ym:s:regionCity": {
+      "iso_name": "RU VKS",
+      "id": "10722",
+      "name": "Voskresensk"
+     },
+     "ym:s:visits": 484.0,
+     "ym:s:bounceRate": 33.26446281
+    },
+    {
+     "ym:s:regionCity": {
+      "iso_name": "RU RTV",
+      "id": "21621",
+      "name": "Reutov"
+     },
+     "ym:s:visits": 482.0,
+     "ym:s:bounceRate": 29.46058091
+    },
+    {
+     "ym:s:regionCity": {
+      "iso_name": "RU CKV",
+      "id": "10761",
+      "name": "Chehov"
+     },
+     "ym:s:visits": 481.0,
+     "ym:s:bounceRate": 22.66112266
+    },
+    {
+     "ym:s:regionCity": {
+      "iso_name": "RU NFM",
+      "id": "10741",
+      "name": "Naro-Fominsk"
+     },
+     "ym:s:visits": 404.0,
+     "ym:s:bounceRate": 33.66336634
+    },
+    {
+     "ym:s:regionCity": {
+      "iso_name": "RU EVK",
+      "id": "10727",
+      "name": "Egorievsk"
+     },
+     "ym:s:visits": 401.0,
+     "ym:s:bounceRate": 26.68329177
+    },
+    {
+     "ym:s:regionCity": {
+      "iso_name": null,
+      "id": "21623",
+      "name": "Ivanteevka"
+     },
+     "ym:s:visits": 399.0,
+     "ym:s:bounceRate": 31.57894737
+    },
+    {
+     "ym:s:regionCity": {
+      "iso_name": null,
+      "id": "21619",
+      "name": "Fryazino"
+     },
+     "ym:s:visits": 386.0,
+     "ym:s:bounceRate": 26.16580311
+    },
+    {
+     "ym:s:regionCity": {
+      "iso_name": "RU CEK",
+      "id": "56",
+      "name": "Chelyabinsk"
+     },
+     "ym:s:visits": 375.0,
+     "ym:s:bounceRate": 24.26666667
+    }
+   ],
+   "error": null
+  },
+  "search_phrase": {
+   "dims": [
+    "ym:s:searchPhrase"
+   ],
+   "metrics": [
+    "ym:s:visits",
+    "ym:s:bounceRate"
+   ],
+   "rows": [
+    {
+     "ym:s:searchPhrase": {
+      "name": "интел групп строительная компания",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%B8%D0%BD%D1%82%D0%B5%D0%BB%20%D0%B3%D1%80%D1%83%D0%BF%D0%BF%20%D1%81%D1%82%D1%80%D0%BE%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F%20%D0%BA%D0%BE%D0%BC%D0%BF%D0%B0%D0%BD%D0%B8%D1%8F"
+     },
+     "ym:s:visits": 159.0,
+     "ym:s:bounceRate": 3.77358491
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "интел групп",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%B8%D0%BD%D1%82%D0%B5%D0%BB%20%D0%B3%D1%80%D1%83%D0%BF%D0%BF"
+     },
+     "ym:s:visits": 114.0,
+     "ym:s:bounceRate": 2.63157895
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "дом из керамических блоков под ключ москва",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%B4%D0%BE%D0%BC%20%D0%B8%D0%B7%20%D0%BA%D0%B5%D1%80%D0%B0%D0%BC%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D1%85%20%D0%B1%D0%BB%D0%BE%D0%BA%D0%BE%D0%B2%20%D0%BF%D0%BE%D0%B4%20%D0%BA%D0%BB%D1%8E%D1%87%20%D0%BC%D0%BE%D1%81%D0%BA%D0%B2%D0%B0"
+     },
+     "ym:s:visits": 79.0,
+     "ym:s:bounceRate": 72.15189873
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "дом из газоблока под ключ москва",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%B4%D0%BE%D0%BC%20%D0%B8%D0%B7%20%D0%B3%D0%B0%D0%B7%D0%BE%D0%B1%D0%BB%D0%BE%D0%BA%D0%B0%20%D0%BF%D0%BE%D0%B4%20%D0%BA%D0%BB%D1%8E%D1%87%20%D0%BC%D0%BE%D1%81%D0%BA%D0%B2%D0%B0"
+     },
+     "ym:s:visits": 47.0,
+     "ym:s:bounceRate": 55.31914894
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "Дом из керамических блоков под ключ москва",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%94%D0%BE%D0%BC%20%D0%B8%D0%B7%20%D0%BA%D0%B5%D1%80%D0%B0%D0%BC%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D1%85%20%D0%B1%D0%BB%D0%BE%D0%BA%D0%BE%D0%B2%20%D0%BF%D0%BE%D0%B4%20%D0%BA%D0%BB%D1%8E%D1%87%20%D0%BC%D0%BE%D1%81%D0%BA%D0%B2%D0%B0"
+     },
+     "ym:s:visits": 38.0,
+     "ym:s:bounceRate": 81.57894737
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "дом из газобетона",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%B4%D0%BE%D0%BC%20%D0%B8%D0%B7%20%D0%B3%D0%B0%D0%B7%D0%BE%D0%B1%D0%B5%D1%82%D0%BE%D0%BD%D0%B0"
+     },
+     "ym:s:visits": 38.0,
+     "ym:s:bounceRate": 31.57894737
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "интел групп строительная компания официальный сайт",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%B8%D0%BD%D1%82%D0%B5%D0%BB%20%D0%B3%D1%80%D1%83%D0%BF%D0%BF%20%D1%81%D1%82%D1%80%D0%BE%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F%20%D0%BA%D0%BE%D0%BC%D0%BF%D0%B0%D0%BD%D0%B8%D1%8F%20%D0%BE%D1%84%D0%B8%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D1%81%D0%B0%D0%B9%D1%82"
+     },
+     "ym:s:visits": 26.0,
+     "ym:s:bounceRate": 0.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "проекты домов из керамических блоков",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D1%8B%20%D0%B4%D0%BE%D0%BC%D0%BE%D0%B2%20%D0%B8%D0%B7%20%D0%BA%D0%B5%D1%80%D0%B0%D0%BC%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D1%85%20%D0%B1%D0%BB%D0%BE%D0%BA%D0%BE%D0%B2"
+     },
+     "ym:s:visits": 26.0,
+     "ym:s:bounceRate": 92.30769231
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "интелгрупп",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%B8%D0%BD%D1%82%D0%B5%D0%BB%D0%B3%D1%80%D1%83%D0%BF%D0%BF"
+     },
+     "ym:s:visits": 24.0,
+     "ym:s:bounceRate": 0.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "Строительство домов под ключ",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%A1%D1%82%D1%80%D0%BE%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D1%81%D1%82%D0%B2%D0%BE%20%D0%B4%D0%BE%D0%BC%D0%BE%D0%B2%20%D0%BF%D0%BE%D0%B4%20%D0%BA%D0%BB%D1%8E%D1%87"
+     },
+     "ym:s:visits": 23.0,
+     "ym:s:bounceRate": 86.95652174
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "doma-karkas.ru",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=doma-karkas.ru"
+     },
+     "ym:s:visits": 22.0,
+     "ym:s:bounceRate": 13.63636364
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "дома из газобетона",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%B4%D0%BE%D0%BC%D0%B0%20%D0%B8%D0%B7%20%D0%B3%D0%B0%D0%B7%D0%BE%D0%B1%D0%B5%D1%82%D0%BE%D0%BD%D0%B0"
+     },
+     "ym:s:visits": 21.0,
+     "ym:s:bounceRate": 38.0952381
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "проекты домов",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D1%8B%20%D0%B4%D0%BE%D0%BC%D0%BE%D0%B2"
+     },
+     "ym:s:visits": 21.0,
+     "ym:s:bounceRate": 33.33333333
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "Проекты домов из керамических блоков",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D1%8B%20%D0%B4%D0%BE%D0%BC%D0%BE%D0%B2%20%D0%B8%D0%B7%20%D0%BA%D0%B5%D1%80%D0%B0%D0%BC%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D1%85%20%D0%B1%D0%BB%D0%BE%D0%BA%D0%BE%D0%B2"
+     },
+     "ym:s:visits": 20.0,
+     "ym:s:bounceRate": 95.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "дом из газобетона под ключ",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%B4%D0%BE%D0%BC%20%D0%B8%D0%B7%20%D0%B3%D0%B0%D0%B7%D0%BE%D0%B1%D0%B5%D1%82%D0%BE%D0%BD%D0%B0%20%D0%BF%D0%BE%D0%B4%20%D0%BA%D0%BB%D1%8E%D1%87"
+     },
+     "ym:s:visits": 17.0,
+     "ym:s:bounceRate": 35.29411765
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "Строительство частного дома под ключ в московской области",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%A1%D1%82%D1%80%D0%BE%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D1%81%D1%82%D0%B2%D0%BE%20%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BE%D0%BC%D0%B0%20%D0%BF%D0%BE%D0%B4%20%D0%BA%D0%BB%D1%8E%D1%87%20%D0%B2%20%D0%BC%D0%BE%D1%81%D0%BA%D0%BE%D0%B2%D1%81%D0%BA%D0%BE%D0%B9%20%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D0%B8"
+     },
+     "ym:s:visits": 16.0,
+     "ym:s:bounceRate": 75.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "дом с плоской крышей под ключ москва",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%B4%D0%BE%D0%BC%20%D1%81%20%D0%BF%D0%BB%D0%BE%D1%81%D0%BA%D0%BE%D0%B9%20%D0%BA%D1%80%D1%8B%D1%88%D0%B5%D0%B9%20%D0%BF%D0%BE%D0%B4%20%D0%BA%D0%BB%D1%8E%D1%87%20%D0%BC%D0%BE%D1%81%D0%BA%D0%B2%D0%B0"
+     },
+     "ym:s:visits": 14.0,
+     "ym:s:bounceRate": 71.42857143
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "дома каркас ру",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%B4%D0%BE%D0%BC%D0%B0%20%D0%BA%D0%B0%D1%80%D0%BA%D0%B0%D1%81%20%D1%80%D1%83"
+     },
+     "ym:s:visits": 14.0,
+     "ym:s:bounceRate": 0.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "интел груп",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%B8%D0%BD%D1%82%D0%B5%D0%BB%20%D0%B3%D1%80%D1%83%D0%BF"
+     },
+     "ym:s:visits": 14.0,
+     "ym:s:bounceRate": 7.14285714
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "отмостка",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%BE%D1%82%D0%BC%D0%BE%D1%81%D1%82%D0%BA%D0%B0"
+     },
+     "ym:s:visits": 14.0,
+     "ym:s:bounceRate": 0.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "дом из пеноблока под ключ",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%B4%D0%BE%D0%BC%20%D0%B8%D0%B7%20%D0%BF%D0%B5%D0%BD%D0%BE%D0%B1%D0%BB%D0%BE%D0%BA%D0%B0%20%D0%BF%D0%BE%D0%B4%20%D0%BA%D0%BB%D1%8E%D1%87"
+     },
+     "ym:s:visits": 13.0,
+     "ym:s:bounceRate": 84.61538462
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "интелл групп",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%B8%D0%BD%D1%82%D0%B5%D0%BB%D0%BB%20%D0%B3%D1%80%D1%83%D0%BF%D0%BF"
+     },
+     "ym:s:visits": 13.0,
+     "ym:s:bounceRate": 15.38461538
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "чем крепить мауэрлат к газоблоку",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D1%87%D0%B5%D0%BC%20%D0%BA%D1%80%D0%B5%D0%BF%D0%B8%D1%82%D1%8C%20%D0%BC%D0%B0%D1%83%D1%8D%D1%80%D0%BB%D0%B0%D1%82%20%D0%BA%20%D0%B3%D0%B0%D0%B7%D0%BE%D0%B1%D0%BB%D0%BE%D0%BA%D1%83"
+     },
+     "ym:s:visits": 13.0,
+     "ym:s:bounceRate": 7.69230769
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "Строительство домов в москве",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%A1%D1%82%D1%80%D0%BE%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D1%81%D1%82%D0%B2%D0%BE%20%D0%B4%D0%BE%D0%BC%D0%BE%D0%B2%20%D0%B2%20%D0%BC%D0%BE%D1%81%D0%BA%D0%B2%D0%B5"
+     },
+     "ym:s:visits": 12.0,
+     "ym:s:bounceRate": 0.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "дом из кирпича",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%B4%D0%BE%D0%BC%20%D0%B8%D0%B7%20%D0%BA%D0%B8%D1%80%D0%BF%D0%B8%D1%87%D0%B0"
+     },
+     "ym:s:visits": 12.0,
+     "ym:s:bounceRate": 83.33333333
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "дома каркас",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%B4%D0%BE%D0%BC%D0%B0%20%D0%BA%D0%B0%D1%80%D0%BA%D0%B0%D1%81"
+     },
+     "ym:s:visits": 12.0,
+     "ym:s:bounceRate": 0.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "интел групп строительная",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%B8%D0%BD%D1%82%D0%B5%D0%BB%20%D0%B3%D1%80%D1%83%D0%BF%D0%BF%20%D1%81%D1%82%D1%80%D0%BE%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F"
+     },
+     "ym:s:visits": 12.0,
+     "ym:s:bounceRate": 0.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "как закрепить мауэрлат к газобетону",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%BA%D0%B0%D0%BA%20%D0%B7%D0%B0%D0%BA%D1%80%D0%B5%D0%BF%D0%B8%D1%82%D1%8C%20%D0%BC%D0%B0%D1%83%D1%8D%D1%80%D0%BB%D0%B0%D1%82%20%D0%BA%20%D0%B3%D0%B0%D0%B7%D0%BE%D0%B1%D0%B5%D1%82%D0%BE%D0%BD%D1%83"
+     },
+     "ym:s:visits": 12.0,
+     "ym:s:bounceRate": 0.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "крепление мауэрлата к газобетону",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%BA%D1%80%D0%B5%D0%BF%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%BC%D0%B0%D1%83%D1%8D%D1%80%D0%BB%D0%B0%D1%82%D0%B0%20%D0%BA%20%D0%B3%D0%B0%D0%B7%D0%BE%D0%B1%D0%B5%D1%82%D0%BE%D0%BD%D1%83"
+     },
+     "ym:s:visits": 12.0,
+     "ym:s:bounceRate": 16.66666667
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "дом 7 на 7 из газобетона",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%B4%D0%BE%D0%BC%207%20%D0%BD%D0%B0%207%20%D0%B8%D0%B7%20%D0%B3%D0%B0%D0%B7%D0%BE%D0%B1%D0%B5%D1%82%D0%BE%D0%BD%D0%B0"
+     },
+     "ym:s:visits": 11.0,
+     "ym:s:bounceRate": 72.72727273
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "дом монреаль",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%B4%D0%BE%D0%BC%20%D0%BC%D0%BE%D0%BD%D1%80%D0%B5%D0%B0%D0%BB%D1%8C"
+     },
+     "ym:s:visits": 11.0,
+     "ym:s:bounceRate": 36.36363636
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "Дома из пеноблоков под ключ недорого",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%94%D0%BE%D0%BC%D0%B0%20%D0%B8%D0%B7%20%D0%BF%D0%B5%D0%BD%D0%BE%D0%B1%D0%BB%D0%BE%D0%BA%D0%BE%D0%B2%20%D0%BF%D0%BE%D0%B4%20%D0%BA%D0%BB%D1%8E%D1%87%20%D0%BD%D0%B5%D0%B4%D0%BE%D1%80%D0%BE%D0%B3%D0%BE"
+     },
+     "ym:s:visits": 10.0,
+     "ym:s:bounceRate": 10.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "дома из газобетона под ключ",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%B4%D0%BE%D0%BC%D0%B0%20%D0%B8%D0%B7%20%D0%B3%D0%B0%D0%B7%D0%BE%D0%B1%D0%B5%D1%82%D0%BE%D0%BD%D0%B0%20%D0%BF%D0%BE%D0%B4%20%D0%BA%D0%BB%D1%8E%D1%87"
+     },
+     "ym:s:visits": 10.0,
+     "ym:s:bounceRate": 70.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "коттеджи под ключ",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%BA%D0%BE%D1%82%D1%82%D0%B5%D0%B4%D0%B6%D0%B8%20%D0%BF%D0%BE%D0%B4%20%D0%BA%D0%BB%D1%8E%D1%87"
+     },
+     "ym:s:visits": 10.0,
+     "ym:s:bounceRate": 70.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "мауэрлат на газобетон",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%BC%D0%B0%D1%83%D1%8D%D1%80%D0%BB%D0%B0%D1%82%20%D0%BD%D0%B0%20%D0%B3%D0%B0%D0%B7%D0%BE%D0%B1%D0%B5%D1%82%D0%BE%D0%BD"
+     },
+     "ym:s:visits": 10.0,
+     "ym:s:bounceRate": 0.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "проекты домов из газоблока",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D1%8B%20%D0%B4%D0%BE%D0%BC%D0%BE%D0%B2%20%D0%B8%D0%B7%20%D0%B3%D0%B0%D0%B7%D0%BE%D0%B1%D0%BB%D0%BE%D0%BA%D0%B0"
+     },
+     "ym:s:visits": 10.0,
+     "ym:s:bounceRate": 100.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "дом из пеноблоков",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%B4%D0%BE%D0%BC%20%D0%B8%D0%B7%20%D0%BF%D0%B5%D0%BD%D0%BE%D0%B1%D0%BB%D0%BE%D0%BA%D0%BE%D0%B2"
+     },
+     "ym:s:visits": 9.0,
+     "ym:s:bounceRate": 33.33333333
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "дом из пеноблоков под ключ московская область",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%B4%D0%BE%D0%BC%20%D0%B8%D0%B7%20%D0%BF%D0%B5%D0%BD%D0%BE%D0%B1%D0%BB%D0%BE%D0%BA%D0%BE%D0%B2%20%D0%BF%D0%BE%D0%B4%20%D0%BA%D0%BB%D1%8E%D1%87%20%D0%BC%D0%BE%D1%81%D0%BA%D0%BE%D0%B2%D1%81%D0%BA%D0%B0%D1%8F%20%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%8C"
+     },
+     "ym:s:visits": 9.0,
+     "ym:s:bounceRate": 88.88888889
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "построить дом из пеноблока под ключ цена",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%BF%D0%BE%D1%81%D1%82%D1%80%D0%BE%D0%B8%D1%82%D1%8C%20%D0%B4%D0%BE%D0%BC%20%D0%B8%D0%B7%20%D0%BF%D0%B5%D0%BD%D0%BE%D0%B1%D0%BB%D0%BE%D0%BA%D0%B0%20%D0%BF%D0%BE%D0%B4%20%D0%BA%D0%BB%D1%8E%D1%87%20%D1%86%D0%B5%D0%BD%D0%B0"
+     },
+     "ym:s:visits": 9.0,
+     "ym:s:bounceRate": 88.88888889
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "расстояние между шпильками в армопояс под мауэрлат",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D1%80%D0%B0%D1%81%D1%81%D1%82%D0%BE%D1%8F%D0%BD%D0%B8%D0%B5%20%D0%BC%D0%B5%D0%B6%D0%B4%D1%83%20%D1%88%D0%BF%D0%B8%D0%BB%D1%8C%D0%BA%D0%B0%D0%BC%D0%B8%20%D0%B2%20%D0%B0%D1%80%D0%BC%D0%BE%D0%BF%D0%BE%D1%8F%D1%81%20%D0%BF%D0%BE%D0%B4%20%D0%BC%D0%B0%D1%83%D1%8D%D1%80%D0%BB%D0%B0%D1%82"
+     },
+     "ym:s:visits": 9.0,
+     "ym:s:bounceRate": 0.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "срок службы пеноблока",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D1%81%D1%80%D0%BE%D0%BA%20%D1%81%D0%BB%D1%83%D0%B6%D0%B1%D1%8B%20%D0%BF%D0%B5%D0%BD%D0%BE%D0%B1%D0%BB%D0%BE%D0%BA%D0%B0"
+     },
+     "ym:s:visits": 9.0,
+     "ym:s:bounceRate": 0.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "Дом под ключ",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%94%D0%BE%D0%BC%20%D0%BF%D0%BE%D0%B4%20%D0%BA%D0%BB%D1%8E%D1%87"
+     },
+     "ym:s:visits": 8.0,
+     "ym:s:bounceRate": 100.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "Стяжка стен деревянного дома",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%A1%D1%82%D1%8F%D0%B6%D0%BA%D0%B0%20%D1%81%D1%82%D0%B5%D0%BD%20%D0%B4%D0%B5%D1%80%D0%B5%D0%B2%D1%8F%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BE%D0%BC%D0%B0"
+     },
+     "ym:s:visits": 8.0,
+     "ym:s:bounceRate": 0.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "дом из газобетона под ключ цена",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%B4%D0%BE%D0%BC%20%D0%B8%D0%B7%20%D0%B3%D0%B0%D0%B7%D0%BE%D0%B1%D0%B5%D1%82%D0%BE%D0%BD%D0%B0%20%D0%BF%D0%BE%D0%B4%20%D0%BA%D0%BB%D1%8E%D1%87%20%D1%86%D0%B5%D0%BD%D0%B0"
+     },
+     "ym:s:visits": 8.0,
+     "ym:s:bounceRate": 50.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "дом из деревянных блоков",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%B4%D0%BE%D0%BC%20%D0%B8%D0%B7%20%D0%B4%D0%B5%D1%80%D0%B5%D0%B2%D1%8F%D0%BD%D0%BD%D1%8B%D1%85%20%D0%B1%D0%BB%D0%BE%D0%BA%D0%BE%D0%B2"
+     },
+     "ym:s:visits": 8.0,
+     "ym:s:bounceRate": 62.5
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "дом из пеноблоков под ключ проекты и цены",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%B4%D0%BE%D0%BC%20%D0%B8%D0%B7%20%D0%BF%D0%B5%D0%BD%D0%BE%D0%B1%D0%BB%D0%BE%D0%BA%D0%BE%D0%B2%20%D0%BF%D0%BE%D0%B4%20%D0%BA%D0%BB%D1%8E%D1%87%20%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D1%8B%20%D0%B8%20%D1%86%D0%B5%D0%BD%D1%8B"
+     },
+     "ym:s:visits": 8.0,
+     "ym:s:bounceRate": 25.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "дом под ключ из газобетона цена",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%B4%D0%BE%D0%BC%20%D0%BF%D0%BE%D0%B4%20%D0%BA%D0%BB%D1%8E%D1%87%20%D0%B8%D0%B7%20%D0%B3%D0%B0%D0%B7%D0%BE%D0%B1%D0%B5%D1%82%D0%BE%D0%BD%D0%B0%20%D1%86%D0%B5%D0%BD%D0%B0"
+     },
+     "ym:s:visits": 8.0,
+     "ym:s:bounceRate": 75.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "дома из пеноблоков под ключ недорого",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%B4%D0%BE%D0%BC%D0%B0%20%D0%B8%D0%B7%20%D0%BF%D0%B5%D0%BD%D0%BE%D0%B1%D0%BB%D0%BE%D0%BA%D0%BE%D0%B2%20%D0%BF%D0%BE%D0%B4%20%D0%BA%D0%BB%D1%8E%D1%87%20%D0%BD%D0%B5%D0%B4%D0%BE%D1%80%D0%BE%D0%B3%D0%BE"
+     },
+     "ym:s:visits": 8.0,
+     "ym:s:bounceRate": 0.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "строительство домов из газобетона",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D1%81%D1%82%D1%80%D0%BE%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D1%81%D1%82%D0%B2%D0%BE%20%D0%B4%D0%BE%D0%BC%D0%BE%D0%B2%20%D0%B8%D0%B7%20%D0%B3%D0%B0%D0%B7%D0%BE%D0%B1%D0%B5%D1%82%D0%BE%D0%BD%D0%B0"
+     },
+     "ym:s:visits": 8.0,
+     "ym:s:bounceRate": 25.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "строительство каркасных домов москва",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D1%81%D1%82%D1%80%D0%BE%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D1%81%D1%82%D0%B2%D0%BE%20%D0%BA%D0%B0%D1%80%D0%BA%D0%B0%D1%81%D0%BD%D1%8B%D1%85%20%D0%B4%D0%BE%D0%BC%D0%BE%D0%B2%20%D0%BC%D0%BE%D1%81%D0%BA%D0%B2%D0%B0"
+     },
+     "ym:s:visits": 8.0,
+     "ym:s:bounceRate": 75.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "Построить дом под ключ",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%9F%D0%BE%D1%81%D1%82%D1%80%D0%BE%D0%B8%D1%82%D1%8C%20%D0%B4%D0%BE%D0%BC%20%D0%BF%D0%BE%D0%B4%20%D0%BA%D0%BB%D1%8E%D1%87"
+     },
+     "ym:s:visits": 7.0,
+     "ym:s:bounceRate": 100.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "дачный дом из газобетона фото",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%B4%D0%B0%D1%87%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%BE%D0%BC%20%D0%B8%D0%B7%20%D0%B3%D0%B0%D0%B7%D0%BE%D0%B1%D0%B5%D1%82%D0%BE%D0%BD%D0%B0%20%D1%84%D0%BE%D1%82%D0%BE"
+     },
+     "ym:s:visits": 7.0,
+     "ym:s:bounceRate": 42.85714286
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "как крепить мауэрлат к газобетону с армопоясом",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%BA%D0%B0%D0%BA%20%D0%BA%D1%80%D0%B5%D0%BF%D0%B8%D1%82%D1%8C%20%D0%BC%D0%B0%D1%83%D1%8D%D1%80%D0%BB%D0%B0%D1%82%20%D0%BA%20%D0%B3%D0%B0%D0%B7%D0%BE%D0%B1%D0%B5%D1%82%D0%BE%D0%BD%D1%83%20%D1%81%20%D0%B0%D1%80%D0%BC%D0%BE%D0%BF%D0%BE%D1%8F%D1%81%D0%BE%D0%BC"
+     },
+     "ym:s:visits": 7.0,
+     "ym:s:bounceRate": 0.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "каркасные дома",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%BA%D0%B0%D1%80%D0%BA%D0%B0%D1%81%D0%BD%D1%8B%D0%B5%20%D0%B4%D0%BE%D0%BC%D0%B0"
+     },
+     "ym:s:visits": 7.0,
+     "ym:s:bounceRate": 42.85714286
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "строительство дома под ключ",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D1%81%D1%82%D1%80%D0%BE%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D1%81%D1%82%D0%B2%D0%BE%20%D0%B4%D0%BE%D0%BC%D0%B0%20%D0%BF%D0%BE%D0%B4%20%D0%BA%D0%BB%D1%8E%D1%87"
+     },
+     "ym:s:visits": 7.0,
+     "ym:s:bounceRate": 42.85714286
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "строительство домов",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D1%81%D1%82%D1%80%D0%BE%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D1%81%D1%82%D0%B2%D0%BE%20%D0%B4%D0%BE%D0%BC%D0%BE%D0%B2"
+     },
+     "ym:s:visits": 7.0,
+     "ym:s:bounceRate": 42.85714286
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "intel group строительная компания",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=intel%20group%20%D1%81%D1%82%D1%80%D0%BE%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F%20%D0%BA%D0%BE%D0%BC%D0%BF%D0%B0%D0%BD%D0%B8%D1%8F"
+     },
+     "ym:s:visits": 6.0,
+     "ym:s:bounceRate": 0.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "барнхаус из газобетона",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%B1%D0%B0%D1%80%D0%BD%D1%85%D0%B0%D1%83%D1%81%20%D0%B8%D0%B7%20%D0%B3%D0%B0%D0%B7%D0%BE%D0%B1%D0%B5%D1%82%D0%BE%D0%BD%D0%B0"
+     },
+     "ym:s:visits": 6.0,
+     "ym:s:bounceRate": 33.33333333
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "дачный дом из газобетона",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%B4%D0%B0%D1%87%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%BE%D0%BC%20%D0%B8%D0%B7%20%D0%B3%D0%B0%D0%B7%D0%BE%D0%B1%D0%B5%D1%82%D0%BE%D0%BD%D0%B0"
+     },
+     "ym:s:visits": 6.0,
+     "ym:s:bounceRate": 100.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "дом из пеноблока",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%B4%D0%BE%D0%BC%20%D0%B8%D0%B7%20%D0%BF%D0%B5%D0%BD%D0%BE%D0%B1%D0%BB%D0%BE%D0%BA%D0%B0"
+     },
+     "ym:s:visits": 6.0,
+     "ym:s:bounceRate": 33.33333333
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "дом из пеноблоков под ключ",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%B4%D0%BE%D0%BC%20%D0%B8%D0%B7%20%D0%BF%D0%B5%D0%BD%D0%BE%D0%B1%D0%BB%D0%BE%D0%BA%D0%BE%D0%B2%20%D0%BF%D0%BE%D0%B4%20%D0%BA%D0%BB%D1%8E%D1%87"
+     },
+     "ym:s:visits": 6.0,
+     "ym:s:bounceRate": 0.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "дома из газобетона под ключ проекты и цены",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%B4%D0%BE%D0%BC%D0%B0%20%D0%B8%D0%B7%20%D0%B3%D0%B0%D0%B7%D0%BE%D0%B1%D0%B5%D1%82%D0%BE%D0%BD%D0%B0%20%D0%BF%D0%BE%D0%B4%20%D0%BA%D0%BB%D1%8E%D1%87%20%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D1%8B%20%D0%B8%20%D1%86%D0%B5%D0%BD%D1%8B"
+     },
+     "ym:s:visits": 6.0,
+     "ym:s:bounceRate": 33.33333333
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "загородный дом под ключ",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%B7%D0%B0%D0%B3%D0%BE%D1%80%D0%BE%D0%B4%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%BE%D0%BC%20%D0%BF%D0%BE%D0%B4%20%D0%BA%D0%BB%D1%8E%D1%87"
+     },
+     "ym:s:visits": 6.0,
+     "ym:s:bounceRate": 100.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "интел групп строительная компания отзывы",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%B8%D0%BD%D1%82%D0%B5%D0%BB%20%D0%B3%D1%80%D1%83%D0%BF%D0%BF%20%D1%81%D1%82%D1%80%D0%BE%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F%20%D0%BA%D0%BE%D0%BC%D0%BF%D0%B0%D0%BD%D0%B8%D1%8F%20%D0%BE%D1%82%D0%B7%D1%8B%D0%B2%D1%8B"
+     },
+     "ym:s:visits": 6.0,
+     "ym:s:bounceRate": 16.66666667
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "компания строительство загородных коттеджей",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%BA%D0%BE%D0%BC%D0%BF%D0%B0%D0%BD%D0%B8%D1%8F%20%D1%81%D1%82%D1%80%D0%BE%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D1%81%D1%82%D0%B2%D0%BE%20%D0%B7%D0%B0%D0%B3%D0%BE%D1%80%D0%BE%D0%B4%D0%BD%D1%8B%D1%85%20%D0%BA%D0%BE%D1%82%D1%82%D0%B5%D0%B4%D0%B6%D0%B5%D0%B9"
+     },
+     "ym:s:visits": 6.0,
+     "ym:s:bounceRate": 100.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "проект дома бавария",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%20%D0%B4%D0%BE%D0%BC%D0%B0%20%D0%B1%D0%B0%D0%B2%D0%B0%D1%80%D0%B8%D1%8F"
+     },
+     "ym:s:visits": 6.0,
+     "ym:s:bounceRate": 50.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "строительство домов из газобетона под ключ",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D1%81%D1%82%D1%80%D0%BE%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D1%81%D1%82%D0%B2%D0%BE%20%D0%B4%D0%BE%D0%BC%D0%BE%D0%B2%20%D0%B8%D0%B7%20%D0%B3%D0%B0%D0%B7%D0%BE%D0%B1%D0%B5%D1%82%D0%BE%D0%BD%D0%B0%20%D0%BF%D0%BE%D0%B4%20%D0%BA%D0%BB%D1%8E%D1%87"
+     },
+     "ym:s:visits": 6.0,
+     "ym:s:bounceRate": 50.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "строительство загородной недвижимости",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D1%81%D1%82%D1%80%D0%BE%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D1%81%D1%82%D0%B2%D0%BE%20%D0%B7%D0%B0%D0%B3%D0%BE%D1%80%D0%BE%D0%B4%D0%BD%D0%BE%D0%B9%20%D0%BD%D0%B5%D0%B4%D0%B2%D0%B8%D0%B6%D0%B8%D0%BC%D0%BE%D1%81%D1%82%D0%B8"
+     },
+     "ym:s:visits": 6.0,
+     "ym:s:bounceRate": 50.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "стяжка стен деревянного дома",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D1%81%D1%82%D1%8F%D0%B6%D0%BA%D0%B0%20%D1%81%D1%82%D0%B5%D0%BD%20%D0%B4%D0%B5%D1%80%D0%B5%D0%B2%D1%8F%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BE%D0%BC%D0%B0"
+     },
+     "ym:s:visits": 6.0,
+     "ym:s:bounceRate": 0.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "шпильки для мауэрлата в армопоясе расстояние и диаметр",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D1%88%D0%BF%D0%B8%D0%BB%D1%8C%D0%BA%D0%B8%20%D0%B4%D0%BB%D1%8F%20%D0%BC%D0%B0%D1%83%D1%8D%D1%80%D0%BB%D0%B0%D1%82%D0%B0%20%D0%B2%20%D0%B0%D1%80%D0%BC%D0%BE%D0%BF%D0%BE%D1%8F%D1%81%D0%B5%20%D1%80%D0%B0%D1%81%D1%81%D1%82%D0%BE%D1%8F%D0%BD%D0%B8%D0%B5%20%D0%B8%20%D0%B4%D0%B8%D0%B0%D0%BC%D0%B5%D1%82%D1%80"
+     },
+     "ym:s:visits": 6.0,
+     "ym:s:bounceRate": 0.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "Дом с плоской крышей под ключ москва",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%94%D0%BE%D0%BC%20%D1%81%20%D0%BF%D0%BB%D0%BE%D1%81%D0%BA%D0%BE%D0%B9%20%D0%BA%D1%80%D1%8B%D1%88%D0%B5%D0%B9%20%D0%BF%D0%BE%D0%B4%20%D0%BA%D0%BB%D1%8E%D1%87%20%D0%BC%D0%BE%D1%81%D0%BA%D0%B2%D0%B0"
+     },
+     "ym:s:visits": 5.0,
+     "ym:s:bounceRate": 80.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "Интел Групп",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%98%D0%BD%D1%82%D0%B5%D0%BB%20%D0%93%D1%80%D1%83%D0%BF%D0%BF"
+     },
+     "ym:s:visits": 5.0,
+     "ym:s:bounceRate": 0.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "Компания строительство домов",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%9A%D0%BE%D0%BC%D0%BF%D0%B0%D0%BD%D0%B8%D1%8F%20%D1%81%D1%82%D1%80%D0%BE%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D1%81%D1%82%D0%B2%D0%BE%20%D0%B4%D0%BE%D0%BC%D0%BE%D0%B2"
+     },
+     "ym:s:visits": 5.0,
+     "ym:s:bounceRate": 100.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "Строительство частных домов",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%A1%D1%82%D1%80%D0%BE%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D1%81%D1%82%D0%B2%D0%BE%20%D1%87%D0%B0%D1%81%D1%82%D0%BD%D1%8B%D1%85%20%D0%B4%D0%BE%D0%BC%D0%BE%D0%B2"
+     },
+     "ym:s:visits": 5.0,
+     "ym:s:bounceRate": 100.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "дачные дома из пеноблоков под ключ недорого цены",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%B4%D0%B0%D1%87%D0%BD%D1%8B%D0%B5%20%D0%B4%D0%BE%D0%BC%D0%B0%20%D0%B8%D0%B7%20%D0%BF%D0%B5%D0%BD%D0%BE%D0%B1%D0%BB%D0%BE%D0%BA%D0%BE%D0%B2%20%D0%BF%D0%BE%D0%B4%20%D0%BA%D0%BB%D1%8E%D1%87%20%D0%BD%D0%B5%D0%B4%D0%BE%D1%80%D0%BE%D0%B3%D0%BE%20%D1%86%D0%B5%D0%BD%D1%8B"
+     },
+     "ym:s:visits": 5.0,
+     "ym:s:bounceRate": 80.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "дом бавария проект",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%B4%D0%BE%D0%BC%20%D0%B1%D0%B0%D0%B2%D0%B0%D1%80%D0%B8%D1%8F%20%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82"
+     },
+     "ym:s:visits": 5.0,
+     "ym:s:bounceRate": 20.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "дома из деревянных блоков",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%B4%D0%BE%D0%BC%D0%B0%20%D0%B8%D0%B7%20%D0%B4%D0%B5%D1%80%D0%B5%D0%B2%D1%8F%D0%BD%D0%BD%D1%8B%D1%85%20%D0%B1%D0%BB%D0%BE%D0%BA%D0%BE%D0%B2"
+     },
+     "ym:s:visits": 5.0,
+     "ym:s:bounceRate": 0.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "дома из пеноблоков под ключ",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%B4%D0%BE%D0%BC%D0%B0%20%D0%B8%D0%B7%20%D0%BF%D0%B5%D0%BD%D0%BE%D0%B1%D0%BB%D0%BE%D0%BA%D0%BE%D0%B2%20%D0%BF%D0%BE%D0%B4%20%D0%BA%D0%BB%D1%8E%D1%87"
+     },
+     "ym:s:visits": 5.0,
+     "ym:s:bounceRate": 20.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "дома под ключ из газобетона",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%B4%D0%BE%D0%BC%D0%B0%20%D0%BF%D0%BE%D0%B4%20%D0%BA%D0%BB%D1%8E%D1%87%20%D0%B8%D0%B7%20%D0%B3%D0%B0%D0%B7%D0%BE%D0%B1%D0%B5%D1%82%D0%BE%D0%BD%D0%B0"
+     },
+     "ym:s:visits": 5.0,
+     "ym:s:bounceRate": 20.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "из чего лучше строить дом для постоянного проживания в московской области",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%B8%D0%B7%20%D1%87%D0%B5%D0%B3%D0%BE%20%D0%BB%D1%83%D1%87%D1%88%D0%B5%20%D1%81%D1%82%D1%80%D0%BE%D0%B8%D1%82%D1%8C%20%D0%B4%D0%BE%D0%BC%20%D0%B4%D0%BB%D1%8F%20%D0%BF%D0%BE%D1%81%D1%82%D0%BE%D1%8F%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%BF%D1%80%D0%BE%D0%B6%D0%B8%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20%D0%B2%20%D0%BC%D0%BE%D1%81%D0%BA%D0%BE%D0%B2%D1%81%D0%BA%D0%BE%D0%B9%20%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D0%B8"
+     },
+     "ym:s:visits": 5.0,
+     "ym:s:bounceRate": 40.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "как закрепить мауэрлат к газоблоку",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%BA%D0%B0%D0%BA%20%D0%B7%D0%B0%D0%BA%D1%80%D0%B5%D0%BF%D0%B8%D1%82%D1%8C%20%D0%BC%D0%B0%D1%83%D1%8D%D1%80%D0%BB%D0%B0%D1%82%20%D0%BA%20%D0%B3%D0%B0%D0%B7%D0%BE%D0%B1%D0%BB%D0%BE%D0%BA%D1%83"
+     },
+     "ym:s:visits": 5.0,
+     "ym:s:bounceRate": 0.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "мауэрлат на газобетон с армопоясом",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%BC%D0%B0%D1%83%D1%8D%D1%80%D0%BB%D0%B0%D1%82%20%D0%BD%D0%B0%20%D0%B3%D0%B0%D0%B7%D0%BE%D0%B1%D0%B5%D1%82%D0%BE%D0%BD%20%D1%81%20%D0%B0%D1%80%D0%BC%D0%BE%D0%BF%D0%BE%D1%8F%D1%81%D0%BE%D0%BC"
+     },
+     "ym:s:visits": 5.0,
+     "ym:s:bounceRate": 0.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "проекты домов из газобетона",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D1%8B%20%D0%B4%D0%BE%D0%BC%D0%BE%D0%B2%20%D0%B8%D0%B7%20%D0%B3%D0%B0%D0%B7%D0%BE%D0%B1%D0%B5%D1%82%D0%BE%D0%BD%D0%B0"
+     },
+     "ym:s:visits": 5.0,
+     "ym:s:bounceRate": 40.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "проекты домов из газобетона для постоянного проживания",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D1%8B%20%D0%B4%D0%BE%D0%BC%D0%BE%D0%B2%20%D0%B8%D0%B7%20%D0%B3%D0%B0%D0%B7%D0%BE%D0%B1%D0%B5%D1%82%D0%BE%D0%BD%D0%B0%20%D0%B4%D0%BB%D1%8F%20%D0%BF%D0%BE%D1%81%D1%82%D0%BE%D1%8F%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%BF%D1%80%D0%BE%D0%B6%D0%B8%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F"
+     },
+     "ym:s:visits": 5.0,
+     "ym:s:bounceRate": 0.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "свайно ростверковый фундамент или ленточный что лучше",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D1%81%D0%B2%D0%B0%D0%B9%D0%BD%D0%BE%20%D1%80%D0%BE%D1%81%D1%82%D0%B2%D0%B5%D1%80%D0%BA%D0%BE%D0%B2%D1%8B%D0%B9%20%D1%84%D1%83%D0%BD%D0%B4%D0%B0%D0%BC%D0%B5%D0%BD%D1%82%20%D0%B8%D0%BB%D0%B8%20%D0%BB%D0%B5%D0%BD%D1%82%D0%BE%D1%87%D0%BD%D1%8B%D0%B9%20%D1%87%D1%82%D0%BE%20%D0%BB%D1%83%D1%87%D1%88%D0%B5"
+     },
+     "ym:s:visits": 5.0,
+     "ym:s:bounceRate": 0.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "сколько простоит дом из пеноблока",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D1%81%D0%BA%D0%BE%D0%BB%D1%8C%D0%BA%D0%BE%20%D0%BF%D1%80%D0%BE%D1%81%D1%82%D0%BE%D0%B8%D1%82%20%D0%B4%D0%BE%D0%BC%20%D0%B8%D0%B7%20%D0%BF%D0%B5%D0%BD%D0%BE%D0%B1%D0%BB%D0%BE%D0%BA%D0%B0"
+     },
+     "ym:s:visits": 5.0,
+     "ym:s:bounceRate": 0.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "срок службы дома из пеноблока",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D1%81%D1%80%D0%BE%D0%BA%20%D1%81%D0%BB%D1%83%D0%B6%D0%B1%D1%8B%20%D0%B4%D0%BE%D0%BC%D0%B0%20%D0%B8%D0%B7%20%D0%BF%D0%B5%D0%BD%D0%BE%D0%B1%D0%BB%D0%BE%D0%BA%D0%B0"
+     },
+     "ym:s:visits": 5.0,
+     "ym:s:bounceRate": 0.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "строительная компания каркасные дома под ключ",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D1%81%D1%82%D1%80%D0%BE%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F%20%D0%BA%D0%BE%D0%BC%D0%BF%D0%B0%D0%BD%D0%B8%D1%8F%20%D0%BA%D0%B0%D1%80%D0%BA%D0%B0%D1%81%D0%BD%D1%8B%D0%B5%20%D0%B4%D0%BE%D0%BC%D0%B0%20%D0%BF%D0%BE%D0%B4%20%D0%BA%D0%BB%D1%8E%D1%87"
+     },
+     "ym:s:visits": 5.0,
+     "ym:s:bounceRate": 100.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "строительные компании загородных домов и коттеджей",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D1%81%D1%82%D1%80%D0%BE%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5%20%D0%BA%D0%BE%D0%BC%D0%BF%D0%B0%D0%BD%D0%B8%D0%B8%20%D0%B7%D0%B0%D0%B3%D0%BE%D1%80%D0%BE%D0%B4%D0%BD%D1%8B%D1%85%20%D0%B4%D0%BE%D0%BC%D0%BE%D0%B2%20%D0%B8%20%D0%BA%D0%BE%D1%82%D1%82%D0%B5%D0%B4%D0%B6%D0%B5%D0%B9"
+     },
+     "ym:s:visits": 5.0,
+     "ym:s:bounceRate": 80.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "строительство домов из пеноблоков",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D1%81%D1%82%D1%80%D0%BE%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D1%81%D1%82%D0%B2%D0%BE%20%D0%B4%D0%BE%D0%BC%D0%BE%D0%B2%20%D0%B8%D0%B7%20%D0%BF%D0%B5%D0%BD%D0%BE%D0%B1%D0%BB%D0%BE%D0%BA%D0%BE%D0%B2"
+     },
+     "ym:s:visits": 5.0,
+     "ym:s:bounceRate": 40.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "строительство домов ключ",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D1%81%D1%82%D1%80%D0%BE%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D1%81%D1%82%D0%B2%D0%BE%20%D0%B4%D0%BE%D0%BC%D0%BE%D0%B2%20%D0%BA%D0%BB%D1%8E%D1%87"
+     },
+     "ym:s:visits": 5.0,
+     "ym:s:bounceRate": 80.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "строительство домов под ключ",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D1%81%D1%82%D1%80%D0%BE%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D1%81%D1%82%D0%B2%D0%BE%20%D0%B4%D0%BE%D0%BC%D0%BE%D0%B2%20%D0%BF%D0%BE%D0%B4%20%D0%BA%D0%BB%D1%8E%D1%87"
+     },
+     "ym:s:visits": 5.0,
+     "ym:s:bounceRate": 60.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "строительство под ключ",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D1%81%D1%82%D1%80%D0%BE%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D1%81%D1%82%D0%B2%D0%BE%20%D0%BF%D0%BE%D0%B4%20%D0%BA%D0%BB%D1%8E%D1%87"
+     },
+     "ym:s:visits": 5.0,
+     "ym:s:bounceRate": 60.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "установка мауэрлата на армопояс",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0%20%D0%BC%D0%B0%D1%83%D1%8D%D1%80%D0%BB%D0%B0%D1%82%D0%B0%20%D0%BD%D0%B0%20%D0%B0%D1%80%D0%BC%D0%BE%D0%BF%D0%BE%D1%8F%D1%81"
+     },
+     "ym:s:visits": 5.0,
+     "ym:s:bounceRate": 0.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "Дом построить под ключ",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%94%D0%BE%D0%BC%20%D0%BF%D0%BE%D1%81%D1%82%D1%80%D0%BE%D0%B8%D1%82%D1%8C%20%D0%BF%D0%BE%D0%B4%20%D0%BA%D0%BB%D1%8E%D1%87"
+     },
+     "ym:s:visits": 4.0,
+     "ym:s:bounceRate": 100.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "Построить дом в подмосковье",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%9F%D0%BE%D1%81%D1%82%D1%80%D0%BE%D0%B8%D1%82%D1%8C%20%D0%B4%D0%BE%D0%BC%20%D0%B2%20%D0%BF%D0%BE%D0%B4%D0%BC%D0%BE%D1%81%D0%BA%D0%BE%D0%B2%D1%8C%D0%B5"
+     },
+     "ym:s:visits": 4.0,
+     "ym:s:bounceRate": 100.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "Строительство домов в краснознаменске",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%A1%D1%82%D1%80%D0%BE%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D1%81%D1%82%D0%B2%D0%BE%20%D0%B4%D0%BE%D0%BC%D0%BE%D0%B2%20%D0%B2%20%D0%BA%D1%80%D0%B0%D1%81%D0%BD%D0%BE%D0%B7%D0%BD%D0%B0%D0%BC%D0%B5%D0%BD%D1%81%D0%BA%D0%B5"
+     },
+     "ym:s:visits": 4.0,
+     "ym:s:bounceRate": 75.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "Строительство домов под ключ в москве",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%A1%D1%82%D1%80%D0%BE%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D1%81%D1%82%D0%B2%D0%BE%20%D0%B4%D0%BE%D0%BC%D0%BE%D0%B2%20%D0%BF%D0%BE%D0%B4%20%D0%BA%D0%BB%D1%8E%D1%87%20%D0%B2%20%D0%BC%D0%BE%D1%81%D0%BA%D0%B2%D0%B5"
+     },
+     "ym:s:visits": 4.0,
+     "ym:s:bounceRate": 100.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "армопояс из кирпича или бетона что лучше",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%B0%D1%80%D0%BC%D0%BE%D0%BF%D0%BE%D1%8F%D1%81%20%D0%B8%D0%B7%20%D0%BA%D0%B8%D1%80%D0%BF%D0%B8%D1%87%D0%B0%20%D0%B8%D0%BB%D0%B8%20%D0%B1%D0%B5%D1%82%D0%BE%D0%BD%D0%B0%20%D1%87%D1%82%D0%BE%20%D0%BB%D1%83%D1%87%D1%88%D0%B5"
+     },
+     "ym:s:visits": 4.0,
+     "ym:s:bounceRate": 0.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "дачный дом из газобетона с террасой",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%B4%D0%B0%D1%87%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%BE%D0%BC%20%D0%B8%D0%B7%20%D0%B3%D0%B0%D0%B7%D0%BE%D0%B1%D0%B5%D1%82%D0%BE%D0%BD%D0%B0%20%D1%81%20%D1%82%D0%B5%D1%80%D1%80%D0%B0%D1%81%D0%BE%D0%B9"
+     },
+     "ym:s:visits": 4.0,
+     "ym:s:bounceRate": 75.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "дом из газоблока",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%B4%D0%BE%D0%BC%20%D0%B8%D0%B7%20%D0%B3%D0%B0%D0%B7%D0%BE%D0%B1%D0%BB%D0%BE%D0%BA%D0%B0"
+     },
+     "ym:s:visits": 4.0,
+     "ym:s:bounceRate": 75.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "дом из газосиликата плюсы и минусы",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%B4%D0%BE%D0%BC%20%D0%B8%D0%B7%20%D0%B3%D0%B0%D0%B7%D0%BE%D1%81%D0%B8%D0%BB%D0%B8%D0%BA%D0%B0%D1%82%D0%B0%20%D0%BF%D0%BB%D1%8E%D1%81%D1%8B%20%D0%B8%20%D0%BC%D0%B8%D0%BD%D1%83%D1%81%D1%8B"
+     },
+     "ym:s:visits": 4.0,
+     "ym:s:bounceRate": 0.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "дом купить под ключ из газобетона",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%B4%D0%BE%D0%BC%20%D0%BA%D1%83%D0%BF%D0%B8%D1%82%D1%8C%20%D0%BF%D0%BE%D0%B4%20%D0%BA%D0%BB%D1%8E%D1%87%20%D0%B8%D0%B7%20%D0%B3%D0%B0%D0%B7%D0%BE%D0%B1%D0%B5%D1%82%D0%BE%D0%BD%D0%B0"
+     },
+     "ym:s:visits": 4.0,
+     "ym:s:bounceRate": 75.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "дома в немецком стиле",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%B4%D0%BE%D0%BC%D0%B0%20%D0%B2%20%D0%BD%D0%B5%D0%BC%D0%B5%D1%86%D0%BA%D0%BE%D0%BC%20%D1%81%D1%82%D0%B8%D0%BB%D0%B5"
+     },
+     "ym:s:visits": 4.0,
+     "ym:s:bounceRate": 50.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "дома из газобетона строительство под ключ",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%B4%D0%BE%D0%BC%D0%B0%20%D0%B8%D0%B7%20%D0%B3%D0%B0%D0%B7%D0%BE%D0%B1%D0%B5%D1%82%D0%BE%D0%BD%D0%B0%20%D1%81%D1%82%D1%80%D0%BE%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D1%81%D1%82%D0%B2%D0%BE%20%D0%BF%D0%BE%D0%B4%20%D0%BA%D0%BB%D1%8E%D1%87"
+     },
+     "ym:s:visits": 4.0,
+     "ym:s:bounceRate": 50.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "дома из газоблока под ключ",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%B4%D0%BE%D0%BC%D0%B0%20%D0%B8%D0%B7%20%D0%B3%D0%B0%D0%B7%D0%BE%D0%B1%D0%BB%D0%BE%D0%BA%D0%B0%20%D0%BF%D0%BE%D0%B4%20%D0%BA%D0%BB%D1%8E%D1%87"
+     },
+     "ym:s:visits": 4.0,
+     "ym:s:bounceRate": 0.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "дома под ключ",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%B4%D0%BE%D0%BC%D0%B0%20%D0%BF%D0%BE%D0%B4%20%D0%BA%D0%BB%D1%8E%D1%87"
+     },
+     "ym:s:visits": 4.0,
+     "ym:s:bounceRate": 50.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "домакаркас",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%B4%D0%BE%D0%BC%D0%B0%D0%BA%D0%B0%D1%80%D0%BA%D0%B0%D1%81"
+     },
+     "ym:s:visits": 4.0,
+     "ym:s:bounceRate": 0.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "земли сельскохозяйственного назначения для дачного строительства плюсы и минусы",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%B7%D0%B5%D0%BC%D0%BB%D0%B8%20%D1%81%D0%B5%D0%BB%D1%8C%D1%81%D0%BA%D0%BE%D1%85%D0%BE%D0%B7%D1%8F%D0%B9%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%BD%D0%B0%D0%B7%D0%BD%D0%B0%D1%87%D0%B5%D0%BD%D0%B8%D1%8F%20%D0%B4%D0%BB%D1%8F%20%D0%B4%D0%B0%D1%87%D0%BD%D0%BE%D0%B3%D0%BE%20%D1%81%D1%82%D1%80%D0%BE%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D1%81%D1%82%D0%B2%D0%B0%20%D0%BF%D0%BB%D1%8E%D1%81%D1%8B%20%D0%B8%20%D0%BC%D0%B8%D0%BD%D1%83%D1%81%D1%8B"
+     },
+     "ym:s:visits": 4.0,
+     "ym:s:bounceRate": 50.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "интел групп официальный сайт",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%B8%D0%BD%D1%82%D0%B5%D0%BB%20%D0%B3%D1%80%D1%83%D0%BF%D0%BF%20%D0%BE%D1%84%D0%B8%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D1%81%D0%B0%D0%B9%D1%82"
+     },
+     "ym:s:visits": 4.0,
+     "ym:s:bounceRate": 0.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "интел групп строительная компания загородных домов",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%B8%D0%BD%D1%82%D0%B5%D0%BB%20%D0%B3%D1%80%D1%83%D0%BF%D0%BF%20%D1%81%D1%82%D1%80%D0%BE%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F%20%D0%BA%D0%BE%D0%BC%D0%BF%D0%B0%D0%BD%D0%B8%D1%8F%20%D0%B7%D0%B0%D0%B3%D0%BE%D1%80%D0%BE%D0%B4%D0%BD%D1%8B%D1%85%20%D0%B4%D0%BE%D0%BC%D0%BE%D0%B2"
+     },
+     "ym:s:visits": 4.0,
+     "ym:s:bounceRate": 0.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "интел групп строительная компания официальный",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%B8%D0%BD%D1%82%D0%B5%D0%BB%20%D0%B3%D1%80%D1%83%D0%BF%D0%BF%20%D1%81%D1%82%D1%80%D0%BE%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F%20%D0%BA%D0%BE%D0%BC%D0%BF%D0%B0%D0%BD%D0%B8%D1%8F%20%D0%BE%D1%84%D0%B8%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9"
+     },
+     "ym:s:visits": 4.0,
+     "ym:s:bounceRate": 0.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "интелгруп",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%B8%D0%BD%D1%82%D0%B5%D0%BB%D0%B3%D1%80%D1%83%D0%BF"
+     },
+     "ym:s:visits": 4.0,
+     "ym:s:bounceRate": 0.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "какой дом можно построить на 6 сотках",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%BA%D0%B0%D0%BA%D0%BE%D0%B9%20%D0%B4%D0%BE%D0%BC%20%D0%BC%D0%BE%D0%B6%D0%BD%D0%BE%20%D0%BF%D0%BE%D1%81%D1%82%D1%80%D0%BE%D0%B8%D1%82%D1%8C%20%D0%BD%D0%B0%206%20%D1%81%D0%BE%D1%82%D0%BA%D0%B0%D1%85"
+     },
+     "ym:s:visits": 4.0,
+     "ym:s:bounceRate": 25.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "какой лучше делать армопояс",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%BA%D0%B0%D0%BA%D0%BE%D0%B9%20%D0%BB%D1%83%D1%87%D1%88%D0%B5%20%D0%B4%D0%B5%D0%BB%D0%B0%D1%82%D1%8C%20%D0%B0%D1%80%D0%BC%D0%BE%D0%BF%D0%BE%D1%8F%D1%81"
+     },
+     "ym:s:visits": 4.0,
+     "ym:s:bounceRate": 25.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "коттедж под ключ подмосковье",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%BA%D0%BE%D1%82%D1%82%D0%B5%D0%B4%D0%B6%20%D0%BF%D0%BE%D0%B4%20%D0%BA%D0%BB%D1%8E%D1%87%20%D0%BF%D0%BE%D0%B4%D0%BC%D0%BE%D1%81%D0%BA%D0%BE%D0%B2%D1%8C%D0%B5"
+     },
+     "ym:s:visits": 4.0,
+     "ym:s:bounceRate": 50.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "крепление мауэрлата к армопоясу",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%BA%D1%80%D0%B5%D0%BF%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%BC%D0%B0%D1%83%D1%8D%D1%80%D0%BB%D0%B0%D1%82%D0%B0%20%D0%BA%20%D0%B0%D1%80%D0%BC%D0%BE%D0%BF%D0%BE%D1%8F%D1%81%D1%83"
+     },
+     "ym:s:visits": 4.0,
+     "ym:s:bounceRate": 0.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "крепление мауэрлата к армопоясу шпильками расстояние между точками",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%BA%D1%80%D0%B5%D0%BF%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%BC%D0%B0%D1%83%D1%8D%D1%80%D0%BB%D0%B0%D1%82%D0%B0%20%D0%BA%20%D0%B0%D1%80%D0%BC%D0%BE%D0%BF%D0%BE%D1%8F%D1%81%D1%83%20%D1%88%D0%BF%D0%B8%D0%BB%D1%8C%D0%BA%D0%B0%D0%BC%D0%B8%20%D1%80%D0%B0%D1%81%D1%81%D1%82%D0%BE%D1%8F%D0%BD%D0%B8%D0%B5%20%D0%BC%D0%B5%D0%B6%D0%B4%D1%83%20%D1%82%D0%BE%D1%87%D0%BA%D0%B0%D0%BC%D0%B8"
+     },
+     "ym:s:visits": 4.0,
+     "ym:s:bounceRate": 0.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "крепление мауэрлата к газоблоку",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%BA%D1%80%D0%B5%D0%BF%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%BC%D0%B0%D1%83%D1%8D%D1%80%D0%BB%D0%B0%D1%82%D0%B0%20%D0%BA%20%D0%B3%D0%B0%D0%B7%D0%BE%D0%B1%D0%BB%D0%BE%D0%BA%D1%83"
+     },
+     "ym:s:visits": 4.0,
+     "ym:s:bounceRate": 0.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "мауэрлат как крепить",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%BC%D0%B0%D1%83%D1%8D%D1%80%D0%BB%D0%B0%D1%82%20%D0%BA%D0%B0%D0%BA%20%D0%BA%D1%80%D0%B5%D0%BF%D0%B8%D1%82%D1%8C"
+     },
+     "ym:s:visits": 4.0,
+     "ym:s:bounceRate": 0.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "мауэрлат на армопояс на газобетоне",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%BC%D0%B0%D1%83%D1%8D%D1%80%D0%BB%D0%B0%D1%82%20%D0%BD%D0%B0%20%D0%B0%D1%80%D0%BC%D0%BE%D0%BF%D0%BE%D1%8F%D1%81%20%D0%BD%D0%B0%20%D0%B3%D0%B0%D0%B7%D0%BE%D0%B1%D0%B5%D1%82%D0%BE%D0%BD%D0%B5"
+     },
+     "ym:s:visits": 4.0,
+     "ym:s:bounceRate": 25.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "монолитно-каркасный дом что это",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%BC%D0%BE%D0%BD%D0%BE%D0%BB%D0%B8%D1%82%D0%BD%D0%BE-%D0%BA%D0%B0%D1%80%D0%BA%D0%B0%D1%81%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%BE%D0%BC%20%D1%87%D1%82%D0%BE%20%D1%8D%D1%82%D0%BE"
+     },
+     "ym:s:visits": 4.0,
+     "ym:s:bounceRate": 0.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "нужна ли гидроизоляция под мауэрлат",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%BD%D1%83%D0%B6%D0%BD%D0%B0%20%D0%BB%D0%B8%20%D0%B3%D0%B8%D0%B4%D1%80%D0%BE%D0%B8%D0%B7%D0%BE%D0%BB%D1%8F%D1%86%D0%B8%D1%8F%20%D0%BF%D0%BE%D0%B4%20%D0%BC%D0%B0%D1%83%D1%8D%D1%80%D0%BB%D0%B0%D1%82"
+     },
+     "ym:s:visits": 4.0,
+     "ym:s:bounceRate": 0.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "нужно ли утеплять дом из бруса 150х150",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%BD%D1%83%D0%B6%D0%BD%D0%BE%20%D0%BB%D0%B8%20%D1%83%D1%82%D0%B5%D0%BF%D0%BB%D1%8F%D1%82%D1%8C%20%D0%B4%D0%BE%D0%BC%20%D0%B8%D0%B7%20%D0%B1%D1%80%D1%83%D1%81%D0%B0%20150%D1%85150"
+     },
+     "ym:s:visits": 4.0,
+     "ym:s:bounceRate": 25.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "пеноблок срок службы дома",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%BF%D0%B5%D0%BD%D0%BE%D0%B1%D0%BB%D0%BE%D0%BA%20%D1%81%D1%80%D0%BE%D0%BA%20%D1%81%D0%BB%D1%83%D0%B6%D0%B1%D1%8B%20%D0%B4%D0%BE%D0%BC%D0%B0"
+     },
+     "ym:s:visits": 4.0,
+     "ym:s:bounceRate": 0.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "построить дом 6 на 7",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%BF%D0%BE%D1%81%D1%82%D1%80%D0%BE%D0%B8%D1%82%D1%8C%20%D0%B4%D0%BE%D0%BC%206%20%D0%BD%D0%B0%207"
+     },
+     "ym:s:visits": 4.0,
+     "ym:s:bounceRate": 0.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "проект дома из газобетона",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%20%D0%B4%D0%BE%D0%BC%D0%B0%20%D0%B8%D0%B7%20%D0%B3%D0%B0%D0%B7%D0%BE%D0%B1%D0%B5%D1%82%D0%BE%D0%BD%D0%B0"
+     },
+     "ym:s:visits": 4.0,
+     "ym:s:bounceRate": 25.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "ск интел групп",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D1%81%D0%BA%20%D0%B8%D0%BD%D1%82%D0%B5%D0%BB%20%D0%B3%D1%80%D1%83%D0%BF%D0%BF"
+     },
+     "ym:s:visits": 4.0,
+     "ym:s:bounceRate": 0.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "сколько надо денег чтобы построить дом 10 на 10 из газобетона",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D1%81%D0%BA%D0%BE%D0%BB%D1%8C%D0%BA%D0%BE%20%D0%BD%D0%B0%D0%B4%D0%BE%20%D0%B4%D0%B5%D0%BD%D0%B5%D0%B3%20%D1%87%D1%82%D0%BE%D0%B1%D1%8B%20%D0%BF%D0%BE%D1%81%D1%82%D1%80%D0%BE%D0%B8%D1%82%D1%8C%20%D0%B4%D0%BE%D0%BC%2010%20%D0%BD%D0%B0%2010%20%D0%B8%D0%B7%20%D0%B3%D0%B0%D0%B7%D0%BE%D0%B1%D0%B5%D1%82%D0%BE%D0%BD%D0%B0"
+     },
+     "ym:s:visits": 4.0,
+     "ym:s:bounceRate": 0.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "сколько стоит дом из пеноблоков под ключ",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D1%81%D0%BA%D0%BE%D0%BB%D1%8C%D0%BA%D0%BE%20%D1%81%D1%82%D0%BE%D0%B8%D1%82%20%D0%B4%D0%BE%D0%BC%20%D0%B8%D0%B7%20%D0%BF%D0%B5%D0%BD%D0%BE%D0%B1%D0%BB%D0%BE%D0%BA%D0%BE%D0%B2%20%D0%BF%D0%BE%D0%B4%20%D0%BA%D0%BB%D1%8E%D1%87"
+     },
+     "ym:s:visits": 4.0,
+     "ym:s:bounceRate": 0.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "строительные компании",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D1%81%D1%82%D1%80%D0%BE%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5%20%D0%BA%D0%BE%D0%BC%D0%BF%D0%B0%D0%BD%D0%B8%D0%B8"
+     },
+     "ym:s:visits": 4.0,
+     "ym:s:bounceRate": 50.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "строительные компании загородных коттеджей",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D1%81%D1%82%D1%80%D0%BE%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5%20%D0%BA%D0%BE%D0%BC%D0%BF%D0%B0%D0%BD%D0%B8%D0%B8%20%D0%B7%D0%B0%D0%B3%D0%BE%D1%80%D0%BE%D0%B4%D0%BD%D1%8B%D1%85%20%D0%BA%D0%BE%D1%82%D1%82%D0%B5%D0%B4%D0%B6%D0%B5%D0%B9"
+     },
+     "ym:s:visits": 4.0,
+     "ym:s:bounceRate": 100.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "строительство домов из пеноблока",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D1%81%D1%82%D1%80%D0%BE%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D1%81%D1%82%D0%B2%D0%BE%20%D0%B4%D0%BE%D0%BC%D0%BE%D0%B2%20%D0%B8%D0%B7%20%D0%BF%D0%B5%D0%BD%D0%BE%D0%B1%D0%BB%D0%BE%D0%BA%D0%B0"
+     },
+     "ym:s:visits": 4.0,
+     "ym:s:bounceRate": 25.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "строительство коттеджей под ключ",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D1%81%D1%82%D1%80%D0%BE%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D1%81%D1%82%D0%B2%D0%BE%20%D0%BA%D0%BE%D1%82%D1%82%D0%B5%D0%B4%D0%B6%D0%B5%D0%B9%20%D0%BF%D0%BE%D0%B4%20%D0%BA%D0%BB%D1%8E%D1%87"
+     },
+     "ym:s:visits": 4.0,
+     "ym:s:bounceRate": 75.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "укладка мауэрлата на армопояс в газобетонной стене",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D1%83%D0%BA%D0%BB%D0%B0%D0%B4%D0%BA%D0%B0%20%D0%BC%D0%B0%D1%83%D1%8D%D1%80%D0%BB%D0%B0%D1%82%D0%B0%20%D0%BD%D0%B0%20%D0%B0%D1%80%D0%BC%D0%BE%D0%BF%D0%BE%D1%8F%D1%81%20%D0%B2%20%D0%B3%D0%B0%D0%B7%D0%BE%D0%B1%D0%B5%D1%82%D0%BE%D0%BD%D0%BD%D0%BE%D0%B9%20%D1%81%D1%82%D0%B5%D0%BD%D0%B5"
+     },
+     "ym:s:visits": 4.0,
+     "ym:s:bounceRate": 0.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "участок 6 соток размеры дома",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D1%83%D1%87%D0%B0%D1%81%D1%82%D0%BE%D0%BA%206%20%D1%81%D0%BE%D1%82%D0%BE%D0%BA%20%D1%80%D0%B0%D0%B7%D0%BC%D0%B5%D1%80%D1%8B%20%D0%B4%D0%BE%D0%BC%D0%B0"
+     },
+     "ym:s:visits": 4.0,
+     "ym:s:bounceRate": 50.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "чем закрепить мауэрлат к газобетону",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D1%87%D0%B5%D0%BC%20%D0%B7%D0%B0%D0%BA%D1%80%D0%B5%D0%BF%D0%B8%D1%82%D1%8C%20%D0%BC%D0%B0%D1%83%D1%8D%D1%80%D0%BB%D0%B0%D1%82%20%D0%BA%20%D0%B3%D0%B0%D0%B7%D0%BE%D0%B1%D0%B5%D1%82%D0%BE%D0%BD%D1%83"
+     },
+     "ym:s:visits": 4.0,
+     "ym:s:bounceRate": 25.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "через какое расстояние ставить шпильки под мауэрлат в армопояс",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D1%87%D0%B5%D1%80%D0%B5%D0%B7%20%D0%BA%D0%B0%D0%BA%D0%BE%D0%B5%20%D1%80%D0%B0%D1%81%D1%81%D1%82%D0%BE%D1%8F%D0%BD%D0%B8%D0%B5%20%D1%81%D1%82%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D1%88%D0%BF%D0%B8%D0%BB%D1%8C%D0%BA%D0%B8%20%D0%BF%D0%BE%D0%B4%20%D0%BC%D0%B0%D1%83%D1%8D%D1%80%D0%BB%D0%B0%D1%82%20%D0%B2%20%D0%B0%D1%80%D0%BC%D0%BE%D0%BF%D0%BE%D1%8F%D1%81"
+     },
+     "ym:s:visits": 4.0,
+     "ym:s:bounceRate": 0.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "что проложить между армопоясом и мауэрлатом",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D1%87%D1%82%D0%BE%20%D0%BF%D1%80%D0%BE%D0%BB%D0%BE%D0%B6%D0%B8%D1%82%D1%8C%20%D0%BC%D0%B5%D0%B6%D0%B4%D1%83%20%D0%B0%D1%80%D0%BC%D0%BE%D0%BF%D0%BE%D1%8F%D1%81%D0%BE%D0%BC%20%D0%B8%20%D0%BC%D0%B0%D1%83%D1%8D%D1%80%D0%BB%D0%B0%D1%82%D0%BE%D0%BC"
+     },
+     "ym:s:visits": 4.0,
+     "ym:s:bounceRate": 25.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "6 соток это много или мало для ижс",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=6%20%D1%81%D0%BE%D1%82%D0%BE%D0%BA%20%D1%8D%D1%82%D0%BE%20%D0%BC%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%B8%D0%BB%D0%B8%20%D0%BC%D0%B0%D0%BB%D0%BE%20%D0%B4%D0%BB%D1%8F%20%D0%B8%D0%B6%D1%81"
+     },
+     "ym:s:visits": 3.0,
+     "ym:s:bounceRate": 0.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "doma karkas",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=doma%20karkas"
+     },
+     "ym:s:visits": 3.0,
+     "ym:s:bounceRate": 0.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "info@doma-karkas.ru",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=info@doma-karkas.ru"
+     },
+     "ym:s:visits": 3.0,
+     "ym:s:bounceRate": 0.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "Дом из керамики",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%94%D0%BE%D0%BC%20%D0%B8%D0%B7%20%D0%BA%D0%B5%D1%80%D0%B0%D0%BC%D0%B8%D0%BA%D0%B8"
+     },
+     "ym:s:visits": 3.0,
+     "ym:s:bounceRate": 100.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "Строительство загородных домов под ключ",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%A1%D1%82%D1%80%D0%BE%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D1%81%D1%82%D0%B2%D0%BE%20%D0%B7%D0%B0%D0%B3%D0%BE%D1%80%D0%BE%D0%B4%D0%BD%D1%8B%D1%85%20%D0%B4%D0%BE%D0%BC%D0%BE%D0%B2%20%D0%BF%D0%BE%D0%B4%20%D0%BA%D0%BB%D1%8E%D1%87"
+     },
+     "ym:s:visits": 3.0,
+     "ym:s:bounceRate": 100.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "Строительство загородных домов под ключ в москве",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%A1%D1%82%D1%80%D0%BE%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D1%81%D1%82%D0%B2%D0%BE%20%D0%B7%D0%B0%D0%B3%D0%BE%D1%80%D0%BE%D0%B4%D0%BD%D1%8B%D1%85%20%D0%B4%D0%BE%D0%BC%D0%BE%D0%B2%20%D0%BF%D0%BE%D0%B4%20%D0%BA%D0%BB%D1%8E%D1%87%20%D0%B2%20%D0%BC%D0%BE%D1%81%D0%BA%D0%B2%D0%B5"
+     },
+     "ym:s:visits": 3.0,
+     "ym:s:bounceRate": 100.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "Строительство коттеджей под ключ",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%A1%D1%82%D1%80%D0%BE%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D1%81%D1%82%D0%B2%D0%BE%20%D0%BA%D0%BE%D1%82%D1%82%D0%B5%D0%B4%D0%B6%D0%B5%D0%B9%20%D0%BF%D0%BE%D0%B4%20%D0%BA%D0%BB%D1%8E%D1%87"
+     },
+     "ym:s:visits": 3.0,
+     "ym:s:bounceRate": 100.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "аллегро дома из бруса",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%B0%D0%BB%D0%BB%D0%B5%D0%B3%D1%80%D0%BE%20%D0%B4%D0%BE%D0%BC%D0%B0%20%D0%B8%D0%B7%20%D0%B1%D1%80%D1%83%D1%81%D0%B0"
+     },
+     "ym:s:visits": 3.0,
+     "ym:s:bounceRate": 0.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "армирование газобетона",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%B0%D1%80%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%B3%D0%B0%D0%B7%D0%BE%D0%B1%D0%B5%D1%82%D0%BE%D0%BD%D0%B0"
+     },
+     "ym:s:visits": 3.0,
+     "ym:s:bounceRate": 0.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "армопояс",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%B0%D1%80%D0%BC%D0%BE%D0%BF%D0%BE%D1%8F%D1%81"
+     },
+     "ym:s:visits": 3.0,
+     "ym:s:bounceRate": 0.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "армопояс для газобетона под мауэрлат",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%B0%D1%80%D0%BC%D0%BE%D0%BF%D0%BE%D1%8F%D1%81%20%D0%B4%D0%BB%D1%8F%20%D0%B3%D0%B0%D0%B7%D0%BE%D0%B1%D0%B5%D1%82%D0%BE%D0%BD%D0%B0%20%D0%BF%D0%BE%D0%B4%20%D0%BC%D0%B0%D1%83%D1%8D%D1%80%D0%BB%D0%B0%D1%82"
+     },
+     "ym:s:visits": 3.0,
+     "ym:s:bounceRate": 0.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "баня или сауна в доме что лучше",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%B1%D0%B0%D0%BD%D1%8F%20%D0%B8%D0%BB%D0%B8%20%D1%81%D0%B0%D1%83%D0%BD%D0%B0%20%D0%B2%20%D0%B4%D0%BE%D0%BC%D0%B5%20%D1%87%D1%82%D0%BE%20%D0%BB%D1%83%D1%87%D1%88%D0%B5"
+     },
+     "ym:s:visits": 3.0,
+     "ym:s:bounceRate": 66.66666667
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "вентзазор в каркасном доме",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%B2%D0%B5%D0%BD%D1%82%D0%B7%D0%B0%D0%B7%D0%BE%D1%80%20%D0%B2%20%D0%BA%D0%B0%D1%80%D0%BA%D0%B0%D1%81%D0%BD%D0%BE%D0%BC%20%D0%B4%D0%BE%D0%BC%D0%B5"
+     },
+     "ym:s:visits": 3.0,
+     "ym:s:bounceRate": 0.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "вреден ли газоблок для здоровья человека",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%B2%D1%80%D0%B5%D0%B4%D0%B5%D0%BD%20%D0%BB%D0%B8%20%D0%B3%D0%B0%D0%B7%D0%BE%D0%B1%D0%BB%D0%BE%D0%BA%20%D0%B4%D0%BB%D1%8F%20%D0%B7%D0%B4%D0%BE%D1%80%D0%BE%D0%B2%D1%8C%D1%8F%20%D1%87%D0%B5%D0%BB%D0%BE%D0%B2%D0%B5%D0%BA%D0%B0"
+     },
+     "ym:s:visits": 3.0,
+     "ym:s:bounceRate": 0.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "газобетонные дома под ключ",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%B3%D0%B0%D0%B7%D0%BE%D0%B1%D0%B5%D1%82%D0%BE%D0%BD%D0%BD%D1%8B%D0%B5%20%D0%B4%D0%BE%D0%BC%D0%B0%20%D0%BF%D0%BE%D0%B4%20%D0%BA%D0%BB%D1%8E%D1%87"
+     },
+     "ym:s:visits": 3.0,
+     "ym:s:bounceRate": 0.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "готовые дома из пеноблоков под ключ цены",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%B3%D0%BE%D1%82%D0%BE%D0%B2%D1%8B%D0%B5%20%D0%B4%D0%BE%D0%BC%D0%B0%20%D0%B8%D0%B7%20%D0%BF%D0%B5%D0%BD%D0%BE%D0%B1%D0%BB%D0%BE%D0%BA%D0%BE%D0%B2%20%D0%BF%D0%BE%D0%B4%20%D0%BA%D0%BB%D1%8E%D1%87%20%D1%86%D0%B5%D0%BD%D1%8B"
+     },
+     "ym:s:visits": 3.0,
+     "ym:s:bounceRate": 33.33333333
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "дачный дом из газобетона 6х6",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%B4%D0%B0%D1%87%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%BE%D0%BC%20%D0%B8%D0%B7%20%D0%B3%D0%B0%D0%B7%D0%BE%D0%B1%D0%B5%D1%82%D0%BE%D0%BD%D0%B0%206%D1%856"
+     },
+     "ym:s:visits": 3.0,
+     "ym:s:bounceRate": 66.66666667
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "дачный дом из газобетона под ключ цена",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%B4%D0%B0%D1%87%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%BE%D0%BC%20%D0%B8%D0%B7%20%D0%B3%D0%B0%D0%B7%D0%BE%D0%B1%D0%B5%D1%82%D0%BE%D0%BD%D0%B0%20%D0%BF%D0%BE%D0%B4%20%D0%BA%D0%BB%D1%8E%D1%87%20%D1%86%D0%B5%D0%BD%D0%B0"
+     },
+     "ym:s:visits": 3.0,
+     "ym:s:bounceRate": 66.66666667
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "дом в американском стиле купить в подмосковье",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%B4%D0%BE%D0%BC%20%D0%B2%20%D0%B0%D0%BC%D0%B5%D1%80%D0%B8%D0%BA%D0%B0%D0%BD%D1%81%D0%BA%D0%BE%D0%BC%20%D1%81%D1%82%D0%B8%D0%BB%D0%B5%20%D0%BA%D1%83%D0%BF%D0%B8%D1%82%D1%8C%20%D0%B2%20%D0%BF%D0%BE%D0%B4%D0%BC%D0%BE%D1%81%D0%BA%D0%BE%D0%B2%D1%8C%D0%B5"
+     },
+     "ym:s:visits": 3.0,
+     "ym:s:bounceRate": 33.33333333
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "дом за 3 месяца под ключ",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%B4%D0%BE%D0%BC%20%D0%B7%D0%B0%203%20%D0%BC%D0%B5%D1%81%D1%8F%D1%86%D0%B0%20%D0%BF%D0%BE%D0%B4%20%D0%BA%D0%BB%D1%8E%D1%87"
+     },
+     "ym:s:visits": 3.0,
+     "ym:s:bounceRate": 0.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "дом из блоков под ключ",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%B4%D0%BE%D0%BC%20%D0%B8%D0%B7%20%D0%B1%D0%BB%D0%BE%D0%BA%D0%BE%D0%B2%20%D0%BF%D0%BE%D0%B4%20%D0%BA%D0%BB%D1%8E%D1%87"
+     },
+     "ym:s:visits": 3.0,
+     "ym:s:bounceRate": 33.33333333
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "дом из керамзитобетонных блоков",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%B4%D0%BE%D0%BC%20%D0%B8%D0%B7%20%D0%BA%D0%B5%D1%80%D0%B0%D0%BC%D0%B7%D0%B8%D1%82%D0%BE%D0%B1%D0%B5%D1%82%D0%BE%D0%BD%D0%BD%D1%8B%D1%85%20%D0%B1%D0%BB%D0%BE%D0%BA%D0%BE%D0%B2"
+     },
+     "ym:s:visits": 3.0,
+     "ym:s:bounceRate": 66.66666667
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "дом из керамики",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%B4%D0%BE%D0%BC%20%D0%B8%D0%B7%20%D0%BA%D0%B5%D1%80%D0%B0%D0%BC%D0%B8%D0%BA%D0%B8"
+     },
+     "ym:s:visits": 3.0,
+     "ym:s:bounceRate": 100.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "дом из керамических блоков",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%B4%D0%BE%D0%BC%20%D0%B8%D0%B7%20%D0%BA%D0%B5%D1%80%D0%B0%D0%BC%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D1%85%20%D0%B1%D0%BB%D0%BE%D0%BA%D0%BE%D0%B2"
+     },
+     "ym:s:visits": 3.0,
+     "ym:s:bounceRate": 66.66666667
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "дом каркас",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%B4%D0%BE%D0%BC%20%D0%BA%D0%B0%D1%80%D0%BA%D0%B0%D1%81"
+     },
+     "ym:s:visits": 3.0,
+     "ym:s:bounceRate": 0.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "дом под ключ",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%B4%D0%BE%D0%BC%20%D0%BF%D0%BE%D0%B4%20%D0%BA%D0%BB%D1%8E%D1%87"
+     },
+     "ym:s:visits": 3.0,
+     "ym:s:bounceRate": 66.66666667
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "дома из газоблока",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%B4%D0%BE%D0%BC%D0%B0%20%D0%B8%D0%B7%20%D0%B3%D0%B0%D0%B7%D0%BE%D0%B1%D0%BB%D0%BE%D0%BA%D0%B0"
+     },
+     "ym:s:visits": 3.0,
+     "ym:s:bounceRate": 0.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "дома из керамических блоков под ключ проекты",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%B4%D0%BE%D0%BC%D0%B0%20%D0%B8%D0%B7%20%D0%BA%D0%B5%D1%80%D0%B0%D0%BC%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D1%85%20%D0%B1%D0%BB%D0%BE%D0%BA%D0%BE%D0%B2%20%D0%BF%D0%BE%D0%B4%20%D0%BA%D0%BB%D1%8E%D1%87%20%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D1%8B"
+     },
+     "ym:s:visits": 3.0,
+     "ym:s:bounceRate": 66.66666667
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "дома из пеноблоков",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%B4%D0%BE%D0%BC%D0%B0%20%D0%B8%D0%B7%20%D0%BF%D0%B5%D0%BD%D0%BE%D0%B1%D0%BB%D0%BE%D0%BA%D0%BE%D0%B2"
+     },
+     "ym:s:visits": 3.0,
+     "ym:s:bounceRate": 33.33333333
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "дома под ключ коттедж",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%B4%D0%BE%D0%BC%D0%B0%20%D0%BF%D0%BE%D0%B4%20%D0%BA%D0%BB%D1%8E%D1%87%20%D0%BA%D0%BE%D1%82%D1%82%D0%B5%D0%B4%D0%B6"
+     },
+     "ym:s:visits": 3.0,
+     "ym:s:bounceRate": 33.33333333
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "дома-каркас.ру",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%B4%D0%BE%D0%BC%D0%B0-%D0%BA%D0%B0%D1%80%D0%BA%D0%B0%D1%81.%D1%80%D1%83"
+     },
+     "ym:s:visits": 3.0,
+     "ym:s:bounceRate": 0.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "загородные дома коттедж под ключ",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%B7%D0%B0%D0%B3%D0%BE%D1%80%D0%BE%D0%B4%D0%BD%D1%8B%D0%B5%20%D0%B4%D0%BE%D0%BC%D0%B0%20%D0%BA%D0%BE%D1%82%D1%82%D0%B5%D0%B4%D0%B6%20%D0%BF%D0%BE%D0%B4%20%D0%BA%D0%BB%D1%8E%D1%87"
+     },
+     "ym:s:visits": 3.0,
+     "ym:s:bounceRate": 66.66666667
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "из чего строить дом для круглогодичного проживания в подмосковье",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%B8%D0%B7%20%D1%87%D0%B5%D0%B3%D0%BE%20%D1%81%D1%82%D1%80%D0%BE%D0%B8%D1%82%D1%8C%20%D0%B4%D0%BE%D0%BC%20%D0%B4%D0%BB%D1%8F%20%D0%BA%D1%80%D1%83%D0%B3%D0%BB%D0%BE%D0%B3%D0%BE%D0%B4%D0%B8%D1%87%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%BF%D1%80%D0%BE%D0%B6%D0%B8%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20%D0%B2%20%D0%BF%D0%BE%D0%B4%D0%BC%D0%BE%D1%81%D0%BA%D0%BE%D0%B2%D1%8C%D0%B5"
+     },
+     "ym:s:visits": 3.0,
+     "ym:s:bounceRate": 66.66666667
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "как крепить крышу к газоблоку",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%BA%D0%B0%D0%BA%20%D0%BA%D1%80%D0%B5%D0%BF%D0%B8%D1%82%D1%8C%20%D0%BA%D1%80%D1%8B%D1%88%D1%83%20%D0%BA%20%D0%B3%D0%B0%D0%B7%D0%BE%D0%B1%D0%BB%D0%BE%D0%BA%D1%83"
+     },
+     "ym:s:visits": 3.0,
+     "ym:s:bounceRate": 0.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "как крепить мауэрлат к газобетону",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%BA%D0%B0%D0%BA%20%D0%BA%D1%80%D0%B5%D0%BF%D0%B8%D1%82%D1%8C%20%D0%BC%D0%B0%D1%83%D1%8D%D1%80%D0%BB%D0%B0%D1%82%20%D0%BA%20%D0%B3%D0%B0%D0%B7%D0%BE%D0%B1%D0%B5%D1%82%D0%BE%D0%BD%D1%83"
+     },
+     "ym:s:visits": 3.0,
+     "ym:s:bounceRate": 0.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "как крепить мауэрлат к газоблоку",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%BA%D0%B0%D0%BA%20%D0%BA%D1%80%D0%B5%D0%BF%D0%B8%D1%82%D1%8C%20%D0%BC%D0%B0%D1%83%D1%8D%D1%80%D0%BB%D0%B0%D1%82%20%D0%BA%20%D0%B3%D0%B0%D0%B7%D0%BE%D0%B1%D0%BB%D0%BE%D0%BA%D1%83"
+     },
+     "ym:s:visits": 3.0,
+     "ym:s:bounceRate": 0.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "как правильно сделать мауэрлат на газобетоне",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%BA%D0%B0%D0%BA%20%D0%BF%D1%80%D0%B0%D0%B2%D0%B8%D0%BB%D1%8C%D0%BD%D0%BE%20%D1%81%D0%B4%D0%B5%D0%BB%D0%B0%D1%82%D1%8C%20%D0%BC%D0%B0%D1%83%D1%8D%D1%80%D0%BB%D0%B0%D1%82%20%D0%BD%D0%B0%20%D0%B3%D0%B0%D0%B7%D0%BE%D0%B1%D0%B5%D1%82%D0%BE%D0%BD%D0%B5"
+     },
+     "ym:s:visits": 3.0,
+     "ym:s:bounceRate": 0.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "как стянуть стены деревянного дома",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%BA%D0%B0%D0%BA%20%D1%81%D1%82%D1%8F%D0%BD%D1%83%D1%82%D1%8C%20%D1%81%D1%82%D0%B5%D0%BD%D1%8B%20%D0%B4%D0%B5%D1%80%D0%B5%D0%B2%D1%8F%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BE%D0%BC%D0%B0"
+     },
+     "ym:s:visits": 3.0,
+     "ym:s:bounceRate": 0.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "какие дома лучше строить для постоянного проживания в подмосковье",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%BA%D0%B0%D0%BA%D0%B8%D0%B5%20%D0%B4%D0%BE%D0%BC%D0%B0%20%D0%BB%D1%83%D1%87%D1%88%D0%B5%20%D1%81%D1%82%D1%80%D0%BE%D0%B8%D1%82%D1%8C%20%D0%B4%D0%BB%D1%8F%20%D0%BF%D0%BE%D1%81%D1%82%D0%BE%D1%8F%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%BF%D1%80%D0%BE%D0%B6%D0%B8%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20%D0%B2%20%D0%BF%D0%BE%D0%B4%D0%BC%D0%BE%D1%81%D0%BA%D0%BE%D0%B2%D1%8C%D0%B5"
+     },
+     "ym:s:visits": 3.0,
+     "ym:s:bounceRate": 0.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "каркасный дом верона",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%BA%D0%B0%D1%80%D0%BA%D0%B0%D1%81%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%BE%D0%BC%20%D0%B2%D0%B5%D1%80%D0%BE%D0%BD%D0%B0"
+     },
+     "ym:s:visits": 3.0,
+     "ym:s:bounceRate": 33.33333333
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "каркасный дом с плоской крышей",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%BA%D0%B0%D1%80%D0%BA%D0%B0%D1%81%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%BE%D0%BC%20%D1%81%20%D0%BF%D0%BB%D0%BE%D1%81%D0%BA%D0%BE%D0%B9%20%D0%BA%D1%80%D1%8B%D1%88%D0%B5%D0%B9"
+     },
+     "ym:s:visits": 3.0,
+     "ym:s:bounceRate": 33.33333333
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "мауэрлат",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%BC%D0%B0%D1%83%D1%8D%D1%80%D0%BB%D0%B0%D1%82"
+     },
+     "ym:s:visits": 3.0,
+     "ym:s:bounceRate": 0.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "мауэрлат на газоблок",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%BC%D0%B0%D1%83%D1%8D%D1%80%D0%BB%D0%B0%D1%82%20%D0%BD%D0%B0%20%D0%B3%D0%B0%D0%B7%D0%BE%D0%B1%D0%BB%D0%BE%D0%BA"
+     },
+     "ym:s:visits": 3.0,
+     "ym:s:bounceRate": 0.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "монтаж мауэрлата на армопояс",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%BC%D0%BE%D0%BD%D1%82%D0%B0%D0%B6%20%D0%BC%D0%B0%D1%83%D1%8D%D1%80%D0%BB%D0%B0%D1%82%D0%B0%20%D0%BD%D0%B0%20%D0%B0%D1%80%D0%BC%D0%BE%D0%BF%D0%BE%D1%8F%D1%81"
+     },
+     "ym:s:visits": 3.0,
+     "ym:s:bounceRate": 0.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "нужен ли армопояс для одноэтажного дома из кирпича",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%BD%D1%83%D0%B6%D0%B5%D0%BD%20%D0%BB%D0%B8%20%D0%B0%D1%80%D0%BC%D0%BE%D0%BF%D0%BE%D1%8F%D1%81%20%D0%B4%D0%BB%D1%8F%20%D0%BE%D0%B4%D0%BD%D0%BE%D1%8D%D1%82%D0%B0%D0%B6%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BE%D0%BC%D0%B0%20%D0%B8%D0%B7%20%D0%BA%D0%B8%D1%80%D0%BF%D0%B8%D1%87%D0%B0"
+     },
+     "ym:s:visits": 3.0,
+     "ym:s:bounceRate": 0.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "нужно ли класть рубероид под мауэрлат",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%BD%D1%83%D0%B6%D0%BD%D0%BE%20%D0%BB%D0%B8%20%D0%BA%D0%BB%D0%B0%D1%81%D1%82%D1%8C%20%D1%80%D1%83%D0%B1%D0%B5%D1%80%D0%BE%D0%B8%D0%B4%20%D0%BF%D0%BE%D0%B4%20%D0%BC%D0%B0%D1%83%D1%8D%D1%80%D0%BB%D0%B0%D1%82"
+     },
+     "ym:s:visits": 3.0,
+     "ym:s:bounceRate": 0.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "одноэтажный дом из газобетона под ключ цена",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%BE%D0%B4%D0%BD%D0%BE%D1%8D%D1%82%D0%B0%D0%B6%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%BE%D0%BC%20%D0%B8%D0%B7%20%D0%B3%D0%B0%D0%B7%D0%BE%D0%B1%D0%B5%D1%82%D0%BE%D0%BD%D0%B0%20%D0%BF%D0%BE%D0%B4%20%D0%BA%D0%BB%D1%8E%D1%87%20%D1%86%D0%B5%D0%BD%D0%B0"
+     },
+     "ym:s:visits": 3.0,
+     "ym:s:bounceRate": 0.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "пеноблоки срок службы",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%BF%D0%B5%D0%BD%D0%BE%D0%B1%D0%BB%D0%BE%D0%BA%D0%B8%20%D1%81%D1%80%D0%BE%D0%BA%20%D1%81%D0%BB%D1%83%D0%B6%D0%B1%D1%8B"
+     },
+     "ym:s:visits": 3.0,
+     "ym:s:bounceRate": 0.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "построить дом на участке 6 соток",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%BF%D0%BE%D1%81%D1%82%D1%80%D0%BE%D0%B8%D1%82%D1%8C%20%D0%B4%D0%BE%D0%BC%20%D0%BD%D0%B0%20%D1%83%D1%87%D0%B0%D1%81%D1%82%D0%BA%D0%B5%206%20%D1%81%D0%BE%D1%82%D0%BE%D0%BA"
+     },
+     "ym:s:visits": 3.0,
+     "ym:s:bounceRate": 66.66666667
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "построить дом под ключ из газобетона",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%BF%D0%BE%D1%81%D1%82%D1%80%D0%BE%D0%B8%D1%82%D1%8C%20%D0%B4%D0%BE%D0%BC%20%D0%BF%D0%BE%D0%B4%20%D0%BA%D0%BB%D1%8E%D1%87%20%D0%B8%D0%B7%20%D0%B3%D0%B0%D0%B7%D0%BE%D0%B1%D0%B5%D1%82%D0%BE%D0%BD%D0%B0"
+     },
+     "ym:s:visits": 3.0,
+     "ym:s:bounceRate": 100.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "постройка дома из газобетона под ключ",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%BF%D0%BE%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0%20%D0%B4%D0%BE%D0%BC%D0%B0%20%D0%B8%D0%B7%20%D0%B3%D0%B0%D0%B7%D0%BE%D0%B1%D0%B5%D1%82%D0%BE%D0%BD%D0%B0%20%D0%BF%D0%BE%D0%B4%20%D0%BA%D0%BB%D1%8E%D1%87"
+     },
+     "ym:s:visits": 3.0,
+     "ym:s:bounceRate": 33.33333333
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "проект дома виченца",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%20%D0%B4%D0%BE%D0%BC%D0%B0%20%D0%B2%D0%B8%D1%87%D0%B5%D0%BD%D1%86%D0%B0"
+     },
+     "ym:s:visits": 3.0,
+     "ym:s:bounceRate": 0.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "проект дома монреаль",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%20%D0%B4%D0%BE%D0%BC%D0%B0%20%D0%BC%D0%BE%D0%BD%D1%80%D0%B5%D0%B0%D0%BB%D1%8C"
+     },
+     "ym:s:visits": 3.0,
+     "ym:s:bounceRate": 0.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "проект дома юкон",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%20%D0%B4%D0%BE%D0%BC%D0%B0%20%D1%8E%D0%BA%D0%BE%D0%BD"
+     },
+     "ym:s:visits": 3.0,
+     "ym:s:bounceRate": 66.66666667
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "проект утрехт",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%20%D1%83%D1%82%D1%80%D0%B5%D1%85%D1%82"
+     },
+     "ym:s:visits": 3.0,
+     "ym:s:bounceRate": 0.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "проекты домов и коттеджей",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D1%8B%20%D0%B4%D0%BE%D0%BC%D0%BE%D0%B2%20%D0%B8%20%D0%BA%D0%BE%D1%82%D1%82%D0%B5%D0%B4%D0%B6%D0%B5%D0%B9"
+     },
+     "ym:s:visits": 3.0,
+     "ym:s:bounceRate": 0.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "проекты коттеджей и домов для постоянного проживания",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D1%8B%20%D0%BA%D0%BE%D1%82%D1%82%D0%B5%D0%B4%D0%B6%D0%B5%D0%B9%20%D0%B8%20%D0%B4%D0%BE%D0%BC%D0%BE%D0%B2%20%D0%B4%D0%BB%D1%8F%20%D0%BF%D0%BE%D1%81%D1%82%D0%BE%D1%8F%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%BF%D1%80%D0%BE%D0%B6%D0%B8%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F"
+     },
+     "ym:s:visits": 3.0,
+     "ym:s:bounceRate": 66.66666667
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "расстояние между шпильками для крепления мауэрлата",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D1%80%D0%B0%D1%81%D1%81%D1%82%D0%BE%D1%8F%D0%BD%D0%B8%D0%B5%20%D0%BC%D0%B5%D0%B6%D0%B4%D1%83%20%D1%88%D0%BF%D0%B8%D0%BB%D1%8C%D0%BA%D0%B0%D0%BC%D0%B8%20%D0%B4%D0%BB%D1%8F%20%D0%BA%D1%80%D0%B5%D0%BF%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F%20%D0%BC%D0%B0%D1%83%D1%8D%D1%80%D0%BB%D0%B0%D1%82%D0%B0"
+     },
+     "ym:s:visits": 3.0,
+     "ym:s:bounceRate": 0.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "расстояние шпилек под мауэрлат",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D1%80%D0%B0%D1%81%D1%81%D1%82%D0%BE%D1%8F%D0%BD%D0%B8%D0%B5%20%D1%88%D0%BF%D0%B8%D0%BB%D0%B5%D0%BA%20%D0%BF%D0%BE%D0%B4%20%D0%BC%D0%B0%D1%83%D1%8D%D1%80%D0%BB%D0%B0%D1%82"
+     },
+     "ym:s:visits": 3.0,
+     "ym:s:bounceRate": 0.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "рейтинг производителей газобетона",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D1%80%D0%B5%D0%B9%D1%82%D0%B8%D0%BD%D0%B3%20%D0%BF%D1%80%D0%BE%D0%B8%D0%B7%D0%B2%D0%BE%D0%B4%D0%B8%D1%82%D0%B5%D0%BB%D0%B5%D0%B9%20%D0%B3%D0%B0%D0%B7%D0%BE%D0%B1%D0%B5%D1%82%D0%BE%D0%BD%D0%B0"
+     },
+     "ym:s:visits": 3.0,
+     "ym:s:bounceRate": 0.0
+    },
+    {
+     "ym:s:searchPhrase": {
+      "name": "ск «интел групп»",
+      "favicon": "www.yandex.ru",
+      "url": "https://yandex.ru/search/?text=%D1%81%D0%BA%20%C2%AB%D0%B8%D0%BD%D1%82%D0%B5%D0%BB%20%D0%B3%D1%80%D1%83%D0%BF%D0%BF%C2%BB"
+     },
+     "ym:s:visits": 3.0,
+     "ym:s:bounceRate": 0.0
+    }
+   ],
+   "error": null
+  },
+  "direct_campaign": {
+   "dims": [
+    "ym:s:lastDirectClickOrderName"
+   ],
+   "metrics": [
+    "ym:s:visits",
+    "ym:s:bounceRate"
+   ],
+   "rows": [
+    {
+     "ym:s:lastDirectClickOrderName": {
+      "name": "РСЯ / Интел Групп / Газобетон + Каменные дома + Керамоблок / Москва и МО"
+     },
+     "ym:s:visits": 53396.0,
+     "ym:s:bounceRate": 34.29095812
+    },
+    {
+     "ym:s:lastDirectClickOrderName": {
+      "name": "Товарная кампания / газобетон (копия)"
+     },
+     "ym:s:visits": 31929.0,
+     "ym:s:bounceRate": 20.61135645
+    },
+    {
+     "ym:s:lastDirectClickOrderName": {
+      "name": "рся / газобетон"
+     },
+     "ym:s:visits": 6032.0,
+     "ym:s:bounceRate": 23.30901857
+    },
+    {
+     "ym:s:lastDirectClickOrderName": {
+      "name": "2. Поиск Прошлый директолог (Мобилки)"
+     },
+     "ym:s:visits": 5200.0,
+     "ym:s:bounceRate": 31.07692308
+    },
+    {
+     "ym:s:lastDirectClickOrderName": {
+      "name": "Товарная кампания / газобетон"
+     },
+     "ym:s:visits": 3376.0,
+     "ym:s:bounceRate": 21.53436019
+    },
+    {
+     "ym:s:lastDirectClickOrderName": {
+      "name": "Товарная кампания / кирпич"
+     },
+     "ym:s:visits": 1903.0,
+     "ym:s:bounceRate": 41.77614293
+    },
+    {
+     "ym:s:lastDirectClickOrderName": {
+      "name": "1. Поиск (Газобетон, Керамические)"
+     },
+     "ym:s:visits": 1588.0,
+     "ym:s:bounceRate": 12.84634761
+    },
+    {
+     "ym:s:lastDirectClickOrderName": {
+      "name": "МК / газобетон"
+     },
+     "ym:s:visits": 1310.0,
+     "ym:s:bounceRate": 30.61068702
+    },
+    {
+     "ym:s:lastDirectClickOrderName": {
+      "name": "2.1 Поиск Прошлый директолог (Мобилки)"
+     },
+     "ym:s:visits": 666.0,
+     "ym:s:bounceRate": 36.03603604
+    },
+    {
+     "ym:s:lastDirectClickOrderName": {
+      "name": "Рекламное объявление в MAX № 13 от 02-11-2026"
+     },
+     "ym:s:visits": 279.0,
+     "ym:s:bounceRate": 26.52329749
+    },
+    {
+     "ym:s:lastDirectClickOrderName": {
+      "name": "1.1 Поиск (Газобетон, Керамические)"
+     },
+     "ym:s:visits": 174.0,
+     "ym:s:bounceRate": 12.06896552
+    },
+    {
+     "ym:s:lastDirectClickOrderName": {
+      "name": "Поиск-строительство"
+     },
+     "ym:s:visits": 63.0,
+     "ym:s:bounceRate": 34.92063492
+    },
+    {
+     "ym:s:lastDirectClickOrderName": {
+      "name": "Поиск-газобетон"
+     },
+     "ym:s:visits": 62.0,
+     "ym:s:bounceRate": 33.87096774
+    },
+    {
+     "ym:s:lastDirectClickOrderName": {
+      "name": "Поиск-каменные дома"
+     },
+     "ym:s:visits": 37.0,
+     "ym:s:bounceRate": 32.43243243
+    },
+    {
+     "ym:s:lastDirectClickOrderName": {
+      "name": "Поиск-керамические дома"
+     },
+     "ym:s:visits": 32.0,
+     "ym:s:bounceRate": 34.375
+    },
+    {
+     "ym:s:lastDirectClickOrderName": {
+      "name": "Ретаргетинг"
+     },
+     "ym:s:visits": 4.0,
+     "ym:s:bounceRate": 75.0
+    }
+   ],
+   "error": null
+  },
+  "utm": {
+   "dims": [
+    "ym:s:lastsignUTMSource",
+    "ym:s:lastsignUTMMedium",
+    "ym:s:lastsignUTMCampaign"
+   ],
+   "metrics": [
+    "ym:s:visits"
+   ],
+   "rows": [
+    {
+     "ym:s:lastsignUTMSource": {
+      "name": "yandex"
+     },
+     "ym:s:lastsignUTMMedium": {
+      "name": "cpc"
+     },
+     "ym:s:lastsignUTMCampaign": {
+      "name": "713311426"
+     },
+     "ym:s:visits": 62674.0
+    },
+    {
+     "ym:s:lastsignUTMSource": {
+      "name": "yandex"
+     },
+     "ym:s:lastsignUTMMedium": {
+      "name": "cpc"
+     },
+     "ym:s:lastsignUTMCampaign": {
+      "name": "713935594"
+     },
+     "ym:s:visits": 33653.0
+    },
+    {
+     "ym:s:lastsignUTMSource": {
+      "name": "ay_direct"
+     },
+     "ym:s:lastsignUTMMedium": {
+      "name": "cpc"
+     },
+     "ym:s:lastsignUTMCampaign": {
+      "name": "710812832"
+     },
+     "ym:s:visits": 6885.0
+    },
+    {
+     "ym:s:lastsignUTMSource": {
+      "name": "yandex"
+     },
+     "ym:s:lastsignUTMMedium": {
+      "name": "cpc"
+     },
+     "ym:s:lastsignUTMCampaign": {
+      "name": "714038332"
+     },
+     "ym:s:visits": 5440.0
+    },
+    {
+     "ym:s:lastsignUTMSource": {
+      "name": "ya_direct"
+     },
+     "ym:s:lastsignUTMMedium": {
+      "name": "cpc"
+     },
+     "ym:s:lastsignUTMCampaign": {
+      "name": "707321890"
+     },
+     "ym:s:visits": 4167.0
+    },
+    {
+     "ym:s:lastsignUTMSource": {
+      "name": "ya_direct"
+     },
+     "ym:s:lastsignUTMMedium": {
+      "name": "cpc"
+     },
+     "ym:s:lastsignUTMCampaign": {
+      "name": "707570484"
+     },
+     "ym:s:visits": 2508.0
+    },
+    {
+     "ym:s:lastsignUTMSource": {
+      "name": "yandex"
+     },
+     "ym:s:lastsignUTMMedium": {
+      "name": "cpc"
+     },
+     "ym:s:lastsignUTMCampaign": {
+      "name": "714762514"
+     },
+     "ym:s:visits": 1125.0
+    },
+    {
+     "ym:s:lastsignUTMSource": {
+      "name": "ya_direct"
+     },
+     "ym:s:lastsignUTMMedium": {
+      "name": "cpc"
+     },
+     "ym:s:lastsignUTMCampaign": {
+      "name": "710169488"
+     },
+     "ym:s:visits": 949.0
+    },
+    {
+     "ym:s:lastsignUTMSource": {
+      "name": "yandex"
+     },
+     "ym:s:lastsignUTMMedium": {
+      "name": "cpc"
+     },
+     "ym:s:lastsignUTMCampaign": {
+      "name": "713631836"
+     },
+     "ym:s:visits": 777.0
+    },
+    {
+     "ym:s:lastsignUTMSource": {
+      "name": "yandex"
+     },
+     "ym:s:lastsignUTMMedium": {
+      "name": "cpc"
+     },
+     "ym:s:lastsignUTMCampaign": {
+      "name": "715810384"
+     },
+     "ym:s:visits": 685.0
+    },
+    {
+     "ym:s:lastsignUTMSource": {
+      "name": "ya"
+     },
+     "ym:s:lastsignUTMMedium": {
+      "name": "cpc"
+     },
+     "ym:s:lastsignUTMCampaign": {
+      "name": "713935594"
+     },
+     "ym:s:visits": 596.0
+    },
+    {
+     "ym:s:lastsignUTMSource": {
+      "name": "ya"
+     },
+     "ym:s:lastsignUTMMedium": {
+      "name": "cpc"
+     },
+     "ym:s:lastsignUTMCampaign": {
+      "name": "713311426"
+     },
+     "ym:s:visits": 417.0
+    },
+    {
+     "ym:s:lastsignUTMSource": {
+      "name": "yandex"
+     },
+     "ym:s:lastsignUTMMedium": {
+      "name": "cpc"
+     },
+     "ym:s:lastsignUTMCampaign": {
+      "name": "707321890"
+     },
+     "ym:s:visits": 369.0
+    },
+    {
+     "ym:s:lastsignUTMSource": {
+      "name": "yandex"
+     },
+     "ym:s:lastsignUTMMedium": {
+      "name": "cpc"
+     },
+     "ym:s:lastsignUTMCampaign": {
+      "name": "715734434"
+     },
+     "ym:s:visits": 366.0
+    },
+    {
+     "ym:s:lastsignUTMSource": {
+      "name": "yandex"
+     },
+     "ym:s:lastsignUTMMedium": {
+      "name": "poisk"
+     },
+     "ym:s:lastsignUTMCampaign": {
+      "name": "proekti"
+     },
+     "ym:s:visits": 229.0
+    },
+    {
+     "ym:s:lastsignUTMSource": {
+      "name": "yandex"
+     },
+     "ym:s:lastsignUTMMedium": {
+      "name": "cpc"
+     },
+     "ym:s:lastsignUTMCampaign": {
+      "name": "119507389"
+     },
+     "ym:s:visits": 220.0
+    },
+    {
+     "ym:s:lastsignUTMSource": {
+      "name": "yandex"
+     },
+     "ym:s:lastsignUTMMedium": {
+      "name": "cpc"
+     },
+     "ym:s:lastsignUTMCampaign": {
+      "name": "715702484"
+     },
+     "ym:s:visits": 183.0
+    },
+    {
+     "ym:s:lastsignUTMSource": {
+      "name": "yandex"
+     },
+     "ym:s:lastsignUTMMedium": {
+      "name": "cpc"
+     },
+     "ym:s:lastsignUTMCampaign": {
+      "name": "713631672"
+     },
+     "ym:s:visits": 181.0
+    },
+    {
+     "ym:s:lastsignUTMSource": {
+      "name": "yandex"
+     },
+     "ym:s:lastsignUTMMedium": {
+      "name": "cpc"
+     },
+     "ym:s:lastsignUTMCampaign": {
+      "name": "0"
+     },
+     "ym:s:visits": 180.0
+    },
+    {
+     "ym:s:lastsignUTMSource": {
+      "name": "yandex"
+     },
+     "ym:s:lastsignUTMMedium": {
+      "name": "poisk"
+     },
+     "ym:s:lastsignUTMCampaign": {
+      "name": "obshie"
+     },
+     "ym:s:visits": 161.0
+    },
+    {
+     "ym:s:lastsignUTMSource": {
+      "name": "ya"
+     },
+     "ym:s:lastsignUTMMedium": {
+      "name": "cpc"
+     },
+     "ym:s:lastsignUTMCampaign": {
+      "name": "714038332"
+     },
+     "ym:s:visits": 155.0
+    },
+    {
+     "ym:s:lastsignUTMSource": {
+      "name": "domclick"
+     },
+     "ym:s:lastsignUTMMedium": {
+      "name": "adv"
+     },
+     "ym:s:lastsignUTMCampaign": {
+      "name": "firststart"
+     },
+     "ym:s:visits": 149.0
+    },
+    {
+     "ym:s:lastsignUTMSource": {
+      "name": "yandex"
+     },
+     "ym:s:lastsignUTMMedium": {
+      "name": "cpc"
+     },
+     "ym:s:lastsignUTMCampaign": {
+      "name": "119507325"
+     },
+     "ym:s:visits": 135.0
+    },
+    {
+     "ym:s:lastsignUTMSource": {
+      "name": "yandex"
+     },
+     "ym:s:lastsignUTMMedium": {
+      "name": "poisk"
+     },
+     "ym:s:lastsignUTMCampaign": {
+      "name": "razmeri"
+     },
+     "ym:s:visits": 111.0
+    },
+    {
+     "ym:s:lastsignUTMSource": {
+      "name": "yandex"
+     },
+     "ym:s:lastsignUTMMedium": {
+      "name": "poisk"
+     },
+     "ym:s:lastsignUTMCampaign": {
+      "name": "racchet"
+     },
+     "ym:s:visits": 105.0
+    },
+    {
+     "ym:s:lastsignUTMSource": {
+      "name": "dzen"
+     },
+     "ym:s:lastsignUTMMedium": {
+      "name": null
+     },
+     "ym:s:lastsignUTMCampaign": {
+      "name": "articles"
+     },
+     "ym:s:visits": 88.0
+    },
+    {
+     "ym:s:lastsignUTMSource": {
+      "name": "yandex"
+     },
+     "ym:s:lastsignUTMMedium": {
+      "name": "cpc"
+     },
+     "ym:s:lastsignUTMCampaign": {
+      "name": "119507377"
+     },
+     "ym:s:visits": 87.0
+    },
+    {
+     "ym:s:lastsignUTMSource": {
+      "name": "yandex"
+     },
+     "ym:s:lastsignUTMMedium": {
+      "name": "cpc"
+     },
+     "ym:s:lastsignUTMCampaign": {
+      "name": "707570484"
+     },
+     "ym:s:visits": 79.0
+    },
+    {
+     "ym:s:lastsignUTMSource": {
+      "name": "ya"
+     },
+     "ym:s:lastsignUTMMedium": {
+      "name": "cpc"
+     },
+     "ym:s:lastsignUTMCampaign": {
+      "name": "714762514"
+     },
+     "ym:s:visits": 75.0
+    },
+    {
+     "ym:s:lastsignUTMSource": {
+      "name": "yandex"
+     },
+     "ym:s:lastsignUTMMedium": {
+      "name": "cpc"
+     },
+     "ym:s:lastsignUTMCampaign": {
+      "name": "713617296"
+     },
+     "ym:s:visits": 69.0
+    }
+   ]
+  },
+  "source_goals": {
+   "dims": [
+    "ym:s:lastsignTrafficSource"
+   ],
+   "metrics": [
+    "ym:s:visits",
+    "ym:s:goal41224933reaches",
+    "ym:s:goal309041787reaches",
+    "ym:s:goal201424006reaches",
+    "ym:s:goal201424009reaches",
+    "ym:s:goal201424012reaches",
+    "ym:s:goal307252364reaches",
+    "ym:s:goal297819512reaches",
+    "ym:s:goal260580704reaches"
+   ],
+   "rows": [
+    {
+     "ym:s:lastsignTrafficSource": {
+      "icon_id": "3",
+      "icon_type": "traffic-source",
+      "name": "Ad traffic",
+      "id": "ad"
+     },
+     "ym:s:visits": 124843.0,
+     "ym:s:goal41224933reaches": 145.0,
+     "ym:s:goal309041787reaches": 20.0,
+     "ym:s:goal201424006reaches": 126.0,
+     "ym:s:goal201424009reaches": 89.0,
+     "ym:s:goal201424012reaches": 103.0,
+     "ym:s:goal307252364reaches": 56.0,
+     "ym:s:goal297819512reaches": 6762.0,
+     "ym:s:goal260580704reaches": 0.0
+    },
+    {
+     "ym:s:lastsignTrafficSource": {
+      "icon_id": "2",
+      "icon_type": "traffic-source",
+      "name": "Search engine traffic",
+      "id": "organic"
+     },
+     "ym:s:visits": 15371.0,
+     "ym:s:goal41224933reaches": 42.0,
+     "ym:s:goal309041787reaches": 28.0,
+     "ym:s:goal201424006reaches": 32.0,
+     "ym:s:goal201424009reaches": 24.0,
+     "ym:s:goal201424012reaches": 32.0,
+     "ym:s:goal307252364reaches": 18.0,
+     "ym:s:goal297819512reaches": 1743.0,
+     "ym:s:goal260580704reaches": 0.0
+    },
+    {
+     "ym:s:lastsignTrafficSource": {
+      "icon_id": "0",
+      "icon_type": "traffic-source",
+      "name": "Direct traffic",
+      "id": "direct"
+     },
+     "ym:s:visits": 9049.0,
+     "ym:s:goal41224933reaches": 12.0,
+     "ym:s:goal309041787reaches": 35.0,
+     "ym:s:goal201424006reaches": 11.0,
+     "ym:s:goal201424009reaches": 4.0,
+     "ym:s:goal201424012reaches": 5.0,
+     "ym:s:goal307252364reaches": 1.0,
+     "ym:s:goal297819512reaches": 316.0,
+     "ym:s:goal260580704reaches": 0.0
+    },
+    {
+     "ym:s:lastsignTrafficSource": {
+      "icon_id": "-1",
+      "icon_type": "traffic-source",
+      "name": "Internal traffic",
+      "id": "internal"
+     },
+     "ym:s:visits": 1609.0,
+     "ym:s:goal41224933reaches": 2.0,
+     "ym:s:goal309041787reaches": 0.0,
+     "ym:s:goal201424006reaches": 2.0,
+     "ym:s:goal201424009reaches": 1.0,
+     "ym:s:goal201424012reaches": 1.0,
+     "ym:s:goal307252364reaches": 0.0,
+     "ym:s:goal297819512reaches": 102.0,
+     "ym:s:goal260580704reaches": 0.0
+    },
+    {
+     "ym:s:lastsignTrafficSource": {
+      "icon_id": "1",
+      "icon_type": "traffic-source",
+      "name": "Link traffic",
+      "id": "referral"
+     },
+     "ym:s:visits": 1180.0,
+     "ym:s:goal41224933reaches": 10.0,
+     "ym:s:goal309041787reaches": 9.0,
+     "ym:s:goal201424006reaches": 8.0,
+     "ym:s:goal201424009reaches": 3.0,
+     "ym:s:goal201424012reaches": 4.0,
+     "ym:s:goal307252364reaches": 2.0,
+     "ym:s:goal297819512reaches": 188.0,
+     "ym:s:goal260580704reaches": 0.0
+    },
+    {
+     "ym:s:lastsignTrafficSource": {
+      "icon_id": "9",
+      "icon_type": "traffic-source",
+      "name": "Recommendation system traffic",
+      "id": "recommend"
+     },
+     "ym:s:visits": 525.0,
+     "ym:s:goal41224933reaches": 1.0,
+     "ym:s:goal309041787reaches": 0.0,
+     "ym:s:goal201424006reaches": 1.0,
+     "ym:s:goal201424009reaches": 0.0,
+     "ym:s:goal201424012reaches": 0.0,
+     "ym:s:goal307252364reaches": 0.0,
+     "ym:s:goal297819512reaches": 171.0,
+     "ym:s:goal260580704reaches": 0.0
+    },
+    {
+     "ym:s:lastsignTrafficSource": {
+      "icon_id": "8",
+      "icon_type": "traffic-source",
+      "name": "Social network traffic",
+      "id": "social"
+     },
+     "ym:s:visits": 175.0,
+     "ym:s:goal41224933reaches": 1.0,
+     "ym:s:goal309041787reaches": 1.0,
+     "ym:s:goal201424006reaches": 1.0,
+     "ym:s:goal201424009reaches": 1.0,
+     "ym:s:goal201424012reaches": 1.0,
+     "ym:s:goal307252364reaches": 1.0,
+     "ym:s:goal297819512reaches": 16.0,
+     "ym:s:goal260580704reaches": 0.0
+    },
+    {
+     "ym:s:lastsignTrafficSource": {
+      "icon_id": "10",
+      "icon_type": "traffic-source",
+      "name": "Messenger traffic",
+      "id": "messenger"
+     },
+     "ym:s:visits": 67.0,
+     "ym:s:goal41224933reaches": 0.0,
+     "ym:s:goal309041787reaches": 0.0,
+     "ym:s:goal201424006reaches": 0.0,
+     "ym:s:goal201424009reaches": 0.0,
+     "ym:s:goal201424012reaches": 0.0,
+     "ym:s:goal307252364reaches": 0.0,
+     "ym:s:goal297819512reaches": 7.0,
+     "ym:s:goal260580704reaches": 0.0
+    }
+   ],
+   "error": null
+  }
+ },
+ "errors": [
+  "mgmt grants: HTTP 403: {\"errors\":[{\"error_type\":\"access_denied\",\"message\":\"Access Denied\"}],\"code\":403,\"message\":\"Access Denied\"}",
+  "mgmt user_params: HTTP 404: {\"errors\":[{\"error_type\":\"not_found\",\"message\":\"No endpoint GET /management/v1/counter/22595095/user_params.\"}],\"code\":404,\"message\":\"No endpoint GET /management/v1/counter/22595095/user_params.\"}",
+  "mgmt alerts: HTTP 404: {\"errors\":[{\"error_type\":\"not_found\",\"message\":\"No endpoint GET /management/v1/counter/22595095/alerts.\"}],\"code\":404,\"message\":\"No endpoint GET /management/v1/counter/22595095/alerts.\"}",
+  "mgmt data_sources: HTTP 404: {\"errors\":[{\"error_type\":\"not_found\",\"message\":\"No endpoint GET /management/v1/counter/22595095/data_sources.\"}],\"code\":404,\"message\":\"No endpoint GET /management/v1/counter/22595095/data_sources.\"}",
+  "mgmt labels: HTTP 404: {\"errors\":[{\"error_type\":\"not_found\",\"message\":\"No endpoint GET /management/v1/counter/22595095/labels.\"}],\"code\":404,\"message\":\"No endpoint GET /management/v1/counter/22595095/labels.\"}",
+  "mgmt experiments: HTTP 404: {\"errors\":[{\"error_type\":\"not_found\",\"message\":\"No endpoint GET /management/v1/counter/22595095/experiments.\"}],\"code\":404,\"message\":\"No endpoint GET /management/v1/counter/22595095/experiments.\"}",
+  "mgmt offline_conversions: HTTP 404: {\"errors\":[{\"error_type\":\"not_found\",\"message\":\"No endpoint GET /management/v1/counter/22595095/offline_conversions.\"}],\"code\":404,\"message\":\"No endpoint GET /management/v1/counter/22595095/offline_conversions.\"}",
+  "mgmt accounts: HTTP 404: {\"errors\":[{\"error_type\":\"not_found\",\"message\":\"No endpoint GET /management/v1/counter/22595095/accounts.\"}],\"code\":404,\"message\":\"No endpoint GET /management/v1/counter/22595095/accounts.\"}",
+  "mgmt tracking_params: HTTP 404: {\"errors\":[{\"error_type\":\"not_found\",\"message\":\"No endpoint GET /management/v1/counter/22595095/tracking_params.\"}],\"code\":404,\"message\":\"No endpoint GET /management/v1/counter/22595095/tracking_params.\"}"
+ ]
+}

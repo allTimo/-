@@ -13,7 +13,7 @@ clients:
     since: "2026-10-01"
     objects: [my-zhk-svet]
     services: [competitor-watch, listing-audit]
-    note: "Пилотный клиент. Ждёт отчёт по понедельникам, смотрит в Excel."
+    note: "Пилотный клиент. Ждёт отчёт по четвергам, смотрит в Excel."
 
   - id: client-granel
     name: "СЗ «Гранель» — Селигер Сити"

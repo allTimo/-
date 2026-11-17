@@ -1,0 +1,63 @@
+# РЕКЛАМНЫЕ БЮДЖЕТЫ: пополнения и расходы по клиенту и каналу.
+#
+# РЕЖИМ (юридически важно):
+#   client-pays      — клиент платит площадке сам со своего счёта; мы получаем вознаграждение
+#                      за услугу ведения. Это чистая услуга, НПД подходит.
+#   through-service  — деньги клиента проходят через сервис, а мы оплачиваем площадки.
+#                      Это агентская/комиссионная схема: по 422-ФЗ НПД НЕ применяется.
+#                      Требуется ИП или ООО; при НПД выставляем вознаграждение за ведение.
+#
+# rate_pct — переопределение ставки для этого клиента и канала (пусто = ставка канала).
+
+version: 1
+updated: "2026-11-01"
+
+topups:
+  - { id: top-001, client: client-svet, channel: yandex-direct, date: "2026-10-01", amount_rub: 90000, by: "клиент, счёт №12" }
+  - { id: top-002, client: client-svet, channel: avito, date: "2026-10-03", amount_rub: 30000, by: "клиент, счёт №13" }
+  - { id: top-003, client: client-granel, channel: yandex-direct, date: "2026-10-02", amount_rub: 60000, by: "клиент, платёжка" }
+  - { id: top-004, client: client-granel, channel: vk-ads, date: "2026-10-04", amount_rub: 30000, by: "клиент, платёжка" }
+  - { id: top-005, client: client-granel, channel: cian, date: "2026-10-05", amount_rub: 20000, by: "клиент, платёжка" }
+  - { id: top-006, client: client-donstroy, channel: yandex-direct, date: "2026-10-06", amount_rub: 10000, by: "клиент, счёт №21" }
+  - { id: top-101, client: client-loss-demo, channel: cian, date: "2026-10-01", amount_rub: 120000, by: "клиент, счёт №31 (демо-убыток)" }
+
+spends:
+  - { id: sp-001, client: client-svet, channel: yandex-direct, date: "2026-10-07", amount_rub: 15400, period: "01.10–07.10" }
+  - { id: sp-002, client: client-svet, channel: yandex-direct, date: "2026-10-14", amount_rub: 16100, period: "08.10–14.10" }
+  - { id: sp-003, client: client-svet, channel: yandex-direct, date: "2026-10-21", amount_rub: 15900, period: "15.10–21.10" }
+  - { id: sp-004, client: client-svet, channel: yandex-direct, date: "2026-10-28", amount_rub: 13000, period: "22.10–28.10" }
+  - { id: sp-005, client: client-svet, channel: avito, date: "2026-10-14", amount_rub: 11000, period: "01.10–14.10" }
+  - { id: sp-006, client: client-svet, channel: avito, date: "2026-10-28", amount_rub: 11000, period: "15.10–28.10" }
+  - { id: sp-007, client: client-granel, channel: yandex-direct, date: "2026-10-14", amount_rub: 20000, period: "01.10–14.10" }
+  - { id: sp-008, client: client-granel, channel: yandex-direct, date: "2026-10-28", amount_rub: 21000, period: "15.10–28.10" }
+  - { id: sp-009, client: client-granel, channel: vk-ads, date: "2026-10-14", amount_rub: 9300, period: "01.10–14.10" }
+  - { id: sp-010, client: client-granel, channel: vk-ads, date: "2026-10-28", amount_rub: 9300, period: "15.10–28.10" }
+  - { id: sp-011, client: client-granel, channel: cian, date: "2026-10-28", amount_rub: 12000, period: "01.10–28.10" }
+  - { id: sp-012, client: client-donstroy, channel: yandex-direct, date: "2026-10-21", amount_rub: 4200, period: "01.10–21.10" }
+  # --- УБЫТОЧНЫЙ ДЕМО-КЛИЕНТ: канал без партнёрского договора (возврат 0%), но кэшбэк обещан ---
+  - { id: sp-101, client: client-loss-demo, channel: cian, date: "2026-10-31", amount_rub: 120000, period: "01.10–31.10" }
+
+# ВОЗВРАТ ОТ ПЛОЩАДКИ — ФАКТ (сколько площадка реально вернула). Кэшбэк оператору
+# платится ИЗ ЭТОЙ величины. Если здесь ноль, а кэшбэк обещан — срабатывает предохранитель.
+returns:
+  - { id: ret-001, client: client-svet, channel: yandex-direct, period: "2026-10", amount_rub: 8800, note: "агентское вознаграждение за октябрь" }
+  - { id: ret-002, client: client-svet, channel: avito, period: "2026-10", amount_rub: 1200, note: "частичный возврат по спецусловиям" }
+  - { id: ret-003, client: client-granel, channel: yandex-direct, period: "2026-10", amount_rub: 5200, note: "агентское вознаграждение" }
+  - { id: ret-004, client: client-granel, channel: vk-ads, period: "2026-10", amount_rub: 2600, note: "агентское вознаграждение" }
+  - { id: ret-005, client: client-donstroy, channel: yandex-direct, period: "2026-10", amount_rub: 500, note: "небольшой возврат" }
+  - { id: ret-006, client: client-loss-demo, channel: cian, period: "2026-10", amount_rub: 0, note: "ДЕМО: договора нет, возврат 0 — кэшбэк нечем покрыть" }
+
+# ОТСРОЧКА ПЛАТЕЖА — заготовка: только учёт дней и напоминание, финансирование не реализовано.
+deferred:
+  - { client: client-granel, days: 50, since: "2026-10-15", note: "как у click.ru, до 50 дней — учёт, не финансирование" }
+  - { client: client-loss-demo, days: 30, since: "2026-10-01", note: "демо-отсрочка" }
+
+rates:
+  - { id: rate-001, client: client-granel, channel: yandex-direct, rate_pct: 12, fixed_rub: 0, since: "2026-10-01", reason: "премиум-тариф, повышенная ставка" }
+
+# РЕЖИМ РАБОТЫ С КЛИЕНТОМ (channel: null = для всех каналов клиента).
+# Меняется из панели; у режима through-service в интерфейсе горит юридическая плашка.
+modes:
+  - { client: client-svet, channel: null, mode: client-pays }
+  - { client: client-donstroy, channel: null, mode: client-pays }
+  - { client: client-granel, channel: null, mode: through-service }

@@ -1,0 +1,95 @@
+# Каталог интеграций: что МОЖНО подключить. Состояние «подключено» дашборд
+# определяет сам по профилю DSH (bundles/deps) и по наличию ключей — только факт
+# наличия, значения секретов никогда не читаются и не показываются.
+version: 1
+updated: "2026-10-31"
+
+integrations:
+  - id: zveno
+    name: "Zveno.ai — модели"
+    kind: llm
+    purpose: "Все модели агентов: дешёвые для рутины, сильные для анализа"
+    status_hint: connected
+    key_env: ZVENOAI_API_KEY
+    where: "личный кабинет zveno.ai"
+  - id: vision-router
+    name: "Vision Router — картинки для текстовых моделей"
+    kind: plugin
+    purpose: "Читать скриншоты и изображения без смены модели"
+    status_hint: connected
+    package: dsh-vision-router
+    where: "включён; у поля ввода включить «👁 Vision ✓»"
+  - id: delegate-router
+    name: "Delegate Router — дешёвый роутинг подагентов"
+    kind: plugin
+    purpose: "Лёгкие задачи уходят на glm-5.3-flash (0,45 ₽/ход)"
+    status_hint: connected
+    package: dsh-delegate-router
+    where: "настроить flashModel/proModel по README"
+  - id: serper
+    name: "Serper — усиленный поиск (Google)"
+    kind: search
+    purpose: "Поиск конкурентов, акций, упоминаний"
+    status_hint: not_connected
+    key_env: SERPER_API_KEY
+    package: dsh-serper-search
+    where: "serper.dev — бесплатный лимит, затем по тарифу"
+  - id: sandbase
+    name: "Sandbase Skills — 88 маркетинговых скилов"
+    kind: skills
+    purpose: "Готовые скилы: исследования, соц-разведка, маркетинг, конкуренты"
+    status_hint: partial
+    key_env: SANDBASE_API_KEY
+    package: "@sandbaseai/dsh-skills"
+    where: "часть скилов работает без ключа; ключ — в кабинете SandBase (github.com/sandbaseai)"
+  - id: scrape-webpage
+    name: "Scrape Webpage — разбор страниц"
+    kind: plugin
+    purpose: "Текст, заголовки, ключевые слова, картинки со страниц конкурентов"
+    status_hint: connected
+    package: dsh-scrape-webpage
+    where: "ключ не нужен"
+  - id: skill-browser
+    name: "Skill Browser — панель управления скилами"
+    kind: plugin
+    purpose: "Включать/выключать скилы, журнал вызовов"
+    status_hint: connected
+    package: dsh-skill-browser
+    where: "ключ не нужен"
+  - id: superdesign
+    name: "Superdesign — дизайн и рекламная графика"
+    kind: plugin
+    purpose: "Макеты, баннеры, лендинги"
+    status_hint: connected
+    package: superdesign-dsh
+    where: "нужен вход superdesign login"
+  - id: telegram
+    name: "Telegram-пульт"
+    kind: channel
+    purpose: "Ставить задачи и получать отчёты из телефона"
+    status_hint: not_connected
+    key_env: DSH_TELEGRAM_TOKEN
+    package: dsh-telegram-channel-ru
+    where: "@BotFather выдаёт токен бота"
+  - id: scheduled-tasks
+    name: "Задачи по расписанию (headless)"
+    kind: plugin
+    purpose: "Недельный запуск агентов без открытого чата"
+    status_hint: disabled
+    package: "@opendsh/dsh-plugin-scheduled-tasks"
+    where: "установлен, но выключен из загрузки после сбоя холодного старта"
+  - id: creative-studio
+    name: "Creative Studio — креативы и видео"
+    kind: plugin
+    purpose: "Баннеры, вырезание фона, тексты, видео под площадки"
+    status_hint: disabled
+    package: dsh-creative-studio
+    where: "установлен, но выключен из загрузки после сбоя холодного старта"
+  - id: marketplace-mcp
+    name: "RU Marketplaces MCP (Avito, Ozon, WB, Яндекс Маркет)"
+    kind: mcp
+    purpose: "Сравнение цен по маркетплейсам"
+    status_hint: partial
+    key_env: RU_MARKETPLACE_MCP_DIR
+    package: ru-marketplace-mcp-dsh
+    where: "скилы работают; MCP-часть требует Python 3.12+ и uv"

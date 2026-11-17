@@ -41,6 +41,7 @@ export function loadAgents(warnings) {
       inputs: asArray(raw.inputs).map(String),
       outputs: asArray(raw.outputs).map(String),
       runbook: raw.runbook !== undefined && raw.runbook !== null ? String(raw.runbook) : null,
+      skills: asArray(raw.skills).map(String),
       notes: raw.notes !== undefined && raw.notes !== null ? String(raw.notes) : null,
       origin: 'registry',
     });

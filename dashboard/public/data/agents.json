@@ -3,17 +3,17 @@
   "total": 4,
   "enabled": 1,
   "disabled": 3,
-  "active": 1,
-  "planned": 3,
-  "membersTotal": 17,
-  "membersActive": 16
+  "active": 2,
+  "planned": 2,
+  "membersTotal": 85,
+  "membersActive": 84
  },
  "agents": [
   {
    "id": "agent-1-competitor-watch",
    "name": "Агент 1 — Мониторинг конкурентов",
    "role": "Раз в неделю собирает снимок предложения конкурентов (цены, акции, количество лотов), сравнивает с прошлой неделей и готовит отчёт.",
-   "enabled": true,
+   "enabled": false,
    "status": "active",
    "model": "deepseek/deepseek-v4.1-flash",
    "modelHint": "лёгкий сбор данных + расчёты движка; сильную модель подключать только для выводов",
@@ -22,7 +22,7 @@
     "Мониторинг",
     "Конкуренты"
    ],
-   "schedule": "weekly:monday:10:00",
+   "schedule": "weekly:thursday:11:00",
    "inputs": [
     "registry/intake/inbox",
     "01-competitor-watch/inbox",
@@ -34,13 +34,19 @@
     "01-competitor-watch/data/snapshots"
    ],
    "runbook": "00-admin/runbook.md",
+   "skills": [],
    "notes": "Движок и тесты: 01-competitor-watch/scripts, 52 теста.",
    "origin": "registry",
    "linkedMembers": [
+    "verifier",
+    "verifier",
+    "verifier",
+    "verifier",
+    "verifier",
+    "verifier",
+    "verifier",
+    "verifier",
     "data-engine",
-    "verifier",
-    "verifier",
-    "verifier",
     "agent1-workspace"
    ],
    "linkConfigured": true,
@@ -52,18 +58,18 @@
       "done": 8
      }
     },
-    "sessions": 11,
+    "sessions": 66,
     "tokens": {
-     "inputTokens": 14725319,
-     "outputTokens": 2015171,
-     "cacheReadTokens": 459730112,
+     "inputTokens": 66625166,
+     "outputTokens": 8240230,
+     "cacheReadTokens": 1722825392,
      "cacheWriteTokens": 0,
-     "totalTokens": 476470602
+     "totalTokens": 1797690788
     },
-    "usd": 15.9506,
-    "rub": 1284.94,
+    "usd": 60.3806,
+    "rub": 4864.09,
     "rubComplete": true,
-    "lastActivityAt": 1793552032070,
+    "lastActivityAt": 1794168364279,
     "priceKnown": true
    }
   },
@@ -71,8 +77,8 @@
    "id": "agent-2-direct-semantics",
    "name": "Агент 2 — Семантика и кампании Яндекс Директа",
    "role": "Собирает и кластеризует семантику, собирает кампании и группы, пишет объявления, готовит выгрузку в Директ.",
-   "enabled": false,
-   "status": "planned",
+   "enabled": true,
+   "status": "active",
    "model": "deepseek/deepseek-v4-pro",
    "modelHint": "задача творческая и объёмная — здесь сильная модель оправдана",
    "projects": [],
@@ -89,7 +95,18 @@
     "02-keywords-direct"
    ],
    "runbook": "02-keywords-direct/README.md",
-   "notes": "Следующий этап. Запуск — по команде пользователя.",
+   "skills": [
+    "direct-keywords",
+    "yandex-performance-head",
+    "performance-unit-economics",
+    "direct-campaign-management",
+    "metrika-cross-analytics",
+    "yandex-wordstat",
+    "yandex-audience",
+    "ppc-audit",
+    "performance-ops"
+   ],
+   "notes": "Движок: skills/direct_api — проверка доступа к API Директа, отчёты Метрики. Токен задан, доступ ждёт одобрения заявки на API (ошибка 58); Метрика читается. Создание кампаний и изменение ставок — только по подтверждению.",
    "origin": "registry",
    "linkedMembers": [],
    "linkConfigured": false,
@@ -136,6 +153,7 @@
     "creatives"
    ],
    "runbook": null,
+   "skills": [],
    "notes": "Инструменты из маркета: superdesign, dsh-creative-studio (ставится в T11).",
    "origin": "registry",
    "linkedMembers": [],
@@ -181,6 +199,7 @@
     "reports"
    ],
    "runbook": null,
+   "skills": [],
    "notes": "Опирается на данные дашборда; включать, когда появятся выгрузки по расходам.",
    "origin": "registry",
    "linkedMembers": [],
@@ -234,6 +253,270 @@
    ]
   },
   {
+   "id": "0e1d0408-74f0-43f9-bda7-54dde16b7068",
+   "kind": "product",
+   "registryAgentId": "agent-1-competitor-watch",
+   "name": "verifier",
+   "description": "Независимая и адверсариальная проверка фактов аудита Агента 1",
+   "provider": "spawn",
+   "context": "fresh",
+   "phase": "active",
+   "teamId": "session-0044c75e-46ff-4eb8-99d5-9a6e79583c9e",
+   "sessions": 8,
+   "tokens": {
+    "inputTokens": 7664883,
+    "outputTokens": 888580,
+    "cacheReadTokens": 185115798,
+    "cacheWriteTokens": 0,
+    "totalTokens": 193669261
+   },
+   "usd": 6.5052,
+   "rub": 524.04,
+   "rubComplete": true,
+   "lastActivityAt": 1794168364279,
+   "sessionIds": [
+    "da044fb1-0d8c-4583-b9fb-c3cf8c439ca1",
+    "242d7510-64f4-408f-87d5-eb4e60609680",
+    "0e1d0408-74f0-43f9-bda7-54dde16b7068",
+    "23a95d8d-c435-4381-9d4d-e3ca03d75720",
+    "25597775-3aaa-4ffb-9adb-ff0f5087ba40",
+    "e43a1771-9fc1-4400-b4fa-6315d1135359",
+    "bc3bdbf7-a3cb-400e-b8c3-2617e5d33100",
+    "6280b1b7-a0d1-4515-ba04-d6a2da0210ff"
+   ]
+  },
+  {
+   "id": "bc3bdbf7-a3cb-400e-b8c3-2617e5d33100",
+   "kind": "product",
+   "registryAgentId": "agent-1-competitor-watch",
+   "name": "verifier",
+   "description": "независимый верификатор Агента 1 и плагина",
+   "provider": "spawn",
+   "context": "fresh",
+   "phase": "active",
+   "teamId": "session-162bee51-5867-46f8-be1a-478d35530d29",
+   "sessions": 8,
+   "tokens": {
+    "inputTokens": 7664883,
+    "outputTokens": 888580,
+    "cacheReadTokens": 185115798,
+    "cacheWriteTokens": 0,
+    "totalTokens": 193669261
+   },
+   "usd": 6.5052,
+   "rub": 524.04,
+   "rubComplete": true,
+   "lastActivityAt": 1794168364279,
+   "sessionIds": [
+    "da044fb1-0d8c-4583-b9fb-c3cf8c439ca1",
+    "242d7510-64f4-408f-87d5-eb4e60609680",
+    "0e1d0408-74f0-43f9-bda7-54dde16b7068",
+    "23a95d8d-c435-4381-9d4d-e3ca03d75720",
+    "25597775-3aaa-4ffb-9adb-ff0f5087ba40",
+    "e43a1771-9fc1-4400-b4fa-6315d1135359",
+    "bc3bdbf7-a3cb-400e-b8c3-2617e5d33100",
+    "6280b1b7-a0d1-4515-ba04-d6a2da0210ff"
+   ]
+  },
+  {
+   "id": "242d7510-64f4-408f-87d5-eb4e60609680",
+   "kind": "product",
+   "registryAgentId": "agent-1-competitor-watch",
+   "name": "verifier",
+   "description": "Адверсариальная верификация артефактов",
+   "provider": "spawn",
+   "context": "fresh",
+   "phase": "active",
+   "teamId": "session-37ed05b1-7c50-44eb-a40c-4185f53626f5",
+   "sessions": 8,
+   "tokens": {
+    "inputTokens": 7664883,
+    "outputTokens": 888580,
+    "cacheReadTokens": 185115798,
+    "cacheWriteTokens": 0,
+    "totalTokens": 193669261
+   },
+   "usd": 6.5052,
+   "rub": 524.04,
+   "rubComplete": true,
+   "lastActivityAt": 1794168364279,
+   "sessionIds": [
+    "da044fb1-0d8c-4583-b9fb-c3cf8c439ca1",
+    "242d7510-64f4-408f-87d5-eb4e60609680",
+    "0e1d0408-74f0-43f9-bda7-54dde16b7068",
+    "23a95d8d-c435-4381-9d4d-e3ca03d75720",
+    "25597775-3aaa-4ffb-9adb-ff0f5087ba40",
+    "e43a1771-9fc1-4400-b4fa-6315d1135359",
+    "bc3bdbf7-a3cb-400e-b8c3-2617e5d33100",
+    "6280b1b7-a0d1-4515-ba04-d6a2da0210ff"
+   ]
+  },
+  {
+   "id": "e43a1771-9fc1-4400-b4fa-6315d1135359",
+   "kind": "product",
+   "registryAgentId": "agent-1-competitor-watch",
+   "name": "verifier",
+   "description": "Независимая проверка плагина на живом GUI (доступ, скриншоты, DOM-ассерты)",
+   "provider": "spawn",
+   "context": "fresh",
+   "phase": "active",
+   "teamId": "session-932e8d00-4a73-4772-89cf-12fe61c6e310",
+   "sessions": 8,
+   "tokens": {
+    "inputTokens": 7664883,
+    "outputTokens": 888580,
+    "cacheReadTokens": 185115798,
+    "cacheWriteTokens": 0,
+    "totalTokens": 193669261
+   },
+   "usd": 6.5052,
+   "rub": 524.04,
+   "rubComplete": true,
+   "lastActivityAt": 1794168364279,
+   "sessionIds": [
+    "da044fb1-0d8c-4583-b9fb-c3cf8c439ca1",
+    "242d7510-64f4-408f-87d5-eb4e60609680",
+    "0e1d0408-74f0-43f9-bda7-54dde16b7068",
+    "23a95d8d-c435-4381-9d4d-e3ca03d75720",
+    "25597775-3aaa-4ffb-9adb-ff0f5087ba40",
+    "e43a1771-9fc1-4400-b4fa-6315d1135359",
+    "bc3bdbf7-a3cb-400e-b8c3-2617e5d33100",
+    "6280b1b7-a0d1-4515-ba04-d6a2da0210ff"
+   ]
+  },
+  {
+   "id": "6280b1b7-a0d1-4515-ba04-d6a2da0210ff",
+   "kind": "product",
+   "registryAgentId": "agent-1-competitor-watch",
+   "name": "verifier",
+   "description": "Independent verification of russification and audit results",
+   "provider": "spawn",
+   "context": "fresh",
+   "phase": "active",
+   "teamId": "session-a1097186-d111-41f5-b0fb-1e9047ac821d",
+   "sessions": 8,
+   "tokens": {
+    "inputTokens": 7664883,
+    "outputTokens": 888580,
+    "cacheReadTokens": 185115798,
+    "cacheWriteTokens": 0,
+    "totalTokens": 193669261
+   },
+   "usd": 6.5052,
+   "rub": 524.04,
+   "rubComplete": true,
+   "lastActivityAt": 1794168364279,
+   "sessionIds": [
+    "da044fb1-0d8c-4583-b9fb-c3cf8c439ca1",
+    "242d7510-64f4-408f-87d5-eb4e60609680",
+    "0e1d0408-74f0-43f9-bda7-54dde16b7068",
+    "23a95d8d-c435-4381-9d4d-e3ca03d75720",
+    "25597775-3aaa-4ffb-9adb-ff0f5087ba40",
+    "e43a1771-9fc1-4400-b4fa-6315d1135359",
+    "bc3bdbf7-a3cb-400e-b8c3-2617e5d33100",
+    "6280b1b7-a0d1-4515-ba04-d6a2da0210ff"
+   ]
+  },
+  {
+   "id": "25597775-3aaa-4ffb-9adb-ff0f5087ba40",
+   "kind": "product",
+   "registryAgentId": "agent-1-competitor-watch",
+   "name": "verifier",
+   "description": "Независимая приёмка Агента 1 (WP5)",
+   "provider": "spawn",
+   "context": "fresh",
+   "phase": "active",
+   "teamId": "session-a6c093a5-0bfa-47d4-b002-a2dbc3d4be43",
+   "sessions": 8,
+   "tokens": {
+    "inputTokens": 7664883,
+    "outputTokens": 888580,
+    "cacheReadTokens": 185115798,
+    "cacheWriteTokens": 0,
+    "totalTokens": 193669261
+   },
+   "usd": 6.5052,
+   "rub": 524.04,
+   "rubComplete": true,
+   "lastActivityAt": 1794168364279,
+   "sessionIds": [
+    "da044fb1-0d8c-4583-b9fb-c3cf8c439ca1",
+    "242d7510-64f4-408f-87d5-eb4e60609680",
+    "0e1d0408-74f0-43f9-bda7-54dde16b7068",
+    "23a95d8d-c435-4381-9d4d-e3ca03d75720",
+    "25597775-3aaa-4ffb-9adb-ff0f5087ba40",
+    "e43a1771-9fc1-4400-b4fa-6315d1135359",
+    "bc3bdbf7-a3cb-400e-b8c3-2617e5d33100",
+    "6280b1b7-a0d1-4515-ba04-d6a2da0210ff"
+   ]
+  },
+  {
+   "id": "da044fb1-0d8c-4583-b9fb-c3cf8c439ca1",
+   "kind": "product",
+   "registryAgentId": "agent-1-competitor-watch",
+   "name": "verifier",
+   "description": "Независимая верификация сводного документа готовности к подписке",
+   "provider": "spawn",
+   "context": "fresh",
+   "phase": "active",
+   "teamId": "session-b888c8b8-d6b0-4e4c-b2fd-fd6a35efc9cf",
+   "sessions": 8,
+   "tokens": {
+    "inputTokens": 7664883,
+    "outputTokens": 888580,
+    "cacheReadTokens": 185115798,
+    "cacheWriteTokens": 0,
+    "totalTokens": 193669261
+   },
+   "usd": 6.5052,
+   "rub": 524.04,
+   "rubComplete": true,
+   "lastActivityAt": 1794168364279,
+   "sessionIds": [
+    "da044fb1-0d8c-4583-b9fb-c3cf8c439ca1",
+    "242d7510-64f4-408f-87d5-eb4e60609680",
+    "0e1d0408-74f0-43f9-bda7-54dde16b7068",
+    "23a95d8d-c435-4381-9d4d-e3ca03d75720",
+    "25597775-3aaa-4ffb-9adb-ff0f5087ba40",
+    "e43a1771-9fc1-4400-b4fa-6315d1135359",
+    "bc3bdbf7-a3cb-400e-b8c3-2617e5d33100",
+    "6280b1b7-a0d1-4515-ba04-d6a2da0210ff"
+   ]
+  },
+  {
+   "id": "23a95d8d-c435-4381-9d4d-e3ca03d75720",
+   "kind": "product",
+   "registryAgentId": "agent-1-competitor-watch",
+   "name": "verifier",
+   "description": "Адверсариальная проверка утверждений аудита",
+   "provider": "spawn",
+   "context": "fresh",
+   "phase": "active",
+   "teamId": "session-ca7143a5-b33a-4419-bb4a-a32ac3be0603",
+   "sessions": 8,
+   "tokens": {
+    "inputTokens": 7664883,
+    "outputTokens": 888580,
+    "cacheReadTokens": 185115798,
+    "cacheWriteTokens": 0,
+    "totalTokens": 193669261
+   },
+   "usd": 6.5052,
+   "rub": 524.04,
+   "rubComplete": true,
+   "lastActivityAt": 1794168364279,
+   "sessionIds": [
+    "da044fb1-0d8c-4583-b9fb-c3cf8c439ca1",
+    "242d7510-64f4-408f-87d5-eb4e60609680",
+    "0e1d0408-74f0-43f9-bda7-54dde16b7068",
+    "23a95d8d-c435-4381-9d4d-e3ca03d75720",
+    "25597775-3aaa-4ffb-9adb-ff0f5087ba40",
+    "e43a1771-9fc1-4400-b4fa-6315d1135359",
+    "bc3bdbf7-a3cb-400e-b8c3-2617e5d33100",
+    "6280b1b7-a0d1-4515-ba04-d6a2da0210ff"
+   ]
+  },
+  {
    "id": "ab6c1cbd-ae91-443e-95b6-4d598fb42390",
    "kind": "product",
    "registryAgentId": "agent-1-competitor-watch",
@@ -260,87 +543,197 @@
    ]
   },
   {
-   "id": "bc3bdbf7-a3cb-400e-b8c3-2617e5d33100",
-   "kind": "product",
-   "registryAgentId": "agent-1-competitor-watch",
-   "name": "verifier",
-   "description": "независимый верификатор Агента 1 и плагина",
+   "id": "c79dd3e2-0b3c-4d5a-bff5-5f5ce4d8b0e2",
+   "kind": "other",
+   "registryAgentId": null,
+   "name": "engine-dev",
+   "description": "WP2: движок — аналитика, акции, прогноз, почта",
    "provider": "spawn",
    "context": "fresh",
    "phase": "active",
-   "teamId": "session-162bee51-5867-46f8-be1a-478d35530d29",
+   "teamId": "session-8a94bc68-411f-49b3-a76b-d9489f2c06da",
    "sessions": 3,
    "tokens": {
-    "inputTokens": 3139739,
-    "outputTokens": 294527,
-    "cacheReadTokens": 72610368,
+    "inputTokens": 2906513,
+    "outputTokens": 382570,
+    "cacheReadTokens": 88165248,
     "cacheWriteTokens": 0,
-    "totalTokens": 76044634
+    "totalTokens": 91454331
    },
-   "usd": 2.5372,
-   "rub": 204.39,
+   "usd": 3.0602,
+   "rub": 246.52,
    "rubComplete": true,
-   "lastActivityAt": 1793552032070,
+   "lastActivityAt": 1793801377319,
    "sessionIds": [
-    "e43a1771-9fc1-4400-b4fa-6315d1135359",
-    "bc3bdbf7-a3cb-400e-b8c3-2617e5d33100",
-    "6280b1b7-a0d1-4515-ba04-d6a2da0210ff"
+    "0b48d04f-55c8-4c41-b30f-bc7093b4f70f",
+    "1e37574f-98bb-40fd-a92a-f9d47e51cd4a",
+    "c79dd3e2-0b3c-4d5a-bff5-5f5ce4d8b0e2"
    ]
   },
   {
-   "id": "e43a1771-9fc1-4400-b4fa-6315d1135359",
-   "kind": "product",
-   "registryAgentId": "agent-1-competitor-watch",
-   "name": "verifier",
-   "description": "Независимая проверка плагина на живом GUI (доступ, скриншоты, DOM-ассерты)",
+   "id": "1e37574f-98bb-40fd-a92a-f9d47e51cd4a",
+   "kind": "other",
+   "registryAgentId": null,
+   "name": "engine-dev",
+   "description": "Реальный прогон движка Агента 1 (закрытие D2)",
    "provider": "spawn",
    "context": "fresh",
    "phase": "active",
-   "teamId": "session-932e8d00-4a73-4772-89cf-12fe61c6e310",
+   "teamId": "session-a6c093a5-0bfa-47d4-b002-a2dbc3d4be43",
    "sessions": 3,
    "tokens": {
-    "inputTokens": 3139739,
-    "outputTokens": 294527,
-    "cacheReadTokens": 72610368,
+    "inputTokens": 2906513,
+    "outputTokens": 382570,
+    "cacheReadTokens": 88165248,
     "cacheWriteTokens": 0,
-    "totalTokens": 76044634
+    "totalTokens": 91454331
    },
-   "usd": 2.5372,
-   "rub": 204.39,
+   "usd": 3.0602,
+   "rub": 246.52,
    "rubComplete": true,
-   "lastActivityAt": 1793552032070,
+   "lastActivityAt": 1793801377319,
    "sessionIds": [
-    "e43a1771-9fc1-4400-b4fa-6315d1135359",
-    "bc3bdbf7-a3cb-400e-b8c3-2617e5d33100",
-    "6280b1b7-a0d1-4515-ba04-d6a2da0210ff"
+    "0b48d04f-55c8-4c41-b30f-bc7093b4f70f",
+    "1e37574f-98bb-40fd-a92a-f9d47e51cd4a",
+    "c79dd3e2-0b3c-4d5a-bff5-5f5ce4d8b0e2"
    ]
   },
   {
-   "id": "6280b1b7-a0d1-4515-ba04-d6a2da0210ff",
-   "kind": "product",
-   "registryAgentId": "agent-1-competitor-watch",
-   "name": "verifier",
-   "description": "Independent verification of russification and audit results",
+   "id": "0b48d04f-55c8-4c41-b30f-bc7093b4f70f",
+   "kind": "other",
+   "registryAgentId": null,
+   "name": "engine-dev",
+   "description": "Движок Агента 1: истина конкурентов, метрики, режимы почты",
    "provider": "spawn",
    "context": "fresh",
    "phase": "active",
-   "teamId": "session-a1097186-d111-41f5-b0fb-1e9047ac821d",
+   "teamId": "session-cec85480-684b-402f-91d4-ae647514081a",
    "sessions": 3,
    "tokens": {
-    "inputTokens": 3139739,
-    "outputTokens": 294527,
-    "cacheReadTokens": 72610368,
+    "inputTokens": 2906513,
+    "outputTokens": 382570,
+    "cacheReadTokens": 88165248,
     "cacheWriteTokens": 0,
-    "totalTokens": 76044634
+    "totalTokens": 91454331
    },
-   "usd": 2.5372,
-   "rub": 204.39,
+   "usd": 3.0602,
+   "rub": 246.52,
    "rubComplete": true,
-   "lastActivityAt": 1793552032070,
+   "lastActivityAt": 1793801377319,
    "sessionIds": [
-    "e43a1771-9fc1-4400-b4fa-6315d1135359",
-    "bc3bdbf7-a3cb-400e-b8c3-2617e5d33100",
-    "6280b1b7-a0d1-4515-ba04-d6a2da0210ff"
+    "0b48d04f-55c8-4c41-b30f-bc7093b4f70f",
+    "1e37574f-98bb-40fd-a92a-f9d47e51cd4a",
+    "c79dd3e2-0b3c-4d5a-bff5-5f5ce4d8b0e2"
+   ]
+  },
+  {
+   "id": "e709b55f-a903-4dbb-bb2e-70eb2b3d20c9",
+   "kind": "other",
+   "registryAgentId": null,
+   "name": "panel-dev",
+   "description": "WP3: панель — тумблеры, поле ввода, индикатор, аналитика",
+   "provider": "spawn",
+   "context": "fresh",
+   "phase": "active",
+   "teamId": "session-8a94bc68-411f-49b3-a76b-d9489f2c06da",
+   "sessions": 3,
+   "tokens": {
+    "inputTokens": 971124,
+    "outputTokens": 354886,
+    "cacheReadTokens": 90128318,
+    "cacheWriteTokens": 0,
+    "totalTokens": 91454328
+   },
+   "usd": 3.0515,
+   "rub": 245.84,
+   "rubComplete": true,
+   "lastActivityAt": 1793796628381,
+   "sessionIds": [
+    "e2c579b6-697f-42b8-b390-8adbdc086154",
+    "66e28f95-0f33-43c9-864d-65daa02e70b8",
+    "e709b55f-a903-4dbb-bb2e-70eb2b3d20c9"
+   ]
+  },
+  {
+   "id": "66e28f95-0f33-43c9-864d-65daa02e70b8",
+   "kind": "other",
+   "registryAgentId": null,
+   "name": "panel-dev",
+   "description": "Довести WP3: панель Агента 1, e2e-прогон, отчёт",
+   "provider": "spawn",
+   "context": "fresh",
+   "phase": "active",
+   "teamId": "session-a6c093a5-0bfa-47d4-b002-a2dbc3d4be43",
+   "sessions": 3,
+   "tokens": {
+    "inputTokens": 971124,
+    "outputTokens": 354886,
+    "cacheReadTokens": 90128318,
+    "cacheWriteTokens": 0,
+    "totalTokens": 91454328
+   },
+   "usd": 3.0515,
+   "rub": 245.84,
+   "rubComplete": true,
+   "lastActivityAt": 1793796628381,
+   "sessionIds": [
+    "e2c579b6-697f-42b8-b390-8adbdc086154",
+    "66e28f95-0f33-43c9-864d-65daa02e70b8",
+    "e709b55f-a903-4dbb-bb2e-70eb2b3d20c9"
+   ]
+  },
+  {
+   "id": "e2c579b6-697f-42b8-b390-8adbdc086154",
+   "kind": "other",
+   "registryAgentId": null,
+   "name": "panel-dev",
+   "description": "Сервер и сборщик панели: подбор, CRUD конкурентов, отправка по кнопке",
+   "provider": "spawn",
+   "context": "fresh",
+   "phase": "active",
+   "teamId": "session-cec85480-684b-402f-91d4-ae647514081a",
+   "sessions": 3,
+   "tokens": {
+    "inputTokens": 971124,
+    "outputTokens": 354886,
+    "cacheReadTokens": 90128318,
+    "cacheWriteTokens": 0,
+    "totalTokens": 91454328
+   },
+   "usd": 3.0515,
+   "rub": 245.84,
+   "rubComplete": true,
+   "lastActivityAt": 1793796628381,
+   "sessionIds": [
+    "e2c579b6-697f-42b8-b390-8adbdc086154",
+    "66e28f95-0f33-43c9-864d-65daa02e70b8",
+    "e709b55f-a903-4dbb-bb2e-70eb2b3d20c9"
+   ]
+  },
+  {
+   "id": "a76b5014-2925-40c4-b3a4-1422b0ace699",
+   "kind": "other",
+   "registryAgentId": null,
+   "name": "qa-verifier",
+   "description": "Независимая проверка четырёх правок Агента 1",
+   "provider": "spawn",
+   "context": "fresh",
+   "phase": "active",
+   "teamId": "session-cec85480-684b-402f-91d4-ae647514081a",
+   "sessions": 1,
+   "tokens": {
+    "inputTokens": 784110,
+    "outputTokens": 282546,
+    "cacheReadTokens": 84857344,
+    "cacheWriteTokens": 0,
+    "totalTokens": 85924000
+   },
+   "usd": 2.8511,
+   "rub": 229.68,
+   "rubComplete": true,
+   "lastActivityAt": 1793801515099,
+   "sessionIds": [
+    "a76b5014-2925-40c4-b3a4-1422b0ace699"
    ]
   },
   {
@@ -367,6 +760,32 @@
    "lastActivityAt": 1793547413147,
    "sessionIds": [
     "18edb148-dc05-4424-84d4-d587ac4471b2"
+   ]
+  },
+  {
+   "id": "3f3faa7c-440a-43a3-8edf-20742de80bb1",
+   "kind": "other",
+   "registryAgentId": null,
+   "name": "engine-agent1",
+   "description": "Движок Агента 1: применение маркетинговых настроек к сбору и отчёту",
+   "provider": "spawn",
+   "context": "fresh",
+   "phase": "active",
+   "teamId": "session-9d85d9a1-9f70-4f42-b8a7-aec5bcbc2781",
+   "sessions": 1,
+   "tokens": {
+    "inputTokens": 4946069,
+    "outputTokens": 372197,
+    "cacheReadTokens": 54442615,
+    "cacheWriteTokens": 0,
+    "totalTokens": 59760881
+   },
+   "usd": 2.038,
+   "rub": 164.18,
+   "rubComplete": true,
+   "lastActivityAt": 1793745613368,
+   "sessionIds": [
+    "3f3faa7c-440a-43a3-8edf-20742de80bb1"
    ]
   },
   {
@@ -448,6 +867,32 @@
    ]
   },
   {
+   "id": "c5541485-e223-4943-acf9-8cdc32cf4e83",
+   "kind": "other",
+   "registryAgentId": null,
+   "name": "finmodel2",
+   "description": "Финмодель: кэшбэк-контур, unit-экономика, ДДС",
+   "provider": "spawn",
+   "context": "fresh",
+   "phase": "active",
+   "teamId": "session-37ed05b1-7c50-44eb-a40c-4185f53626f5",
+   "sessions": 1,
+   "tokens": {
+    "inputTokens": 285347,
+    "outputTokens": 284006,
+    "cacheReadTokens": 45998592,
+    "cacheWriteTokens": 0,
+    "totalTokens": 46567945
+   },
+   "usd": 1.5862,
+   "rub": 127.78,
+   "rubComplete": true,
+   "lastActivityAt": 1794166847559,
+   "sessionIds": [
+    "c5541485-e223-4943-acf9-8cdc32cf4e83"
+   ]
+  },
+  {
    "id": "b92ef342-e1fc-4691-a19d-01ede6e42968",
    "kind": "other",
    "registryAgentId": null,
@@ -500,6 +945,110 @@
    ]
   },
   {
+   "id": "9ed75474-6422-451c-908d-c2abe6450329",
+   "kind": "other",
+   "registryAgentId": null,
+   "name": "ui-dev",
+   "description": "Интерфейс: одна вкладка без дублей, список конкурентов, метрики, отправка",
+   "provider": "spawn",
+   "context": "fresh",
+   "phase": "active",
+   "teamId": "session-cec85480-684b-402f-91d4-ae647514081a",
+   "sessions": 1,
+   "tokens": {
+    "inputTokens": 388907,
+    "outputTokens": 107324,
+    "cacheReadTokens": 21175040,
+    "cacheWriteTokens": 0,
+    "totalTokens": 21671271
+   },
+   "usd": 0.7304,
+   "rub": 58.84,
+   "rubComplete": true,
+   "lastActivityAt": 1793797398855,
+   "sessionIds": [
+    "9ed75474-6422-451c-908d-c2abe6450329"
+   ]
+  },
+  {
+   "id": "6dd90300-8ee5-4540-abbf-bd00f3a342fa",
+   "kind": "other",
+   "registryAgentId": null,
+   "name": "session-forensics",
+   "description": "Измеряет реальные токены/кэш/размеры запросов из логов сессий DSH",
+   "provider": "spawn",
+   "context": "fresh",
+   "phase": "active",
+   "teamId": "session-3da48f99-b9ec-47b3-9cde-bb742e244415",
+   "sessions": 1,
+   "tokens": {
+    "inputTokens": 1043335,
+    "outputTokens": 108004,
+    "cacheReadTokens": 15340544,
+    "cacheWriteTokens": 0,
+    "totalTokens": 16491883
+   },
+   "usd": 0.5641,
+   "rub": 45.44,
+   "rubComplete": true,
+   "lastActivityAt": 1793640093560,
+   "sessionIds": [
+    "6dd90300-8ee5-4540-abbf-bd00f3a342fa"
+   ]
+  },
+  {
+   "id": "aa3a7a59-ec5b-434b-930d-1a8da84fc02e",
+   "kind": "other",
+   "registryAgentId": null,
+   "name": "panel-agent1",
+   "description": "Панель Агента 1: маркетинговые тонкие настройки + фикс вёрстки + кнопка «Детали»",
+   "provider": "spawn",
+   "context": "fresh",
+   "phase": "active",
+   "teamId": "session-9d85d9a1-9f70-4f42-b8a7-aec5bcbc2781",
+   "sessions": 1,
+   "tokens": {
+    "inputTokens": 189750,
+    "outputTokens": 73716,
+    "cacheReadTokens": 16184960,
+    "cacheWriteTokens": 0,
+    "totalTokens": 16448426
+   },
+   "usd": 0.5519,
+   "rub": 44.46,
+   "rubComplete": true,
+   "lastActivityAt": 1793741650620,
+   "sessionIds": [
+    "aa3a7a59-ec5b-434b-930d-1a8da84fc02e"
+   ]
+  },
+  {
+   "id": "815a6288-3db0-4590-91b7-f9e300ac7f93",
+   "kind": "other",
+   "registryAgentId": null,
+   "name": "audit-engine",
+   "description": "Аудит движка Агента 1: код, данные, доставка, гейты pytest/verify-data",
+   "provider": "spawn",
+   "context": "fresh",
+   "phase": "active",
+   "teamId": "session-7ed2c384-ea61-4141-9024-0c161cd9b719",
+   "sessions": 1,
+   "tokens": {
+    "inputTokens": 343704,
+    "outputTokens": 62071,
+    "cacheReadTokens": 14734848,
+    "cacheWriteTokens": 0,
+    "totalTokens": 15140623
+   },
+   "usd": 0.5062,
+   "rub": 40.78,
+   "rubComplete": true,
+   "lastActivityAt": 1793803634886,
+   "sessionIds": [
+    "815a6288-3db0-4590-91b7-f9e300ac7f93"
+   ]
+  },
+  {
    "id": "f05182e9-1a62-4402-9b83-808feca15fe4",
    "kind": "other",
    "registryAgentId": null,
@@ -523,6 +1072,84 @@
    "lastActivityAt": 1793550211113,
    "sessionIds": [
     "f05182e9-1a62-4402-9b83-808feca15fe4"
+   ]
+  },
+  {
+   "id": "5ac22313-004c-4ae8-bc4d-24ffb67ab459",
+   "kind": "other",
+   "registryAgentId": null,
+   "name": "arch2",
+   "description": "Архитектура: тенанты, self-service, кэшбэк",
+   "provider": "spawn",
+   "context": "fresh",
+   "phase": "active",
+   "teamId": "session-37ed05b1-7c50-44eb-a40c-4185f53626f5",
+   "sessions": 1,
+   "tokens": {
+    "inputTokens": 232530,
+    "outputTokens": 85630,
+    "cacheReadTokens": 10096384,
+    "cacheWriteTokens": 0,
+    "totalTokens": 10414544
+   },
+   "usd": 0.3617,
+   "rub": 29.14,
+   "rubComplete": true,
+   "lastActivityAt": 1794162732872,
+   "sessionIds": [
+    "5ac22313-004c-4ae8-bc4d-24ffb67ab459"
+   ]
+  },
+  {
+   "id": "d8165cf5-5310-4aad-9291-4e5cdf996cd5",
+   "kind": "other",
+   "registryAgentId": null,
+   "name": "quality-auditor",
+   "description": "Аудит качества работы, eval и edge cases Агента 1",
+   "provider": "spawn",
+   "context": "fresh",
+   "phase": "active",
+   "teamId": "session-0044c75e-46ff-4eb8-99d5-9a6e79583c9e",
+   "sessions": 1,
+   "tokens": {
+    "inputTokens": 167402,
+    "outputTokens": 56864,
+    "cacheReadTokens": 9760640,
+    "cacheWriteTokens": 0,
+    "totalTokens": 9984906
+   },
+   "usd": 0.3388,
+   "rub": 27.3,
+   "rubComplete": true,
+   "lastActivityAt": 1794150824597,
+   "sessionIds": [
+    "d8165cf5-5310-4aad-9291-4e5cdf996cd5"
+   ]
+  },
+  {
+   "id": "32b66dbb-8fe2-4213-9808-c9a02ace08f0",
+   "kind": "other",
+   "registryAgentId": null,
+   "name": "integration-auditor",
+   "description": "Аудит встроенности, контрактов, отказоустойчивости и наблюдаемости Агента 1",
+   "provider": "spawn",
+   "context": "fresh",
+   "phase": "active",
+   "teamId": "session-0044c75e-46ff-4eb8-99d5-9a6e79583c9e",
+   "sessions": 1,
+   "tokens": {
+    "inputTokens": 311268,
+    "outputTokens": 45796,
+    "cacheReadTokens": 9455616,
+    "cacheWriteTokens": 0,
+    "totalTokens": 9812680
+   },
+   "usd": 0.3298,
+   "rub": 26.57,
+   "rubComplete": true,
+   "lastActivityAt": 1794150827335,
+   "sessionIds": [
+    "32b66dbb-8fe2-4213-9808-c9a02ace08f0"
    ]
   },
   {
@@ -552,6 +1179,136 @@
    ]
   },
   {
+   "id": "e8fd868c-3017-4072-9246-62f0639f73be",
+   "kind": "other",
+   "registryAgentId": null,
+   "name": "saas-layer",
+   "description": "Аудит SaaS-слоя marketing-agents",
+   "provider": "spawn",
+   "context": "fresh",
+   "phase": "active",
+   "teamId": "session-ca7143a5-b33a-4419-bb4a-a32ac3be0603",
+   "sessions": 1,
+   "tokens": {
+    "inputTokens": 194563,
+    "outputTokens": 54539,
+    "cacheReadTokens": 8595017,
+    "cacheWriteTokens": 0,
+    "totalTokens": 8844119
+   },
+   "usd": 0.3014,
+   "rub": 24.28,
+   "rubComplete": true,
+   "lastActivityAt": 1794149028911,
+   "sessionIds": [
+    "e8fd868c-3017-4072-9246-62f0639f73be"
+   ]
+  },
+  {
+   "id": "40037409-f279-4a72-b619-4c1c86679417",
+   "kind": "other",
+   "registryAgentId": null,
+   "name": "prompt-gateway",
+   "description": "System prompt, JSON-схема tool gateway и гардрейлы",
+   "provider": "spawn",
+   "context": "fresh",
+   "phase": "active",
+   "teamId": "session-b888c8b8-d6b0-4e4c-b2fd-fd6a35efc9cf",
+   "sessions": 1,
+   "tokens": {
+    "inputTokens": 551153,
+    "outputTokens": 56808,
+    "cacheReadTokens": 7771648,
+    "cacheWriteTokens": 0,
+    "totalTokens": 8379609
+   },
+   "usd": 0.2872,
+   "rub": 23.14,
+   "rubComplete": true,
+   "lastActivityAt": 1794168381665,
+   "sessionIds": [
+    "40037409-f279-4a72-b619-4c1c86679417"
+   ]
+  },
+  {
+   "id": "7a656408-2574-411f-906e-3e195d62af73",
+   "kind": "other",
+   "registryAgentId": null,
+   "name": "vault-agents-reporting",
+   "description": "Переносит домены Agents и Reporting в Obsidian-vault",
+   "provider": "spawn",
+   "context": "fresh",
+   "phase": "active",
+   "teamId": "session-30561df1-9a52-4e34-a339-0b4167ace958",
+   "sessions": 1,
+   "tokens": {
+    "inputTokens": 220723,
+    "outputTokens": 88187,
+    "cacheReadTokens": 7855330,
+    "cacheWriteTokens": 0,
+    "totalTokens": 8164240
+   },
+   "usd": 0.2901,
+   "rub": 23.37,
+   "rubComplete": true,
+   "lastActivityAt": 1793721139246,
+   "sessionIds": [
+    "7a656408-2574-411f-906e-3e195d62af73"
+   ]
+  },
+  {
+   "id": "4125686e-a566-420e-961f-a22c8768c849",
+   "kind": "other",
+   "registryAgentId": null,
+   "name": "finmodel",
+   "description": "Эталонная SaaS-финмодель: blueprint и xlsx-каркас",
+   "provider": "spawn",
+   "context": "fresh",
+   "phase": "active",
+   "teamId": "session-37ed05b1-7c50-44eb-a40c-4185f53626f5",
+   "sessions": 1,
+   "tokens": {
+    "inputTokens": 197474,
+    "outputTokens": 137160,
+    "cacheReadTokens": 7177728,
+    "cacheWriteTokens": 0,
+    "totalTokens": 7512362
+   },
+   "usd": 0.2845,
+   "rub": 22.92,
+   "rubComplete": true,
+   "lastActivityAt": 1794159050234,
+   "sessionIds": [
+    "4125686e-a566-420e-961f-a22c8768c849"
+   ]
+  },
+  {
+   "id": "38e0479f-5afb-4df4-aca7-892f0e9973b6",
+   "kind": "other",
+   "registryAgentId": null,
+   "name": "agent-layer",
+   "description": "Аудит multi-agent слоя marketing-agents",
+   "provider": "spawn",
+   "context": "fresh",
+   "phase": "active",
+   "teamId": "session-ca7143a5-b33a-4419-bb4a-a32ac3be0603",
+   "sessions": 1,
+   "tokens": {
+    "inputTokens": 144547,
+    "outputTokens": 45558,
+    "cacheReadTokens": 6965248,
+    "cacheWriteTokens": 0,
+    "totalTokens": 7155353
+   },
+   "usd": 0.2443,
+   "rub": 19.68,
+   "rubComplete": true,
+   "lastActivityAt": 1794148980928,
+   "sessionIds": [
+    "38e0479f-5afb-4df4-aca7-892f0e9973b6"
+   ]
+  },
+  {
    "id": "b584c756-0f46-4910-bddd-4fa3101f9786",
    "kind": "other",
    "registryAgentId": null,
@@ -575,6 +1332,292 @@
    "lastActivityAt": 1793467359970,
    "sessionIds": [
     "b584c756-0f46-4910-bddd-4fa3101f9786"
+   ]
+  },
+  {
+   "id": "a1ee36b6-c56f-438d-9f75-73e816168570",
+   "kind": "other",
+   "registryAgentId": null,
+   "name": "core-search",
+   "description": "Перевод ядра поиска и разбора на русский",
+   "provider": "spawn",
+   "context": "fresh",
+   "phase": "active",
+   "teamId": "session-f7c2fd8a-a82f-4fc3-b6df-423dda418490",
+   "sessions": 1,
+   "tokens": {
+    "inputTokens": 61936,
+    "outputTokens": 56406,
+    "cacheReadTokens": 6681216,
+    "cacheWriteTokens": 0,
+    "totalTokens": 6799558
+   },
+   "usd": 0.2363,
+   "rub": 19.04,
+   "rubComplete": true,
+   "lastActivityAt": 1794170367688,
+   "sessionIds": [
+    "a1ee36b6-c56f-438d-9f75-73e816168570"
+   ]
+  },
+  {
+   "id": "70f0138f-11c8-405b-b110-86b89bc61741",
+   "kind": "other",
+   "registryAgentId": null,
+   "name": "flows-econ",
+   "description": "Аудит потоков и юнит-экономики marketing-agents",
+   "provider": "spawn",
+   "context": "fresh",
+   "phase": "active",
+   "teamId": "session-ca7143a5-b33a-4419-bb4a-a32ac3be0603",
+   "sessions": 1,
+   "tokens": {
+    "inputTokens": 373298,
+    "outputTokens": 41726,
+    "cacheReadTokens": 6188326,
+    "cacheWriteTokens": 0,
+    "totalTokens": 6603350
+   },
+   "usd": 0.2254,
+   "rub": 18.16,
+   "rubComplete": true,
+   "lastActivityAt": 1794149002761,
+   "sessionIds": [
+    "70f0138f-11c8-405b-b110-86b89bc61741"
+   ]
+  },
+  {
+   "id": "7ba18b3e-931d-4f59-a77f-0a5e50f1f320",
+   "kind": "other",
+   "registryAgentId": null,
+   "name": "audit-panel",
+   "description": "Аудит операторской панели: разделы, задачи task-24/34/35, честность данных в UI",
+   "provider": "spawn",
+   "context": "fresh",
+   "phase": "active",
+   "teamId": "session-7ed2c384-ea61-4141-9024-0c161cd9b719",
+   "sessions": 1,
+   "tokens": {
+    "inputTokens": 179442,
+    "outputTokens": 28015,
+    "cacheReadTokens": 6247168,
+    "cacheWriteTokens": 0,
+    "totalTokens": 6454625
+   },
+   "usd": 0.2163,
+   "rub": 17.42,
+   "rubComplete": true,
+   "lastActivityAt": 1793803404185,
+   "sessionIds": [
+    "7ba18b3e-931d-4f59-a77f-0a5e50f1f320"
+   ]
+  },
+  {
+   "id": "973450cc-7053-41a8-9390-e41be4fc83b0",
+   "kind": "other",
+   "registryAgentId": null,
+   "name": "vault-dashboard-infra",
+   "description": "Переносит домены Dashboard и Infrastructure в Obsidian-vault",
+   "provider": "spawn",
+   "context": "fresh",
+   "phase": "active",
+   "teamId": "session-30561df1-9a52-4e34-a339-0b4167ace958",
+   "sessions": 1,
+   "tokens": {
+    "inputTokens": 327895,
+    "outputTokens": 57067,
+    "cacheReadTokens": 5757952,
+    "cacheWriteTokens": 0,
+    "totalTokens": 6142914
+   },
+   "usd": 0.2154,
+   "rub": 17.35,
+   "rubComplete": true,
+   "lastActivityAt": 1793718041268,
+   "sessionIds": [
+    "973450cc-7053-41a8-9390-e41be4fc83b0"
+   ]
+  },
+  {
+   "id": "97110ebb-1bc0-46e0-873b-535ef72121ac",
+   "kind": "other",
+   "registryAgentId": null,
+   "name": "env-repro",
+   "description": "Аудит И1: среда, зависимости, воспроизводимость (marketing-agents)",
+   "provider": "spawn",
+   "context": "fresh",
+   "phase": "active",
+   "teamId": "session-d6e1c799-2020-4639-b888-40667db2e7d4",
+   "sessions": 1,
+   "tokens": {
+    "inputTokens": 382245,
+    "outputTokens": 46565,
+    "cacheReadTokens": 5688576,
+    "cacheWriteTokens": 0,
+    "totalTokens": 6117386
+   },
+   "usd": 0.2113,
+   "rub": 17.02,
+   "rubComplete": true,
+   "lastActivityAt": 1793804644588,
+   "sessionIds": [
+    "97110ebb-1bc0-46e0-873b-535ef72121ac"
+   ]
+  },
+  {
+   "id": "ebab0930-7e85-4739-be59-8bbd389eef16",
+   "kind": "other",
+   "registryAgentId": null,
+   "name": "gtm2",
+   "description": "Концепция и GTM под SaaS для маркетологов",
+   "provider": "spawn",
+   "context": "fresh",
+   "phase": "active",
+   "teamId": "session-37ed05b1-7c50-44eb-a40c-4185f53626f5",
+   "sessions": 1,
+   "tokens": {
+    "inputTokens": 185813,
+    "outputTokens": 62205,
+    "cacheReadTokens": 5408384,
+    "cacheWriteTokens": 0,
+    "totalTokens": 5656402
+   },
+   "usd": 0.2014,
+   "rub": 16.22,
+   "rubComplete": true,
+   "lastActivityAt": 1794166848221,
+   "sessionIds": [
+    "ebab0930-7e85-4739-be59-8bbd389eef16"
+   ]
+  },
+  {
+   "id": "2ad2db75-4d29-4951-bcd8-d7db57353650",
+   "kind": "other",
+   "registryAgentId": null,
+   "name": "visual",
+   "description": "Визуальный roadmap и чек-лист (HTML)",
+   "provider": "spawn",
+   "context": "fresh",
+   "phase": "active",
+   "teamId": "session-37ed05b1-7c50-44eb-a40c-4185f53626f5",
+   "sessions": 1,
+   "tokens": {
+    "inputTokens": 147707,
+    "outputTokens": 99542,
+    "cacheReadTokens": 5355264,
+    "cacheWriteTokens": 0,
+    "totalTokens": 5602513
+   },
+   "usd": 0.2113,
+   "rub": 17.02,
+   "rubComplete": true,
+   "lastActivityAt": 1794166830642,
+   "sessionIds": [
+    "2ad2db75-4d29-4951-bcd8-d7db57353650"
+   ]
+  },
+  {
+   "id": "a6d6ef29-d3bc-4e68-b11e-abaac8731698",
+   "kind": "other",
+   "registryAgentId": null,
+   "name": "export-core",
+   "description": "Создаёт модуль экспорта панели в Obsidian-vault",
+   "provider": "spawn",
+   "context": "fresh",
+   "phase": "active",
+   "teamId": "session-30561df1-9a52-4e34-a339-0b4167ace958",
+   "sessions": 1,
+   "tokens": {
+    "inputTokens": 313120,
+    "outputTokens": 59344,
+    "cacheReadTokens": 5126528,
+    "cacheWriteTokens": 0,
+    "totalTokens": 5498992
+   },
+   "usd": 0.1954,
+   "rub": 15.74,
+   "rubComplete": true,
+   "lastActivityAt": 1793719669203,
+   "sessionIds": [
+    "a6d6ef29-d3bc-4e68-b11e-abaac8731698"
+   ]
+  },
+  {
+   "id": "adbefc82-e707-4b54-8f61-ac28cbdd2937",
+   "kind": "other",
+   "registryAgentId": null,
+   "name": "skills-us",
+   "description": "Реализация US-скиллов недвижимости (apify, rentcast, zillapi) и тестов",
+   "provider": "spawn",
+   "context": "fresh",
+   "phase": "active",
+   "teamId": "session-77b1a47d-17d2-402d-afd7-34bcb790db2b",
+   "sessions": 1,
+   "tokens": {
+    "inputTokens": 59148,
+    "outputTokens": 47127,
+    "cacheReadTokens": 5113600,
+    "cacheWriteTokens": 0,
+    "totalTokens": 5219875
+   },
+   "usd": 0.1826,
+   "rub": 14.71,
+   "rubComplete": true,
+   "lastActivityAt": 1793807290316,
+   "sessionIds": [
+    "adbefc82-e707-4b54-8f61-ac28cbdd2937"
+   ]
+  },
+  {
+   "id": "3c217e10-7126-449a-b4ce-cf39f2e0f6d0",
+   "kind": "other",
+   "registryAgentId": null,
+   "name": "settings-auditor",
+   "description": "Аудит роли, границ, настроек и версионирования Агента 1",
+   "provider": "spawn",
+   "context": "fresh",
+   "phase": "active",
+   "teamId": "session-0044c75e-46ff-4eb8-99d5-9a6e79583c9e",
+   "sessions": 1,
+   "tokens": {
+    "inputTokens": 165992,
+    "outputTokens": 44872,
+    "cacheReadTokens": 4965760,
+    "cacheWriteTokens": 0,
+    "totalTokens": 5176624
+   },
+   "usd": 0.1805,
+   "rub": 14.54,
+   "rubComplete": true,
+   "lastActivityAt": 1794150726120,
+   "sessionIds": [
+    "3c217e10-7126-449a-b4ce-cf39f2e0f6d0"
+   ]
+  },
+  {
+   "id": "36a24e8b-5a6b-4b49-9df7-671dd0bbae45",
+   "kind": "other",
+   "registryAgentId": null,
+   "name": "audit-product",
+   "description": "Аудит продукта: оффер, путь клиента, деньги, юридика, готовность к продаже",
+   "provider": "spawn",
+   "context": "fresh",
+   "phase": "active",
+   "teamId": "session-7ed2c384-ea61-4141-9024-0c161cd9b719",
+   "sessions": 1,
+   "tokens": {
+    "inputTokens": 137863,
+    "outputTokens": 30133,
+    "cacheReadTokens": 4987136,
+    "cacheWriteTokens": 0,
+    "totalTokens": 5155132
+   },
+   "usd": 0.1752,
+   "rub": 14.11,
+   "rubComplete": true,
+   "lastActivityAt": 1793803434691,
+   "sessionIds": [
+    "36a24e8b-5a6b-4b49-9df7-671dd0bbae45"
    ]
   },
   {
@@ -604,6 +1647,578 @@
    ]
   },
   {
+   "id": "3614ca4b-3f6d-492f-9e63-4cedb343a5b6",
+   "kind": "other",
+   "registryAgentId": null,
+   "name": "direct-accounts-ui",
+   "description": "UI-блок кабинетов Директа в карточке Агента 2",
+   "provider": "spawn",
+   "context": "fresh",
+   "phase": "active",
+   "teamId": "session-d6c55e8c-dd9a-4adf-a5ed-99c9f7bbd953",
+   "sessions": 1,
+   "tokens": {
+    "inputTokens": 209595,
+    "outputTokens": 61386,
+    "cacheReadTokens": 4776448,
+    "cacheWriteTokens": 0,
+    "totalTokens": 5047429
+   },
+   "usd": 0.1815,
+   "rub": 14.62,
+   "rubComplete": true,
+   "lastActivityAt": 1794336416618,
+   "sessionIds": [
+    "3614ca4b-3f6d-492f-9e63-4cedb343a5b6"
+   ]
+  },
+  {
+   "id": "16906ee0-a595-4242-a7c8-aa4ddf9b7bc1",
+   "kind": "other",
+   "registryAgentId": null,
+   "name": "arch",
+   "description": "Целевая архитектура агентной платформы",
+   "provider": "spawn",
+   "context": "fresh",
+   "phase": "active",
+   "teamId": "session-37ed05b1-7c50-44eb-a40c-4185f53626f5",
+   "sessions": 1,
+   "tokens": {
+    "inputTokens": 88781,
+    "outputTokens": 38384,
+    "cacheReadTokens": 4876544,
+    "cacheWriteTokens": 0,
+    "totalTokens": 5003709
+   },
+   "usd": 0.1729,
+   "rub": 13.93,
+   "rubComplete": true,
+   "lastActivityAt": 1794158809262,
+   "sessionIds": [
+    "16906ee0-a595-4242-a7c8-aa4ddf9b7bc1"
+   ]
+  },
+  {
+   "id": "e4341632-7f5e-458a-9345-0d508ee4bb71",
+   "kind": "other",
+   "registryAgentId": null,
+   "name": "techdebt-risks",
+   "description": "Аудит техдолга и рисков marketing-agents",
+   "provider": "spawn",
+   "context": "fresh",
+   "phase": "active",
+   "teamId": "session-ca7143a5-b33a-4419-bb4a-a32ac3be0603",
+   "sessions": 1,
+   "tokens": {
+    "inputTokens": 292953,
+    "outputTokens": 46113,
+    "cacheReadTokens": 4571532,
+    "cacheWriteTokens": 0,
+    "totalTokens": 4910598
+   },
+   "usd": 0.1723,
+   "rub": 13.88,
+   "rubComplete": true,
+   "lastActivityAt": 1794149077079,
+   "sessionIds": [
+    "e4341632-7f5e-458a-9345-0d508ee4bb71"
+   ]
+  },
+  {
+   "id": "f54f61ce-85b1-42dc-944e-9e5312fb0582",
+   "kind": "other",
+   "registryAgentId": null,
+   "name": "gtm",
+   "description": "ICP, дифференциация, MVP scope, GTM",
+   "provider": "spawn",
+   "context": "fresh",
+   "phase": "active",
+   "teamId": "session-37ed05b1-7c50-44eb-a40c-4185f53626f5",
+   "sessions": 1,
+   "tokens": {
+    "inputTokens": 93697,
+    "outputTokens": 46203,
+    "cacheReadTokens": 4487424,
+    "cacheWriteTokens": 0,
+    "totalTokens": 4627324
+   },
+   "usd": 0.1633,
+   "rub": 13.15,
+   "rubComplete": true,
+   "lastActivityAt": 1794159056982,
+   "sessionIds": [
+    "f54f61ce-85b1-42dc-944e-9e5312fb0582"
+   ]
+  },
+  {
+   "id": "67336e06-8ab3-4fad-af39-cbc55b58a3d6",
+   "kind": "other",
+   "registryAgentId": null,
+   "name": "panel-arch",
+   "description": "Аудит И2 (панель): архитектура и границы dashboard",
+   "provider": "spawn",
+   "context": "fresh",
+   "phase": "active",
+   "teamId": "session-d6e1c799-2020-4639-b888-40667db2e7d4",
+   "sessions": 1,
+   "tokens": {
+    "inputTokens": 119138,
+    "outputTokens": 31564,
+    "cacheReadTokens": 4139392,
+    "cacheWriteTokens": 0,
+    "totalTokens": 4290094
+   },
+   "usd": 0.1478,
+   "rub": 11.91,
+   "rubComplete": true,
+   "lastActivityAt": 1793804483327,
+   "sessionIds": [
+    "67336e06-8ab3-4fad-af39-cbc55b58a3d6"
+   ]
+  },
+  {
+   "id": "be25a83a-d705-4532-abff-8d3a8b4baace",
+   "kind": "other",
+   "registryAgentId": null,
+   "name": "direct-api",
+   "description": "Модуль skills/direct_api для Яндекс.Директа + тесты",
+   "provider": "spawn",
+   "context": "fresh",
+   "phase": "active",
+   "teamId": "session-d6c55e8c-dd9a-4adf-a5ed-99c9f7bbd953",
+   "sessions": 1,
+   "tokens": {
+    "inputTokens": 154346,
+    "outputTokens": 45741,
+    "cacheReadTokens": 4003328,
+    "cacheWriteTokens": 0,
+    "totalTokens": 4203415
+   },
+   "usd": 0.1495,
+   "rub": 12.04,
+   "rubComplete": true,
+   "lastActivityAt": 1794334331175,
+   "sessionIds": [
+    "be25a83a-d705-4532-abff-8d3a8b4baace"
+   ]
+  },
+  {
+   "id": "fc2897f3-3f53-4a38-8782-b6a9c61def4d",
+   "kind": "other",
+   "registryAgentId": null,
+   "name": "config-dev",
+   "description": "WP1: конфиги, расписание, email, тумблеры аналитики",
+   "provider": "spawn",
+   "context": "fresh",
+   "phase": "active",
+   "teamId": "session-8a94bc68-411f-49b3-a76b-d9489f2c06da",
+   "sessions": 1,
+   "tokens": {
+    "inputTokens": 188664,
+    "outputTokens": 22950,
+    "cacheReadTokens": 3490816,
+    "cacheWriteTokens": 0,
+    "totalTokens": 3702430
+   },
+   "usd": 0.1262,
+   "rub": 10.17,
+   "rubComplete": true,
+   "lastActivityAt": 1793731686490,
+   "sessionIds": [
+    "fc2897f3-3f53-4a38-8782-b6a9c61def4d"
+   ]
+  },
+  {
+   "id": "ea44c3d9-5d12-42e1-b032-e785e02e6686",
+   "kind": "other",
+   "registryAgentId": null,
+   "name": "vault-export-dev",
+   "description": "Реализует режим \"вся база\" в export-vault.mjs и проброс scope в serve.mjs (T3)",
+   "provider": "spawn",
+   "context": "fresh",
+   "phase": "active",
+   "teamId": "session-61d1d1d5-3944-40be-97d0-f4772ca9dc54",
+   "sessions": 1,
+   "tokens": {
+    "inputTokens": 257775,
+    "outputTokens": 37056,
+    "cacheReadTokens": 2946702,
+    "cacheWriteTokens": 0,
+    "totalTokens": 3241533
+   },
+   "usd": 0.1158,
+   "rub": 9.33,
+   "rubComplete": true,
+   "lastActivityAt": 1794169017839,
+   "sessionIds": [
+    "ea44c3d9-5d12-42e1-b032-e785e02e6686"
+   ]
+  },
+  {
+   "id": "82e60db1-0c90-4e5d-8b8b-30e053ad3d0f",
+   "kind": "other",
+   "registryAgentId": null,
+   "name": "tenancy-audit",
+   "description": "Аудит текущих настроек Агента 1 по 10 SaaS-слоям",
+   "provider": "spawn",
+   "context": "fresh",
+   "phase": "active",
+   "teamId": "session-b888c8b8-d6b0-4e4c-b2fd-fd6a35efc9cf",
+   "sessions": 1,
+   "tokens": {
+    "inputTokens": 324024,
+    "outputTokens": 58092,
+    "cacheReadTokens": 2794496,
+    "cacheWriteTokens": 0,
+    "totalTokens": 3176612
+   },
+   "usd": 0.1203,
+   "rub": 9.69,
+   "rubComplete": true,
+   "lastActivityAt": 1794168169854,
+   "sessionIds": [
+    "82e60db1-0c90-4e5d-8b8b-30e053ad3d0f"
+   ]
+  },
+  {
+   "id": "d5d33360-3c53-4353-8849-8ca06a8c5a73",
+   "kind": "other",
+   "registryAgentId": null,
+   "name": "target-arch",
+   "description": "Целевая архитектура мультитенантного SaaS: БД, RLS, биллинг, token-cost",
+   "provider": "spawn",
+   "context": "fresh",
+   "phase": "active",
+   "teamId": "session-b888c8b8-d6b0-4e4c-b2fd-fd6a35efc9cf",
+   "sessions": 1,
+   "tokens": {
+    "inputTokens": 135397,
+    "outputTokens": 69670,
+    "cacheReadTokens": 2946048,
+    "cacheWriteTokens": 0,
+    "totalTokens": 3151115
+   },
+   "usd": 0.1231,
+   "rub": 9.92,
+   "rubComplete": true,
+   "lastActivityAt": 1794168207391,
+   "sessionIds": [
+    "d5d33360-3c53-4353-8849-8ca06a8c5a73"
+   ]
+  },
+  {
+   "id": "1ed69904-a1af-4938-8fce-15c72351d0bc",
+   "kind": "other",
+   "registryAgentId": null,
+   "name": "core-store",
+   "description": "Перевод индекса и хранилища на русский",
+   "provider": "spawn",
+   "context": "fresh",
+   "phase": "active",
+   "teamId": "session-f7c2fd8a-a82f-4fc3-b6df-423dda418490",
+   "sessions": 1,
+   "tokens": {
+    "inputTokens": 129467,
+    "outputTokens": 56242,
+    "cacheReadTokens": 2669312,
+    "cacheWriteTokens": 0,
+    "totalTokens": 2855021
+   },
+   "usd": 0.1094,
+   "rub": 8.81,
+   "rubComplete": true,
+   "lastActivityAt": 1794170357087,
+   "sessionIds": [
+    "1ed69904-a1af-4938-8fce-15c72351d0bc"
+   ]
+  },
+  {
+   "id": "d211eea3-8359-4c31-9ed9-18d8e277f058",
+   "kind": "other",
+   "registryAgentId": null,
+   "name": "agent2-tz",
+   "description": "Форма ТЗ и пробный кластер Агента 2 по ЖК «Свет»",
+   "provider": "spawn",
+   "context": "fresh",
+   "phase": "active",
+   "teamId": "session-d6c55e8c-dd9a-4adf-a5ed-99c9f7bbd953",
+   "sessions": 1,
+   "tokens": {
+    "inputTokens": 95432,
+    "outputTokens": 55969,
+    "cacheReadTokens": 2624384,
+    "cacheWriteTokens": 0,
+    "totalTokens": 2775785
+   },
+   "usd": 0.1068,
+   "rub": 8.6,
+   "rubComplete": true,
+   "lastActivityAt": 1794334398286,
+   "sessionIds": [
+    "d211eea3-8359-4c31-9ed9-18d8e277f058"
+   ]
+  },
+  {
+   "id": "ffbb203d-196e-4de5-9f09-aee97005eff0",
+   "kind": "other",
+   "registryAgentId": null,
+   "name": "export-api-ui",
+   "description": "Добавляет кнопку и маршрут экспорта в панель",
+   "provider": "spawn",
+   "context": "fresh",
+   "phase": "active",
+   "teamId": "session-30561df1-9a52-4e34-a339-0b4167ace958",
+   "sessions": 1,
+   "tokens": {
+    "inputTokens": 129863,
+    "outputTokens": 19779,
+    "cacheReadTokens": 2616832,
+    "cacheWriteTokens": 0,
+    "totalTokens": 2766474
+   },
+   "usd": 0.0951,
+   "rub": 7.66,
+   "rubComplete": true,
+   "lastActivityAt": 1793719606288,
+   "sessionIds": [
+    "ffbb203d-196e-4de5-9f09-aee97005eff0"
+   ]
+  },
+  {
+   "id": "eeb99898-085a-4b43-8d70-78b329c2170b",
+   "kind": "other",
+   "registryAgentId": null,
+   "name": "integration-audit",
+   "description": "Аудит интеграций и состояния Агента 1",
+   "provider": "spawn",
+   "context": "fresh",
+   "phase": "active",
+   "teamId": "session-8a94bc68-411f-49b3-a76b-d9489f2c06da",
+   "sessions": 1,
+   "tokens": {
+    "inputTokens": 139779,
+    "outputTokens": 16436,
+    "cacheReadTokens": 2384768,
+    "cacheWriteTokens": 0,
+    "totalTokens": 2540983
+   },
+   "usd": 0.0868,
+   "rub": 7,
+   "rubComplete": true,
+   "lastActivityAt": 1793729717163,
+   "sessionIds": [
+    "eeb99898-085a-4b43-8d70-78b329c2170b"
+   ]
+  },
+  {
+   "id": "02f924a9-3738-4b37-ade7-f623ccdf244e",
+   "kind": "other",
+   "registryAgentId": null,
+   "name": "host-server",
+   "description": "Перевод хост-части и серверных маршрутов на русский",
+   "provider": "spawn",
+   "context": "fresh",
+   "phase": "active",
+   "teamId": "session-f7c2fd8a-a82f-4fc3-b6df-423dda418490",
+   "sessions": 1,
+   "tokens": {
+    "inputTokens": 104217,
+    "outputTokens": 52411,
+    "cacheReadTokens": 2374400,
+    "cacheWriteTokens": 0,
+    "totalTokens": 2531028
+   },
+   "usd": 0.0978,
+   "rub": 7.88,
+   "rubComplete": true,
+   "lastActivityAt": 1794170334858,
+   "sessionIds": [
+    "02f924a9-3738-4b37-ade7-f623ccdf244e"
+   ]
+  },
+  {
+   "id": "f847ab9e-57d5-4bb3-ae9c-e0a83089edc1",
+   "kind": "other",
+   "registryAgentId": null,
+   "name": "vault-auth-connectors",
+   "description": "Переносит домены Auth и Connectors в Obsidian-vault",
+   "provider": "spawn",
+   "context": "fresh",
+   "phase": "active",
+   "teamId": "session-30561df1-9a52-4e34-a339-0b4167ace958",
+   "sessions": 1,
+   "tokens": {
+    "inputTokens": 328974,
+    "outputTokens": 25425,
+    "cacheReadTokens": 2162688,
+    "cacheWriteTokens": 0,
+    "totalTokens": 2517087
+   },
+   "usd": 0.0889,
+   "rub": 7.16,
+   "rubComplete": true,
+   "lastActivityAt": 1793717906785,
+   "sessionIds": [
+    "f847ab9e-57d5-4bb3-ae9c-e0a83089edc1"
+   ]
+  },
+  {
+   "id": "99c94df8-9e8b-43cb-9e1c-fe2eed8bbc66",
+   "kind": "other",
+   "registryAgentId": null,
+   "name": "direct-accounts-api",
+   "description": "API кабинетов Директа + защищённое хранение токенов",
+   "provider": "spawn",
+   "context": "fresh",
+   "phase": "active",
+   "teamId": "session-d6c55e8c-dd9a-4adf-a5ed-99c9f7bbd953",
+   "sessions": 1,
+   "tokens": {
+    "inputTokens": 95931,
+    "outputTokens": 33170,
+    "cacheReadTokens": 2254848,
+    "cacheWriteTokens": 0,
+    "totalTokens": 2383949
+   },
+   "usd": 0.087,
+   "rub": 7.01,
+   "rubComplete": true,
+   "lastActivityAt": 1794336090672,
+   "sessionIds": [
+    "99c94df8-9e8b-43cb-9e1c-fe2eed8bbc66"
+   ]
+  },
+  {
+   "id": "0cc95560-a4ff-4926-8d67-756717045123",
+   "kind": "other",
+   "registryAgentId": null,
+   "name": "engine-audit",
+   "description": "Аудит Python-движка Агента 1",
+   "provider": "spawn",
+   "context": "fresh",
+   "phase": "active",
+   "teamId": "session-8a94bc68-411f-49b3-a76b-d9489f2c06da",
+   "sessions": 1,
+   "tokens": {
+    "inputTokens": 369080,
+    "outputTokens": 15626,
+    "cacheReadTokens": 1648128,
+    "cacheWriteTokens": 0,
+    "totalTokens": 2032834
+   },
+   "usd": 0.0703,
+   "rub": 5.66,
+   "rubComplete": true,
+   "lastActivityAt": 1793729724709,
+   "sessionIds": [
+    "0cc95560-a4ff-4926-8d67-756717045123"
+   ]
+  },
+  {
+   "id": "07acefbd-4d87-4d32-aee2-6e21da959454",
+   "kind": "other",
+   "registryAgentId": null,
+   "name": "vault-skills",
+   "description": "Наполняет домен «Скилы» в vault",
+   "provider": "spawn",
+   "context": "fresh",
+   "phase": "active",
+   "teamId": "session-30561df1-9a52-4e34-a339-0b4167ace958",
+   "sessions": 1,
+   "tokens": {
+    "inputTokens": 44448,
+    "outputTokens": 23818,
+    "cacheReadTokens": 1898752,
+    "cacheWriteTokens": 0,
+    "totalTokens": 1967018
+   },
+   "usd": 0.0707,
+   "rub": 5.7,
+   "rubComplete": true,
+   "lastActivityAt": 1793721052067,
+   "sessionIds": [
+    "07acefbd-4d87-4d32-aee2-6e21da959454"
+   ]
+  },
+  {
+   "id": "7e22adaf-9a68-4d22-bcfc-d3038bc38432",
+   "kind": "other",
+   "registryAgentId": null,
+   "name": "audit-py",
+   "description": "Аудит Python-скриптов на предмет замены скиллами",
+   "provider": "spawn",
+   "context": "fresh",
+   "phase": "active",
+   "teamId": "session-77b1a47d-17d2-402d-afd7-34bcb790db2b",
+   "sessions": 1,
+   "tokens": {
+    "inputTokens": 96862,
+    "outputTokens": 26474,
+    "cacheReadTokens": 1808896,
+    "cacheWriteTokens": 0,
+    "totalTokens": 1932232
+   },
+   "usd": 0.0704,
+   "rub": 5.67,
+   "rubComplete": true,
+   "lastActivityAt": 1793807196836,
+   "sessionIds": [
+    "7e22adaf-9a68-4d22-bcfc-d3038bc38432"
+   ]
+  },
+  {
+   "id": "5b091ad0-68ea-4ee6-8ebd-cd7262a8defd",
+   "kind": "other",
+   "registryAgentId": null,
+   "name": "client-readme",
+   "description": "Перевод GUI-карточки и README на русский",
+   "provider": "spawn",
+   "context": "fresh",
+   "phase": "active",
+   "teamId": "session-f7c2fd8a-a82f-4fc3-b6df-423dda418490",
+   "sessions": 1,
+   "tokens": {
+    "inputTokens": 82448,
+    "outputTokens": 39436,
+    "cacheReadTokens": 1674240,
+    "cacheWriteTokens": 0,
+    "totalTokens": 1796124
+   },
+   "usd": 0.0701,
+   "rub": 5.65,
+   "rubComplete": true,
+   "lastActivityAt": 1794170278681,
+   "sessionIds": [
+    "5b091ad0-68ea-4ee6-8ebd-cd7262a8defd"
+   ]
+  },
+  {
+   "id": "7e6e9c73-b6f1-4b3b-917f-05646ab49011",
+   "kind": "other",
+   "registryAgentId": null,
+   "name": "vault-billing-transactions",
+   "description": "Переносит домены Billing и Transactions в Obsidian-vault",
+   "provider": "spawn",
+   "context": "fresh",
+   "phase": "active",
+   "teamId": "session-30561df1-9a52-4e34-a339-0b4167ace958",
+   "sessions": 1,
+   "tokens": {
+    "inputTokens": 160684,
+    "outputTokens": 30119,
+    "cacheReadTokens": 1522688,
+    "cacheWriteTokens": 0,
+    "totalTokens": 1713491
+   },
+   "usd": 0.0645,
+   "rub": 5.2,
+   "rubComplete": true,
+   "lastActivityAt": 1793717926751,
+   "sessionIds": [
+    "7e6e9c73-b6f1-4b3b-917f-05646ab49011"
+   ]
+  },
+  {
    "id": "9d66e28b-6708-401a-9046-e6f91c21f01a",
    "kind": "other",
    "registryAgentId": null,
@@ -627,6 +2242,240 @@
    "lastActivityAt": 1793466430453,
    "sessionIds": [
     "9d66e28b-6708-401a-9046-e6f91c21f01a"
+   ]
+  },
+  {
+   "id": "5bb80bad-90ed-4690-8722-53c47b9c3d34",
+   "kind": "other",
+   "registryAgentId": null,
+   "name": "perf-research",
+   "description": "Ресёрч API и MCP для performance-навыков",
+   "provider": "spawn",
+   "context": "fresh",
+   "phase": "active",
+   "teamId": "session-d6c55e8c-dd9a-4adf-a5ed-99c9f7bbd953",
+   "sessions": 1,
+   "tokens": {
+    "inputTokens": 101363,
+    "outputTokens": 16040,
+    "cacheReadTokens": 1428864,
+    "cacheWriteTokens": 0,
+    "totalTokens": 1546267
+   },
+   "usd": 0.0547,
+   "rub": 4.41,
+   "rubComplete": true,
+   "lastActivityAt": 1794345304431,
+   "sessionIds": [
+    "5bb80bad-90ed-4690-8722-53c47b9c3d34"
+   ]
+  },
+  {
+   "id": "433969ab-29c0-4f0c-aa22-a46588fc2894",
+   "kind": "other",
+   "registryAgentId": null,
+   "name": "skills-ru",
+   "description": "Реализация RU-скиллов недвижимости (reefapi, rentscout, mcp_rosreestr) и тестов",
+   "provider": "spawn",
+   "context": "fresh",
+   "phase": "active",
+   "teamId": "session-77b1a47d-17d2-402d-afd7-34bcb790db2b",
+   "sessions": 1,
+   "tokens": {
+    "inputTokens": 43172,
+    "outputTokens": 27133,
+    "cacheReadTokens": 1394560,
+    "cacheWriteTokens": 0,
+    "totalTokens": 1464865
+   },
+   "usd": 0.0556,
+   "rub": 4.48,
+   "rubComplete": true,
+   "lastActivityAt": 1793807161272,
+   "sessionIds": [
+    "433969ab-29c0-4f0c-aa22-a46588fc2894"
+   ]
+  },
+  {
+   "id": "5b194389-9ad6-4b03-93e3-b94c83d33d34",
+   "kind": "other",
+   "registryAgentId": null,
+   "name": "vault-agent-settings",
+   "description": "Наполняет домен «Настройки-агентов» в vault",
+   "provider": "spawn",
+   "context": "fresh",
+   "phase": "active",
+   "teamId": "session-30561df1-9a52-4e34-a339-0b4167ace958",
+   "sessions": 1,
+   "tokens": {
+    "inputTokens": 95968,
+    "outputTokens": 20005,
+    "cacheReadTokens": 1237248,
+    "cacheWriteTokens": 0,
+    "totalTokens": 1353221
+   },
+   "usd": 0.0498,
+   "rub": 4.01,
+   "rubComplete": true,
+   "lastActivityAt": 1793721053181,
+   "sessionIds": [
+    "5b194389-9ad6-4b03-93e3-b94c83d33d34"
+   ]
+  },
+  {
+   "id": "f9a4f45e-a3bc-4bfa-b480-f2cfc75ac938",
+   "kind": "other",
+   "registryAgentId": null,
+   "name": "config-inventory",
+   "description": "Инвентаризирует реальную конфигурацию DSH: плагины, инструменты, маршрутизация, инъекции в промпт",
+   "provider": "spawn",
+   "context": "fresh",
+   "phase": "active",
+   "teamId": "session-3da48f99-b9ec-47b3-9cde-bb742e244415",
+   "sessions": 1,
+   "tokens": {
+    "inputTokens": 110732,
+    "outputTokens": 37693,
+    "cacheReadTokens": 1133101,
+    "cacheWriteTokens": 0,
+    "totalTokens": 1281526
+   },
+   "usd": 0.053,
+   "rub": 4.27,
+   "rubComplete": true,
+   "lastActivityAt": 1793640468449,
+   "sessionIds": [
+    "f9a4f45e-a3bc-4bfa-b480-f2cfc75ac938"
+   ]
+  },
+  {
+   "id": "6670f6b4-868a-4f96-aa29-a951b89045e4",
+   "kind": "other",
+   "registryAgentId": null,
+   "name": "vault-ui-dev",
+   "description": "Добавляет в панель кнопку «Обновить всю базу Obsidian» (T4)",
+   "provider": "spawn",
+   "context": "fresh",
+   "phase": "active",
+   "teamId": "session-61d1d1d5-3944-40be-97d0-f4772ca9dc54",
+   "sessions": 1,
+   "tokens": {
+    "inputTokens": 184958,
+    "outputTokens": 16580,
+    "cacheReadTokens": 1018982,
+    "cacheWriteTokens": 0,
+    "totalTokens": 1220520
+   },
+   "usd": 0.0444,
+   "rub": 3.58,
+   "rubComplete": true,
+   "lastActivityAt": 1794168879977,
+   "sessionIds": [
+    "6670f6b4-868a-4f96-aa29-a951b89045e4"
+   ]
+  },
+  {
+   "id": "f4afc1a9-9459-44bd-9134-c76fc6175d6d",
+   "kind": "other",
+   "registryAgentId": null,
+   "name": "tools-i18n",
+   "description": "Перевод инструментов vault и промптов на русский",
+   "provider": "spawn",
+   "context": "fresh",
+   "phase": "active",
+   "teamId": "session-f7c2fd8a-a82f-4fc3-b6df-423dda418490",
+   "sessions": 1,
+   "tokens": {
+    "inputTokens": 61420,
+    "outputTokens": 46220,
+    "cacheReadTokens": 1039104,
+    "cacheWriteTokens": 0,
+    "totalTokens": 1146744
+   },
+   "usd": 0.0514,
+   "rub": 4.14,
+   "rubComplete": true,
+   "lastActivityAt": 1794170331601,
+   "sessionIds": [
+    "f4afc1a9-9459-44bd-9134-c76fc6175d6d"
+   ]
+  },
+  {
+   "id": "6028187b-c958-4a8d-8f88-e29351b6e3e6",
+   "kind": "other",
+   "registryAgentId": null,
+   "name": "run-journal",
+   "description": "Пишет панельные прогоны в registry/runs.jsonl (serve.mjs)",
+   "provider": "spawn",
+   "context": "fresh",
+   "phase": "active",
+   "teamId": "session-a0a8ad3b-20a7-4b5b-a89f-95dcb51412d9",
+   "sessions": 1,
+   "tokens": {
+    "inputTokens": 86594,
+    "outputTokens": 9412,
+    "cacheReadTokens": 979968,
+    "cacheWriteTokens": 0,
+    "totalTokens": 1075974
+   },
+   "usd": 0.0375,
+   "rub": 3.02,
+   "rubComplete": true,
+   "lastActivityAt": 1794245527045,
+   "sessionIds": [
+    "6028187b-c958-4a8d-8f88-e29351b6e3e6"
+   ]
+  },
+  {
+   "id": "34889b2c-38d7-450a-844c-677f9ac16182",
+   "kind": "other",
+   "registryAgentId": null,
+   "name": "perf-skills",
+   "description": "Создание 8 скиллов Head of Performance",
+   "provider": "spawn",
+   "context": "fresh",
+   "phase": "active",
+   "teamId": "session-d6c55e8c-dd9a-4adf-a5ed-99c9f7bbd953",
+   "sessions": 1,
+   "tokens": {
+    "inputTokens": 90947,
+    "outputTokens": 20815,
+    "cacheReadTokens": 803456,
+    "cacheWriteTokens": 0,
+    "totalTokens": 915218
+   },
+   "usd": 0.0359,
+   "rub": 2.9,
+   "rubComplete": true,
+   "lastActivityAt": 1794345341044,
+   "sessionIds": [
+    "34889b2c-38d7-450a-844c-677f9ac16182"
+   ]
+  },
+  {
+   "id": "8fa7ac17-4b4e-4de5-866c-fce093ed1c4c",
+   "kind": "other",
+   "registryAgentId": null,
+   "name": "scrape-investigator",
+   "description": "Diagnose broken dsh-scrape-webpage plugin, write one report file",
+   "provider": "spawn",
+   "context": "fresh",
+   "phase": "active",
+   "teamId": "session-29587bfa-e3aa-403b-b0e8-8994f9edfa48",
+   "sessions": 1,
+   "tokens": {
+    "inputTokens": 65596,
+    "outputTokens": 5854,
+    "cacheReadTokens": 507264,
+    "cacheWriteTokens": 0,
+    "totalTokens": 578714
+   },
+   "usd": 0.0204,
+   "rub": 1.65,
+   "rubComplete": true,
+   "lastActivityAt": 1793813527943,
+   "sessionIds": [
+    "8fa7ac17-4b4e-4de5-866c-fce093ed1c4c"
    ]
   },
   {

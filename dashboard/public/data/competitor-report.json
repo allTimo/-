@@ -3,6 +3,14 @@
  "exists": true,
  "clients": [
   {
+   "clientId": "client-granel",
+   "dir": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\01-competitor-watch\\data\\clients\\client-granel\\competitor-profiles",
+   "exists": false,
+   "summary": null,
+   "profiles": [],
+   "emptyReason": "Профили конкурентов ещё не сформированы: движок не выполнял прогон профилирования по этому клиенту."
+  },
+  {
    "clientId": "client-svet",
    "dir": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\01-competitor-watch\\data\\clients\\client-svet\\competitor-profiles",
    "exists": true,
@@ -6049,7 +6057,7 @@
   ]
  },
  "counts": {
-  "clients": 1,
+  "clients": 2,
   "profiles": 6,
   "lots": 170,
   "withPrice": 6,

@@ -338,6 +338,59 @@ export function setListItemField(text, opts) {
   return { ok: true, changed: true, text: lines.join(eol), line: block.start + 2, previous: null };
 }
 
+// Границы блока по пути ключей (например ['agent1'] или ['agent1','watch']).
+// Возвращает { start, end, indent }: end — индекс строки сразу после последней
+// содержательной строки блока. Пустые строки внутри блока не разрывают его,
+// комментарии тоже (они не мешают вставке).
+function findYamlBlock(lines, path) {
+  const stack = [];
+  for (let i = 0; i < lines.length; i++) {
+    const stripped = stripComment(lines[i]).replace(/\s+$/, '');
+    if (stripped.trim() === '') continue;
+    const indent = stripped.match(/^ */)[0].length;
+    const m = /^([A-Za-z0-9_.@/\-]+)\s*:\s*(.*)$/.exec(stripped.slice(indent));
+    if (!m) continue;
+    while (stack.length > 0 && stack[stack.length - 1].indent >= indent) stack.pop();
+    const key = m[1];
+    const cur = stack.map(function (s) { return s.key; }).concat([key]);
+    if (cur.length === path.length && cur.every(function (k, idx) { return k === path[idx]; })) {
+      let last = i;
+      for (let j = i + 1; j < lines.length; j++) {
+        const raw = lines[j];
+        if (raw.trim() === '') continue;
+        const ind = raw.match(/^ */)[0].length;
+        if (ind <= indent) break;
+        last = j;
+      }
+      return { start: i, end: last + 1, indent: indent };
+    }
+    stack.push({ key: key, indent: indent });
+  }
+  return null;
+}
+
+// Дописать дочерний блок в конец родительского: например agent1.analytics в agent1.
+// Нужно, когда параметр появился в панели раньше, чем в YAML: правка не падает,
+// а создаёт блок с переданными строками. Комментарии и порядок остальных строк не трогаем.
+export function insertChildBlock(text, parentPath, childKey, childLines) {
+  const eol = text.indexOf('\r\n') >= 0 ? '\r\n' : '\n';
+  const lines = text.split(/\r?\n/);
+  const block = findYamlBlock(lines, parentPath);
+  if (!block) return { ok: false, reason: 'parent-not-found', path: parentPath.join('.') };
+  const indent = ' '.repeat(block.indent + 2);
+  // если ключ уже есть прямо под родителем — вставка не нужна
+  for (let i = block.start + 1; i < block.end; i++) {
+    const stripped = stripComment(lines[i]).replace(/\s+$/, '');
+    const m = /^([A-Za-z0-9_.@/\-]+)\s*:/.exec(stripped.slice(stripped.match(/^ */)[0].length));
+    if (m && m[1] === childKey && stripped.match(/^ */)[0].length === block.indent + 2) {
+      return { ok: true, changed: false, text: text, line: i + 1 };
+    }
+  }
+  const blockLines = [indent + childKey + ':'].concat(childLines.map(function (l) { return indent + '  ' + l; }));
+  const out = lines.slice(0, block.end).concat(blockLines, lines.slice(block.end));
+  return { ok: true, changed: true, text: out.join(eol), line: block.end + 1 };
+}
+
 // Правка списочного поля внутри блока (projects: [a, b], groups: ["x", "y"]).
 export function setListItemArray(text, opts) {
   const eol = text.indexOf('\r\n') >= 0 ? '\r\n' : '\n';

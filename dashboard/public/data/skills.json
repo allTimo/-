@@ -1,0 +1,214 @@
+{
+ "generatedAt": "2026-11-13T18:34:06.624Z",
+ "file": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\skills\\registry\\skills_registry.json",
+ "skills": [
+  {
+   "name": "apify",
+   "title": "Apify (Free Tier)",
+   "purpose": "Запуск готовых акторов Apify для парсинга недвижимости (Cian, Zillow и др.).",
+   "module": "skills.real_estate.apify",
+   "group": "real_estate",
+   "enabled": true,
+   "requiredEnv": [
+    "APIFY_TOKEN"
+   ],
+   "needsKey": true,
+   "freeTier": "$5 бесплатных кредитов ежемесячно",
+   "limits": "Списывает кредиты платформы. Без APIFY_TOKEN скилл логирует предупреждение и возвращает пустой список. Актор Cian дублирует существующий коннектор cian-connector.",
+   "verified": "2026-11-04: api.apify.com отвечает HTTP 200",
+   "runs": 346,
+   "lastRun": {
+    "ts": "2026-11-10T20:49:36+00:00",
+    "status": "skipped_no_key",
+    "count": 0,
+    "error": "скилл apify: не задана переменная окружения APIFY_TOKEN; скилл пропущен и вернул пустой результат. Смотри skills/.env.example и marketing-agents/.env"
+   }
+  },
+  {
+   "name": "developer_pricing",
+   "title": "Цены с сайта застройщика",
+   "purpose": "Цены «от» по позициям каталога с публичной страницы застройщика: цена лота выбирается правилом честности, а не первым числом карточки.",
+   "module": "skills.real_estate.developer_pricing",
+   "group": "real_estate",
+   "enabled": true,
+   "requiredEnv": [],
+   "needsKey": false,
+   "freeTier": "бесплатно: публичная страница, ключ не нужен",
+   "limits": "Только анонимный HTTP: страница-каркас SPA или блокировка робота дают статус not_deployed и пустой список (страницу должен открыть Chrome CDP в движке Агента 1). Цена — «от» по позиции каталога (корпус + тип квартиры + площадь), не шахматка по лотам. Слова-обманки («взнос», «платёж», «ипотек», «ставка», «₽/м²») отбрасываются; ₽/м² вне коридора 120 000…1 200 000 не публикуется вовсе. Закрывает дефект F10.",
+   "verified": "2026-11-04: разбор фикстуры 01-competitor-watch/tests/fixtures/pages/site-price-cards.html — 3 позиции, «взнос 1 100 000 ₽» отброшен, выбрана цена 11 000 000 ₽; ₽/м² 74 928 не опубликован; правило совпадает с движком (тест test_28)",
+   "runs": 127,
+   "lastRun": {
+    "ts": "2026-11-10T20:49:36+00:00",
+    "status": "empty",
+    "count": 0,
+    "error": null
+   }
+  },
+  {
+   "name": "mcp_market",
+   "title": "MCP Market Russia",
+   "purpose": "Поиск компаний строительного рынка РФ по строке запроса.",
+   "module": "skills.real_estate.mcp_market",
+   "group": "real_estate",
+   "enabled": true,
+   "requiredEnv": [],
+   "needsKey": false,
+   "freeTier": "полностью бесплатно, ключ не требуется",
+   "limits": "Каталог строительных подрядчиков, а не база лотов: цен квартир, площадей и корпусов нет. Отдаёт цену за м² отдельными полями.",
+   "verified": "2026-11-04: живой запрос q=\"каркасные дома в спб\" -> HTTP 200, 10 компаний",
+   "runs": 337,
+   "lastRun": {
+    "ts": "2026-11-10T20:49:36+00:00",
+    "status": "empty",
+    "count": 0,
+    "error": null
+   }
+  },
+  {
+   "name": "mcp_rosreestr",
+   "title": "mcp-rosreestr (Open Source)",
+   "purpose": "Кадастровые данные Росреестра/НСПД: кадастровая стоимость, площадь, год постройки, адрес.",
+   "module": "skills.real_estate.mcp_rosreestr",
+   "group": "real_estate",
+   "enabled": true,
+   "requiredEnv": [],
+   "needsKey": false,
+   "freeTier": "ключ не требуется — open-source под MIT",
+   "limits": "Нужна машина с российским IP и локально поднятый MCP-сервер. Без него скилл возвращает not_deployed с пояснением.",
+   "verified": "2026-11-04: найдены yasg1988/mcp-rosreestr (MIT, Python) и atomno-mcp/mcp-rosreestr (MIT)",
+   "runs": 551,
+   "lastRun": {
+    "ts": "2026-11-10T20:49:36+00:00",
+    "status": "ok",
+    "count": 1,
+    "error": null
+   }
+  },
+  {
+   "name": "reefapi",
+   "title": "ReefAPI (Avito / Cian)",
+   "purpose": "Живые данные Avito и Cian через единый REST API ReefAPI.",
+   "module": "skills.real_estate.reefapi",
+   "group": "real_estate",
+   "enabled": true,
+   "requiredEnv": [
+    "REEFAPI_KEY"
+   ],
+   "needsKey": true,
+   "freeTier": "1 000 бесплатных кредитов при регистрации, без карты; один пул кредитов на все API",
+   "limits": "Платно после бесплатных кредитов. Без REEFAPI_KEY скилл логирует предупреждение и возвращает пустой список.",
+   "verified": "2026-11-04: документация подтверждает Base URL, заголовок x-api-key, конверт {ok,data,meta,error}, POST /avito/v1/search = 2 кредита",
+   "runs": 747,
+   "lastRun": {
+    "ts": "2026-11-10T20:49:36+00:00",
+    "status": "error",
+    "count": 0,
+    "error": "SkillError: неизвестное api='zillow'; допустимы: avito, cian"
+   }
+  },
+  {
+   "name": "rentcast",
+   "title": "RentCast",
+   "purpose": "Данные о долгосрочной и краткосрочной аренде и продажах в США.",
+   "module": "skills.real_estate.rentcast",
+   "group": "real_estate",
+   "enabled": true,
+   "requiredEnv": [
+    "RENTCAST_KEY"
+   ],
+   "needsKey": true,
+   "freeTier": "50 бесплатных запросов в месяц",
+   "limits": "Только рынок США — к новостройкам Москвы неприменимо. Без RENTCAST_KEY скилл логирует предупреждение и возвращает пустой список.",
+   "verified": "2026-11-04: api.rentcast.io/listings/rental/long-term -> HTTP 401 без ключа (сервис существует)",
+   "runs": 346,
+   "lastRun": {
+    "ts": "2026-11-10T20:49:36+00:00",
+    "status": "skipped_no_key",
+    "count": 0,
+    "error": "скилл rentcast: не задана переменная окружения RENTCAST_KEY; скилл пропущен и вернул пустой результат. Смотри skills/.env.example и marketing-agents/.env"
+   }
+  },
+  {
+   "name": "rentscout",
+   "title": "RentScout (Open Source)",
+   "purpose": "Агрегация объявлений об аренде с локально развёрнутого сервиса RentScout.",
+   "module": "skills.real_estate.rentscout",
+   "group": "real_estate",
+   "enabled": true,
+   "requiredEnv": [],
+   "needsKey": false,
+   "freeTier": "ключ не требуется — сервис разворачивается локально",
+   "limits": "Развёртывание НЕ выполнено. Канонического проекта с набором Avito/Cian/Domofond/Yandex Realty/DomClick не найдено: RU-форк CreatmanCEO/rentscout помечен как Commercial, а его источники — Avito/Cian/Yandex Travel/Sutochno/Ostrovok.",
+   "verified": "2026-11-04: GitHub-поиск rentscout -> 16 репозиториев, заявленный набор источников не подтверждён",
+   "runs": 612,
+   "lastRun": {
+    "ts": "2026-11-10T20:49:36+00:00",
+    "status": "ok",
+    "count": 1,
+    "error": null
+   }
+  },
+  {
+   "name": "yandex_direct",
+   "title": "Яндекс.Директ API v5",
+   "purpose": "Аккаунт Агента 2 через официальный API v5: проверка доступа, список кампаний (Campaigns.get) и асинхронные отчёты Reports (TSV или «отчёт готовится»).",
+   "module": "skills.direct_api",
+   "group": "direct",
+   "enabled": true,
+   "requiredEnv": [
+    "YANDEX_OAUTH_TOKEN"
+   ],
+   "needsKey": true,
+   "freeTier": "бесплатно в рамках аккаунта",
+   "limits": "Reports асинхронный: 201 = отчёт готовится (повторить запрос позже). Изменение ставок/бюджета модуль НЕ выполняет — только чтение кампаний и отчётов; песочница сервис Reports не поддерживает. Без YANDEX_DIRECT_TOKEN скилл логирует предупреждение и возвращает пустой список (не сбой).",
+   "verified": "2026-11-10: тесты на мок-транспорте; живого токена нет",
+   "runs": 343,
+   "lastRun": {
+    "ts": "2026-11-10T20:49:36+00:00",
+    "status": "ok",
+    "count": 2,
+    "error": null
+   }
+  },
+  {
+   "name": "zillapi",
+   "title": "Zillapi",
+   "purpose": "Доступ к данным Zillow (США) через платный REST API Zillapi.",
+   "module": "skills.real_estate.zillapi",
+   "group": "real_estate",
+   "enabled": true,
+   "requiredEnv": [
+    "ZILLAPI_KEY"
+   ],
+   "needsKey": true,
+   "freeTier": "100 бесплатных кредитов без кредитной карты",
+   "limits": "Только рынок США (Zillow). Без ZILLAPI_KEY скилл логирует предупреждение и возвращает пустой список.",
+   "verified": "2026-11-04: zillapi.com/pricing — «start free with 100 credits», «No card to start»; api.zillapi.com -> 401 без ключа",
+   "runs": 311,
+   "lastRun": {
+    "ts": "2026-11-10T20:49:36+00:00",
+    "status": "skipped_no_key",
+    "count": 0,
+    "error": "скилл zillapi: не задана переменная окружения ZILLAPI_KEY; скилл пропущен и вернул пустой результат. Смотри skills/.env.example и marketing-agents/.env"
+   }
+  }
+ ],
+ "counts": {
+  "total": 9,
+  "enabled": 9,
+  "needsKey": 5,
+  "withRuns": 9,
+  "journalRuns": 4227
+ },
+ "journal": {
+  "file": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\skills\\logs\\skill-runs.jsonl",
+  "exists": true,
+  "runs": 4227,
+  "ok": 964,
+  "empty": 1634,
+  "errors": 498,
+  "skipped": 851
+ },
+ "honesty": "Скилы — источники данных: расчёты, проверки и запись остаются в детерминированном движке агента. «Прогонов нет» означает, что скил ещё не вызывался, а не что он сломан.",
+ "warnings": []
+}

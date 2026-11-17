@@ -1,0 +1,858 @@
+{
+ "pairs": {
+  "client-svet:2026-11-01>2026-11-02": {
+   "client": "client-svet",
+   "prev": "2026-11-01",
+   "curr": "2026-11-02",
+   "rows_prev": 15,
+   "rows_curr": 175,
+   "keys_prev": 15,
+   "keys_curr": 175,
+   "common": 0,
+   "smaller": 15,
+   "pct": 0.0,
+   "new": 175,
+   "gone": 15,
+   "real_gone": 15,
+   "dup_surplus": 0,
+   "suspicious": 0,
+   "no_ref_key": 0,
+   "no_ref_examples": [],
+   "steps_prev": {
+    "old": 15
+   },
+   "steps_curr": {
+    "old": 79,
+    "n": 88,
+    "c": 8
+   },
+   "url_prev": {
+    "empty": 15
+   },
+   "url_curr": {
+    "empty": 175
+   },
+   "n_or_u_without_url": 88,
+   "c_step_with_url": 0,
+   "gone_with_new_prefix": 0,
+   "real_gone_examples": [
+    {
+     "project": "ЗИЛАРТ",
+     "rooms": "0",
+     "area": "20",
+     "floor": "",
+     "lot_id": "developer-sites-f378eaf9"
+    },
+    {
+     "project": "ЗИЛАРТ",
+     "rooms": "0",
+     "area": "32",
+     "floor": "",
+     "lot_id": "developer-sites-32fa5d53"
+    },
+    {
+     "project": "ЗИЛАРТ",
+     "rooms": "1",
+     "area": "39",
+     "floor": "",
+     "lot_id": "developer-sites-08163656"
+    },
+    {
+     "project": "ЗИЛАРТ",
+     "rooms": "1",
+     "area": "36",
+     "floor": "",
+     "lot_id": "developer-sites-5e5669ae"
+    },
+    {
+     "project": "ЗИЛАРТ",
+     "rooms": "1",
+     "area": "40",
+     "floor": "",
+     "lot_id": "developer-sites-2869633e"
+    },
+    {
+     "project": "ЗИЛАРТ",
+     "rooms": "1",
+     "area": "40",
+     "floor": "",
+     "lot_id": "developer-sites-6ed3822c"
+    },
+    {
+     "project": "ЗИЛАРТ",
+     "rooms": "1",
+     "area": "40",
+     "floor": "",
+     "lot_id": "developer-sites-36b4864a"
+    },
+    {
+     "project": "ЗИЛАРТ",
+     "rooms": "2",
+     "area": "55",
+     "floor": "",
+     "lot_id": "developer-sites-45d0b48e"
+    },
+    {
+     "project": "ЗИЛАРТ",
+     "rooms": "2",
+     "area": "57",
+     "floor": "",
+     "lot_id": "developer-sites-89a69c1c"
+    },
+    {
+     "project": "ЗИЛАРТ",
+     "rooms": "2",
+     "area": "58",
+     "floor": "",
+     "lot_id": "developer-sites-687d6c48"
+    },
+    {
+     "project": "ЗИЛАРТ",
+     "rooms": "2",
+     "area": "64",
+     "floor": "",
+     "lot_id": "developer-sites-87d2c869"
+    },
+    {
+     "project": "ЗИЛАРТ",
+     "rooms": "2",
+     "area": "66",
+     "floor": "",
+     "lot_id": "developer-sites-75ff3c45"
+    }
+   ],
+   "suspicious_examples": [],
+   "dup_surplus_examples": []
+  },
+  "client-svet:2026-11-02>2026-11-03": {
+   "client": "client-svet",
+   "prev": "2026-11-02",
+   "curr": "2026-11-03",
+   "rows_prev": 175,
+   "rows_curr": 154,
+   "keys_prev": 175,
+   "keys_curr": 154,
+   "common": 92,
+   "smaller": 154,
+   "pct": 59.74,
+   "new": 62,
+   "gone": 83,
+   "real_gone": 79,
+   "dup_surplus": 0,
+   "suspicious": 0,
+   "no_ref_key": 4,
+   "no_ref_examples": [
+    {
+     "project": "Онежский вал",
+     "rooms": "2",
+     "area": "53.1",
+     "lot_id": "cian-062eedda"
+    },
+    {
+     "project": "Онежский вал",
+     "rooms": "1",
+     "area": "39",
+     "lot_id": "cian-b95e122c"
+    },
+    {
+     "project": "Михалковский",
+     "rooms": "2",
+     "area": "44.4",
+     "lot_id": "cian-953b79a5"
+    },
+    {
+     "project": "Михалковский",
+     "rooms": "2",
+     "area": "53.5",
+     "lot_id": "cian-32254af4"
+    }
+   ],
+   "steps_prev": {
+    "old": 79,
+    "n": 88,
+    "c": 8
+   },
+   "steps_curr": {
+    "c": 12,
+    "n": 127,
+    "old": 15
+   },
+   "url_prev": {
+    "empty": 175
+   },
+   "url_curr": {
+    "empty": 154
+   },
+   "n_or_u_without_url": 127,
+   "c_step_with_url": 0,
+   "gone_with_new_prefix": 4,
+   "real_gone_examples": [
+    {
+     "project": "Дмитровское небо",
+     "rooms": "0",
+     "area": "22.3",
+     "floor": "32",
+     "lot_id": "cian-90c8dbd5"
+    },
+    {
+     "project": "Дмитровское небо",
+     "rooms": "2",
+     "area": "54.7",
+     "floor": "32",
+     "lot_id": "cian-e1929b83"
+    },
+    {
+     "project": "Дмитровское небо",
+     "rooms": "2",
+     "area": "66.6",
+     "floor": "4",
+     "lot_id": "cian-dfa4b37d"
+    },
+    {
+     "project": "Дмитровское небо",
+     "rooms": "2",
+     "area": "58.6",
+     "floor": "17",
+     "lot_id": "cian-8c0eeb0b"
+    },
+    {
+     "project": "Дмитровское небо",
+     "rooms": "1",
+     "area": "40.5",
+     "floor": "11",
+     "lot_id": "cian-479a24c9"
+    },
+    {
+     "project": "Дмитровское небо",
+     "rooms": "3",
+     "area": "75.2",
+     "floor": "23",
+     "lot_id": "cian-98230315"
+    },
+    {
+     "project": "Дмитровское небо",
+     "rooms": "0",
+     "area": "26.2",
+     "floor": "7",
+     "lot_id": "cian-bd380ca3"
+    },
+    {
+     "project": "Дмитровское небо",
+     "rooms": "2",
+     "area": "66.5",
+     "floor": "2",
+     "lot_id": "cian-f4d236ac"
+    },
+    {
+     "project": "Дмитровское небо",
+     "rooms": "3",
+     "area": "67.3",
+     "floor": "32",
+     "lot_id": "cian-c5ad446e"
+    },
+    {
+     "project": "Дмитровское небо",
+     "rooms": "3",
+     "area": "76.4",
+     "floor": "2",
+     "lot_id": "cian-223ae82f"
+    },
+    {
+     "project": "Дмитровское небо",
+     "rooms": "0",
+     "area": "26.2",
+     "floor": "13",
+     "lot_id": "cian-e7d240c4"
+    },
+    {
+     "project": "Дмитровское небо",
+     "rooms": "3",
+     "area": "76.4",
+     "floor": "6",
+     "lot_id": "cian-49e90df3"
+    }
+   ],
+   "suspicious_examples": [],
+   "dup_surplus_examples": []
+  },
+  "client-svet:2026-11-03>2026-11-04": {
+   "client": "client-svet",
+   "prev": "2026-11-03",
+   "curr": "2026-11-04",
+   "rows_prev": 154,
+   "rows_curr": 154,
+   "keys_prev": 154,
+   "keys_curr": 154,
+   "common": 139,
+   "smaller": 154,
+   "pct": 90.26,
+   "new": 15,
+   "gone": 15,
+   "real_gone": 15,
+   "dup_surplus": 0,
+   "suspicious": 0,
+   "no_ref_key": 0,
+   "no_ref_examples": [],
+   "steps_prev": {
+    "c": 12,
+    "n": 127,
+    "old": 15
+   },
+   "steps_curr": {
+    "c": 12,
+    "n": 142
+   },
+   "url_prev": {
+    "empty": 154
+   },
+   "url_curr": {
+    "empty": 12,
+    "filled": 142
+   },
+   "n_or_u_without_url": 0,
+   "c_step_with_url": 0,
+   "gone_with_new_prefix": 0,
+   "real_gone_examples": [
+    {
+     "project": "Селигер Сити",
+     "rooms": "2",
+     "area": "48",
+     "floor": "4",
+     "lot_id": "cian-92990551"
+    },
+    {
+     "project": "Селигер Сити",
+     "rooms": "0",
+     "area": "38.6",
+     "floor": "12",
+     "lot_id": "cian-c8a92772"
+    },
+    {
+     "project": "Дмитровское небо",
+     "rooms": "0",
+     "area": "26.2",
+     "floor": "13",
+     "lot_id": "cian-9eb3ed33"
+    },
+    {
+     "project": "Дмитровское небо",
+     "rooms": "2",
+     "area": "59.5",
+     "floor": "8",
+     "lot_id": "cian-07752b27"
+    },
+    {
+     "project": "Дмитровское небо",
+     "rooms": "3",
+     "area": "76.4",
+     "floor": "8",
+     "lot_id": "cian-e9173b2c"
+    },
+    {
+     "project": "Дмитровское небо",
+     "rooms": "0",
+     "area": "25.3",
+     "floor": "13",
+     "lot_id": "cian-eb04daa4"
+    },
+    {
+     "project": "Онежский вал",
+     "rooms": "1",
+     "area": "39",
+     "floor": "9",
+     "lot_id": "cian-c825f892"
+    },
+    {
+     "project": "Онежский вал",
+     "rooms": "3",
+     "area": "65.8",
+     "floor": "4",
+     "lot_id": "cian-92b35da3"
+    },
+    {
+     "project": "Онежский вал",
+     "rooms": "2",
+     "area": "53.1",
+     "floor": "14",
+     "lot_id": "cian-ee005f71"
+    },
+    {
+     "project": "Акценты",
+     "rooms": "1",
+     "area": "43.2",
+     "floor": "4",
+     "lot_id": "cian-94d79cb4"
+    },
+    {
+     "project": "Акценты",
+     "rooms": "0",
+     "area": "41.2",
+     "floor": "16",
+     "lot_id": "cian-a574aa6d"
+    },
+    {
+     "project": "Михалковский",
+     "rooms": "2",
+     "area": "36.9",
+     "floor": "3",
+     "lot_id": "cian-97b44ff7"
+    }
+   ],
+   "suspicious_examples": [],
+   "dup_surplus_examples": []
+  },
+  "client-granel:2026-11-02>2026-11-03": {
+   "client": "client-granel",
+   "prev": "2026-11-02",
+   "curr": "2026-11-03",
+   "rows_prev": 229,
+   "rows_curr": 229,
+   "keys_prev": 229,
+   "keys_curr": 229,
+   "common": 170,
+   "smaller": 229,
+   "pct": 74.24,
+   "new": 59,
+   "gone": 59,
+   "real_gone": 47,
+   "dup_surplus": 1,
+   "suspicious": 0,
+   "no_ref_key": 11,
+   "no_ref_examples": [
+    {
+     "project": "Свет",
+     "rooms": "0",
+     "area": "86.1",
+     "lot_id": "cian-ecabd951"
+    },
+    {
+     "project": "Свет",
+     "rooms": "0",
+     "area": "33.5",
+     "lot_id": "cian-2a0809f7"
+    },
+    {
+     "project": "Дмитровское небо",
+     "rooms": "0",
+     "area": "26.2",
+     "lot_id": "cian-e7d240c4"
+    },
+    {
+     "project": "Дмитровское небо",
+     "rooms": "3",
+     "area": "76.4",
+     "lot_id": "cian-40612a47"
+    },
+    {
+     "project": "Дмитровское небо",
+     "rooms": "0",
+     "area": "25.3",
+     "lot_id": "cian-32d1305c"
+    },
+    {
+     "project": "Онежский вал",
+     "rooms": "2",
+     "area": "53.1",
+     "lot_id": "cian-062eedda"
+    },
+    {
+     "project": "Онежский вал",
+     "rooms": "1",
+     "area": "39",
+     "lot_id": "cian-b95e122c"
+    },
+    {
+     "project": "Нарвин",
+     "rooms": "1",
+     "area": "35.2",
+     "lot_id": "cian-1d6e5e4a"
+    },
+    {
+     "project": "Кинетик. Резиденции на Дмитровском",
+     "rooms": "0",
+     "area": "36.5",
+     "lot_id": "cian-241e1903"
+    },
+    {
+     "project": "Михалковский",
+     "rooms": "2",
+     "area": "44.4",
+     "lot_id": "cian-953b79a5"
+    },
+    {
+     "project": "Михалковский",
+     "rooms": "2",
+     "area": "53.5",
+     "lot_id": "cian-32254af4"
+    }
+   ],
+   "steps_prev": {
+    "n": 167,
+    "old": 54,
+    "c": 8
+   },
+   "steps_curr": {
+    "n": 198,
+    "old": 23,
+    "c": 8
+   },
+   "url_prev": {
+    "empty": 229
+   },
+   "url_curr": {
+    "empty": 229
+   },
+   "n_or_u_without_url": 198,
+   "c_step_with_url": 0,
+   "gone_with_new_prefix": 6,
+   "real_gone_examples": [
+    {
+     "project": "Свет",
+     "rooms": "0",
+     "area": "57.9",
+     "floor": "48",
+     "lot_id": "cian-c7794197"
+    },
+    {
+     "project": "Свет",
+     "rooms": "0",
+     "area": "59.3",
+     "floor": "46",
+     "lot_id": "cian-2458ad44"
+    },
+    {
+     "project": "Свет",
+     "rooms": "0",
+     "area": "49.4",
+     "floor": "4",
+     "lot_id": "cian-e520be9f"
+    },
+    {
+     "project": "Свет",
+     "rooms": "0",
+     "area": "79.9",
+     "floor": "25",
+     "lot_id": "cian-ec70364f"
+    },
+    {
+     "project": "Дмитровское небо",
+     "rooms": "2",
+     "area": "66.6",
+     "floor": "7",
+     "lot_id": "n-48bb60a1"
+    },
+    {
+     "project": "Дмитровское небо",
+     "rooms": "2",
+     "area": "66.5",
+     "floor": "8",
+     "lot_id": "cian-a3f4f805"
+    },
+    {
+     "project": "Дмитровское небо",
+     "rooms": "0",
+     "area": "59.5",
+     "floor": "8",
+     "lot_id": "cian-35a14847"
+    },
+    {
+     "project": "Онежский вал",
+     "rooms": "3",
+     "area": "81",
+     "floor": "6",
+     "lot_id": "cian-20cee3cc"
+    },
+    {
+     "project": "Онежский вал",
+     "rooms": "1",
+     "area": "35.3",
+     "floor": "2",
+     "lot_id": "cian-c995c118"
+    },
+    {
+     "project": "Онежский вал",
+     "rooms": "1",
+     "area": "31.1",
+     "floor": "7",
+     "lot_id": "cian-944f1988"
+    },
+    {
+     "project": "Онежский вал",
+     "rooms": "2",
+     "area": "61.5",
+     "floor": "2",
+     "lot_id": "cian-08298951"
+    },
+    {
+     "project": "Онежский вал",
+     "rooms": "0",
+     "area": "31",
+     "floor": "6",
+     "lot_id": "cian-c3fa9357"
+    }
+   ],
+   "suspicious_examples": [],
+   "dup_surplus_examples": [
+    {
+     "project": "Дмитровское небо",
+     "area": "26.2",
+     "lot_id": "cian-8b4af81a"
+    }
+   ]
+  },
+  "client-granel:2026-11-03>2026-11-04": {
+   "client": "client-granel",
+   "prev": "2026-11-03",
+   "curr": "2026-11-04",
+   "rows_prev": 229,
+   "rows_curr": 229,
+   "keys_prev": 229,
+   "keys_curr": 229,
+   "common": 206,
+   "smaller": 229,
+   "pct": 89.96,
+   "new": 23,
+   "gone": 23,
+   "real_gone": 23,
+   "dup_surplus": 0,
+   "suspicious": 0,
+   "no_ref_key": 0,
+   "no_ref_examples": [],
+   "steps_prev": {
+    "n": 198,
+    "old": 23,
+    "c": 8
+   },
+   "steps_curr": {
+    "n": 221,
+    "c": 8
+   },
+   "url_prev": {
+    "empty": 229
+   },
+   "url_curr": {
+    "filled": 221,
+    "empty": 8
+   },
+   "n_or_u_without_url": 0,
+   "c_step_with_url": 0,
+   "gone_with_new_prefix": 0,
+   "real_gone_examples": [
+    {
+     "project": "Свет",
+     "rooms": "0",
+     "area": "33.5",
+     "floor": "38",
+     "lot_id": "cian-00d3a7fd"
+    },
+    {
+     "project": "Свет",
+     "rooms": "0",
+     "area": "82.7",
+     "floor": "36",
+     "lot_id": "cian-59a88d5e"
+    },
+    {
+     "project": "Свет",
+     "rooms": "0",
+     "area": "38.9",
+     "floor": "45",
+     "lot_id": "cian-14a9a9c6"
+    },
+    {
+     "project": "Свет",
+     "rooms": "0",
+     "area": "86.1",
+     "floor": "2",
+     "lot_id": "cian-5412be8d"
+    },
+    {
+     "project": "Свет",
+     "rooms": "0",
+     "area": "51.5",
+     "floor": "28",
+     "lot_id": "cian-60b4aa94"
+    },
+    {
+     "project": "Дмитровское небо",
+     "rooms": "0",
+     "area": "26.2",
+     "floor": "13",
+     "lot_id": "cian-44fc4eb1"
+    },
+    {
+     "project": "Дмитровское небо",
+     "rooms": "2",
+     "area": "59.5",
+     "floor": "8",
+     "lot_id": "cian-e9ca93d8"
+    },
+    {
+     "project": "Дмитровское небо",
+     "rooms": "3",
+     "area": "76.4",
+     "floor": "8",
+     "lot_id": "cian-d9f3f77f"
+    },
+    {
+     "project": "Дмитровское небо",
+     "rooms": "0",
+     "area": "25.3",
+     "floor": "13",
+     "lot_id": "cian-46ebf861"
+    },
+    {
+     "project": "Онежский вал",
+     "rooms": "1",
+     "area": "39",
+     "floor": "9",
+     "lot_id": "cian-c825f892"
+    },
+    {
+     "project": "Онежский вал",
+     "rooms": "3",
+     "area": "65.8",
+     "floor": "4",
+     "lot_id": "cian-92b35da3"
+    },
+    {
+     "project": "Онежский вал",
+     "rooms": "2",
+     "area": "53.1",
+     "floor": "14",
+     "lot_id": "cian-ee005f71"
+    }
+   ],
+   "suspicious_examples": [],
+   "dup_surplus_examples": []
+  }
+ },
+ "invariants": {
+  "ok": true
+ },
+ "migrated_rows": {
+  "client-svet:2026-11-02": 96,
+  "client-svet:2026-11-03": 139,
+  "client-granel:2026-11-02": 175,
+  "client-granel:2026-11-03": 206
+ },
+ "validate": {
+  "client-svet:2026-11-01": {
+   "before": null,
+   "after": {
+    "exit": 1,
+    "total": 15,
+    "delivery": 0,
+    "source_developer_sites": 15,
+    "rows_line": "15",
+    "ok_line": false
+   }
+  },
+  "client-svet:2026-11-02": {
+   "before": {
+    "exit": 1,
+    "total": 126,
+    "delivery": 126,
+    "source_developer_sites": 0,
+    "rows_line": "175",
+    "ok_line": false
+   },
+   "after": {
+    "exit": 1,
+    "total": 126,
+    "delivery": 126,
+    "source_developer_sites": 0,
+    "rows_line": "175",
+    "ok_line": false
+   }
+  },
+  "client-svet:2026-11-03": {
+   "before": {
+    "exit": 1,
+    "total": 109,
+    "delivery": 105,
+    "source_developer_sites": 4,
+    "rows_line": "154",
+    "ok_line": false
+   },
+   "after": {
+    "exit": 1,
+    "total": 109,
+    "delivery": 105,
+    "source_developer_sites": 4,
+    "rows_line": "154",
+    "ok_line": false
+   }
+  },
+  "client-svet:2026-11-04": {
+   "before": null,
+   "after": {
+    "exit": 1,
+    "total": 110,
+    "delivery": 106,
+    "source_developer_sites": 4,
+    "rows_line": "154",
+    "ok_line": false
+   }
+  },
+  "client-granel:2026-11-02": {
+   "before": {
+    "exit": 1,
+    "total": 208,
+    "delivery": 208,
+    "source_developer_sites": 0,
+    "rows_line": "229",
+    "ok_line": false
+   },
+   "after": {
+    "exit": 1,
+    "total": 208,
+    "delivery": 208,
+    "source_developer_sites": 0,
+    "rows_line": "229",
+    "ok_line": false
+   }
+  },
+  "client-granel:2026-11-03": {
+   "before": {
+    "exit": 1,
+    "total": 209,
+    "delivery": 209,
+    "source_developer_sites": 0,
+    "rows_line": "229",
+    "ok_line": false
+   },
+   "after": {
+    "exit": 1,
+    "total": 209,
+    "delivery": 209,
+    "source_developer_sites": 0,
+    "rows_line": "229",
+    "ok_line": false
+   }
+  },
+  "client-granel:2026-11-04": {
+   "before": null,
+   "after": {
+    "exit": 1,
+    "total": 209,
+    "delivery": 209,
+    "source_developer_sites": 0,
+    "rows_line": "229",
+    "ok_line": false
+   }
+  }
+ },
+ "analytics": {
+  "client-svet": {
+   "lotsOnSale": 154,
+   "new": 15,
+   "gone": 15
+  },
+  "client-granel": {
+   "lotsOnSale": 229,
+   "new": 23,
+   "gone": 23
+  }
+ }
+}

@@ -61,7 +61,7 @@
    "statusRaw": "new",
    "project": "my-zhk-svet",
    "due": "2026-11-05",
-   "overdue": false,
+   "overdue": true,
    "source": "telemost-text",
    "created": "2026-10-31",
    "createdMs": 1793437200000,
@@ -77,7 +77,7 @@
   },
   {
    "id": "task-1",
-   "subject": "R1 (T34+T28A): языковой пакет — 8 справок «пресеты агента» + пропуски пайплайна ru-locale",
+   "subject": "Диагностика сломанного dsh-scrape-webpage (ошибка «shell.run is not a function»)",
    "group": "Сборка системы",
    "category": "Задачи команды",
    "ownerLabel": null,
@@ -89,25 +89,23 @@
    "overdue": false,
    "source": "dsh-session",
    "created": null,
-   "createdMs": 1793466867107,
+   "createdMs": 1793813470649,
    "quote": null,
    "origin": "dsh",
    "originLabel": "лог DSH",
    "file": null,
    "ownerUnknown": false,
-   "revision": 3,
-   "description": "ВОССТАНОВЛЕННАЯ ЗАДАЧА из ветки «Панель управления (тест)»: T34 (task-33) + Часть A из T28 (task-28). Владелец: teammate locale-core.\n\nГДЕ (вне рабочего каталога):\n- проект языкового пакета: C:\\Users\\Артем\\Desktop\\DeepSeek Harness\\ru-locale\n- профиль: C:\\Users\\Артем\\.dsh\\profiles\\desktop\n- node: C:\\Users\\Артем\\.dsh\\dsh-runtimes\\dsh-primary-runtime\\dependencies\\node\\bin\\node.exe\n- проверка профиля: marketing-agents\\install\\check-profile-bundles.mjs\n\nФАКТЫ РАЗВЕДКИ (проверены Lead 31.10):\n1) node tools\\validate-translations.js -> problems: 0, warnings: 68, identical-to-en: 57. Установленный пакет чистый (0 CJK).\n2) Ровно 10 не-строковых источников во всём corpus: 8 ключей settings.agentPreset (guideStandardExplanation, guideStandardUsage, guidePtcExplanation, guidePtcUsage, guideMinimalExplanation, guideMinimalUsage, guideCordisExplanation, guideCordisUsage — вид {\"__raw\":\"[\\\"...\\\"].join(\\\"\\\\n\\\\n\\\")\"}) и 2 ключа conversation (hint.plan, placeholder.plan — {\"__raw\":\"PLAN_NEXT_ACTION_EN\"}).\n3) Пайплайн их ВЫБРАСЫВАЕТ: validate-translations.js («не строковый источник») и build-plugin.js (continue для не-строк). Поэтому ни в plugin\\lib\\client.js, ни в node_modules\\dsh-locale-ru\\lib\\clien",
-   "descriptionFirstLine": "ВОССТАНОВЛЕННАЯ ЗАДАЧА из ветки «Панель управления (тест)»: T34 (task-33) + Часть A из T28 (task-28). Владелец: teammate locale-core.",
+   "revision": 4,
+   "description": "Цель: найти корневую причину, почему инструмент scrape_webpage в сессии падает с «Не удалось выполнить команду: shell.run is not a function», и предложить конкретные варианты починки.\n\nКонтекст: хост DeepSeek Harness 0.2.1-rc.5 (Desktop), профиль desktop (путь: C:\\Users\\Артем\\.dsh\\profiles\\desktop). Плагин dsh-scrape-webpage@1.0.0 установлен в node_modules профиля и совпадает с версией в маркете. Тот же плагин ломается при вызове на любой URL (проверено на https://www.mr-group.ru/projects/zhk-seliger-siti). Нужен источник чтения страниц конкурентов для Агента 1 (задача E).\n\nЧто сделать:\n1. Прочитать код плагина (<DSH_PROFILE_DIR>\\node_modules\\dsh-scrape-webpage, прежде всего lib/**) и найти, где вызывается shell.run и что это за API.\n2. Установить, предоставляет ли хост 0.2.1-rc.5 такое API (искать в чекауте DSH: C:\\Users\\Артем\\AppData\\Local\\Programs\\DeepSeek Harness\\resources\\app.asar\\dsh\\ — асар можно читать через node, если доступно, либо через grep по распакованным файлам, если они рядом).\n3. Проверить, есть ли в маркете более новая версия плагина (кэш каталога: C:\\Users\\Артем\\.dsh\\profiles\\desktop\\.dsh-market\\discovery-compatibility-v1.json, поле entries → facts.version).\n4. Д",
+   "descriptionFirstLine": "Цель: найти корневую причину, почему инструмент scrape_webpage в сессии падает с «Не удалось выполнить команду: shell.run is not a function», и предложить конкретные варианты починки.",
    "writeScopes": [
-    "marketing-agents/install/README-ui-ru-locale-pipeline.md",
-    "marketing-agents/install/ru-locale-report.md",
-    "marketing-agents/install"
+    "marketing-agents/docs/scrape-webpage-diagnosis-2026-11-04.md"
    ],
    "blockedBy": []
   },
   {
    "id": "task-10",
-   "subject": "T10: установка 9 выбранных плагинов из маркета в профиль desktop",
+   "subject": "V4. Визуальный roadmap и интерактивный чек-лист (HTML)",
    "group": "Сборка системы",
    "category": "Задачи команды",
    "ownerLabel": null,
@@ -119,24 +117,23 @@
    "overdue": false,
    "source": "dsh-session",
    "created": null,
-   "createdMs": 1793389358131,
+   "createdMs": 1794161639090,
    "quote": null,
    "origin": "dsh",
    "originLabel": "лог DSH",
    "file": null,
    "ownerUnknown": false,
-   "revision": 3,
-   "description": "T10 — установить 9 выбранных плагинов/скилов из маркета DSH в профиль desktop\n\nПОЛЬЗОВАТЕЛЬ ВЫБРАЛ (ставить всё):\n1. sandbase-skills                  -> github:sandbaseai/sandbase-skills\n2. ru-marketplace-mcp (папка /dsh)  -> github:Vladimir-Human/ru-marketplace-mcp#path:/dsh\n3. dsh-skill-browser                -> dsh-skill-browser\n4. dsh-serper-search                -> dsh-serper-search\n5. dsh-scrape-webpage               -> dsh-scrape-webpage\n6. @opendsh/dsh-plugin-scheduled-tasks -> @opendsh/dsh-plugin-scheduled-tasks\n7. dsh-telegram-channel-ru          -> dsh-telegram-channel-ru\n8. dsh-creative-studio              -> https://github.com/Ylight-cpu/dsh-creative-studio/releases/latest/download/dsh-creative-studio.tgz\n9. superdesign-skill                -> github:superdesigndev/superdesign-skill\n\nИНСТРУМЕНТЫ И ФАКТЫ (проверено Lead):\n- CLI: C:\\Users\\Артем\\AppData\\Local\\Programs\\DeepSeek Harness\\resources\\runtime\\cli\\bin\\dsh.cmd (версия 0.2.1-rc.5).\n- dsh plugin --profile desktop add <spec> — ВАЖНО: он лишь форвардит аргументы в pnpm в каталоге профиля, сам bundle НЕ регистрирует.\n- Профиль: C:\\Users\\Артем\\.dsh\\profiles\\desktop ; пакеты ставятся в его node_modules; включение плагина",
-   "descriptionFirstLine": "T10 — установить 9 выбранных плагинов/скилов из маркета DSH в профиль desktop",
+   "revision": 6,
+   "description": "Владелец: visual. Создаёшь ровно один файл: marketing-agents/docs/strategy-2026-11-08/roadmap-visual.html\n\nЦЕЛЬ: заказчику нужен лёгкий визуальный документ, по которому удобно вести реализацию проекта и отмечать сделанное.\n\nТРЕБОВАНИЯ К ФАЙЛУ:\n1) Один автономный HTML-файл (открывается двойным щелчком, без интернета и сборки): встроенные CSS и vanilla JS, никаких CDN, шрифтов из сети и внешних картинок. Русский язык, UTF-8.\n2) Верхний блок — дорожная карта: горизонтальная полоса этапов (Спринт 1 → Спринт 2 → Волна 2 → Волна 3) с карточками; в карточке: цель, объём в человеко-неделях, критерии выхода (DoD), владелец, зависимость. Наглядно: цветовые статусы (готово / в работе / ждёт / заблокировано) и прогресс-бар по числу отмеченных пунктов.\n3) Интерактивный чек-лист: сгруппирован по этапам; каждый пункт с чекбоксом, сохранение прогресса в localStorage (при перезагрузке страницы отметки на месте); кнопка «сбросить прогресс»; счётчик «отмечено X из Y» по каждому этапу и общий.\n4) Отдельный блок «Развилки, требующие решения заказчика» — карточки с вариантами (A/B), чтобы решение было видно: (1) триал 3 дня от регистрации против «3 дня после первого отчёта»; (2) выплата кэшбэка — баланс",
+   "descriptionFirstLine": "Владелец: visual. Создаёшь ровно один файл: marketing-agents/docs/strategy-2026-11-08/roadmap-visual.html",
    "writeScopes": [
-    "%USERPROFILE%/.dsh/profiles/desktop",
-    "marketing-agents/install"
+    "marketing-agents/docs/strategy-2026-11-08/roadmap-visual.html"
    ],
    "blockedBy": []
   },
   {
    "id": "task-11",
-   "subject": "T11: форс-установка 2 плагинов, картинки (vision), дешёвые модели + prices.yaml",
+   "subject": "D-F9-DUP: перенос ключей может создать дубль lot_id внутри даты",
    "group": "Сборка системы",
    "category": "Задачи команды",
    "ownerLabel": null,
@@ -148,25 +145,24 @@
    "overdue": false,
    "source": "dsh-session",
    "created": null,
-   "createdMs": 1793455525891,
+   "createdMs": 1793801182165,
    "quote": null,
    "origin": "dsh",
    "originLabel": "лог DSH",
    "file": null,
    "ownerUnknown": false,
    "revision": 3,
-   "description": "T11 — форс-установка 2 плагинов + картинки + дешёвые модели (профиль)\n\n1) ФОРС-УСТАНОВКА (пользователь сказал «форсируем»). Отклонённые хостом: @opendsh/dsh-plugin-scheduled-tasks@0.2.4 (нужно семейство ^0.1.0-rc.6, у нас DSH 0.2.1-rc.5) и dsh-creative-studio@0.2.1 (engines.dsh не допускает 0.2.x).\n   - Сначала найди ОФИЦИАЛЬНЫЙ механизм обхода (поищи в ресурсах CLI/app.asar строки allow-version / allowIncompatible / force; проверь dsh plugin --help и dsh --help; посмотри, как это делает GUI-маркет dshmarket: node_modules\\dshmarket\\lib).\n   - Если официального нет — ставь напрямую: dsh plugin --profile desktop add <pkg>@<ver> (или pnpm add в каталоге профиля) и вручную добавь имя пакета в profile package.json -> dsh.profile.bundles.\n   - Строго по одному, с бэкапом package.json / pnpm-lock.yaml / pnpm-workspace.yaml ДО правок (.bak-force-<timestamp>).\n   - КРИТИЧНО: несовместимый плагин может сломать старт DSH. Поэтому после каждой установки проверяй: package.json парсится, точка входа существует, bundle.patch существует; в отчёте дай ОДНУ команду полного откатa (удалить из deps+bundles, pnpm install, либо восстановить из бэкапа).\n   - Порядок: сначала scheduled-tasks, потом creati",
-   "descriptionFirstLine": "T11 — форс-установка 2 плагинов + картинки + дешёвые модели (профиль)",
+   "description": "Дефект D-F9-DUP (подтверждён QA, medium): в `01-competitor-watch/scripts/migrate_lot_ids.py`, функция `plan_migration`, мягкое (loose) сопоставление кладёт найденный ключ в `used`, но не удаляет его из `available`. Поэтому строка с точной подписью позже получает тот же ключ — внутри одной даты появляются два одинаковых `lot_id` (нарушен докстринг «ключ эталона используется не больше одного раза»). Фикстура QA: `matched_exact 1 + matched_loose 1` → `['n-KKKK0001','n-KKKK0001']`. На живых снимках дублей 0 (повезло: мягкая ступень срабатывала 12 раз), но инструмент обязан быть корректным — иначе повторный/иной прогон испортит идентичность, а валидатор справедливо отвергнет дубли.\n\nТРЕБУЕТСЯ (зона: 01-competitor-watch/scripts/**, tests/**):\n1. Сначала все ТОЧНЫЕ сопоставления, затем мягкие; использованный ключ эталона удалять из `available` при любом виде сопоставления (или помечать израсходованным).\n2. Регресс-тест на фикстуру QA: точное + мягкое сопоставление в одной дате → все `lot_id` уникальны (и проверка, что количество строк не изменилось).\n3. Проверка на копиях реальных снимков: повторный прогон переноса не создаёт дублей, число строк и остальные колонки не меняются, `.bak` и и",
+   "descriptionFirstLine": "Дефект D-F9-DUP (подтверждён QA, medium): в `01-competitor-watch/scripts/migrate_lot_ids.py`, функция `plan_migration`, мягкое (loose) сопоставление кладёт найденный ключ в `used`, но не удаляет его из `available`. Поэтому строка с точной подписью позже получает тот же ключ — внутри одной даты появляются два одинаковых `lot_id` (нарушен докстринг «ключ эталона используется не больше одного раза»). Фикстура QA: `matched_exact 1 + matched_loose 1` → `['n-KKKK0001','n-KKKK0001']`. На живых снимках дублей 0 (повезло: мягкая ступень срабатывала 12 раз), но инструмент обязан быть корректным — иначе повторный/иной прогон испортит идентичность, а валидатор справедливо отвергнет дубли.",
    "writeScopes": [
-    "marketing-agents/install",
-    "marketing-agents/registry/prices.yaml",
-    "%USERPROFILE%/.dsh/profiles/desktop"
+    "marketing-agents/01-competitor-watch/scripts",
+    "marketing-agents/01-competitor-watch/tests"
    ],
    "blockedBy": []
   },
   {
    "id": "task-12",
-   "subject": "T12: веб-дашборд «Центр управления агентами» (прототип + скриншоты)",
+   "subject": "V6. Финальная проверка после правок 08.11",
    "group": "Сборка системы",
    "category": "Задачи команды",
    "ownerLabel": null,
@@ -178,23 +174,23 @@
    "overdue": false,
    "source": "dsh-session",
    "created": null,
-   "createdMs": 1793455525896,
+   "createdMs": 1794162941361,
    "quote": null,
    "origin": "dsh",
    "originLabel": "лог DSH",
    "file": null,
    "ownerUnknown": false,
    "revision": 3,
-   "description": "T12 — ВЕБ-ДАШБОРД «Центр управления агентами» (прототип на согласование)\n\nЦЕЛЬ: локальный сайт, который показывает сеть агентов и её работу, и позволяет управлять.\nПользователь хочет видеть: сколько и какие агенты работают; какие модели используют; расход в токенах И рублях; группировки по агентам; вложенность задач по группам и категориям; проекты, которые агенты ведут; сквозную аналитику; включение/выключение агентов; инфраструктуру для подключения новых агентов. Публикация: ТОЛЬКО ЛОКАЛЬНО (выбор пользователя).\n\nИСТОЧНИКИ ДАННЫХ (проверено Lead, не перепроверяй с нуля):\nA) Логи сессий: C:\\Users\\Артем\\.dsh\\sessions\\<проект>\\<session-id>\\session.v4.jsonl.zstd — это НЕСКОЛЬКО склеенных zstd-фреймов (425 на файл). Обычный zstdDecompressSync отдаёт только первый фрейм! Рабочий способ: найти все вхождения magic 28 B5 2F FD, резать по ним и распаковывать каждый фрейм отдельно, склеивая текст (проверено: 1188 строк событий).\n   Полезные типы событий: session, user/message, assistant/message (в data.message есть usage: inputTokens/outputTokens/totalTokens/cacheReadTokens), model/selection {provider,model}, team/member {member{id,name,description,provider,phase}}, team/task {task{id,subje",
-   "descriptionFirstLine": "T12 — ВЕБ-ДАШБОРД «Центр управления агентами» (прототип на согласование)",
+   "description": "Цель: финальная быстрая проверка закрытия 5 расхождений из §12 и новых чисел, появившихся после пересчёта. Полный пересмотр пакета не нужен.\n\nПроверить (статус + доказательство, файл:строка или число):\n1. V1 (воронка): финмодель пересчитана на вариант B. Ожидаемые числа: активация 40/50/55 %, конец триала 80 %, оплата 33 %, регистрация→оплата 10,6 / 13,2 / 14,5 %; регистраций нужно 127 / 186 / 269 в год; стоп-правила (активация ≥ 25 %, регистрация→оплата ≥ 8 %, триал→оплата ≥ 10 %) проходят. Проверь арифметику воронки и что она совпадает с onepager §10 и gtm §5.\n2. V2 (payback): «6,6 мес» больше не встречается нигде (onepager, gtm, README, 00-concept-audit, blueprint); стоит 5,9 мес (5,6 с add-on) с базой. Потолок CAC Starter — одна таблица с базами (15 760 / 15 800 / 17 520 / 18 388 ₽), и вывод «полный CAC 36 612 ₽ выше любого потолка» воспроизводится.\n3. V3 (HTML): roadmap-visual.html обновлён — Starter/Growth/Pro, развилка S/B/C, доли 50/80, кассовый/полный CAC, воронка 60→30→8; посторонних старых строк (Lite, «12–20 недель», «16,5–22,5») нет; файл автономен.\n4. V4: roadmap-2-sprints.md — арифметика прироста сходится (+9,0 продукт и +1,5 внешние = 21,0); architecture ссылается н",
+   "descriptionFirstLine": "Цель: финальная быстрая проверка закрытия 5 расхождений из §12 и новых чисел, появившихся после пересчёта. Полный пересмотр пакета не нужен.",
    "writeScopes": [
-    "marketing-agents/dashboard"
+    "marketing-agents/docs/strategy-2026-11-08/verification.md"
    ],
    "blockedBy": []
   },
   {
    "id": "task-13",
-   "subject": "T13: приём задач голосом из Телемоста (аудио -> расшифровка -> задачи)",
+   "subject": "V7. Визуальный roadmap: зафиксировать утверждённые решения",
    "group": "Сборка системы",
    "category": "Задачи команды",
    "owner": "agent-1-competitor-watch",
@@ -207,24 +203,23 @@
    "overdue": false,
    "source": "dsh-session",
    "created": null,
-   "createdMs": 1793455525901,
+   "createdMs": 1794166263851,
    "quote": null,
    "origin": "dsh",
    "originLabel": "лог DSH",
    "file": null,
    "ownerUnknown": false,
    "revision": 3,
-   "description": "T13 — Приём задач голосом из Яндекс Телемоста (без API у Телемоста)\n\nПОЛЬЗОВАТЕЛЬ ВЫБРАЛ: «голосом — записать встречу/голосовое, получить расшифровку, разложить на задачи».\nУ Телемоста нет публичного API, поэтому путь такой: пользователь записывает встречу (или голосовое) и кладёт файл в папку; мы делаем расшифровку и превращаем её в задачи реестра.\n\nАРТЕФАКТЫ (write-scope: marketing-agents/registry/intake/** и marketing-agents/registry/tasks/**):\n1) registry/intake/README.md — по-русски: куда что класть (inbox/audio — аудио/видео, inbox/text — готовые транскрипты и заметки), поддерживаемые форматы, как получить запись из Телемоста, лимиты, что делать если расшифровка не удалась.\n2) registry/intake/scripts/transcribe.* — расшифровка аудио в текст (русский).\n   ВАЖНО, сначала разведка: в системе уже есть локальный движок речи C:\\Users\\Артем\\.dsh\\speech-to-text\\sensevoice\\models и включён voice-input bundle. Выясни, есть ли CLI/скрипт для расшифровки ФАЙЛА (ищи в ресурсах DSH: app.asar.unpacked, node_modules, python-пакеты). Если локально нельзя — честно зафиксируй это и предложи рабочий обход: (а) расшифровка средствами самого Телемоста/Яндекс, (б) внешний ASR. НЕ выдумывай несущест",
-   "descriptionFirstLine": "T13 — Приём задач голосом из Яндекс Телемоста (без API у Телемоста)",
+   "description": "Владелец: visual. Правишь только marketing-agents/docs/strategy-2026-11-08/roadmap-visual.html.\n\nЗАКАЗЧИК УТВЕРДИЛ РЕШЕНИЯ (08.11.2026, 22:30):\n1) **Вариант B** — self-service-бета: 21,0 чел.-недели, 18–22 недели при разработчике фултайм, цель 8–12 платящих за 16 недель беты; нужен второй исполнитель или подрядчик. Варианты S и C — отклонить, оставить как историю/альтернативу с пометкой «отклонено заказчиком».\n2) **Триал — вариант B:** 3 дня, таймер стартует после первого успешного отчёта (`trial_start = first_report`). Вариант «от регистрации» — помечен как отклонённый (оставлен для A/B-теста флагом).\n3) **Кэшбэк — только зачёт в баланс подписки** в MVP (шаг 1). Деньги на счёт и гибрид выше 10 000 ₽ — шаг 2, после 3 платящих с подключёнными кабинетами и первого подтверждённого возврата.\n4) **CAC-бюджет:** 264 000 ₽/год остаётся **потолком** (не планом к расходу); план клиентов не поднимаем, бюджет не режем; стоимость регистрации измеряем на первых 100 регистрациях, решение — по замеру. Порог остатка 150 000 ₽.\n5) **Проценты кэшбэка публично не называются** до партнёрского договора: на тарифах только «доступно на Growth и Pro после подключения кабинета».\n\nЧТО ИЗМЕНИТЬ В ФАЙЛЕ:\n- В ",
+   "descriptionFirstLine": "Владелец: visual. Правишь только marketing-agents/docs/strategy-2026-11-08/roadmap-visual.html.",
    "writeScopes": [
-    "marketing-agents/registry/intake",
-    "marketing-agents/registry/tasks"
+    "marketing-agents/docs/strategy-2026-11-08/roadmap-visual.html"
    ],
    "blockedBy": []
   },
   {
    "id": "task-14",
-   "subject": "T14: подключить Циан/Авито к Агенту 1 через Chrome CDP + реальный сбор",
+   "subject": "F3. Зафиксировать утверждённые решения в финмодели и шаблонах",
    "group": "Сборка системы",
    "category": "Задачи команды",
    "owner": "agent-1-competitor-watch",
@@ -237,27 +232,25 @@
    "overdue": false,
    "source": "dsh-session",
    "created": null,
-   "createdMs": 1793455525906,
+   "createdMs": 1794166263858,
    "quote": null,
    "origin": "dsh",
    "originLabel": "лог DSH",
    "file": null,
    "ownerUnknown": false,
    "revision": 3,
-   "description": "T14 — Подключить Циан и Авито к Агенту 1 (Chrome over CDP)\n\nКОНТЕКСТ: в маркете установлены скилы cian-connector и avito-connector (в каталоге сессии уже видны). Они требуют Chrome, запущенный с отладочным портом (CDP). Chrome найден: \"C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe\". Сейчас CDP не запущен (порт 9222 закрыт). Пользователь дал согласие на настройку.\n\nАРТЕФАКТЫ (write-scope: marketing-agents/00-admin/**, marketing-agents/01-competitor-watch/README.md, .../templates/**, .../data/**, .../reports/**):\n1) 00-admin/scripts/start-chrome-cdp.ps1 — запуск ВАШЕГО Chrome с отладкой:\n   - отдельный профиль-каталог (например %USERPROFILE%\\.dsh-chrome-profile), чтобы не мешать обычному Chrome; при первом запуске пользователь логинится в Циан/Авито в этом окне;\n   - порт 9222, проверка что http://127.0.0.1:9222/json/version отвечает; понятные сообщения по-русски; параметр -Port.\n   Проверь скрипт запуском: подними Chrome, убедись что CDP отвечает, потом закрой (не оставляй висеть).\n2) 00-admin/runbook.md — новый раздел «Сбор данных с Циан и Авито»: порядок (запустить Chrome CDP -> попросить агента собрать данные по конкурентам -> проверить снимок), что делать если площадка п",
-   "descriptionFirstLine": "T14 — Подключить Циан и Авито к Агенту 1 (Chrome over CDP)",
+   "description": "Владелец: finmodel2. Правишь только свои файлы: finmodel.xlsx, finmodel-blueprint.md, unit-economics-cashflow.xlsx.\n\nЗАКАЗЧИК УТВЕРДИЛ РЕШЕНИЯ (08.11.2026, 22:30) — нужно зафиксировать их в модели, без пересчёта базовых допущений:\n1) **Вариант B** (self-service-бета) — утверждён; воронка B (10,56 / 13,20 / 14,52 %, регистраций 127 / 186 / 269) остаётся базовой. Ничего в расчётах не менять, только пометить как утверждённое решение.\n2) **Триал — вариант B** (таймер после первого отчёта) — расчётная база уже такая, подтверди пометкой.\n3) **Кэшбэк в MVP — только зачёт в баланс подписки.** В «Кэшбэк-контуре» выдели явно: начислено / зачтено в подписку / выведено деньгами (= 0 в варианте B MVP) / остаток; вывод деньгами и гибрид с порогом 10 000 ₽ — шаг 2, помечено как «вне MVP».\n4) **CAC-бюджет 264 000 ₽/год — потолок, а не план к расходу.** Переименуй соответствующие строки и подписи: «потолок бюджета привлечения»; рядом оставь «потребность по замеру после первых 100 регистраций — ЗАПОЛНИТЬ». План клиентов не поднимаем (22 остаётся), бюджет не режем — это решение заказчика.\n5) **Проценты кэшбэка публично не называются** до партнёрского договора — добавь пометку в лист «Кэшбэк-контур» и",
+   "descriptionFirstLine": "Владелец: finmodel2. Правишь только свои файлы: finmodel.xlsx, finmodel-blueprint.md, unit-economics-cashflow.xlsx.",
    "writeScopes": [
-    "marketing-agents/00-admin",
-    "marketing-agents/01-competitor-watch/README.md",
-    "marketing-agents/01-competitor-watch/templates",
-    "marketing-agents/01-competitor-watch/data",
-    "marketing-agents/01-competitor-watch/reports"
+    "marketing-agents/docs/strategy-2026-11-08/finmodel.xlsx",
+    "marketing-agents/docs/strategy-2026-11-08/finmodel-blueprint.md",
+    "marketing-agents/docs/strategy-2026-11-08/unit-economics-cashflow.xlsx"
    ],
    "blockedBy": []
   },
   {
    "id": "task-15",
-   "subject": "T15: дашборд в один клик — автономный HTML + .cmd-лаунчер + генератор",
+   "subject": "V8. Проверка фиксации утверждённых решений во всём пакете",
    "group": "Сборка системы",
    "category": "Задачи команды",
    "owner": null,
@@ -270,55 +263,56 @@
    "overdue": false,
    "source": "dsh-session",
    "created": null,
-   "createdMs": 1793458635243,
+   "createdMs": 1794166368135,
    "quote": null,
    "origin": "dsh",
    "originLabel": "лог DSH",
    "file": null,
    "ownerUnknown": true,
    "revision": 3,
-   "description": "T15 — Дашборд, которым можно пользоваться без терминала (2 версии + автозапуск)\n\nСИТУАЦИЯ: пользователь открыл http://127.0.0.1:8787 и получил ERR_CONNECTION_REFUSED — сервер был запущен фоновым заданием агента и умер вместе с его сессией. Нужны версии, которые работают без терминала и не зависят от агентов. Пользователь НЕ технический: всё должно запускаться двойным щелчком.\n\nАРТЕФАКТЫ (write-scope: marketing-agents/dashboard/**, marketing-agents/install/**):\n\n1) ЛОКАЛЬНАЯ ВЕРСИЯ В ОДИН КЛИК (полный функционал, с тумблерами)\n   marketing-agents/dashboard/Открыть дашборд.cmd\n   - запускает serve.mjs ОТДЕЛЬНЫМ процессом так, чтобы он жил после закрытия консоли: Start-Process с -WindowStyle Hidden (НЕ фоновое задание агента);\n   - если порт уже занят — не падать, а просто открыть браузер на существующий сервер;\n   - открывает браузер на http://127.0.0.1:8787;\n   - пишет внятные сообщения по-русски; путь к node берёт из %USERPROFILE%\\.dsh\\dsh-runtimes\\... , с fallback на PATH;\n   - в конце: \"Дашборд запущен. Это окно можно закрыть.\"\n   Проверь фактически: двойной запуск, повторный запуск при живом сервере, ответ 200.\n\n2) АВТОНОМНАЯ ВЕРСИЯ БЕЗ СЕРВЕРА (всегда открывается, даже если нич",
-   "descriptionFirstLine": "T15 — Дашборд, которым можно пользоваться без терминала (2 версии + автозапуск)",
+   "description": "Цель: убедиться, что утверждённые заказчиком решения 08.11.2026 (22:30) зафиксированы во всех файлах пакета единообразно и нигде не осталось формулировок «развилка не выбрана / рекомендация / требует подтверждения».\n\nУтверждено: (1) вариант **B** — self-service-бета, 21,0 чн, 18–22 недели, S и C отклонены; (2) триал **3 дня от первого отчёта** (`trial_start = first_report`); (3) кэшбэк в MVP — **только зачёт в баланс подписки**, вывод деньгами — шаг 2; (4) бюджет привлечения 264 000 ₽/год — **потолок**, план клиентов не поднимаем, стоимость регистрации замеряем на первых 100 регистрациях; (5) **проценты кэшбэка не публикуются** до партнёрского договора.\n\nПроверить по каждому файлу (статус + доказательство, файл:строка):\n1. `onepager.md` — шапка (версия/статус), §6 (триал), §8 (кэшбэк), §10 (сроки), §13 (что утверждено). Остатков «рекомендация GTM» и «на решение заказчика» быть не должно.\n2. `gtm-mvp-scope.md` — шапка и §11 (вопросы 1–4, 7, 8 закрыты, остались только операционные).\n3. `roadmap-2-sprints.md` — раздел «Утверждено…» и таблица этапов 1–4 + волна 2; недели этапов совпадают с 18–22; стоп-правила про потолок бюджета и кэшбэк-зачёт.\n4. `README.md` — §3.1–§3.3 (утверждено), ",
+   "descriptionFirstLine": "Цель: убедиться, что утверждённые заказчиком решения 08.11.2026 (22:30) зафиксированы во всех файлах пакета единообразно и нигде не осталось формулировок «развилка не выбрана / рекомендация / требует подтверждения».",
    "writeScopes": [
-    "marketing-agents/dashboard",
-    "marketing-agents/install"
+    "marketing-agents/docs/strategy-2026-11-08/verification.md"
+   ],
+   "blockedBy": [
+    "task-13",
+    "task-14"
+   ]
+  },
+  {
+   "id": "task-16",
+   "subject": "G3. Снять остатки «развилок» в onepager и gtm",
+   "group": "Сборка системы",
+   "category": "Задачи команды",
+   "owner": null,
+   "ownerLabel": null,
+   "ownerName": null,
+   "status": "done",
+   "statusRaw": "completed",
+   "project": null,
+   "due": null,
+   "overdue": false,
+   "source": "dsh-session",
+   "created": null,
+   "createdMs": 1794166807876,
+   "quote": null,
+   "origin": "dsh",
+   "originLabel": "лог DSH",
+   "file": null,
+   "ownerUnknown": true,
+   "revision": 3,
+   "description": "Владелец: gtm2. Правишь только onepager.md и gtm-mvp-scope.md. Правки формулировочные: снять остатки «развилки/рекомендации» там, где решения уже утверждены заказчиком 08.11.2026.\n\n1) `onepager.md` :197 — «Развилка S/B/C (§10) выбирается заказчиком один раз» противоречит :168 («B — утверждён») и :206 («Утверждено»). Замени на «Вариант B утверждён (08.11.2026), S — аварийный fallback, C — шаг 2».\n2) `onepager.md` §6 заголовок «Триал 3 дня: развилка (решение + варианты + риск)» → «Триал 3 дня: решение и отклонённые варианты»; метки «(рекомендуется)» у вариантов заменить на «(утверждено)» / «(отклонено)».\n3) `gtm-mvp-scope.md` :146 (§4.2 «Развилка сроков (сохранена из прежней редакции, обновлена)») — переписать как утверждённый план: B утверждён, S и C отклонены.\n4) `gtm-mvp-scope.md` — убрать «рекомендация» в местах, где решение принято: :172 «Рекомендация: B — основной и дефолт», :220 «Решение (рекомендация GTM)», :230 «Рекомендация: фиксируем в оферте целевой гибрид…», :252 «База плана — рекомендация B». Формулировки: «утверждено заказчиком 08.11.2026». Про гибрид выплат важно: он **не** в MVP — в MVP только зачёт в баланс, гибрид — шаг 2.\n5) Проверь, что нигде не осталось «требует",
+   "descriptionFirstLine": "Владелец: gtm2. Правишь только onepager.md и gtm-mvp-scope.md. Правки формулировочные: снять остатки «развилки/рекомендации» там, где решения уже утверждены заказчиком 08.11.2026.",
+   "writeScopes": [
+    "marketing-agents/docs/strategy-2026-11-08/onepager.md",
+    "marketing-agents/docs/strategy-2026-11-08/gtm-mvp-scope.md"
    ],
    "blockedBy": []
   },
   {
-   "id": "task-16",
-   "subject": "T16: вкладки «Интеграции API» и «Источники мониторинга» с тумблерами и статистикой",
-   "group": "Сборка системы",
-   "category": "Задачи команды",
-   "owner": null,
-   "ownerLabel": null,
-   "ownerName": null,
-   "status": "done",
-   "statusRaw": "completed",
-   "project": null,
-   "due": null,
-   "overdue": false,
-   "source": "dsh-session",
-   "created": null,
-   "createdMs": 1793459139615,
-   "quote": null,
-   "origin": "dsh",
-   "originLabel": "лог DSH",
-   "file": null,
-   "ownerUnknown": true,
-   "revision": 3,
-   "description": "T16 — Дашборд: вкладки «Интеграции API» и «Источники мониторинга»\n\nВАЖНО: сначала закрой T15 (автономный HTML + .cmd), потом бери T16.\n\nКОНТРАКТЫ (Lead уже создал, читай их):\n- marketing-agents/registry/sources.yaml — источники мониторинга (id, name, enabled, kind, auth, status, priority, last_run, limits, howto, note). Тумблер правит enabled.\n- marketing-agents/registry/integrations-catalog.yaml — что МОЖНО подключить (id, name, kind, purpose, status_hint, key_env/package, where).\n\n1) ВКЛАДКА «ИНТЕГРАЦИИ API» — два блока:\n   A. «Подключено» — определяется ФАКТИЧЕСКИ, не по мнению: из профиля DSH (C:\\Users\\Артем\\.dsh\\profiles\\desktop\\package.json -> dsh.profile.bundles и dependencies) + проверка, что каталог пакета есть в node_modules и у него есть точка входа/патч (логику можно взять из marketing-agents/install/check-profile-bundles.mjs). Показывай: имя, версия, назначение (из каталога, если есть), статус загрузки (в бандлах / установлен но выключен), нужен ли ключ.\n   B. «Можно подключить» — из integrations-catalog.yaml минус уже подключённые: назначение, что даёт, как подключить (команда dsh plugin add или где взять ключ).\n   СЕКРЕТЫ: проверяй только ФАКТ наличия ключа (env-пере",
-   "descriptionFirstLine": "T16 — Дашборд: вкладки «Интеграции API» и «Источники мониторинга»",
-   "writeScopes": [
-    "marketing-agents/dashboard"
-   ],
-   "blockedBy": [
-    "task-15"
-   ]
-  },
-  {
    "id": "task-17",
-   "subject": "T17: публичная тестовая страница дашборда (туннель, только чтение)",
+   "subject": "F4. Развести в blueprint потолок бюджета и потребность привлечения",
    "group": "Сборка системы",
    "category": "Задачи команды",
    "owner": null,
@@ -331,23 +325,23 @@
    "overdue": false,
    "source": "dsh-session",
    "created": null,
-   "createdMs": 1793459139620,
+   "createdMs": 1794166807881,
    "quote": null,
    "origin": "dsh",
    "originLabel": "лог DSH",
    "file": null,
    "ownerUnknown": true,
    "revision": 3,
-   "description": "T17 — ПУБЛИЧНАЯ ТЕСТОВАЯ СТРАНИЦА дашборда (доступ с телефона)\n\nЦЕЛЬ: пользователь хочет открыть рабочий кабинет с телефона по ссылке из интернета. Публикуем ТОЛЬКО ЧТЕНИЕ, без возможности что-то переключить, и без секретов.\n\nБЕЗОПАСНОСТЬ (критично):\n- Публикуемая копия — статические файлы, БЕЗ серверного API (никаких /api/agents/toggle), без записи в файлы.\n- В публикуемой копии не должно быть ключей, путей к .credentials.yaml, содержимого реестра с чувствительными полями. Проверь поиском по публикуемой папке: ZVENOAI|SERPER|SANDBASE|TOKEN|credentials|password — не должно быть значений (упоминания «ключа нет/есть» — это булев флаг, допустимо).\n- В шапке страницы напиши крупно: «Тестовая копия • только просмотр • данные на <дата/время>».\n\nЧТО СДЕЛАТЬ:\n1) marketing-agents/install/publish/ — папка публикации: скрипт build-publish.mjs копирует статику дашборда (dashboard/public/**) в install/publish/site/ и заменяет обращения к /api/state на встроенный файл data/state.json (или использует автономный HTML из T15, если он уже собран). Никаких POST.\n2) Туннель: скачай cloudflared для Windows в marketing-agents/install/tools/cloudflared.exe (официальный релиз GitHub cloudflare/cloudflared",
-   "descriptionFirstLine": "T17 — ПУБЛИЧНАЯ ТЕСТОВАЯ СТРАНИЦА дашборда (доступ с телефона)",
+   "description": "Владелец: finmodel2. Правишь только finmodel-blueprint.md (книги не трогай, если не потребуется пересчёт — пересчёт не нужен).\n\nПравка: в таблице баз потолков (строка ~310) стоит «бюджет 294 360 ₽/год» — это противоречит утверждённому решению: **264 000 ₽/год — потолок бюджета привлечения** (22 оплаты × 12 000 ₽), а 294 360 ₽ — это **потребность** при 24,5 оплаты × 12 000 ₽ (полная стоимость привлечения при плановом CAC 12 000 ₽), то есть выше потолка. Разведи понятия в этой строке и в соседнем тексте: потолок vs потребность, и добавь, что решение заказчика — не резать бюджет и не поднимать план до замера стоимости регистрации на первых 100 регистрациях.\n\nПроверь заодно, что во всём blueprint не осталось «294 360 ₽/год» в смысле «бюджет/план», и что блок про кэшбэк везде говорит: в MVP только зачёт в баланс, вывод деньгами — шаг 2.\n\nОтчёт ≤5 строк. Чужие файлы не править.",
+   "descriptionFirstLine": "Владелец: finmodel2. Правишь только finmodel-blueprint.md (книги не трогай, если не потребуется пересчёт — пересчёт не нужен).",
    "writeScopes": [
-    "marketing-agents/install"
+    "marketing-agents/docs/strategy-2026-11-08/finmodel-blueprint.md"
    ],
    "blockedBy": []
   },
   {
    "id": "task-18",
-   "subject": "T18: источники — реальное вкл/выкл в сборе + журнал запусков",
+   "subject": "V9. Показать эффект решения по кэшбэку в визуальном roadmap",
    "group": "Сборка системы",
    "category": "Задачи команды",
    "owner": null,
@@ -360,25 +354,23 @@
    "overdue": false,
    "source": "dsh-session",
    "created": null,
-   "createdMs": 1793459139624,
+   "createdMs": 1794166807886,
    "quote": null,
    "origin": "dsh",
    "originLabel": "лог DSH",
    "file": null,
    "ownerUnknown": true,
    "revision": 3,
-   "description": "T18 — Тумблеры источников должны реально влиять на сбор + журнал запусков\n\nПОЧЕМУ: пользователь просит вкладку «Источники мониторинга» с включением/выключением и статистикой. Тумблер обязан иметь последствия, иначе это картинка.\n\nКОНТРАКТ (Lead создал): marketing-agents/registry/sources.yaml — поле enabled. Скрипты сбора обязаны пропускать источники с enabled: false.\n\nЧТО СДЕЛАТЬ (write-scope: 01-competitor-watch/scripts/**, 01-competitor-watch/tests/**, 01-competitor-watch/data/**):\n1) scripts/sources_tool.py — CLI: list (таблица: id, enabled, status, last_run), enable <id>, disable <id>, status <id>.\n   - правка только своего поля в sources.yaml, атомарно (temp+rename), бэкап .bak-<timestamp>, комментарии и порядок строк сохраняются (как в мини-YAML дашборда — можно взять тот же подход, но реализуй у себя);\n   - повторный enable/disable идемпотентен; неизвестный id — понятная ошибка, код 1.\n2) scripts/log_source_run.py — добавляет запись в 01-competitor-watch/data/source-runs.jsonl:\n   {\"ts\":\"<ISO>\",\"source\":\"<id>\",\"status\":\"ok|partial|blocked|empty\",\"lots\":<N>,\"projects\":<N>,\"note\":\"...\"}\n   Требования: только добавление (append), один JSON в строке, устойчивость к параллельной ",
-   "descriptionFirstLine": "T18 — Тумблеры источников должны реально влиять на сбор + журнал запусков",
+   "description": "Владелец: visual. Правишь только roadmap-visual.html. Правка небольшая (не блокирует, но полезная для заказчика): в файле нет чисел денежного потока, поэтому на экране не видно эффекта утверждённого решения «кэшбэк только зачётом».\n\nДобавь блок «Деньги: эффект утверждённых решений» (можно рядом с метриками) с четырьмя числами и подписью «сценарные допущения, источник — finmodel.xlsx / unit-economics-cashflow.xlsx»:\n- выплаты кэшбэка деньгами за год: **0 ₽** (в MVP — только зачёт в баланс);\n- касса в конце года: **1 682 450 ₽** в MVP-режиме против **1 571 528 ₽** при выводе деньгами → эффект решения **+110 922 ₽**;\n- разрыв при ФОТ 100 000 ₽/мес: минимум **−46 681 ₽** (месяц 6), требуемое финансирование **196 681 ₽**, runway 6 мес;\n- бюджет привлечения: **потолок 264 000 ₽/год** (потребность при CAC 12 000 ₽ — 294 360 ₽, решается замером на первых 100 регистрациях).\n\nТребования файла сохраняются: автономный HTML без сети, localStorage, печать без разрывов. Отчёт ≤4 строк.",
+   "descriptionFirstLine": "Владелец: visual. Правишь только roadmap-visual.html. Правка небольшая (не блокирует, но полезная для заказчика): в файле нет чисел денежного потока, поэтому на экране не видно эффекта утверждённого решения «кэшбэк только зачётом».",
    "writeScopes": [
-    "marketing-agents/01-competitor-watch/scripts",
-    "marketing-agents/01-competitor-watch/tests",
-    "marketing-agents/01-competitor-watch/data"
+    "marketing-agents/docs/strategy-2026-11-08/roadmap-visual.html"
    ],
    "blockedBy": []
   },
   {
    "id": "task-19",
-   "subject": "T19: дашборд для Тильды — мобильная страница «Панель управления»",
+   "subject": "V10. Подтверждение закрытия замечаний §14",
    "group": "Сборка системы",
    "category": "Задачи команды",
    "owner": null,
@@ -391,21 +383,19 @@
    "overdue": false,
    "source": "dsh-session",
    "created": null,
-   "createdMs": 1793459691694,
+   "createdMs": 1794166851785,
    "quote": null,
    "origin": "dsh",
    "originLabel": "лог DSH",
    "file": null,
    "ownerUnknown": true,
    "revision": 3,
-   "description": "T19 — Дашборд для Тильды (мобильная «Панель управления»)\n\nЦЕЛЬ: пользователь создал в Тильде страницу «Панель управления» и хочет видеть рабочий кабинет оттуда, в первую очередь С ТЕЛЕФОНА. Тильда публична в интернете — это заменяет туннель.\n\nЧТО СДЕЛАТЬ (write-scope: marketing-agents/dashboard/tilda/**):\n1) dashboard/tilda/build-tilda.mjs — ГЕНЕРАТОР, собирает один файл dashboard/tilda/panel-tilda.html:\n   - автономный: стили и скрипты вшиты, данные вшиты как JS-объект (НЕ fetch, без сети);\n   - МОБИЛЬНЫЙ ПЕРВЫЙ: ширина 360-430 px без горизонтальной прокрутки, крупные тапы, карточки в одну колонку, таблицы -> компактные списки, график — упрощённая полоса/мини-бары;\n   - вкладки: Обзор, Агенты, Задачи, Источники, Расходы, Интеграции (те же данные, что в локальном дашборде);\n   - тумблеры НЕ пишут в файлы (нельзя со статичной страницы): показывают, что «управление доступно в локальной версии», и НЕ выглядят как рабочие;\n   - в шапке крупно: «Данные на <дата/время сборки> • только просмотр»;\n   - РАЗМЕР: цель <= 60 КБ итогового файла. Для этого собирай для Тильды ОБЛЕГЧЁННЫЙ набор данных (агрегаты + верхние строки таблиц), а не весь 178-КБ слепок; тяжёлые массивы округляй/обрезай, но",
-   "descriptionFirstLine": "T19 — Дашборд для Тильды (мобильная «Панель управления»)",
+   "description": "Цель: подтвердить, что шесть замечаний §14.3 закрыты, и дать финальный вердикт по пакету перед началом реализации.\n\nПроверить (статус + доказательство, файл:строка):\n1. **№1 (было критично) — roadmap-2-sprints.md:** старый слой снят: в шапке горизонт 18–22 недели и «Утверждено: вариант B»; нет формулировки «авторизация, биллинг, кэшбэк-кошелёк — вне объёма»; нет «двух развилок, выбрать нужно одну» и «это то, что реально планируется ниже»; «спринт 1/2» заменены на «этап 1/2/3»; риск про «8,5–10,5 чн не влезает в 4 недели» переписан под 21,0 чн; строка про тарифы говорит Starter 1 / Growth до 3 / Pro до 10.\n2. **№2–№3 — gtm-mvp-scope.md и onepager.md:** развилка сроков подана как утверждённый план; нигде нет «рекомендация / рекомендуется / выбирается заказчиком» по пяти утверждённым решениям; гибрид выплат помечен шагом 2, в MVP только зачёт в баланс.\n3. **№4 — README.md:** бюджет привлечения — потолок 264 000 ₽/год, а 294 360 ₽ названо потребностью при CAC 12 000 ₽; заголовок §3.4 больше не говорит «до пересчёта числа сценарные».\n4. **№5 — finmodel-blueprint.md:** понятия разведены (потолок 264 000 ₽ vs потребность 294 360 ₽, превышение 30 360 ₽); «294 360 ₽» нигде не назван бюджето",
+   "descriptionFirstLine": "Цель: подтвердить, что шесть замечаний §14.3 закрыты, и дать финальный вердикт по пакету перед началом реализации.",
    "writeScopes": [
-    "marketing-agents/dashboard/tilda"
+    "marketing-agents/docs/strategy-2026-11-08/verification.md"
    ],
-   "blockedBy": [
-    "task-16"
-   ]
+   "blockedBy": []
   },
   {
    "id": "task-2",
@@ -2402,7 +2392,7 @@
   },
   {
    "id": "task-8",
-   "subject": "R4b (T29): русификация остальных dshmarket lib\\*.js (19 файлов)",
+   "subject": "G2. Концепция/GTM под SaaS для маркетологов: self-service, триал 3 дня, кэшбэк Growth/Pro",
    "group": "Сборка системы",
    "category": "Задачи команды",
    "owner": "agent-1-competitor-watch",
@@ -2415,17 +2405,18 @@
    "overdue": false,
    "source": "dsh-session",
    "created": null,
-   "createdMs": 1793468967005,
+   "createdMs": 1794161639068,
    "quote": null,
    "origin": "dsh",
    "originLabel": "лог DSH",
    "file": null,
    "ownerUnknown": false,
-   "revision": 3,
-   "description": "ВЛАДЕЛЕЦ: teammate market-ru (освободился после task-2, знает контекст dshmarket). ЦЕЛЬ: закончить русификацию серверной части маркета — все пользовательские сообщения в перечисленных lib-файлах.\n\nТВОИ ФАЙЛЫ (строго эти, C:\\Users\\Артем\\.dsh\\profiles\\desktop\\node_modules\\dshmarket\\lib\\) и текущий объём CJK:\ndsh-cli.js 797, official-desktop.js 752, verify.js 529, install.js 331, recovery.js 246, backup.js 235, snapshot.js 184, presets.js 151, patch.js 119, hot.js 88, check.js 86, host-recovery.js 76, groups.js 57, trial.js 45, http.js 36, order.js 29, restart.js 15, profile.js 10, updates.js 8. Итого ~3812 CJK-символов.\nНЕ ТВОИ: routes.js и pnpm-compat.js — их ведёт market-lib-ru (task-6). client\\client.js — уже сделан тобой (task-2), больше не трогай. Остальные каталоги профиля — не твои.\n\nЧТО СДЕЛАТЬ:\n1) Бэкап КАЖДОГО правимого файла -> *.bak-ru-<timestamp> ПЕРЕД правкой; бэкапы не удалять.\n2) Перевести ВСЕ видимые пользователю сообщения: ошибки установки/обновления/удаления, предупреждения, статусы, прогресс, результаты проверок, подсказки CLI, подтверждения.\n3) НЕ переводить: служебные коды, ключи, идентификаторы пакетов, команды pnpm, поля API, пути, имена переменных окружения, ",
-   "descriptionFirstLine": "ВЛАДЕЛЕЦ: teammate market-ru (освободился после task-2, знает контекст dshmarket). ЦЕЛЬ: закончить русификацию серверной части маркета — все пользовательские сообщения в перечисленных lib-файлах.",
+   "revision": 6,
+   "description": "Владелец: gtm2. Правишь ТОЛЬКО marketing-agents/docs/strategy-2026-11-08/onepager.md и gtm-mvp-scope.md.\n\nИЗМЕНЕНИЯ ЗАКАЗЧИКА (08.11.2026) — вносишь как решение, с явными пометками там, где ты не согласен:\n1) Продукт — SaaS-платформа **для маркетологов** (агентство, фрилансер, инхаус-маркетолог), а не только для маркетинга застройщиков. Первая вертикаль — новостройки Москвы/МО (иначе нет ни данных, ни кейсов).\n2) Кабинет один — кабинет маркетолога (он же оператор и плательщик). Кабинет клиента маркетолога — отложен, подключается позже по необходимости.\n3) Self-service: маркетолог сам регистрируется в кабинете; пробный период **3 дня**; по окончании все функции замораживаются до покупки подписки.\n4) Кэшбэк с рекламных кабинетов клиентов маркетолога — только на **Growth (50 % нетто-возврата, гипотеза)** и **Pro (80 % нетто, `cashback_share = 0,8`)**; Starter — без кэшбэка. Выплата: гибрид — зачисление на баланс подписки, вывод деньгами выше 10 000 ₽ и только после поступления денег от партнёра (до 50 дней).\n5) Тарифы (v2-нейминг): Starter 5 000 (1 проект-ЖК) · Growth 15 000 (до 3) · Pro 30 000 (до 10) · Enterprise от 50 000 (вне первой волны).\n\nЧТО ИЗМЕНИТЬ:\n- §ICP: платящий — маркет",
+   "descriptionFirstLine": "Владелец: gtm2. Правишь ТОЛЬКО marketing-agents/docs/strategy-2026-11-08/onepager.md и gtm-mvp-scope.md.",
    "writeScopes": [
-    "marketing-agents/install/ru-market-lib2-report.md"
+    "marketing-agents/docs/strategy-2026-11-08/onepager.md",
+    "marketing-agents/docs/strategy-2026-11-08/gtm-mvp-scope.md"
    ],
    "blockedBy": []
   },
@@ -2461,7 +2452,7 @@
   },
   {
    "id": "task-9",
-   "subject": "T9: повторная независимая проверка фиксов D1/D2",
+   "subject": "F9-ENGINE: стабильный lot_id + url в снимке + перенос старых снимков",
    "group": "Сборка системы",
    "category": "Задачи команды",
    "owner": "agent-1-competitor-watch",
@@ -2474,21 +2465,21 @@
    "overdue": false,
    "source": "dsh-session",
    "created": null,
-   "createdMs": 1793388845820,
+   "createdMs": 1793799750569,
    "quote": null,
    "origin": "dsh",
    "originLabel": "лог DSH",
    "file": null,
    "ownerUnknown": false,
    "revision": 3,
-   "description": "T9 — повторная независимая проверка исправлений D1 и D2\n\nТы уже проверял систему в T7 (отчёт: marketing-agents\\05-verification\\verification-report.md). data-engine исправил два найденных дефекта.\n\nЧТО СДЕЛАТЬ:\n1) Взять ровно те команды воспроизведения D1 и D2 из твоего отчёта и прогнать их ЗАНОВО на текущем состоянии кода. Оба сценария должны больше не воспроизводиться.\n2) Проверить, что фикс не сломал ничего: прогнать полный набор тестов движка, дифф-арифметику на фикстурах, сборку отчёта и XLSX (достаточно повторить свои ключевые независимые проверки, не всё заново).\n3) Проверить, что исправления не внесли регресс в отчёт 2026-10-23 -> 2026-10-30: параметры, которые не должны были измениться (число изменений цен, медианы по проектам), остались прежними — либо объяснить расхождение.\n4) Убедиться, что .ps1 и .py теперь дают одинаковый результат выбора предыдущего снимка (три случая: ровно 7 дней, только ближайший, ничего нет).\n5) Убедиться, что ты снова ничего не изменил вне marketing-agents\\05-verification.\n\nРЕЗУЛЬТАТ: дописать в marketing-agents\\05-verification\\verification-report.md раздел «Повторная проверка T9» с вердиктом по каждому дефекту (исправлен / не исправлен / исправл",
-   "descriptionFirstLine": "T9 — повторная независимая проверка исправлений D1 и D2",
+   "description": "Контракт: marketing-agents/docs/f9-lot-identity-2026-11-04.md (прочитай целиком, там причины, целевая идентичность §4, переходный период §5, приёмка §6). Зона записи: 01-competitor-watch/scripts/**, 01-competitor-watch/tests/**, 01-competitor-watch/data/clients/**/snapshots/** (только с .bak).\n\nСделать:\n1. `lot_id` по ступеням §4: родной id (Циан offer_id) → нормализованный url → содержимое (без цены и без index) → сырой слепок. Формат `<префикс>-<8hex>` (n/u/c/r).\n2. Строку снимка `url` заполнять из лота (url/link/offer_url) — сейчас в collect_clients.py:133 жёстко \"\".\n3. Коллизии ключа внутри снимка не отбрасывать молча: детерминированный суффикс -2/-3 + счётчик `lot_id_collisions` и предупреждение в сводке.\n4. Переходный период по §5: пересобрать самый свежий снимок (11-04) со старым файлом в .bak, затем одноразовый перенос ключей в старых снимках (11-01…11-03) с сопоставлением по подписи содержимого с эталоном; атомарно, .bak, отчёт «сопоставлено/не сопоставлено».\n5. Тесты на инварианты §6.2 (идемпотентность, перестановка, изменение цены не меняет ключ, url в строке, коллизия с суффиксом).\n6. Обновить `01-competitor-watch/scripts/SCHEMA.md`: идентичность как в §4.\n\nПриёмка: pyt",
+   "descriptionFirstLine": "Контракт: marketing-agents/docs/f9-lot-identity-2026-11-04.md (прочитай целиком, там причины, целевая идентичность §4, переходный период §5, приёмка §6). Зона записи: 01-competitor-watch/scripts/**, 01-competitor-watch/tests/**, 01-competitor-watch/data/clients/**/snapshots/** (только с .bak).",
    "writeScopes": [
-    "marketing-agents/05-verification"
+    "marketing-agents/01-competitor-watch/scripts",
+    "marketing-agents/01-competitor-watch/tests",
+    "marketing-agents/01-competitor-watch/data/clients"
    ],
-   "blockedBy": [
-    "task-8"
-   ]
+   "blockedBy": []
   }
  ],
  "tree": [
@@ -2590,7 +2581,7 @@
        "statusRaw": "new",
        "project": "my-zhk-svet",
        "due": "2026-11-05",
-       "overdue": false,
+       "overdue": true,
        "source": "telemost-text",
        "created": "2026-10-31",
        "createdMs": 1793437200000,
@@ -2626,7 +2617,7 @@
      "tasks": [
       {
        "id": "task-1",
-       "subject": "R1 (T34+T28A): языковой пакет — 8 справок «пресеты агента» + пропуски пайплайна ru-locale",
+       "subject": "Диагностика сломанного dsh-scrape-webpage (ошибка «shell.run is not a function»)",
        "group": "Сборка системы",
        "category": "Задачи команды",
        "ownerLabel": null,
@@ -2638,25 +2629,23 @@
        "overdue": false,
        "source": "dsh-session",
        "created": null,
-       "createdMs": 1793466867107,
+       "createdMs": 1793813470649,
        "quote": null,
        "origin": "dsh",
        "originLabel": "лог DSH",
        "file": null,
        "ownerUnknown": false,
-       "revision": 3,
-       "description": "ВОССТАНОВЛЕННАЯ ЗАДАЧА из ветки «Панель управления (тест)»: T34 (task-33) + Часть A из T28 (task-28). Владелец: teammate locale-core.\n\nГДЕ (вне рабочего каталога):\n- проект языкового пакета: C:\\Users\\Артем\\Desktop\\DeepSeek Harness\\ru-locale\n- профиль: C:\\Users\\Артем\\.dsh\\profiles\\desktop\n- node: C:\\Users\\Артем\\.dsh\\dsh-runtimes\\dsh-primary-runtime\\dependencies\\node\\bin\\node.exe\n- проверка профиля: marketing-agents\\install\\check-profile-bundles.mjs\n\nФАКТЫ РАЗВЕДКИ (проверены Lead 31.10):\n1) node tools\\validate-translations.js -> problems: 0, warnings: 68, identical-to-en: 57. Установленный пакет чистый (0 CJK).\n2) Ровно 10 не-строковых источников во всём corpus: 8 ключей settings.agentPreset (guideStandardExplanation, guideStandardUsage, guidePtcExplanation, guidePtcUsage, guideMinimalExplanation, guideMinimalUsage, guideCordisExplanation, guideCordisUsage — вид {\"__raw\":\"[\\\"...\\\"].join(\\\"\\\\n\\\\n\\\")\"}) и 2 ключа conversation (hint.plan, placeholder.plan — {\"__raw\":\"PLAN_NEXT_ACTION_EN\"}).\n3) Пайплайн их ВЫБРАСЫВАЕТ: validate-translations.js («не строковый источник») и build-plugin.js (continue для не-строк). Поэтому ни в plugin\\lib\\client.js, ни в node_modules\\dsh-locale-ru\\lib\\clien",
-       "descriptionFirstLine": "ВОССТАНОВЛЕННАЯ ЗАДАЧА из ветки «Панель управления (тест)»: T34 (task-33) + Часть A из T28 (task-28). Владелец: teammate locale-core.",
+       "revision": 4,
+       "description": "Цель: найти корневую причину, почему инструмент scrape_webpage в сессии падает с «Не удалось выполнить команду: shell.run is not a function», и предложить конкретные варианты починки.\n\nКонтекст: хост DeepSeek Harness 0.2.1-rc.5 (Desktop), профиль desktop (путь: C:\\Users\\Артем\\.dsh\\profiles\\desktop). Плагин dsh-scrape-webpage@1.0.0 установлен в node_modules профиля и совпадает с версией в маркете. Тот же плагин ломается при вызове на любой URL (проверено на https://www.mr-group.ru/projects/zhk-seliger-siti). Нужен источник чтения страниц конкурентов для Агента 1 (задача E).\n\nЧто сделать:\n1. Прочитать код плагина (<DSH_PROFILE_DIR>\\node_modules\\dsh-scrape-webpage, прежде всего lib/**) и найти, где вызывается shell.run и что это за API.\n2. Установить, предоставляет ли хост 0.2.1-rc.5 такое API (искать в чекауте DSH: C:\\Users\\Артем\\AppData\\Local\\Programs\\DeepSeek Harness\\resources\\app.asar\\dsh\\ — асар можно читать через node, если доступно, либо через grep по распакованным файлам, если они рядом).\n3. Проверить, есть ли в маркете более новая версия плагина (кэш каталога: C:\\Users\\Артем\\.dsh\\profiles\\desktop\\.dsh-market\\discovery-compatibility-v1.json, поле entries → facts.version).\n4. Д",
+       "descriptionFirstLine": "Цель: найти корневую причину, почему инструмент scrape_webpage в сессии падает с «Не удалось выполнить команду: shell.run is not a function», и предложить конкретные варианты починки.",
        "writeScopes": [
-        "marketing-agents/install/README-ui-ru-locale-pipeline.md",
-        "marketing-agents/install/ru-locale-report.md",
-        "marketing-agents/install"
+        "marketing-agents/docs/scrape-webpage-diagnosis-2026-11-04.md"
        ],
        "blockedBy": []
       },
       {
        "id": "task-10",
-       "subject": "T10: установка 9 выбранных плагинов из маркета в профиль desktop",
+       "subject": "V4. Визуальный roadmap и интерактивный чек-лист (HTML)",
        "group": "Сборка системы",
        "category": "Задачи команды",
        "ownerLabel": null,
@@ -2668,24 +2657,23 @@
        "overdue": false,
        "source": "dsh-session",
        "created": null,
-       "createdMs": 1793389358131,
+       "createdMs": 1794161639090,
        "quote": null,
        "origin": "dsh",
        "originLabel": "лог DSH",
        "file": null,
        "ownerUnknown": false,
-       "revision": 3,
-       "description": "T10 — установить 9 выбранных плагинов/скилов из маркета DSH в профиль desktop\n\nПОЛЬЗОВАТЕЛЬ ВЫБРАЛ (ставить всё):\n1. sandbase-skills                  -> github:sandbaseai/sandbase-skills\n2. ru-marketplace-mcp (папка /dsh)  -> github:Vladimir-Human/ru-marketplace-mcp#path:/dsh\n3. dsh-skill-browser                -> dsh-skill-browser\n4. dsh-serper-search                -> dsh-serper-search\n5. dsh-scrape-webpage               -> dsh-scrape-webpage\n6. @opendsh/dsh-plugin-scheduled-tasks -> @opendsh/dsh-plugin-scheduled-tasks\n7. dsh-telegram-channel-ru          -> dsh-telegram-channel-ru\n8. dsh-creative-studio              -> https://github.com/Ylight-cpu/dsh-creative-studio/releases/latest/download/dsh-creative-studio.tgz\n9. superdesign-skill                -> github:superdesigndev/superdesign-skill\n\nИНСТРУМЕНТЫ И ФАКТЫ (проверено Lead):\n- CLI: C:\\Users\\Артем\\AppData\\Local\\Programs\\DeepSeek Harness\\resources\\runtime\\cli\\bin\\dsh.cmd (версия 0.2.1-rc.5).\n- dsh plugin --profile desktop add <spec> — ВАЖНО: он лишь форвардит аргументы в pnpm в каталоге профиля, сам bundle НЕ регистрирует.\n- Профиль: C:\\Users\\Артем\\.dsh\\profiles\\desktop ; пакеты ставятся в его node_modules; включение плагина",
-       "descriptionFirstLine": "T10 — установить 9 выбранных плагинов/скилов из маркета DSH в профиль desktop",
+       "revision": 6,
+       "description": "Владелец: visual. Создаёшь ровно один файл: marketing-agents/docs/strategy-2026-11-08/roadmap-visual.html\n\nЦЕЛЬ: заказчику нужен лёгкий визуальный документ, по которому удобно вести реализацию проекта и отмечать сделанное.\n\nТРЕБОВАНИЯ К ФАЙЛУ:\n1) Один автономный HTML-файл (открывается двойным щелчком, без интернета и сборки): встроенные CSS и vanilla JS, никаких CDN, шрифтов из сети и внешних картинок. Русский язык, UTF-8.\n2) Верхний блок — дорожная карта: горизонтальная полоса этапов (Спринт 1 → Спринт 2 → Волна 2 → Волна 3) с карточками; в карточке: цель, объём в человеко-неделях, критерии выхода (DoD), владелец, зависимость. Наглядно: цветовые статусы (готово / в работе / ждёт / заблокировано) и прогресс-бар по числу отмеченных пунктов.\n3) Интерактивный чек-лист: сгруппирован по этапам; каждый пункт с чекбоксом, сохранение прогресса в localStorage (при перезагрузке страницы отметки на месте); кнопка «сбросить прогресс»; счётчик «отмечено X из Y» по каждому этапу и общий.\n4) Отдельный блок «Развилки, требующие решения заказчика» — карточки с вариантами (A/B), чтобы решение было видно: (1) триал 3 дня от регистрации против «3 дня после первого отчёта»; (2) выплата кэшбэка — баланс",
+       "descriptionFirstLine": "Владелец: visual. Создаёшь ровно один файл: marketing-agents/docs/strategy-2026-11-08/roadmap-visual.html",
        "writeScopes": [
-        "%USERPROFILE%/.dsh/profiles/desktop",
-        "marketing-agents/install"
+        "marketing-agents/docs/strategy-2026-11-08/roadmap-visual.html"
        ],
        "blockedBy": []
       },
       {
        "id": "task-11",
-       "subject": "T11: форс-установка 2 плагинов, картинки (vision), дешёвые модели + prices.yaml",
+       "subject": "D-F9-DUP: перенос ключей может создать дубль lot_id внутри даты",
        "group": "Сборка системы",
        "category": "Задачи команды",
        "ownerLabel": null,
@@ -2697,25 +2685,24 @@
        "overdue": false,
        "source": "dsh-session",
        "created": null,
-       "createdMs": 1793455525891,
+       "createdMs": 1793801182165,
        "quote": null,
        "origin": "dsh",
        "originLabel": "лог DSH",
        "file": null,
        "ownerUnknown": false,
        "revision": 3,
-       "description": "T11 — форс-установка 2 плагинов + картинки + дешёвые модели (профиль)\n\n1) ФОРС-УСТАНОВКА (пользователь сказал «форсируем»). Отклонённые хостом: @opendsh/dsh-plugin-scheduled-tasks@0.2.4 (нужно семейство ^0.1.0-rc.6, у нас DSH 0.2.1-rc.5) и dsh-creative-studio@0.2.1 (engines.dsh не допускает 0.2.x).\n   - Сначала найди ОФИЦИАЛЬНЫЙ механизм обхода (поищи в ресурсах CLI/app.asar строки allow-version / allowIncompatible / force; проверь dsh plugin --help и dsh --help; посмотри, как это делает GUI-маркет dshmarket: node_modules\\dshmarket\\lib).\n   - Если официального нет — ставь напрямую: dsh plugin --profile desktop add <pkg>@<ver> (или pnpm add в каталоге профиля) и вручную добавь имя пакета в profile package.json -> dsh.profile.bundles.\n   - Строго по одному, с бэкапом package.json / pnpm-lock.yaml / pnpm-workspace.yaml ДО правок (.bak-force-<timestamp>).\n   - КРИТИЧНО: несовместимый плагин может сломать старт DSH. Поэтому после каждой установки проверяй: package.json парсится, точка входа существует, bundle.patch существует; в отчёте дай ОДНУ команду полного откатa (удалить из deps+bundles, pnpm install, либо восстановить из бэкапа).\n   - Порядок: сначала scheduled-tasks, потом creati",
-       "descriptionFirstLine": "T11 — форс-установка 2 плагинов + картинки + дешёвые модели (профиль)",
+       "description": "Дефект D-F9-DUP (подтверждён QA, medium): в `01-competitor-watch/scripts/migrate_lot_ids.py`, функция `plan_migration`, мягкое (loose) сопоставление кладёт найденный ключ в `used`, но не удаляет его из `available`. Поэтому строка с точной подписью позже получает тот же ключ — внутри одной даты появляются два одинаковых `lot_id` (нарушен докстринг «ключ эталона используется не больше одного раза»). Фикстура QA: `matched_exact 1 + matched_loose 1` → `['n-KKKK0001','n-KKKK0001']`. На живых снимках дублей 0 (повезло: мягкая ступень срабатывала 12 раз), но инструмент обязан быть корректным — иначе повторный/иной прогон испортит идентичность, а валидатор справедливо отвергнет дубли.\n\nТРЕБУЕТСЯ (зона: 01-competitor-watch/scripts/**, tests/**):\n1. Сначала все ТОЧНЫЕ сопоставления, затем мягкие; использованный ключ эталона удалять из `available` при любом виде сопоставления (или помечать израсходованным).\n2. Регресс-тест на фикстуру QA: точное + мягкое сопоставление в одной дате → все `lot_id` уникальны (и проверка, что количество строк не изменилось).\n3. Проверка на копиях реальных снимков: повторный прогон переноса не создаёт дублей, число строк и остальные колонки не меняются, `.bak` и и",
+       "descriptionFirstLine": "Дефект D-F9-DUP (подтверждён QA, medium): в `01-competitor-watch/scripts/migrate_lot_ids.py`, функция `plan_migration`, мягкое (loose) сопоставление кладёт найденный ключ в `used`, но не удаляет его из `available`. Поэтому строка с точной подписью позже получает тот же ключ — внутри одной даты появляются два одинаковых `lot_id` (нарушен докстринг «ключ эталона используется не больше одного раза»). Фикстура QA: `matched_exact 1 + matched_loose 1` → `['n-KKKK0001','n-KKKK0001']`. На живых снимках дублей 0 (повезло: мягкая ступень срабатывала 12 раз), но инструмент обязан быть корректным — иначе повторный/иной прогон испортит идентичность, а валидатор справедливо отвергнет дубли.",
        "writeScopes": [
-        "marketing-agents/install",
-        "marketing-agents/registry/prices.yaml",
-        "%USERPROFILE%/.dsh/profiles/desktop"
+        "marketing-agents/01-competitor-watch/scripts",
+        "marketing-agents/01-competitor-watch/tests"
        ],
        "blockedBy": []
       },
       {
        "id": "task-12",
-       "subject": "T12: веб-дашборд «Центр управления агентами» (прототип + скриншоты)",
+       "subject": "V6. Финальная проверка после правок 08.11",
        "group": "Сборка системы",
        "category": "Задачи команды",
        "ownerLabel": null,
@@ -2727,23 +2714,23 @@
        "overdue": false,
        "source": "dsh-session",
        "created": null,
-       "createdMs": 1793455525896,
+       "createdMs": 1794162941361,
        "quote": null,
        "origin": "dsh",
        "originLabel": "лог DSH",
        "file": null,
        "ownerUnknown": false,
        "revision": 3,
-       "description": "T12 — ВЕБ-ДАШБОРД «Центр управления агентами» (прототип на согласование)\n\nЦЕЛЬ: локальный сайт, который показывает сеть агентов и её работу, и позволяет управлять.\nПользователь хочет видеть: сколько и какие агенты работают; какие модели используют; расход в токенах И рублях; группировки по агентам; вложенность задач по группам и категориям; проекты, которые агенты ведут; сквозную аналитику; включение/выключение агентов; инфраструктуру для подключения новых агентов. Публикация: ТОЛЬКО ЛОКАЛЬНО (выбор пользователя).\n\nИСТОЧНИКИ ДАННЫХ (проверено Lead, не перепроверяй с нуля):\nA) Логи сессий: C:\\Users\\Артем\\.dsh\\sessions\\<проект>\\<session-id>\\session.v4.jsonl.zstd — это НЕСКОЛЬКО склеенных zstd-фреймов (425 на файл). Обычный zstdDecompressSync отдаёт только первый фрейм! Рабочий способ: найти все вхождения magic 28 B5 2F FD, резать по ним и распаковывать каждый фрейм отдельно, склеивая текст (проверено: 1188 строк событий).\n   Полезные типы событий: session, user/message, assistant/message (в data.message есть usage: inputTokens/outputTokens/totalTokens/cacheReadTokens), model/selection {provider,model}, team/member {member{id,name,description,provider,phase}}, team/task {task{id,subje",
-       "descriptionFirstLine": "T12 — ВЕБ-ДАШБОРД «Центр управления агентами» (прототип на согласование)",
+       "description": "Цель: финальная быстрая проверка закрытия 5 расхождений из §12 и новых чисел, появившихся после пересчёта. Полный пересмотр пакета не нужен.\n\nПроверить (статус + доказательство, файл:строка или число):\n1. V1 (воронка): финмодель пересчитана на вариант B. Ожидаемые числа: активация 40/50/55 %, конец триала 80 %, оплата 33 %, регистрация→оплата 10,6 / 13,2 / 14,5 %; регистраций нужно 127 / 186 / 269 в год; стоп-правила (активация ≥ 25 %, регистрация→оплата ≥ 8 %, триал→оплата ≥ 10 %) проходят. Проверь арифметику воронки и что она совпадает с onepager §10 и gtm §5.\n2. V2 (payback): «6,6 мес» больше не встречается нигде (onepager, gtm, README, 00-concept-audit, blueprint); стоит 5,9 мес (5,6 с add-on) с базой. Потолок CAC Starter — одна таблица с базами (15 760 / 15 800 / 17 520 / 18 388 ₽), и вывод «полный CAC 36 612 ₽ выше любого потолка» воспроизводится.\n3. V3 (HTML): roadmap-visual.html обновлён — Starter/Growth/Pro, развилка S/B/C, доли 50/80, кассовый/полный CAC, воронка 60→30→8; посторонних старых строк (Lite, «12–20 недель», «16,5–22,5») нет; файл автономен.\n4. V4: roadmap-2-sprints.md — арифметика прироста сходится (+9,0 продукт и +1,5 внешние = 21,0); architecture ссылается н",
+       "descriptionFirstLine": "Цель: финальная быстрая проверка закрытия 5 расхождений из §12 и новых чисел, появившихся после пересчёта. Полный пересмотр пакета не нужен.",
        "writeScopes": [
-        "marketing-agents/dashboard"
+        "marketing-agents/docs/strategy-2026-11-08/verification.md"
        ],
        "blockedBy": []
       },
       {
        "id": "task-13",
-       "subject": "T13: приём задач голосом из Телемоста (аудио -> расшифровка -> задачи)",
+       "subject": "V7. Визуальный roadmap: зафиксировать утверждённые решения",
        "group": "Сборка системы",
        "category": "Задачи команды",
        "owner": "agent-1-competitor-watch",
@@ -2756,24 +2743,23 @@
        "overdue": false,
        "source": "dsh-session",
        "created": null,
-       "createdMs": 1793455525901,
+       "createdMs": 1794166263851,
        "quote": null,
        "origin": "dsh",
        "originLabel": "лог DSH",
        "file": null,
        "ownerUnknown": false,
        "revision": 3,
-       "description": "T13 — Приём задач голосом из Яндекс Телемоста (без API у Телемоста)\n\nПОЛЬЗОВАТЕЛЬ ВЫБРАЛ: «голосом — записать встречу/голосовое, получить расшифровку, разложить на задачи».\nУ Телемоста нет публичного API, поэтому путь такой: пользователь записывает встречу (или голосовое) и кладёт файл в папку; мы делаем расшифровку и превращаем её в задачи реестра.\n\nАРТЕФАКТЫ (write-scope: marketing-agents/registry/intake/** и marketing-agents/registry/tasks/**):\n1) registry/intake/README.md — по-русски: куда что класть (inbox/audio — аудио/видео, inbox/text — готовые транскрипты и заметки), поддерживаемые форматы, как получить запись из Телемоста, лимиты, что делать если расшифровка не удалась.\n2) registry/intake/scripts/transcribe.* — расшифровка аудио в текст (русский).\n   ВАЖНО, сначала разведка: в системе уже есть локальный движок речи C:\\Users\\Артем\\.dsh\\speech-to-text\\sensevoice\\models и включён voice-input bundle. Выясни, есть ли CLI/скрипт для расшифровки ФАЙЛА (ищи в ресурсах DSH: app.asar.unpacked, node_modules, python-пакеты). Если локально нельзя — честно зафиксируй это и предложи рабочий обход: (а) расшифровка средствами самого Телемоста/Яндекс, (б) внешний ASR. НЕ выдумывай несущест",
-       "descriptionFirstLine": "T13 — Приём задач голосом из Яндекс Телемоста (без API у Телемоста)",
+       "description": "Владелец: visual. Правишь только marketing-agents/docs/strategy-2026-11-08/roadmap-visual.html.\n\nЗАКАЗЧИК УТВЕРДИЛ РЕШЕНИЯ (08.11.2026, 22:30):\n1) **Вариант B** — self-service-бета: 21,0 чел.-недели, 18–22 недели при разработчике фултайм, цель 8–12 платящих за 16 недель беты; нужен второй исполнитель или подрядчик. Варианты S и C — отклонить, оставить как историю/альтернативу с пометкой «отклонено заказчиком».\n2) **Триал — вариант B:** 3 дня, таймер стартует после первого успешного отчёта (`trial_start = first_report`). Вариант «от регистрации» — помечен как отклонённый (оставлен для A/B-теста флагом).\n3) **Кэшбэк — только зачёт в баланс подписки** в MVP (шаг 1). Деньги на счёт и гибрид выше 10 000 ₽ — шаг 2, после 3 платящих с подключёнными кабинетами и первого подтверждённого возврата.\n4) **CAC-бюджет:** 264 000 ₽/год остаётся **потолком** (не планом к расходу); план клиентов не поднимаем, бюджет не режем; стоимость регистрации измеряем на первых 100 регистрациях, решение — по замеру. Порог остатка 150 000 ₽.\n5) **Проценты кэшбэка публично не называются** до партнёрского договора: на тарифах только «доступно на Growth и Pro после подключения кабинета».\n\nЧТО ИЗМЕНИТЬ В ФАЙЛЕ:\n- В ",
+       "descriptionFirstLine": "Владелец: visual. Правишь только marketing-agents/docs/strategy-2026-11-08/roadmap-visual.html.",
        "writeScopes": [
-        "marketing-agents/registry/intake",
-        "marketing-agents/registry/tasks"
+        "marketing-agents/docs/strategy-2026-11-08/roadmap-visual.html"
        ],
        "blockedBy": []
       },
       {
        "id": "task-14",
-       "subject": "T14: подключить Циан/Авито к Агенту 1 через Chrome CDP + реальный сбор",
+       "subject": "F3. Зафиксировать утверждённые решения в финмодели и шаблонах",
        "group": "Сборка системы",
        "category": "Задачи команды",
        "owner": "agent-1-competitor-watch",
@@ -2786,27 +2772,25 @@
        "overdue": false,
        "source": "dsh-session",
        "created": null,
-       "createdMs": 1793455525906,
+       "createdMs": 1794166263858,
        "quote": null,
        "origin": "dsh",
        "originLabel": "лог DSH",
        "file": null,
        "ownerUnknown": false,
        "revision": 3,
-       "description": "T14 — Подключить Циан и Авито к Агенту 1 (Chrome over CDP)\n\nКОНТЕКСТ: в маркете установлены скилы cian-connector и avito-connector (в каталоге сессии уже видны). Они требуют Chrome, запущенный с отладочным портом (CDP). Chrome найден: \"C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe\". Сейчас CDP не запущен (порт 9222 закрыт). Пользователь дал согласие на настройку.\n\nАРТЕФАКТЫ (write-scope: marketing-agents/00-admin/**, marketing-agents/01-competitor-watch/README.md, .../templates/**, .../data/**, .../reports/**):\n1) 00-admin/scripts/start-chrome-cdp.ps1 — запуск ВАШЕГО Chrome с отладкой:\n   - отдельный профиль-каталог (например %USERPROFILE%\\.dsh-chrome-profile), чтобы не мешать обычному Chrome; при первом запуске пользователь логинится в Циан/Авито в этом окне;\n   - порт 9222, проверка что http://127.0.0.1:9222/json/version отвечает; понятные сообщения по-русски; параметр -Port.\n   Проверь скрипт запуском: подними Chrome, убедись что CDP отвечает, потом закрой (не оставляй висеть).\n2) 00-admin/runbook.md — новый раздел «Сбор данных с Циан и Авито»: порядок (запустить Chrome CDP -> попросить агента собрать данные по конкурентам -> проверить снимок), что делать если площадка п",
-       "descriptionFirstLine": "T14 — Подключить Циан и Авито к Агенту 1 (Chrome over CDP)",
+       "description": "Владелец: finmodel2. Правишь только свои файлы: finmodel.xlsx, finmodel-blueprint.md, unit-economics-cashflow.xlsx.\n\nЗАКАЗЧИК УТВЕРДИЛ РЕШЕНИЯ (08.11.2026, 22:30) — нужно зафиксировать их в модели, без пересчёта базовых допущений:\n1) **Вариант B** (self-service-бета) — утверждён; воронка B (10,56 / 13,20 / 14,52 %, регистраций 127 / 186 / 269) остаётся базовой. Ничего в расчётах не менять, только пометить как утверждённое решение.\n2) **Триал — вариант B** (таймер после первого отчёта) — расчётная база уже такая, подтверди пометкой.\n3) **Кэшбэк в MVP — только зачёт в баланс подписки.** В «Кэшбэк-контуре» выдели явно: начислено / зачтено в подписку / выведено деньгами (= 0 в варианте B MVP) / остаток; вывод деньгами и гибрид с порогом 10 000 ₽ — шаг 2, помечено как «вне MVP».\n4) **CAC-бюджет 264 000 ₽/год — потолок, а не план к расходу.** Переименуй соответствующие строки и подписи: «потолок бюджета привлечения»; рядом оставь «потребность по замеру после первых 100 регистраций — ЗАПОЛНИТЬ». План клиентов не поднимаем (22 остаётся), бюджет не режем — это решение заказчика.\n5) **Проценты кэшбэка публично не называются** до партнёрского договора — добавь пометку в лист «Кэшбэк-контур» и",
+       "descriptionFirstLine": "Владелец: finmodel2. Правишь только свои файлы: finmodel.xlsx, finmodel-blueprint.md, unit-economics-cashflow.xlsx.",
        "writeScopes": [
-        "marketing-agents/00-admin",
-        "marketing-agents/01-competitor-watch/README.md",
-        "marketing-agents/01-competitor-watch/templates",
-        "marketing-agents/01-competitor-watch/data",
-        "marketing-agents/01-competitor-watch/reports"
+        "marketing-agents/docs/strategy-2026-11-08/finmodel.xlsx",
+        "marketing-agents/docs/strategy-2026-11-08/finmodel-blueprint.md",
+        "marketing-agents/docs/strategy-2026-11-08/unit-economics-cashflow.xlsx"
        ],
        "blockedBy": []
       },
       {
        "id": "task-15",
-       "subject": "T15: дашборд в один клик — автономный HTML + .cmd-лаунчер + генератор",
+       "subject": "V8. Проверка фиксации утверждённых решений во всём пакете",
        "group": "Сборка системы",
        "category": "Задачи команды",
        "owner": null,
@@ -2819,55 +2803,56 @@
        "overdue": false,
        "source": "dsh-session",
        "created": null,
-       "createdMs": 1793458635243,
+       "createdMs": 1794166368135,
        "quote": null,
        "origin": "dsh",
        "originLabel": "лог DSH",
        "file": null,
        "ownerUnknown": true,
        "revision": 3,
-       "description": "T15 — Дашборд, которым можно пользоваться без терминала (2 версии + автозапуск)\n\nСИТУАЦИЯ: пользователь открыл http://127.0.0.1:8787 и получил ERR_CONNECTION_REFUSED — сервер был запущен фоновым заданием агента и умер вместе с его сессией. Нужны версии, которые работают без терминала и не зависят от агентов. Пользователь НЕ технический: всё должно запускаться двойным щелчком.\n\nАРТЕФАКТЫ (write-scope: marketing-agents/dashboard/**, marketing-agents/install/**):\n\n1) ЛОКАЛЬНАЯ ВЕРСИЯ В ОДИН КЛИК (полный функционал, с тумблерами)\n   marketing-agents/dashboard/Открыть дашборд.cmd\n   - запускает serve.mjs ОТДЕЛЬНЫМ процессом так, чтобы он жил после закрытия консоли: Start-Process с -WindowStyle Hidden (НЕ фоновое задание агента);\n   - если порт уже занят — не падать, а просто открыть браузер на существующий сервер;\n   - открывает браузер на http://127.0.0.1:8787;\n   - пишет внятные сообщения по-русски; путь к node берёт из %USERPROFILE%\\.dsh\\dsh-runtimes\\... , с fallback на PATH;\n   - в конце: \"Дашборд запущен. Это окно можно закрыть.\"\n   Проверь фактически: двойной запуск, повторный запуск при живом сервере, ответ 200.\n\n2) АВТОНОМНАЯ ВЕРСИЯ БЕЗ СЕРВЕРА (всегда открывается, даже если нич",
-       "descriptionFirstLine": "T15 — Дашборд, которым можно пользоваться без терминала (2 версии + автозапуск)",
+       "description": "Цель: убедиться, что утверждённые заказчиком решения 08.11.2026 (22:30) зафиксированы во всех файлах пакета единообразно и нигде не осталось формулировок «развилка не выбрана / рекомендация / требует подтверждения».\n\nУтверждено: (1) вариант **B** — self-service-бета, 21,0 чн, 18–22 недели, S и C отклонены; (2) триал **3 дня от первого отчёта** (`trial_start = first_report`); (3) кэшбэк в MVP — **только зачёт в баланс подписки**, вывод деньгами — шаг 2; (4) бюджет привлечения 264 000 ₽/год — **потолок**, план клиентов не поднимаем, стоимость регистрации замеряем на первых 100 регистрациях; (5) **проценты кэшбэка не публикуются** до партнёрского договора.\n\nПроверить по каждому файлу (статус + доказательство, файл:строка):\n1. `onepager.md` — шапка (версия/статус), §6 (триал), §8 (кэшбэк), §10 (сроки), §13 (что утверждено). Остатков «рекомендация GTM» и «на решение заказчика» быть не должно.\n2. `gtm-mvp-scope.md` — шапка и §11 (вопросы 1–4, 7, 8 закрыты, остались только операционные).\n3. `roadmap-2-sprints.md` — раздел «Утверждено…» и таблица этапов 1–4 + волна 2; недели этапов совпадают с 18–22; стоп-правила про потолок бюджета и кэшбэк-зачёт.\n4. `README.md` — §3.1–§3.3 (утверждено), ",
+       "descriptionFirstLine": "Цель: убедиться, что утверждённые заказчиком решения 08.11.2026 (22:30) зафиксированы во всех файлах пакета единообразно и нигде не осталось формулировок «развилка не выбрана / рекомендация / требует подтверждения».",
        "writeScopes": [
-        "marketing-agents/dashboard",
-        "marketing-agents/install"
+        "marketing-agents/docs/strategy-2026-11-08/verification.md"
+       ],
+       "blockedBy": [
+        "task-13",
+        "task-14"
+       ]
+      },
+      {
+       "id": "task-16",
+       "subject": "G3. Снять остатки «развилок» в onepager и gtm",
+       "group": "Сборка системы",
+       "category": "Задачи команды",
+       "owner": null,
+       "ownerLabel": null,
+       "ownerName": null,
+       "status": "done",
+       "statusRaw": "completed",
+       "project": null,
+       "due": null,
+       "overdue": false,
+       "source": "dsh-session",
+       "created": null,
+       "createdMs": 1794166807876,
+       "quote": null,
+       "origin": "dsh",
+       "originLabel": "лог DSH",
+       "file": null,
+       "ownerUnknown": true,
+       "revision": 3,
+       "description": "Владелец: gtm2. Правишь только onepager.md и gtm-mvp-scope.md. Правки формулировочные: снять остатки «развилки/рекомендации» там, где решения уже утверждены заказчиком 08.11.2026.\n\n1) `onepager.md` :197 — «Развилка S/B/C (§10) выбирается заказчиком один раз» противоречит :168 («B — утверждён») и :206 («Утверждено»). Замени на «Вариант B утверждён (08.11.2026), S — аварийный fallback, C — шаг 2».\n2) `onepager.md` §6 заголовок «Триал 3 дня: развилка (решение + варианты + риск)» → «Триал 3 дня: решение и отклонённые варианты»; метки «(рекомендуется)» у вариантов заменить на «(утверждено)» / «(отклонено)».\n3) `gtm-mvp-scope.md` :146 (§4.2 «Развилка сроков (сохранена из прежней редакции, обновлена)») — переписать как утверждённый план: B утверждён, S и C отклонены.\n4) `gtm-mvp-scope.md` — убрать «рекомендация» в местах, где решение принято: :172 «Рекомендация: B — основной и дефолт», :220 «Решение (рекомендация GTM)», :230 «Рекомендация: фиксируем в оферте целевой гибрид…», :252 «База плана — рекомендация B». Формулировки: «утверждено заказчиком 08.11.2026». Про гибрид выплат важно: он **не** в MVP — в MVP только зачёт в баланс, гибрид — шаг 2.\n5) Проверь, что нигде не осталось «требует",
+       "descriptionFirstLine": "Владелец: gtm2. Правишь только onepager.md и gtm-mvp-scope.md. Правки формулировочные: снять остатки «развилки/рекомендации» там, где решения уже утверждены заказчиком 08.11.2026.",
+       "writeScopes": [
+        "marketing-agents/docs/strategy-2026-11-08/onepager.md",
+        "marketing-agents/docs/strategy-2026-11-08/gtm-mvp-scope.md"
        ],
        "blockedBy": []
       },
       {
-       "id": "task-16",
-       "subject": "T16: вкладки «Интеграции API» и «Источники мониторинга» с тумблерами и статистикой",
-       "group": "Сборка системы",
-       "category": "Задачи команды",
-       "owner": null,
-       "ownerLabel": null,
-       "ownerName": null,
-       "status": "done",
-       "statusRaw": "completed",
-       "project": null,
-       "due": null,
-       "overdue": false,
-       "source": "dsh-session",
-       "created": null,
-       "createdMs": 1793459139615,
-       "quote": null,
-       "origin": "dsh",
-       "originLabel": "лог DSH",
-       "file": null,
-       "ownerUnknown": true,
-       "revision": 3,
-       "description": "T16 — Дашборд: вкладки «Интеграции API» и «Источники мониторинга»\n\nВАЖНО: сначала закрой T15 (автономный HTML + .cmd), потом бери T16.\n\nКОНТРАКТЫ (Lead уже создал, читай их):\n- marketing-agents/registry/sources.yaml — источники мониторинга (id, name, enabled, kind, auth, status, priority, last_run, limits, howto, note). Тумблер правит enabled.\n- marketing-agents/registry/integrations-catalog.yaml — что МОЖНО подключить (id, name, kind, purpose, status_hint, key_env/package, where).\n\n1) ВКЛАДКА «ИНТЕГРАЦИИ API» — два блока:\n   A. «Подключено» — определяется ФАКТИЧЕСКИ, не по мнению: из профиля DSH (C:\\Users\\Артем\\.dsh\\profiles\\desktop\\package.json -> dsh.profile.bundles и dependencies) + проверка, что каталог пакета есть в node_modules и у него есть точка входа/патч (логику можно взять из marketing-agents/install/check-profile-bundles.mjs). Показывай: имя, версия, назначение (из каталога, если есть), статус загрузки (в бандлах / установлен но выключен), нужен ли ключ.\n   B. «Можно подключить» — из integrations-catalog.yaml минус уже подключённые: назначение, что даёт, как подключить (команда dsh plugin add или где взять ключ).\n   СЕКРЕТЫ: проверяй только ФАКТ наличия ключа (env-пере",
-       "descriptionFirstLine": "T16 — Дашборд: вкладки «Интеграции API» и «Источники мониторинга»",
-       "writeScopes": [
-        "marketing-agents/dashboard"
-       ],
-       "blockedBy": [
-        "task-15"
-       ]
-      },
-      {
        "id": "task-17",
-       "subject": "T17: публичная тестовая страница дашборда (туннель, только чтение)",
+       "subject": "F4. Развести в blueprint потолок бюджета и потребность привлечения",
        "group": "Сборка системы",
        "category": "Задачи команды",
        "owner": null,
@@ -2880,23 +2865,23 @@
        "overdue": false,
        "source": "dsh-session",
        "created": null,
-       "createdMs": 1793459139620,
+       "createdMs": 1794166807881,
        "quote": null,
        "origin": "dsh",
        "originLabel": "лог DSH",
        "file": null,
        "ownerUnknown": true,
        "revision": 3,
-       "description": "T17 — ПУБЛИЧНАЯ ТЕСТОВАЯ СТРАНИЦА дашборда (доступ с телефона)\n\nЦЕЛЬ: пользователь хочет открыть рабочий кабинет с телефона по ссылке из интернета. Публикуем ТОЛЬКО ЧТЕНИЕ, без возможности что-то переключить, и без секретов.\n\nБЕЗОПАСНОСТЬ (критично):\n- Публикуемая копия — статические файлы, БЕЗ серверного API (никаких /api/agents/toggle), без записи в файлы.\n- В публикуемой копии не должно быть ключей, путей к .credentials.yaml, содержимого реестра с чувствительными полями. Проверь поиском по публикуемой папке: ZVENOAI|SERPER|SANDBASE|TOKEN|credentials|password — не должно быть значений (упоминания «ключа нет/есть» — это булев флаг, допустимо).\n- В шапке страницы напиши крупно: «Тестовая копия • только просмотр • данные на <дата/время>».\n\nЧТО СДЕЛАТЬ:\n1) marketing-agents/install/publish/ — папка публикации: скрипт build-publish.mjs копирует статику дашборда (dashboard/public/**) в install/publish/site/ и заменяет обращения к /api/state на встроенный файл data/state.json (или использует автономный HTML из T15, если он уже собран). Никаких POST.\n2) Туннель: скачай cloudflared для Windows в marketing-agents/install/tools/cloudflared.exe (официальный релиз GitHub cloudflare/cloudflared",
-       "descriptionFirstLine": "T17 — ПУБЛИЧНАЯ ТЕСТОВАЯ СТРАНИЦА дашборда (доступ с телефона)",
+       "description": "Владелец: finmodel2. Правишь только finmodel-blueprint.md (книги не трогай, если не потребуется пересчёт — пересчёт не нужен).\n\nПравка: в таблице баз потолков (строка ~310) стоит «бюджет 294 360 ₽/год» — это противоречит утверждённому решению: **264 000 ₽/год — потолок бюджета привлечения** (22 оплаты × 12 000 ₽), а 294 360 ₽ — это **потребность** при 24,5 оплаты × 12 000 ₽ (полная стоимость привлечения при плановом CAC 12 000 ₽), то есть выше потолка. Разведи понятия в этой строке и в соседнем тексте: потолок vs потребность, и добавь, что решение заказчика — не резать бюджет и не поднимать план до замера стоимости регистрации на первых 100 регистрациях.\n\nПроверь заодно, что во всём blueprint не осталось «294 360 ₽/год» в смысле «бюджет/план», и что блок про кэшбэк везде говорит: в MVP только зачёт в баланс, вывод деньгами — шаг 2.\n\nОтчёт ≤5 строк. Чужие файлы не править.",
+       "descriptionFirstLine": "Владелец: finmodel2. Правишь только finmodel-blueprint.md (книги не трогай, если не потребуется пересчёт — пересчёт не нужен).",
        "writeScopes": [
-        "marketing-agents/install"
+        "marketing-agents/docs/strategy-2026-11-08/finmodel-blueprint.md"
        ],
        "blockedBy": []
       },
       {
        "id": "task-18",
-       "subject": "T18: источники — реальное вкл/выкл в сборе + журнал запусков",
+       "subject": "V9. Показать эффект решения по кэшбэку в визуальном roadmap",
        "group": "Сборка системы",
        "category": "Задачи команды",
        "owner": null,
@@ -2909,25 +2894,23 @@
        "overdue": false,
        "source": "dsh-session",
        "created": null,
-       "createdMs": 1793459139624,
+       "createdMs": 1794166807886,
        "quote": null,
        "origin": "dsh",
        "originLabel": "лог DSH",
        "file": null,
        "ownerUnknown": true,
        "revision": 3,
-       "description": "T18 — Тумблеры источников должны реально влиять на сбор + журнал запусков\n\nПОЧЕМУ: пользователь просит вкладку «Источники мониторинга» с включением/выключением и статистикой. Тумблер обязан иметь последствия, иначе это картинка.\n\nКОНТРАКТ (Lead создал): marketing-agents/registry/sources.yaml — поле enabled. Скрипты сбора обязаны пропускать источники с enabled: false.\n\nЧТО СДЕЛАТЬ (write-scope: 01-competitor-watch/scripts/**, 01-competitor-watch/tests/**, 01-competitor-watch/data/**):\n1) scripts/sources_tool.py — CLI: list (таблица: id, enabled, status, last_run), enable <id>, disable <id>, status <id>.\n   - правка только своего поля в sources.yaml, атомарно (temp+rename), бэкап .bak-<timestamp>, комментарии и порядок строк сохраняются (как в мини-YAML дашборда — можно взять тот же подход, но реализуй у себя);\n   - повторный enable/disable идемпотентен; неизвестный id — понятная ошибка, код 1.\n2) scripts/log_source_run.py — добавляет запись в 01-competitor-watch/data/source-runs.jsonl:\n   {\"ts\":\"<ISO>\",\"source\":\"<id>\",\"status\":\"ok|partial|blocked|empty\",\"lots\":<N>,\"projects\":<N>,\"note\":\"...\"}\n   Требования: только добавление (append), один JSON в строке, устойчивость к параллельной ",
-       "descriptionFirstLine": "T18 — Тумблеры источников должны реально влиять на сбор + журнал запусков",
+       "description": "Владелец: visual. Правишь только roadmap-visual.html. Правка небольшая (не блокирует, но полезная для заказчика): в файле нет чисел денежного потока, поэтому на экране не видно эффекта утверждённого решения «кэшбэк только зачётом».\n\nДобавь блок «Деньги: эффект утверждённых решений» (можно рядом с метриками) с четырьмя числами и подписью «сценарные допущения, источник — finmodel.xlsx / unit-economics-cashflow.xlsx»:\n- выплаты кэшбэка деньгами за год: **0 ₽** (в MVP — только зачёт в баланс);\n- касса в конце года: **1 682 450 ₽** в MVP-режиме против **1 571 528 ₽** при выводе деньгами → эффект решения **+110 922 ₽**;\n- разрыв при ФОТ 100 000 ₽/мес: минимум **−46 681 ₽** (месяц 6), требуемое финансирование **196 681 ₽**, runway 6 мес;\n- бюджет привлечения: **потолок 264 000 ₽/год** (потребность при CAC 12 000 ₽ — 294 360 ₽, решается замером на первых 100 регистрациях).\n\nТребования файла сохраняются: автономный HTML без сети, localStorage, печать без разрывов. Отчёт ≤4 строк.",
+       "descriptionFirstLine": "Владелец: visual. Правишь только roadmap-visual.html. Правка небольшая (не блокирует, но полезная для заказчика): в файле нет чисел денежного потока, поэтому на экране не видно эффекта утверждённого решения «кэшбэк только зачётом».",
        "writeScopes": [
-        "marketing-agents/01-competitor-watch/scripts",
-        "marketing-agents/01-competitor-watch/tests",
-        "marketing-agents/01-competitor-watch/data"
+        "marketing-agents/docs/strategy-2026-11-08/roadmap-visual.html"
        ],
        "blockedBy": []
       },
       {
        "id": "task-19",
-       "subject": "T19: дашборд для Тильды — мобильная страница «Панель управления»",
+       "subject": "V10. Подтверждение закрытия замечаний §14",
        "group": "Сборка системы",
        "category": "Задачи команды",
        "owner": null,
@@ -2940,21 +2923,19 @@
        "overdue": false,
        "source": "dsh-session",
        "created": null,
-       "createdMs": 1793459691694,
+       "createdMs": 1794166851785,
        "quote": null,
        "origin": "dsh",
        "originLabel": "лог DSH",
        "file": null,
        "ownerUnknown": true,
        "revision": 3,
-       "description": "T19 — Дашборд для Тильды (мобильная «Панель управления»)\n\nЦЕЛЬ: пользователь создал в Тильде страницу «Панель управления» и хочет видеть рабочий кабинет оттуда, в первую очередь С ТЕЛЕФОНА. Тильда публична в интернете — это заменяет туннель.\n\nЧТО СДЕЛАТЬ (write-scope: marketing-agents/dashboard/tilda/**):\n1) dashboard/tilda/build-tilda.mjs — ГЕНЕРАТОР, собирает один файл dashboard/tilda/panel-tilda.html:\n   - автономный: стили и скрипты вшиты, данные вшиты как JS-объект (НЕ fetch, без сети);\n   - МОБИЛЬНЫЙ ПЕРВЫЙ: ширина 360-430 px без горизонтальной прокрутки, крупные тапы, карточки в одну колонку, таблицы -> компактные списки, график — упрощённая полоса/мини-бары;\n   - вкладки: Обзор, Агенты, Задачи, Источники, Расходы, Интеграции (те же данные, что в локальном дашборде);\n   - тумблеры НЕ пишут в файлы (нельзя со статичной страницы): показывают, что «управление доступно в локальной версии», и НЕ выглядят как рабочие;\n   - в шапке крупно: «Данные на <дата/время сборки> • только просмотр»;\n   - РАЗМЕР: цель <= 60 КБ итогового файла. Для этого собирай для Тильды ОБЛЕГЧЁННЫЙ набор данных (агрегаты + верхние строки таблиц), а не весь 178-КБ слепок; тяжёлые массивы округляй/обрезай, но",
-       "descriptionFirstLine": "T19 — Дашборд для Тильды (мобильная «Панель управления»)",
+       "description": "Цель: подтвердить, что шесть замечаний §14.3 закрыты, и дать финальный вердикт по пакету перед началом реализации.\n\nПроверить (статус + доказательство, файл:строка):\n1. **№1 (было критично) — roadmap-2-sprints.md:** старый слой снят: в шапке горизонт 18–22 недели и «Утверждено: вариант B»; нет формулировки «авторизация, биллинг, кэшбэк-кошелёк — вне объёма»; нет «двух развилок, выбрать нужно одну» и «это то, что реально планируется ниже»; «спринт 1/2» заменены на «этап 1/2/3»; риск про «8,5–10,5 чн не влезает в 4 недели» переписан под 21,0 чн; строка про тарифы говорит Starter 1 / Growth до 3 / Pro до 10.\n2. **№2–№3 — gtm-mvp-scope.md и onepager.md:** развилка сроков подана как утверждённый план; нигде нет «рекомендация / рекомендуется / выбирается заказчиком» по пяти утверждённым решениям; гибрид выплат помечен шагом 2, в MVP только зачёт в баланс.\n3. **№4 — README.md:** бюджет привлечения — потолок 264 000 ₽/год, а 294 360 ₽ названо потребностью при CAC 12 000 ₽; заголовок §3.4 больше не говорит «до пересчёта числа сценарные».\n4. **№5 — finmodel-blueprint.md:** понятия разведены (потолок 264 000 ₽ vs потребность 294 360 ₽, превышение 30 360 ₽); «294 360 ₽» нигде не назван бюджето",
+       "descriptionFirstLine": "Цель: подтвердить, что шесть замечаний §14.3 закрыты, и дать финальный вердикт по пакету перед началом реализации.",
        "writeScopes": [
-        "marketing-agents/dashboard/tilda"
+        "marketing-agents/docs/strategy-2026-11-08/verification.md"
        ],
-       "blockedBy": [
-        "task-16"
-       ]
+       "blockedBy": []
       },
       {
        "id": "task-2",
@@ -4951,7 +4932,7 @@
       },
       {
        "id": "task-8",
-       "subject": "R4b (T29): русификация остальных dshmarket lib\\*.js (19 файлов)",
+       "subject": "G2. Концепция/GTM под SaaS для маркетологов: self-service, триал 3 дня, кэшбэк Growth/Pro",
        "group": "Сборка системы",
        "category": "Задачи команды",
        "owner": "agent-1-competitor-watch",
@@ -4964,17 +4945,18 @@
        "overdue": false,
        "source": "dsh-session",
        "created": null,
-       "createdMs": 1793468967005,
+       "createdMs": 1794161639068,
        "quote": null,
        "origin": "dsh",
        "originLabel": "лог DSH",
        "file": null,
        "ownerUnknown": false,
-       "revision": 3,
-       "description": "ВЛАДЕЛЕЦ: teammate market-ru (освободился после task-2, знает контекст dshmarket). ЦЕЛЬ: закончить русификацию серверной части маркета — все пользовательские сообщения в перечисленных lib-файлах.\n\nТВОИ ФАЙЛЫ (строго эти, C:\\Users\\Артем\\.dsh\\profiles\\desktop\\node_modules\\dshmarket\\lib\\) и текущий объём CJK:\ndsh-cli.js 797, official-desktop.js 752, verify.js 529, install.js 331, recovery.js 246, backup.js 235, snapshot.js 184, presets.js 151, patch.js 119, hot.js 88, check.js 86, host-recovery.js 76, groups.js 57, trial.js 45, http.js 36, order.js 29, restart.js 15, profile.js 10, updates.js 8. Итого ~3812 CJK-символов.\nНЕ ТВОИ: routes.js и pnpm-compat.js — их ведёт market-lib-ru (task-6). client\\client.js — уже сделан тобой (task-2), больше не трогай. Остальные каталоги профиля — не твои.\n\nЧТО СДЕЛАТЬ:\n1) Бэкап КАЖДОГО правимого файла -> *.bak-ru-<timestamp> ПЕРЕД правкой; бэкапы не удалять.\n2) Перевести ВСЕ видимые пользователю сообщения: ошибки установки/обновления/удаления, предупреждения, статусы, прогресс, результаты проверок, подсказки CLI, подтверждения.\n3) НЕ переводить: служебные коды, ключи, идентификаторы пакетов, команды pnpm, поля API, пути, имена переменных окружения, ",
-       "descriptionFirstLine": "ВЛАДЕЛЕЦ: teammate market-ru (освободился после task-2, знает контекст dshmarket). ЦЕЛЬ: закончить русификацию серверной части маркета — все пользовательские сообщения в перечисленных lib-файлах.",
+       "revision": 6,
+       "description": "Владелец: gtm2. Правишь ТОЛЬКО marketing-agents/docs/strategy-2026-11-08/onepager.md и gtm-mvp-scope.md.\n\nИЗМЕНЕНИЯ ЗАКАЗЧИКА (08.11.2026) — вносишь как решение, с явными пометками там, где ты не согласен:\n1) Продукт — SaaS-платформа **для маркетологов** (агентство, фрилансер, инхаус-маркетолог), а не только для маркетинга застройщиков. Первая вертикаль — новостройки Москвы/МО (иначе нет ни данных, ни кейсов).\n2) Кабинет один — кабинет маркетолога (он же оператор и плательщик). Кабинет клиента маркетолога — отложен, подключается позже по необходимости.\n3) Self-service: маркетолог сам регистрируется в кабинете; пробный период **3 дня**; по окончании все функции замораживаются до покупки подписки.\n4) Кэшбэк с рекламных кабинетов клиентов маркетолога — только на **Growth (50 % нетто-возврата, гипотеза)** и **Pro (80 % нетто, `cashback_share = 0,8`)**; Starter — без кэшбэка. Выплата: гибрид — зачисление на баланс подписки, вывод деньгами выше 10 000 ₽ и только после поступления денег от партнёра (до 50 дней).\n5) Тарифы (v2-нейминг): Starter 5 000 (1 проект-ЖК) · Growth 15 000 (до 3) · Pro 30 000 (до 10) · Enterprise от 50 000 (вне первой волны).\n\nЧТО ИЗМЕНИТЬ:\n- §ICP: платящий — маркет",
+       "descriptionFirstLine": "Владелец: gtm2. Правишь ТОЛЬКО marketing-agents/docs/strategy-2026-11-08/onepager.md и gtm-mvp-scope.md.",
        "writeScopes": [
-        "marketing-agents/install/ru-market-lib2-report.md"
+        "marketing-agents/docs/strategy-2026-11-08/onepager.md",
+        "marketing-agents/docs/strategy-2026-11-08/gtm-mvp-scope.md"
        ],
        "blockedBy": []
       },
@@ -5010,7 +4992,7 @@
       },
       {
        "id": "task-9",
-       "subject": "T9: повторная независимая проверка фиксов D1/D2",
+       "subject": "F9-ENGINE: стабильный lot_id + url в снимке + перенос старых снимков",
        "group": "Сборка системы",
        "category": "Задачи команды",
        "owner": "agent-1-competitor-watch",
@@ -5023,21 +5005,21 @@
        "overdue": false,
        "source": "dsh-session",
        "created": null,
-       "createdMs": 1793388845820,
+       "createdMs": 1793799750569,
        "quote": null,
        "origin": "dsh",
        "originLabel": "лог DSH",
        "file": null,
        "ownerUnknown": false,
        "revision": 3,
-       "description": "T9 — повторная независимая проверка исправлений D1 и D2\n\nТы уже проверял систему в T7 (отчёт: marketing-agents\\05-verification\\verification-report.md). data-engine исправил два найденных дефекта.\n\nЧТО СДЕЛАТЬ:\n1) Взять ровно те команды воспроизведения D1 и D2 из твоего отчёта и прогнать их ЗАНОВО на текущем состоянии кода. Оба сценария должны больше не воспроизводиться.\n2) Проверить, что фикс не сломал ничего: прогнать полный набор тестов движка, дифф-арифметику на фикстурах, сборку отчёта и XLSX (достаточно повторить свои ключевые независимые проверки, не всё заново).\n3) Проверить, что исправления не внесли регресс в отчёт 2026-10-23 -> 2026-10-30: параметры, которые не должны были измениться (число изменений цен, медианы по проектам), остались прежними — либо объяснить расхождение.\n4) Убедиться, что .ps1 и .py теперь дают одинаковый результат выбора предыдущего снимка (три случая: ровно 7 дней, только ближайший, ничего нет).\n5) Убедиться, что ты снова ничего не изменил вне marketing-agents\\05-verification.\n\nРЕЗУЛЬТАТ: дописать в marketing-agents\\05-verification\\verification-report.md раздел «Повторная проверка T9» с вердиктом по каждому дефекту (исправлен / не исправлен / исправл",
-       "descriptionFirstLine": "T9 — повторная независимая проверка исправлений D1 и D2",
+       "description": "Контракт: marketing-agents/docs/f9-lot-identity-2026-11-04.md (прочитай целиком, там причины, целевая идентичность §4, переходный период §5, приёмка §6). Зона записи: 01-competitor-watch/scripts/**, 01-competitor-watch/tests/**, 01-competitor-watch/data/clients/**/snapshots/** (только с .bak).\n\nСделать:\n1. `lot_id` по ступеням §4: родной id (Циан offer_id) → нормализованный url → содержимое (без цены и без index) → сырой слепок. Формат `<префикс>-<8hex>` (n/u/c/r).\n2. Строку снимка `url` заполнять из лота (url/link/offer_url) — сейчас в collect_clients.py:133 жёстко \"\".\n3. Коллизии ключа внутри снимка не отбрасывать молча: детерминированный суффикс -2/-3 + счётчик `lot_id_collisions` и предупреждение в сводке.\n4. Переходный период по §5: пересобрать самый свежий снимок (11-04) со старым файлом в .bak, затем одноразовый перенос ключей в старых снимках (11-01…11-03) с сопоставлением по подписи содержимого с эталоном; атомарно, .bak, отчёт «сопоставлено/не сопоставлено».\n5. Тесты на инварианты §6.2 (идемпотентность, перестановка, изменение цены не меняет ключ, url в строке, коллизия с суффиксом).\n6. Обновить `01-competitor-watch/scripts/SCHEMA.md`: идентичность как в §4.\n\nПриёмка: pyt",
+       "descriptionFirstLine": "Контракт: marketing-agents/docs/f9-lot-identity-2026-11-04.md (прочитай целиком, там причины, целевая идентичность §4, переходный период §5, приёмка §6). Зона записи: 01-competitor-watch/scripts/**, 01-competitor-watch/tests/**, 01-competitor-watch/data/clients/**/snapshots/** (только с .bak).",
        "writeScopes": [
-        "marketing-agents/05-verification"
+        "marketing-agents/01-competitor-watch/scripts",
+        "marketing-agents/01-competitor-watch/tests",
+        "marketing-agents/01-competitor-watch/data/clients"
        ],
-       "blockedBy": [
-        "task-8"
-       ]
+       "blockedBy": []
       }
      ],
      "byStatus": {
@@ -5062,7 +5044,7 @@
    "registry": 3,
    "dsh": 80
   },
-  "overdue": 0,
+  "overdue": 1,
   "unassigned": 0,
   "ownerUnknown": 66,
   "inProgress": 2,

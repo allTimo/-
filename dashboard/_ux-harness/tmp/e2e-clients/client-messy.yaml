@@ -1,0 +1,8 @@
+client_id: client-messy
+name: "Кривой отступ"
+competitors:
+  - { id: ok-one, name: "Нормальный", site: "https://ok.example" }
+    - { id: nested, name: "Вложенный", site: "https://bad.example" }
+  - { id: qa-в-кривой-конфиг, name: "QA В кривой конфиг", developer: "", class: "", site: "https://messy.example/", platforms: { cian: "", avito: "", yandex_realty: "", domclick: "" }, source: "вручную", added: "2026-11-04" }
+other_key: true
+# хвостовой комментарий файла — его нельзя унести вместе с записью

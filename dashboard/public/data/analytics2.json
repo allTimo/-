@@ -1,116 +1,8 @@
 {
- "generatedAtMs": 1793565418391,
- "today": "2026-11-01",
+ "generatedAtMs": 1794594846612,
+ "today": "2026-11-13",
  "series": {
   "day": [
-   {
-    "key": "2026-08-04",
-    "revenue": 0,
-    "cost": 0,
-    "margin": 0,
-    "runs": 0,
-    "results": 0,
-    "sent": 0
-   },
-   {
-    "key": "2026-08-05",
-    "revenue": 0,
-    "cost": 0,
-    "margin": 0,
-    "runs": 0,
-    "results": 0,
-    "sent": 0
-   },
-   {
-    "key": "2026-08-06",
-    "revenue": 0,
-    "cost": 0,
-    "margin": 0,
-    "runs": 0,
-    "results": 0,
-    "sent": 0
-   },
-   {
-    "key": "2026-08-07",
-    "revenue": 0,
-    "cost": 0,
-    "margin": 0,
-    "runs": 0,
-    "results": 0,
-    "sent": 0
-   },
-   {
-    "key": "2026-08-08",
-    "revenue": 0,
-    "cost": 0,
-    "margin": 0,
-    "runs": 0,
-    "results": 0,
-    "sent": 0
-   },
-   {
-    "key": "2026-08-09",
-    "revenue": 0,
-    "cost": 0,
-    "margin": 0,
-    "runs": 0,
-    "results": 0,
-    "sent": 0
-   },
-   {
-    "key": "2026-08-10",
-    "revenue": 0,
-    "cost": 0,
-    "margin": 0,
-    "runs": 0,
-    "results": 0,
-    "sent": 0
-   },
-   {
-    "key": "2026-08-11",
-    "revenue": 0,
-    "cost": 0,
-    "margin": 0,
-    "runs": 0,
-    "results": 0,
-    "sent": 0
-   },
-   {
-    "key": "2026-08-12",
-    "revenue": 0,
-    "cost": 0,
-    "margin": 0,
-    "runs": 0,
-    "results": 0,
-    "sent": 0
-   },
-   {
-    "key": "2026-08-13",
-    "revenue": 0,
-    "cost": 0,
-    "margin": 0,
-    "runs": 0,
-    "results": 0,
-    "sent": 0
-   },
-   {
-    "key": "2026-08-14",
-    "revenue": 0,
-    "cost": 0,
-    "margin": 0,
-    "runs": 0,
-    "results": 0,
-    "sent": 0
-   },
-   {
-    "key": "2026-08-15",
-    "revenue": 0,
-    "cost": 0,
-    "margin": 0,
-    "runs": 0,
-    "results": 0,
-    "sent": 0
-   },
    {
     "key": "2026-08-16",
     "revenue": 0,
@@ -812,27 +704,117 @@
     "runs": 10,
     "results": 3,
     "sent": 0
+   },
+   {
+    "key": "2026-11-02",
+    "revenue": 853.33,
+    "cost": 2.2902,
+    "margin": 851.04,
+    "runs": 2,
+    "results": 2,
+    "sent": 0
+   },
+   {
+    "key": "2026-11-03",
+    "revenue": 853.33,
+    "cost": 7.6224,
+    "margin": 845.71,
+    "runs": 8,
+    "results": 8,
+    "sent": 0
+   },
+   {
+    "key": "2026-11-04",
+    "revenue": 853.33,
+    "cost": 2.5085,
+    "margin": 850.82,
+    "runs": 3,
+    "results": 2,
+    "sent": 0
+   },
+   {
+    "key": "2026-11-05",
+    "revenue": 853.33,
+    "cost": 1.3467,
+    "margin": 851.98,
+    "runs": 2,
+    "results": 2,
+    "sent": 2
+   },
+   {
+    "key": "2026-11-06",
+    "revenue": 853.33,
+    "cost": 0,
+    "margin": 853.33,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-11-07",
+    "revenue": 853.33,
+    "cost": 0,
+    "margin": 853.33,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-11-08",
+    "revenue": 853.33,
+    "cost": 0,
+    "margin": 853.33,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-11-09",
+    "revenue": 853.33,
+    "cost": 0,
+    "margin": 853.33,
+    "runs": 4,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-11-10",
+    "revenue": 853.33,
+    "cost": 0,
+    "margin": 853.33,
+    "runs": 21,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-11-11",
+    "revenue": 853.33,
+    "cost": 0,
+    "margin": 853.33,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
+   },
+   {
+    "key": "2026-11-12",
+    "revenue": 853.33,
+    "cost": 1.0827,
+    "margin": 852.25,
+    "runs": 2,
+    "results": 2,
+    "sent": 2
+   },
+   {
+    "key": "2026-11-13",
+    "revenue": 853.33,
+    "cost": 0,
+    "margin": 853.33,
+    "runs": 0,
+    "results": 0,
+    "sent": 0
    }
   ],
   "week": [
-   {
-    "key": "2026-W19",
-    "revenue": 0,
-    "cost": 0,
-    "margin": 0,
-    "runs": 0,
-    "results": 0,
-    "sent": 0
-   },
-   {
-    "key": "2026-W20",
-    "revenue": 0,
-    "cost": 0,
-    "margin": 0,
-    "runs": 0,
-    "results": 0,
-    "sent": 0
-   },
    {
     "key": "2026-W21",
     "revenue": 0,
@@ -1048,6 +1030,24 @@
     "runs": 12,
     "results": 5,
     "sent": 1
+   },
+   {
+    "key": "2026-W45",
+    "revenue": 5973.31,
+    "cost": 13.7678,
+    "margin": 5959.54,
+    "runs": 15,
+    "results": 14,
+    "sent": 2
+   },
+   {
+    "key": "2026-W46",
+    "revenue": 4266.65,
+    "cost": 1.0827,
+    "margin": 4265.57,
+    "runs": 27,
+    "results": 2,
+    "sent": 2
    }
   ],
   "month": [
@@ -1107,30 +1107,16 @@
    },
    {
     "key": "2026-11",
-    "revenue": 950,
-    "cost": 2.1997999999999998,
-    "margin": 947.8,
-    "runs": 10,
-    "results": 3,
-    "sent": 0
+    "revenue": 11189.96,
+    "cost": 17.0503,
+    "margin": 11172.91,
+    "runs": 52,
+    "results": 19,
+    "sent": 4
    }
   ]
  },
  "bars": [
-  {
-   "week": "2026-W19",
-   "revenue": 0,
-   "cost": 0,
-   "margin": 0,
-   "runs": 0
-  },
-  {
-   "week": "2026-W20",
-   "revenue": 0,
-   "cost": 0,
-   "margin": 0,
-   "runs": 0
-  },
   {
    "week": "2026-W21",
    "revenue": 0,
@@ -1298,6 +1284,20 @@
    "cost": 242,
    "margin": 11618,
    "runs": 12
+  },
+  {
+   "week": "2026-W45",
+   "revenue": 17833,
+   "cost": 256,
+   "margin": 17577,
+   "runs": 15
+  },
+  {
+   "week": "2026-W46",
+   "revenue": 22100,
+   "cost": 257,
+   "margin": 21843,
+   "runs": 27
   }
  ],
  "byService": [
@@ -1305,7 +1305,7 @@
    "id": "competitor-watch",
    "name": "Мониторинг конкурентов и цен",
    "value": 6800,
-   "runs": 12,
+   "runs": 47,
    "margin": 2780,
    "color": null,
    "share": 0.23859649122807017
@@ -1334,7 +1334,7 @@
    "id": "client-granel",
    "name": "СЗ «Гранель» — Селигер Сити",
    "value": 19700,
-   "runs": 1,
+   "runs": 9,
    "status": "active",
    "share": 0.6912280701754386
   },
@@ -1342,7 +1342,7 @@
    "id": "client-svet",
    "name": "ЖК «Свет» (Dominanta)",
    "value": 8800,
-   "runs": 4,
+   "runs": 12,
    "status": "active",
    "share": 0.3087719298245614
   }
@@ -1350,10 +1350,10 @@
  "serviceTotal": 28500,
  "clientTotal": 28500,
  "funnel": {
-  "runs": 12,
-  "results": 6,
+  "runs": 54,
+  "results": 22,
   "sent": 2,
-  "pending": 3
+  "pending": 5
  },
  "heatmap": [
   [
@@ -1376,34 +1376,8 @@
    0,
    0,
    0,
-   0,
-   0,
-   0,
-   0,
-   0
-  ],
-  [
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
+   2,
+   4,
    0,
    0,
    0
@@ -1430,6 +1404,32 @@
    0,
    0,
    0,
+   8,
+   13,
+   0
+  ],
+  [
+   8,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   3,
+   0,
+   0,
+   0,
+   0,
+   0,
    0,
    0,
    0
@@ -1454,9 +1454,9 @@
    0,
    0,
    0,
+   2,
    0,
-   0,
-   0,
+   2,
    0,
    0
   ],
@@ -1572,8 +1572,13 @@
   "agent": [
    {
     "key": "agent-1-competitor-watch",
-    "count": 12,
-    "value": 242.19979999999998
+    "count": 47,
+    "value": 257.0503
+   },
+   {
+    "key": "agent-2-direct-semantics",
+    "count": 7,
+    "value": 0
    }
   ],
   "source": [
@@ -1611,16 +1616,31 @@
     "key": "Домклик",
     "count": 1,
     "value": 0
+   },
+   {
+    "key": "Авито через ReefAPI (разовая глубокая проверка)",
+    "count": 1,
+    "value": 0
    }
   ],
   "channel": [
    {
-    "key": "Telegram",
-    "count": 4,
+    "key": "Почта",
+    "count": 13,
     "value": 0
    },
    {
-    "key": "Почта",
+    "key": "Telegram",
+    "count": 6,
+    "value": 0
+   },
+   {
+    "key": "Скачивание",
+    "count": 1,
+    "value": 0
+   },
+   {
+    "key": "WhatsApp",
     "count": 1,
     "value": 0
    },
@@ -1664,7 +1684,12 @@
   "runStatus": [
    {
     "key": "успешно",
-    "count": 12,
+    "count": 51,
+    "value": 0
+   },
+   {
+    "key": "ошибка",
+    "count": 3,
     "value": 0
    }
   ]
@@ -1678,19 +1703,19 @@
   },
   "cost": {
    "label": "Себестоимость прогонов",
-   "value": 242.19979999999998,
+   "value": 257.0503,
    "unit": "₽",
    "hint": "сумма себестоимости всех записей в runs.jsonl"
   },
   "margin": {
    "label": "Маржа",
-   "value": 28257.8002,
+   "value": 28242.9497,
    "unit": "₽",
    "hint": "доход − себестоимость"
   },
   "marginPct": {
    "label": "Маржинальность",
-   "value": 0.9915017614035089,
+   "value": 0.9909806912280702,
    "unit": "%",
    "hint": "маржа / доход"
   },
@@ -1702,61 +1727,61 @@
   },
   "runsTotal": {
    "label": "Прогонов всего",
-   "value": 12,
+   "value": 54,
    "unit": "",
    "hint": "записи в registry/runs.jsonl"
   },
   "successRate": {
    "label": "Успешность прогонов",
-   "value": 1,
+   "value": 0.9444444444444444,
    "unit": "%",
    "hint": "успешные / все прогоны"
   },
   "avgRunSec": {
    "label": "Среднее время прогона",
-   "value": 6.812,
+   "value": 21.514,
    "unit": "с",
    "hint": "среднее по колонке duration_ms"
   },
   "tokensTotal": {
    "label": "Токенов израсходовано",
-   "value": 1226948917,
+   "value": 2723168957,
    "unit": "",
    "hint": "все токены из логов DSH, включая чтение кэша"
   },
   "tokensIn": {
    "label": "Токенов на вход",
-   "value": 38887036,
+   "value": 91760382,
    "unit": "",
    "hint": "входные токены"
   },
   "tokensOut": {
    "label": "Токенов на выход",
-   "value": 5785828,
+   "value": 14096999,
    "unit": "",
    "hint": "выходные токены"
   },
   "tokensCache": {
    "label": "Токенов из кэша",
-   "value": 1182128187,
+   "value": 2617163710,
    "unit": "",
    "hint": "чтение кэша: дешевле обычных"
   },
   "costPanel": {
    "label": "Расход панели",
-   "value": 3333.39,
+   "value": 7452.25,
    "unit": "₽",
    "hint": "расход моделей по логам сессий"
   },
   "costPerRun": {
    "label": "Стоимость одного прогона",
-   "value": 20.183316666666666,
+   "value": 4.7601907407407404,
    "unit": "₽",
    "hint": "себестоимость / число прогонов"
   },
   "results": {
    "label": "Результатов готово",
-   "value": 6,
+   "value": 22,
    "unit": "",
    "hint": "записи в registry/results.yaml"
   },
@@ -1768,13 +1793,13 @@
   },
   "resultsPending": {
    "label": "Ожидает отправки",
-   "value": 3,
+   "value": 5,
    "unit": "",
    "hint": "результаты со статусом «ожидает»"
   },
   "manualShare": {
    "label": "Доля ручной отправки",
-   "value": 0.6666666666666666,
+   "value": 0.9090909090909091,
    "unit": "%",
    "hint": "не отправлено автоматически / все результаты"
   },
@@ -1804,7 +1829,7 @@
   },
   "subsExpiring": {
    "label": "Подписки истекают",
-   "value": 1,
+   "value": 4,
    "unit": "",
    "hint": "до конца ≤ 7 дней"
   },
@@ -1840,7 +1865,7 @@
   },
   "tasksOverdue": {
    "label": "Задач просрочено",
-   "value": 0,
+   "value": 1,
    "unit": "",
    "hint": "срок прошёл, задача не закрыта"
   },
@@ -1858,26 +1883,26 @@
   },
   "sourcesSuccess": {
    "label": "Успешность сбора",
-   "value": 0.42857142857142855,
+   "value": 0.375,
    "unit": "%",
    "hint": "работающие источники / все"
   }
  },
  "spark": [
-  423.33,
-  620,
-  620,
-  620,
-  620,
-  620,
-  620,
-  620,
-  620,
-  620,
-  620,
-  620,
   380,
-  947.8002
+  947.8002,
+  851.0398,
+  845.7076000000001,
+  850.8215,
+  851.9833,
+  853.33,
+  853.33,
+  853.33,
+  853.33,
+  853.33,
+  853.33,
+  852.2473,
+  853.33
  ],
  "tops": {
   "servicesByMargin": [
@@ -1905,13 +1930,13 @@
     "name": "СЗ «Гранель» — Селигер Сити",
     "value": 19700,
     "unit": "₽",
-    "extra": "активен · прогонов 1"
+    "extra": "активен · прогонов 9"
    },
    {
     "name": "ЖК «Свет» (Dominanta)",
     "value": 8800,
     "unit": "₽",
-    "extra": "активен · прогонов 4"
+    "extra": "активен · прогонов 12"
    },
    {
     "name": "Пример: убыточный клиент",
@@ -1961,7 +1986,13 @@
   "modelsByCost": [
    {
     "name": "deepseek/deepseek-v4.1-flash",
-    "value": 3315.1,
+    "value": 7399.22,
+    "unit": "₽",
+    "extra": "цена неизвестна"
+   },
+   {
+    "name": "google/gemini-3-flash-preview",
+    "value": 34.74,
     "unit": "₽",
     "extra": "цена неизвестна"
    },

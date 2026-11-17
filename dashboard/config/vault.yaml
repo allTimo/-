@@ -1,0 +1,10 @@
+# Куда панель выгружает состояние. Читает dashboard/collector/export-vault.mjs.
+#
+# Пишется ТОЛЬКО в <vault_path>/<domains_dir>/<Домен>/<export_subdir>/.
+# Заметки, созданные вручную (вне папки выгрузки), не читаются и не перезаписываются.
+# Секреты и персональные данные не экспортируются.
+version: 1
+vault_path: "C:\\Users\\Артем\\Documents\\Obsidian Vault"
+domains_dir: "20-Домены"
+export_subdir: "выгрузка-панели"
+enabled: true

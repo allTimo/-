@@ -1,5 +1,5 @@
 {
- "generatedAtMs": 1793565414688,
+ "generatedAtMs": 1794594842350,
  "funnel": {
   "agents": 4,
   "agentsEnabled": 1,
@@ -7,18 +7,18 @@
   "tasksInProgress": 2,
   "tasksDone": 65,
   "tasksUnassigned": 0,
-  "sources": 7,
+  "sources": 8,
   "sourcesEnabled": 6,
   "lots": 304,
-  "tokens": 1226948917,
-  "rub": 3333.39,
+  "tokens": 2723168957,
+  "rub": 7452.25,
   "rubComplete": false
  },
  "agents": [
   {
    "id": "agent-1-competitor-watch",
    "name": "Агент 1 — Мониторинг конкурентов",
-   "enabled": true,
+   "enabled": false,
    "status": "active",
    "model": "deepseek/deepseek-v4.1-flash",
    "groups": [
@@ -38,22 +38,27 @@
     }
    },
    "tokens": {
-    "inputTokens": 14725319,
-    "outputTokens": 2015171,
-    "cacheReadTokens": 459730112,
+    "inputTokens": 66625166,
+    "outputTokens": 8240230,
+    "cacheReadTokens": 1722825392,
     "cacheWriteTokens": 0,
-    "totalTokens": 476470602
+    "totalTokens": 1797690788
    },
-   "rub": 1284.94,
+   "rub": 4864.09,
    "rubComplete": true,
-   "usd": 15.9506,
-   "sessions": 11,
-   "lastActivityAt": 1793552032070,
+   "usd": 60.3806,
+   "sessions": 66,
+   "lastActivityAt": 1794168364279,
    "linkedMembers": [
+    "verifier",
+    "verifier",
+    "verifier",
+    "verifier",
+    "verifier",
+    "verifier",
+    "verifier",
+    "verifier",
     "data-engine",
-    "verifier",
-    "verifier",
-    "verifier",
     "agent1-workspace"
    ],
    "sources": [
@@ -69,8 +74,8 @@
   {
    "id": "agent-2-direct-semantics",
    "name": "Агент 2 — Семантика и кампании Яндекс Директа",
-   "enabled": false,
-   "status": "planned",
+   "enabled": true,
+   "status": "active",
    "model": "deepseek/deepseek-v4-pro",
    "groups": [
     "Директ",
@@ -195,10 +200,10 @@
    "agents": [
     "agent-1-competitor-watch"
    ],
-   "agentsTokens": 476470602,
-   "agentsRub": 1284.94,
+   "agentsTokens": 1797690788,
+   "agentsRub": 4864.09,
    "agentsRubComplete": true,
-   "costPerLot": 85.66266666666667
+   "costPerLot": 324.2726666666667
   },
   {
    "id": "partner-feeds",
@@ -245,10 +250,10 @@
    "agents": [
     "agent-1-competitor-watch"
    ],
-   "agentsTokens": 476470602,
-   "agentsRub": 1284.94,
+   "agentsTokens": 1797690788,
+   "agentsRub": 4864.09,
    "agentsRubComplete": true,
-   "costPerLot": 4.446159169550173
+   "costPerLot": 16.83076124567474
   },
   {
    "id": "avito",
@@ -263,8 +268,8 @@
    "agents": [
     "agent-1-competitor-watch"
    ],
-   "agentsTokens": 476470602,
-   "agentsRub": 1284.94,
+   "agentsTokens": 1797690788,
+   "agentsRub": 4864.09,
    "agentsRubComplete": true,
    "costPerLot": null
   },
@@ -299,6 +304,22 @@
    "agentsRub": null,
    "agentsRubComplete": true,
    "costPerLot": null
+  },
+  {
+   "id": "reefapi",
+   "name": "Авито через ReefAPI (разовая глубокая проверка)",
+   "enabled": false,
+   "kind": "http",
+   "status": "paused",
+   "lots": 0,
+   "snapshots": 0,
+   "share": 0,
+   "lastDate": null,
+   "agents": [],
+   "agentsTokens": 0,
+   "agentsRub": null,
+   "agentsRubComplete": true,
+   "costPerLot": null
   }
  ],
  "weeks": [
@@ -314,11 +335,29 @@
   {
    "week": "2026-W44",
    "lots": 295,
-   "tokens": 1226948917,
-   "rub": 3333.38,
+   "tokens": 1255033457,
+   "rub": 3408.81,
    "rubComplete": true,
-   "tasksCreated": 83,
-   "tasksDone": 65
+   "tasksCreated": 70,
+   "tasksDone": 52
+  },
+  {
+   "week": "2026-W45",
+   "lots": 0,
+   "tokens": 1318828068,
+   "rub": 3603.3399999999997,
+   "rubComplete": true,
+   "tasksCreated": 13,
+   "tasksDone": 13
+  },
+  {
+   "week": "2026-W46",
+   "lots": 0,
+   "tokens": 149307432,
+   "rub": 440.11,
+   "rubComplete": true,
+   "tasksCreated": 0,
+   "tasksDone": 0
   }
  ],
  "days": [
@@ -339,13 +378,68 @@
   },
   {
    "d": "2026-10-31",
-   "tokens": 562739058,
-   "rub": 1523.43
+   "tokens": 590823598,
+   "rub": 1598.86
   },
   {
    "d": "2026-11-01",
    "tokens": 558732929,
    "rub": 1497.6
+  },
+  {
+   "d": "2026-11-02",
+   "tokens": 37290375,
+   "rub": 105.54
+  },
+  {
+   "d": "2026-11-03",
+   "tokens": 229253129,
+   "rub": 626.24
+  },
+  {
+   "d": "2026-11-04",
+   "tokens": 616045199,
+   "rub": 1662.36
+  },
+  {
+   "d": "2026-11-05",
+   "tokens": 11299027,
+   "rub": 31.47
+  },
+  {
+   "d": "2026-11-06",
+   "tokens": 12544041,
+   "rub": 35.17
+  },
+  {
+   "d": "2026-11-08",
+   "tokens": 412396297,
+   "rub": 1142.56
+  },
+  {
+   "d": "2026-11-09",
+   "tokens": 24315467,
+   "rub": 67.04
+  },
+  {
+   "d": "2026-11-10",
+   "tokens": 58642828,
+   "rub": 161.37
+  },
+  {
+   "d": "2026-11-11",
+   "tokens": 38959108,
+   "rub": 104.1
+  },
+  {
+   "d": "2026-11-12",
+   "tokens": 17948162,
+   "rub": 47.31
+  },
+  {
+   "d": "2026-11-13",
+   "tokens": 9441867,
+   "rub": 60.29
   }
  ],
  "projects": [
@@ -361,13 +455,13 @@
     "inProgress": 0
    },
    "tokens": {
-    "inputTokens": 8445841,
-    "outputTokens": 1426117,
-    "cacheReadTokens": 314509376,
+    "inputTokens": 12970985,
+    "outputTokens": 2020170,
+    "cacheReadTokens": 427014806,
     "cacheWriteTokens": 0,
-    "totalTokens": 324381334
+    "totalTokens": 442005961
    },
-   "rub": 876.16,
+   "rub": 1195.81,
    "rubComplete": true
   }
  ],

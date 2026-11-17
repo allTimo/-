@@ -1,0 +1,595 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-04",
+  "generated_at": "2026-11-04T16:49:50",
+  "client_id": "client-granel",
+  "toggles": {
+    "enabled": true,
+    "lots_all_on_sale": true,
+    "price_dynamics": true,
+    "promos": true,
+    "developers_sites": true,
+    "dedup_promos": true,
+    "new_promos_only": true,
+    "forecast": true
+  },
+  "metrics": {
+    "competitorsInAnalysis": 8,
+    "competitorsWithData": 8,
+    "lotsAnalyzed": 229,
+    "cheapestLotRub": 1500000
+  },
+  "truth": {
+    "competitors": 8,
+    "withData": 8,
+    "withoutSource": 0,
+    "list": [
+      {
+        "id": "свет",
+        "name": "Свет",
+        "developer": "Dominanta",
+        "klass": "бизнес",
+        "site": "https://svetdom.ru/",
+        "platforms": {
+          "cian": "https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-svet-5449798-ot-zastroyschika-OTZ/"
+        },
+        "hasSource": true,
+        "hasData": true,
+        "source": "",
+        "status": "в анализе"
+      },
+      {
+        "id": "дмитровское-небо",
+        "name": "Дмитровское небо",
+        "developer": "Группа ЛСР",
+        "klass": "бизнес",
+        "site": "",
+        "platforms": {
+          "cian": "https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-dmitrovskoe-nebo-4051330-ot-zastroyschika-OTZ/"
+        },
+        "hasSource": true,
+        "hasData": true,
+        "source": "",
+        "status": "в анализе"
+      },
+      {
+        "id": "онежский-вал",
+        "name": "Онежский вал",
+        "developer": "ПИК",
+        "klass": "бизнес",
+        "site": "https://www.pik.ru/",
+        "platforms": {
+          "cian": "https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-onezhskiy-val-5722062-ot-zastroyschika-OTZ/"
+        },
+        "hasSource": true,
+        "hasData": true,
+        "source": "",
+        "status": "в анализе"
+      },
+      {
+        "id": "нарвин",
+        "name": "Нарвин",
+        "developer": "ПИК",
+        "klass": "бизнес",
+        "site": "https://www.pik.ru/",
+        "platforms": {
+          "cian": "https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-narvin-5686240-ot-zastroyschika-OTZ/"
+        },
+        "hasSource": true,
+        "hasData": true,
+        "source": "",
+        "status": "в анализе"
+      },
+      {
+        "id": "бусиновский-парк",
+        "name": "Бусиновский парк",
+        "developer": "ПИК",
+        "klass": "бизнес",
+        "site": "https://www.pik.ru/",
+        "platforms": {
+          "cian": "https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-businovskiy-park-2159741-ot-zastroyschika-OTZ/"
+        },
+        "hasSource": true,
+        "hasData": true,
+        "source": "",
+        "status": "в анализе"
+      },
+      {
+        "id": "акценты",
+        "name": "Акценты",
+        "developer": "Plus Development",
+        "klass": "бизнес",
+        "site": "https://accenty.ru/",
+        "platforms": {
+          "cian": "https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-akcenty-5698426-ot-zastroyschika-OTZ/",
+          "yandex_realty": "https://realty.yandex.ru/moskva_i_moskovskaya_oblast/kupit/novostrojka/akcenty-3991148/"
+        },
+        "hasSource": true,
+        "hasData": true,
+        "source": "",
+        "status": "в анализе"
+      },
+      {
+        "id": "кинетик-резиденции-на-дмитровском",
+        "name": "Кинетик. Резиденции на Дмитровском",
+        "developer": "UDS",
+        "klass": "бизнес",
+        "site": "",
+        "platforms": {
+          "cian": "https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-kinetik-rezidencii-na-dmitrovskom-5778933-ot-zastroyschika-OTZ/"
+        },
+        "hasSource": true,
+        "hasData": true,
+        "source": "",
+        "status": "в анализе"
+      },
+      {
+        "id": "михалковский",
+        "name": "Михалковский",
+        "developer": "РГ-Девелопмент",
+        "klass": "бизнес",
+        "site": "https://rg-dev.ru/novostroyki/mihalkovskij/",
+        "platforms": {
+          "cian": "https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-mihalkovskiy-3206223-ot-zastroyschika-OTZ/",
+          "yandex_realty": "https://realty.yandex.ru/moskva_i_moskovskaya_oblast/kupit/novostrojka/mihalkovskij-2586475/"
+        },
+        "hasSource": true,
+        "hasData": true,
+        "source": "",
+        "status": "в анализе"
+      }
+    ]
+  },
+  "by_competitor": [
+    {
+      "project": "Свет",
+      "developer": "Dominanta",
+      "lots_on_sale": 28,
+      "price_per_m2": {
+        "min": 396051,
+        "median": 493300,
+        "max": 720207
+      },
+      "cheapest_lot_rub": 19446667,
+      "sources": [
+        "cian"
+      ],
+      "reliable": true
+    },
+    {
+      "project": "Акценты",
+      "developer": "Plus Development",
+      "lots_on_sale": 32,
+      "price_per_m2": {
+        "min": 170455,
+        "median": 472283,
+        "max": 733333
+      },
+      "cheapest_lot_rub": 15000000,
+      "sources": [
+        "cian",
+        "yandex_realty"
+      ],
+      "reliable": true
+    },
+    {
+      "project": "Кинетик. Резиденции на Дмитровском",
+      "developer": "UDS",
+      "lots_on_sale": 25,
+      "price_per_m2": {
+        "min": 475594,
+        "median": 518121,
+        "max": 616087
+      },
+      "cheapest_lot_rub": 16740909,
+      "sources": [
+        "cian"
+      ],
+      "reliable": true
+    },
+    {
+      "project": "Дмитровское небо",
+      "developer": "Группа ЛСР",
+      "lots_on_sale": 28,
+      "price_per_m2": {
+        "min": 412356,
+        "median": 452106,
+        "max": 743394
+      },
+      "cheapest_lot_rub": 15043535,
+      "sources": [
+        "cian"
+      ],
+      "reliable": true
+    },
+    {
+      "project": "Бусиновский парк",
+      "developer": "ПИК",
+      "lots_on_sale": 28,
+      "price_per_m2": {
+        "min": 327561,
+        "median": 454460,
+        "max": 743300
+      },
+      "cheapest_lot_rub": 14866000,
+      "sources": [
+        "cian"
+      ],
+      "reliable": true
+    },
+    {
+      "project": "Нарвин",
+      "developer": "ПИК",
+      "lots_on_sale": 28,
+      "price_per_m2": {
+        "min": 403986,
+        "median": 492574,
+        "max": 740466
+      },
+      "cheapest_lot_rub": 14142900,
+      "sources": [
+        "cian"
+      ],
+      "reliable": true
+    },
+    {
+      "project": "Онежский вал",
+      "developer": "ПИК",
+      "lots_on_sale": 28,
+      "price_per_m2": {
+        "min": 431300,
+        "median": 524750,
+        "max": 595500
+      },
+      "cheapest_lot_rub": 16279578,
+      "sources": [
+        "cian"
+      ],
+      "reliable": true
+    },
+    {
+      "project": "Михалковский",
+      "developer": "РГ-Девелопмент",
+      "lots_on_sale": 32,
+      "price_per_m2": {
+        "min": 425001,
+        "median": 443584,
+        "max": 532213
+      },
+      "cheapest_lot_rub": 1500000,
+      "sources": [
+        "cian",
+        "yandex_realty"
+      ],
+      "reliable": true
+    }
+  ],
+  "by_source": [
+    {
+      "source": "cian",
+      "lots_on_sale": 221,
+      "median_price_per_m2": 488851,
+      "min": 327561,
+      "max": 743394
+    },
+    {
+      "source": "yandex_realty",
+      "lots_on_sale": 8,
+      "median_price_per_m2": 458171,
+      "min": 170455,
+      "max": 532213
+    }
+  ],
+  "dynamics": [
+    {
+      "project": "Свет",
+      "lots_new": 5,
+      "lots_gone": 5,
+      "median_delta_pct": 0.14,
+      "period": {
+        "prev": "2026-11-03",
+        "curr": "2026-11-04"
+      }
+    },
+    {
+      "project": "Акценты",
+      "lots_new": 2,
+      "lots_gone": 2,
+      "median_delta_pct": 0.0,
+      "period": {
+        "prev": "2026-11-03",
+        "curr": "2026-11-04"
+      }
+    },
+    {
+      "project": "Кинетик. Резиденции на Дмитровском",
+      "lots_new": 2,
+      "lots_gone": 2,
+      "median_delta_pct": 0.09,
+      "period": {
+        "prev": "2026-11-03",
+        "curr": "2026-11-04"
+      }
+    },
+    {
+      "project": "Дмитровское небо",
+      "lots_new": 4,
+      "lots_gone": 4,
+      "median_delta_pct": -6.24,
+      "period": {
+        "prev": "2026-11-03",
+        "curr": "2026-11-04"
+      }
+    },
+    {
+      "project": "Бусиновский парк",
+      "lots_new": 2,
+      "lots_gone": 2,
+      "median_delta_pct": 0.0,
+      "period": {
+        "prev": "2026-11-03",
+        "curr": "2026-11-04"
+      }
+    },
+    {
+      "project": "Нарвин",
+      "lots_new": 1,
+      "lots_gone": 1,
+      "median_delta_pct": 0.0,
+      "period": {
+        "prev": "2026-11-03",
+        "curr": "2026-11-04"
+      }
+    },
+    {
+      "project": "Онежский вал",
+      "lots_new": 3,
+      "lots_gone": 3,
+      "median_delta_pct": 0.0,
+      "period": {
+        "prev": "2026-11-03",
+        "curr": "2026-11-04"
+      }
+    },
+    {
+      "project": "Михалковский",
+      "lots_new": 4,
+      "lots_gone": 4,
+      "median_delta_pct": 0.09,
+      "period": {
+        "prev": "2026-11-03",
+        "curr": "2026-11-04"
+      }
+    }
+  ],
+  "promos_new": [],
+  "promos_known_count": 8,
+  "forecast": [
+    {
+      "metric": "median_price_per_m2",
+      "method": "trend-linear",
+      "points": 3,
+      "weeks": 4,
+      "values": [
+        {
+          "week": "2026-11-11",
+          "value": 472283
+        },
+        {
+          "week": "2026-11-18",
+          "value": 472283
+        },
+        {
+          "week": "2026-11-25",
+          "value": 472283
+        },
+        {
+          "week": "2026-12-02",
+          "value": 472283
+        }
+      ],
+      "estimate": true,
+      "project": "Акценты"
+    },
+    {
+      "metric": "median_price_per_m2",
+      "method": "trend-linear",
+      "points": 3,
+      "weeks": 4,
+      "values": [
+        {
+          "week": "2026-11-11",
+          "value": 462147
+        },
+        {
+          "week": "2026-11-18",
+          "value": 467913
+        },
+        {
+          "week": "2026-11-25",
+          "value": 473678
+        },
+        {
+          "week": "2026-12-02",
+          "value": 479444
+        }
+      ],
+      "estimate": true,
+      "project": "Бусиновский парк"
+    },
+    {
+      "metric": "median_price_per_m2",
+      "method": "trend-linear",
+      "points": 3,
+      "weeks": 4,
+      "values": [
+        {
+          "week": "2026-11-11",
+          "value": 439464
+        },
+        {
+          "week": "2026-11-18",
+          "value": 420500
+        },
+        {
+          "week": "2026-11-25",
+          "value": 401537
+        },
+        {
+          "week": "2026-12-02",
+          "value": 382573
+        }
+      ],
+      "estimate": true,
+      "project": "Дмитровское небо"
+    },
+    {
+      "metric": "median_price_per_m2",
+      "method": "trend-linear",
+      "points": 3,
+      "weeks": 4,
+      "values": [
+        {
+          "week": "2026-11-11",
+          "value": 517973
+        },
+        {
+          "week": "2026-11-18",
+          "value": 517973
+        },
+        {
+          "week": "2026-11-25",
+          "value": 517973
+        },
+        {
+          "week": "2026-12-02",
+          "value": 517973
+        }
+      ],
+      "estimate": true,
+      "project": "Кинетик. Резиденции на Дмитровском"
+    },
+    {
+      "metric": "median_price_per_m2",
+      "method": "trend-linear",
+      "points": 3,
+      "weeks": 4,
+      "values": [
+        {
+          "week": "2026-11-11",
+          "value": 1756909
+        },
+        {
+          "week": "2026-11-18",
+          "value": 2010538
+        },
+        {
+          "week": "2026-11-25",
+          "value": 2264168
+        },
+        {
+          "week": "2026-12-02",
+          "value": 2517798
+        }
+      ],
+      "estimate": true,
+      "project": "Михалковский"
+    },
+    {
+      "metric": "median_price_per_m2",
+      "method": "trend-linear",
+      "points": 3,
+      "weeks": 4,
+      "values": [
+        {
+          "week": "2026-11-11",
+          "value": 487390
+        },
+        {
+          "week": "2026-11-18",
+          "value": 483502
+        },
+        {
+          "week": "2026-11-25",
+          "value": 479614
+        },
+        {
+          "week": "2026-12-02",
+          "value": 475726
+        }
+      ],
+      "estimate": true,
+      "project": "Нарвин"
+    },
+    {
+      "metric": "median_price_per_m2",
+      "method": "trend-linear",
+      "points": 3,
+      "weeks": 4,
+      "values": [
+        {
+          "week": "2026-11-11",
+          "value": 527413
+        },
+        {
+          "week": "2026-11-18",
+          "value": 529411
+        },
+        {
+          "week": "2026-11-25",
+          "value": 531408
+        },
+        {
+          "week": "2026-12-02",
+          "value": 533406
+        }
+      ],
+      "estimate": true,
+      "project": "Онежский вал"
+    },
+    {
+      "metric": "median_price_per_m2",
+      "method": "trend-linear",
+      "points": 3,
+      "weeks": 4,
+      "values": [
+        {
+          "week": "2026-11-11",
+          "value": 496493
+        },
+        {
+          "week": "2026-11-18",
+          "value": 499057
+        },
+        {
+          "week": "2026-11-25",
+          "value": 501622
+        },
+        {
+          "week": "2026-12-02",
+          "value": 504186
+        }
+      ],
+      "estimate": true,
+      "project": "Свет"
+    }
+  ],
+  "email": [],
+  "data_status": [
+    {
+      "source": "outlier_guard",
+      "status": "unreliable",
+      "reason": "одинаковая цена 70 000 000 ₽ на 24 лотах (>= 5) — артефакт парсинга; ₽/м² ниже правдоподобной границы 150 000: 1 лотов; ₽/м² выше правдоподобной границы 800 000: 23 лотов"
+    },
+    {
+      "source": "by_source:cian",
+      "status": "unreliable",
+      "reason": "цены источника «cian» посчитаны без аномальных лотов: одинаковая цена 70 000 000 ₽ на 24 лотах (>= 5) — артефакт парсинга; ₽/м² выше правдоподобной границы 800 000: 23 лотов"
+    },
+    {
+      "source": "by_source:yandex_realty",
+      "status": "unreliable",
+      "reason": "цены источника «yandex_realty» посчитаны без аномальных лотов: ₽/м² ниже правдоподобной границы 150 000: 1 лотов"
+    }
+  ]
+}

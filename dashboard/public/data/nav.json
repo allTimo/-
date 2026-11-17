@@ -19,37 +19,23 @@
      "counterKind": null
     },
     {
-     "id": "subscriptions",
-     "label": "Подписки и тарифы",
-     "icon": "card",
-     "counter": "overdue",
-     "counterKind": "bad"
-    },
-    {
-     "id": "services",
-     "label": "Услуги",
-     "icon": "spark",
+     "id": "projects",
+     "label": "Объекты и ЖК",
+     "icon": "folder",
      "counter": null,
      "counterKind": null
-    },
-    {
-     "id": "ads",
-     "label": "Реклама и кэшбэк",
-     "icon": "wallet",
-     "counter": null,
-     "counterKind": null
-    },
-    {
-     "id": "queue",
-     "label": "Очередь работ",
-     "icon": "list",
-     "counter": "failed",
-     "counterKind": "bad"
     },
     {
      "id": "agents",
      "label": "Агенты",
      "icon": "bot",
+     "counter": null,
+     "counterKind": null
+    },
+    {
+     "id": "results",
+     "label": "Отчёты",
+     "icon": "check",
      "counter": null,
      "counterKind": null
     }
@@ -67,63 +53,42 @@
      "counterKind": null
     },
     {
-     "id": "results",
-     "label": "Результаты",
-     "icon": "check",
-     "counter": null,
-     "counterKind": null
-    },
-    {
      "id": "usage",
      "label": "Расходы: токены и модели",
      "icon": "ruble",
-     "counter": null,
-     "counterKind": null
-    },
-    {
-     "id": "economy",
-     "label": "Экономика: деньги сервиса",
-     "icon": "trend",
-     "counter": null,
-     "counterKind": null
-    },
-    {
-     "id": "quality",
-     "label": "Качество",
-     "icon": "check",
      "counter": null,
      "counterKind": null
     }
    ]
   },
   {
-   "id": "system",
-   "title": "Система",
+   "id": "data",
+   "title": "Данные и настройки",
    "items": [
     {
-     "id": "integrations",
-     "label": "Интеграции",
+     "id": "sources",
+     "label": "Источники данных",
      "icon": "box",
      "counter": null,
      "counterKind": null
     },
     {
-     "id": "payments",
-     "label": "Оплаты",
-     "icon": "wallet",
-     "counter": "unpaid",
-     "counterKind": "bad"
+     "id": "skills",
+     "label": "Скилы",
+     "icon": "plug",
+     "counter": null,
+     "counterKind": null
     },
     {
-     "id": "notifications",
-     "label": "Уведомления",
-     "icon": "bell",
+     "id": "integrations",
+     "label": "Интеграции",
+     "icon": "layers",
      "counter": null,
      "counterKind": null
     },
     {
      "id": "system",
-     "label": "Состояние системы: здоровье данных",
+     "label": "Здоровье данных",
      "icon": "pulse",
      "counter": null,
      "counterKind": null
@@ -136,29 +101,71 @@
      "counterKind": null
     },
     {
-     "id": "infra",
-     "label": "Инфраструктура и справка",
-     "icon": "wrench",
+     "id": "settings",
+     "label": "Настройки",
+     "icon": "gear",
      "counter": null,
      "counterKind": null
     }
    ]
   },
   {
-   "id": "manage",
-   "title": "Управление",
+   "id": "service-later",
+   "title": "Служебное — демо и позже",
    "items": [
     {
-     "id": "workspaces",
-     "label": "Рабочие пространства",
-     "icon": "layers",
+     "id": "subscriptions",
+     "label": "Подписки и тарифы (демо)",
+     "icon": "card",
+     "counter": "overdue",
+     "counterKind": "bad"
+    },
+    {
+     "id": "services",
+     "label": "Услуги (демо)",
+     "icon": "spark",
      "counter": null,
      "counterKind": null
     },
     {
-     "id": "projects",
-     "label": "Проекты",
-     "icon": "folder",
+     "id": "ads",
+     "label": "Реклама и кэшбэк (демо)",
+     "icon": "wallet",
+     "counter": null,
+     "counterKind": null
+    },
+    {
+     "id": "payments",
+     "label": "Оплаты",
+     "icon": "wallet",
+     "counter": null,
+     "counterKind": null
+    },
+    {
+     "id": "economy",
+     "label": "Экономика: деньги сервиса (демо)",
+     "icon": "trend",
+     "counter": null,
+     "counterKind": null
+    },
+    {
+     "id": "queue",
+     "label": "Очередь работ",
+     "icon": "list",
+     "counter": "failed",
+     "counterKind": "bad"
+    },
+    {
+     "id": "quality",
+     "label": "Качество",
+     "icon": "check",
+     "counter": null,
+     "counterKind": null
+    },
+    {
+     "id": "workspaces",
+     "label": "Рабочие пространства",
+     "icon": "layers",
      "counter": null,
      "counterKind": null
     },
@@ -177,18 +184,19 @@
      "counterKind": null
     },
     {
-     "id": "settings",
-     "label": "Настройки",
-     "icon": "gear",
+     "id": "notifications",
+     "label": "Уведомления",
+     "icon": "bell",
      "counter": null,
      "counterKind": null
-    }
-   ]
-  },
-  {
-   "id": "help",
-   "title": "Помощь",
-   "items": [
+    },
+    {
+     "id": "infra",
+     "label": "Инфраструктура и справка",
+     "icon": "wrench",
+     "counter": null,
+     "counterKind": null
+    },
     {
      "id": "learning",
      "label": "Обучение",
@@ -208,5 +216,5 @@
  ],
  "file": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\dashboard\\config\\nav.yaml",
  "exists": true,
- "total": 25
+ "total": 27
 }

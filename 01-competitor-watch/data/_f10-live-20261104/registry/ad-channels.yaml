@@ -1,0 +1,28 @@
+# КАНАЛЫ РЕКЛАМЫ и ставки вознаграждения за ведение.
+#
+# source: api     — расходы можно забирать по API
+#         export  — площадка отдаёт выгрузку файлом (CSV/XLSX), забираем импортом
+#         manual  — только вручную
+# rate_pct — ставка вознаграждения по умолчанию, % от расхода
+# fixed_rub — фиксированная часть вознаграждения за период, ₽
+#
+# Ставку можно переопределить по каналу здесь и по клиенту в ad-budgets.yaml.
+
+version: 1
+updated: "2026-11-01"
+
+settings:
+  default_rate_pct: 10
+  low_balance_threshold_rub: 15000
+  rounding: "до копейки, половина вверх"
+  utp: "Кэшбэк с любого оборота — без минимального порога. Ставки ниже — наши фактические по договорам, а не «до 22% при соблюдении условий»."
+
+# return_pct — ставка ВОЗВРАТА от площадки (агентское вознаграждение), % от расхода.
+# Это отдельная величина: именно ИЗ НЕЁ платится кэшбэк оператору (см. registry/README-ads.md).
+# agreement: false — партнёрского договора нет, возврат 0%, и платить кэшбэк из своего кармана нельзя.
+channels:
+  - { id: yandex-direct, name: "Яндекс Директ", status: active, source: api, rate_pct: 10, fixed_rub: 0, return_pct: 10, agreement: true, note: "основной канал, расходы по API" }
+  - { id: vk-ads, name: "VK Реклама", status: active, source: api, rate_pct: 10, fixed_rub: 0, return_pct: 8, agreement: true, note: "расходы по API" }
+  - { id: avito, name: "Avito", status: active, source: export, rate_pct: 8, fixed_rub: 0, return_pct: 0, agreement: false, note: "партнёрского договора нет: возврат 0%" }
+  - { id: cian, name: "CIAN", status: active, source: manual, rate_pct: 8, fixed_rub: 0, return_pct: 0, agreement: false, note: "партнёрского договора нет: возврат 0%" }
+  - { id: telegram-ads, name: "Telegram Ads", status: paused, source: manual, rate_pct: 12, fixed_rub: 3000, return_pct: 7, agreement: false, note: "нет открытого API, работаем вручную" }

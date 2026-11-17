@@ -1,0 +1,12 @@
+# ТОНКИЕ НАСТРОЙКИ АГЕНТА 3 — заготовка.
+version: 1
+agent: agent-3-creative
+updated: "2026-11-01"
+status: stub
+schedule: { enabled: false, days: [1], time: "12:00", frequency: on-demand, timezone: "Europe/Moscow", only_on_new_data: false }
+model: { name: "deepseek/deepseek-v4.1-flash", limit_rub: 0, limit_tokens: 0, on_limit: warn }
+priority: { level: low, max_parallel: 1, timeout_sec: 600, retries: 0 }
+report: { formats: [md], sections: [summary], language: ru, branding: false }
+delivery: { channels: [], addresses: [], auto_send: false, copy_to: "" }
+alerts: { when: [never], price_threshold_pct: 0, quiet_hours: "" }
+limits: { skip_weekends: true, min_interval_hours: 24, stop_switch: true }

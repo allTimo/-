@@ -1,0 +1,1150 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Дорожная карта и чек-лист · marketing-agents · вариант B · ноябрь 2026 (v7)</title>
+<style>
+  :root{
+    --bg:#f5f6f8; --card:#ffffff; --ink:#1f2733; --muted:#5d6b7a; --line:#e2e6ec;
+    --accent:#35618f; --accent-soft:#eaf0f7;
+    --done:#2f7d54; --done-bg:#e7f4ed;
+    --work:#a8720f; --work-bg:#fdf4e3;
+    --wait:#516274; --wait-bg:#eef1f5;
+    --block:#ab3b3b; --block-bg:#fbeceb;
+    --dec:#2f7d54; --dec-bg:#e7f4ed;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0; padding:28px 20px 64px; background:var(--bg); color:var(--ink);
+    font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  }
+  .wrap{max-width:1240px;margin:0 auto}
+  h1{font-size:26px;line-height:1.25;margin:0 0 8px}
+  h2{font-size:20px;margin:0 0 4px}
+  h3{font-size:15px;margin:0 0 6px}
+  p{margin:8px 0}
+  ul{margin:8px 0 0;padding-left:18px}
+  li{margin:4px 0}
+  code{font-family:ui-monospace,SFMono-Regular,Consolas,"Liberation Mono",monospace;font-size:.9em;background:#f1f3f7;padding:1px 4px;border-radius:4px}
+  .muted{color:var(--muted)}
+  .small{font-size:13px}
+  .page-head{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 22px;margin-bottom:18px}
+  .lead{color:var(--muted);margin:6px 0 0;max-width:860px}
+  .meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+  .chip{font-size:12.5px;color:var(--muted);background:#f3f5f8;border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+  .chip.dec{color:var(--dec);background:var(--dec-bg);border-color:var(--done);font-weight:600}
+  .note{margin-top:14px;border-left:3px solid var(--accent);background:var(--accent-soft);border-radius:0 10px 10px 0;padding:10px 14px;font-size:14px}
+  .note.dec{border-left-color:var(--done);background:var(--dec-bg)}
+  .note ol{margin:6px 0 0;padding-left:20px}
+  .note li{margin:2px 0}
+  section{margin-top:26px}
+  .sec-head{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:12px}
+  .sec-head .hint{font-size:13.5px;color:var(--muted)}
+  /* --- дорожная карта --- */
+  .roadmap{display:flex;gap:8px;align-items:stretch;flex-wrap:nowrap}
+  .roadmap .arrow{align-self:center;color:#9aa7b6;font-size:18px;flex:0 0 auto}
+  .stage{flex:1 1 0;min-width:190px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 15px;break-inside:avoid;page-break-inside:avoid}
+  .stage .card{height:100%;display:flex;flex-direction:column}
+  .stage .card.decided{border-color:#b9dcc7;border-width:2px}
+  .badge{display:inline-block;font-size:12px;font-weight:600;border-radius:999px;padding:2px 9px;white-space:nowrap}
+  .badge.done{color:var(--done);background:var(--done-bg)}
+  .badge.work{color:var(--work);background:var(--work-bg)}
+  .badge.wait{color:var(--wait);background:var(--wait-bg)}
+  .badge.block{color:var(--block);background:var(--block-bg)}
+  .badge.rej{color:#5d6b7a;background:#eef1f5}
+  .stage-top{display:flex;justify-content:space-between;gap:8px;align-items:center;margin-bottom:6px}
+  .stage-when{font-size:12.5px;color:var(--muted)}
+  .field{margin-top:9px;font-size:13.5px}
+  .field .k{display:block;color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.03em;margin-bottom:2px}
+  .stage ul{padding-left:16px;font-size:13.5px}
+  .bar{height:8px;border-radius:999px;background:#edf0f4;overflow:hidden;margin-top:6px}
+  .bar > i{display:block;height:100%;width:0;background:var(--accent);border-radius:999px;transition:width .2s ease}
+  .bar-line{display:flex;justify-content:space-between;font-size:12.5px;color:var(--muted);margin-top:12px;gap:8px}
+  .legend{display:flex;flex-wrap:wrap;gap:14px;margin:12px 0 0;font-size:13px;color:var(--muted)}
+  .legend span{display:inline-flex;align-items:center;gap:6px}
+  .dot{width:10px;height:10px;border-radius:50%;display:inline-block}
+  .dot.done{background:var(--done)} .dot.work{background:var(--work)}
+  .dot.wait{background:var(--wait)} .dot.block{background:var(--block)}
+  /* --- таблица вариантов --- */
+  table{width:100%;border-collapse:collapse;font-size:13.5px;margin-top:10px}
+  th,td{text-align:left;border-bottom:1px solid var(--line);padding:7px 8px;vertical-align:top}
+  th{color:var(--muted);font-weight:600;font-size:12.5px;text-transform:uppercase;letter-spacing:.03em}
+  tr.rec-row td{background:var(--done-bg)}
+  tr.rej-row td{color:var(--muted)}
+  /* --- чек-лист --- */
+  .two-col{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:16px;align-items:start}
+  .group{margin-bottom:14px}
+  .group-head{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:8px}
+  .group-head .cnt{font-size:13px;color:var(--muted)}
+  .items{list-style:none;margin:0;padding:0}
+  .items li{border-bottom:1px dashed var(--line);padding:0}
+  .items li:last-child{border-bottom:0}
+  .items label{display:flex;gap:10px;align-items:flex-start;padding:9px 4px;cursor:pointer;font-size:14.5px}
+  .items input[type=checkbox]{width:17px;height:17px;margin:2px 0 0;flex:0 0 auto;accent-color:var(--accent);cursor:pointer}
+  .items input:checked + span{color:var(--muted);text-decoration:line-through}
+  .items input:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+  .items li.exit{background:#fafcfd}
+  .toolbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:12px}
+  button{font:inherit;font-size:13.5px;color:var(--ink);background:#fff;border:1px solid #cfd6df;border-radius:8px;padding:6px 12px;cursor:pointer}
+  button:hover{border-color:var(--accent);color:var(--accent)}
+  button.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+  button.primary:hover{background:#2b5079;color:#fff}
+  button.ghost{background:transparent}
+  button[aria-pressed=true]{background:var(--done-bg);border-color:var(--done);color:var(--done);font-weight:600}
+  .total{font-size:14px;color:var(--muted)}
+  .total b{color:var(--ink);font-size:17px}
+  /* --- стоп-правила --- */
+  .stop .card{border-left:4px solid var(--block)}
+  .stop h3{color:var(--block)}
+  .stop-item{border-bottom:1px dashed var(--line);padding:9px 0;font-size:14px}
+  .stop-item:last-child{border-bottom:0}
+  .stop-item b{display:block;margin-bottom:2px}
+  .stop-item.new b::after{content:"новое";margin-left:8px;font-size:11px;color:var(--dec);background:var(--dec-bg);border-radius:999px;padding:1px 7px}
+  /* --- развилки --- */
+  .forks{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:14px}
+  .fork .opts{display:grid;gap:10px;margin-top:10px}
+  .opt{border:1px solid var(--line);border-radius:10px;padding:10px 12px;background:#fcfdfe}
+  .opt.selected{border-color:var(--done);background:var(--done-bg)}
+  .opt.rejected{background:#fafbfc;color:var(--muted)}
+  .opt-head{display:flex;justify-content:space-between;gap:8px;align-items:center;flex-wrap:wrap}
+  .opt-head b{font-size:14px}
+  .pros,.cons{margin:6px 0 0;padding-left:16px;font-size:13.5px}
+  .pros li::marker{color:var(--done)} .cons li::marker{color:var(--block)}
+  .rec{margin-top:10px;font-size:13.5px;background:var(--accent-soft);border-radius:8px;padding:8px 10px}
+  .rec.dec{background:var(--dec-bg)}
+  .fork-state{font-size:13px;color:var(--muted);margin-top:8px}
+  .fork-state.dec{color:var(--done);font-weight:600}
+  /* --- метрики --- */
+  .metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+  .metric .now{font-size:14px;margin:8px 0 0}
+  .metric .now b{font-size:18px}
+  .metric .row{display:flex;gap:6px;margin-top:8px;flex-wrap:wrap}
+  .metric input{font:inherit;font-size:13.5px;padding:6px 8px;border:1px solid #cfd6df;border-radius:8px;background:#fff;min-width:0}
+  .metric input[type=text]{flex:1 1 90px}
+  .metric input[type=date]{flex:0 1 140px}
+  .spark{display:flex;align-items:flex-end;gap:3px;height:44px;margin-top:10px}
+  .spark .c{flex:1 1 0;background:#cddcec;border-radius:3px 3px 0 0;min-height:2px}
+  .spark .c.last{background:var(--accent)}
+  .mlog{list-style:none;margin:8px 0 0;padding:0;font-size:13px}
+  .mlog li{display:flex;justify-content:space-between;gap:8px;border-bottom:1px dashed var(--line);padding:4px 0}
+  .mlog .del{background:none;border:0;padding:0 4px;color:var(--muted);cursor:pointer;font-size:13px}
+  .mlog .del:hover{color:var(--block)}
+  .funnel-card{grid-column:1/-1}
+  .funnel{display:flex;gap:8px;align-items:flex-end;flex-wrap:wrap;margin-top:10px}
+  .fstep{display:flex;flex-direction:column;gap:4px;font-size:13px;color:var(--muted);min-width:120px}
+  .fstep input{font:inherit;font-size:14px;padding:6px 8px;border:1px solid #cfd6df;border-radius:8px;background:#fff;width:100%}
+  .farrow{color:#9aa7b6;font-size:18px;padding-bottom:6px}
+  .conv{list-style:none;margin:12px 0 0;padding:0;font-size:13.5px;display:flex;gap:18px;flex-wrap:wrap}
+  .conv li{border:0;margin:0}
+  .conv b{font-size:15px}
+  /* --- деньги --- */
+  .money{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+  .money .big{font-size:24px;font-weight:700;margin:6px 0 0;color:var(--accent);letter-spacing:-.01em}
+  .money .effect{margin:8px 0 0;font-size:13.5px;background:var(--dec-bg);border-radius:8px;padding:6px 10px}
+  .money .effect b{color:var(--done)}
+  .money .vs{color:var(--ink)}
+  footer{margin-top:30px;color:var(--muted);font-size:13px;border-top:1px solid var(--line);padding-top:12px}
+  @media (max-width:1000px){
+    .two-col{grid-template-columns:minmax(0,1fr)}
+    .roadmap{flex-direction:column;flex-wrap:wrap}
+    .roadmap .arrow{transform:rotate(90deg);align-self:flex-start;padding-left:12px}
+    .stage{min-width:0}
+  }
+  @media print{
+    body{background:#fff;padding:0 0 12mm;font-size:11pt}
+    .no-print{display:none !important}
+    .page-head,.card,.opt{border-color:#ccc;box-shadow:none}
+    .card,.opt,.group,.metric,.fork{break-inside:avoid;page-break-inside:avoid}
+    .roadmap{flex-wrap:wrap}
+    .items input[type=checkbox]{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    table,.opt{break-inside:avoid;page-break-inside:avoid}
+    a{color:inherit;text-decoration:none}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="page-head">
+    <h1>Дорожная карта и чек-лист: marketing-agents · утверждён вариант B</h1>
+    <p class="lead">Пять развилок утверждены заказчиком 08.11.2026, 22:30. План — self-service-бета: 21,0 чел.-нед., 18–22 недели,
+      цель 8–12 платящих за 16 недель беты. Файл автономный: интернет и сборка не нужны, прогресс и решения хранятся только
+      в вашем браузере (localStorage).</p>
+    <div class="meta">
+      <span class="chip dec">Утверждено: вариант B · 21,0 чн · 18–22 недели</span>
+      <span class="chip">Дата: 08.11.2026 (v7)</span>
+      <span class="chip">Рамка: один агент · ICP-маркетолог · метрика RAR</span>
+      <span class="chip">Тарифы: Starter 5 000 · Growth 15 000 · Pro 30 000 ₽/мес</span>
+      <span class="chip">CAC-бюджет: потолок 264 000 ₽/год</span>
+    </div>
+    <div class="note dec">
+      <b>Утверждённые решения заказчика (08.11.2026, 22:30):</b>
+      <ol>
+        <li><b>Вариант B — self-service-бета:</b> 21,0 чел.-нед., 18–22 недели при разработчике фултайм, цель 8–12 платящих за 16 недель беты; нужен второй исполнитель или подрядчик. Варианты S и C — <b>отклонены</b>.</li>
+        <li><b>Триал — от первого отчёта:</b> 3 дня, таймер стартует после первого успешного отчёта (<code>trial_start = first_report</code>). Вариант «от регистрации» отклонён, оставлен флагом для A/B-теста.</li>
+        <li><b>Кэшбэк в MVP — только зачёт в баланс подписки</b> (шаг 1). Деньги на счёт и гибрид выше 10 000 ₽ — шаг 2, после 3 платящих с подключёнными кабинетами и первого подтверждённого возврата.</li>
+        <li><b>CAC-бюджет 264 000 ₽/год — потолок</b>, а не план к расходу: план клиентов не поднимаем, бюджет не режем, стоимость регистрации замеряем на первых 100 регистрациях, решение — по замеру. Порог остатка 150 000 ₽.</li>
+        <li><b>Проценты кэшбэка публично не называются</b> до партнёрского договора: на тарифах только «доступно на Growth и Pro после подключения кабинета».</li>
+      </ol>
+    </div>
+  </header>
+
+  <!-- ============ 1. ДОРОЖНАЯ КАРТА ============ -->
+  <section id="roadmap" aria-labelledby="h-roadmap">
+    <div class="sec-head">
+      <h2 id="h-roadmap">1. Дорожная карта · вариант B</h2>
+      <span class="hint">этапы 1–4 и волна 2 — как в roadmap-2-sprints.md; прогресс-бар считается по отмеченным пунктам чек-листа из раздела 2</span>
+    </div>
+
+    <div class="roadmap">
+
+      <div class="stage" data-stage="e1">
+        <div class="card">
+          <div class="stage-top"><h3>Этап 1 · Доверие к цифрам</h3><span class="badge work">в работе</span></div>
+          <div class="stage-when">недели 1–4</div>
+          <div class="field"><span class="k">Цель</span>Снять блокер доверия №1, сделать проект воспроизводимым и замкнуть заявку до оператора.</div>
+          <div class="field"><span class="k">Объём</span>часть 21,0 чн варианта B; отдельная оценка этапа не дана (⚠ оценка только по пакету)</div>
+          <div class="field"><span class="k">Критерии выхода (DoD)</span>
+            <ul>
+              <li>guard — единственный источник публикуемых цен; автотест на повтор цены ≥ 5 лотов;</li>
+              <li><code>ok</code> только при <code>comparedProjects &gt; 0</code>; <code>verify-data</code> падает на нуле;</li>
+              <li>честный охват «заявлено / с данными / без данных и почему»;</li>
+              <li><code>git init</code> + одна воспроизводимая команда приёмки; PDF восстановлен;</li>
+              <li>отчёт не противоречит себе, заявка доходит до оператора, сторно 15 700 ₽.</li>
+            </ul>
+          </div>
+          <div class="field"><span class="k">Владелец</span>Разработчик движка + панель; п. 1.4 — Lead</div>
+          <div class="field"><span class="k">Зависимость</span>нет входящих; блокирует все остальные этапы (вход в self-service невозможен без доверия к цифрам)</div>
+          <div class="bar-line"><span>Прогресс</span><span><span data-cnt="e1">0 из 14</span> · <span data-pct="e1">0%</span></span></div>
+          <div class="bar" data-bar="e1"><i></i></div>
+        </div>
+      </div>
+
+      <div class="arrow" aria-hidden="true">→</div>
+
+      <div class="stage" data-stage="e2">
+        <div class="card">
+          <div class="stage-top"><h3>Этап 2 · Вход и деньги</h3><span class="badge wait">ждёт</span></div>
+          <div class="stage-when">недели 5–8</div>
+          <div class="field"><span class="k">Цель</span>Маркетолог сам регистрируется и оплачивает подписку; данные клиентов изолированы.</div>
+          <div class="field"><span class="k">Объём</span>hosted auth 3–5 чн + биллинг 2–4 чн (оценки) — внутри 21,0 чн</div>
+          <div class="field"><span class="k">Критерии выхода (DoD)</span>
+            <ul>
+              <li>регистрация, вход, подтверждение e-mail, восстановление пароля работают;</li>
+              <li>изоляция тенантов (RLS) подтверждена негативным тестом;</li>
+              <li>подписка Starter/Growth/Pro и приём платежей, чеки через провайдера;</li>
+              <li>лимиты по тарифу; кабинет маркетолога с кнопкой «что не так в отчёте».</li>
+            </ul>
+          </div>
+          <div class="field"><span class="k">Владелец</span>Разработчик (фултайм) + Lead; продавец — параллельно</div>
+          <div class="field"><span class="k">Зависимость</span>закрытый этап 1; выбран hosted auth; юрконтур до приёма первого платежа</div>
+          <div class="bar-line"><span>Прогресс</span><span><span data-cnt="e2">0 из 8</span> · <span data-pct="e2">0%</span></span></div>
+          <div class="bar" data-bar="e2"><i></i></div>
+        </div>
+      </div>
+
+      <div class="arrow" aria-hidden="true">→</div>
+
+      <div class="stage" data-stage="e3">
+        <div class="card">
+          <div class="stage-top"><h3>Этап 3 · Триал и ценность</h3><span class="badge wait">ждёт</span></div>
+          <div class="stage-when">недели 9–12</div>
+          <div class="field"><span class="k">Цель</span>Клиент успевает увидеть ценность до окончания триала; качество отчёта измеряется (RAR).</div>
+          <div class="field"><span class="k">Объём</span>триал и заморозка 1,5–2 чн + операционный объём 3,5 чн (оценки)</div>
+          <div class="field"><span class="k">Критерии выхода (DoD)</span>
+            <ul>
+              <li>триал 3 дня <b>от первого отчёта</b> (<code>trial_start = first_report</code>);</li>
+              <li>заморозка и восстановление доступа работают, retention 90 дней;</li>
+              <li>онбординг ≤ 1 дня, первый отчёт ≤ 5 рабочих дней;</li>
+              <li>журнал правок ведётся, RAR измеряется на 10+ отчётах;</li>
+              <li>панель оператора из 4 экранов, алерт «0 лотов».</li>
+            </ul>
+          </div>
+          <div class="field"><span class="k">Владелец</span>Оператор + разработчик движка и панели</div>
+          <div class="field"><span class="k">Зависимость</span>закрытый этап 2 (нужна подписка и кабинет); решение по триалу принято — от первого отчёта</div>
+          <div class="bar-line"><span>Прогресс</span><span><span data-cnt="e3">0 из 11</span> · <span data-pct="e3">0%</span></span></div>
+          <div class="bar" data-bar="e3"><i></i></div>
+        </div>
+      </div>
+
+      <div class="arrow" aria-hidden="true">→</div>
+
+      <div class="stage" data-stage="e4">
+        <div class="card">
+          <div class="stage-top"><h3>Этап 4 · Первые платящие</h3><span class="badge wait">ждёт</span></div>
+          <div class="stage-when">недели 13–18 (буфер до 22)</div>
+          <div class="field"><span class="k">Цель</span>Продажи self-service до 8–12 платящих, второй клиент, юрконтур и замер стоимости регистрации.</div>
+          <div class="field"><span class="k">Объём</span>продажи и юрконтур — внешний объём внутри 3,5 чн варианта B (оценка)</div>
+          <div class="field"><span class="k">Критерии выхода (DoD)</span>
+            <ul>
+              <li>8–12 оплативших; воронка зафиксирована в цифрах;</li>
+              <li>стоимость регистрации измерена на первых 100 регистрациях, решение — по замеру;</li>
+              <li>CAC-бюджет: потолок 264 000 ₽/год не превышен, остаток не ниже 150 000 ₽;</li>
+              <li>второй клиент подключён, изоляция проверена тестом;</li>
+              <li>юрконтур: оферта с автопродлением, возвраты, 152-ФЗ/РКН, чеки.</li>
+            </ul>
+          </div>
+          <div class="field"><span class="k">Владелец</span>Основатель (продажи) + оператор + бухгалтер (внешне)</div>
+          <div class="field"><span class="k">Зависимость</span>закрытый этап 3; буфер 4 недели на сбои источников и доработки; второй исполнитель или подрядчик</div>
+          <div class="bar-line"><span>Прогресс</span><span><span data-cnt="e4">0 из 9</span> · <span data-pct="e4">0%</span></span></div>
+          <div class="bar" data-bar="e4"><i></i></div>
+        </div>
+      </div>
+
+      <div class="arrow" aria-hidden="true">→</div>
+
+      <div class="stage" data-stage="w2">
+        <div class="card">
+          <div class="stage-top"><h3>Волна 2 · Кабинеты и кэшбэк</h3><span class="badge block">заблокировано</span></div>
+          <div class="stage-when">после этапа 4</div>
+          <div class="field"><span class="k">Цель</span>Подключение рекламных кабинетов и кэшбэк-контур с зачётом в баланс подписки.</div>
+          <div class="field"><span class="k">Объём</span>кабинеты и кэшбэк 2–4 чн (оценка), только после партнёрского договора</div>
+          <div class="field"><span class="k">Критерии выхода (DoD)</span>
+            <ul>
+              <li>кабинеты клиента подключены (OAuth/API), заявка доступна в кабинете;</li>
+              <li>начисление только из фактического нетто-возврата; Growth 50 % / Pro 80 %, Starter без кэшбэка;</li>
+              <li>кэшбэк зачитывается в баланс подписки; выплаты деньгами не включены;</li>
+              <li>предохранитель <code>Σaccrual ≤ net_return</code>, отсрочка ≤ 50 дней.</li>
+            </ul>
+          </div>
+          <div class="field"><span class="k">Владелец</span>Разработчик + Lead (партнёрский договор — основатель)</div>
+          <div class="field"><span class="k">Зависимость</span>заблокировано: партнёрский договор и подтверждённый возврат; вывод деньгами — только после 3 платящих с кабинетами</div>
+          <div class="bar-line"><span>Прогресс</span><span><span data-cnt="w2">0 из 7</span> · <span data-pct="w2">0%</span></span></div>
+          <div class="bar" data-bar="w2"><i></i></div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="legend">
+      <span><i class="dot done"></i>готово</span>
+      <span><i class="dot work"></i>в работе</span>
+      <span><i class="dot wait"></i>ждёт</span>
+      <span><i class="dot block"></i>заблокировано</span>
+      <span class="small">Оценки объёма помечены как оценки: данных о скорости команды и ₽/час в проекте нет.</span>
+    </div>
+
+    <div class="card decided" style="margin-top:14px">
+      <h3>Утверждённый вариант и отклонённые альтернативы</h3>
+      <table>
+        <thead><tr><th>Вариант</th><th>Объём</th><th>Календарь</th><th>Статус</th></tr></thead>
+        <tbody>
+          <tr class="rej-row"><td>S — assisted-MVP (без self-service)</td><td>10,5 чн</td><td>9–10 недель</td><td><span class="badge rej">отклонено заказчиком</span> fallback, если проект придётся останавливать досрочно</td></tr>
+          <tr class="rec-row"><td><b>B — self-service-бета</b></td><td><b>21,0 чн</b> (продукт 17,5 + внешние 3,5)</td><td><b>18–22 недели</b> при разработчике фултайм</td><td><span class="badge done">утверждено 08.11.2026</span> 8–12 платящих за 16 недель беты</td></tr>
+          <tr class="rej-row"><td>C — полный self-service</td><td>23,0+ чн</td><td>20–24 недели</td><td><span class="badge rej">отклонено заказчиком</span> это шаг 2: апгрейды, prorate, выплаты деньгами, Enterprise</td></tr>
+        </tbody>
+      </table>
+      <p class="small muted">Соло-исполнитель с продажами — 23,0 чн (~25 недель при 0,5 FTE), поэтому решение B требует второго исполнителя или подрядчика:
+        без него срок сдвигается за 22 недели. Смешивать варианты нельзя — это разные продукты и разные обещания клиенту.</p>
+    </div>
+  </section>
+
+  <!-- ============ 2. ЧЕК-ЛИСТ + СТОП-ПРАВИЛА ============ -->
+  <section id="checklist" aria-labelledby="h-check">
+    <div class="sec-head">
+      <h2 id="h-check">2. Интерактивный чек-лист</h2>
+      <span class="hint">отметки сохраняются в браузере и не исчезают при перезагрузке страницы</span>
+    </div>
+
+    <div class="two-col">
+      <div>
+        <div class="toolbar no-print" style="margin-top:0">
+          <span class="total">Всего отмечено: <b><span data-cnt="all">0 из 49</span></b></span>
+          <button class="ghost" id="reset-progress" type="button">Сбросить прогресс</button>
+          <span class="small muted" data-save-state>сохранение: —</span>
+        </div>
+
+        <!-- Этап 1 -->
+        <div class="group card" style="margin-top:12px">
+          <div class="group-head">
+            <h3>Этап 1 · Доверие к цифрам · недели 1–4</h3>
+            <span class="cnt" data-cnt="e1">0 из 14</span>
+          </div>
+          <ul class="items">
+            <li><label><input type="checkbox" data-key="e1-01"><span>Guard выбросов — единственный источник публикуемых цен: таблица раздела 3, «самый дешёвый лот», карточка панели <span class="muted small">(1.1)</span></span></label></li>
+            <li><label><input type="checkbox" data-key="e1-02"><span>Автотест на правило «повтор цены ≥ 5 лотов → срез не публикуется» и на применение guard в таблице <span class="muted small">(DoD 2)</span></span></label></li>
+            <li><label><input type="checkbox" data-key="e1-03"><span>Строгая связность: <code>ok</code> только при <code>comparedProjects &gt; 0</code>, нормализация ключей проектов <span class="muted small">(1.2)</span></span></label></li>
+            <li><label><input type="checkbox" data-key="e1-04"><span><code>verify-data</code> падает при <code>comparedProjects = 0</code> — проверено намеренным сломом данных <span class="muted small">(DoD 3)</span></span></label></li>
+            <li><label><input type="checkbox" data-key="e1-05"><span>Честный охват в отчёте: «заявлено / с данными / без данных и почему», <code>partial</code> вместо <code>ok</code> при 401 и пустой выдаче <span class="muted small">(1.3)</span></span></label></li>
+            <li><label><input type="checkbox" data-key="e1-06"><span>Воспроизводимость: <code>git init</code> + первый коммит, <code>.gitignore</code> без секретов и <code>.bak</code>, одна команда приёмки с фиксированным CWD <span class="muted small">(1.4)</span></span></label></li>
+            <li><label><input type="checkbox" data-key="e1-07"><span>Один источник правды по снимкам: панель читает <code>data/clients/&lt;client&gt;/snapshots</code>, а не <code>data/snapshots</code> <span class="muted small">(1.5)</span></span></label></li>
+            <li><label><input type="checkbox" data-key="e1-08"><span>Реальный метеринг прогона: время по шагам, число внешних вызовов, объём данных; отказ от «символов/4» и записи сметы как факта <span class="muted small">(1.6)</span></span></label></li>
+            <li><label><input type="checkbox" data-key="e1-09"><span>Целостность доставки: <code>.eml</code> с вложениями, статус <code>sent</code> только с <code>run_id</code>, один файл на адрес, allowlist fail-closed <span class="muted small">(1.7)</span></span></label></li>
+            <li><label><input type="checkbox" data-key="e1-10"><span>Замыкание воронки: <code>/api/lead</code> в панели + раздел «Заявки» + уведомление оператору <span class="muted small">(1.8)</span></span></label></li>
+            <li><label><input type="checkbox" data-key="e1-11"><span>Демо-данные помечены <code>demo: true</code> и бейджем; сторно двух счетов за неоказанное (9 800 ₽ и 5 900 ₽) <span class="muted small">(1.9)</span></span></label></li>
+            <li><label><input type="checkbox" data-key="e1-12"><span>Восстановлена сборка PDF и комплект форматов включён в проверку отчёта <span class="muted small">(1.10)</span></span></label></li>
+            <li><label><input type="checkbox" data-key="e1-13"><span>Ни один существующий тест не удалён, <code>pytest</code> зелёный из зафиксированной команды; отозван утёкший ключ панели <span class="muted small">(DoD 10 · немедленно)</span></span></label></li>
+            <li class="exit"><label><input type="checkbox" data-key="e1-14"><span><b>Выход этапа:</b> отчёт не противоречит себе, заявка доходит до оператора, приёмка воспроизводима, сторно 15 700 ₽ проведено</span></label></li>
+          </ul>
+        </div>
+
+        <!-- Этап 2 -->
+        <div class="group card">
+          <div class="group-head">
+            <h3>Этап 2 · Вход и деньги · недели 5–8</h3>
+            <span class="cnt" data-cnt="e2">0 из 8</span>
+          </div>
+          <ul class="items">
+            <li><label><input type="checkbox" data-key="e2-01"><span><b>Hosted auth</b> (Supabase / Auth0 / Clerk, 3–5 чн): вход, сессии, выход, защита от перебора <span class="small muted">(решение: hosted, самописный отклонён)</span></span></label></li>
+            <li><label><input type="checkbox" data-key="e2-02"><span>Самостоятельная регистрация и подтверждение e-mail, восстановление пароля; лендинг с тарифами и регистрацией опубликован</span></label></li>
+            <li><label><input type="checkbox" data-key="e2-03"><span><b>Изоляция тенантов:</b> <code>tenant_id</code> / RLS; негативный тест «данные чужого тенанта недоступны» пройден</span></label></li>
+            <li><label><input type="checkbox" data-key="e2-04"><span><b>Подписка Starter 5 000 ₽</b> (1 проект, без кэшбэка) / <b>Growth 15 000 ₽</b> (до 3) / <b>Pro 30 000 ₽</b> (до 10); один прайс во всех документах</span></label></li>
+            <li><label><input type="checkbox" data-key="e2-05"><span><b>Приём платежей:</b> рекуррентные списания, эквайринг 2,8 %, чеки/ККТ через провайдера; счёт и подтверждение оплаты <span class="small muted">(2–4 чн)</span></span></label></li>
+            <li><label><input type="checkbox" data-key="e2-06"><span><b>Лимиты по тарифу</b> (проекты и прогоны) и понятные сообщения при упоре в лимит</span></label></li>
+            <li><label><input type="checkbox" data-key="e2-07"><span>Кабинет маркетолога: проекты и конкуренты, отчёты, подписка, настройки + кнопка «что не так в отчёте» (нужна и для измеримости RAR)</span></label></li>
+            <li class="exit"><label><input type="checkbox" data-key="e2-08"><span><b>Выход этапа:</b> маркетолог сам регистрируется и оплачивает; данные клиентов изолированы</span></label></li>
+          </ul>
+        </div>
+
+        <!-- Этап 3 -->
+        <div class="group card">
+          <div class="group-head">
+            <h3>Этап 3 · Триал и ценность · недели 9–12</h3>
+            <span class="cnt" data-cnt="e3">0 из 11</span>
+          </div>
+          <ul class="items">
+            <li><label><input type="checkbox" data-key="e3-01"><span><b>Триал 3 дня от первого отчёта:</b> таймер стартует после первого успешного отчёта, <code>trial_start = first_report</code> <span class="small muted">(утверждено)</span></span></label></li>
+            <li><label><input type="checkbox" data-key="e3-02"><span>Флаг <code>trial_start = registration</code> сохранён для A/B-теста отклонённого варианта (в продакшене не включён)</span></label></li>
+            <li><label><input type="checkbox" data-key="e3-03"><span><b>Заморозка функций:</b> state-машина подписки, read-only-режим, уведомления клиенту <span class="small muted">(1,5–2 чн)</span></span></label></li>
+            <li><label><input type="checkbox" data-key="e3-04"><span>Восстановление доступа после оплаты проверено (данные и отчёты сохраняются)</span></label></li>
+            <li><label><input type="checkbox" data-key="e3-05"><span><b>Лимиты триала</b> по тарифу: что доступно в триале, что закрыто, понятные сообщения</span></label></li>
+            <li><label><input type="checkbox" data-key="e3-06"><span>Retention данных 90 дней после заморозки/ухода клиента зафиксирован в политике</span></label></li>
+            <li><label><input type="checkbox" data-key="e3-07"><span>Онбординг-runbook: подключение клиента за ≤ 1 день (5 конкурентов → конфиг → валидатор → первый отчёт) <span class="muted small">(2.1)</span></span></label></li>
+            <li><label><input type="checkbox" data-key="e3-08"><span>Журнал правок и подсчёт RAR: каждое замечание — запись (дата, отчёт, поле, тип); RAR на 10+ отчётах <span class="muted small">(2.2)</span></span></label></li>
+            <li><label><input type="checkbox" data-key="e3-09"><span>Панель оператора урезана до 4 экранов (клиенты, заявки, прогоны/отчёты, деньги), заглушки скрыты <span class="muted small">(2.4)</span></span></label></li>
+            <li><label><input type="checkbox" data-key="e3-10"><span>Стабильность парсинга: алерт «0 лотов», повтор с backoff, стоп-условие публикации пустого отчёта <span class="muted small">(2.3)</span></span></label></li>
+            <li class="exit"><label><input type="checkbox" data-key="e3-11"><span><b>Выход этапа:</b> первый отчёт ≤ 5 рабочих дней; заморозка и восстановление доступа работают; RAR измеряется</span></label></li>
+          </ul>
+        </div>
+
+        <!-- Этап 4 -->
+        <div class="group card">
+          <div class="group-head">
+            <h3>Этап 4 · Первые платящие · недели 13–18 (буфер до 22)</h3>
+            <span class="cnt" data-cnt="e4">0 из 9</span>
+          </div>
+          <ul class="items">
+            <li><label><input type="checkbox" data-key="e4-01"><span><b>Продажи self-service:</b> 150 адресных касаний, ≥ 12 демо, ≥ 8 пилотных отчётов, <b>цель 8–12 платящих</b> за 16 недель беты <span class="muted small">(2.6)</span></span></label></li>
+            <li><label><input type="checkbox" data-key="e4-02"><span>Воронка зафиксирована в цифрах: 60 регистраций → 30 активаций → 8 оплат (13 %) и далее по месяцам</span></label></li>
+            <li><label><input type="checkbox" data-key="e4-03"><span>Второй клиент подключён, изоляция проверена тестом: клиент A не видит данные клиента B <span class="muted small">(2.5)</span></span></label></li>
+            <li><label><input type="checkbox" data-key="e4-04"><span>Юрконтур: оферта с автопродлением и реквизитами ИП, порядок возвратов, 152-ФЗ/РКН, чеки/ККТ <span class="muted small">(2.7)</span></span></label></li>
+            <li><label><input type="checkbox" data-key="e4-05"><span>Публичный пример отчёта (обезличенный) как материал для касаний <span class="muted small">(2.8)</span></span></label></li>
+            <li><label><input type="checkbox" data-key="e4-06"><span><b>Стоимость регистрации измерена на первых 100 регистрациях</b> — решение по цифре, а не по оценке</span></label></li>
+            <li><label><input type="checkbox" data-key="e4-07"><span>CAC-бюджет соблюдён: потолок <b>264 000 ₽/год</b> не превышен, остаток не ниже порога 150 000 ₽; план клиентов не поднимали, бюджет не резали</span></label></li>
+            <li><label><input type="checkbox" data-key="e4-08"><span>Порог качества: активация ≥ 40 % регистраций, триал → оплата ≥ 15 %, RAR ≥ 0,6 на 10+ отчётах; иначе — возврат к assisted-модели</span></label></li>
+            <li class="exit"><label><input type="checkbox" data-key="e4-09"><span><b>Выход этапа:</b> 8–12 оплативших, стоимость регистрации измерена, стоп-правила работают</span></label></li>
+          </ul>
+        </div>
+
+        <!-- Волна 2 -->
+        <div class="group card">
+          <div class="group-head">
+            <h3>Волна 2 · Рекламные кабинеты и кэшбэк-зачёт · после этапа 4</h3>
+            <span class="cnt" data-cnt="w2">0 из 7</span>
+          </div>
+          <ul class="items">
+            <li><label><input type="checkbox" data-key="w2-01"><span>Подключение рекламных кабинетов клиента (OAuth/API) + заявка на подключение в кабинете <span class="small muted">(2–4 чн)</span></span></label></li>
+            <li><label><input type="checkbox" data-key="w2-02"><span>Партнёрский контур и договор: без договора кэшбэк не включается (стоп-правило)</span></label></li>
+            <li><label><input type="checkbox" data-key="w2-03"><span>Начисление только из фактического нетто-возврата: Growth 50 % нетто (гипотеза), Pro 80 % нетто, Starter без кэшбэка</span></label></li>
+            <li><label><input type="checkbox" data-key="w2-04"><span><b>Зачёт кэшбэка в баланс подписки</b> (шаг 1, утверждено): деньги за пределы платформы не уходят</span></label></li>
+            <li><label><input type="checkbox" data-key="w2-05"><span>Предохранитель: <code>Σaccrual ≤ net_return</code>; нет возврата — нет начисления; отсрочка ≤ 50 дней</span></label></li>
+            <li><label><input type="checkbox" data-key="w2-06"><span>Проценты публично не называются до договора: на тарифах только «доступно на Growth и Pro после подключения кабинета»</span></label></li>
+            <li><label><input type="checkbox" data-key="w2-07"><span>Вывод деньгами и гибрид выше 10 000 ₽ — <b>не включены</b>: только после 3 платящих с кабинетами и первого подтверждённого возврата (шаг 2)</span></label></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Стоп-правила -->
+      <aside class="stop" aria-labelledby="h-stop">
+        <div class="card">
+          <h2 id="h-stop" style="font-size:17px">Стоп-правила</h2>
+          <p class="small muted">Пока условие не выполнено — действие не делаем. Правило сильнее плана.</p>
+          <div class="stop-item new"><b>Кэшбэк — только зачёт в баланс</b>Пока нет подтверждённого возврата от партнёра, кэшбэк не выводится деньгами и не выплачивается гибридом выше 10 000 ₽.</div>
+          <div class="stop-item new"><b>Бюджет 264 000 ₽/год — потолок, а не план</b>План клиентов не поднимаем, бюджет не режем; стоимость регистрации замеряем на первых 100 регистрациях, решение — по замеру; остаток не ниже 150 000 ₽.</div>
+          <div class="stop-item new"><b>Проценты кэшбэка публично не называются</b>До партнёрского договора на тарифах только «доступно на Growth и Pro после подключения кабинета»; ставки 50 % и 80 % — гипотеза.</div>
+          <div class="stop-item"><b>Не продавать при &lt; 2 платящих на выходе этапа 2</b>Канал меняется, продукт не трогаем: сначала вход и деньги, потом продажи.</div>
+          <div class="stop-item"><b>Не выпускать кабинет наружу без auth и изоляции тенантов</b>Внешний доступ без входа и разделения данных = утечка данных клиентов.</div>
+          <div class="stop-item"><b>Не включать кэшбэк без партнёрского договора и подключённого кабинета</b>Начисление возможно только при подтверждённом кабинете клиента и после поступления денег от партнёра.</div>
+          <div class="stop-item"><b>Не публиковать отчёт без блока охвата и вне guard</b>Честный охват и guard — условие входа в продажи; плохой первый отчёт расходится быстрее хорошего.</div>
+          <div class="stop-item"><b>Не смешивать утверждённый вариант B с S и C</b>S и C отклонены заказчиком; это разные продукты и разные обещания клиенту.</div>
+          <div class="stop-item"><b>Не закрывать этап «сделанным кодом»</b>Этап закрывает проверяемый результат (выход этапа); незакрытый этап не перекрывается следующим.</div>
+          <div class="stop-item"><b>Не показывать неизмеренную цифру как факт</b>Смета, «символы/4» и сценарные допущения помечаются «оценка»; нет данных — пишем «данных нет», а не ноль.</div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ============ 3. РАЗВИЛКИ ============ -->
+  <section id="forks" aria-labelledby="h-forks">
+    <div class="sec-head">
+      <h2 id="h-forks">3. Развилки: решения заказчика</h2>
+      <span class="hint">все пять решений утверждены 08.11.2026, 22:30 и сохранены в браузере; выбор можно изменить — отклонённые варианты помечены</span>
+    </div>
+
+    <div class="forks">
+
+      <article class="fork card decided" data-fork="variant">
+        <div class="opt-head"><h3>1. Вариант объёма и срока</h3><span class="badge done">Решено 08.11.2026</span></div>
+        <p class="small muted">Утверждён вариант B — 21,0 чн, 18–22 недели, цель 8–12 платящих за 16 недель беты.</p>
+        <div class="opts">
+          <div class="opt" data-option="S">
+            <div class="opt-head"><b>S — assisted-MVP · 10,5 чн · 9–10 недель</b><span class="badge rej">отклонено</span><button type="button" class="pick" data-fork="variant" data-option="S" aria-pressed="false">выбрано</button></div>
+            <ul class="pros"><li>быстрая проверка спроса руками: до 3 платящих;</li><li>платформенный слой не оплачивается.</li></ul>
+            <ul class="cons"><li>self-service нет — поток регистраций не проверить;</li><li>рост упирается в 3 клиентов.</li></ul>
+          </div>
+          <div class="opt" data-option="B">
+            <div class="opt-head"><b>B — self-service-бета · 21,0 чн · 18–22 недели</b><span class="badge done">утверждено</span><button type="button" class="pick" data-fork="variant" data-option="B" aria-pressed="false">выбрано</button></div>
+            <ul class="pros"><li>регистрация, триал, подписка и приём платежей — проверяется вся воронка;</li><li>цель 8–12 платящих за 16 недель беты.</li></ul>
+            <ul class="cons"><li>18–22 недели при разработчике фултайм и отдельном продавце;</li><li>нужен второй исполнитель или подрядчик — иначе срок сдвигается за 22 недели.</li></ul>
+          </div>
+          <div class="opt" data-option="C">
+            <div class="opt-head"><b>C — полный self-service · 23,0+ чн · 20–24 недели</b><span class="badge rej">отклонено</span><button type="button" class="pick" data-fork="variant" data-option="C" aria-pressed="false">выбрано</button></div>
+            <ul class="pros"><li>апгрейды, prorate, overage, seats, выплаты кэшбэка деньгами;</li><li>Enterprise-ready без переделки платформы.</li></ul>
+            <ul class="cons"><li>самый долгий срок и максимальный расход до выручки;</li><li>отложено на шаг 2 (после этапа 4).</li></ul>
+          </div>
+        </div>
+        <div class="rec dec"><b>Решение:</b> вариант B. S — fallback только при досрочной остановке проекта; C — шаг 2. Без второго исполнителя или подрядчика дата B не выполняется.</div>
+        <div class="fork-state dec" data-fork-state="variant">Утверждено: вариант B</div>
+      </article>
+
+      <article class="fork card decided" data-fork="trial">
+        <div class="opt-head"><h3>2. Триал: от чего считать 3 дня</h3><span class="badge done">Решено 08.11.2026</span></div>
+        <p class="small muted">Первый отчёт — до 5 рабочих дней, то есть 3 дня от регистрации истекают раньше, чем появляется ценность.</p>
+        <div class="opts">
+          <div class="opt" data-option="A">
+            <div class="opt-head"><b>A — 3 дня от регистрации</b><span class="badge rej">отклонено</span><button type="button" class="pick" data-fork="trial" data-option="A" aria-pressed="false">выбрано</button></div>
+            <ul class="pros"><li>простая механика: срок не зависит от действий оператора;</li><li>предсказуемая нагрузка и понятный отсчёт.</li></ul>
+            <ul class="cons"><li>таймер истекает до появления ценности: конверсия 3–5 %;</li><li>воронка регистрация → оплата обнуляется.</li></ul>
+          </div>
+          <div class="opt" data-option="B">
+            <div class="opt-head"><b>B — 3 дня после первого отчёта</b><span class="badge done">утверждено</span><button type="button" class="pick" data-fork="trial" data-option="B" aria-pressed="false">выбрано</button></div>
+            <ul class="pros"><li>таймер стартует после первого успешного отчёта — ценность увидена;</li><li>оценка конверсии регистрация → оплата 12–15 % вместо 3–5 %.</li></ul>
+            <ul class="cons"><li>таймер привязан к событию «отчёт отдан»;</li><li>срок плавает, нужны уведомления клиенту.</li></ul>
+          </div>
+        </div>
+        <div class="rec dec"><b>Решение:</b> вариант B — <code>trial_start = first_report</code>. Вариант «от регистрации» отклонён, но сохранён флагом <code>trial_start = registration</code> для A/B-теста (в продакшене не включён).</div>
+        <div class="fork-state dec" data-fork-state="trial">Утверждено: таймер после первого отчёта</div>
+      </article>
+
+      <article class="fork card decided" data-fork="cashback">
+        <div class="opt-head"><h3>3. Кэшбэк: как платить</h3><span class="badge done">Решено 08.11.2026</span></div>
+        <p class="small muted">Кэшбэк — только Growth 50 % нетто и Pro 80 % нетто; Starter без кэшбэка; обязательны фактический нетто-возврат и предохранитель.</p>
+        <div class="opts">
+          <div class="opt" data-option="A">
+            <div class="opt-head"><b>A — зачёт в баланс подписки (шаг 1, MVP)</b><span class="badge done">утверждено</span><button type="button" class="pick" data-fork="cashback" data-option="A" aria-pressed="false">выбрано</button></div>
+            <ul class="pros"><li>деньги за пределы платформы не уходят — кассового разрыва нет;</li><li>проще учёт, налоги и возвраты; работает до партнёрских выплат.</li></ul>
+            <ul class="cons"><li>меньше ощущается клиентом как «живые деньги»;</li><li>нужна логика списаний и срока жизни баланса.</li></ul>
+          </div>
+          <div class="opt" data-option="B">
+            <div class="opt-head"><b>B — деньги на счёт клиента</b><span class="badge rej">отклонено</span><button type="button" class="pick" data-fork="cashback" data-option="B" aria-pressed="false">выбрано</button></div>
+            <ul class="pros"><li>максимально понятная ценность для агентств;</li><li>сильный аргумент в переговорах с партнёром.</li></ul>
+            <ul class="cons"><li>требует фондирования и отсрочки до 50 дней — кассовый разрыв;</li><li>выплаты, чеки и отчётность сложнее; в MVP не делаем.</li></ul>
+          </div>
+          <div class="opt" data-option="C">
+            <div class="opt-head"><b>C — гибрид выше 10 000 ₽ (шаг 2)</b><span class="badge rej">отклонено</span><button type="button" class="pick" data-fork="cashback" data-option="C" aria-pressed="false">выбрано</button></div>
+            <ul class="pros"><li>до 10 000 ₽ — зачёт в баланс, выше — вывод деньгами;</li><li>запускается после 3 платящих с кабинетами и подтверждённого возврата.</li></ul>
+            <ul class="cons"><li>две механики и правило приоритета списания;</li><li>это шаг 2, а не MVP.</li></ul>
+          </div>
+        </div>
+        <div class="rec dec"><b>Решение:</b> шаг 1 — только зачёт в баланс подписки. Деньги на счёт и гибрид выше 10 000 ₽ — шаг 2, после 3 платящих с подключёнными кабинетами и первого подтверждённого возврата.</div>
+        <div class="fork-state dec" data-fork-state="cashback">Утверждено: зачёт в баланс подписки</div>
+      </article>
+
+      <article class="fork card decided" data-fork="auth">
+        <div class="opt-head"><h3>4. Авторизация: hosted или самописная</h3><span class="badge done">Решено 08.11.2026</span></div>
+        <p class="small muted">Auth и изоляция тенантов входят в MVP (этап 2): без них кабинет наружу не выпускаем.</p>
+        <div class="opts">
+          <div class="opt" data-option="A">
+            <div class="opt-head"><b>A — hosted auth · 3–5 чн</b><span class="badge done">утверждено</span><button type="button" class="pick" data-fork="auth" data-option="A" aria-pressed="false">выбрано</button></div>
+            <ul class="pros"><li>быстрее и безопаснее: вход, сессии, подтверждение e-mail, восстановление пароля — у провайдера;</li><li>экономит 5–9 чн против самописного.</li></ul>
+            <ul class="cons"><li>зависимость от внешнего сервиса и его доступности;</li><li>данные учётных записей уходят наружу — нужна политика данных.</li></ul>
+          </div>
+          <div class="opt" data-option="B">
+            <div class="opt-head"><b>B — самописный вход · 8–14 чн</b><span class="badge rej">отклонено</span><button type="button" class="pick" data-fork="auth" data-option="B" aria-pressed="false">выбрано</button></div>
+            <ul class="pros"><li>полный контроль над кодом и данными, нет внешней зависимости;</li><li>нет отдельного счёта за сервис auth.</li></ul>
+            <ul class="cons"><li>свой контур безопасности: сессии, восстановление, защита от перебора;</li><li>+5–9 чн к объёму и риск ошибок в изоляции.</li></ul>
+          </div>
+        </div>
+        <div class="rec dec"><b>Решение:</b> вариант A — hosted auth (Supabase / Auth0 / Clerk). Самописный отклонён: он дороже на 5–9 чн и переносит риск безопасности внутрь проекта.</div>
+        <div class="fork-state dec" data-fork-state="auth">Утверждено: hosted auth</div>
+      </article>
+
+      <article class="fork card decided" data-fork="budget">
+        <div class="opt-head"><h3>5. CAC-бюджет: потолок или план клиентов</h3><span class="badge done">Решено 08.11.2026</span></div>
+        <p class="small muted">Бюджет привлечения 264 000 ₽/год. Развилка: считать его планом к расходу или потолком с замером стоимости регистрации.</p>
+        <div class="opts">
+          <div class="opt" data-option="A">
+            <div class="opt-head"><b>A — потолок 264 000 ₽/год + замер на первых 100 регистрациях</b><span class="badge done">утверждено</span><button type="button" class="pick" data-fork="budget" data-option="A" aria-pressed="false">выбрано</button></div>
+            <ul class="pros"><li>план клиентов не поднимаем и бюджет не режем — обещания не меняются;</li><li>решение по каналу принимается по замеренной стоимости регистрации, а не по оценке;</li><li>порог остатка 150 000 ₽ оставляет запас.</li></ul>
+            <ul class="cons"><li>нужен реальный замер: без него цифра остаётся сценарной;</li><li>первые 100 регистраций могут израсходовать часть потолка.</li></ul>
+          </div>
+          <div class="opt" data-option="B">
+            <div class="opt-head"><b>B — поднять план клиентов под бюджет</b><span class="badge rej">отклонено</span><button type="button" class="pick" data-fork="budget" data-option="B" aria-pressed="false">выбрано</button></div>
+            <ul class="pros"><li>бюджет расходуется быстрее, выручка растёт раньше;</li><li>проще обосновать найм продавца.</li></ul>
+            <ul class="cons"><li>план клиентов был бы обещанием без замера стоимости привлечения;</li><li>риск выйти за потолок и за порог остатка 150 000 ₽.</li></ul>
+          </div>
+          <div class="opt" data-option="C">
+            <div class="opt-head"><b>C — урезать бюджет</b><span class="badge rej">отклонено</span><button type="button" class="pick" data-fork="budget" data-option="C" aria-pressed="false">выбрано</button></div>
+            <ul class="pros"><li>меньше расходов до подтверждения воронки;</li><li>ниже риск кассового разрыва.</li></ul>
+            <ul class="cons"><li>срезает проверку канала до появления данных;</li><li>цель 8–12 платящих становится недостижимой.</li></ul>
+          </div>
+        </div>
+        <div class="rec dec"><b>Решение:</b> вариант A — 264 000 ₽/год остаётся потолком, а не планом к расходу. План клиентов не поднимаем, бюджет не режем, стоимость регистрации замеряем на первых 100 регистрациях и решаем по замеру. Порог остатка — 150 000 ₽.</div>
+        <div class="fork-state dec" data-fork-state="budget">Утверждено: потолок 264 000 ₽/год + замер</div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ============ 4. МЕТРИКИ ============ -->
+  <section id="metrics" aria-labelledby="h-metrics">
+    <div class="sec-head">
+      <h2 id="h-metrics">4. Прогресс по метрикам</h2>
+      <span class="hint">вносите фактические значения по датам — записи сохраняются в браузере, столбики показывают динамику</span>
+    </div>
+
+    <div class="metrics">
+
+      <article class="metric card" data-metric="paying" data-unit="шт">
+        <h3>Платящие клиенты</h3>
+        <div class="small muted">Утверждённая цель варианта B: <b>8–12</b> за 16 недель беты; промежуточно — ≥ 2 к выходу этапа 2</div>
+        <p class="now">Текущее: <b data-now>данных нет</b></p>
+        <div class="row">
+          <input type="date" data-date aria-label="Дата значения: платящие клиенты">
+          <input type="text" inputmode="numeric" data-value placeholder="значение, шт" aria-label="Значение: платящие клиенты">
+          <button type="button" class="primary" data-add>Добавить</button>
+        </div>
+        <div class="spark" data-spark aria-hidden="true"></div>
+        <ul class="mlog" data-log></ul>
+      </article>
+
+      <article class="metric card" data-metric="reg_cost" data-unit="₽">
+        <h3>Стоимость регистрации</h3>
+        <div class="small muted">Замер на <b>первых 100 регистрациях</b> — по нему решение. CAC-бюджет 264 000 ₽/год — потолок, не план; остаток не ниже 150 000 ₽</div>
+        <p class="now">Текущее: <b data-now>данных нет</b></p>
+        <div class="row">
+          <input type="date" data-date aria-label="Дата значения: стоимость регистрации">
+          <input type="text" inputmode="decimal" data-value placeholder="например 2500" aria-label="Значение: стоимость регистрации">
+          <button type="button" class="primary" data-add>Добавить</button>
+        </div>
+        <div class="spark" data-spark aria-hidden="true"></div>
+        <ul class="mlog" data-log></ul>
+      </article>
+
+      <article class="metric card" data-metric="rar" data-unit="">
+        <h3>RAR — доля отчётов без правок</h3>
+        <div class="small muted">Цель ≥ 0,8 · минимум 0,6 (порог качества этапа 4) · измеряется на 10+ отчётах</div>
+        <p class="now">Текущее: <b data-now>данных нет</b></p>
+        <div class="row">
+          <input type="date" data-date aria-label="Дата значения: RAR">
+          <input type="text" inputmode="decimal" data-value placeholder="например 0,62" aria-label="Значение: RAR">
+          <button type="button" class="primary" data-add>Добавить</button>
+        </div>
+        <div class="spark" data-spark aria-hidden="true"></div>
+        <ul class="mlog" data-log></ul>
+      </article>
+
+      <article class="metric card" data-metric="trial" data-unit="%">
+        <h3>Конверсия триала в оплату</h3>
+        <div class="small muted">Цель ≥ 15 % активаций · порог провала &lt; 10 % → возврат к assisted-модели</div>
+        <p class="now">Текущее: <b data-now>данных нет</b></p>
+        <div class="row">
+          <input type="date" data-date aria-label="Дата значения: конверсия триала">
+          <input type="text" inputmode="decimal" data-value placeholder="например 15" aria-label="Значение: конверсия триала">
+          <button type="button" class="primary" data-add>Добавить</button>
+        </div>
+        <div class="spark" data-spark aria-hidden="true"></div>
+        <ul class="mlog" data-log></ul>
+      </article>
+
+      <!-- Воронка self-service -->
+      <article class="metric card funnel-card">
+        <h3>Воронка self-service: регистрации → активации → оплаты</h3>
+        <div class="small muted">План беты: <b>60 → 30 → 8</b> (регистрация → оплата 13 %). Порог провала: активация &lt; 25 % регистраций или регистрация → оплата &lt; 8 % → возврат к assisted.</div>
+        <div class="funnel">
+          <label class="fstep">Регистрации<input type="text" inputmode="numeric" data-funnel="reg" aria-label="Регистрации"></label>
+          <span class="farrow" aria-hidden="true">→</span>
+          <label class="fstep">Активации<input type="text" inputmode="numeric" data-funnel="act" aria-label="Активации"></label>
+          <span class="farrow" aria-hidden="true">→</span>
+          <label class="fstep">Оплаты<input type="text" inputmode="numeric" data-funnel="pay" aria-label="Оплаты"></label>
+          <button type="button" class="primary no-print" data-funnel-reset>Очистить</button>
+        </div>
+        <ul class="conv">
+          <li>Активация от регистраций: <b data-conv="act-reg">—</b> <span class="muted small">(план 50 %)</span></li>
+          <li>Оплата от регистраций: <b data-conv="pay-reg">—</b> <span class="muted small">(план 13 %)</span></li>
+          <li>Оплата от активаций: <b data-conv="pay-act">—</b> <span class="muted small">(план 27 %)</span></li>
+        </ul>
+        <p class="small muted" data-funnel-state style="margin-top:8px">данных нет — впишите фактические значения воронки</p>
+      </article>
+
+      <article class="metric card" data-metric="cac_cash" data-unit="₽">
+        <h3>CAC кассовый</h3>
+        <div class="small muted">Сценарное допущение — 12 022 ₽ (касса канала); не факт. Payback 1,4 мес при ARPA 10 500 ₽</div>
+        <p class="now">Текущее: <b data-now>данных нет</b></p>
+        <div class="row">
+          <input type="date" data-date aria-label="Дата значения: CAC кассовый">
+          <input type="text" inputmode="decimal" data-value placeholder="например 12022" aria-label="Значение: CAC кассовый">
+          <button type="button" class="primary" data-add>Добавить</button>
+        </div>
+        <div class="spark" data-spark aria-hidden="true"></div>
+        <ul class="mlog" data-log></ul>
+      </article>
+
+      <article class="metric card" data-metric="cac_full" data-unit="₽">
+        <h3>CAC полный (с часами основателя)</h3>
+        <div class="small muted">Сценарное допущение — 36 612 ₽; потолок Starter 15 800 ₽ при марже 79 %; LTV/CAC по полному CAC = 1,51 — Starter платным трафиком не масштабируется</div>
+        <p class="now">Текущее: <b data-now>данных нет</b></p>
+        <div class="row">
+          <input type="date" data-date aria-label="Дата значения: CAC полный">
+          <input type="text" inputmode="decimal" data-value placeholder="например 36612" aria-label="Значение: CAC полный">
+          <button type="button" class="primary" data-add>Добавить</button>
+        </div>
+        <div class="spark" data-spark aria-hidden="true"></div>
+        <ul class="mlog" data-log></ul>
+      </article>
+
+    </div>
+
+    <div class="toolbar no-print">
+      <button class="ghost" id="reset-metrics" type="button">Очистить метрики</button>
+      <button class="ghost" id="reset-forks" type="button">Вернуть утверждённые решения</button>
+      <span class="small muted">Данные хранятся локально в этом браузере и никуда не отправляются.</span>
+    </div>
+  </section>
+
+  <!-- ============ 5. ДЕНЬГИ: ЭФФЕКТ РЕШЕНИЙ ============ -->
+  <section id="money" aria-labelledby="h-money">
+    <div class="sec-head">
+      <h2 id="h-money">5. Деньги: эффект утверждённых решений</h2>
+      <span class="hint">сценарные допущения, источник — <code>finmodel.xlsx</code> / <code>unit-economics-cashflow.xlsx</code>; не факт</span>
+    </div>
+
+    <div class="money">
+
+      <article class="card">
+        <h3>Выплаты кэшбэка деньгами за год</h3>
+        <p class="big">0 ₽</p>
+        <p class="small muted">В MVP кэшбэк — <b>только зачёт в баланс подписки</b> (утверждено 08.11.2026). Вывод деньгами и гибрид выше 10 000 ₽ — шаг 2, после 3 платящих с кабинетами и подтверждённого возврата.</p>
+      </article>
+
+      <article class="card">
+        <h3>Касса в конце года</h3>
+        <p class="big">1 682 450 ₽</p>
+        <p class="small muted">MVP-режим (кэшбэк зачётом) против <span class="vs">1 571 528 ₽</span>, если выводить кэшбэк деньгами.</p>
+        <p class="effect">Эффект решения: <b>+110 922 ₽</b></p>
+      </article>
+
+      <article class="card">
+        <h3>Разрыв при ФОТ 100 000 ₽/мес</h3>
+        <p class="big">−46 681 ₽</p>
+        <p class="small muted">Минимум в месяце 6. Требуемое финансирование — <b>196 681 ₽</b>, runway 6 мес.</p>
+      </article>
+
+      <article class="card">
+        <h3>Бюджет привлечения</h3>
+        <p class="big">264 000 ₽/год</p>
+        <p class="small muted"><b>Потолок, а не план к расходу</b>: план клиентов не поднимаем, бюджет не режем. Потребность при CAC 12 000 ₽ — 294 360 ₽; решается замером стоимости регистрации на первых 100 регистрациях.</p>
+      </article>
+
+    </div>
+  </section>
+
+  <footer>
+    <p>Источники содержания: <code>roadmap-2-sprints.md</code> (утверждённый план этапов 1–4 и волна 2), <code>README.md</code>,
+      <code>gtm-mvp-scope.md</code> (только чтение). Оценки объёма помечены как оценки: данных о скорости команды и ₽/час в проекте нет.
+      Где факта нет — написано «данных нет», а не ноль. Числа CAC, бюджета и воронки — сценарные допущения, помеченные как таковые.</p>
+    <p>Файл автономный: без сетевых запросов, CDN, внешних шрифтов и картинок. Печать: Ctrl+P — карточки и таблицы не разрезаются.
+      Версия v9 (08.11.2026): утверждён вариант B, триал от первого отчёта, кэшбэк — зачёт в баланс, CAC-бюджет как потолок;
+      добавлен блок «Деньги: эффект утверждённых решений» (числа сценарные, источник — <code>finmodel.xlsx</code> и
+      <code>unit-economics-cashflow.xlsx</code>).</p>
+  </footer>
+
+</div>
+
+<script>
+(function () {
+  'use strict';
+
+  // Ключи v3: структура этапов изменилась, отсчёт прогресса начинается заново.
+  var KEYS = {
+    checklist: 'roadmap-visual:checklist:v3',
+    forks: 'roadmap-visual:forks:v3',
+    metrics: 'roadmap-visual:metrics:v3',
+    funnel: 'roadmap-visual:funnel:v3'
+  };
+
+  // Утверждённые заказчиком 08.11.2026 решения: значения по умолчанию, не сбрасываются.
+  var DECIDED = { variant: 'B', trial: 'B', cashback: 'A', auth: 'A', budget: 'A' };
+  var FORK_LABELS = {
+    variant: 'Вариант объёма и срока',
+    trial: 'Триал',
+    cashback: 'Кэшбэк',
+    auth: 'Авторизация',
+    budget: 'CAC-бюджет'
+  };
+  var DECIDED_TEXT = {
+    variant: 'Утверждено: вариант B (21,0 чн, 18–22 недели)',
+    trial: 'Утверждено: таймер после первого отчёта',
+    cashback: 'Утверждено: зачёт в баланс подписки',
+    auth: 'Утверждено: hosted auth',
+    budget: 'Утверждено: потолок 264 000 ₽/год + замер'
+  };
+
+  var store = {
+    get: function (key, fallback) {
+      try {
+        var raw = window.localStorage.getItem(key);
+        if (raw === null) { return fallback; }
+        var parsed = JSON.parse(raw);
+        return (parsed === null || typeof parsed === 'undefined') ? fallback : parsed;
+      } catch (e) { return fallback; }
+    },
+    set: function (key, value) {
+      try { window.localStorage.setItem(key, JSON.stringify(value)); return true; }
+      catch (e) { return false; }
+    },
+    remove: function (key) {
+      try { window.localStorage.removeItem(key); } catch (e) {}
+    }
+  };
+
+  var saveState = document.querySelector('[data-save-state]');
+  function reportSave(ok) {
+    if (!saveState) { return; }
+    saveState.textContent = ok ? 'сохранение: включено (localStorage)' : 'сохранение недоступно, отметки не сохранятся';
+  }
+
+  /* ---------------- чек-лист ---------------- */
+  var boxes = Array.prototype.slice.call(document.querySelectorAll('.items input[type=checkbox]'));
+  var counters = Array.prototype.slice.call(document.querySelectorAll('[data-cnt]'));
+  var bars = Array.prototype.slice.call(document.querySelectorAll('[data-bar]'));
+  var pcts = Array.prototype.slice.call(document.querySelectorAll('[data-pct]'));
+  var TOTAL = boxes.length;
+
+  function stageOf(box) { return (box.getAttribute('data-key') || '').split('-')[0]; }
+
+  function renderChecklist() {
+    var stageTotals = {};
+    var stageDone = {};
+    var allDone = 0;
+
+    boxes.forEach(function (box) {
+      var st = stageOf(box);
+      stageTotals[st] = (stageTotals[st] || 0) + 1;
+      if (box.checked) { stageDone[st] = (stageDone[st] || 0) + 1; allDone += 1; }
+    });
+
+    counters.forEach(function (el) {
+      var scope = el.getAttribute('data-cnt');
+      var done = scope === 'all' ? allDone : (stageDone[scope] || 0);
+      var all = scope === 'all' ? TOTAL : (stageTotals[scope] || 0);
+      el.textContent = done + ' из ' + all;
+    });
+
+    bars.forEach(function (bar) {
+      var st = bar.getAttribute('data-bar');
+      var all = stageTotals[st] || 0;
+      var done = stageDone[st] || 0;
+      var fill = bar.querySelector('i');
+      if (fill) { fill.style.width = (all ? Math.round(done * 100 / all) : 0) + '%'; }
+    });
+
+    pcts.forEach(function (el) {
+      var st = el.getAttribute('data-pct');
+      var all = stageTotals[st] || 0;
+      var done = stageDone[st] || 0;
+      el.textContent = (all ? Math.round(done * 100 / all) : 0) + '%';
+    });
+  }
+
+  var savedChecklist = store.get(KEYS.checklist, {});
+  boxes.forEach(function (box) {
+    var key = box.getAttribute('data-key');
+    if (savedChecklist && savedChecklist[key] === true) { box.checked = true; }
+    box.addEventListener('change', function () {
+      var state = store.get(KEYS.checklist, {});
+      if (box.checked) { state[key] = true; } else { delete state[key]; }
+      reportSave(store.set(KEYS.checklist, state));
+      renderChecklist();
+    });
+  });
+  renderChecklist();
+
+  (function probeStorage() {
+    var probeKey = 'roadmap-visual:probe';
+    var ok = store.set(probeKey, 1);
+    if (ok) { store.remove(probeKey); }
+    reportSave(ok);
+  }());
+
+  var resetProgress = document.getElementById('reset-progress');
+  if (resetProgress) {
+    resetProgress.addEventListener('click', function () {
+      if (!window.confirm('Сбросить все отметки чек-листа? Развилки и метрики не затрагиваются.')) { return; }
+      boxes.forEach(function (box) { box.checked = false; });
+      store.remove(KEYS.checklist);
+      renderChecklist();
+      reportSave(true);
+    });
+  }
+
+  /* ---------------- развилки (решения заказчика) ---------------- */
+  var picks = Array.prototype.slice.call(document.querySelectorAll('.pick'));
+
+  function forkState() {
+    var saved = store.get(KEYS.forks, null);
+    var state = {};
+    Object.keys(DECIDED).forEach(function (fork) {
+      state[fork] = (saved && saved[fork]) ? saved[fork] : DECIDED[fork];
+    });
+    return state;
+  }
+
+  function renderForks() {
+    var state = forkState();
+    picks.forEach(function (btn) {
+      var fork = btn.getAttribute('data-fork');
+      var option = btn.getAttribute('data-option');
+      var chosen = state[fork] === option;
+      var decided = DECIDED[fork] === option;
+      btn.setAttribute('aria-pressed', chosen ? 'true' : 'false');
+      btn.textContent = chosen ? (decided ? 'утверждено ✓' : 'выбрано ✓') : 'выбрано';
+      var opt = btn.closest('.opt');
+      if (opt) {
+        if (chosen) { opt.classList.add('selected'); } else { opt.classList.remove('selected'); }
+        if (!chosen && decided) { opt.classList.add('rejected'); } else { opt.classList.remove('rejected'); }
+      }
+    });
+    Object.keys(FORK_LABELS).forEach(function (fork) {
+      var el = document.querySelector('[data-fork-state="' + fork + '"]');
+      if (!el) { return; }
+      var isDecided = state[fork] === DECIDED[fork];
+      el.textContent = isDecided
+        ? DECIDED_TEXT[fork]
+        : 'Изменено вручную: вариант ' + state[fork] + ' (утверждено было ' + DECIDED[fork] + ')';
+      if (isDecided) { el.classList.add('dec'); } else { el.classList.remove('dec'); }
+    });
+  }
+
+  picks.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var fork = btn.getAttribute('data-fork');
+      var option = btn.getAttribute('data-option');
+      var state = forkState();
+      state[fork] = option;
+      reportSave(store.set(KEYS.forks, state));
+      renderForks();
+    });
+  });
+  renderForks();
+
+  var resetForks = document.getElementById('reset-forks');
+  if (resetForks) {
+    resetForks.addEventListener('click', function () {
+      if (!window.confirm('Вернуть утверждённые заказчиком решения (08.11.2026)?')) { return; }
+      store.remove(KEYS.forks);
+      renderForks();
+    });
+  }
+
+  /* ---------------- метрики ---------------- */
+  var metricCards = Array.prototype.slice.call(document.querySelectorAll('.metric[data-metric]'));
+
+  function todayISO() {
+    var d = new Date();
+    var m = String(d.getMonth() + 1); if (m.length < 2) { m = '0' + m; }
+    var day = String(d.getDate()); if (day.length < 2) { day = '0' + day; }
+    return d.getFullYear() + '-' + m + '-' + day;
+  }
+
+  function fmtDate(iso) {
+    if (!iso || iso.length < 10) { return iso || '—'; }
+    return iso.slice(8, 10) + '.' + iso.slice(5, 7) + '.' + iso.slice(0, 4);
+  }
+
+  function renderMetrics() {
+    var all = store.get(KEYS.metrics, {});
+    metricCards.forEach(function (card) {
+      var id = card.getAttribute('data-metric');
+      var unit = card.getAttribute('data-unit') || '';
+      var list = (all[id] || []).slice();
+      var log = card.querySelector('[data-log]');
+      var spark = card.querySelector('[data-spark]');
+      var now = card.querySelector('[data-now]');
+
+      if (log) { log.innerHTML = ''; }
+      if (list.length === 0) {
+        if (now) { now.textContent = 'данных нет'; }
+        if (spark) { spark.innerHTML = ''; }
+        if (log) {
+          var empty = document.createElement('li');
+          empty.className = 'muted';
+          empty.textContent = 'записей нет — впишите измеренное значение';
+          log.appendChild(empty);
+        }
+        return;
+      }
+
+      var last = list[list.length - 1];
+      if (now) { now.textContent = String(last.value) + (unit ? ' ' + unit : ''); }
+
+      if (spark) {
+        spark.innerHTML = '';
+        var tail = list.slice(-8);
+        var nums = tail.map(function (r) { return Number(String(r.value).replace(',', '.')); });
+        var max = 0;
+        nums.forEach(function (n) { if (isFinite(n) && n > max) { max = n; } });
+        tail.forEach(function (rec, i) {
+          var col = document.createElement('div');
+          col.className = 'c' + (i === tail.length - 1 ? ' last' : '');
+          var n = nums[i];
+          col.style.height = ((max > 0 && isFinite(n)) ? Math.max(6, Math.round(n * 100 / max)) : 6) + '%';
+          col.title = fmtDate(rec.date) + ': ' + rec.value + (unit ? ' ' + unit : '');
+          spark.appendChild(col);
+        });
+      }
+
+      if (log) {
+        list.slice().reverse().forEach(function (rec) {
+          var li = document.createElement('li');
+          var span = document.createElement('span');
+          span.textContent = fmtDate(rec.date) + ' — ' + rec.value + (unit ? ' ' + unit : '');
+          var del = document.createElement('button');
+          del.type = 'button';
+          del.className = 'del no-print';
+          del.textContent = 'удалить';
+          del.setAttribute('data-del', id);
+          del.setAttribute('data-date', rec.date);
+          del.setAttribute('data-value', rec.value);
+          li.appendChild(span);
+          li.appendChild(del);
+          log.appendChild(li);
+        });
+      }
+    });
+  }
+
+  metricCards.forEach(function (card) {
+    var id = card.getAttribute('data-metric');
+    var dateInput = card.querySelector('[data-date]');
+    var valueInput = card.querySelector('[data-value]');
+    var addBtn = card.querySelector('[data-add]');
+    if (dateInput && !dateInput.value) { dateInput.value = todayISO(); }
+    if (!addBtn) { return; }
+    addBtn.addEventListener('click', function () {
+      var raw = (valueInput && valueInput.value ? valueInput.value : '').trim();
+      if (raw === '') { if (valueInput) { valueInput.focus(); } return; }
+      var all = store.get(KEYS.metrics, {});
+      if (!all[id]) { all[id] = []; }
+      all[id].push({ date: (dateInput && dateInput.value) || todayISO(), value: raw });
+      reportSave(store.set(KEYS.metrics, all));
+      if (valueInput) { valueInput.value = ''; }
+      if (dateInput) { dateInput.value = todayISO(); }
+      renderMetrics();
+    });
+    if (valueInput) {
+      valueInput.addEventListener('keydown', function (ev) {
+        if (ev.key === 'Enter') { ev.preventDefault(); addBtn.click(); }
+      });
+    }
+  });
+
+  document.addEventListener('click', function (ev) {
+    var btn = ev.target && ev.target.closest ? ev.target.closest('[data-del]') : null;
+    if (!btn) { return; }
+    var id = btn.getAttribute('data-del');
+    var date = btn.getAttribute('data-date');
+    var value = btn.getAttribute('data-value');
+    var all = store.get(KEYS.metrics, {});
+    if (!all[id]) { return; }
+    for (var i = all[id].length - 1; i >= 0; i -= 1) {
+      if (String(all[id][i].date) === String(date) && String(all[id][i].value) === String(value)) {
+        all[id].splice(i, 1);
+        break;
+      }
+    }
+    reportSave(store.set(KEYS.metrics, all));
+    renderMetrics();
+  });
+
+  /* ---------------- воронка self-service ---------------- */
+  var funnelInputs = Array.prototype.slice.call(document.querySelectorAll('[data-funnel]'));
+  var funnelState = document.querySelector('[data-funnel-state]');
+
+  function funnelNumber(raw) {
+    var n = Number(String(raw == null ? '' : raw).replace(',', '.').replace(/\s/g, ''));
+    return isFinite(n) && n >= 0 ? n : null;
+  }
+
+  function pct(part, whole) {
+    if (part === null || whole === null || whole <= 0) { return null; }
+    return Math.round(part * 1000 / whole) / 10;
+  }
+
+  function fmtPct(v) {
+    if (v === null) { return '—'; }
+    return String(v).replace('.', ',') + ' %';
+  }
+
+  function renderFunnel() {
+    var saved = store.get(KEYS.funnel, {});
+    var vals = {};
+    funnelInputs.forEach(function (inp) {
+      var key = inp.getAttribute('data-funnel');
+      if (saved && typeof saved[key] !== 'undefined' && inp.value === '') { inp.value = saved[key]; }
+      vals[key] = funnelNumber(inp.value);
+    });
+    var out = { 'act-reg': pct(vals.act, vals.reg), 'pay-reg': pct(vals.pay, vals.reg), 'pay-act': pct(vals.pay, vals.act) };
+    Object.keys(out).forEach(function (k) {
+      var el = document.querySelector('[data-conv="' + k + '"]');
+      if (el) { el.textContent = fmtPct(out[k]); }
+    });
+    if (funnelState) {
+      var filled = vals.reg !== null || vals.act !== null || vals.pay !== null;
+      funnelState.textContent = filled
+        ? 'план беты: 60 → 30 → 8 (50 % активаций, 13 % регистрация → оплата); порог провала — активация < 25 % или регистрация → оплата < 8 %'
+        : 'данных нет — впишите фактические значения воронки';
+    }
+  }
+
+  funnelInputs.forEach(function (inp) {
+    inp.addEventListener('input', function () {
+      var key = inp.getAttribute('data-funnel');
+      var saved = store.get(KEYS.funnel, {});
+      saved[key] = inp.value;
+      reportSave(store.set(KEYS.funnel, saved));
+      renderFunnel();
+    });
+  });
+  renderFunnel();
+
+  var funnelReset = document.querySelector('[data-funnel-reset]');
+  if (funnelReset) {
+    funnelReset.addEventListener('click', function () {
+      if (!window.confirm('Очистить значения воронки?')) { return; }
+      funnelInputs.forEach(function (inp) { inp.value = ''; });
+      store.remove(KEYS.funnel);
+      renderFunnel();
+    });
+  }
+
+  var resetMetrics = document.getElementById('reset-metrics');
+  if (resetMetrics) {
+    resetMetrics.addEventListener('click', function () {
+      if (!window.confirm('Очистить все внесённые значения метрик и воронки?')) { return; }
+      store.remove(KEYS.metrics);
+      store.remove(KEYS.funnel);
+      funnelInputs.forEach(function (inp) { inp.value = ''; });
+      renderMetrics();
+      renderFunnel();
+    });
+  }
+
+  renderMetrics();
+})();
+</script>
+</body>
+</html>

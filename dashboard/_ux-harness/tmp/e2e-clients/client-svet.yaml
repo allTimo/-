@@ -1,0 +1,324 @@
+# ============================================================================
+# КОНФИГ КЛИЕНТА: client-svet (ЖК «Свет», Dominanta)
+# ============================================================================
+# Один файл = один клиент (контракт зафиксирован Lead, см. task-49).
+# Глобальные переключатели — registry/sources.yaml; этот файл их переопределяет.
+# Панель: registry/clients.yaml -> client-svet, registry/agent-settings/agent-1-competitor-watch.yaml
+#
+# СОСТАВ КОНКУРЕНТОВ (обновлён 2026-11-03, task-7 / дефект D1):
+#   Официальный список застройщика — 19 ЖК из базы знаний проекта
+#   docs/projects/svet-project-base.md, раздел «Конкуренты» (перенос листа «СВЕТ»
+#   таблицы Dominanta, дата переноса 2026-11-03).
+#   Дополнительно сохранён 1 ориентир (Михалковский) — вне официального списка.
+#   Итого 20 записей.
+#
+#   class: у 7 записей значение взято из подтверждённого источника
+#   (00-admin/config/competitors.yaml, обновлён 2026-10-31); у 13 новых
+#   конкурентов официальная таблица класс не содержит, поэтому стоит
+#   class: "" (пусто = не подтверждён, НЕ выдумываем значение).
+#   Поле присутствует, т.к. его требует 00-admin/scripts/validate_config.py
+#   (CLIENT_COMPETITOR_REQUIRED = name, developer, class, site, platforms).
+#
+# ССЫЛКИ ПРОВЕРЕНЫ ФАКТИЧЕСКИ 2026-11-01 обычным HTTP (без логина).
+# Полная таблица проверки: 00-admin/research/platforms-public-pages-2026-11-01.md
+#   cian          — HTTP 200, в HTML видны лоты с ценами (реально работает без входа)
+#   yandex-realty — HTTP 200, цена видна (проверено на двух ЖК)
+#   avito         — HTTP 439 «Доступ ограничен: проверка безопасности» (ЗАБЛОКИРОВАН)
+#   domclick      — HTTP 401 (ЗАБЛОКИРОВАН)
+# Ссылки площадок (platforms) сохранены ТОЛЬКО там, где они уже проверены;
+# для остальных конкурентов — пустые значения и TODO без выдуманных URL.
+# ============================================================================
+
+version: 1
+updated: "2026-11-03"
+
+client_id: client-svet
+name: "ЖК «Свет»"
+brand:
+  logo: "assets/logo.png"      # TODO (от пользователя): файл логотипа ещё не положен в проект
+  accent: "#7553ff"
+
+schedule:
+  weekday: thursday            # как в registry/agent-settings: присылать по четвергам
+  time: "11:00"                # Europe/Moscow
+
+report:
+  title: "Мониторинг конкурентов"
+  formats: [md, xlsx, pdf]     # движок отдаёт md + xlsx + docx + pdf (F1, 2026-11-03);
+                               # pdf собирается через node + libreoffice-kit
+
+recipients:
+  # Решение пользователя 04.11.2026: только эти два адреса, телеграм-канал не используется.
+  - { channel: email, address: "tyurina@d-a.ru" }       # получатель отчёта
+  - { channel: email, address: "vodnev@d-a.ru" }        # получатель отчёта
+
+sources:
+  - { id: developer-sites, enabled: true }                                   # работает частично
+  - { id: cian,           enabled: true, mode: public-pages, auth: none }     # проверено: 10/10 страниц ЖК, 200
+  - { id: avito,          enabled: false, mode: public-pages, auth: none }    # 439 «проверка безопасности»
+  - { id: yandex-realty,  enabled: true, mode: public-pages, auth: none }     # проверено: 200, цена видна
+  - { id: domclick,       enabled: false, mode: public-pages, auth: none }    # 401
+
+competitors:
+  # ==========================================================================
+  # ОФИЦИАЛЬНЫЙ СПИСОК ЗАСТРОЙЩИКА — 19 ЖК (лист «СВЕТ», база знаний Dominanta)
+  # Порядок — как в таблице застройщика.
+  # ==========================================================================
+
+  # 1
+  - name: "Селигер Сити"
+    developer: "MR Group"
+    class: "бизнес"
+    site: "https://www.mr-group.ru/projects/zhk-seliger-siti"
+    platforms:
+      cian: "https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-seliger-siti-36051-ot-zastroyschika-OTZ/"
+      avito: ""
+      yandex_realty: ""
+      domclick: ""
+
+  # 2
+  - name: "Дмитровское небо"
+    developer: "ЛСР"
+    class: "бизнес"
+    site: "https://www.lsr.ru/msk/zhilye-kompleksy/dmitrovskoe-nebo"
+    platforms:
+      cian: "https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-dmitrovskoe-nebo-4051330-ot-zastroyschika-OTZ/"
+      avito: ""
+      yandex_realty: ""
+      domclick: ""
+
+  # 3
+  - name: "Very"
+    developer: "ГК Основа"
+    class: ""                    # класс не подтверждён официальной таблицей
+    site: "https://gk-osnova.ru/very-botsad"
+    # TODO (от пользователя): ссылка на площадку не подтверждена — не выдумываем
+    platforms:
+      cian: ""
+      avito: ""
+      yandex_realty: ""
+      domclick: ""
+
+  # 4
+  - name: "Mod"
+    developer: "MR Group"
+    class: ""                    # класс не подтверждён официальной таблицей
+    site: "https://www.mr-group.ru/projects/zhk-mod"
+    # TODO (от пользователя): ссылка на площадку не подтверждена — не выдумываем
+    platforms:
+      cian: ""
+      avito: ""
+      yandex_realty: ""
+      domclick: ""
+
+  # 5
+  - name: "Level Южнопортовая"
+    developer: "Level Group"
+    class: ""                    # класс не подтверждён официальной таблицей
+    site: "https://level.ru/projects/southport/"
+    # TODO (от пользователя): ссылка на площадку не подтверждена — не выдумываем
+    platforms:
+      cian: ""
+      avito: ""
+      yandex_realty: ""
+      domclick: ""
+
+  # 6
+  - name: "Адмирал"
+    developer: "Галс"
+    class: ""                    # класс не подтверждён официальной таблицей
+    site: "https://hals-admiral.mrqz.me/"
+    # TODO (от пользователя): ссылка на площадку не подтверждена — не выдумываем
+    platforms:
+      cian: ""
+      avito: ""
+      yandex_realty: ""
+      domclick: ""
+
+  # 7
+  - name: "AFI Tower"
+    developer: "AFI Development"
+    class: ""                    # класс не подтверждён официальной таблицей
+    site: "https://afitower.ru/"
+    # TODO (от пользователя): ссылка на площадку не подтверждена — не выдумываем
+    platforms:
+      cian: ""
+      avito: ""
+      yandex_realty: ""
+      domclick: ""
+
+  # 8
+  - name: "Pride"
+    developer: "PIONEER"
+    class: ""                    # класс не подтверждён официальной таблицей
+    site: "https://pride-home.ru/"
+    # TODO (от пользователя): ссылка на площадку не подтверждена — не выдумываем
+    platforms:
+      cian: ""
+      avito: ""
+      yandex_realty: ""
+      domclick: ""
+
+  # 9
+  - name: "Level Селигерская"
+    developer: "Level Group"
+    class: ""                    # класс не подтверждён официальной таблицей
+    site: "https://level.ru/projects/seligerskaya"
+    # TODO (от пользователя): ссылка на площадку не подтверждена — не выдумываем
+    platforms:
+      cian: ""
+      avito: ""
+      yandex_realty: ""
+      domclick: ""
+
+  # 10
+  - name: "Яркий квартал Инджой"
+    developer: "Талан"
+    class: ""                    # класс не подтверждён официальной таблицей
+    site: "https://injoy.ru/"
+    # TODO (от пользователя): ссылка на площадку не подтверждена — не выдумываем
+    platforms:
+      cian: ""
+      avito: ""
+      yandex_realty: ""
+      domclick: ""
+
+  # 11
+  - name: "Апсайд Тауэрс"
+    developer: "Upside Девелопмент"
+    class: ""                    # класс не подтверждён официальной таблицей
+    site: "https://upside-towers.ru/"
+    # TODO (от пользователя): ссылка на площадку не подтверждена — не выдумываем
+    platforms:
+      cian: ""
+      avito: ""
+      yandex_realty: ""
+      domclick: ""
+
+  # 12
+  - name: "Сити Бэй"
+    developer: "MR Group"
+    class: ""                    # класс не подтверждён официальной таблицей
+    site: "https://www.mr-group.ru/projects/zhk-citybay/"
+    # TODO (от пользователя): ссылка на площадку не подтверждена — не выдумываем
+    platforms:
+      cian: ""
+      avito: ""
+      yandex_realty: ""
+      domclick: ""
+
+  # 13 (в прежнем конфиге — «Кинетик. Резиденции на Дмитровском»)
+  - name: "Kinetic"
+    developer: "UDS"
+    class: "бизнес"
+    site: "https://dom-kinetik.ru/"
+    platforms:
+      cian: "https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-kinetik-rezidencii-na-dmitrovskom-5778933-ot-zastroyschika-OTZ/"
+      avito: ""
+      yandex_realty: ""
+      domclick: ""
+
+  # 14
+  - name: "Квартал МОНС"
+    developer: "Брусника"
+    class: "бизнес"              # источник: 00-admin/config/competitors.yaml (zhk-mons)
+    site: "https://moskva.brusnika.ru/projects/mons"
+    # TODO (от пользователя): ссылка на площадку не подтверждена — не выдумываем
+    platforms:
+      cian: ""
+      avito: ""
+      yandex_realty: ""
+      domclick: ""
+
+  # 15
+  - name: "Тринити 3"
+    developer: "Гранель"
+    class: ""                    # класс не подтверждён официальной таблицей
+    site: "https://granelle.ru/objects/tri"
+    # TODO (от пользователя): ссылка на площадку не подтверждена — не выдумываем
+    platforms:
+      cian: ""
+      avito: ""
+      yandex_realty: ""
+      domclick: ""
+
+  # 16
+  - name: "Онежский вал"
+    developer: "ПИК"
+    class: "бизнес"
+    site: "https://www.pik.ru/onezhskiy"
+    platforms:
+      cian: "https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-onezhskiy-val-5722062-ot-zastroyschika-OTZ/"
+      avito: ""
+      yandex_realty: ""
+      domclick: ""
+
+  # 17
+  - name: "Руставели 14"
+    developer: "ПИК"
+    class: ""                    # класс не подтверждён официальной таблицей
+    site: "https://www.pik.ru/"
+    # TODO (от пользователя): ссылка на площадку не подтверждена — не выдумываем
+    platforms:
+      cian: ""
+      avito: ""
+      yandex_realty: ""
+      domclick: ""
+
+  # 18
+  - name: "Акценты"
+    developer: "Plus Development"
+    class: "бизнес"
+    site: "https://accenty.ru/"
+    platforms:
+      cian: "https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-akcenty-5698426-ot-zastroyschika-OTZ/"
+      avito: ""
+      yandex_realty: "https://realty.yandex.ru/moskva_i_moskovskaya_oblast/kupit/novostrojka/akcenty-3991148/"
+      domclick: ""
+
+  # 19 (сайта в таблице застройщика нет)
+  - name: "Дмитровское ш., 89"
+    developer: "Фонд реновации"
+    class: ""                    # класс не подтверждён официальной таблицей
+    site: ""
+    # TODO (от пользователя): сайта нет в таблице застройщика; ссылки площадок не подтверждены
+    platforms:
+      cian: ""
+      avito: ""
+      yandex_realty: ""
+      domclick: ""
+
+  # ==========================================================================
+  # ДОПОЛНИТЕЛЬНЫЙ ОРИЕНТИР — вне официального списка застройщика
+  # ==========================================================================
+  # В официальном списке (лист «СВЕТ») отсутствует, но сохранён как ориентир
+  # по сегменту: рабочие cian + yandex ссылки проверены 2026-11-01.
+  - name: "Михалковский"
+    developer: "РГ-Девелопмент"
+    class: "бизнес"
+    source: "дополнительный ориентир (вне списка застройщика)"
+    site: "https://rg-dev.ru/novostroyki/mihalkovskij/"
+    platforms:
+      cian: "https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-mihalkovskiy-3206223-ot-zastroyschika-OTZ/"
+      avito: ""
+      yandex_realty: "https://realty.yandex.ru/moskva_i_moskovskaya_oblast/kupit/novostrojka/mihalkovskij-2586475/"
+      domclick: ""
+
+  - { id: жк-нарвин, name: "ЖК Нарвин", developer: "ПИК", class: "", site: "", platforms: { cian: "", avito: "", yandex_realty: "", domclick: "" }, source: "автоподбор", distance_km: 4.28, added: "2026-11-04" }
+# НАШ СОБСТВЕННЫЙ ОБЪЕКТ здесь НЕ дублируется: структура контракта фиксирована
+# (client_id, name, brand, schedule, report, recipients, sources, competitors).
+# Наш ЖК задаётся в панели: registry/agent-settings/agent-1-competitor-watch.yaml -> agent1.watch;
+# самоописание — 00-admin/config/my-objects.yaml -> my-zhk-svet.
+# Ссылки нашего ЖК на 01.11.2026 (для agent1.watch.url, проверены HTTP 200):
+#   сайт: https://svetdom.ru/
+#   циан: https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-svet-5449798-ot-zastroyschika-OTZ/  (28 лотов в HTML)
+
+# ЧТО НУЖНО ОТ ПОЛЬЗОВАТЕЛЯ (TODO):
+#   1. Логотип клиента в assets/logo.png (сейчас в проекте нет).
+#   2. Для 13 НОВЫХ конкурентов официального списка (Very, Mod, Level Южнопортовая,
+#      Адмирал, AFI Tower, Pride, Level Селигерская, Яркий квартал Инджой,
+#      Апсайд Тауэрс, Сити Бэй, Тринити 3, Руставели 14, Дмитровское ш., 89) —
+#      ссылки на площадки (cian / yandex_realty). Сейчас они пустые:
+#      URL не выдумываются. Авито/Домклик заблокированы (439/401) и выключены в sources.
+#   3. Подтвердить class для 13 конкурентов выше (сейчас class: "" = неизвестен);
+#      у остальных значение "бизнес" взято из 00-admin/config/competitors.yaml.

@@ -1,0 +1,80 @@
+{
+ "goal_309041787": {
+  "id": 309041787,
+  "name": "Лид",
+  "type": "step",
+  "default_price": 0.0,
+  "is_retargeting": 0,
+  "goal_source": "user",
+  "is_favorite": 1,
+  "status": "Active",
+  "labels": [],
+  "steps": [
+   {
+    "id": 309041789,
+    "name": "Лид.",
+    "type": "url",
+    "default_price": 0.0,
+    "is_retargeting": 0,
+    "goal_source": "user",
+    "is_favorite": 0,
+    "status": "Active",
+    "conditions": [
+     {
+      "type": "action",
+      "url": "send-form-call-me"
+     },
+     {
+      "type": "action",
+      "url": "send-form-calc-project"
+     },
+     {
+      "type": "action",
+      "url": "send-form-order-construct"
+     },
+     {
+      "type": "action",
+      "url": "send-form-action"
+     },
+     {
+      "type": "action",
+      "url": "send-formЛучше-один-раз-увидеть"
+     },
+     {
+      "type": "action",
+      "url": "send-form-credit"
+     },
+     {
+      "type": "action",
+      "url": "send-form-changes-project"
+     },
+     {
+      "type": "action",
+      "url": "send-form-meeting"
+     },
+     {
+      "type": "action",
+      "url": "send-form-buy-project"
+     },
+     {
+      "type": "action",
+      "url": "Jivo_User_gave_contacts_during_chat"
+     }
+    ]
+   }
+  ]
+ },
+ "goal_297819512": {
+  "id": 297819512,
+  "name": "Отправка всех форм",
+  "type": "form",
+  "default_price": 0.0,
+  "is_retargeting": 0,
+  "goal_source": "user",
+  "is_favorite": 0,
+  "status": "Active",
+  "labels": [],
+  "conditions": [],
+  "price_locations": []
+ }
+}

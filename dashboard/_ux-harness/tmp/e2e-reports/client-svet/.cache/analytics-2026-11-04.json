@@ -1,0 +1,762 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-04",
+  "generated_at": "2026-11-04T15:45:30",
+  "client_id": "client-svet",
+  "toggles": {
+    "enabled": true,
+    "lots_all_on_sale": true,
+    "price_dynamics": true,
+    "promos": true,
+    "developers_sites": true,
+    "dedup_promos": true,
+    "new_promos_only": true,
+    "forecast": true
+  },
+  "metrics": {
+    "competitorsInAnalysis": 19,
+    "competitorsWithData": 8,
+    "lotsAnalyzed": 154,
+    "cheapestLotRub": 1100000
+  },
+  "truth": {
+    "competitors": 19,
+    "withData": 8,
+    "withoutSource": 2,
+    "list": [
+      {
+        "id": "селигер-сити",
+        "name": "Селигер Сити",
+        "developer": "MR Group",
+        "klass": "бизнес",
+        "site": "https://www.mr-group.ru/projects/zhk-seliger-siti",
+        "platforms": {
+          "cian": "https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-seliger-siti-36051-ot-zastroyschika-OTZ/"
+        },
+        "hasSource": true,
+        "hasData": true,
+        "source": "",
+        "status": "в анализе"
+      },
+      {
+        "id": "дмитровское-небо",
+        "name": "Дмитровское небо",
+        "developer": "ЛСР",
+        "klass": "бизнес",
+        "site": "https://www.lsr.ru/msk/zhilye-kompleksy/dmitrovskoe-nebo",
+        "platforms": {
+          "cian": "https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-dmitrovskoe-nebo-4051330-ot-zastroyschika-OTZ/"
+        },
+        "hasSource": true,
+        "hasData": true,
+        "source": "",
+        "status": "в анализе"
+      },
+      {
+        "id": "very",
+        "name": "Very",
+        "developer": "ГК Основа",
+        "klass": "",
+        "site": "https://gk-osnova.ru/very-botsad",
+        "platforms": {},
+        "hasSource": true,
+        "hasData": true,
+        "source": "",
+        "status": "в анализе"
+      },
+      {
+        "id": "mod",
+        "name": "Mod",
+        "developer": "MR Group",
+        "klass": "",
+        "site": "https://www.mr-group.ru/projects/zhk-mod",
+        "platforms": {},
+        "hasSource": true,
+        "hasData": false,
+        "source": "",
+        "status": "в анализе"
+      },
+      {
+        "id": "level-южнопортовая",
+        "name": "Level Южнопортовая",
+        "developer": "Level Group",
+        "klass": "",
+        "site": "https://level.ru/projects/southport/",
+        "platforms": {},
+        "hasSource": true,
+        "hasData": true,
+        "source": "",
+        "status": "в анализе"
+      },
+      {
+        "id": "адмирал",
+        "name": "Адмирал",
+        "developer": "Галс",
+        "klass": "",
+        "site": "https://hals-admiral.mrqz.me/",
+        "platforms": {},
+        "hasSource": true,
+        "hasData": false,
+        "source": "",
+        "status": "в анализе"
+      },
+      {
+        "id": "afi-tower",
+        "name": "AFI Tower",
+        "developer": "AFI Development",
+        "klass": "",
+        "site": "https://afitower.ru/",
+        "platforms": {},
+        "hasSource": true,
+        "hasData": false,
+        "source": "",
+        "status": "в анализе"
+      },
+      {
+        "id": "pride",
+        "name": "Pride",
+        "developer": "PIONEER",
+        "klass": "",
+        "site": "https://pride-home.ru/",
+        "platforms": {},
+        "hasSource": true,
+        "hasData": false,
+        "source": "",
+        "status": "в анализе"
+      },
+      {
+        "id": "level-селигерская",
+        "name": "Level Селигерская",
+        "developer": "Level Group",
+        "klass": "",
+        "site": "https://level.ru/projects/seligerskaya",
+        "platforms": {},
+        "hasSource": true,
+        "hasData": true,
+        "source": "",
+        "status": "в анализе"
+      },
+      {
+        "id": "яркий-квартал-инджой",
+        "name": "Яркий квартал Инджой",
+        "developer": "Талан",
+        "klass": "",
+        "site": "https://injoy.ru/",
+        "platforms": {},
+        "hasSource": true,
+        "hasData": false,
+        "source": "",
+        "status": "в анализе"
+      },
+      {
+        "id": "апсайд-тауэрс",
+        "name": "Апсайд Тауэрс",
+        "developer": "Upside Девелопмент",
+        "klass": "",
+        "site": "https://upside-towers.ru/",
+        "platforms": {},
+        "hasSource": true,
+        "hasData": false,
+        "source": "",
+        "status": "в анализе"
+      },
+      {
+        "id": "сити-бэй",
+        "name": "Сити Бэй",
+        "developer": "MR Group",
+        "klass": "",
+        "site": "https://www.mr-group.ru/projects/zhk-citybay/",
+        "platforms": {},
+        "hasSource": true,
+        "hasData": false,
+        "source": "",
+        "status": "в анализе"
+      },
+      {
+        "id": "kinetic",
+        "name": "Kinetic",
+        "developer": "UDS",
+        "klass": "бизнес",
+        "site": "https://dom-kinetik.ru/",
+        "platforms": {
+          "cian": "https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-kinetik-rezidencii-na-dmitrovskom-5778933-ot-zastroyschika-OTZ/"
+        },
+        "hasSource": true,
+        "hasData": false,
+        "source": "",
+        "status": "в анализе"
+      },
+      {
+        "id": "квартал-монс",
+        "name": "Квартал МОНС",
+        "developer": "Брусника",
+        "klass": "бизнес",
+        "site": "https://moskva.brusnika.ru/projects/mons",
+        "platforms": {},
+        "hasSource": true,
+        "hasData": false,
+        "source": "",
+        "status": "в анализе"
+      },
+      {
+        "id": "тринити-3",
+        "name": "Тринити 3",
+        "developer": "Гранель",
+        "klass": "",
+        "site": "https://granelle.ru/objects/tri",
+        "platforms": {},
+        "hasSource": true,
+        "hasData": false,
+        "source": "",
+        "status": "в анализе"
+      },
+      {
+        "id": "онежский-вал",
+        "name": "Онежский вал",
+        "developer": "ПИК",
+        "klass": "бизнес",
+        "site": "https://www.pik.ru/onezhskiy",
+        "platforms": {
+          "cian": "https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-onezhskiy-val-5722062-ot-zastroyschika-OTZ/"
+        },
+        "hasSource": true,
+        "hasData": true,
+        "source": "",
+        "status": "в анализе"
+      },
+      {
+        "id": "руставели-14",
+        "name": "Руставели 14",
+        "developer": "ПИК",
+        "klass": "",
+        "site": "https://www.pik.ru/",
+        "platforms": {},
+        "hasSource": true,
+        "hasData": false,
+        "source": "",
+        "status": "в анализе"
+      },
+      {
+        "id": "акценты",
+        "name": "Акценты",
+        "developer": "Plus Development",
+        "klass": "бизнес",
+        "site": "https://accenty.ru/",
+        "platforms": {
+          "cian": "https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-akcenty-5698426-ot-zastroyschika-OTZ/",
+          "yandex_realty": "https://realty.yandex.ru/moskva_i_moskovskaya_oblast/kupit/novostrojka/akcenty-3991148/"
+        },
+        "hasSource": true,
+        "hasData": true,
+        "source": "",
+        "status": "в анализе"
+      },
+      {
+        "id": "дмитровское-ш-89",
+        "name": "Дмитровское ш., 89",
+        "developer": "Фонд реновации",
+        "klass": "",
+        "site": "",
+        "platforms": {},
+        "hasSource": false,
+        "hasData": false,
+        "source": "",
+        "status": "без источника — в анализ не попадает"
+      },
+      {
+        "id": "михалковский",
+        "name": "Михалковский",
+        "developer": "РГ-Девелопмент",
+        "klass": "бизнес",
+        "site": "https://rg-dev.ru/novostroyki/mihalkovskij/",
+        "platforms": {
+          "cian": "https://www.cian.ru/kupit-kvartiru-zhiloy-kompleks-mihalkovskiy-3206223-ot-zastroyschika-OTZ/",
+          "yandex_realty": "https://realty.yandex.ru/moskva_i_moskovskaya_oblast/kupit/novostrojka/mihalkovskij-2586475/"
+        },
+        "hasSource": true,
+        "hasData": true,
+        "source": "дополнительный ориентир (вне списка застройщика)",
+        "status": "в анализе"
+      },
+      {
+        "id": "жк-нарвин",
+        "name": "ЖК Нарвин",
+        "developer": "ПИК",
+        "klass": "",
+        "site": "",
+        "platforms": {},
+        "hasSource": false,
+        "hasData": false,
+        "source": "автоподбор",
+        "status": "без источника — в анализ не попадает"
+      }
+    ]
+  },
+  "by_competitor": [
+    {
+      "project": "Level Селигерская",
+      "developer": "Level Group",
+      "lots_on_sale": 2,
+      "price_per_m2": {
+        "min": 409756,
+        "median": 409756,
+        "max": 409756
+      },
+      "cheapest_lot_rub": 2600000,
+      "sources": [
+        "developer-sites"
+      ],
+      "reliable": true
+    },
+    {
+      "project": "Level Южнопортовая",
+      "developer": "Level Group",
+      "lots_on_sale": 1,
+      "price_per_m2": {
+        "min": null,
+        "median": null,
+        "max": null
+      },
+      "cheapest_lot_rub": 1100000,
+      "sources": [
+        "developer-sites"
+      ],
+      "reliable": true
+    },
+    {
+      "project": "Селигер Сити",
+      "developer": "MR Group",
+      "lots_on_sale": 30,
+      "price_per_m2": {
+        "min": 294262,
+        "median": 567471,
+        "max": 646072
+      },
+      "cheapest_lot_rub": 14500000,
+      "sources": [
+        "cian"
+      ],
+      "reliable": true
+    },
+    {
+      "project": "Акценты",
+      "developer": "Plus Development",
+      "lots_on_sale": 32,
+      "price_per_m2": {
+        "min": 170455,
+        "median": 472283,
+        "max": 636574
+      },
+      "cheapest_lot_rub": 15000000,
+      "sources": [
+        "cian",
+        "yandex_realty"
+      ],
+      "reliable": true
+    },
+    {
+      "project": "Very",
+      "developer": "ГК Основа",
+      "lots_on_sale": 1,
+      "price_per_m2": {
+        "min": null,
+        "median": null,
+        "max": null
+      },
+      "cheapest_lot_rub": 14800000,
+      "sources": [
+        "developer-sites"
+      ],
+      "reliable": true
+    },
+    {
+      "project": "Дмитровское небо",
+      "developer": "ЛСР",
+      "lots_on_sale": 28,
+      "price_per_m2": {
+        "min": 412356,
+        "median": 453162,
+        "max": 743394
+      },
+      "cheapest_lot_rub": 15043535,
+      "sources": [
+        "cian"
+      ],
+      "reliable": true
+    },
+    {
+      "project": "Онежский вал",
+      "developer": "ПИК",
+      "lots_on_sale": 28,
+      "price_per_m2": {
+        "min": 431300,
+        "median": 519850,
+        "max": 595500
+      },
+      "cheapest_lot_rub": 16279578,
+      "sources": [
+        "cian"
+      ],
+      "reliable": true
+    },
+    {
+      "project": "Михалковский",
+      "developer": "РГ-Девелопмент",
+      "lots_on_sale": 32,
+      "price_per_m2": {
+        "min": 425001,
+        "median": 443584,
+        "max": 532213
+      },
+      "cheapest_lot_rub": 1500000,
+      "sources": [
+        "cian",
+        "yandex_realty"
+      ],
+      "reliable": true
+    }
+  ],
+  "by_source": [
+    {
+      "source": "cian",
+      "lots_on_sale": 142,
+      "median_price_per_m2": 498445,
+      "min": 294262,
+      "max": 743394
+    },
+    {
+      "source": "developer-sites",
+      "lots_on_sale": 4,
+      "median_price_per_m2": 409756,
+      "min": 409756,
+      "max": 409756
+    },
+    {
+      "source": "yandex_realty",
+      "lots_on_sale": 8,
+      "median_price_per_m2": 458171,
+      "min": 170455,
+      "max": 532213
+    }
+  ],
+  "dynamics": [
+    {
+      "project": "Level Селигерская",
+      "lots_new": 0,
+      "lots_gone": 0,
+      "median_delta_pct": 0.0,
+      "period": {
+        "prev": "2026-11-03",
+        "curr": "2026-11-04"
+      }
+    },
+    {
+      "project": "Level Южнопортовая",
+      "lots_new": 0,
+      "lots_gone": 0,
+      "median_delta_pct": null,
+      "period": {
+        "prev": "2026-11-03",
+        "curr": "2026-11-04"
+      }
+    },
+    {
+      "project": "Селигер Сити",
+      "lots_new": 19,
+      "lots_gone": 19,
+      "median_delta_pct": -1.75,
+      "period": {
+        "prev": "2026-11-03",
+        "curr": "2026-11-04"
+      }
+    },
+    {
+      "project": "Акценты",
+      "lots_new": 20,
+      "lots_gone": 20,
+      "median_delta_pct": 0.0,
+      "period": {
+        "prev": "2026-11-03",
+        "curr": "2026-11-04"
+      }
+    },
+    {
+      "project": "Very",
+      "lots_new": 0,
+      "lots_gone": 0,
+      "median_delta_pct": null,
+      "period": {
+        "prev": "2026-11-03",
+        "curr": "2026-11-04"
+      }
+    },
+    {
+      "project": "Дмитровское небо",
+      "lots_new": 18,
+      "lots_gone": 18,
+      "median_delta_pct": -6.02,
+      "period": {
+        "prev": "2026-11-03",
+        "curr": "2026-11-04"
+      }
+    },
+    {
+      "project": "Онежский вал",
+      "lots_new": 25,
+      "lots_gone": 25,
+      "median_delta_pct": -0.93,
+      "period": {
+        "prev": "2026-11-03",
+        "curr": "2026-11-04"
+      }
+    },
+    {
+      "project": "Михалковский",
+      "lots_new": 20,
+      "lots_gone": 20,
+      "median_delta_pct": 0.09,
+      "period": {
+        "prev": "2026-11-03",
+        "curr": "2026-11-04"
+      }
+    }
+  ],
+  "promos_new": [
+    {
+      "project": "Селигер Сити",
+      "text": "ипотека с особыми условиями для клиентов МИЭЛЬ от банков-партнёров, работаем с любыми исто",
+      "first_seen": "2026-11-04"
+    }
+  ],
+  "promos_known_count": 9,
+  "forecast": [
+    {
+      "metric": "median_price_per_m2",
+      "method": "trend-linear",
+      "points": 3,
+      "weeks": 4,
+      "values": [
+        {
+          "week": "2026-11-11",
+          "value": 472283
+        },
+        {
+          "week": "2026-11-18",
+          "value": 472283
+        },
+        {
+          "week": "2026-11-25",
+          "value": 472283
+        },
+        {
+          "week": "2026-12-02",
+          "value": 472283
+        }
+      ],
+      "estimate": true,
+      "project": "Акценты"
+    },
+    {
+      "metric": "median_price_per_m2",
+      "method": "trend-linear",
+      "points": 3,
+      "weeks": 4,
+      "values": [
+        {
+          "week": "2026-11-11",
+          "value": 440872
+        },
+        {
+          "week": "2026-11-18",
+          "value": 422436
+        },
+        {
+          "week": "2026-11-25",
+          "value": 404001
+        },
+        {
+          "week": "2026-12-02",
+          "value": 385565
+        }
+      ],
+      "estimate": true,
+      "project": "Дмитровское небо"
+    },
+    {
+      "metric": "median_price_per_m2",
+      "method": "trend-linear",
+      "points": 3,
+      "weeks": 4,
+      "values": [
+        {
+          "week": "2026-11-11",
+          "value": 1756909
+        },
+        {
+          "week": "2026-11-18",
+          "value": 2010538
+        },
+        {
+          "week": "2026-11-25",
+          "value": 2264168
+        },
+        {
+          "week": "2026-12-02",
+          "value": 2517798
+        }
+      ],
+      "estimate": true,
+      "project": "Михалковский"
+    },
+    {
+      "metric": "median_price_per_m2",
+      "method": "trend-linear",
+      "points": 3,
+      "weeks": 4,
+      "values": [
+        {
+          "week": "2026-11-11",
+          "value": 520880
+        },
+        {
+          "week": "2026-11-18",
+          "value": 520428
+        },
+        {
+          "week": "2026-11-25",
+          "value": 519975
+        },
+        {
+          "week": "2026-12-02",
+          "value": 519522
+        }
+      ],
+      "estimate": true,
+      "project": "Онежский вал"
+    },
+    {
+      "metric": "median_price_per_m2",
+      "method": "trend-linear",
+      "points": 3,
+      "weeks": 4,
+      "values": [
+        {
+          "week": "2026-11-11",
+          "value": 571957
+        },
+        {
+          "week": "2026-11-18",
+          "value": 572790
+        },
+        {
+          "week": "2026-11-25",
+          "value": 573623
+        },
+        {
+          "week": "2026-12-02",
+          "value": 574456
+        }
+      ],
+      "estimate": true,
+      "project": "Селигер Сити"
+    }
+  ],
+  "email": [],
+  "data_status": [
+    {
+      "source": "developer-sites",
+      "status": "ok",
+      "reason": "HTTP 401: площадка отдаёт данные только по договору/API (—) (браузер отключён флагом); получено обычным HTTP (User-Agent Chrome), без логина; получено обычным HTTP (User-Agent Chrome), без логина (каталожная/поисковая страница: список лотов рыночный, привязка к конкретному ЖК условная); пустой ответ (браузер отключён флагом); страница открылась, но лотов на ней нет; страница открылась, но лотов на ней нет (видна только цена «от»); цена «от» на странице: 17 140 000 ₽; ещё 20 цен без площади/комнатности — в снимок не попали (не додумываем)"
+    },
+    {
+      "source": "partner-feeds",
+      "status": "skipped",
+      "reason": "нет в конфиге клиента"
+    },
+    {
+      "source": "manual-inbox",
+      "status": "skipped",
+      "reason": "нет в конфиге клиента"
+    },
+    {
+      "source": "cian",
+      "status": "ok",
+      "reason": "получено обычным HTTP (User-Agent Chrome), без логина (каталожная/поисковая страница: список лотов рыночный, привязка к конкретному ЖК условная); страница не упоминает «Kinetic» — похоже на каталожную выдачу; лоты не привязаны к проекту"
+    },
+    {
+      "source": "avito",
+      "status": "skipped",
+      "reason": "выключен в конфиге клиента"
+    },
+    {
+      "source": "yandex-realty",
+      "status": "ok",
+      "reason": "получено обычным HTTP (User-Agent Chrome), без логина (каталожная/поисковая страница: список лотов рыночный, привязка к конкретному ЖК условная)"
+    },
+    {
+      "source": "domclick",
+      "status": "skipped",
+      "reason": "выключен в конфиге клиента"
+    },
+    {
+      "source": "outlier_guard",
+      "status": "unreliable",
+      "reason": "одинаковая цена 70 000 000 ₽ на 24 лотах (>= 5) — артефакт парсинга; ₽/м² ниже правдоподобной границы 150 000: 4 лотов; ₽/м² выше правдоподобной границы 800 000: 23 лотов"
+    },
+    {
+      "source": "competitors",
+      "status": "no_source",
+      "reason": "без источника — в анализ не попадает: Дмитровское ш., 89, ЖК Нарвин"
+    },
+    {
+      "source": "by_source:cian",
+      "status": "unreliable",
+      "reason": "цены источника «cian» посчитаны без аномальных лотов: одинаковая цена 70 000 000 ₽ на 24 лотах (>= 5) — артефакт парсинга; ₽/м² выше правдоподобной границы 800 000: 23 лотов"
+    },
+    {
+      "source": "by_source:developer-sites",
+      "status": "unreliable",
+      "reason": "цены источника «developer-sites» посчитаны без аномальных лотов: ₽/м² ниже правдоподобной границы 150 000: 3 лотов"
+    },
+    {
+      "source": "by_source:yandex_realty",
+      "status": "unreliable",
+      "reason": "цены источника «yandex_realty» посчитаны без аномальных лотов: ₽/м² ниже правдоподобной границы 150 000: 1 лотов"
+    },
+    {
+      "source": "dynamics:Level Южнопортовая",
+      "status": "no_data",
+      "reason": "для проекта «Level Южнопортовая» нет медианы ₽/м² в одном из снимков"
+    },
+    {
+      "source": "dynamics:Very",
+      "status": "no_data",
+      "reason": "для проекта «Very» нет медианы ₽/м² в одном из снимков"
+    },
+    {
+      "source": "forecast:Level Селигерская",
+      "status": "no_data",
+      "reason": "истории мало: 2 точек из 3 нужных — прогноз не строится"
+    },
+    {
+      "source": "forecast:Level Южнопортовая",
+      "status": "no_data",
+      "reason": "истории мало: 2 точек из 3 нужных — прогноз не строится"
+    },
+    {
+      "source": "forecast:Very",
+      "status": "no_data",
+      "reason": "истории мало: 2 точек из 3 нужных — прогноз не строится"
+    },
+    {
+      "source": "forecast:ЗИЛАРТ",
+      "status": "no_data",
+      "reason": "истории мало: 1 точек из 3 нужных — прогноз не строится"
+    },
+    {
+      "source": "forecast:Кинетик. Резиденции на Дмитровском",
+      "status": "no_data",
+      "reason": "истории мало: 1 точек из 3 нужных — прогноз не строится"
+    }
+  ]
+}

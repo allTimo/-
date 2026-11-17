@@ -51,6 +51,7 @@ function adsSpark(host, timeline, channels) {
 VIEWS.ads = function (view) {
   var a = STATE.ads;
   if (!a) { view.appendChild(note('bad', 'Нет данных раздела. Пересоберите: node marketing-agents/dashboard/collector/collect.mjs')); return; }
+  if (a.demo) view.appendChild(note('bad', 'ДЕМО-ДАННЫЕ. ' + a.demoReason));
   var t = a.totals;
 
   // ---------- ЕДИНЫЙ КОШЕЛЁК КЛИЕНТА (модель click.ru) ----------

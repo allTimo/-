@@ -96,6 +96,8 @@ def load_watch(settings_file=None, project_id=None, radius=None, classes=None):
     watch["max_candidates"] = int(watch.get("max_candidates") or 20)
     watch["sources"] = list(watch.get("sources") or ["cian", "avito", "yandex-realty", "domclick", "web-search"])
     watch["confirmed"] = [item for item in (agent1.get("competitors") or []) if isinstance(item, dict)]
+    # Контракт v2 (§3, группа 1): в панели одно поле query — «название или сайт».
+    cw.derive_watch_query(watch)
     watch["settings_file"] = str(path)
     return watch
 
@@ -347,11 +349,14 @@ def class_matches(candidate_class, wanted):
 
 
 def load_search_results(path):
-    """Снимок поисковой выдачи (реальные результаты, сохранённые в JSON)."""
-    data = json.loads(Path(path).read_text(encoding="utf-8-sig"))
-    if isinstance(data, dict):
-        return list(data.get("results") or data.get("candidates") or [])
-    return list(data)
+    """Снимок поисковой выдачи: JSON движка, ответ Serper, HTML-страница или список ссылок.
+
+    Разбор форматов — в ``search_results.py`` (задача E): агрегаторы и соцсети
+    отсеиваются, наружу идут записи с реальными адресами, ничего не додумывается.
+    """
+    import search_results as search_results_mod
+
+    return search_results_mod.load_entries(path)
 
 
 def discover_via_platforms(watch, allow_browser=False):

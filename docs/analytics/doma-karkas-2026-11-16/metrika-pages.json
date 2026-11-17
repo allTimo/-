@@ -1,0 +1,1126 @@
+{
+ "ym:pv:URLPath": {
+  "query": {
+   "ids": [
+    22595095
+   ],
+   "dimensions": [
+    "ym:pv:URLPath"
+   ],
+   "metrics": [
+    "ym:pv:pageviews",
+    "ym:pv:users"
+   ],
+   "sort": [
+    "-ym:pv:pageviews"
+   ],
+   "date1": "2026-08-19",
+   "date2": "2026-11-16",
+   "limit": 40,
+   "offset": 1,
+   "group": "Week",
+   "benchmarks_version": "1793577600000",
+   "benchmarks_sub_industry": "false",
+   "auto_group_size": "1",
+   "exp_bucket_size": "100",
+   "attr_name": "",
+   "funnel_window": "",
+   "benchmarks_quantile": "50",
+   "time_interval": "1SECOND",
+   "intervals": "1",
+   "quantile": "50",
+   "offline_window": "21",
+   "attribution": "CROSS_DEVICE_LAST_SIGNIFICANT",
+   "currency": "RUB",
+   "benchmarks_attribution": "Automatic",
+   "adfox_event_id": "0",
+   "funnel_pattern": ""
+  },
+  "data": [
+   {
+    "dimensions": [
+     {
+      "name": "/catalog/gazobetonnye/",
+      "favicon": "doma-karkas.ru"
+     }
+    ],
+    "metrics": [
+     77555.0,
+     28265.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "/catalog/keramicheskie/",
+      "favicon": "doma-karkas.ru"
+     }
+    ],
+    "metrics": [
+     43455.0,
+     23595.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "/catalog/",
+      "favicon": "doma-karkas.ru"
+     }
+    ],
+    "metrics": [
+     16388.0,
+     4338.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "/",
+      "favicon": "doma-karkas.ru"
+     }
+    ],
+    "metrics": [
+     15556.0,
+     10733.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "/catalog/kamennye-doma/",
+      "favicon": "doma-karkas.ru"
+     }
+    ],
+    "metrics": [
+     15179.0,
+     5862.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "/catalog/karkasnye-doma/",
+      "favicon": "doma-karkas.ru"
+     }
+    ],
+    "metrics": [
+     8120.0,
+     1864.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "/catalog/gazobetonnye/monreal/",
+      "favicon": "doma-karkas.ru"
+     }
+    ],
+    "metrics": [
+     7419.0,
+     5489.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "/catalog/gazobetonnye/bavariya/",
+      "favicon": "doma-karkas.ru"
+     }
+    ],
+    "metrics": [
+     7206.0,
+     5336.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "/catalog/kirpichniye/",
+      "favicon": "doma-karkas.ru"
+     }
+    ],
+    "metrics": [
+     5535.0,
+     2534.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "/catalog/gazobetonnye/tinen/",
+      "favicon": "doma-karkas.ru"
+     }
+    ],
+    "metrics": [
+     4272.0,
+     2703.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "/catalog/gazobetonnye/vichentsa/",
+      "favicon": "doma-karkas.ru"
+     }
+    ],
+    "metrics": [
+     4035.0,
+     2557.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "/aktsii/",
+      "favicon": "doma-karkas.ru"
+     }
+    ],
+    "metrics": [
+     3040.0,
+     1562.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "/catalog/gazobetonnye/malaga/",
+      "favicon": "doma-karkas.ru"
+     }
+    ],
+    "metrics": [
+     2989.0,
+     2267.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "/catalog/gazobetonnye/lira/",
+      "favicon": "doma-karkas.ru"
+     }
+    ],
+    "metrics": [
+     2968.0,
+     1911.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "/catalog/gazobetonnye/kenigsberg/",
+      "favicon": "doma-karkas.ru"
+     }
+    ],
+    "metrics": [
+     2771.0,
+     1972.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "/ipoteka/",
+      "favicon": "doma-karkas.ru"
+     }
+    ],
+    "metrics": [
+     2313.0,
+     1728.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "/proektirovanie/",
+      "favicon": "doma-karkas.ru"
+     }
+    ],
+    "metrics": [
+     2029.0,
+     1556.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "/catalog/gazobetonnye/glendeyl/",
+      "favicon": "doma-karkas.ru"
+     }
+    ],
+    "metrics": [
+     1811.0,
+     1090.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "/catalog/gazobetonnye/doma-iz-gazobetona-odnoetazhnye/",
+      "favicon": "doma-karkas.ru"
+     }
+    ],
+    "metrics": [
+     1701.0,
+     774.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "/catalog/doma-iz-penobloka-pod-klyuch/",
+      "favicon": "doma-karkas.ru"
+     }
+    ],
+    "metrics": [
+     1522.0,
+     596.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "/catalog/gazobetonnye/kapri/",
+      "favicon": "doma-karkas.ru"
+     }
+    ],
+    "metrics": [
+     1371.0,
+     1120.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "/catalog/gazobetonnye/oushensayd/",
+      "favicon": "doma-karkas.ru"
+     }
+    ],
+    "metrics": [
+     1336.0,
+     867.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "/catalog/gazobetonnye/pirey/",
+      "favicon": "doma-karkas.ru"
+     }
+    ],
+    "metrics": [
+     1320.0,
+     945.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "/catalog/keramicheskie/vichentsa/",
+      "favicon": "doma-karkas.ru"
+     }
+    ],
+    "metrics": [
+     1313.0,
+     925.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "/articles/kreplenie-mauerlata-k-gazobetonu-instruktsiya/",
+      "favicon": "doma-karkas.ru"
+     }
+    ],
+    "metrics": [
+     1276.0,
+     985.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "/catalog/doma-iz-brusa-pod-klyuch/",
+      "favicon": "doma-karkas.ru"
+     }
+    ],
+    "metrics": [
+     1263.0,
+     427.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "/catalog/gazobetonnye/alkasar/",
+      "favicon": "doma-karkas.ru"
+     }
+    ],
+    "metrics": [
+     1242.0,
+     772.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "/catalog/gazobetonnye/fedinburg/",
+      "favicon": "doma-karkas.ru"
+     }
+    ],
+    "metrics": [
+     1222.0,
+     804.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "/catalog/gazobetonnye/sakramento/",
+      "favicon": "doma-karkas.ru"
+     }
+    ],
+    "metrics": [
+     1193.0,
+     648.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "/catalog/gazobetonnye/port-lui/",
+      "favicon": "doma-karkas.ru"
+     }
+    ],
+    "metrics": [
+     1184.0,
+     828.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "/catalog/gazobetonnye/tivat/",
+      "favicon": "doma-karkas.ru"
+     }
+    ],
+    "metrics": [
+     1172.0,
+     837.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "/catalog/karkasnye-doma/vichentsa/",
+      "favicon": "doma-karkas.ru"
+     }
+    ],
+    "metrics": [
+     1169.0,
+     774.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "/catalog/gazobetonnye/florentsiya/",
+      "favicon": "doma-karkas.ru"
+     }
+    ],
+    "metrics": [
+     1101.0,
+     799.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "/catalog/keramzitbeton/",
+      "favicon": "doma-karkas.ru"
+     }
+    ],
+    "metrics": [
+     1029.0,
+     371.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "/kontakty/",
+      "favicon": "doma-karkas.ru"
+     }
+    ],
+    "metrics": [
+     1002.0,
+     656.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "/catalog/keramzitbeton/vichentsa/",
+      "favicon": "doma-karkas.ru"
+     }
+    ],
+    "metrics": [
+     1001.0,
+     715.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "/catalog/gazobetonnye/sidney/",
+      "favicon": "doma-karkas.ru"
+     }
+    ],
+    "metrics": [
+     990.0,
+     546.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "/catalog/ot-100-do-150/",
+      "favicon": "doma-karkas.ru"
+     }
+    ],
+    "metrics": [
+     989.0,
+     313.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "/catalog/karkasnye-doma/glendeyl/",
+      "favicon": "doma-karkas.ru"
+     }
+    ],
+    "metrics": [
+     976.0,
+     613.0
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "/catalog/gazobetonnye/lyutsern/",
+      "favicon": "doma-karkas.ru"
+     }
+    ],
+    "metrics": [
+     962.0,
+     628.0
+    ]
+   }
+  ],
+  "total_rows": 2263,
+  "total_rows_rounded": false,
+  "sampled": false,
+  "contains_sensitive_data": false,
+  "sample_share": 1.0,
+  "sample_size": 340850,
+  "sample_space": 340850,
+  "data_lag": 0,
+  "totals": [
+   361523.0,
+   98817.0
+  ],
+  "min": [
+   962.0,
+   313.0
+  ],
+  "max": [
+   77555.0,
+   28265.0
+  ]
+ },
+ "ym:s:startURLPath": {
+  "query": {
+   "ids": [
+    22595095
+   ],
+   "dimensions": [
+    "ym:s:startURLPath"
+   ],
+   "metrics": [
+    "ym:s:pageviews",
+    "ym:s:bounceRate",
+    "ym:s:avgVisitDurationSeconds"
+   ],
+   "sort": [
+    "-ym:s:pageviews"
+   ],
+   "date1": "2026-08-19",
+   "date2": "2026-11-16",
+   "limit": 40,
+   "offset": 1,
+   "group": "Week",
+   "benchmarks_version": "1793577600000",
+   "benchmarks_sub_industry": "false",
+   "auto_group_size": "1",
+   "exp_bucket_size": "100",
+   "attr_name": "",
+   "funnel_window": "",
+   "benchmarks_quantile": "50",
+   "time_interval": "1SECOND",
+   "intervals": "1",
+   "quantile": "50",
+   "offline_window": "21",
+   "attribution": "CROSS_DEVICE_LAST_SIGNIFICANT",
+   "currency": "RUB",
+   "benchmarks_attribution": "Automatic",
+   "adfox_event_id": "0",
+   "funnel_pattern": ""
+  },
+  "data": [
+   {
+    "dimensions": [
+     {
+      "name": "/catalog/gazobetonnye/",
+      "favicon": "doma-karkas.ru"
+     }
+    ],
+    "metrics": [
+     92893.0,
+     30.58519507,
+     177.52242414
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "/catalog/keramicheskie/",
+      "favicon": "doma-karkas.ru"
+     }
+    ],
+    "metrics": [
+     46939.0,
+     34.3496065,
+     135.54709194
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "/",
+      "favicon": "doma-karkas.ru"
+     }
+    ],
+    "metrics": [
+     45098.0,
+     23.75563756,
+     209.50430504
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "/catalog/kamennye-doma/",
+      "favicon": "doma-karkas.ru"
+     }
+    ],
+    "metrics": [
+     18999.0,
+     26.77345538,
+     154.40059227
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "/catalog/gazobetonnye/bavariya/",
+      "favicon": "doma-karkas.ru"
+     }
+    ],
+    "metrics": [
+     10323.0,
+     19.92281717,
+     98.78999839
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "/catalog/gazobetonnye/monreal/",
+      "favicon": "doma-karkas.ru"
+     }
+    ],
+    "metrics": [
+     9090.0,
+     19.29225516,
+     113.17305603
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "/ipoteka/",
+      "favicon": "doma-karkas.ru"
+     }
+    ],
+    "metrics": [
+     7010.0,
+     27.47321991,
+     194.11972275
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "/catalog/",
+      "favicon": "doma-karkas.ru"
+     }
+    ],
+    "metrics": [
+     6273.0,
+     24.34725849,
+     260.70430809
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "/catalog/gazobetonnye/tinen/",
+      "favicon": "doma-karkas.ru"
+     }
+    ],
+    "metrics": [
+     5789.0,
+     20.12614679,
+     115.61553899
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "/catalog/kirpichniye/",
+      "favicon": "doma-karkas.ru"
+     }
+    ],
+    "metrics": [
+     4965.0,
+     36.02130087,
+     149.33016356
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "/proektirovanie/",
+      "favicon": "doma-karkas.ru"
+     }
+    ],
+    "metrics": [
+     4481.0,
+     52.84222738,
+     111.60150812
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "/catalog/gazobetonnye/malaga/",
+      "favicon": "doma-karkas.ru"
+     }
+    ],
+    "metrics": [
+     3599.0,
+     22.0747296,
+     96.44886922
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "/catalog/gazobetonnye/kenigsberg/",
+      "favicon": "doma-karkas.ru"
+     }
+    ],
+    "metrics": [
+     3346.0,
+     20.5792014,
+     121.96752962
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "/catalog/gazobetonnye/vichentsa/",
+      "favicon": "doma-karkas.ru"
+     }
+    ],
+    "metrics": [
+     3280.0,
+     17.80322749,
+     155.86621551
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "/catalog/gazobetonnye/lira/",
+      "favicon": "doma-karkas.ru"
+     }
+    ],
+    "metrics": [
+     3125.0,
+     29.33454052,
+     100.57537347
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "/catalog/karkasnye-doma/",
+      "favicon": "doma-karkas.ru"
+     }
+    ],
+    "metrics": [
+     2875.0,
+     10.88,
+     307.2032
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "/catalog/gazobetonnye/doma-iz-gazobetona-odnoetazhnye/",
+      "favicon": "doma-karkas.ru"
+     }
+    ],
+    "metrics": [
+     2333.0,
+     24.55012853,
+     146.51156812
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "/catalog/gazobetonnye/kapri/",
+      "favicon": "doma-karkas.ru"
+     }
+    ],
+    "metrics": [
+     1974.0,
+     28.36938436,
+     102.95174709
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "/catalog/gazobetonnye/tivat/",
+      "favicon": "doma-karkas.ru"
+     }
+    ],
+    "metrics": [
+     1375.0,
+     17.57188498,
+     148.69808307
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "/catalog/gazobetonnye/sidney/",
+      "favicon": "doma-karkas.ru"
+     }
+    ],
+    "metrics": [
+     1340.0,
+     15.06276151,
+     137.42538354
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "/catalog/gazobetonnye/glendeyl/",
+      "favicon": "doma-karkas.ru"
+     }
+    ],
+    "metrics": [
+     1320.0,
+     18.48906561,
+     221.47117296
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "/articles/kreplenie-mauerlata-k-gazobetonu-instruktsiya/",
+      "favicon": "doma-karkas.ru"
+     }
+    ],
+    "metrics": [
+     1313.0,
+     9.19017288,
+     248.30209281
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "/catalog/gazobetonnye/brande/",
+      "favicon": "doma-karkas.ru"
+     }
+    ],
+    "metrics": [
+     1150.0,
+     20.86553323,
+     127.80370943
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "/catalog/gazobetonnye/vilnyus/",
+      "favicon": "doma-karkas.ru"
+     }
+    ],
+    "metrics": [
+     1133.0,
+     18.65008881,
+     134.78152753
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "/catalog/gazobetonnye/pirey/",
+      "favicon": "doma-karkas.ru"
+     }
+    ],
+    "metrics": [
+     1101.0,
+     19.44827586,
+     147.38482759
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "/catalog/gazobetonnye/lyutsern/",
+      "favicon": "doma-karkas.ru"
+     }
+    ],
+    "metrics": [
+     1058.0,
+     15.99190283,
+     199.13967611
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "/catalog/gazobetonnye/doma-iz-gazobetona-dvukhetazhnye/",
+      "favicon": "doma-karkas.ru"
+     }
+    ],
+    "metrics": [
+     1048.0,
+     26.2195122,
+     160.92682927
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "/catalog/keramicheskie/doma-iz-keramicheskikh-blokov-odnoetazhnye/",
+      "favicon": "doma-karkas.ru"
+     }
+    ],
+    "metrics": [
+     1043.0,
+     26.68539326,
+     186.17696629
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "/catalog/gazobetonnye/yukon/",
+      "favicon": "doma-karkas.ru"
+     }
+    ],
+    "metrics": [
+     1005.0,
+     22.16582064,
+     107.95939086
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "/catalog/gazobetonnye/ottava/",
+      "favicon": "doma-karkas.ru"
+     }
+    ],
+    "metrics": [
+     895.0,
+     19.80392157,
+     133.37647059
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "/catalog/gazobetonnye/lentsburg/",
+      "favicon": "doma-karkas.ru"
+     }
+    ],
+    "metrics": [
+     877.0,
+     22.3255814,
+     140.16511628
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "/catalog/gazobetonnye/verona/",
+      "favicon": "doma-karkas.ru"
+     }
+    ],
+    "metrics": [
+     816.0,
+     21.05263158,
+     114.39676113
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "/catalog/gazobetonnye/bruklin/",
+      "favicon": "doma-karkas.ru"
+     }
+    ],
+    "metrics": [
+     787.0,
+     29.32038835,
+     128.16504854
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "/aktsii/",
+      "favicon": "doma-karkas.ru"
+     }
+    ],
+    "metrics": [
+     759.0,
+     16.30901288,
+     323.95708155
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "/catalog/gazobetonnye/florentsiya/",
+      "favicon": "doma-karkas.ru"
+     }
+    ],
+    "metrics": [
+     737.0,
+     26.57992565,
+     90.12825279
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "/catalog/gazobetonnye/bazel/",
+      "favicon": "doma-karkas.ru"
+     }
+    ],
+    "metrics": [
+     681.0,
+     24.14698163,
+     183.80839895
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "/catalog/gazobetonnye/oushensayd/",
+      "favicon": "doma-karkas.ru"
+     }
+    ],
+    "metrics": [
+     668.0,
+     17.57575758,
+     236.94242424
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "/catalog/gazobetonnye/fedinburg/",
+      "favicon": "doma-karkas.ru"
+     }
+    ],
+    "metrics": [
+     655.0,
+     24.48979592,
+     302.18367347
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "/catalog/doma-iz-penobloka-pod-klyuch/",
+      "favicon": "doma-karkas.ru"
+     }
+    ],
+    "metrics": [
+     630.0,
+     25.90909091,
+     146.53636364
+    ]
+   },
+   {
+    "dimensions": [
+     {
+      "name": "/catalog/gazobetonnye/barn-khaus/",
+      "favicon": "doma-karkas.ru"
+     }
+    ],
+    "metrics": [
+     592.0,
+     23.85786802,
+     221.75126904
+    ]
+   }
+  ],
+  "total_rows": 1674,
+  "total_rows_rounded": false,
+  "sampled": false,
+  "contains_sensitive_data": false,
+  "sample_share": 1.0,
+  "sample_size": 153715,
+  "sample_space": 153715,
+  "data_lag": 0,
+  "totals": [
+   340051.0,
+   27.24466085,
+   161.85458984
+  ],
+  "min": [
+   592.0,
+   9.19017288,
+   90.12825279
+  ],
+  "max": [
+   92893.0,
+   52.84222738,
+   323.95708155
+  ]
+ }
+}

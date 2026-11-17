@@ -1,0 +1,20 @@
+{
+  "date": "2026-11-03",
+  "generated_at": "2026-11-03T22:55:42",
+  "records": [
+    {
+      "to": "tyurina@d-a.ru",
+      "status": "eml_saved",
+      "sent_at": null,
+      "file": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\01-competitor-watch\\reports\\clients\\client-svet\\2026-11-03-competitor-watch.eml",
+      "reason": "не отправлено: нет SMTP-доступа: в settings.yaml -> delivery.email не задан smtp_host"
+    },
+    {
+      "to": "vodnev@d-a.ru",
+      "status": "eml_saved",
+      "sent_at": null,
+      "file": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\01-competitor-watch\\reports\\clients\\client-svet\\2026-11-03-competitor-watch.eml",
+      "reason": "не отправлено: нет SMTP-доступа: в settings.yaml -> delivery.email не задан smtp_host"
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+client_id: client-empty
+name: "Пустые"
+competitors:
+  - { id: первый-в-пустом-списке, name: "Первый в пустом списке", developer: "", class: "", site: "https://first.example/", platforms: { cian: "", avito: "", yandex_realty: "", domclick: "" }, source: "вручную", added: "2026-11-04" }
+other_key: true

@@ -24,6 +24,8 @@ from collections import Counter
 from pathlib import Path
 
 import cwlib as cw
+import analytics
+import marketing_settings as ms
 from diff_snapshots import compute_diff, diff_cache_path, load_snapshot_for_ref, lot_brief
 
 SECTIONS = (
@@ -84,6 +86,33 @@ def pct(value, digits=None):
 def stats_rows(payload):
     """Projects that pass thresholds.min_lots_for_stats."""
     return [row for row in payload["price_by_project"] if not row.get("stats_excluded")]
+
+
+# Promo presentation toggles: agent1.analytics.dedup_promos (safe default True).
+_PROMO_SETTINGS = {"dedup_promos": True}
+
+
+def configure_promos(toggles):
+    """Apply the promo toggles from the agent settings to the report."""
+    if isinstance(toggles, dict) and "dedup_promos" in toggles:
+        _PROMO_SETTINGS["dedup_promos"] = bool(toggles["dedup_promos"])
+    return _PROMO_SETTINGS
+
+
+def promo_rows_for(payload):
+    """All promo rows of the diff, deduplicated when dedup_promos is on.
+
+    One and the same wording repeated across several lots of one project is
+    shown once and carries its lot count; this is what the «Лотов» column shows.
+    """
+    cached = payload.get("_promo_rows")
+    if cached is not None:
+        return cached
+    rows = (list(payload.get("promo_new") or []) + list(payload.get("promo_changed") or [])
+            + list(payload.get("promo_ended") or []))
+    if _PROMO_SETTINGS["dedup_promos"]:
+        rows, _folded = analytics.dedup_promo_rows(rows)
+    return rows
 
 
 def settings_line(config, sections_expected):
@@ -168,20 +197,27 @@ def build_highlights(payload):
 
     changes = payload["price_changes"]
     if changes:
-        top_up = max(changes, key=lambda c: c["delta_pct"])
-        items.append(
-            "Рост цены: %s, лот %s — %s → %s (%s, %s)."
-            % (cell(top_up["project"]), cell(top_up["lot_id"]),
-               money(top_up["price_prev_rub"]), money(top_up["price_curr_rub"]),
-               money(top_up["delta_rub"]), pct(top_up["delta_pct"]))
-        )
-        top_down = min(changes, key=lambda c: c["delta_pct"])
-        if top_down["delta_pct"] < 0:
+        limit = _REPORT_SETTINGS.get("top_deals_count", 5)
+        increases = [c for c in changes if c["delta_pct"] > 0]
+        decreases = [c for c in changes if c["delta_pct"] < 0]
+
+        increases.sort(key=lambda c: c["delta_pct"], reverse=True)
+        decreases.sort(key=lambda c: c["delta_pct"], reverse=False)
+
+        for c in increases[:limit]:
+            items.append(
+                "Рост цены: %s, лот %s — %s → %s (%s, %s)."
+                % (cell(c["project"]), cell(c["lot_id"]),
+                   money(c["price_prev_rub"]), money(c["price_curr_rub"]),
+                   money(c["delta_rub"]), pct(c["delta_pct"]))
+            )
+
+        for c in decreases[:limit]:
             items.append(
                 "Снижение цены: %s, лот %s — %s → %s (%s, %s)."
-                % (cell(top_down["project"]), cell(top_down["lot_id"]),
-                   money(top_down["price_prev_rub"]), money(top_down["price_curr_rub"]),
-                   money(top_down["delta_rub"]), pct(top_down["delta_pct"]))
+                % (cell(c["project"]), cell(c["lot_id"]),
+                   money(c["price_prev_rub"]), money(c["price_curr_rub"]),
+                   money(c["delta_rub"]), pct(c["delta_pct"]))
             )
     else:
         items.append(
@@ -436,15 +472,17 @@ def build_markdown(payload, curr_rows, limitations_text, limitations_path,
     # 5 ---------------------------------------------------------------
     add("## " + SECTIONS[4])
     add("")
-    promo_rows = list(payload["promo_new"]) + list(payload["promo_changed"]) + list(payload["promo_ended"])
+    promo_rows = promo_rows_for(payload)
     if promo_rows:
-        add("| Проект | Текст акции | Статус |")
-        add("| --- | --- | --- |")
+        # «Лотов» — сколько лотов делят одну и ту же акцию (dedup_promos).
+        add("| Проект | Текст акции | Статус | Лотов |")
+        add("| --- | --- | --- | --- |")
         for row in promo_rows:
             text = cell(row["promo_text"])
             if row["status"] == "изменилась" and row.get("promo_text_prev"):
                 text = "%s (было: «%s»)" % (text, cell(row["promo_text_prev"]))
-            add("| %s | %s | %s |" % (cell(row["project"]), text, cell(row["status"])))
+            add("| %s | %s | %s | %s |" % (cell(row["project"]), text, cell(row["status"]),
+                                           row.get("lots", 1)))
     else:
         add("_Изменений по акциям и промо нет._")
     add("")
@@ -517,6 +555,14 @@ def build_markdown(payload, curr_rows, limitations_text, limitations_path,
         for notice in notices:
             add("- %s" % notice)
     add("")
+
+    # analytics ---------------------------------------------------------
+    # Unnumbered on purpose: the 9 numbered sections are a frozen contract
+    # (settings.yaml -> report_sections). This block carries the machine-readable
+    # analytics that is also written to .cache/analytics-<date>.json.
+    if "analytics" in payload:
+        for line in analytics.render_markdown(payload.get("analytics")):
+            add(line)
     return "\n".join(lines)
 
 
@@ -656,10 +702,11 @@ def build_xlsx(payload, curr_rows, path, settings_note=""):
     promos = workbook.create_sheet("Акции")
     promo_rows = [
         [row["competitor"], row["project"], row["lot_id"], row["promo_text"],
-         row.get("promo_text_prev") or "", row["status"]]
-        for row in (list(payload["promo_new"]) + list(payload["promo_changed"]) + list(payload["promo_ended"]))
+         row.get("promo_text_prev") or "", row["status"], row.get("lots", 1)]
+        for row in promo_rows_for(payload)
     ]
-    _write_sheet(promos, ["Конкурент", "Проект", "ID лота", "Текст акции", "Было", "Статус"], promo_rows)
+    _write_sheet(promos, ["Конкурент", "Проект", "ID лота", "Текст акции", "Было", "Статус", "Лотов"],
+                 promo_rows)
 
     # --- Лоты ----------------------------------------------------------
     lots = workbook.create_sheet("Лоты")
@@ -676,6 +723,11 @@ def build_xlsx(payload, curr_rows, path, settings_note=""):
         ])
     _write_sheet(lots, LOT_HEADERS_RU, lot_rows,
                  {8: AREA_FMT, 12: MONEY_FMT, 13: MONEY_FMT})
+
+    # --- Аналитика -----------------------------------------------------
+    sheet = workbook.create_sheet("Аналитика")
+    _write_sheet(sheet, analytics.ANALYTICS_SHEET_HEADERS,
+                 analytics.sheet_rows(payload.get("analytics")))
 
     path = Path(path)
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -703,6 +755,12 @@ def build_parser():
     parser.add_argument("--config-dir", default=None, help="каталог конфигов 00-admin/config (по умолчанию вычисляется от скрипта)")
     parser.add_argument("--no-config", action="store_true",
                         help="не читать settings.yaml, работать на значениях по умолчанию")
+    parser.add_argument("--registry-dir", default=None,
+                        help="каталог registry (тонкие настройки агента: agent1.analytics)")
+    parser.add_argument("--agent-settings", default=None,
+                        help="путь к agent-1-competitor-watch.yaml (по умолчанию registry/agent-settings)")
+    parser.add_argument("--client-id", default=None,
+                        help="id клиента для reports/clients/<id>/.cache/analytics-<date>.json")
     return parser
 
 
@@ -712,6 +770,18 @@ def main(argv=None):
     use_config = not args.no_config
     config = cw.load_config(args.config_dir, use_config=use_config)
     configure_report(config)
+
+    # ---- marketing settings (WP2): read once, influence comparison depth ----
+    agent_settings = cw.load_agent_settings(registry_dir=args.registry_dir,
+                                            path=args.agent_settings)
+    marketing = ms.load(agent_settings=agent_settings)
+    for warning in marketing.warnings:
+        print("ПРЕДУПРЕЖДЕНИЕ (agent-settings): %s" % warning)
+    _REPORT_SETTINGS["top_deals_count"] = marketing.agent1.get("top_deals_count", 5)
+    _REPORT_SETTINGS["compare_depth_weeks"] = marketing.agent1.get("compare_depth_weeks", 2)
+    depth_days = _REPORT_SETTINGS["compare_depth_weeks"] * 7
+    if "period_days" not in config or config.get("period_days") == 7:
+        config["period_days"] = depth_days
 
     formats_text = args.formats if args.formats else config["formats"]
     formats = {item.strip().lower() for item in str(formats_text).split(",") if item.strip()}
@@ -763,6 +833,25 @@ def main(argv=None):
     cw.json_dump(diff_cache_path(reports_dir, curr_date), payload)
     payload["_curr_rows"] = curr_rows
 
+    # ---- analytics (WP2): toggles from the agent's thin settings -------
+    toggles = analytics.resolve_toggles(agent_settings)
+    for warning in marketing.warnings:
+        notices.append("agent-settings: %s" % warning)
+    configure_promos(toggles)
+    analytics_written = None
+    if analytics.analytics_enabled(toggles):
+        data = analytics.build_analytics(
+            curr_rows, prev_rows, payload, toggles,
+            client_id=args.client_id, date=curr_date,
+            history=analytics.history_medians(snapshots_dir),
+            selection=marketing.selection,
+            min_lots=marketing.agent1.get("min_lots"))
+        analytics_written = analytics.write_analytics(
+            analytics.analytics_path(reports_dir, curr_date, args.client_id), data)
+        payload["analytics"] = data
+    else:
+        payload["analytics"] = None
+
     print("Снимок: %s" % curr_path)
     if prev_path:
         print("Предыдущий снимок: %s" % prev_path)
@@ -793,10 +882,14 @@ def main(argv=None):
 
     for path in written:
         print("Отчёт: %s" % path)
+    if analytics_written:
+        print("Аналитика: %s" % analytics_written)
+    else:
+        print("Аналитика выключена (agent1.analytics.enabled = false).")
     if limitations_text:
         print("Ограничения взяты из: %s" % limitations_path)
     print("Разделов в Markdown: %d" % len(SECTIONS))
-    print("Листов в XLSX: Сводка, Цены, Изменения, Акции, Лоты")
+    print("Листов в XLSX: Сводка, Цены, Изменения, Акции, Лоты, Аналитика")
 
     if args.telegram:
         print("")

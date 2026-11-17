@@ -1,0 +1,59 @@
+# Подписки: кто на каком тарифе, сроки, цена, признак «счёт выставлен».
+version: 1
+updated: "2026-10-31"
+
+subscriptions:
+  - id: sub-001
+    client: client-svet
+    service: competitor-watch
+    plan: business
+    period: monthly
+    start: "2026-10-01"
+    end: "2026-11-01"
+    status: active            # active | paused | overdue | closed
+    price_rub: 2900
+    invoiced: true
+
+  - id: sub-002
+    client: client-svet
+    service: listing-audit
+    plan: business
+    period: monthly
+    start: "2026-10-20"
+    end: "2026-11-20"
+    status: active
+    price_rub: 5900
+    invoiced: false
+
+  - id: sub-003
+    client: client-granel
+    service: competitor-watch
+    plan: premium
+    period: monthly
+    start: "2026-10-15"
+    end: "2026-11-15"
+    status: active
+    price_rub: 3900
+    invoiced: true
+
+  - id: sub-004
+    client: client-granel
+    service: direct-semantics
+    plan: premium
+    period: monthly
+    start: "2026-11-01"
+    end: "2026-12-01"
+    status: active
+    price_rub: 9900
+    invoiced: false
+
+  - id: sub-005
+    client: client-granel
+    service: listing-audit
+    plan: premium
+    period: monthly
+    start: "2026-10-15"
+    end: "2026-11-15"
+    status: overdue
+    price_rub: 5900
+    invoiced: true

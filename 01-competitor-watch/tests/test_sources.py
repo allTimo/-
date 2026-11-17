@@ -40,7 +40,8 @@ import sources_tool           # noqa: E402
 def run_cli(script, *args, cwd=None):
     env = dict(os.environ)
     env["PYTHONIOENCODING"] = "utf-8"
-    env["PYTHONPATH"] = str(SCRIPTS_DIR)
+    env["PYTHONPATH"] = os.pathsep.join(
+        part for part in (env.get("PYTHONPATH"), str(SCRIPTS_DIR)) if part)
     return subprocess.run(
         [sys.executable, str(SCRIPTS_DIR / script)] + [str(arg) for arg in args],
         capture_output=True, text=True, encoding="utf-8", errors="replace",

@@ -46,7 +46,8 @@ PNG_1PX = base64.b64decode(
 def run_cli(script, *args):
     env = dict(os.environ)
     env["PYTHONIOENCODING"] = "utf-8"
-    env["PYTHONPATH"] = str(SCRIPTS_DIR)
+    env["PYTHONPATH"] = os.pathsep.join(
+        part for part in (env.get("PYTHONPATH"), str(SCRIPTS_DIR)) if part)
     return subprocess.run([sys.executable, str(SCRIPTS_DIR / script)] + [str(a) for a in args],
                           capture_output=True, text=True, encoding="utf-8", errors="replace",
                           env=env, cwd=str(PROJECT_DIR))
@@ -299,6 +300,55 @@ class PlatformParserTestCase(unittest.TestCase):
         self.assertEqual(platforms.parse_floor("15/24 эт."), (15, 24))
         self.assertIsNone(platforms.parse_number("123"))
 
+    def test_27_site_price_is_not_the_down_payment(self):
+        """F10: цена лота с сайта застройщика — не «взнос» и не «цена за м²»."""
+        html = (PAGES / "site-price-cards.html").read_text(encoding="utf-8")
+        lots = platforms.parse_cards(html, "site", "https://level.ru/projects/southport/")
+        self.assertEqual(len(lots), 3)
+        self.assertEqual(lots[0]["price_rub"], 11000000)
+        self.assertEqual(lots[0]["area_m2"], 31.7)
+        self.assertEqual(lots[0]["offer_url"], "https://level.ru/flats/101")
+        self.assertEqual(lots[1]["price_rub"], 16800000)
+        self.assertEqual(lots[1]["offer_url"], "https://level.ru/flats/102")
+        # 2 600 000 ₽ / 34,7 м² = 74 928 ₽/м² — недостоверно, публикуем «данных нет»
+        self.assertIsNone(lots[2]["price_rub"])
+        self.assertEqual(lots[2]["area_m2"], 34.7)
+        page = platforms.parse_page(html, "site", "https://level.ru/projects/southport/")
+        self.assertEqual(len(page["lots"]), 2)
+
+    def test_29_site_cards_from_other_pages_are_not_lots(self):
+        """Паркинг, ипотека, каталог и чужой ЖК — не лоты конкурента (проверено на живом level.ru)."""
+        html = (
+            '<article class="card-flat"><a href="/parking">Паркинг 31 м2</a>'
+            '<div>Цена 17 600 000 ₽</div></article>'
+            '<article class="card-flat"><a href="https://level.ru/purchase/mortgage/">Ипотека</a>'
+            '<div>Цена 15 000 000 ₽</div></article>'
+            '<article class="card-flat"><a href="https://level.ru/projects/lesnoy/">ЖК Лесной 123.3 м2</a>'
+            '<div>Цена 25 000 000 ₽</div></article>'
+            '<article class="card-flat"><a href="https://level.ru/southport/flat/1room/10-195/">1-комн 41 м2</a>'
+            '<div>Цена 25 364 668 ₽</div></article>'
+        )
+        lots = platforms.parse_cards(html, "site", "https://level.ru/projects/southport/")
+        self.assertEqual(len(lots), 1)
+        self.assertEqual(lots[0]["offer_url"], "https://level.ru/southport/flat/1room/10-195/")
+        self.assertEqual(lots[0]["price_rub"], 25364668)
+
+    def test_28_engine_and_skill_pick_the_same_price(self):
+        """Правило выбора цены в движке и в скиле developer_pricing не расходится."""
+        if str(PROJECT_DIR.parent) not in sys.path:
+            sys.path.insert(0, str(PROJECT_DIR.parent))
+        from skills.real_estate import developer_pricing
+        samples = (
+            "Первоначальный взнос 1 100 000 ₽ Цена от 11 000 000 ₽",
+            "студия 22 м² — 8 400 000 ₽",
+            "цена за м² 300 000 ₽ цена 20 000 000 ₽",
+            "23,18 млн ₽",
+            "нет цены",
+        )
+        for text in samples:
+            self.assertEqual(platforms.pick_lot_price(text), developer_pricing.pick_lot_price(text),
+                             "расхождение на: %s" % text)
+
 
 class SnapshotAndMonthTestCase(unittest.TestCase):
     @classmethod
@@ -502,6 +552,55 @@ class CollectionFlowTestCase(unittest.TestCase):
         checked = run_cli("clients.py", "--clients-dir", bad_dir, "check")
         self.assertEqual(checked.returncode, 1)
         self.assertIn("ПРОБЛЕМЫ", checked.stdout)
+
+
+    def test_30_discount_price_and_area_with_space(self):
+        """level.ru: площадь «28.8 м 2» и цена со скидкой «-35%» (проверено живьём)."""
+        html = (
+            '<article class="card-flat"><a href="/southport/flat/1room/10-195/">'
+            'Студия-квартира, 28.8 м 2</a>'
+            '<div>В ипотеку: от 84 903 руб./мес. 25 364 668 руб. 16 487 034 руб. -35%</div>'
+            '</article>'
+        )
+        lots = platforms.parse_cards(html, "site", "https://level.ru/projects/southport/")
+        self.assertEqual(len(lots), 1)
+        self.assertEqual(lots[0]["area_m2"], 28.8)
+        self.assertEqual(lots[0]["price_rub"], 16487034)
+        self.assertEqual(lots[0]["rooms"], 0)
+        self.assertIn("25 364 668", lots[0]["promo_text"])
+        # процент не сходится — цену не подменяем, берём крупное «честное» число
+        details = platforms.pick_lot_price_details("цена 10 000 000 руб. 9 000 000 руб. -3%")
+        self.assertEqual(details["price_rub"], 10000000)
+        self.assertIsNone(details["price_before_rub"])
+
+
+    def test_31_delivery_year_is_honest_and_junk_is_refused(self):
+        """F12: год сдачи — честное значение, а ипотечные годы и мусор в колонку не идут."""
+        self.assertEqual(platforms.parse_delivery("Срок сдачи: 2027"), "2027")
+        self.assertEqual(platforms.parse_delivery("Сдача: IV кв. 2027"), "2027-Q4")
+        self.assertEqual(platforms.parse_delivery("3 квартал 2028"), "2028-Q3")
+        self.assertEqual(platforms.parse_delivery("Ставка 13% на 2027 год"), "")
+        self.assertEqual(platforms.parse_delivery("ипотека от 3% 2026 год"), "")
+        self.assertTrue(cw.DELIVERY_RE.match("2027"))
+        self.assertTrue(cw.DELIVERY_RE.match("2027-Q2"))
+        self.assertFalse(cw.DELIVERY_RE.match("ставка 13"))
+        self.assertFalse(cw.DELIVERY_RE.match("2027-Q9"))
+
+
+class ArtifactPathTestCase(unittest.TestCase):
+    """F2: пути артефактов не должны ронять прогон (относительные и внешние каталоги)."""
+
+    def test_01_relative_path_inside_project_is_made_relative(self):
+        ref = collect_clients.artifact_ref("01-competitor-watch/reports/clients/x.md")
+        self.assertEqual(ref, "01-competitor-watch/reports/clients/x.md")
+
+    def test_02_path_outside_project_is_kept_absolute_without_crash(self):
+        # Берём путь у корня диска: он вне проекта при любом TEMP (под песочницей TEMP
+        # может быть внутри рабочей области, и проверка «вне проекта» ломалась бы).
+        outside = Path(Path(PROJECT_DIR).resolve().anchor) / "cw-artifact-x.md"
+        ref = collect_clients.artifact_ref(str(outside))
+        self.assertTrue(Path(ref).is_absolute(), ref)
+        self.assertTrue(ref.endswith("cw-artifact-x.md"))
 
 
 if __name__ == "__main__":

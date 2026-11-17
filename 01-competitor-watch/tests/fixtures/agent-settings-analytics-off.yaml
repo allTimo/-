@@ -1,0 +1,13 @@
+# Тонкие настройки агента 1 — фикстура тестов WP2.
+# Проверяет, что тумблеры читаются из agent1.analytics, а отсутствующие ключи
+# получают безопасный дефолт true.
+version: 1
+agent: agent-1-competitor-watch
+
+delivery:
+  addresses: ["@svet_marketing"]
+
+agent1:
+  analytics:
+    enabled: false
+    forecast: false

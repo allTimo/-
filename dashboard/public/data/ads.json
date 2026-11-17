@@ -1,6 +1,8 @@
 {
- "generatedAtMs": 1793565418415,
- "today": "2026-11-01",
+ "generatedAtMs": 1794594846616,
+ "today": "2026-11-13",
+ "demo": true,
+ "demoReason": "Бюджеты, кошелёк, возвраты площадок и кэшбэк операторам — демонстрационные записи реестра, а не фактические расходы и выплаты. Реальный контур включается после партнёрских договоров и первых клиентов.",
  "platform": {
   "commissionPct": 7,
   "ipoRegistered": false,
@@ -432,13 +434,13 @@
     "days": 50,
     "since": "2026-10-15",
     "dueDate": "2026-12-04",
-    "daysLeft": 33,
+    "daysLeft": 21,
     "overdue": false,
     "note": "как у click.ru, до 50 дней — учёт, не финансирование"
    },
    "deferredDays": 50,
    "deferredDue": "2026-12-04",
-   "deferredDaysLeft": 33,
+   "deferredDaysLeft": 21,
    "deferredOverdue": false
   },
   {
@@ -486,13 +488,13 @@
     "days": 30,
     "since": "2026-10-01",
     "dueDate": "2026-10-31",
-    "daysLeft": -1,
+    "daysLeft": -13,
     "overdue": true,
     "note": "демо-отсрочка"
    },
    "deferredDays": 30,
    "deferredDue": "2026-10-31",
-   "deferredDaysLeft": -1,
+   "deferredDaysLeft": -13,
    "deferredOverdue": true
   },
   {
@@ -1015,7 +1017,7 @@
    "days": 50,
    "since": "2026-10-15",
    "dueDate": "2026-12-04",
-   "daysLeft": 33,
+   "daysLeft": 21,
    "overdue": false,
    "note": "как у click.ru, до 50 дней — учёт, не финансирование"
   },
@@ -1024,7 +1026,7 @@
    "days": 30,
    "since": "2026-10-01",
    "dueDate": "2026-10-31",
-   "daysLeft": -1,
+   "daysLeft": -13,
    "overdue": true,
    "note": "демо-отсрочка"
   }
@@ -1117,7 +1119,7 @@
    "level": "critical",
    "title": "Просрочена отсрочка платежа: Пример: убыточный клиент",
    "what": "Отсрочка 30 дней с 2026-10-01, срок 2026-10-31.",
-   "meaning": "Платёж просрочен на 1 дн. Напоминание клиенту.",
+   "meaning": "Платёж просрочен на 13 дн. Напоминание клиенту.",
    "action": "Напомнить клиенту о платеже.",
    "client": "client-loss-demo"
   }

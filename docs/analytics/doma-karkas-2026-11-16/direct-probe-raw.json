@@ -1,0 +1,66 @@
+{
+ "textcampaign": {
+  "http_error": 404,
+  "body": ""
+ },
+ "textcampaign2": {
+  "http_error": 404,
+  "body": ""
+ },
+ "bidmodifiers": {
+  "error": {
+   "request_id": "1002623075481818687",
+   "error_code": 8000,
+   "error_detail": "Элемент массива FieldNames содержит неверное значение перечисления, ожидается одно из значений: Id, CampaignId, AdGroupId, Level, Type",
+   "error_string": "Некорректный запрос"
+  }
+ },
+ "audiencetargets": {
+  "error": {
+   "request_id": "2084224596545431328",
+   "error_code": 8000,
+   "error_detail": "Элемент массива FieldNames содержит неверное значение перечисления, ожидается одно из значений: Id, AdGroupId, CampaignId, RetargetingListId, InterestId, ContextBid, StrategyPriority, State",
+   "error_string": "Некорректный запрос"
+  }
+ },
+ "retargetinglists": {
+  "result": {
+   "RetargetingLists": [
+    {
+     "Type": "RETARGETING",
+     "Id": 42251315,
+     "Scope": "FOR_TARGETS_AND_ADJUSTMENTS",
+     "Name": "Исключение: спам-звонки 01.09.2026",
+     "Rules": [
+      {
+       "Arguments": [
+        {
+         "MembershipLifeSpan": 540,
+         "ExternalId": 2059259583
+        }
+       ],
+       "Operator": "ANY"
+      }
+     ]
+    },
+    {
+     "Type": "AUDIENCE",
+     "Id": 43247191,
+     "Scope": "FOR_TARGETS_ONLY",
+     "Name": "Интересы и привычки",
+     "Rules": [
+      {
+       "Arguments": [
+        {
+         "MembershipLifeSpan": 0,
+         "ExternalId": 19000107580
+        }
+       ],
+       "Operator": "ANY"
+      }
+     ]
+    }
+   ]
+  }
+ }
+}

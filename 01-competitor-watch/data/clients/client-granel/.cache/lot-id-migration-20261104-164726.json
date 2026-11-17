@@ -1,0 +1,723 @@
+{
+  "client": "client-granel",
+  "status": "ok",
+  "reference_date": "2026-11-04",
+  "reference_rows": 229,
+  "dates": {
+    "2026-11-02": {
+      "rows": 229,
+      "matched_exact": 172,
+      "matched_loose": 3,
+      "unmatched": 54,
+      "unmatched_list": [
+        {
+          "lot_id": "cian-ecabd951",
+          "project": "Свет",
+          "rooms": 0,
+          "area_m2": 86.1,
+          "floor": 2,
+          "floors_total": 51,
+          "reason": "нет строки с такой подписью в эталонном снимке"
+        },
+        {
+          "lot_id": "cian-c7794197",
+          "project": "Свет",
+          "rooms": 0,
+          "area_m2": 57.9,
+          "floor": 48,
+          "floors_total": 51,
+          "reason": "нет строки с такой подписью в эталонном снимке"
+        },
+        {
+          "lot_id": "cian-2458ad44",
+          "project": "Свет",
+          "rooms": 0,
+          "area_m2": 59.3,
+          "floor": 46,
+          "floors_total": 51,
+          "reason": "нет строки с такой подписью в эталонном снимке"
+        },
+        {
+          "lot_id": "cian-e520be9f",
+          "project": "Свет",
+          "rooms": 0,
+          "area_m2": 49.4,
+          "floor": 4,
+          "floors_total": 51,
+          "reason": "нет строки с такой подписью в эталонном снимке"
+        },
+        {
+          "lot_id": "cian-2a0809f7",
+          "project": "Свет",
+          "rooms": 0,
+          "area_m2": 33.5,
+          "floor": 38,
+          "floors_total": 51,
+          "reason": "нет строки с такой подписью в эталонном снимке"
+        },
+        {
+          "lot_id": "cian-14a9a9c6",
+          "project": "Свет",
+          "rooms": 0,
+          "area_m2": 38.9,
+          "floor": 45,
+          "floors_total": 51,
+          "reason": "нет строки с такой подписью в эталонном снимке"
+        },
+        {
+          "lot_id": "cian-ec70364f",
+          "project": "Свет",
+          "rooms": 0,
+          "area_m2": 79.9,
+          "floor": 25,
+          "floors_total": 51,
+          "reason": "нет строки с такой подписью в эталонном снимке"
+        },
+        {
+          "lot_id": "cian-e7d240c4",
+          "project": "Дмитровское небо",
+          "rooms": 0,
+          "area_m2": 26.2,
+          "floor": 13,
+          "floors_total": 13,
+          "reason": "нет строки с такой подписью в эталонном снимке"
+        },
+        {
+          "lot_id": "cian-40612a47",
+          "project": "Дмитровское небо",
+          "rooms": 3,
+          "area_m2": 76.4,
+          "floor": 8,
+          "floors_total": 8,
+          "reason": "нет строки с такой подписью в эталонном снимке"
+        },
+        {
+          "lot_id": "cian-32d1305c",
+          "project": "Дмитровское небо",
+          "rooms": 0,
+          "area_m2": 25.3,
+          "floor": 13,
+          "floors_total": 13,
+          "reason": "нет строки с такой подписью в эталонном снимке"
+        },
+        {
+          "lot_id": "cian-a3f4f805",
+          "project": "Дмитровское небо",
+          "rooms": 2,
+          "area_m2": 66.5,
+          "floor": 8,
+          "floors_total": 8,
+          "reason": "нет строки с такой подписью в эталонном снимке"
+        },
+        {
+          "lot_id": "cian-8b4af81a",
+          "project": "Дмитровское небо",
+          "rooms": 0,
+          "area_m2": 26.2,
+          "floor": 15,
+          "floors_total": 15,
+          "reason": "нет строки с такой подписью в эталонном снимке"
+        },
+        {
+          "lot_id": "cian-35a14847",
+          "project": "Дмитровское небо",
+          "rooms": 0,
+          "area_m2": 59.5,
+          "floor": 8,
+          "floors_total": 8,
+          "reason": "нет строки с такой подписью в эталонном снимке"
+        },
+        {
+          "lot_id": "cian-20cee3cc",
+          "project": "Онежский вал",
+          "rooms": 3,
+          "area_m2": 81.0,
+          "floor": 6,
+          "floors_total": 18,
+          "reason": "нет строки с такой подписью в эталонном снимке"
+        },
+        {
+          "lot_id": "cian-062eedda",
+          "project": "Онежский вал",
+          "rooms": 2,
+          "area_m2": 53.1,
+          "floor": 14,
+          "floors_total": 18,
+          "reason": "нет строки с такой подписью в эталонном снимке"
+        },
+        {
+          "lot_id": "cian-c995c118",
+          "project": "Онежский вал",
+          "rooms": 1,
+          "area_m2": 35.3,
+          "floor": 2,
+          "floors_total": 9,
+          "reason": "нет строки с такой подписью в эталонном снимке"
+        },
+        {
+          "lot_id": "cian-944f1988",
+          "project": "Онежский вал",
+          "rooms": 1,
+          "area_m2": 31.1,
+          "floor": 7,
+          "floors_total": 9,
+          "reason": "нет строки с такой подписью в эталонном снимке"
+        },
+        {
+          "lot_id": "cian-08298951",
+          "project": "Онежский вал",
+          "rooms": 2,
+          "area_m2": 61.5,
+          "floor": 2,
+          "floors_total": 8,
+          "reason": "нет строки с такой подписью в эталонном снимке"
+        },
+        {
+          "lot_id": "cian-c3fa9357",
+          "project": "Онежский вал",
+          "rooms": 0,
+          "area_m2": 31.0,
+          "floor": 6,
+          "floors_total": 18,
+          "reason": "нет строки с такой подписью в эталонном снимке"
+        },
+        {
+          "lot_id": "cian-7f458ec2",
+          "project": "Онежский вал",
+          "rooms": 3,
+          "area_m2": 65.1,
+          "floor": 22,
+          "floors_total": 23,
+          "reason": "нет строки с такой подписью в эталонном снимке"
+        },
+        {
+          "lot_id": "cian-b95e122c",
+          "project": "Онежский вал",
+          "rooms": 1,
+          "area_m2": 39.0,
+          "floor": 9,
+          "floors_total": 23,
+          "reason": "нет строки с такой подписью в эталонном снимке"
+        },
+        {
+          "lot_id": "cian-f703e896",
+          "project": "Онежский вал",
+          "rooms": 2,
+          "area_m2": 50.1,
+          "floor": 7,
+          "floors_total": 8,
+          "reason": "нет строки с такой подписью в эталонном снимке"
+        },
+        {
+          "lot_id": "cian-b9e3f746",
+          "project": "Онежский вал",
+          "rooms": 1,
+          "area_m2": 41.9,
+          "floor": 7,
+          "floors_total": 23,
+          "reason": "нет строки с такой подписью в эталонном снимке"
+        },
+        {
+          "lot_id": "cian-13e8571a",
+          "project": "Онежский вал",
+          "rooms": 2,
+          "area_m2": 48.4,
+          "floor": 2,
+          "floors_total": 8,
+          "reason": "нет строки с такой подписью в эталонном снимке"
+        },
+        {
+          "lot_id": "cian-ea1392ad",
+          "project": "Онежский вал",
+          "rooms": 0,
+          "area_m2": 31.1,
+          "floor": 4,
+          "floors_total": 9,
+          "reason": "нет строки с такой подписью в эталонном снимке"
+        },
+        {
+          "lot_id": "cian-18e51402",
+          "project": "Нарвин",
+          "rooms": 2,
+          "area_m2": 51.5,
+          "floor": 5,
+          "floors_total": 38,
+          "reason": "нет строки с такой подписью в эталонном снимке"
+        },
+        {
+          "lot_id": "cian-1d6e5e4a",
+          "project": "Нарвин",
+          "rooms": 1,
+          "area_m2": 35.2,
+          "floor": 25,
+          "floors_total": 38,
+          "reason": "нет строки с такой подписью в эталонном снимке"
+        },
+        {
+          "lot_id": "cian-e169f51b",
+          "project": "Нарвин",
+          "rooms": 2,
+          "area_m2": 55.2,
+          "floor": 21,
+          "floors_total": 38,
+          "reason": "нет строки с такой подписью в эталонном снимке"
+        },
+        {
+          "lot_id": "cian-5dd7b931",
+          "project": "Нарвин",
+          "rooms": 1,
+          "area_m2": 43.8,
+          "floor": 6,
+          "floors_total": 38,
+          "reason": "нет строки с такой подписью в эталонном снимке"
+        },
+        {
+          "lot_id": "cian-3b363507",
+          "project": "Нарвин",
+          "rooms": 2,
+          "area_m2": 51.5,
+          "floor": 2,
+          "floors_total": 38,
+          "reason": "нет строки с такой подписью в эталонном снимке"
+        },
+        {
+          "lot_id": "cian-acfb382c",
+          "project": "Нарвин",
+          "rooms": 0,
+          "area_m2": 24.4,
+          "floor": 13,
+          "floors_total": 38,
+          "reason": "нет строки с такой подписью в эталонном снимке"
+        },
+        {
+          "lot_id": "cian-90023183",
+          "project": "Нарвин",
+          "rooms": 1,
+          "area_m2": 39.9,
+          "floor": 22,
+          "floors_total": 38,
+          "reason": "нет строки с такой подписью в эталонном снимке"
+        },
+        {
+          "lot_id": "cian-2ebb6f3f",
+          "project": "Нарвин",
+          "rooms": 1,
+          "area_m2": 38.7,
+          "floor": 5,
+          "floors_total": 19,
+          "reason": "нет строки с такой подписью в эталонном снимке"
+        },
+        {
+          "lot_id": "cian-84cb0268",
+          "project": "Нарвин",
+          "rooms": 3,
+          "area_m2": 81.9,
+          "floor": 34,
+          "floors_total": 38,
+          "reason": "нет строки с такой подписью в эталонном снимке"
+        },
+        {
+          "lot_id": "cian-b411b325",
+          "project": "Нарвин",
+          "rooms": 0,
+          "area_m2": 19.0,
+          "floor": 23,
+          "floors_total": 38,
+          "reason": "нет строки с такой подписью в эталонном снимке"
+        },
+        {
+          "lot_id": "cian-c9a887c0",
+          "project": "Бусиновский парк",
+          "rooms": 1,
+          "area_m2": 34.9,
+          "floor": 27,
+          "floors_total": 32,
+          "reason": "нет строки с такой подписью в эталонном снимке"
+        },
+        {
+          "lot_id": "cian-39483734",
+          "project": "Бусиновский парк",
+          "rooms": 1,
+          "area_m2": 42.5,
+          "floor": 21,
+          "floors_total": 24,
+          "reason": "нет строки с такой подписью в эталонном снимке"
+        },
+        {
+          "lot_id": "cian-e7e97d44",
+          "project": "Бусиновский парк",
+          "rooms": 2,
+          "area_m2": 56.3,
+          "floor": 28,
+          "floors_total": 32,
+          "reason": "нет строки с такой подписью в эталонном снимке"
+        },
+        {
+          "lot_id": "cian-9fa4363e",
+          "project": "Бусиновский парк",
+          "rooms": 2,
+          "area_m2": 49.8,
+          "floor": 16,
+          "floors_total": 24,
+          "reason": "нет строки с такой подписью в эталонном снимке"
+        },
+        {
+          "lot_id": "cian-f58e1c11",
+          "project": "Бусиновский парк",
+          "rooms": 2,
+          "area_m2": 61.2,
+          "floor": 7,
+          "floors_total": 32,
+          "reason": "нет строки с такой подписью в эталонном снимке"
+        },
+        {
+          "lot_id": "cian-8f007060",
+          "project": "Бусиновский парк",
+          "rooms": 3,
+          "area_m2": 67.8,
+          "floor": 15,
+          "floors_total": 23,
+          "reason": "нет строки с такой подписью в эталонном снимке"
+        },
+        {
+          "lot_id": "cian-ca589f0b",
+          "project": "Акценты",
+          "rooms": 2,
+          "area_m2": 60.9,
+          "floor": 13,
+          "floors_total": 30,
+          "reason": "нет строки с такой подписью в эталонном снимке"
+        },
+        {
+          "lot_id": "cian-f3366e9c",
+          "project": "Акценты",
+          "rooms": 2,
+          "area_m2": 67.2,
+          "floor": 8,
+          "floors_total": 30,
+          "reason": "нет строки с такой подписью в эталонном снимке"
+        },
+        {
+          "lot_id": "cian-4e3da373",
+          "project": "Акценты",
+          "rooms": 3,
+          "area_m2": 80.5,
+          "floor": 25,
+          "floors_total": 30,
+          "reason": "нет строки с такой подписью в эталонном снимке"
+        },
+        {
+          "lot_id": "cian-f5fb39b5",
+          "project": "Акценты",
+          "rooms": 1,
+          "area_m2": 43.2,
+          "floor": 8,
+          "floors_total": 30,
+          "reason": "нет строки с такой подписью в эталонном снимке"
+        },
+        {
+          "lot_id": "cian-a6212f16",
+          "project": "Акценты",
+          "rooms": 0,
+          "area_m2": 46.9,
+          "floor": 8,
+          "floors_total": 30,
+          "reason": "нет строки с такой подписью в эталонном снимке"
+        },
+        {
+          "lot_id": "cian-241e1903",
+          "project": "Кинетик. Резиденции на Дмитровском",
+          "rooms": 0,
+          "area_m2": 36.5,
+          "floor": 7,
+          "floors_total": 26,
+          "reason": "нет строки с такой подписью в эталонном снимке"
+        },
+        {
+          "lot_id": "cian-3706798f",
+          "project": "Михалковский",
+          "rooms": 2,
+          "area_m2": 52.4,
+          "floor": 19,
+          "floors_total": 20,
+          "reason": "нет строки с такой подписью в эталонном снимке"
+        },
+        {
+          "lot_id": "cian-953b79a5",
+          "project": "Михалковский",
+          "rooms": 2,
+          "area_m2": 44.4,
+          "floor": 2,
+          "floors_total": 18,
+          "reason": "нет строки с такой подписью в эталонном снимке"
+        },
+        {
+          "lot_id": "cian-b8e9068b",
+          "project": "Михалковский",
+          "rooms": 2,
+          "area_m2": 52.3,
+          "floor": 20,
+          "floors_total": 20,
+          "reason": "нет строки с такой подписью в эталонном снимке"
+        },
+        {
+          "lot_id": "cian-de5d4466",
+          "project": "Михалковский",
+          "rooms": 2,
+          "area_m2": 44.3,
+          "floor": 7,
+          "floors_total": 20,
+          "reason": "нет строки с такой подписью в эталонном снимке"
+        },
+        {
+          "lot_id": "cian-32254af4",
+          "project": "Михалковский",
+          "rooms": 2,
+          "area_m2": 53.5,
+          "floor": 3,
+          "floors_total": 9,
+          "reason": "нет строки с такой подписью в эталонном снимке"
+        },
+        {
+          "lot_id": "cian-ea7cdb46",
+          "project": "Михалковский",
+          "rooms": 2,
+          "area_m2": 60.0,
+          "floor": 8,
+          "floors_total": 20,
+          "reason": "нет строки с такой подписью в эталонном снимке"
+        },
+        {
+          "lot_id": "cian-d2f3a469",
+          "project": "Михалковский",
+          "rooms": 4,
+          "area_m2": 85.0,
+          "floor": 7,
+          "floors_total": 20,
+          "reason": "нет строки с такой подписью в эталонном снимке"
+        }
+      ],
+      "changed": 175,
+      "backup": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\01-competitor-watch\\data\\clients\\client-granel\\snapshots\\2026-11-02\\lots.csv.bak-20261104-164726"
+    },
+    "2026-11-03": {
+      "rows": 229,
+      "matched_exact": 201,
+      "matched_loose": 5,
+      "unmatched": 23,
+      "unmatched_list": [
+        {
+          "lot_id": "cian-00d3a7fd",
+          "project": "Свет",
+          "rooms": 0,
+          "area_m2": 33.5,
+          "floor": 38,
+          "floors_total": 51,
+          "reason": "нет строки с такой подписью в эталонном снимке"
+        },
+        {
+          "lot_id": "cian-59a88d5e",
+          "project": "Свет",
+          "rooms": 0,
+          "area_m2": 82.7,
+          "floor": 36,
+          "floors_total": 51,
+          "reason": "нет строки с такой подписью в эталонном снимке"
+        },
+        {
+          "lot_id": "cian-14a9a9c6",
+          "project": "Свет",
+          "rooms": 0,
+          "area_m2": 38.9,
+          "floor": 45,
+          "floors_total": 51,
+          "reason": "нет строки с такой подписью в эталонном снимке"
+        },
+        {
+          "lot_id": "cian-5412be8d",
+          "project": "Свет",
+          "rooms": 0,
+          "area_m2": 86.1,
+          "floor": 2,
+          "floors_total": 51,
+          "reason": "нет строки с такой подписью в эталонном снимке"
+        },
+        {
+          "lot_id": "cian-60b4aa94",
+          "project": "Свет",
+          "rooms": 0,
+          "area_m2": 51.5,
+          "floor": 28,
+          "floors_total": 51,
+          "reason": "нет строки с такой подписью в эталонном снимке"
+        },
+        {
+          "lot_id": "cian-44fc4eb1",
+          "project": "Дмитровское небо",
+          "rooms": 0,
+          "area_m2": 26.2,
+          "floor": 13,
+          "floors_total": 13,
+          "reason": "нет строки с такой подписью в эталонном снимке"
+        },
+        {
+          "lot_id": "cian-e9ca93d8",
+          "project": "Дмитровское небо",
+          "rooms": 2,
+          "area_m2": 59.5,
+          "floor": 8,
+          "floors_total": 8,
+          "reason": "нет строки с такой подписью в эталонном снимке"
+        },
+        {
+          "lot_id": "cian-d9f3f77f",
+          "project": "Дмитровское небо",
+          "rooms": 3,
+          "area_m2": 76.4,
+          "floor": 8,
+          "floors_total": 8,
+          "reason": "нет строки с такой подписью в эталонном снимке"
+        },
+        {
+          "lot_id": "cian-46ebf861",
+          "project": "Дмитровское небо",
+          "rooms": 0,
+          "area_m2": 25.3,
+          "floor": 13,
+          "floors_total": 13,
+          "reason": "нет строки с такой подписью в эталонном снимке"
+        },
+        {
+          "lot_id": "cian-c825f892",
+          "project": "Онежский вал",
+          "rooms": 1,
+          "area_m2": 39.0,
+          "floor": 9,
+          "floors_total": 23,
+          "reason": "нет строки с такой подписью в эталонном снимке"
+        },
+        {
+          "lot_id": "cian-92b35da3",
+          "project": "Онежский вал",
+          "rooms": 3,
+          "area_m2": 65.8,
+          "floor": 4,
+          "floors_total": 23,
+          "reason": "нет строки с такой подписью в эталонном снимке"
+        },
+        {
+          "lot_id": "cian-ee005f71",
+          "project": "Онежский вал",
+          "rooms": 2,
+          "area_m2": 53.1,
+          "floor": 14,
+          "floors_total": 18,
+          "reason": "нет строки с такой подписью в эталонном снимке"
+        },
+        {
+          "lot_id": "cian-47b0ef43",
+          "project": "Нарвин",
+          "rooms": 1,
+          "area_m2": 35.2,
+          "floor": 25,
+          "floors_total": 38,
+          "reason": "нет строки с такой подписью в эталонном снимке"
+        },
+        {
+          "lot_id": "cian-c1347f27",
+          "project": "Бусиновский парк",
+          "rooms": 2,
+          "area_m2": 59.4,
+          "floor": 18,
+          "floors_total": 32,
+          "reason": "нет строки с такой подписью в эталонном снимке"
+        },
+        {
+          "lot_id": "cian-d4dd7eb0",
+          "project": "Бусиновский парк",
+          "rooms": 0,
+          "area_m2": 24.3,
+          "floor": 26,
+          "floors_total": 32,
+          "reason": "нет строки с такой подписью в эталонном снимке"
+        },
+        {
+          "lot_id": "cian-94d79cb4",
+          "project": "Акценты",
+          "rooms": 1,
+          "area_m2": 43.2,
+          "floor": 4,
+          "floors_total": 30,
+          "reason": "нет строки с такой подписью в эталонном снимке"
+        },
+        {
+          "lot_id": "cian-a574aa6d",
+          "project": "Акценты",
+          "rooms": 0,
+          "area_m2": 41.2,
+          "floor": 16,
+          "floors_total": 30,
+          "reason": "нет строки с такой подписью в эталонном снимке"
+        },
+        {
+          "lot_id": "cian-66cc8c61",
+          "project": "Кинетик. Резиденции на Дмитровском",
+          "rooms": 0,
+          "area_m2": 36.5,
+          "floor": 7,
+          "floors_total": 26,
+          "reason": "нет строки с такой подписью в эталонном снимке"
+        },
+        {
+          "lot_id": "cian-2677a89b",
+          "project": "Кинетик. Резиденции на Дмитровском",
+          "rooms": 0,
+          "area_m2": 76.8,
+          "floor": 6,
+          "floors_total": 45,
+          "reason": "нет строки с такой подписью в эталонном снимке"
+        },
+        {
+          "lot_id": "cian-97b44ff7",
+          "project": "Михалковский",
+          "rooms": 2,
+          "area_m2": 36.9,
+          "floor": 3,
+          "floors_total": 20,
+          "reason": "нет строки с такой подписью в эталонном снимке"
+        },
+        {
+          "lot_id": "cian-3eb894fa",
+          "project": "Михалковский",
+          "rooms": 2,
+          "area_m2": 44.4,
+          "floor": 2,
+          "floors_total": 18,
+          "reason": "нет строки с такой подписью в эталонном снимке"
+        },
+        {
+          "lot_id": "cian-10a955cc",
+          "project": "Михалковский",
+          "rooms": 2,
+          "area_m2": 53.5,
+          "floor": 3,
+          "floors_total": 9,
+          "reason": "нет строки с такой подписью в эталонном снимке"
+        },
+        {
+          "lot_id": "cian-fb53d8b8",
+          "project": "Михалковский",
+          "rooms": 0,
+          "area_m2": 29.5,
+          "floor": 2,
+          "floors_total": 20,
+          "reason": "нет строки с такой подписью в эталонном снимке"
+        }
+      ],
+      "changed": 206,
+      "backup": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\01-competitor-watch\\data\\clients\\client-granel\\snapshots\\2026-11-03\\lots.csv.bak-20261104-164726"
+    }
+  },
+  "dry_run": false,
+  "checked_at": "20261104-164726"
+}

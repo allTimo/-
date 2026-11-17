@@ -1,5 +1,12 @@
 # СТРУКТУРА ЛЕВОГО МЕНЮ — один файл, из которого панель строит навигацию.
 #
+# С 09.11.2026 меню разделено на «рабочее место маркетолога» (Работа / Аналитика /
+# Данные и настройки) и «Служебное — демо и позже»: подписки, услуги, кэшбэк, оплаты
+# и экономика сервиса — это бизнес-контур после первых клиентов (решение пользователя
+# 09.11.2026: сначала панель для тестов агентов на себе и клиентах).
+# Экраны скрытых разделов НЕ удалены: они открываются по адресу (#economy и т.п.)
+# и возвращаются в рабочую группу одной строкой здесь.
+#
 # Чтобы добавить новый раздел, допишите запись в нужную группу. Логику править не нужно.
 #
 # Поля записи:
@@ -19,7 +26,7 @@
 #   - { id: agents-creative, label: "Агенты-креативы", icon: "spark", counter: failed }
 
 version: 1
-updated: "2026-11-01"
+updated: "2026-11-09"
 
 groups:
   - id: work
@@ -27,42 +34,40 @@ groups:
     items:
       - { id: overview, label: "Обзор", icon: "grid", counter: alerts }
       - { id: clients, label: "Клиенты", icon: "users" }
-      - { id: subscriptions, label: "Подписки и тарифы", icon: "card", counter: overdue, counter_kind: bad }
-      - { id: services, label: "Услуги", icon: "spark" }
-      - { id: ads, label: "Реклама и кэшбэк", icon: "wallet" }
-      - { id: queue, label: "Очередь работ", icon: "list", counter: failed, counter_kind: bad }
+      - { id: projects, label: "Объекты и ЖК", icon: "folder" }
       - { id: agents, label: "Агенты", icon: "bot" }
+      - { id: results, label: "Отчёты", icon: "check" }
 
   - id: analytics
     title: "Аналитика"
     items:
       - { id: analytics, label: "Аналитика", icon: "chart" }
-      - { id: results, label: "Результаты", icon: "check" }
       - { id: usage, label: "Расходы: токены и модели", icon: "ruble" }
-      - { id: economy, label: "Экономика: деньги сервиса", icon: "trend" }
-      - { id: quality, label: "Качество", icon: "check" }
 
-  - id: system
-    title: "Система"
+  - id: data
+    title: "Данные и настройки"
     items:
-      - { id: integrations, label: "Интеграции", icon: "box" }
-      - { id: payments, label: "Оплаты", icon: "wallet", counter: unpaid, counter_kind: bad }
-      - { id: notifications, label: "Уведомления", icon: "bell" }
-      - { id: system, label: "Состояние системы: здоровье данных", icon: "pulse" }
+      - { id: sources, label: "Источники данных", icon: "box" }
+      - { id: skills, label: "Скилы", icon: "plug" }
+      - { id: integrations, label: "Интеграции", icon: "layers" }
+      - { id: system, label: "Здоровье данных", icon: "pulse" }
       - { id: journal, label: "Журнал", icon: "clock" }
-      - { id: infra, label: "Инфраструктура и справка", icon: "wrench" }
-
-  - id: manage
-    title: "Управление"
-    items:
-      - { id: workspaces, label: "Рабочие пространства", icon: "layers" }
-      - { id: projects, label: "Проекты", icon: "folder" }
-      - { id: team, label: "Команда и доступы", icon: "userplus" }
-      - { id: security, label: "Безопасность", icon: "lock" }
       - { id: settings, label: "Настройки", icon: "gear" }
 
-  - id: help
-    title: "Помощь"
+  - id: service-later
+    title: "Служебное — демо и позже"
     items:
+      - { id: subscriptions, label: "Подписки и тарифы (демо)", icon: "card", counter: overdue, counter_kind: bad }
+      - { id: services, label: "Услуги (демо)", icon: "spark" }
+      - { id: ads, label: "Реклама и кэшбэк (демо)", icon: "wallet" }
+      - { id: payments, label: "Оплаты", icon: "wallet" }
+      - { id: economy, label: "Экономика: деньги сервиса (демо)", icon: "trend" }
+      - { id: queue, label: "Очередь работ", icon: "list", counter: failed, counter_kind: bad }
+      - { id: quality, label: "Качество", icon: "check" }
+      - { id: workspaces, label: "Рабочие пространства", icon: "layers" }
+      - { id: team, label: "Команда и доступы", icon: "userplus" }
+      - { id: security, label: "Безопасность", icon: "lock" }
+      - { id: notifications, label: "Уведомления", icon: "bell" }
+      - { id: infra, label: "Инфраструктура и справка", icon: "wrench" }
       - { id: learning, label: "Обучение", icon: "book" }
       - { id: support, label: "Поддержка", icon: "help" }

@@ -53,7 +53,7 @@ export function buildAlertsDoc(ctx) {
         title: 'Данные устарели: последний снимок ' + lastSnapshot,
         what: 'Свежих снимков нет ' + age + ' дн. (порог ' + STALE_DAYS + ' дн.)',
         meaning: 'Отчёт за текущую неделю будет без свежих данных. Нужно запустить сбор.',
-        action: { label: 'Собрать данные сейчас', tab: 'overview', anchor: 'actions' },
+        action: { label: 'Собрать данные сейчас', tab: 'overview', anchor: 'actions', run: 'collect' },
       });
     }
   } else if (sourcesDoc.summary.total > 0) {

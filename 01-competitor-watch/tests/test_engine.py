@@ -48,7 +48,8 @@ def run_cli(script, *args, cwd=None):
     """Run one engine CLI with the same interpreter as the tests."""
     env = dict(os.environ)
     env["PYTHONIOENCODING"] = "utf-8"
-    env["PYTHONPATH"] = str(SCRIPTS_DIR)
+    env["PYTHONPATH"] = os.pathsep.join(
+        part for part in (env.get("PYTHONPATH"), str(SCRIPTS_DIR)) if part)
     return subprocess.run(
         [sys.executable, str(SCRIPTS_DIR / script)] + [str(arg) for arg in args],
         capture_output=True, text=True, encoding="utf-8", errors="replace",
@@ -125,7 +126,7 @@ class EngineTestCase(unittest.TestCase):
             "строка 9: пустое обязательное поле lot_id",
             "строка 10: promo_flag=2 должен быть 0 или 1",
             "строка 11: finish=дизайнерская не из списка",
-            "строка 12: delivery=2027 не в формате YYYY-QN",
+            "строка 12: delivery=ставка 13 не в формате YYYY или YYYY-QN",
             "строка 13: floor=30 больше floors_total=20",
         ]
         for message in expected_messages:
@@ -409,7 +410,8 @@ class EngineTestCase(unittest.TestCase):
     def test_21_xlsx_sheets_and_formatting(self):
         from openpyxl import load_workbook
         workbook = load_workbook(self.xlsx_path)
-        self.assertEqual(workbook.sheetnames, ["Сводка", "Цены", "Изменения", "Акции", "Лоты"])
+        self.assertEqual(workbook.sheetnames,
+                         ["Сводка", "Цены", "Изменения", "Акции", "Лоты", "Аналитика"])
         for sheet in workbook.worksheets:
             self.assertTrue(sheet["A1"].font.bold, "шапка листа %s должна быть жирной" % sheet.title)
             self.assertEqual(sheet.freeze_panes, "A2", "шапка листа %s должна быть заморожена" % sheet.title)
@@ -590,7 +592,8 @@ class CwdAndConfigTestCase(unittest.TestCase):
     def test_38_stdout_is_utf8_without_pythonioencoding(self):
         env = dict(os.environ)
         env.pop("PYTHONIOENCODING", None)
-        env["PYTHONPATH"] = str(SCRIPTS_DIR)
+        env["PYTHONPATH"] = os.pathsep.join(
+            part for part in (env.get("PYTHONPATH"), str(SCRIPTS_DIR)) if part)
         proc = subprocess.run(
             [sys.executable, str(SCRIPTS_DIR / "build_weekly_report.py"),
              "--curr", str(CURR_FIXTURE), "--prev", str(PREV_FIXTURE),

@@ -20,7 +20,7 @@ updated: "2026-10-31"
 # --- Период сравнения ------------------------------------------------------
 period:
   days: 7                     # Сравниваем текущий снимок с снимком 7 дней назад.
-  snapshot_weekday: "monday"  # День сбора недельного снимка (пн).
+  snapshot_weekday: "thursday" # День сбора недельного снимка (чт, 11:00 МСК).
   compare_mode: "week_over_week"   # week_over_week | previous_snapshot
   # week_over_week  — сравнивать с снимком ровно N дней назад;
   # previous_snapshot — сравнивать с предыдущим по дате снимком (если сбор пропущен).
@@ -79,18 +79,36 @@ output:
   filename_xlsx: "weekly-report.xlsx"
   decimals_separator: ","      # десятичный разделитель в русском отчёте
 
-# --- Куда отправлять отчёт (текстом; автоматической отправки нет) ----------
+# --- Куда отправлять отчёт: доставка (telegram + email) --------------------
 delivery:
-  send_mode: "manual"          # manual — отчёт готовит агент, отправляете вы сами
+  send_mode: "auto"            # auto — агент готовит и отправляет отчёт сам
   telegram:
     enabled: false
     target: ""                 # например "@my_channel" или "username"
-    note: "Укажите канал/чат. Автоотправка в этой версии выключена."
+    note: "Значения по умолчанию; каналы и адреса Агента 1 — в agent-settings."
   email:
-    enabled: false
+    enabled: true
     to: ""                     # например "me@example.com"
     subject_template: "Конкуренты, неделя {date_from}–{date_to}"
-    note: "Укажите адрес. Автоотправка в этой версии выключена."
+    note: "Получатели Агента 1 — в agent-settings (tyurina@d-a.ru, vodnev@d-a.ru)."
+    # SMTP-транспорт (настроен 04.11.2026, Яндекс 360).
+    # Пароль В КОНФИГЕ НЕ ХРАНИТСЯ: сначала берётся из переменной окружения,
+    # затем — из локального файла smtp_password_file (вне публикации, см. .gitignore).
+    smtp_host: "smtp.yandex.ru"
+    smtp_port: 465
+    smtp_user: "art-vodnev@yandex.ru"
+    smtp_password_env: "DSH_SMTP_PASSWORD"
+    smtp_password_file: "00-admin/config/.smtp-password.local"
+    from: "art-vodnev@yandex.ru"
+    use_ssl: true
+
+  # ЖЁСТКИЙ БЕЛЫЙ СПИСОК ПОЛУЧАТЕЛЕЙ (решение пользователя 04.11.2026).
+  # Письма уходят ТОЛЬКО на эти адреса. Любой другой адрес из agent-settings
+  # или клиентского конфига отбрасывается с предупреждением — правится здесь,
+  # а не обходом в коде. Пока список не изменён пользователем, доставка работает так.
+  recipients_allowlist:
+    - "vodnev@d-a.ru"
+    - "tyurina@d-a.ru"
 
 # --- Разделы отчёта: СПРАВОЧНОЕ ЗЕРКАЛО (НЕ управляет отчётом) -------------
 # ВАЖНО: заголовки 9 разделов ФИКСИРОВАНЫ в движке (build_weekly_report.py).
@@ -147,11 +165,11 @@ data_contract:
     - status
   lot_key: ["source", "competitor", "project", "lot_id"]   # ключ сопоставления лотов
   enums:
-    source: ["cian", "avito", "yandex_realty", "site", "other"]   # допустимые значения колонки source
+    source: ["cian", "avito", "yandex_realty", "site", "developer-sites", "other"]   # допустимые значения колонки source
     rooms: "0 = студия, 1..5 = число комнат, 6 = 5+"
     finish: ["без отделки", "white box", "чистовая", "с мебелью", "unknown"]
     promo_flag: [0, 1]
-    delivery: "YYYY-QN"
+    delivery: "YYYY или YYYY-QN (год без квартала законен, площадки публикуют только год)"
     status: ["active", "reserved", "sold"]
   # lot_id должен быть СТАБИЛЬНЫМ между неделями: если у источника нет своего id,
   # берётся хэш ссылки на лот (иначе лот не сопоставится и даст ложный приход/уход).

@@ -1,5 +1,5 @@
 {
- "generatedAtMs": 1793565418389,
+ "generatedAtMs": 1794594846609,
  "routing": {
   "title": "Роутинг моделей (delegate-router)",
   "note": "Файл конфигурации найден. Лёгкие задачи уходят на дешёвую модель, сложные — на сильную.",
@@ -181,16 +181,6 @@
     "history": null
    },
    {
-    "name": "@deepseek-ai/dsh-experimental-agent-team-profile",
-    "inBundles": true,
-    "installed": false,
-    "declaredVersion": null,
-    "protected": true,
-    "protectReason": "встроенный бандл DeepSeek — приходит с приложением, выключение ломает запуск DSH",
-    "inbox": true,
-    "history": null
-   },
-   {
     "name": "@deepseek-ai/dsh-experimental-auto-review",
     "inBundles": true,
     "installed": false,
@@ -201,27 +191,7 @@
     "history": null
    },
    {
-    "name": "@deepseek-ai/dsh-experimental-badge-skill-bundle",
-    "inBundles": true,
-    "installed": false,
-    "declaredVersion": null,
-    "protected": true,
-    "protectReason": "встроенный бандл DeepSeek — приходит с приложением, выключение ломает запуск DSH",
-    "inbox": true,
-    "history": null
-   },
-   {
-    "name": "@deepseek-ai/dsh-experimental-cot-translation-bundle",
-    "inBundles": true,
-    "installed": false,
-    "declaredVersion": null,
-    "protected": true,
-    "protectReason": "встроенный бандл DeepSeek — приходит с приложением, выключение ломает запуск DSH",
-    "inbox": true,
-    "history": null
-   },
-   {
-    "name": "@deepseek-ai/dsh-experimental-inspector-profile",
+    "name": "@deepseek-ai/dsh-experimental-forge-bundle",
     "inBundles": true,
     "installed": false,
     "declaredVersion": null,
@@ -241,80 +211,10 @@
     "history": null
    },
    {
-    "name": "@deepseek-ai/dsh-experimental-ralph-bundle",
-    "inBundles": true,
-    "installed": false,
-    "declaredVersion": null,
-    "protected": true,
-    "protectReason": "встроенный бандл DeepSeek — приходит с приложением, выключение ломает запуск DSH",
-    "inbox": true,
-    "history": null
-   },
-   {
-    "name": "@deepseek-ai/dsh-experimental-session-search",
-    "inBundles": true,
-    "installed": false,
-    "declaredVersion": null,
-    "protected": true,
-    "protectReason": "встроенный бандл DeepSeek — приходит с приложением, выключение ломает запуск DSH",
-    "inbox": true,
-    "history": null
-   },
-   {
-    "name": "@deepseek-ai/dsh-experimental-session-titles-bundle",
-    "inBundles": true,
-    "installed": false,
-    "declaredVersion": null,
-    "protected": true,
-    "protectReason": "встроенный бандл DeepSeek — приходит с приложением, выключение ломает запуск DSH",
-    "inbox": true,
-    "history": null
-   },
-   {
-    "name": "@deepseek-ai/dsh-experimental-terminal-bundle",
-    "inBundles": true,
-    "installed": false,
-    "declaredVersion": null,
-    "protected": true,
-    "protectReason": "встроенный бандл DeepSeek — приходит с приложением, выключение ломает запуск DSH",
-    "inbox": true,
-    "history": null
-   },
-   {
-    "name": "@deepseek-ai/dsh-experimental-tool-worktree",
-    "inBundles": true,
-    "installed": false,
-    "declaredVersion": null,
-    "protected": true,
-    "protectReason": "встроенный бандл DeepSeek — приходит с приложением, выключение ломает запуск DSH",
-    "inbox": true,
-    "history": null
-   },
-   {
     "name": "@deepseek-ai/dsh-experimental-voice-input-bundle",
     "inBundles": true,
     "installed": false,
     "declaredVersion": null,
-    "protected": true,
-    "protectReason": "встроенный бандл DeepSeek — приходит с приложением, выключение ломает запуск DSH",
-    "inbox": true,
-    "history": null
-   },
-   {
-    "name": "@deepseek-ai/dsh-subagent-claude-code",
-    "inBundles": true,
-    "installed": true,
-    "declaredVersion": "0.2.1-rc.3",
-    "protected": true,
-    "protectReason": "встроенный бандл DeepSeek — приходит с приложением, выключение ломает запуск DSH",
-    "inbox": true,
-    "history": null
-   },
-   {
-    "name": "@deepseek-ai/dsh-subagent-codex",
-    "inBundles": true,
-    "installed": true,
-    "declaredVersion": "0.2.1-rc.3",
     "protected": true,
     "protectReason": "встроенный бандл DeepSeek — приходит с приложением, выключение ломает запуск DSH",
     "inbox": true,
@@ -331,18 +231,8 @@
     "history": null
    },
    {
-    "name": "@sandbaseai/dsh-skills",
-    "inBundles": true,
-    "installed": true,
-    "declaredVersion": "https://codeload.github.com/sandbaseai/sandbase-skills/tar.gz/refs/heads/main",
-    "protected": false,
-    "protectReason": null,
-    "inbox": false,
-    "history": null
-   },
-   {
     "name": "dsh-delegate-router",
-    "inBundles": true,
+    "inBundles": false,
     "installed": true,
     "declaredVersion": "^0.4.5",
     "protected": false,
@@ -351,50 +241,30 @@
     "history": null
    },
    {
-    "name": "dsh-git-credentials",
+    "name": "dsh-marketing-skills",
     "inBundles": true,
     "installed": true,
-    "declaredVersion": "^0.6.1",
+    "declaredVersion": "file:C:/Users/Артем/Desktop/тестDH/marketing-agents/plugin",
     "protected": false,
     "protectReason": null,
     "inbox": false,
     "history": null
    },
    {
-    "name": "dsh-locale-ru",
+    "name": "dsh-plugin-vault-memory",
+    "inBundles": true,
+    "installed": true,
+    "declaredVersion": "^0.3.1",
+    "protected": false,
+    "protectReason": null,
+    "inbox": false,
+    "history": null
+   },
+   {
+    "name": "dsh-portable",
     "inBundles": false,
     "installed": true,
-    "declaredVersion": "file:.plugin-sources/dsh-locale-ru",
-    "protected": true,
-    "protectReason": "языковой пакет: выключение вернёт интерфейс на китайский (подключён через file:.plugin-sources)",
-    "inbox": false,
-    "history": null
-   },
-   {
-    "name": "dsh-review",
-    "inBundles": true,
-    "installed": true,
-    "declaredVersion": "^0.1.1",
-    "protected": false,
-    "protectReason": null,
-    "inbox": false,
-    "history": null
-   },
-   {
-    "name": "dsh-scrape-webpage",
-    "inBundles": true,
-    "installed": true,
-    "declaredVersion": "^1.0.0",
-    "protected": false,
-    "protectReason": null,
-    "inbox": false,
-    "history": null
-   },
-   {
-    "name": "dsh-serper-search",
-    "inBundles": true,
-    "installed": true,
-    "declaredVersion": "^0.4.0",
+    "declaredVersion": "^0.1.10",
     "protected": false,
     "protectReason": null,
     "inbox": false,
@@ -402,7 +272,7 @@
    },
    {
     "name": "dsh-skill-browser",
-    "inBundles": true,
+    "inBundles": false,
     "installed": true,
     "declaredVersion": "^1.9.11",
     "protected": false,
@@ -411,18 +281,8 @@
     "history": null
    },
    {
-    "name": "dsh-telegram-channel-ru",
-    "inBundles": true,
-    "installed": true,
-    "declaredVersion": "^0.13.1",
-    "protected": false,
-    "protectReason": null,
-    "inbox": false,
-    "history": null
-   },
-   {
     "name": "dsh-vision-router",
-    "inBundles": true,
+    "inBundles": false,
     "installed": true,
     "declaredVersion": "^3.1.0",
     "protected": false,
@@ -442,32 +302,22 @@
    },
    {
     "name": "ru-marketplace-mcp-dsh",
-    "inBundles": true,
+    "inBundles": false,
     "installed": true,
-    "declaredVersion": "file:.plugin-sources/ru-marketplace-mcp-dsh",
-    "protected": false,
-    "protectReason": null,
-    "inbox": false,
-    "history": null
-   },
-   {
-    "name": "superdesign-dsh",
-    "inBundles": true,
-    "installed": true,
-    "declaredVersion": "https://codeload.github.com/superdesigndev/superdesign-skill/tar.gz/refs/heads/main",
+    "declaredVersion": "file:C:/Users/Артем/Desktop/тестDH/marketing-agents/connectors/ru-marketplace-mcp/dsh",
     "protected": false,
     "protectReason": null,
     "inbox": false,
     "history": null
    }
   ],
-  "protectedCount": 17,
+  "protectedCount": 6,
   "restartNote": "После изменения списка плагинов НУЖЕН ПЕРЕЗАПУСК DeepSeek Harness: изменения подхватываются только при старте приложения."
  },
  "delivery": {
   "title": "Доставка и уведомления",
   "note": "Куда уходит отчёт. Автоматическая отправка в этой версии выключена: отчёт готовит агент, отправляете вы сами.",
-  "sendMode": "manual",
+  "sendMode": "auto",
   "items": [
    {
     "id": "delivery.telegram.enabled",
@@ -487,7 +337,7 @@
     "id": "delivery.email.enabled",
     "label": "Отправка на почту",
     "kind": "bool",
-    "value": false,
+    "value": true,
     "file": "settings",
     "path": [
      "delivery",
@@ -495,13 +345,18 @@
      "enabled"
     ],
     "what": "Включит отметку «отправлять на почту». Нужен адрес получателя и почтовый шлюз.",
-    "history": null
+    "history": {
+     "at": 1793474035475.254,
+     "previous": false,
+     "now": true,
+     "backup": "settings.yaml.bak-20261031-221356-943"
+    }
    }
   ],
   "where": {
-   "sendMode": "вручную (отчёт готовит агент)",
+   "sendMode": "auto",
    "telegram": "выключен",
-   "email": "выключена",
+   "email": "адрес: не указан",
    "formats": [
     "md",
     "xlsx"
@@ -957,10 +812,10 @@
    {
     "id": "agent-1-competitor-watch",
     "name": "Агент 1 — Мониторинг конкурентов",
-    "enabled": true,
+    "enabled": false,
     "status": "active",
     "model": "deepseek/deepseek-v4.1-flash",
-    "schedule": "weekly:monday:10:00",
+    "schedule": "weekly:thursday:11:00",
     "projects": [],
     "groups": [
      "Мониторинг",
@@ -1050,20 +905,25 @@
     ],
     "history": {
      "enabled": {
-      "at": 1793460449487.3916,
-      "previous": false,
-      "now": true,
-      "backup": "agents.yaml.bak-20261031-182730"
+      "at": 1794345388911.2434,
+      "previous": true,
+      "now": false,
+      "backup": "agents.yaml.bak-20261113-212553-396"
      },
      "model": null,
-     "schedule": null
+     "schedule": {
+      "at": 1793530368766.9883,
+      "previous": "weekly:monday:10:00",
+      "now": "weekly:thursday:11:00",
+      "backup": "agents.yaml.bak-20261101-135250-646"
+     }
     }
    },
    {
     "id": "agent-2-direct-semantics",
     "name": "Агент 2 — Семантика и кампании Яндекс Директа",
-    "enabled": false,
-    "status": "planned",
+    "enabled": true,
+    "status": "active",
     "model": "deepseek/deepseek-v4-pro",
     "schedule": "on-demand",
     "projects": [],
@@ -1154,7 +1014,12 @@
      }
     ],
     "history": {
-     "enabled": null,
+     "enabled": {
+      "at": 1793530368766.9883,
+      "previous": false,
+      "now": true,
+      "backup": "agents.yaml.bak-20261101-135250-646"
+     },
      "model": {
       "at": 1793462552750.1118,
       "previous": "deepseek/deepseek-v4.1-flash",
@@ -1493,6 +1358,17 @@
       "now": true,
       "backup": "sources.yaml.bak-20261101-184902-580"
      }
+    }
+   },
+   {
+    "id": "reefapi",
+    "name": "Авито через ReefAPI (разовая глубокая проверка)",
+    "enabled": false,
+    "status": "paused",
+    "kind": "http",
+    "lots": 0,
+    "history": {
+     "enabled": null
     }
    }
   ]

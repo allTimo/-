@@ -1,0 +1,422 @@
+{
+ "generatedAtMs": 1794594846171,
+ "today": "2026-11-13",
+ "file": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\registry\\runs.jsonl",
+ "exists": true,
+ "note": "Источник — registry/runs.jsonl: длительность (duration_ms) и стоимость (cost_rub) каждого прогона. Где поля нет, там честно «данных нет», а не ноль.",
+ "agents": [
+  {
+   "id": "agent-1-competitor-watch",
+   "name": "Агент 1 — Мониторинг конкурентов",
+   "status": "active",
+   "enabled": false,
+   "schedule": "weekly:thursday:11:00",
+   "model": "deepseek/deepseek-v4.1-flash",
+   "role": "Раз в неделю собирает снимок предложения конкурентов (цены, акции, количество лотов), сравнивает с прошлой неделей и готовит отчёт.",
+   "projects": [],
+   "groups": [
+    "Мониторинг",
+    "Конкуренты"
+   ],
+   "ready": true,
+   "readinessKind": "has-runs",
+   "readinessReason": null,
+   "runs": {
+    "total": 47,
+    "ok": 47,
+    "failed": 0,
+    "other": 0,
+    "lastTs": "2026-11-12T21:07:07.446+03:00",
+    "lastStatus": "ok",
+    "lastClient": "client-svet",
+    "lastArtifact": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\01-competitor-watch\\reports\\clients\\client-svet\\2026-11-12-competitor-watch.md",
+    "lastError": "PDF не собран: LibreOffice Kit вернул код 1: {\"code\":\"failed\",\"error\":\"EPERM: operation not permitted, mkdtemp 'C:\\\\Users\\\\328F~1\\\\AppData\\\\Local\\\\Temp\\\\libreoffice-kit-XXXXXX'\"}\n"
+   },
+   "duration": {
+    "count": 47,
+    "avgMs": 24666,
+    "minMs": 415,
+    "maxMs": 282958,
+    "lastMs": 282958
+   },
+   "cost": {
+    "count": 29,
+    "totalRub": 257.05,
+    "lastRub": 0.5638
+   },
+   "withoutCost": 18,
+   "withoutDuration": 0,
+   "byClient": [
+    {
+     "client": "(без клиента)",
+     "runs": 26,
+     "ok": 26,
+     "lastTs": "2026-11-10T21:19:07.659Z",
+     "lastStatus": "ok"
+    },
+    {
+     "client": "client-granel",
+     "runs": 9,
+     "ok": 9,
+     "lastTs": "2026-11-12T21:02:24.466+03:00",
+     "lastStatus": "ok"
+    },
+    {
+     "client": "client-svet",
+     "runs": 12,
+     "ok": 12,
+     "lastTs": "2026-11-12T21:07:07.446+03:00",
+     "lastStatus": "ok"
+    }
+   ],
+   "recent": [
+    {
+     "runId": "run-45bf4140",
+     "ts": "2026-11-12T21:07:07.446+03:00",
+     "client": "client-svet",
+     "status": "ok",
+     "durationMs": 282958,
+     "costRub": 0.5638,
+     "costSource": null,
+     "trigger": null,
+     "artifact": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\01-competitor-watch\\reports\\clients\\client-svet\\2026-11-12-competitor-watch.md",
+     "error": "PDF не собран: LibreOffice Kit вернул код 1: {\"code\":\"failed\",\"error\":\"EPERM: operation not permitted, mkdtemp 'C:\\\\Users\\\\328F~1\\\\AppData\\\\Local\\\\Temp\\\\libreoffice-kit-XXXXXX'\"}\n",
+     "service": "competitor-watch"
+    },
+    {
+     "runId": "run-0d94305b",
+     "ts": "2026-11-12T21:02:24.466+03:00",
+     "client": "client-granel",
+     "status": "ok",
+     "durationMs": 75125,
+     "costRub": 0.5189,
+     "costSource": null,
+     "trigger": null,
+     "artifact": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\01-competitor-watch\\reports\\clients\\client-granel\\2026-11-12-competitor-watch.md",
+     "error": "PDF не собран: LibreOffice Kit вернул код 1: {\"code\":\"failed\",\"error\":\"EPERM: operation not permitted, mkdtemp 'C:\\\\Users\\\\328F~1\\\\AppData\\\\Local\\\\Temp\\\\libreoffice-kit-XXXXXX'\"}\n",
+     "service": "competitor-watch"
+    },
+    {
+     "runId": "dash-55eb5304",
+     "ts": "2026-11-10T21:19:07.659Z",
+     "client": null,
+     "status": "ok",
+     "durationMs": 439,
+     "costRub": null,
+     "costSource": "none",
+     "trigger": "dashboard",
+     "artifact": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\01-competitor-watch\\reports\\2026-10-30-competitor-watch.xlsx",
+     "error": null,
+     "service": "competitor-watch"
+    },
+    {
+     "runId": "dash-5c8c1f9a",
+     "ts": "2026-11-10T21:18:45.862Z",
+     "client": null,
+     "status": "ok",
+     "durationMs": 489,
+     "costRub": null,
+     "costSource": "none",
+     "trigger": "dashboard",
+     "artifact": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\01-competitor-watch\\reports\\2026-10-30-competitor-watch.xlsx",
+     "error": null,
+     "service": "competitor-watch"
+    },
+    {
+     "runId": "dash-1a7c486b",
+     "ts": "2026-11-10T21:18:01.562Z",
+     "client": null,
+     "status": "ok",
+     "durationMs": 415,
+     "costRub": null,
+     "costSource": "none",
+     "trigger": "dashboard",
+     "artifact": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\01-competitor-watch\\reports\\2026-10-30-competitor-watch.xlsx",
+     "error": null,
+     "service": "competitor-watch"
+    },
+    {
+     "runId": "dash-7142ebdc",
+     "ts": "2026-11-10T21:17:38.990Z",
+     "client": null,
+     "status": "ok",
+     "durationMs": 513,
+     "costRub": null,
+     "costSource": "none",
+     "trigger": "dashboard",
+     "artifact": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\01-competitor-watch\\reports\\2026-10-30-competitor-watch.xlsx",
+     "error": null,
+     "service": "competitor-watch"
+    },
+    {
+     "runId": "dash-d64ee9d1",
+     "ts": "2026-11-10T21:07:27.179Z",
+     "client": null,
+     "status": "ok",
+     "durationMs": 440,
+     "costRub": null,
+     "costSource": "none",
+     "trigger": "dashboard",
+     "artifact": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\01-competitor-watch\\reports\\2026-10-30-competitor-watch.xlsx",
+     "error": null,
+     "service": "competitor-watch"
+    },
+    {
+     "runId": "dash-d986e79c",
+     "ts": "2026-11-10T21:07:05.997Z",
+     "client": null,
+     "status": "ok",
+     "durationMs": 1120,
+     "costRub": null,
+     "costSource": "none",
+     "trigger": "dashboard",
+     "artifact": "C:\\Users\\Артем\\Desktop\\тестDH\\marketing-agents\\01-competitor-watch\\reports\\2026-10-30-competitor-watch.xlsx",
+     "error": null,
+     "service": "competitor-watch"
+    }
+   ]
+  },
+  {
+   "id": "agent-2-direct-semantics",
+   "name": "Агент 2 — Семантика и кампании Яндекс Директа",
+   "status": "active",
+   "enabled": true,
+   "schedule": "on-demand",
+   "model": "deepseek/deepseek-v4-pro",
+   "role": "Собирает и кластеризует семантику, собирает кампании и группы, пишет объявления, готовит выгрузку в Директ.",
+   "projects": [],
+   "groups": [
+    "Директ",
+    "Семантика"
+   ],
+   "ready": true,
+   "readinessKind": "has-runs",
+   "readinessReason": null,
+   "runs": {
+    "total": 7,
+    "ok": 4,
+    "failed": 3,
+    "other": 0,
+    "lastTs": "2026-11-10T21:19:21.878Z",
+    "lastStatus": "ok",
+    "lastClient": null,
+    "lastArtifact": null,
+    "lastError": null
+   },
+   "duration": {
+    "count": 7,
+    "avgMs": 347,
+    "minMs": 129,
+    "maxMs": 562,
+    "lastMs": 446
+   },
+   "cost": {
+    "count": 0,
+    "totalRub": null,
+    "lastRub": null
+   },
+   "withoutCost": 7,
+   "withoutDuration": 0,
+   "byClient": [
+    {
+     "client": "(без клиента)",
+     "runs": 7,
+     "ok": 4,
+     "lastTs": "2026-11-10T21:19:21.878Z",
+     "lastStatus": "ok"
+    }
+   ],
+   "recent": [
+    {
+     "runId": "dash-b427536c",
+     "ts": "2026-11-10T21:19:21.878Z",
+     "client": null,
+     "status": "ok",
+     "durationMs": 446,
+     "costRub": null,
+     "costSource": "none",
+     "trigger": "dashboard",
+     "artifact": null,
+     "error": null,
+     "service": "metrika"
+    },
+    {
+     "runId": "dash-e3b1a5f5",
+     "ts": "2026-11-10T21:17:08.303Z",
+     "client": null,
+     "status": "ok",
+     "durationMs": 458,
+     "costRub": null,
+     "costSource": "none",
+     "trigger": "dashboard",
+     "artifact": null,
+     "error": null,
+     "service": "metrika"
+    },
+    {
+     "runId": "dash-de4ab2ca",
+     "ts": "2026-11-10T19:31:02.171Z",
+     "client": null,
+     "status": "failed",
+     "durationMs": 562,
+     "costRub": null,
+     "costSource": "none",
+     "trigger": "dashboard",
+     "artifact": null,
+     "error": "Campaigns.get: ошибка API 58: Незавершенная регистрация (Необходимо заполнить для приложения заявку на доступ в интерфейсе Директа и дождаться её подтверждения)",
+     "service": "direct-api"
+    },
+    {
+     "runId": "dash-34b52ee8",
+     "ts": "2026-11-10T19:29:51.602Z",
+     "client": null,
+     "status": "failed",
+     "durationMs": 282,
+     "costRub": null,
+     "costSource": "none",
+     "trigger": "dashboard",
+     "artifact": null,
+     "error": "Campaigns.get: ошибка API 58: Незавершенная регистрация (Необходимо заполнить для приложения заявку на доступ в интерфейсе Директа и дождаться её подтверждения)",
+     "service": "direct-api"
+    },
+    {
+     "runId": "dash-36d17fb1",
+     "ts": "2026-11-10T19:29:41.006Z",
+     "client": null,
+     "status": "failed",
+     "durationMs": 424,
+     "costRub": null,
+     "costSource": "none",
+     "trigger": "dashboard",
+     "artifact": null,
+     "error": "Campaigns.get: ошибка API 58: Незавершенная регистрация (Необходимо заполнить для приложения заявку на доступ в интерфейсе Директа и дождаться её подтверждения)",
+     "service": "direct-api"
+    },
+    {
+     "runId": "dash-28bfe3c3",
+     "ts": "2026-11-10T18:12:42.675Z",
+     "client": null,
+     "status": "ok",
+     "durationMs": 130,
+     "costRub": null,
+     "costSource": "none",
+     "trigger": "dashboard",
+     "artifact": null,
+     "error": "токен Директа не задан: YANDEX_DIRECT_TOKEN в marketing-agents/.env",
+     "service": "direct-api"
+    },
+    {
+     "runId": "dash-dffd0e68",
+     "ts": "2026-11-10T18:12:15.348Z",
+     "client": null,
+     "status": "ok",
+     "durationMs": 129,
+     "costRub": null,
+     "costSource": "none",
+     "trigger": "dashboard",
+     "artifact": null,
+     "error": null,
+     "service": "direct-api"
+    }
+   ]
+  },
+  {
+   "id": "agent-3-creative",
+   "name": "Агент 3 — Креативы и дизайн (заготовка)",
+   "status": "planned",
+   "enabled": false,
+   "schedule": "on-demand",
+   "model": "deepseek/deepseek-v4.1-flash",
+   "role": "Готовит баннеры и графику под размеры площадок, обновляет креативы под акции конкурентов.",
+   "projects": [],
+   "groups": [
+    "Креативы"
+   ],
+   "ready": false,
+   "readinessKind": "planned",
+   "readinessReason": "движок не подключён: агент в статусе «запланирован» (registry/agents.yaml). Прогонов в журнале нет.",
+   "runs": {
+    "total": 0,
+    "ok": 0,
+    "failed": 0,
+    "other": 0,
+    "lastTs": null,
+    "lastStatus": null,
+    "lastClient": null,
+    "lastArtifact": null,
+    "lastError": null
+   },
+   "duration": {
+    "count": 0,
+    "avgMs": null,
+    "minMs": null,
+    "maxMs": null,
+    "lastMs": null
+   },
+   "cost": {
+    "count": 0,
+    "totalRub": null,
+    "lastRub": null
+   },
+   "withoutCost": 0,
+   "withoutDuration": 0,
+   "byClient": [],
+   "recent": []
+  },
+  {
+   "id": "agent-4-analytics",
+   "name": "Агент 4 — Сквозная аналитика (заготовка)",
+   "status": "planned",
+   "enabled": false,
+   "schedule": "weekly",
+   "model": "deepseek/deepseek-v4.1-flash",
+   "role": "Сводит расходы и результаты по площадкам и кампаниям, готовит недельную сводку по эффективности.",
+   "projects": [],
+   "groups": [
+    "Аналитика"
+   ],
+   "ready": false,
+   "readinessKind": "planned",
+   "readinessReason": "движок не подключён: агент в статусе «запланирован» (registry/agents.yaml). Прогонов в журнале нет.",
+   "runs": {
+    "total": 0,
+    "ok": 0,
+    "failed": 0,
+    "other": 0,
+    "lastTs": null,
+    "lastStatus": null,
+    "lastClient": null,
+    "lastArtifact": null,
+    "lastError": null
+   },
+   "duration": {
+    "count": 0,
+    "avgMs": null,
+    "minMs": null,
+    "maxMs": null,
+    "lastMs": null
+   },
+   "cost": {
+    "count": 0,
+    "totalRub": null,
+    "lastRub": null
+   },
+   "withoutCost": 0,
+   "withoutDuration": 0,
+   "byClient": [],
+   "recent": []
+  }
+ ],
+ "totals": {
+  "agents": 4,
+  "agentsReady": 2,
+  "agentsWithRuns": 2,
+  "runs": 54,
+  "unattributed": 0,
+  "runsWithDuration": 54,
+  "runsWithCost": 29,
+  "avgDurationMs": 21514,
+  "costRub": 257.05
+ },
+ "warnings": []
+}

@@ -37,14 +37,20 @@ REQUIRED_NON_EMPTY = (
 FINISH_VALUES = ("без отделки", "white box", "чистовая", "с мебелью", "unknown")
 STATUS_VALUES = ("active", "reserved", "sold")
 # Controlled vocabulary from 00-admin/config/settings.yaml (data_contract.enums.source).
-SOURCE_VALUES = ("cian", "avito", "yandex_realty", "site", "other")
+#: Идентификаторы источника в колонке source. ``developer-sites`` пишет движок
+#: (источник «сайты застройщиков», см. clients.KNOWN_SOURCES) — раньше валидатор
+#: его не знал и красил снимок (дефект F13).
+SOURCE_VALUES = ("cian", "avito", "yandex_realty", "site", "developer-sites", "other")
 ROOMS_MIN, ROOMS_MAX = 0, 6
 AREA_MIN, AREA_MAX = 10.0, 400.0
 PRICE_MIN_EXCLUSIVE = 1_000_000.0
 PPM2_TOLERANCE = 0.01
 
 DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
-DELIVERY_RE = re.compile(r"^\d{4}-Q[1-4]$")
+#: Срок сдачи: год «2027» или год с кварталом «2027-Q2».
+#: Год без квартала — честное значение: площадки (Циан) чаще публикуют только год,
+#: а требование YYYY-QN красило валидатор на всех датах (дефект F12).
+DELIVERY_RE = re.compile(r"^\d{4}(?:-Q[1-4])?$")
 
 # Room buckets used by the report: studios / 1 / 2 / 3 / 4+ (rooms == 6 means 5+).
 ROOM_BUCKETS = (
@@ -499,7 +505,7 @@ def validate_row(raw, line_no, expected_date=None):
 
     delivery = get("delivery")
     if delivery and not DELIVERY_RE.match(delivery):
-        problems.append("строка %d: delivery=%s не в формате YYYY-QN" % (line_no, delivery))
+        problems.append("строка %d: delivery=%s не в формате YYYY или YYYY-QN" % (line_no, delivery))
 
     status = get("status")
     if status and status not in STATUS_VALUES:
@@ -1012,4 +1018,95 @@ def settings_formats(config_dir=None, default=DEFAULT_FORMATS):
     if isinstance(value, list) and value:
         return ",".join(str(item) for item in value)
     return default
+
+
+# --------------------------------------------------------------------------
+# Agent 1 thin settings (registry/agent-settings/agent-1-competitor-watch.yaml)
+# --------------------------------------------------------------------------
+
+AGENT1_ID = "agent-1-competitor-watch"
+REGISTRY_DIR = PROJECT_ROOT / "registry"
+AGENT_SETTINGS_DIR = REGISTRY_DIR / "agent-settings"
+
+
+def agent_settings_path(agent_id=AGENT1_ID, registry_dir=None):
+    """Path of the agent's thin settings file (WP2: toggles live there)."""
+    base = Path(registry_dir) if registry_dir else REGISTRY_DIR
+    return Path(base) / "agent-settings" / ("%s.yaml" % agent_id)
+
+
+def load_agent_settings(agent_id=AGENT1_ID, registry_dir=None, path=None, warn=False):
+    """Load the agent's thin settings.
+
+    Never raises: a missing or broken file yields {} and the engine keeps its
+    safe defaults. PyYAML is used when present, otherwise the built-in mini
+    parser (the same rule as load_settings).
+    """
+    target = Path(path) if path else agent_settings_path(agent_id, registry_dir)
+    if not target.exists():
+        if warn:
+            print("Предупреждение: %s не найден — настройки агента по умолчанию." % target,
+                  file=sys.stderr)
+        return {}
+    try:
+        import yaml  # optional: PyYAML is NOT part of the DSH runtime
+    except ImportError:
+        yaml = None
+    data = {}
+    try:
+        if yaml is not None:
+            with open(target, "r", encoding="utf-8-sig") as handle:
+                loaded = yaml.safe_load(handle)
+        else:
+            loaded = parse_simple_yaml(target)
+        data = loaded if isinstance(loaded, dict) else {}
+    except Exception as exc:
+        if warn:
+            print("Предупреждение: не удалось прочитать %s (%s) — настройки агента по умолчанию."
+                  % (target, exc), file=sys.stderr)
+        return {}
+    return data
+
+
+# --------------------------------------------------------------------------
+# agent1.watch: единое поле query (контракт v2, §3 группа 1)
+# --------------------------------------------------------------------------
+
+_URL_LIKE_RE = re.compile(r"^(?:https?://|//)\S+$|^[\w.-]+\.[A-Za-z]{2,}(?:[/?#].*)?$")
+
+
+def looks_like_url(value):
+    """True when the string is a site address (`https://…`, `//…`, `example.ru/path`)."""
+    text = str(value or "").strip()
+    if not text or " " in text:
+        return False
+    return bool(_URL_LIKE_RE.match(text))
+
+
+def derive_watch_query(watch):
+    """Fill empty `name`/`url` of agent1.watch from the single field `query`.
+
+    The panel shows one field («Мой ЖК: название или сайт»); the engine keeps
+    `name`/`url` in YAML usable. A URL-like query fills `url`, any other query
+    fills `name`. An already filled value always wins and nothing is invented:
+    the query is copied verbatim, the name is never derived from a domain.
+    """
+    if not isinstance(watch, dict):
+        return watch
+    query = str(watch.get("query") or "").strip()
+    if not query:
+        return watch
+    if looks_like_url(query):
+        if not str(watch.get("url") or "").strip():
+            watch["url"] = query
+    elif not str(watch.get("name") or "").strip():
+        watch["name"] = query
+    return watch
+
+
+def slug_id(text):
+    """Stable lowercase id for a competitor entry without an explicit `id`."""
+    cleaned = re.sub(r"[^\w]+", "-", str(text or "").strip().casefold(), flags=re.UNICODE)
+    return cleaned.strip("-") or "competitor"
+
 

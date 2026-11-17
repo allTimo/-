@@ -563,7 +563,9 @@ async function checkDrawer(page, r) {
   if (!cards) { r.skip('drawer', 'Модальные окна: открытие, Esc, клик вне', 'нет .agent-card на #agents/executors'); return; }
   let used = -1;
   for (let i = 0; i < Math.min(cards, 6); i++) {
-    await page.eval(CLICK('#view .agent-card', i));
+    // Клик по карточке агента больше НЕ открывает боковое меню (решение пользователя
+    // 04.11.2026): drawer вызывается отдельной кнопкой «Детали» внутри карточки.
+    await page.eval(CLICK('#view .agent-card button.btn', i));
     await sleep(400);
     if (await page.eval("!document.getElementById('drawer').hidden")) { used = i; break; }
   }
@@ -574,7 +576,7 @@ async function checkDrawer(page, r) {
   await sleep(350);
   const closedEsc = await page.eval("document.getElementById('drawer').hidden");
   const lockedEsc = await page.eval('__ux.scrollLocked()');
-  await page.eval(CLICK('#view .agent-card'));
+  await page.eval(CLICK('#view .agent-card button.btn'));
   await sleep(400);
   await page.eval("(() => { document.getElementById('drawerBackdrop').click(); return true; })()");
   await sleep(350);

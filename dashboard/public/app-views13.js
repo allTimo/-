@@ -70,10 +70,10 @@ function staleBanner() {
     ['domclick', 'Домклик', 'enum', 'Проверено: закрыт (401/403) — держим выключенным.', ['http', 'browser', 'off']],
     ['developer-sites', 'Сайты застройщиков', 'enum', 'Обычный HTTP без логина.', ['http', 'browser', 'off']]
   ]]);
-  AG_SCHEMA.splice(8, 0, ['agent1.watch', 'ЖК для наблюдения', [
-    ['name', 'Название ЖК', 'str', 'Ваш проект, вокруг которого ищем конкурентов.'],
+  // Контракт v2 (§3): в карточке у «Охвата и радиуса» — ОДНО поле «Мой ЖК» (query).
+  // Поля name и url из карточки убраны (остаются в YAML; движок выводит их из query).
+  AG_SCHEMA.splice(8, 0, ['agent1.watch', 'Охват и радиус', [
     ['address', 'Адрес', 'str', 'Нужен, чтобы определить координаты. Если номера дома нет, геокодер может ошибиться — тогда укажите координаты вручную.'],
-    ['url', 'Ссылка на сайт ЖК', 'str', 'Для сбора данных о своём проекте (необязательно).'],
     ['lat', 'Широта', 'str', 'Если пусто — агент определит по адресу сам.'],
     ['lon', 'Долгота', 'str', 'Если пусто — агент определит по адресу сам.'],
     ['radius_km', 'Радиус поиска конкурентов, км', 'num', 'Ищем конкурентов в этом радиусе по прямой. По умолчанию 10 км; точность ±0,5 км.'],
@@ -83,67 +83,64 @@ function staleBanner() {
     ['sources', 'Источники поиска', 'list', 'Где искать: cian, avito, yandex-realty, domclick, web-search.', ['cian', 'avito', 'yandex-realty', 'domclick', 'web-search']],
     ['max_candidates', 'Максимум кандидатов', 'int', 'Сколько кандидатов показать за один поиск.']
   ]]);
-  // 2026-11-01: карта «домен → ключ проекта» для сопоставления бюджетов (agent1.competitor_domains).
-  // Группа динамическая: строки берём из данных, потому что домены заранее неизвестны.
-  var origBlock0 = agentSettingsBlock;
-  agentSettingsBlock = function (agentId) {
-    var box = origBlock0(agentId);
-    if (agentId !== 'agent-1-competitor-watch') return box;
-    var rec = agSettings(agentId);
-    if (!rec || !rec.agent1) return box;
-    var map = rec.agent1.competitorDomains || {};
-    var grp = el('div', 'ag-group');
-    grp.appendChild(el('div', 'ag-group-title', 'Домены конкурентов (для сопоставления бюджетов)'));
-    grp.appendChild(el('div', 'ag-what', 'Карта «домен → канонический ключ проекта». Нужна, когда срез сервиса отдаёт только домен (seliger-city.ru), а профиль называется по ключу (zhk-seliger-siti). Читает и движок, и панель.'));
-    Object.keys(map).forEach(function (dom) {
-      var row = el('div', 'ag-row');
-      var lab = el('div', 'ag-label');
-      lab.appendChild(el('div', 'ag-name', dom));
-      lab.appendChild(el('div', 'ag-what', 'канонический ключ проекта:'));
-      row.appendChild(lab);
-      var inp = el('input'); inp.type = 'text'; inp.value = map[dom]; inp.style.flex = '0 0 220px';
-      row.appendChild(inp);
-      var btn = el('button', 'btn small', 'Сохранить');
-      btn.addEventListener('click', function () {
-        if (!window.confirm('Сохранить домен ' + dom + ' → ' + inp.value + '?')) return;
-        fetch('/api/agent-settings/set', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ agent: agentId, group: 'agent1.competitor_domains', field: dom, value: inp.value }) })
-          .then(function (r) { return r.json(); }).then(function (res) {
-            toast(res.ok ? ('Сохранено: ' + dom + ' → ' + inp.value) : ('Не удалось: ' + res.message), res.ok ? 'ok' : 'bad');
-            if (res.ok) refreshDataNow();
-          });
-      });
-      row.appendChild(btn);
-      grp.appendChild(row);
-    });
-    var addRow = el('div', 'ag-row');
-    var dIn = el('input'); dIn.type = 'text'; dIn.placeholder = 'новый домен, например seliger-city.ru'; dIn.style.flex = '1 1 220px';
-    var kIn = el('input'); kIn.type = 'text'; kIn.placeholder = 'ключ проекта zhk-…'; kIn.style.flex = '0 0 200px';
-    var aBtn = el('button', 'btn small primary', 'Добавить домен');
-    aBtn.addEventListener('click', function () {
-      if (!dIn.value) { toast('Укажите домен', 'bad'); return; }
-      fetch('/api/agent-settings/set', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ agent: agentId, group: 'agent1.competitor_domains', field: dIn.value, value: kIn.value }) })
+  // Карта «домен → ключ проекта» (agent1.competitor_domains) — см. competitorDomainsBlock() ниже.
+  // task-6: это больше НЕ отдельная группа карточки, а свёрнутый подраздел внутри группы
+  // «Конкуренты в анализе» (её собирает app-views15.js).
+})();
+
+// Подраздел «Домены конкурентов» внутри группы «Конкуренты в анализе»: свёрнутый details.
+// У него намеренно нет ни .ag-group, ни data-group, ни .ag-group-title — в карточке Агента 1
+// остаются ровно 5 контрактных групп, считаемых по data-group.
+function competitorDomainsBlock() {
+  var agentId = 'agent-1-competitor-watch';
+  var rec = agSettings(agentId);
+  if (!rec || !rec.agent1) return null;
+  var map = rec.agent1.competitorDomains || {};
+  var more = el('details', 'ag-more domain-more');
+  more.appendChild(el('summary', 'ag-more-sum', 'Домены конкурентов (для сопоставления бюджетов)'));
+  more.appendChild(el('div', 'ag-what', 'Карта «домен → канонический ключ проекта». Нужна, когда срез сервиса отдаёт только домен (seliger-city.ru), а профиль называется по ключу (zhk-seliger-siti). Читает и движок, и панель.'));
+  Object.keys(map).forEach(function (dom) {
+    var row = el('div', 'ag-row');
+    var lab = el('div', 'ag-label');
+    lab.appendChild(el('div', 'ag-name', dom));
+    lab.appendChild(el('div', 'ag-what', 'канонический ключ проекта:'));
+    row.appendChild(lab);
+    var inp = el('input'); inp.type = 'text'; inp.value = map[dom]; inp.style.flex = '0 0 220px';
+    row.appendChild(inp);
+    var btn = el('button', 'btn small', 'Сохранить');
+    btn.addEventListener('click', function () {
+      if (!window.confirm('Сохранить домен ' + dom + ' → ' + inp.value + '?')) return;
+      fetch('/api/agent-settings/set', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ agent: agentId, group: 'agent1.competitor_domains', field: dom, value: inp.value }) })
         .then(function (r) { return r.json(); }).then(function (res) {
-          toast(res.ok ? ('Добавлено: ' + dIn.value + ' → ' + kIn.value) : ('Не удалось: ' + res.message), res.ok ? 'ok' : 'bad');
+          toast(res.ok ? ('Сохранено: ' + dom + ' → ' + inp.value) : ('Не удалось: ' + res.message), res.ok ? 'ok' : 'bad');
           if (res.ok) refreshDataNow();
         });
     });
-    addRow.appendChild(dIn); addRow.appendChild(kIn); addRow.appendChild(aBtn);
-    grp.appendChild(addRow);
-    box.appendChild(grp);
-    return box;
-  };
-  var origBlock = agentSettingsBlock;
-  agentSettingsBlock = function (agentId) {
-    var box = origBlock(agentId);
-    if (agentId === 'agent-1-competitor-watch') box.appendChild(watchCandidatesBlock());
-    return box;
-  };
-})();
+    row.appendChild(btn);
+    more.appendChild(row);
+  });
+  var addRow = el('div', 'ag-row');
+  var dIn = el('input'); dIn.type = 'text'; dIn.placeholder = 'новый домен, например seliger-city.ru'; dIn.style.flex = '1 1 220px';
+  var kIn = el('input'); kIn.type = 'text'; kIn.placeholder = 'ключ проекта zhk-…'; kIn.style.flex = '0 0 200px';
+  var aBtn = el('button', 'btn small primary', 'Добавить домен');
+  aBtn.addEventListener('click', function () {
+    if (!dIn.value) { toast('Укажите домен', 'bad'); return; }
+    fetch('/api/agent-settings/set', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ agent: agentId, group: 'agent1.competitor_domains', field: dIn.value, value: kIn.value }) })
+      .then(function (r) { return r.json(); }).then(function (res) {
+        toast(res.ok ? ('Добавлено: ' + dIn.value + ' → ' + kIn.value) : ('Не удалось: ' + res.message), res.ok ? 'ok' : 'bad');
+        if (res.ok) refreshDataNow();
+      });
+  });
+  addRow.appendChild(dIn); addRow.appendChild(kIn); addRow.appendChild(aBtn);
+  more.appendChild(addRow);
+  return more;
+}
 
 function watchCandidatesBlock() {
   var d = STATE['candidates'] || { exists: false, projects: [], counts: { total: 0 } };
   var box = el('div', 'watch-box');
-  box.appendChild(el('div', 'ag-group-title', 'Подбор конкурентов'));
+  // Заголовок группы даёт контейнер «Конкуренты в анализе» (app-views15.js), здесь — подраздел.
+  box.appendChild(el('div', 'ag-sub-title', 'Кандидаты радиуса (автоподбор)'));
 
   var rec = agSettings('agent-1-competitor-watch') || {};
   var w = (rec.agent1 && rec.agent1.watch) ? rec.agent1.watch : {};
@@ -244,7 +241,7 @@ function watchCandidatesBlock() {
   addAll.addEventListener('click', function () {
     var inR = list.filter(function (c) { return c.status === 'candidate' && c.distanceKm !== null && c.distanceKm <= Number(w.radius_km || 10); });
     if (!inR.length) { toast('В радиусе нет новых кандидатов', 'bad'); return; }
-    if (!window.confirm('Добавить в конкуренты ' + inR.length + ' кандидат(ов) в радиусе ' + (w.radius_km || 10) + ' км?\n\nКаждый будет записан в клиентский конфиг с копией .bak.')) return;
+    if (!window.confirm('Добавить в анализ ' + inR.length + ' кандидат(ов) в радиусе ' + (w.radius_km || 10) + ' км?\n\nКаждый будет записан в истинный список конкурентов клиента с копией .bak.')) return;
     inR.forEach(function (c) { candidateAct(c, 'approve'); });
     setTimeout(function () { refreshState(); }, 900);
   });
@@ -275,10 +272,10 @@ function watchCandidatesBlock() {
     var st = el('span');
     st.appendChild(badge(c.status === 'approved' ? 'добавлен' : (c.status === 'rejected' ? 'отклонён' : 'новый'), c.status === 'approved' ? 'ok' : (c.status === 'rejected' ? 'grey' : 'accent')));
     var act = el('span');
-    var addB = el('button', 'btn small primary', 'Добавить в конкуренты');
+    var addB = el('button', 'btn small primary', 'Добавить в анализ');
     addB.disabled = c.status === 'approved';
     addB.addEventListener('click', function () {
-      if (!window.confirm('Добавить «' + c.name + '» в конкуренты клиента? Запись пойдёт в клиентский конфиг Агента 1 с копией .bak.')) return;
+      if (!window.confirm('Добавить «' + c.name + '» в анализ конкурентов клиента? Запись пойдёт в истинный список (клиентский конфиг Агента 1) с копией .bak.')) return;
       candidateAct(c, 'approve');
     });
     var rejB = el('button', 'btn small', 'Отклонить');
@@ -306,8 +303,69 @@ function candidateAct(c, action) {
 }
 
 
-// Встраиваем блок «Тонкие настройки» в карточки агентов и источников.
-(function wrapAgentViews() {
+/* Маркетинговая карточка Агента 1: в «Тонких настройках» остаются ТОЛЬКО
+   маркетинговые группы. Системные (расписание, модель, приоритет, лимиты,
+   источник) в карточке не рендерятся вовсе — они живут в YAML и разделе
+   системных настроек. Контракт: docs/agent-1-marketing-settings-contract.md. */
+(function patchAgent1MarketingGroups() {
+  var A1 = 'agent-1-competitor-watch';
+  // Контракт v2 (§3): «Сравнение и выводы» — ОДНА группа (agent1 + подраздел «Тумблеры аналитики»).
+  // Отдельной группы agent1.analytics на карточке больше нет.
+  var ORDER = ['agent1.watch', 'agent1.selection', 'agent1'];
+  var TITLES = {
+    'agent1.watch': 'Охват и радиус',
+    'agent1.selection': 'Что анализировать',
+    'agent1': 'Сравнение и выводы'
+  };
+  var origGroups = agGroupsForAgent;
+  agGroupsForAgent = function (agentId) {
+    return agentId === A1 ? ORDER.slice() : origGroups(agentId);
+  };
+  var origTitle = agGroupTitle;
+  agGroupTitle = function (agentId, group, fallback) {
+    return (agentId === A1 && TITLES[group]) ? TITLES[group] : origTitle(agentId, group, fallback);
+  };
+  var origHint = agSummaryHint;
+  agSummaryHint = function (agentId, rec) {
+    // Подпись называет ровно то, что видно в карточке: пять групп контракта v2.
+    return agentId === A1 ? 'охват и радиус, конкуренты в анализе, что анализировать, сравнение и выводы, отправка отчёта' : origHint(agentId, rec);
+  };
+
+  var origBlock = agentSettingsBlock;
+  agentSettingsBlock = function (agentId) {
+    var box = origBlock(agentId);
+    if (agentId !== A1 || !box || !box.querySelectorAll) return box;
+    var insert = function (node, anchor) {
+      if (anchor && box.insertBefore) box.insertBefore(node, anchor);
+      else box.appendChild(node);
+    };
+    var groups = Array.prototype.slice.call(box.querySelectorAll('.ag-group'));
+    var anchor = box.querySelector ? box.querySelector('.ag-actions') : null;
+    ORDER.forEach(function (g) {
+      var node = groups.filter(function (n) { return n.dataset && n.dataset.group === g; })[0];
+      if (node) insert(node, anchor);
+    });
+    var rec = agSettings(A1);
+    if (rec && rec.agent1) {
+      if (rec.agent1.selectionPresent === false) {
+        insert(note('warn', 'В файле registry/agent-settings/' + rec.fileName + ' блока agent1.selection ещё нет — показаны значения по умолчанию из контракта. Сохранение любого поля из «Что анализировать» создаст блок. Тумблеры аналитики: ' + (rec.agent1.analyticsPresent === false ? 'блока agent1.analytics тоже нет, показаны значения по умолчанию (включено).' : 'блок agent1.analytics есть в файле.')), anchor);
+      }
+      if ((rec.agent1.selectionInvalid || []).length) {
+        insert(note('bad', 'В «Что анализировать» недопустимые значения: ' + rec.agent1.selectionInvalid.join(', ') + ' — показаны значения по умолчанию. Сохранение заменит их допустимыми.'), anchor);
+      }
+      if ((rec.agent1.selectionUnknown || []).length) {
+        insert(note('warn', 'В agent1.selection есть неизвестные ключи, панель их не показывает: ' + rec.agent1.selectionUnknown.join(', ') + '. Они остаются в файле как есть.'), anchor);
+      }
+    }
+    return box;
+  };
+})();
+
+// Плашка «данные могли устареть» на экранах агентов и источников.
+// ВАЖНО (дубль №1 контракта v2): второй регистрации блоков «Тонкие настройки» здесь больше нет.
+// Блоки добавляет app-views12.js (единственная регистрация), а от повторного появления
+// защищает проверка «в карточке уже есть .ag-settings». Эта обёртка только вставляет плашку.
+(function wrapStaleBannerOnly() {
   function wrap(origName, matcher) {
     var orig = VIEWS[origName];
     if (!orig) return;
@@ -318,30 +376,12 @@ function candidateAct(c, action) {
       matcher(view);
     };
   }
-  function appendToCards(view, agentIds) {
-    var cards = view.querySelectorAll('.agent-card');
-    cards.forEach(function (card, idx) {
-      var nameEl = card.querySelector('.agent-name');
-      var name = nameEl ? String(nameEl.textContent).trim() : '';
-      var agentId = null;
-      agentIds.forEach(function (id) { if (!agentId && name && name.indexOf(id) >= 0) agentId = id; });
-      if (!agentId && agentIds.length > idx) agentId = agentIds[idx];
-      if (!agentId) return;
-      card.appendChild(agentSettingsBlock(agentId));
-    });
-  }
   wrap('agentsExecutors', function (view) {
     var banner = staleBanner();
     if (banner) view.insertBefore(banner, view.firstChild);
-    var d = STATE['agent-settings'];
-    var ids = d && d.byAgent ? Object.keys(d.byAgent).filter(function (k) { return k.indexOf('source') === -1; }) : [];
-    appendToCards(view, ids);
   });
   wrap('agentsSources', function (view) {
     var banner = staleBanner();
     if (banner) view.insertBefore(banner, view.firstChild);
-    var d = STATE['agent-settings'];
-    var ids = d && d.byAgent ? Object.keys(d.byAgent).filter(function (k) { return k.indexOf('source') >= 0; }) : [];
-    appendToCards(view, ids);
   });
 })();

@@ -1,6 +1,6 @@
 {
   "project_id": "my-zhk-svet",
-  "generated_at": "2026-11-01T17:31:22+03:00",
+  "generated_at": "2026-11-04T15:42:20+03:00",
   "watch": {
     "name": "ЖК «Свет»",
     "address": "Москва, Западное Дегунино, Дмитровское шоссе, 83А",
@@ -33,7 +33,7 @@
       "source": "avito",
       "url": "https://www.avito.ru/rossiya/kvartiry",
       "status": "needs_browser",
-      "note": "HTTP 439 (браузер отключён флагом)",
+      "note": "HTTP 429 (браузер отключён флагом)",
       "found": 0
     },
     {
@@ -44,22 +44,24 @@
       "found": 0
     }
   ],
-  "search": "; снимок выдачи search-results-degunino-2026-11-01.json (9 записей)",
+  "search": "веб-поиск не настроен (нужен --search-results или CW_SEARCH_ENDPOINT) — поиск по району пропущен, данных нет",
   "summary": {
-    "total": 9,
+    "total": 20,
     "in_radius": 6,
     "radius_km": 10.0,
     "approved": 0,
     "rejected": 0,
-    "candidate": 9,
-    "without_distance": 3,
-    "without_price": 0,
-    "class_mismatch": 3
+    "candidate": 20,
+    "without_distance": 14,
+    "without_price": 14,
+    "class_mismatch": 2
   },
   "limitations": [
     "точность геокодирования невысокая (primary/highway) — проверьте координаты или задайте их вручную",
     "площадки без публичных данных: cian (no_data), avito (needs_browser), yandex-realty (no_data)",
-    "без расстояния: 3 (нет координат — данных нет)"
+    "веб-поиск не выполнялся: нет доступа к поисковому сервису",
+    "без расстояния: 14 (нет координат — данных нет)",
+    "без цены за м²: 14 (на публичной странице цены нет)"
   ],
   "candidates": [
     {
